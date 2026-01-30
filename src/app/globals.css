@@ -367,3 +367,279 @@ body {
   0%, 100% { opacity: 0.5; }
   50% { opacity: 1; }
 }
+
+/* ===== Effect 7: Noise & Scanline Overlay ===== */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+.scanline-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9997;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+}
+
+/* ===== Effect 1: Boot Sequence ===== */
+.boot-sequence {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.boot-text {
+  font-family: var(--font-orbitron), monospace;
+  font-size: clamp(2rem, 8vw, 5rem);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  display: flex;
+  overflow: hidden;
+}
+
+.boot-char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.boot-scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 255, 255, 0.03) 2px,
+    rgba(255, 255, 255, 0.03) 4px
+  );
+  animation: scanline-move 0.1s linear infinite;
+}
+
+@keyframes scanline-move {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(4px); }
+}
+
+/* ===== Effect 2: Chromatic Aberration ===== */
+.chromatic-active {
+  animation: chromatic-glitch 0.4s ease-out forwards;
+}
+
+@keyframes chromatic-glitch {
+  0% {
+    text-shadow: 
+      -2px 0 rgba(255, 0, 0, 0.7),
+      2px 0 rgba(0, 255, 255, 0.7);
+    filter: blur(1px);
+  }
+  50% {
+    text-shadow: 
+      -1px 0 rgba(255, 0, 0, 0.5),
+      1px 0 rgba(0, 255, 255, 0.5);
+    filter: blur(0.5px);
+  }
+  100% {
+    text-shadow: none;
+    filter: none;
+  }
+}
+
+/* ===== Effect 3: Dynamic Background Gradients ===== */
+.section-bg {
+  position: absolute;
+  inset: 0;
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.gradient-section-0 {
+  background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(37, 99, 235, 0.08), transparent);
+}
+
+.gradient-section-1 {
+  background: radial-gradient(ellipse 70% 50% at 30% 50%, rgba(37, 99, 235, 0.06), transparent);
+}
+
+.gradient-section-2 {
+  background: radial-gradient(ellipse 60% 70% at 70% 40%, rgba(37, 99, 235, 0.08), transparent);
+}
+
+.gradient-section-3 {
+  background: radial-gradient(ellipse 80% 40% at 50% 60%, rgba(37, 99, 235, 0.05), transparent);
+}
+
+.gradient-section-4 {
+  background: radial-gradient(ellipse 50% 50% at 50% 50%, rgba(37, 99, 235, 0.1), transparent);
+}
+
+/* ===== Effect 5: Glass Card with Parallax ===== */
+.glass-card {
+  background: rgba(17, 17, 17, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-style: preserve-3d;
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--card-rotation, 0deg),
+    transparent 0deg,
+    rgba(255, 255, 255, 0.1) 60deg,
+    transparent 120deg
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glass-card:hover::before {
+  opacity: 1;
+}
+
+.glass-card:hover {
+  border-color: var(--gray-600);
+  transform: perspective(1000px) rotateX(var(--rotateX, 0deg)) rotateY(var(--rotateY, 0deg));
+}
+
+/* ===== Effect 6: Timeline Progress ===== */
+.timeline-container {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline-progress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: var(--gray-800);
+}
+
+.timeline-progress-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(180deg, var(--accent), var(--accent-light));
+  transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.timeline-item-enhanced {
+  display: flex;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.timeline-item-enhanced::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gray-600);
+  transition: all 0.3s ease;
+}
+
+.timeline-item-enhanced.active::before {
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.timeline-item-enhanced:not(.active) {
+  opacity: 0.4;
+  filter: blur(0.5px);
+}
+
+.timeline-item-enhanced:last-child {
+  border-bottom: none;
+}
+
+/* ===== Effect 4: Custom Cursor ===== */
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10001;
+  transition: transform 0.15s ease, width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+}
+
+.custom-cursor.hovering {
+  width: 40px;
+  height: 40px;
+  border-color: var(--accent);
+}
+
+.cursor-glow {
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9996;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+}
+
+/* Hide default cursor on interactive elements */
+body.custom-cursor-active {
+  cursor: none;
+}
+
+body.custom-cursor-active a,
+body.custom-cursor-active button {
+  cursor: none;
+}
+
+@media (max-width: 768px) {
+  .custom-cursor,
+  .cursor-glow {
+    display: none;
+  }
+  
+  body.custom-cursor-active {
+    cursor: auto;
+  }
+}
