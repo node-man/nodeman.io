@@ -53,38 +53,12 @@ export default function Cursor() {
   if (!isVisible) return null;
 
   return (
-    <>
-      {/* Main cursor */}
-      <motion.div
-        ref={cursorRef}
-        className={`custom-cursor ${isHovering ? "hovering" : ""}`}
-        animate={{
-          x: position.x,
-          y: position.y,
-          scale: isHovering ? 1.5 : 1,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 500,
-          damping: 28,
-          mass: 0.5,
-        }}
-      />
-
-      {/* Cursor glow */}
-      <motion.div
-        className="cursor-glow"
-        animate={{
-          x: position.x,
-          y: position.y,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 150,
-          damping: 20,
-          mass: 0.8,
-        }}
-      />
-    </>
+    <div
+      ref={cursorRef}
+      className={`custom-cursor ${isHovering ? "hovering" : ""}`}
+      style={{
+        transform: `translate(${position.x}px, ${position.y}px) scale(${isHovering ? 1.5 : 1})`,
+      }}
+    />
   );
 }

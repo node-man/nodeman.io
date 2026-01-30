@@ -6,7 +6,6 @@ import { useFullPage } from "@/hooks/useFullPage";
 import { SECTIONS, PERSONAL, CURRENT_ROLES, JOURNEY, CONTACT } from "@/lib/constants";
 import BootSequence from "@/components/BootSequence";
 import NoiseOverlay from "@/components/NoiseOverlay";
-import Cursor from "@/components/Cursor";
 import GlassCard from "@/components/GlassCard";
 
 export default function Home() {
@@ -25,9 +24,6 @@ export default function Home() {
     <>
       {/* Effect 7: Noise & Scanline Overlay */}
       <NoiseOverlay />
-
-      {/* Effect 4: Custom Cursor */}
-      <Cursor />
 
       {/* Effect 1: Boot Sequence */}
       {isBooting && <BootSequence onComplete={handleBootComplete} text="NODEMAN" />}
@@ -104,7 +100,7 @@ function SectionIntro({ isActive, onNext }: { isActive: boolean; onNext: () => v
         </motion.p>
 
         {/* Effect 2: Character-by-character with chromatic aberration */}
-        <h1 className={`font-display text-hero mb-8 ${showChromatic ? "chromatic-active" : ""}`}>
+        <h1 className={`font-display text-hero mb-8 whitespace-nowrap ${showChromatic ? "chromatic-active" : ""}`}>
           {chars.map((char, index) => (
             <motion.span
               key={index}
@@ -204,7 +200,7 @@ function SectionAbout({ isActive }: { isActive: boolean }) {
           animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ delay: 0.32 }}
           className="text-body leading-relaxed whitespace-pre-line"
-          style={{ color: "var(--text-secondary)" }}
+          style={{ color: "var(--text-secondary)", marginTop: "10px", marginBottom: "10px" }}
         >
           {PERSONAL.bio}
         </motion.p>
@@ -259,6 +255,7 @@ function SectionRoles({ isActive }: { isActive: boolean }) {
           animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ delay: 0.2 }}
           className="font-display text-title mb-16"
+          style={{ marginTop: "10px", marginBottom: "10px" }}
         >
           What I Do
         </motion.h2>
@@ -396,20 +393,16 @@ function SectionContact({ isActive }: { isActive: boolean }) {
           새로운 기회, 협업, 또는 대화를 환영합니다.
         </motion.p>
 
-        <motion.div
+        <motion.a
+          href={`mailto:${CONTACT.email}`}
           initial={{ opacity: 0, y: 20 }}
           animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ delay: 0.44 }}
+          className="text-subtitle font-display interactive inline-block"
+          style={{ color: "var(--accent-light)" }}
         >
-          <GlassCard className="inline-block px-8 py-4">
-            <a
-              href={`mailto:${CONTACT.email}`}
-              className="contact-item justify-center interactive"
-            >
-              <span className="text-body">{CONTACT.email}</span>
-            </a>
-          </GlassCard>
-        </motion.div>
+          {CONTACT.email}
+        </motion.a>
       </div>
     </section>
   );

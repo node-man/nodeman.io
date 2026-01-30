@@ -24,7 +24,7 @@ export const CURRENT_ROLES = [
   {
     title: "Professor",
     organization: "University",
-    description: "웹프로그래밍 / 고급웹프로그래밍 강의",
+    description: "ICT 융합학과 겸임교수",
     period: "2021 - Present",
   },
 ];
