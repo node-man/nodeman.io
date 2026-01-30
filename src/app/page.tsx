@@ -7,6 +7,7 @@ import { SECTIONS, PERSONAL, CURRENT_ROLES, JOURNEY, CONTACT } from "@/lib/const
 import BootSequence from "@/components/BootSequence";
 import NoiseOverlay from "@/components/NoiseOverlay";
 import GlassCard from "@/components/GlassCard";
+import GalaxyBackground from "@/components/GalaxyBackground";
 
 export default function Home() {
   const [isBooting, setIsBooting] = useState(true);
@@ -28,8 +29,8 @@ export default function Home() {
       {/* Effect 1: Boot Sequence */}
       {isBooting && <BootSequence onComplete={handleBootComplete} text="NODEMAN" />}
 
-      {/* Effect 3: Dynamic Background */}
-      <div className={`section-bg gradient-section-${currentSection}`} />
+      {/* Effect 3: Dynamic Galaxy Background */}
+      <GalaxyBackground currentSection={currentSection} />
 
       {/* Main Content */}
       <AnimatePresence>
