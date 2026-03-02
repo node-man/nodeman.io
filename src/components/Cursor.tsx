@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import { motion } from "framer-motion";
 
 export default function Cursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 });

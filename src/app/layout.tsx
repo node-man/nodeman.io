@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Orbitron, Rajdhani } from "next/font/google";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import "./globals.css";
 
 const orbitron = Orbitron({
@@ -27,6 +28,9 @@ export const metadata: Metadata = {
   },
 };
 
+const GA_MEASUREMENT_ID =
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? process.env.NEXT_PUBLIC_GA_ID;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -36,6 +40,7 @@ export default function RootLayout({
     <html lang="ko" className={`${orbitron.variable} ${rajdhani.variable}`}>
       <body className="antialiased">
         {children}
+        {GA_MEASUREMENT_ID ? <GoogleAnalytics measurementId={GA_MEASUREMENT_ID} /> : null}
       </body>
     </html>
   );

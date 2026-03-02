@@ -86,7 +86,7 @@ function SpiralGalaxy({ currentSection }: { currentSection: number }) {
       uCoreColor: { value: colors.primary.clone() },
       uArmColor: { value: colors.secondary.clone() },
     }),
-    []
+    [colors.primary, colors.secondary]
   );
 
   useFrame((state, delta) => {
