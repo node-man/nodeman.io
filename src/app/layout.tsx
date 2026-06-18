@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
-import { Orbitron, Rajdhani } from "next/font/google";
+import { Suspense } from "react";
+import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import "./globals.css";
 
-const orbitron = Orbitron({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-orbitron",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-space-grotesk",
   display: "swap",
 });
 
-const rajdhani = Rajdhani({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-rajdhani",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-jetbrains-mono",
   display: "swap",
 });
 
@@ -37,10 +39,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className={`${orbitron.variable} ${rajdhani.variable}`}>
+    <html lang="ko" className={`${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
       <body className="antialiased">
         {children}
-        {GA_MEASUREMENT_ID ? <GoogleAnalytics measurementId={GA_MEASUREMENT_ID} /> : null}
+        {GA_MEASUREMENT_ID ? (
+          <Suspense fallback={null}>
+            <GoogleAnalytics measurementId={GA_MEASUREMENT_ID} />
+          </Suspense>
+        ) : null}
       </body>
     </html>
   );
