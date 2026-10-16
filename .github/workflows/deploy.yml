@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths-ignore:
       - "content/radar/raw/**"
+      - "content/radar/requests/**"
   workflow_dispatch:
 
 permissions:

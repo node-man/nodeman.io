@@ -9,6 +9,12 @@ on:
   schedule:
     - cron: "37 21 * * *" # 06:37 KST
   workflow_dispatch:
+  # On-demand: the daily writer pushes a file here when today's raw file is
+  # missing or stale (it cannot call workflow_dispatch).
+  push:
+    branches: [main]
+    paths:
+      - "content/radar/requests/**"
 
 permissions:
   contents: write
