@@ -19,13 +19,17 @@ export default function LedgerPage() {
   });
 
   return (
-    <div className="rd-layout single">
-      <main className="rd-post">
+    <main className="rd-book">
+      <section className="rd-sheet">
+        <div className="rd-rh">
+          <span>Tech Radar</span>
+          <span>예측 장부</span>
+        </div>
         <span className="rd-badge">
           <b>AI</b>예측은 AI(Claude)가 남겼고 확인 시점에 결과를 공개합니다
         </span>
-        <h1 className="rd-title">예측 장부</h1>
-        <p className="rd-lede">
+        <h1 className="rd-hed">예측 장부</h1>
+        <p className="rd-dek">
           매일 호에서 AI가 확률을 붙여 남긴 예측입니다. 확인 날짜가 지나면 근거 링크와 함께 적중, 빗나감, 무효로 채점합니다.
         </p>
         <div className="rd-stats" style={{ gridTemplateColumns: "repeat(3, minmax(0,1fr))" }}>
@@ -74,7 +78,11 @@ export default function LedgerPage() {
           )}
           {done.length ? <LedgerTable items={done} /> : null}
         </section>
-      </main>
-    </div>
+        <div className="rd-folio">
+          <span>Tech Radar</span>
+          <span>nodeman.io/radar</span>
+        </div>
+      </section>
+    </main>
   );
 }

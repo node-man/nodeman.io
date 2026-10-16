@@ -132,6 +132,7 @@ between 0.05 and 0.95. No stock-price targets, no investment framing.
   "편집자의 말", no notes about the pipeline).
 - `quick`: 3–6 lines, each starting with a bold summary.
 - `title` ≤ 30 Korean characters; `lede` 2–3 sentences.
+- `cover.big`: the magazine cover headline for the lead story, 1–3 short lines joined with `\n` (≤ 9 characters each; the last line is tinted), e.g. `"로드스터,\n날다"`.
 - `raw` = `content/radar/raw/$TODAY.json`, `rawCollectedAt` copied exactly.
 - `publishedAt` = the actual commit time in KST with `+09:00`.
 

@@ -423,7 +423,15 @@ export function BlockView({ b, ledger }: { b: Block; ledger: Prediction[] }): Re
   }
 }
 
-export function StoryView({ s, ledger, plain }: { s: Story; ledger: Prediction[]; plain?: boolean }) {
+export function StoryView({ s, ledger, plain, cols }: { s: Story; ledger: Prediction[]; plain?: boolean; cols?: boolean }) {
+  // In magazine layout, runs of 2+ paragraphs flow in two columns.
+  const groups: (Block | Block[])[] = [];
+  for (const b of s.blocks) {
+    const last = groups[groups.length - 1];
+    if (cols && b.type === "p" && Array.isArray(last)) last.push(b);
+    else if (cols && b.type === "p") groups.push([b]);
+    else groups.push(b);
+  }
   return (
     <div className={plain ? "rd-story plain" : "rd-story"} id={s.id}>
       {!plain ? (
@@ -440,9 +448,17 @@ export function StoryView({ s, ledger, plain }: { s: Story; ledger: Prediction[]
         </>
       ) : null}
       <div className="rd-prose">
-        {s.blocks.map((b, k) => (
-          <BlockView key={k} b={b} ledger={ledger} />
-        ))}
+        {groups.map((g, k) =>
+          Array.isArray(g) ? (
+            <div className={g.length > 1 ? "rd-cols" : "rd-onecol"} key={k}>
+              {g.map((b, j) => (
+                <BlockView key={j} b={b} ledger={ledger} />
+              ))}
+            </div>
+          ) : (
+            <BlockView key={k} b={g} ledger={ledger} />
+          ),
+        )}
       </div>
       {s.ai ? <Ai ai={s.ai} /> : null}
       {s.sources.length ? (

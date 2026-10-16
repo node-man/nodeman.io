@@ -13,6 +13,9 @@
     "**광고망으로 심는 제로클릭 스파이웨어.** Citizen Lab이 이스라엘 광고 업체 Discover-Tech의 플랫폼이 악용됐다고 밝혔습니다.",
     "**GitHub 트렌딩 13개 중 9개가 에이전트 도구.** 1위 rea 혼자 오늘 스타의 75%를 받았습니다."
   ],
+  "cover": {
+    "big": "로드스터,\n날다"
+  },
   "sections": [
     {
       "id": "roadster",
@@ -26,17 +29,109 @@
           "kicker": "모빌리티",
           "title": "하늘을 나는 로드스터, 9년 만의 재등장",
           "blocks": [
-            { "type": "p", "dropcap": true, "text": "테슬라가 현지 시각 10월 15일 밤 텍사스 맥그리거의 SpaceX 시험장에서 2세대 로드스터를 다시 공개했습니다. 2017년 첫 공개 때 2020년 출고를 약속했던 차입니다. 새 양산 목표는 2028년입니다." },
-            { "type": "p", "text": "**어떻게 나는가.** 연료를 태우는 로켓이 아닙니다. 좌석 뒤 탄소섬유 압력 용기에 약 600리터의 압축 공기를 채우고, 차체의 분사구 10개(위 4, 옆 2, 뒤 4)로 짧게 내뿜습니다. 바닥 팬은 공기를 빨아들여 차를 노면에 붙여 둡니다." },
-            { "type": "p", "text": "**무엇을 보여 줬나.** 시연 차는 C자형 경사로를 타고 올라 완전히 뒤집힌 채 달린 뒤, 분사구로 튀어 올라 공중에서 한 바퀴 돌고 착지했습니다. 사이버캡과 사이버트럭, 세미 트럭을 줄지어 세워 두고 그 위를 넘기도 했습니다. 시연 차에는 사람이 타지 않았습니다." },
-            { "type": "p", "text": "**얼마나 빠른가.** 테슬라는 0→60마일(약 97km/h) 가속 1초 미만, 최고 속도 230마일(약 370km/h) 이상, 주행거리 300마일(약 480km)을 제시했습니다. 모두 테슬라 발표이고 외부 측정값은 아직 없습니다. 국내 예약은 주문대금 560만원에 열흘 안에 6,500만원을 더 내는 방식으로 총 7,060만원이며, 판매가와는 별개입니다." },
+            {
+              "type": "p",
+              "dropcap": true,
+              "text": "테슬라가 현지 시각 10월 15일 밤 텍사스 맥그리거의 SpaceX 시험장에서 2세대 로드스터를 다시 공개했습니다. 2017년 첫 공개 때 2020년 출고를 약속했던 차입니다. 새 양산 목표는 2028년입니다."
+            },
+            {
+              "type": "p",
+              "text": "**어떻게 나는가.** 연료를 태우는 로켓이 아닙니다. 좌석 뒤 탄소섬유 압력 용기에 약 600리터의 압축 공기를 채우고, 차체의 분사구 10개(위 4, 옆 2, 뒤 4)로 짧게 내뿜습니다. 바닥 팬은 공기를 빨아들여 차를 노면에 붙여 둡니다."
+            },
+            {
+              "type": "p",
+              "text": "**무엇을 보여 줬나.** 시연 차는 C자형 경사로를 타고 올라 완전히 뒤집힌 채 달린 뒤, 분사구로 튀어 올라 공중에서 한 바퀴 돌고 착지했습니다. 사이버캡과 사이버트럭, 세미 트럭을 줄지어 세워 두고 그 위를 넘기도 했습니다. 시연 차에는 사람이 타지 않았습니다."
+            },
+            {
+              "type": "p",
+              "text": "**얼마나 빠른가.** 테슬라는 0→60마일(약 97km/h) 가속 1초 미만, 최고 속도 230마일(약 370km/h) 이상, 주행거리 300마일(약 480km)을 제시했습니다. 모두 테슬라 발표이고 외부 측정값은 아직 없습니다. 국내 예약은 주문대금 560만원에 열흘 안에 6,500만원을 더 내는 방식으로 총 7,060만원이며, 판매가와는 별개입니다."
+            },
             {
               "type": "cards",
               "title": "트림 3종 · 테슬라 발표 기준",
               "items": [
-                { "name": "Performance", "sub": "도로 주행용", "dots": { "on": 0, "total": 10, "label": "분사구 0개" }, "rows": [["좌석", "2인승"], ["분사구", "없음 · 바닥 팬"], ["판매", "일반 예약"]], "highlight": { "label": "미국 예약금", "value": "$50,000" } },
-                { "name": "Thrust", "sub": "트랙·가속용", "dots": { "on": 4, "total": 10, "label": "분사구 4개" }, "rows": [["좌석", "2인승"], ["분사구", "후방 4개"], ["판매", "한정"]], "highlight": { "label": "미국 예약금", "value": "$250,000" } },
-                { "name": "Rocket", "sub": "비행 시스템 전체", "dots": { "on": 10, "total": 10, "label": "분사구 10개" }, "rows": [["좌석", "1인승"], ["분사구", "10개 · 부양·회전"], ["판매", "초대 전용"]], "highlight": { "label": "공공도로", "value": "불가", "tone": "risk" } }
+                {
+                  "name": "Performance",
+                  "sub": "도로 주행용",
+                  "dots": {
+                    "on": 0,
+                    "total": 10,
+                    "label": "분사구 0개"
+                  },
+                  "rows": [
+                    [
+                      "좌석",
+                      "2인승"
+                    ],
+                    [
+                      "분사구",
+                      "없음 · 바닥 팬"
+                    ],
+                    [
+                      "판매",
+                      "일반 예약"
+                    ]
+                  ],
+                  "highlight": {
+                    "label": "미국 예약금",
+                    "value": "$50,000"
+                  }
+                },
+                {
+                  "name": "Thrust",
+                  "sub": "트랙·가속용",
+                  "dots": {
+                    "on": 4,
+                    "total": 10,
+                    "label": "분사구 4개"
+                  },
+                  "rows": [
+                    [
+                      "좌석",
+                      "2인승"
+                    ],
+                    [
+                      "분사구",
+                      "후방 4개"
+                    ],
+                    [
+                      "판매",
+                      "한정"
+                    ]
+                  ],
+                  "highlight": {
+                    "label": "미국 예약금",
+                    "value": "$250,000"
+                  }
+                },
+                {
+                  "name": "Rocket",
+                  "sub": "비행 시스템 전체",
+                  "dots": {
+                    "on": 10,
+                    "total": 10,
+                    "label": "분사구 10개"
+                  },
+                  "rows": [
+                    [
+                      "좌석",
+                      "1인승"
+                    ],
+                    [
+                      "분사구",
+                      "10개 · 부양·회전"
+                    ],
+                    [
+                      "판매",
+                      "초대 전용"
+                    ]
+                  ],
+                  "highlight": {
+                    "label": "공공도로",
+                    "value": "불가",
+                    "tone": "risk"
+                  }
+                }
               ],
               "footer": "**공통** 230mph 이상 · 300마일 · 판매가 미공개 · 양산 목표 2028년"
             },
@@ -44,52 +139,143 @@
               "type": "timeline",
               "title": "약속과 현실",
               "points": [
-                { "date": "2017-11", "label": "1세대 공개", "note": "예약금 $50,000", "kind": "past" },
-                { "date": "2020", "label": "당초 약속한 출고", "kind": "missed" },
-                { "date": "2026-10-15", "label": "2세대 재공개", "kind": "now" },
-                { "date": "2028", "label": "새 양산 목표", "kind": "future" }
+                {
+                  "date": "2017-11",
+                  "label": "1세대 공개",
+                  "note": "예약금 $50,000",
+                  "kind": "past"
+                },
+                {
+                  "date": "2020",
+                  "label": "당초 약속한 출고",
+                  "kind": "missed"
+                },
+                {
+                  "date": "2026-10-15",
+                  "label": "2세대 재공개",
+                  "kind": "now"
+                },
+                {
+                  "date": "2028",
+                  "label": "새 양산 목표",
+                  "kind": "future"
+                }
               ],
-              "gaps": [{ "from": "2020", "to": "2026-10-15", "label": "약속보다 6년 넘게 지연" }]
+              "gaps": [
+                {
+                  "from": "2020",
+                  "to": "2026-10-15",
+                  "label": "약속보다 6년 넘게 지연"
+                }
+              ]
             },
             {
               "type": "stats",
               "items": [
-                { "value": "−5%", "label": "공개 전 한 주 TSLA 하락폭" },
-                { "value": "+3%", "label": "공개 직후 야간 거래 반등" },
-                { "value": "10/21", "label": "3분기 실적 발표, 공개 6일 뒤" },
-                { "value": "80kN+", "label": "테슬라 주장 후방 추력, 측정 조건 미공개" }
+                {
+                  "value": "−5%",
+                  "label": "공개 전 한 주 TSLA 하락폭"
+                },
+                {
+                  "value": "+3%",
+                  "label": "공개 직후 야간 거래 반등"
+                },
+                {
+                  "value": "10/21",
+                  "label": "3분기 실적 발표, 공개 6일 뒤"
+                },
+                {
+                  "value": "80kN+",
+                  "label": "테슬라 주장 후방 추력, 측정 조건 미공개"
+                }
               ]
             },
             {
               "type": "quotes",
               "items": [
-                { "who": "Deepwater 애널리스트", "text": "상업적 가치 없는 공학 과시로 평가하고, 테슬라와 SpaceX 결합의 신호로 읽었습니다." },
-                { "who": "Future Fund 매니저", "text": "행사 전부터 과대 홍보 탓에 시장 반응은 실망일 것이라고 전망했습니다." },
-                { "who": "Electrek", "text": "가속 수치와 비행 주장의 기술적 근거를 따로 따져 보는 분석 기사를 냈습니다." },
-                { "who": "테슬라 측", "text": "성공이 보장되지 않았고 안전을 최우선으로 설계한 차는 아니라고 무대에서 인정했습니다." }
+                {
+                  "who": "Deepwater 애널리스트",
+                  "text": "상업적 가치 없는 공학 과시로 평가하고, 테슬라와 SpaceX 결합의 신호로 읽었습니다."
+                },
+                {
+                  "who": "Future Fund 매니저",
+                  "text": "행사 전부터 과대 홍보 탓에 시장 반응은 실망일 것이라고 전망했습니다."
+                },
+                {
+                  "who": "Electrek",
+                  "text": "가속 수치와 비행 주장의 기술적 근거를 따로 따져 보는 분석 기사를 냈습니다."
+                },
+                {
+                  "who": "테슬라 측",
+                  "text": "성공이 보장되지 않았고 안전을 최우선으로 설계한 차는 아니라고 무대에서 인정했습니다."
+                }
               ]
             },
-            { "type": "unknowns", "title": "아직 공개되지 않은 것", "items": ["트림별 판매 가격", "Rocket 트림의 체공 시간·높이", "배터리 용량", "압축 공기 재충전 방법", "도로·항공 인증 일정", "2017년 예약자 처리 방침"] }
+            {
+              "type": "unknowns",
+              "title": "아직 공개되지 않은 것",
+              "items": [
+                "트림별 판매 가격",
+                "Rocket 트림의 체공 시간·높이",
+                "배터리 용량",
+                "압축 공기 재충전 방법",
+                "도로·항공 인증 일정",
+                "2017년 예약자 처리 방침"
+              ]
+            }
           ],
           "ai": {
             "kind": "opinion",
             "stance": "기술은 인상적, 일정은 회의적",
             "confidence": 2,
             "points": [
-              { "k": "판단", "v": "올해 자동차 업계에서 가장 인상적인 공학 시연입니다. 하지만 2028년 양산, 특히 Rocket 트림의 실사용은 회의적으로 봅니다. 이번 행사의 실질적 효과는 판매보다 테슬라·SpaceX 결합 서사와 실적 발표 직전의 관심 전환에 가깝습니다." },
-              { "k": "근거", "v": "2017년 약속이 6년 넘게 밀렸고, 가격·인증·재충전 방식이 하나도 나오지 않았습니다. 사람이 탄 채 공중에 뜨는 차를 승인할 도로·항공 규정 자체가 아직 없습니다." },
-              { "k": "반론", "v": "테슬라는 늦더라도 결국 출시한 전례가 있습니다. 사이버트럭은 2019년 공개 후 2023년에 인도됐습니다. 바닥 팬과 능동형 공력 장치는 비행 없이도 양산할 수 있어 Performance 트림은 현실성이 더 높습니다." }
+              {
+                "k": "판단",
+                "v": "올해 자동차 업계에서 가장 인상적인 공학 시연입니다. 하지만 2028년 양산, 특히 Rocket 트림의 실사용은 회의적으로 봅니다. 이번 행사의 실질적 효과는 판매보다 테슬라·SpaceX 결합 서사와 실적 발표 직전의 관심 전환에 가깝습니다."
+              },
+              {
+                "k": "근거",
+                "v": "2017년 약속이 6년 넘게 밀렸고, 가격·인증·재충전 방식이 하나도 나오지 않았습니다. 사람이 탄 채 공중에 뜨는 차를 승인할 도로·항공 규정 자체가 아직 없습니다."
+              },
+              {
+                "k": "반론",
+                "v": "테슬라는 늦더라도 결국 출시한 전례가 있습니다. 사이버트럭은 2019년 공개 후 2023년에 인도됐습니다. 바닥 팬과 능동형 공력 장치는 비행 없이도 양산할 수 있어 Performance 트림은 현실성이 더 높습니다."
+              }
             ]
           },
           "sources": [
-            { "title": "TechCrunch", "url": "https://techcrunch.com/2026/10/15/tesla-reveals-spacex-powered-roadster-that-flies-and-falls-with-style/" },
-            { "title": "The Verge", "url": "https://www.theverge.com/transportation/1012552/tesla-roadster-next-gen-reveal-elon-musk" },
-            { "title": "Electrek", "url": "https://electrek.co/2026/10/15/an-updated-technical-look-at-teslas-kick-flipping-0-60-in-1s-next-gen-roadster/" },
-            { "title": "Jalopnik", "url": "https://www.jalopnik.com/2288450/tesla-roadster-rereveal-new-design-production-plans-for-flying-car/" },
-            { "title": "Fox Business", "url": "https://www.foxbusiness.com/technology/teslas-new-roadster-makes-flying-debut-hitting-60-mph-under-second" },
-            { "title": "Stocktwits", "url": "https://stocktwits.com/news-articles/markets/equity/tsla-stock-thrust-flying-roadster-reveal-munster-engineering-flex-tesla-spacex-clue/cZx0oWSRBrs" },
-            { "title": "블로터(국내 예약금)", "url": "https://www.bloter.net/news/articleView.html?idxno=675840" },
-            { "title": "한국경제", "url": "https://www.hankyung.com/article/202610166216i" }
+            {
+              "title": "TechCrunch",
+              "url": "https://techcrunch.com/2026/10/15/tesla-reveals-spacex-powered-roadster-that-flies-and-falls-with-style/"
+            },
+            {
+              "title": "The Verge",
+              "url": "https://www.theverge.com/transportation/1012552/tesla-roadster-next-gen-reveal-elon-musk"
+            },
+            {
+              "title": "Electrek",
+              "url": "https://electrek.co/2026/10/15/an-updated-technical-look-at-teslas-kick-flipping-0-60-in-1s-next-gen-roadster/"
+            },
+            {
+              "title": "Jalopnik",
+              "url": "https://www.jalopnik.com/2288450/tesla-roadster-rereveal-new-design-production-plans-for-flying-car/"
+            },
+            {
+              "title": "Fox Business",
+              "url": "https://www.foxbusiness.com/technology/teslas-new-roadster-makes-flying-debut-hitting-60-mph-under-second"
+            },
+            {
+              "title": "Stocktwits",
+              "url": "https://stocktwits.com/news-articles/markets/equity/tsla-stock-thrust-flying-roadster-reveal-munster-engineering-flex-tesla-spacex-clue/cZx0oWSRBrs"
+            },
+            {
+              "title": "블로터(국내 예약금)",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=675840"
+            },
+            {
+              "title": "한국경제",
+              "url": "https://www.hankyung.com/article/202610166216i"
+            }
           ]
         }
       ]
@@ -104,26 +290,56 @@
           "id": "tsmc-q3",
           "kicker": "반도체 · 10/15",
           "title": "TSMC, 여섯 분기 연속 최대 이익",
-          "hot": { "count": 19, "basis": "Techmeme 관련 기사" },
+          "hot": {
+            "count": 19,
+            "basis": "Techmeme 관련 기사"
+          },
           "blocks": [
-            { "type": "p", "text": "TSMC의 3분기 순이익은 7,630억 6천만 대만달러로 1년 전보다 68.7% 늘었습니다. 월별 매출을 합친 3분기 매출은 약 1조 4,900억 대만달러(약 467억 달러)로 회사가 7월에 낸 가이던스 상단(458억 달러)을 넘었습니다. 4분기 매출 가이던스는 523억~543억 달러이고 올해 성장률 전망은 약 44%입니다." },
-            { "type": "p", "text": "블룸버그는 TSMC 최고경영자가 일론 머스크의 반도체 공장 계획 Terafab 참여를 논의 중이며, 참여한다면 공장 운영은 TSMC가 맡아야 한다는 입장이라고 보도했습니다. 대만은 별도로 미국에 개당 20억~40억 달러 규모의 산업단지를 짓는 계획을 내놨습니다." }
+            {
+              "type": "p",
+              "text": "TSMC의 3분기 순이익은 7,630억 6천만 대만달러로 1년 전보다 68.7% 늘었습니다. 월별 매출을 합친 3분기 매출은 약 1조 4,900억 대만달러(약 467억 달러)로 회사가 7월에 낸 가이던스 상단(458억 달러)을 넘었습니다. 4분기 매출 가이던스는 523억~543억 달러이고 올해 성장률 전망은 약 44%입니다."
+            },
+            {
+              "type": "p",
+              "text": "블룸버그는 TSMC 최고경영자가 일론 머스크의 반도체 공장 계획 Terafab 참여를 논의 중이며, 참여한다면 공장 운영은 TSMC가 맡아야 한다는 입장이라고 보도했습니다. 대만은 별도로 미국에 개당 20억~40억 달러 규모의 산업단지를 짓는 계획을 내놨습니다."
+            }
           ],
           "ai": {
             "kind": "opinion",
             "stance": "AI 수요는 아직 꺾이지 않음",
             "confidence": 2,
             "points": [
-              { "k": "판단", "v": "4분기 가이던스는 3분기 매출보다 12~16% 높습니다. AI 칩 수요가 꺾이지 않았다는 가장 직접적인 근거입니다." },
-              { "k": "반론", "v": "같은 날 국내 반도체주는 급락했습니다. AI 매출이 소수 대형 고객에 몰려 있어, 그들의 투자 속도가 늦춰지면 충격도 함께 커진다는 우려가 실적보다 크게 작동한 날입니다." }
+              {
+                "k": "판단",
+                "v": "4분기 가이던스는 3분기 매출보다 12~16% 높습니다. AI 칩 수요가 꺾이지 않았다는 가장 직접적인 근거입니다."
+              },
+              {
+                "k": "반론",
+                "v": "같은 날 국내 반도체주는 급락했습니다. AI 매출이 소수 대형 고객에 몰려 있어, 그들의 투자 속도가 늦춰지면 충격도 함께 커진다는 우려가 실적보다 크게 작동한 날입니다."
+              }
             ]
           },
           "sources": [
-            { "title": "Quartz", "url": "https://qz.com/tsmc-record-profit-ai-chip-demand-101526" },
-            { "title": "CNBC", "url": "https://www.cnbc.com/2026/10/15/tsmc-third-quarter-profit-global-ai-.html" },
-            { "title": "Lapaas Voice", "url": "https://lapaasvoice.com/tsmc-q3-revenue-surges-50-to-record-46-7-billion/" },
-            { "title": "Bloomberg", "url": "https://www.bloomberg.com/news/articles/2026-10-15/tsmc-open-to-working-with-terafab-but-must-control-plants" },
-            { "title": "Techmeme(대만 산업단지)", "url": "https://www.techmeme.com/261016/p1#a261016p1" }
+            {
+              "title": "Quartz",
+              "url": "https://qz.com/tsmc-record-profit-ai-chip-demand-101526"
+            },
+            {
+              "title": "CNBC",
+              "url": "https://www.cnbc.com/2026/10/15/tsmc-third-quarter-profit-global-ai-.html"
+            },
+            {
+              "title": "Lapaas Voice",
+              "url": "https://lapaasvoice.com/tsmc-q3-revenue-surges-50-to-record-46-7-billion/"
+            },
+            {
+              "title": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-10-15/tsmc-open-to-working-with-terafab-but-must-control-plants"
+            },
+            {
+              "title": "Techmeme(대만 산업단지)",
+              "url": "https://www.techmeme.com/261016/p1#a261016p1"
+            }
           ]
         },
         {
@@ -131,15 +347,33 @@
           "kicker": "AI 모델 · 10/12–16",
           "title": "Microsoft는 2.8T, Meta는 816B 오픈웨이트",
           "blocks": [
-            { "type": "p", "text": "Microsoft AI는 총 2조 8천억(2.8T), 활성 800억(80B) 파라미터의 MoE 기반 모델 MAI-Base-2의 사전학습을 마쳤다고 밝혔습니다. GB200 GPU 1만 6천 장으로 38일 동안 50조 토큰을 학습했고, 공개 기본 모델 중 가장 강한 DeepSeek-V4-Pro-Base보다 사전학습 연산 효율이 4~12배 높다고 주장합니다. 아직 사후학습 중이라 공개되지 않았고, 가중치는 신뢰할 수 있는 파트너에게 Foundry로 라이선스할 계획입니다." },
-            { "type": "p", "text": "Meta는 10월 12일 첫 프런티어 모델 Muse Wonder를 100만 토큰당 입력 4달러·출력 20달러의 유료 API로 내놨고, 사흘 뒤 총 816B·활성 42B 구조의 Muse Spark Open을 Hugging Face에 공개했습니다. Mac Studio에서 돌리도록 최적화했다는 설명이고, Hacker News에서 이번 주 가장 높은 점수를 받았습니다." },
+            {
+              "type": "p",
+              "text": "Microsoft AI는 총 2조 8천억(2.8T), 활성 800억(80B) 파라미터의 MoE 기반 모델 MAI-Base-2의 사전학습을 마쳤다고 밝혔습니다. GB200 GPU 1만 6천 장으로 38일 동안 50조 토큰을 학습했고, 공개 기본 모델 중 가장 강한 DeepSeek-V4-Pro-Base보다 사전학습 연산 효율이 4~12배 높다고 주장합니다. 아직 사후학습 중이라 공개되지 않았고, 가중치는 신뢰할 수 있는 파트너에게 Foundry로 라이선스할 계획입니다."
+            },
+            {
+              "type": "p",
+              "text": "Meta는 10월 12일 첫 프런티어 모델 Muse Wonder를 100만 토큰당 입력 4달러·출력 20달러의 유료 API로 내놨고, 사흘 뒤 총 816B·활성 42B 구조의 Muse Spark Open을 Hugging Face에 공개했습니다. Mac Studio에서 돌리도록 최적화했다는 설명이고, Hacker News에서 이번 주 가장 높은 점수를 받았습니다."
+            },
             {
               "type": "stats",
               "items": [
-                { "value": "2.8T", "label": "MAI-Base-2 총 파라미터 (활성 80B)" },
-                { "value": "4–12배", "label": "Microsoft 주장 사전학습 효율, 비교 대상 DeepSeek-V4-Pro-Base" },
-                { "value": "816B", "label": "Muse Spark Open 총 파라미터 (활성 42B)" },
-                { "value": "$4 / $20", "label": "Muse Wonder API, 100만 토큰당 입력/출력" }
+                {
+                  "value": "2.8T",
+                  "label": "MAI-Base-2 총 파라미터 (활성 80B)"
+                },
+                {
+                  "value": "4–12배",
+                  "label": "Microsoft 주장 사전학습 효율, 비교 대상 DeepSeek-V4-Pro-Base"
+                },
+                {
+                  "value": "816B",
+                  "label": "Muse Spark Open 총 파라미터 (활성 42B)"
+                },
+                {
+                  "value": "$4 / $20",
+                  "label": "Muse Wonder API, 100만 토큰당 입력/출력"
+                }
               ]
             }
           ],
@@ -148,54 +382,114 @@
             "stance": "판단 유보",
             "confidence": 1,
             "points": [
-              { "k": "판단", "v": "두 회사 모두 자체 학습 모델로 방향을 굳혔다는 점이 수치보다 중요합니다. Meta의 오픈 816B는 사내 서버에서 돌려야 하는 보안·온프레미스 수요에 의미 있는 선택지가 될 수 있습니다." },
-              { "k": "반론", "v": "효율 배수와 벤치마크는 전부 발표 주체의 자체 측정이고, MAI-Base-2는 아직 써 볼 수도 없습니다. 독립 평가 전까지 판단을 미룹니다." },
-              { "k": "밝혀 둘 점", "v": "이 의견을 쓴 Claude는 두 회사의 경쟁사인 Anthropic이 만들었습니다." }
+              {
+                "k": "판단",
+                "v": "두 회사 모두 자체 학습 모델로 방향을 굳혔다는 점이 수치보다 중요합니다. Meta의 오픈 816B는 사내 서버에서 돌려야 하는 보안·온프레미스 수요에 의미 있는 선택지가 될 수 있습니다."
+              },
+              {
+                "k": "반론",
+                "v": "효율 배수와 벤치마크는 전부 발표 주체의 자체 측정이고, MAI-Base-2는 아직 써 볼 수도 없습니다. 독립 평가 전까지 판단을 미룹니다."
+              },
+              {
+                "k": "밝혀 둘 점",
+                "v": "이 의견을 쓴 Claude는 두 회사의 경쟁사인 Anthropic이 만들었습니다."
+              }
             ]
           },
           "sources": [
-            { "title": "Microsoft AI", "url": "https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai/" },
-            { "title": "GIGAZINE", "url": "https://gigazine.net/gsc_news/en/20261016-microsoft-mai-base-2/" },
-            { "title": "TechCrunch(Muse Wonder)", "url": "https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder" },
-            { "title": "HN 토론(Muse Spark Open)", "url": "https://news.ycombinator.com/item?id=50107379" }
+            {
+              "title": "Microsoft AI",
+              "url": "https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai/"
+            },
+            {
+              "title": "GIGAZINE",
+              "url": "https://gigazine.net/gsc_news/en/20261016-microsoft-mai-base-2/"
+            },
+            {
+              "title": "TechCrunch(Muse Wonder)",
+              "url": "https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder"
+            },
+            {
+              "title": "HN 토론(Muse Spark Open)",
+              "url": "https://news.ycombinator.com/item?id=50107379"
+            }
           ]
         },
         {
           "id": "anthropic-q3",
           "kicker": "AI 기업 · 10/14–16",
           "title": "Anthropic 3분기 매출 168억 달러 보도, 상장 가치 논의는 낮아져",
-          "hot": { "count": 26, "basis": "Techmeme 관련 기사" },
+          "hot": {
+            "count": 26,
+            "basis": "Techmeme 관련 기사"
+          },
           "blocks": [
-            { "type": "p", "text": "로이터는 상장 전 투자자 설명회에 참석한 투자자를 인용해 Anthropic의 3분기 매출이 168억 달러로 직전 분기보다 약 45% 늘었다고 보도했습니다. 국내에서는 두 분기 연속 흑자라는 보도가 함께 나왔습니다. 한편 일부 투자자들이 상장 기업가치를 당초 기대한 약 2조 달러보다 낮은 약 1조 5천억 달러 수준으로 논의했다는 보도도 이어졌습니다. 수치는 모두 전언이며 회사가 공식 발표한 것은 아닙니다." }
+            {
+              "type": "p",
+              "text": "로이터는 상장 전 투자자 설명회에 참석한 투자자를 인용해 Anthropic의 3분기 매출이 168억 달러로 직전 분기보다 약 45% 늘었다고 보도했습니다. 국내에서는 두 분기 연속 흑자라는 보도가 함께 나왔습니다. 한편 일부 투자자들이 상장 기업가치를 당초 기대한 약 2조 달러보다 낮은 약 1조 5천억 달러 수준으로 논의했다는 보도도 이어졌습니다. 수치는 모두 전언이며 회사가 공식 발표한 것은 아닙니다."
+            }
           ],
-          "ai": { "kind": "none", "reason": "이 글을 쓴 Claude는 Anthropic이 만든 AI입니다. 이해관계가 있어 Anthropic 관련 기사에는 의견을 달지 않습니다." },
+          "ai": {
+            "kind": "none",
+            "reason": "이 글을 쓴 Claude는 Anthropic이 만든 AI입니다. 이해관계가 있어 Anthropic 관련 기사에는 의견을 달지 않습니다."
+          },
           "sources": [
-            { "title": "로이터 전재(The Daily Guardian)", "url": "https://thedailyguardian.com/news/science-tech/anthropics-q3-revenue-surges-45-to-nearly-17-billion-766115/" },
-            { "title": "전자신문", "url": "https://www.etnews.com/20261015000453" },
-            { "title": "Techmeme(상장 가치 논의)", "url": "https://www.techmeme.com/261015/p52#a261015p52" }
+            {
+              "title": "로이터 전재(The Daily Guardian)",
+              "url": "https://thedailyguardian.com/news/science-tech/anthropics-q3-revenue-surges-45-to-nearly-17-billion-766115/"
+            },
+            {
+              "title": "전자신문",
+              "url": "https://www.etnews.com/20261015000453"
+            },
+            {
+              "title": "Techmeme(상장 가치 논의)",
+              "url": "https://www.techmeme.com/261015/p52#a261015p52"
+            }
           ]
         },
         {
           "id": "ad-spyware",
           "kicker": "보안 · 10/15",
           "title": "광고 한 번 뜨면 감염, 제로클릭 스파이웨어의 새 배달 경로",
-          "hot": { "count": 17, "basis": "Techmeme 관련 기사" },
+          "hot": {
+            "count": 17,
+            "basis": "Techmeme 관련 기사"
+          },
           "blocks": [
-            { "type": "p", "text": "토론토대 Citizen Lab은 이스라엘 광고 업체 Discover-Tech의 광고 플랫폼(Controlium)이 스파이웨어 업체 Candiru와 Bindecy의 배포 통로로 쓰였다고 밝혔습니다. 광고 타기팅으로 특정 기기를 골라 악성 코드를 실어 보내는 방식이라 사용자가 아무것도 누르지 않아도 감염될 수 있습니다." },
-            { "type": "p", "text": "한 언론사에서는 2024~2025년 윈도 PC 최소 45대가 감염된 것으로 파악됐습니다. 입찰 기록상 군·정부·주요 기반시설·사이버 기관이 쓰는 기기에도 광고가 노출됐지만 실제 감염으로 이어졌는지는 확인되지 않았고, 배후 정부도 특정되지 않았습니다." }
+            {
+              "type": "p",
+              "text": "토론토대 Citizen Lab은 이스라엘 광고 업체 Discover-Tech의 광고 플랫폼(Controlium)이 스파이웨어 업체 Candiru와 Bindecy의 배포 통로로 쓰였다고 밝혔습니다. 광고 타기팅으로 특정 기기를 골라 악성 코드를 실어 보내는 방식이라 사용자가 아무것도 누르지 않아도 감염될 수 있습니다."
+            },
+            {
+              "type": "p",
+              "text": "한 언론사에서는 2024~2025년 윈도 PC 최소 45대가 감염된 것으로 파악됐습니다. 입찰 기록상 군·정부·주요 기반시설·사이버 기관이 쓰는 기기에도 광고가 노출됐지만 실제 감염으로 이어졌는지는 확인되지 않았고, 배후 정부도 특정되지 않았습니다."
+            }
           ],
           "ai": {
             "kind": "opinion",
             "stance": "실무 조치 권장",
             "confidence": 3,
             "points": [
-              { "k": "판단", "v": "회사 PC 보안 정책에 브라우저 광고 차단과 광고 추적 차단을 기본값으로 넣을 때입니다. 비용이 거의 들지 않고 공격 경로 하나를 통째로 줄입니다. 연구진도 표적이 될 만한 사람에게 같은 조치를 권했습니다." },
-              { "k": "반론", "v": "광고 차단은 일부 업무용 웹 서비스와 충돌할 수 있어 예외 목록 관리 부담이 생깁니다." }
+              {
+                "k": "판단",
+                "v": "회사 PC 보안 정책에 브라우저 광고 차단과 광고 추적 차단을 기본값으로 넣을 때입니다. 비용이 거의 들지 않고 공격 경로 하나를 통째로 줄입니다. 연구진도 표적이 될 만한 사람에게 같은 조치를 권했습니다."
+              },
+              {
+                "k": "반론",
+                "v": "광고 차단은 일부 업무용 웹 서비스와 충돌할 수 있어 예외 목록 관리 부담이 생깁니다."
+              }
             ]
           },
           "sources": [
-            { "title": "TechCrunch", "url": "https://techcrunch.com/2026/10/15/citizen-lab-says-governments-are-abusing-online-ads-to-hack-people-with-zero-click-spyware/" },
-            { "title": "Wired", "url": "https://www.wired.com/story/nightmare-scenario-zero-click-spyware-is-infecting-phones-via-targeted-ads/" }
+            {
+              "title": "TechCrunch",
+              "url": "https://techcrunch.com/2026/10/15/citizen-lab-says-governments-are-abusing-online-ads-to-hack-people-with-zero-click-spyware/"
+            },
+            {
+              "title": "Wired",
+              "url": "https://www.wired.com/story/nightmare-scenario-zero-click-spyware-is-infecting-phones-via-targeted-ads/"
+            }
           ]
         },
         {
@@ -203,12 +497,24 @@
           "kicker": "기기 · 10/15",
           "title": "Amazon Bee, AI 웨어러블 2종과 월 12달러 구독",
           "blocks": [
-            { "type": "p", "text": "아마존이 인수한 Bee가 Bee Frontier와 Bee Eclipse 두 기기를 75달러부터 내놓고 월 12달러의 Bee Pro 구독을 함께 시작했습니다. 대화를 듣고 기억하는 개인 AI 기기를 저가 하드웨어와 구독으로 파는 모델입니다. 아마존 기기 총괄은 같은 날 AI 기기가 앱을 쓸 필요를 줄이는 미래를 이야기했습니다." }
+            {
+              "type": "p",
+              "text": "아마존이 인수한 Bee가 Bee Frontier와 Bee Eclipse 두 기기를 75달러부터 내놓고 월 12달러의 Bee Pro 구독을 함께 시작했습니다. 대화를 듣고 기억하는 개인 AI 기기를 저가 하드웨어와 구독으로 파는 모델입니다. 아마존 기기 총괄은 같은 날 AI 기기가 앱을 쓸 필요를 줄이는 미래를 이야기했습니다."
+            }
           ],
           "sources": [
-            { "title": "TechCrunch", "url": "https://techcrunch.com/2026/10/15/amazons-bee-launches-two-new-personal-ai-devices-starting-at-75/" },
-            { "title": "Bloomberg", "url": "https://www.bloomberg.com/news/articles/2026-10-15/amazon-debuts-revamped-bee-ai-wearables-12-a-month-subscription-plan" },
-            { "title": "지디넷코리아", "url": "https://zdnet.co.kr/view/?no=20261016091007" }
+            {
+              "title": "TechCrunch",
+              "url": "https://techcrunch.com/2026/10/15/amazons-bee-launches-two-new-personal-ai-devices-starting-at-75/"
+            },
+            {
+              "title": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-10-15/amazon-debuts-revamped-bee-ai-wearables-12-a-month-subscription-plan"
+            },
+            {
+              "title": "지디넷코리아",
+              "url": "https://zdnet.co.kr/view/?no=20261016091007"
+            }
           ]
         }
       ]
@@ -225,163 +531,363 @@
           "kicker": "GitHub",
           "title": "에이전트 도구가 트렌딩을 채웠다",
           "blocks": [
-            { "type": "p", "text": "오늘 트렌딩 13개 가운데 9개가 코딩·연구 에이전트에 붙여 쓰는 도구입니다. 스킬 묶음(scientific-agent-skills, superpowers), 에이전트 운영 틀(ruflo, ECC), 그리고 토큰을 아끼는 도구(caveman, context-mode, xerj)가 한꺼번에 올라왔습니다. 1위 rea는 혼자 오늘 스타의 4분의 3을 받았습니다." },
+            {
+              "type": "p",
+              "text": "오늘 트렌딩 13개 가운데 9개가 코딩·연구 에이전트에 붙여 쓰는 도구입니다. 스킬 묶음(scientific-agent-skills, superpowers), 에이전트 운영 틀(ruflo, ECC), 그리고 토큰을 아끼는 도구(caveman, context-mode, xerj)가 한꺼번에 올라왔습니다. 1위 rea는 혼자 오늘 스타의 4분의 3을 받았습니다."
+            },
             {
               "type": "share",
               "title": "오늘 받은 스타 점유율",
               "items": [
-                { "label": "rea", "value": 32314 },
-                { "label": "VoiceStudio", "value": 3024 },
-                { "label": "ghidra", "value": 1369 },
-                { "label": "나머지 10개", "value": 6200 }
+                {
+                  "label": "rea",
+                  "value": 32314
+                },
+                {
+                  "label": "VoiceStudio",
+                  "value": 3024
+                },
+                {
+                  "label": "ghidra",
+                  "value": 1369
+                },
+                {
+                  "label": "나머지 10개",
+                  "value": 6200
+                }
               ]
             },
             {
               "type": "bars",
               "title": "rea를 뺀 12개 · 오늘 스타",
               "items": [
-                { "label": "VoiceStudio", "value": 3024 },
-                { "label": "ghidra", "value": 1369 },
-                { "label": "scientific-agent-skills", "value": 1091 },
-                { "label": "ECC", "value": 1013 },
-                { "label": "LibreTV", "value": 978 },
-                { "label": "context-mode", "value": 904 },
-                { "label": "xerj", "value": 715 },
-                { "label": "superpowers", "value": 582 },
-                { "label": "caveman", "value": 433 },
-                { "label": "claude-plugins-official", "value": 307 },
-                { "label": "ruflo", "value": 147 },
-                { "label": "tokenspeed", "value": 30 }
+                {
+                  "label": "VoiceStudio",
+                  "value": 3024
+                },
+                {
+                  "label": "ghidra",
+                  "value": 1369
+                },
+                {
+                  "label": "scientific-agent-skills",
+                  "value": 1091
+                },
+                {
+                  "label": "ECC",
+                  "value": 1013
+                },
+                {
+                  "label": "LibreTV",
+                  "value": 978
+                },
+                {
+                  "label": "context-mode",
+                  "value": 904
+                },
+                {
+                  "label": "xerj",
+                  "value": 715
+                },
+                {
+                  "label": "superpowers",
+                  "value": 582
+                },
+                {
+                  "label": "caveman",
+                  "value": 433
+                },
+                {
+                  "label": "claude-plugins-official",
+                  "value": 307
+                },
+                {
+                  "label": "ruflo",
+                  "value": 147
+                },
+                {
+                  "label": "tokenspeed",
+                  "value": 30
+                }
               ]
             },
             {
               "type": "repo",
               "repo": {
-                "fullName": "morluto/rea", "rank": 1, "language": "TypeScript", "license": "MIT", "stars": 278175, "starsToday": 32314, "verdict": "try",
+                "fullName": "morluto/rea",
+                "rank": 1,
+                "language": "TypeScript",
+                "license": "MIT",
+                "stars": 278175,
+                "starsToday": 32314,
+                "verdict": "try",
                 "def": "소스 코드 없이 앱이나 바이너리가 어떻게 동작하는지 AI 에이전트가 직접 조사하게 해 주는 MCP 서버이자 CLI.",
                 "rows": [
-                  ["동작", "에이전트가 질문하면 정적 분석과 실행 추적을 돌려, 찾아낸 코드·참조·모르는 부분을 근거와 함께 돌려줍니다. 네이티브 바이너리는 Ghidra·Hopper·IDA를 거쳐 의사코드로 풀어냅니다."],
-                  ["대상", "네이티브 바이너리, JS·Electron, .NET, Android APK, Flutter, 펌웨어, 웹사이트·HAR, 패킷 캡처, WASM, EVM 바이트코드."],
-                  ["시작", "`npx rea-agents setup` 후 에이전트 재시작. Node 22.19 이상."],
-                  ["주의", "상용 분석 도구 라이선스는 별도이고 허가받은 소프트웨어만 분석하라고 명시합니다. 실행 추적은 대상을 실제로 돌리므로 격리 환경에서 쓰세요. 이름을 흉내 낸 가짜 패키지 경고가 있습니다."]
+                  [
+                    "동작",
+                    "에이전트가 질문하면 정적 분석과 실행 추적을 돌려, 찾아낸 코드·참조·모르는 부분을 근거와 함께 돌려줍니다. 네이티브 바이너리는 Ghidra·Hopper·IDA를 거쳐 의사코드로 풀어냅니다."
+                  ],
+                  [
+                    "대상",
+                    "네이티브 바이너리, JS·Electron, .NET, Android APK, Flutter, 펌웨어, 웹사이트·HAR, 패킷 캡처, WASM, EVM 바이트코드."
+                  ],
+                  [
+                    "시작",
+                    "`npx rea-agents setup` 후 에이전트 재시작. Node 22.19 이상."
+                  ],
+                  [
+                    "주의",
+                    "상용 분석 도구 라이선스는 별도이고 허가받은 소프트웨어만 분석하라고 명시합니다. 실행 추적은 대상을 실제로 돌리므로 격리 환경에서 쓰세요. 이름을 흉내 낸 가짜 패키지 경고가 있습니다."
+                  ]
                 ]
               }
             },
             {
               "type": "repo",
               "repo": {
-                "fullName": "anthropics/claude-plugins-official", "rank": 2, "language": "Python", "license": "Apache-2.0", "stars": 39507, "starsToday": 307, "verdict": "none",
+                "fullName": "anthropics/claude-plugins-official",
+                "rank": 2,
+                "language": "Python",
+                "license": "Apache-2.0",
+                "stars": 39507,
+                "starsToday": 307,
+                "verdict": "none",
                 "def": "Anthropic이 관리하는 Claude Code 플러그인 공식 목록.",
                 "rows": [
-                  ["구성", "Anthropic이 만든 내부 플러그인과 파트너·커뮤니티의 외부 플러그인으로 나뉩니다. 플러그인은 명령, 에이전트, 스킬, MCP 서버 설정을 묶은 단위입니다."],
-                  ["주의", "README는 플러그인에 들어 있는 MCP 서버나 파일을 Anthropic이 통제하거나 검증하지 않는다고 밝히고, 설치 전에 신뢰할 수 있는지 확인하라고 안내합니다."]
+                  [
+                    "구성",
+                    "Anthropic이 만든 내부 플러그인과 파트너·커뮤니티의 외부 플러그인으로 나뉩니다. 플러그인은 명령, 에이전트, 스킬, MCP 서버 설정을 묶은 단위입니다."
+                  ],
+                  [
+                    "주의",
+                    "README는 플러그인에 들어 있는 MCP 서버나 파일을 Anthropic이 통제하거나 검증하지 않는다고 밝히고, 설치 전에 신뢰할 수 있는지 확인하라고 안내합니다."
+                  ]
                 ]
               }
             },
             {
               "type": "repo",
               "repo": {
-                "fullName": "K-Dense-AI/scientific-agent-skills", "rank": 3, "language": "Python", "license": "MIT", "stars": 50841, "starsToday": 1091, "verdict": "experiment",
+                "fullName": "K-Dense-AI/scientific-agent-skills",
+                "rank": 3,
+                "language": "Python",
+                "license": "MIT",
+                "stars": 50841,
+                "starsToday": 1091,
+                "verdict": "experiment",
                 "def": "어떤 AI 에이전트든 과학 연구 보조로 바꿔 주는 스킬 177개 묶음.",
                 "rows": [
-                  ["동작", "공개 Agent Skills 표준을 따라 Claude 전용이던 스킬을 다른 에이전트에서도 쓰게 했습니다. 같은 팀이 이 스킬로 돌아가는 무료 데스크톱 연구 도구도 냈습니다."],
-                  ["주의", "\"과학자 25만 명 이상 사용\" 같은 수치는 프로젝트 자체 주장입니다."]
+                  [
+                    "동작",
+                    "공개 Agent Skills 표준을 따라 Claude 전용이던 스킬을 다른 에이전트에서도 쓰게 했습니다. 같은 팀이 이 스킬로 돌아가는 무료 데스크톱 연구 도구도 냈습니다."
+                  ],
+                  [
+                    "주의",
+                    "\"과학자 25만 명 이상 사용\" 같은 수치는 프로젝트 자체 주장입니다."
+                  ]
                 ]
               }
             },
             {
               "type": "repo",
               "repo": {
-                "fullName": "JuliusBrussee/caveman", "rank": 4, "language": "Go", "license": "Apache-2.0", "stars": 112817, "starsToday": 433, "verdict": "experiment",
+                "fullName": "JuliusBrussee/caveman",
+                "rank": 4,
+                "language": "Go",
+                "license": "Apache-2.0",
+                "stars": 112817,
+                "starsToday": 433,
+                "verdict": "experiment",
                 "def": "에이전트가 원시인처럼 짧게 말하고 덜 읽게 만들어 토큰을 줄이는 스킬과 프록시.",
                 "rows": [
-                  ["효과", "README는 입력 토큰 33.2% 감소, 자동 모드에서 같은 점수로 54% 저렴하다고 주장합니다. 코드는 그대로 두고 설명 문장만 줄입니다."],
-                  ["주의", "수치는 프로젝트가 고른 작업에서 잰 값입니다. 짧은 답이 디버깅 맥락을 빼먹을 수 있어 팀 단위 도입 전에 자체 작업으로 비교해 보는 게 맞습니다."]
+                  [
+                    "효과",
+                    "README는 입력 토큰 33.2% 감소, 자동 모드에서 같은 점수로 54% 저렴하다고 주장합니다. 코드는 그대로 두고 설명 문장만 줄입니다."
+                  ],
+                  [
+                    "주의",
+                    "수치는 프로젝트가 고른 작업에서 잰 값입니다. 짧은 답이 디버깅 맥락을 빼먹을 수 있어 팀 단위 도입 전에 자체 작업으로 비교해 보는 게 맞습니다."
+                  ]
                 ]
               }
             },
             {
               "type": "repo",
               "repo": {
-                "fullName": "debpalash/VoiceStudio", "rank": 5, "language": "Python", "license": "AGPL-3.0", "stars": 69693, "starsToday": 3024, "verdict": "experiment",
+                "fullName": "debpalash/VoiceStudio",
+                "rank": 5,
+                "language": "Python",
+                "license": "AGPL-3.0",
+                "stars": 69693,
+                "starsToday": 3024,
+                "verdict": "experiment",
                 "def": "음성 복제, 음성 디자인, 영상 더빙, 받아쓰기, 오디오북을 646개 언어로 로컬에서 하는 오픈소스 ElevenLabs 대안.",
                 "rows": [
-                  ["동작", "기본 엔진은 OmniVoice이고 다른 엔진으로 바꿀 수 있습니다. 로컬 API와 MCP를 제공해 에이전트가 직접 부를 수 있습니다."],
-                  ["주의", "AGPL-3.0이라 수정해 서비스로 제공하면 소스 공개 의무가 생깁니다. 타인 목소리 복제는 동의와 법적 문제를 따로 확인해야 합니다."]
+                  [
+                    "동작",
+                    "기본 엔진은 OmniVoice이고 다른 엔진으로 바꿀 수 있습니다. 로컬 API와 MCP를 제공해 에이전트가 직접 부를 수 있습니다."
+                  ],
+                  [
+                    "주의",
+                    "AGPL-3.0이라 수정해 서비스로 제공하면 소스 공개 의무가 생깁니다. 타인 목소리 복제는 동의와 법적 문제를 따로 확인해야 합니다."
+                  ]
                 ]
               }
             },
             {
               "type": "repo",
               "repo": {
-                "fullName": "obra/superpowers", "rank": 6, "language": "Shell", "license": "MIT", "stars": 300183, "starsToday": 582, "verdict": "try",
+                "fullName": "obra/superpowers",
+                "rank": 6,
+                "language": "Shell",
+                "license": "MIT",
+                "stars": 300183,
+                "starsToday": 582,
+                "verdict": "try",
                 "def": "코딩 에이전트에게 \"바로 코드부터 쓰지 않는\" 개발 방법론을 입히는 스킬 프레임워크.",
                 "rows": [
-                  ["동작", "에이전트가 먼저 요구사항을 묻고, 설계를 끊어 보여 주고, 승인 뒤 구현 계획을 세운 다음 실행합니다. Claude Code, Codex, Cursor, Gemini CLI 등 16개 도구를 지원합니다."],
-                  ["주의", "단계가 늘어나는 만큼 작은 수정에는 오히려 느릴 수 있습니다."]
+                  [
+                    "동작",
+                    "에이전트가 먼저 요구사항을 묻고, 설계를 끊어 보여 주고, 승인 뒤 구현 계획을 세운 다음 실행합니다. Claude Code, Codex, Cursor, Gemini CLI 등 16개 도구를 지원합니다."
+                  ],
+                  [
+                    "주의",
+                    "단계가 늘어나는 만큼 작은 수정에는 오히려 느릴 수 있습니다."
+                  ]
                 ]
               }
             },
             {
               "type": "repo",
               "repo": {
-                "fullName": "ruvnet/ruflo", "rank": 7, "language": "TypeScript", "license": "MIT", "stars": 75303, "starsToday": 147, "verdict": "watch",
+                "fullName": "ruvnet/ruflo",
+                "rank": 7,
+                "language": "TypeScript",
+                "license": "MIT",
+                "stars": 75303,
+                "starsToday": 147,
+                "verdict": "watch",
                 "def": "Claude Code와 Codex 위에서 여러 에이전트 무리를 띄우고 감시하는 메타 하네스.",
                 "rows": [
-                  ["동작", "핵심 도구, 에이전트 관제 화면, 라우팅·정책 모드로 나뉩니다. MCP 서버로도 붙일 수 있고 터미널 화면만 따로 쓸 수도 있습니다."],
-                  ["주의", "모드는 사용자 계정 권한으로 돌아가므로 설치 전에 코드를 확인하라고 README가 경고합니다."]
+                  [
+                    "동작",
+                    "핵심 도구, 에이전트 관제 화면, 라우팅·정책 모드로 나뉩니다. MCP 서버로도 붙일 수 있고 터미널 화면만 따로 쓸 수도 있습니다."
+                  ],
+                  [
+                    "주의",
+                    "모드는 사용자 계정 권한으로 돌아가므로 설치 전에 코드를 확인하라고 README가 경고합니다."
+                  ]
                 ]
               }
             },
             {
               "type": "repo",
               "repo": {
-                "fullName": "mksglu/context-mode", "rank": 8, "language": "TypeScript", "license": "NOASSERTION", "stars": 29917, "starsToday": 904, "verdict": "experiment",
+                "fullName": "mksglu/context-mode",
+                "rank": 8,
+                "language": "TypeScript",
+                "license": "NOASSERTION",
+                "stars": 29917,
+                "starsToday": 904,
+                "verdict": "experiment",
                 "def": "도구 호출 결과가 컨텍스트 창을 채우지 않도록 가둬 두고, 세션 기억을 따로 저장하는 MCP 서버.",
                 "rows": [
-                  ["효과", "315KB 출력이 5.4KB로 줄었다는 예(98% 감소)를 듭니다. 작업 기록은 SQLite에 저장해 대화가 압축돼도 필요한 것만 다시 찾아옵니다."],
-                  ["주의", "라이선스가 표준 오픈소스로 표시되지 않아 회사에서 쓰기 전에 조건을 확인해야 합니다."]
+                  [
+                    "효과",
+                    "315KB 출력이 5.4KB로 줄었다는 예(98% 감소)를 듭니다. 작업 기록은 SQLite에 저장해 대화가 압축돼도 필요한 것만 다시 찾아옵니다."
+                  ],
+                  [
+                    "주의",
+                    "라이선스가 표준 오픈소스로 표시되지 않아 회사에서 쓰기 전에 조건을 확인해야 합니다."
+                  ]
                 ]
               }
             },
             {
               "type": "repo",
               "repo": {
-                "fullName": "NationalSecurityAgency/ghidra", "rank": 9, "language": "Java", "license": "Apache-2.0", "stars": 89073, "starsToday": 1369, "verdict": "reference",
+                "fullName": "NationalSecurityAgency/ghidra",
+                "rank": 9,
+                "language": "Java",
+                "license": "Apache-2.0",
+                "stars": 89073,
+                "starsToday": 1369,
+                "verdict": "reference",
                 "def": "미 국가안보국(NSA)이 만든 역공학 프레임워크.",
                 "rows": [
-                  ["맥락", "rea가 바이너리를 해석할 때 쓰는 엔진 중 하나라 함께 주목받은 것으로 보입니다. 디스어셈블, 디컴파일, 스크립팅을 지원합니다."],
-                  ["주의", "일부 버전에 알려진 보안 취약점이 있다며 보안 공지를 먼저 확인하라고 README가 안내합니다."]
+                  [
+                    "맥락",
+                    "rea가 바이너리를 해석할 때 쓰는 엔진 중 하나라 함께 주목받은 것으로 보입니다. 디스어셈블, 디컴파일, 스크립팅을 지원합니다."
+                  ],
+                  [
+                    "주의",
+                    "일부 버전에 알려진 보안 취약점이 있다며 보안 공지를 먼저 확인하라고 README가 안내합니다."
+                  ]
                 ]
               }
             },
             {
               "type": "repo",
               "repo": {
-                "fullName": "affaan-m/ECC", "rank": 10, "language": "JavaScript", "license": "MIT", "stars": 280669, "starsToday": 1013, "verdict": "watch",
+                "fullName": "affaan-m/ECC",
+                "rank": 10,
+                "language": "JavaScript",
+                "license": "MIT",
+                "stars": 280669,
+                "starsToday": 1013,
+                "verdict": "watch",
                 "def": "스킬, 기억, 보안, 조사 우선 개발 규칙을 묶은 에이전트 하네스 최적화 시스템.",
                 "rows": [
-                  ["구성", "Claude Code 플러그인으로 설치하며, 비공개 저장소용 유료 GitHub 앱이 따로 있습니다."],
-                  ["주의", "비공식 재업로드에 악성 코드가 있을 수 있다며 공식 채널만 쓰라고 경고합니다."]
+                  [
+                    "구성",
+                    "Claude Code 플러그인으로 설치하며, 비공개 저장소용 유료 GitHub 앱이 따로 있습니다."
+                  ],
+                  [
+                    "주의",
+                    "비공식 재업로드에 악성 코드가 있을 수 있다며 공식 채널만 쓰라고 경고합니다."
+                  ]
                 ]
               }
             },
             {
               "type": "repo",
               "repo": {
-                "fullName": "lightseekorg/tokenspeed", "rank": 11, "language": "Python", "license": "MIT", "stars": 2582, "starsToday": 30, "verdict": "watch",
+                "fullName": "lightseekorg/tokenspeed",
+                "rank": 11,
+                "language": "Python",
+                "license": "MIT",
+                "stars": 2582,
+                "starsToday": 30,
+                "verdict": "watch",
                 "def": "에이전트 작업량에 맞춘 LLM 추론 엔진.",
-                "rows": [["동작", "제어부는 C++ 상태 기계로, 실행부는 Python으로 나눠 KV 캐시 같은 자원 관리를 컴파일 시점에 검사합니다. PyTorch 생태계 목록에 들어갔습니다."]]
+                "rows": [
+                  [
+                    "동작",
+                    "제어부는 C++ 상태 기계로, 실행부는 Python으로 나눠 KV 캐시 같은 자원 관리를 컴파일 시점에 검사합니다. PyTorch 생태계 목록에 들어갔습니다."
+                  ]
+                ]
               }
             },
             {
               "type": "repo",
               "repo": {
-                "fullName": "xerj-org/xerj", "rank": 12, "language": "Rust", "license": "Apache-2.0", "stars": 6015, "starsToday": 715, "verdict": "experiment",
+                "fullName": "xerj-org/xerj",
+                "rank": 12,
+                "language": "Rust",
+                "license": "Apache-2.0",
+                "stars": 6015,
+                "starsToday": 715,
+                "verdict": "experiment",
                 "def": "폴더를 자동 색인해 코딩 에이전트가 파일을 하나씩 읽지 않고 필요한 코드만 찾게 하는 로컬 검색.",
                 "rows": [
-                  ["효과", "참고 저장소를 내려받아 색인하고 그 풀이를 재사용하게 해, 같은 정답률에서 출력 토큰을 2.7배 줄였다는 자체 사례를 듭니다."],
-                  ["주의", "효과 수치는 프로젝트 자체 사례 연구입니다."]
+                  [
+                    "효과",
+                    "참고 저장소를 내려받아 색인하고 그 풀이를 재사용하게 해, 같은 정답률에서 출력 토큰을 2.7배 줄였다는 자체 사례를 듭니다."
+                  ],
+                  [
+                    "주의",
+                    "효과 수치는 프로젝트 자체 사례 연구입니다."
+                  ]
                 ]
               }
             }
@@ -391,12 +897,26 @@
             "stance": "토큰 절약이 새 경쟁축",
             "confidence": 2,
             "points": [
-              { "k": "판단", "v": "caveman, context-mode, xerj가 같은 날 올라온 건 우연이 아닙니다. 에이전트 비용의 대부분이 모델 가격보다 \"얼마나 많이 읽고 쓰느냐\"에서 나온다는 인식이 퍼졌습니다. 여러 에이전트를 묶어 쓰는 쪽이라면 도구 출력을 가두고 기억을 따로 두는 context-mode식 구조가 가장 먼저 검토할 만합니다." },
-              { "k": "반론", "v": "세 도구 모두 효과 수치가 자체 측정이고, 서로 겹쳐 쓰면 효과가 더해지는지는 알 수 없습니다." },
-              { "k": "밝혀 둘 점", "v": "오늘 오른 도구 상당수가 Claude Code용이고, 2위는 Anthropic 저장소입니다. 이 의견을 쓴 Claude는 Anthropic이 만들었습니다." }
+              {
+                "k": "판단",
+                "v": "caveman, context-mode, xerj가 같은 날 올라온 건 우연이 아닙니다. 에이전트 비용의 대부분이 모델 가격보다 \"얼마나 많이 읽고 쓰느냐\"에서 나온다는 인식이 퍼졌습니다. 여러 에이전트를 묶어 쓰는 쪽이라면 도구 출력을 가두고 기억을 따로 두는 context-mode식 구조가 가장 먼저 검토할 만합니다."
+              },
+              {
+                "k": "반론",
+                "v": "세 도구 모두 효과 수치가 자체 측정이고, 서로 겹쳐 쓰면 효과가 더해지는지는 알 수 없습니다."
+              },
+              {
+                "k": "밝혀 둘 점",
+                "v": "오늘 오른 도구 상당수가 Claude Code용이고, 2위는 Anthropic 저장소입니다. 이 의견을 쓴 Claude는 Anthropic이 만들었습니다."
+              }
             ]
           },
-          "sources": [{ "title": "GitHub Trending", "url": "https://github.com/trending" }]
+          "sources": [
+            {
+              "title": "GitHub Trending",
+              "url": "https://github.com/trending"
+            }
+          ]
         }
       ]
     },
@@ -414,13 +934,34 @@
             {
               "type": "list",
               "items": [
-                { "k": "MARKET", "text": "15일 코스피가 7.57% 내린 5,554.22로 마감하며 서킷브레이커가 발동했습니다. 삼성전자는 9.48%, SK하이닉스는 11.06% 떨어졌고 외국인이 3조 6천억원어치를 팔았습니다. 미국 물가 우려와 AI 투자가 수익으로 이어질지에 대한 의문이 원인으로 꼽혔습니다." },
-                { "k": "MARKET", "text": "16일에는 코스피가 2%대 올라 5,660선을 회복하며 8거래일 만에 반등했고, 코스닥은 4%대 오르며 장중 매수 사이드카가 발동했습니다." },
-                { "k": "APPLE", "text": "아이폰 듀오 국내 사전예약이 16일 오후 9시 시작합니다. 329만원 가격과 초기 품귀 보도가 나왔고, 벤치마크에서 갤럭시 Z 폴드8과 픽셀11 프로 폴드를 앞섰다는 결과가 공개됐습니다." },
-                { "k": "SAMSUNG", "text": "4분기 스마트폰 감산에 들어간 삼성전자가 PCB 원재료 수급 차질을 겪고 있다는 보도입니다." },
-                { "k": "SK HYNIX", "text": "중국 우시 공장용 장비 수출 허용을 얻는 대가로 미국 내 공장 건설을 제시하는 협상을 벌이고 있다고 TechCrunch가 보도했습니다. 인디애나 HBM 공장은 8월 착공해 2029년 하반기 양산이 목표입니다." },
-                { "k": "TESLA", "text": "테슬라 FSD가 독일의 지지로 유럽 승인에 속도가 붙었지만, 한국 도입은 2028년 이후로 전망된다는 보도입니다." },
-                { "k": "AI 정책", "text": "독자 AI 파운데이션 모델 평가에 쓴 수학 시험지가 부실하다는 지적이 나오자 NIA는 외부 검증을 마쳤다고 해명했습니다." }
+                {
+                  "k": "MARKET",
+                  "text": "15일 코스피가 7.57% 내린 5,554.22로 마감하며 서킷브레이커가 발동했습니다. 삼성전자는 9.48%, SK하이닉스는 11.06% 떨어졌고 외국인이 3조 6천억원어치를 팔았습니다. 미국 물가 우려와 AI 투자가 수익으로 이어질지에 대한 의문이 원인으로 꼽혔습니다."
+                },
+                {
+                  "k": "MARKET",
+                  "text": "16일에는 코스피가 2%대 올라 5,660선을 회복하며 8거래일 만에 반등했고, 코스닥은 4%대 오르며 장중 매수 사이드카가 발동했습니다."
+                },
+                {
+                  "k": "APPLE",
+                  "text": "아이폰 듀오 국내 사전예약이 16일 오후 9시 시작합니다. 329만원 가격과 초기 품귀 보도가 나왔고, 벤치마크에서 갤럭시 Z 폴드8과 픽셀11 프로 폴드를 앞섰다는 결과가 공개됐습니다."
+                },
+                {
+                  "k": "SAMSUNG",
+                  "text": "4분기 스마트폰 감산에 들어간 삼성전자가 PCB 원재료 수급 차질을 겪고 있다는 보도입니다."
+                },
+                {
+                  "k": "SK HYNIX",
+                  "text": "중국 우시 공장용 장비 수출 허용을 얻는 대가로 미국 내 공장 건설을 제시하는 협상을 벌이고 있다고 TechCrunch가 보도했습니다. 인디애나 HBM 공장은 8월 착공해 2029년 하반기 양산이 목표입니다."
+                },
+                {
+                  "k": "TESLA",
+                  "text": "테슬라 FSD가 독일의 지지로 유럽 승인에 속도가 붙었지만, 한국 도입은 2028년 이후로 전망된다는 보도입니다."
+                },
+                {
+                  "k": "AI 정책",
+                  "text": "독자 AI 파운데이션 모델 평가에 쓴 수학 시험지가 부실하다는 지적이 나오자 NIA는 외부 검증을 마쳤다고 해명했습니다."
+                }
               ]
             }
           ],
@@ -429,19 +970,49 @@
             "stance": "실적과 기대의 엇갈림",
             "confidence": 1,
             "points": [
-              { "k": "판단", "v": "TSMC가 최대 이익을 낸 날 국내 반도체주가 급락한 건, 시장이 올해 실적보다 AI 투자가 언제 돈이 되느냐를 묻고 있다는 신호로 봅니다. 하루 만의 반등만으로 그 질문이 풀렸다고 보기는 어렵습니다." },
-              { "k": "반론", "v": "외국인 매도는 미국 물가 지표에 따른 위험 회피 성격도 커서, AI 의구심만으로 설명하면 과합니다. 이 의견은 산업 흐름에 대한 해석이며 투자 판단의 근거가 아닙니다." }
+              {
+                "k": "판단",
+                "v": "TSMC가 최대 이익을 낸 날 국내 반도체주가 급락한 건, 시장이 올해 실적보다 AI 투자가 언제 돈이 되느냐를 묻고 있다는 신호로 봅니다. 하루 만의 반등만으로 그 질문이 풀렸다고 보기는 어렵습니다."
+              },
+              {
+                "k": "반론",
+                "v": "외국인 매도는 미국 물가 지표에 따른 위험 회피 성격도 커서, AI 의구심만으로 설명하면 과합니다. 이 의견은 산업 흐름에 대한 해석이며 투자 판단의 근거가 아닙니다."
+              }
             ]
           },
           "sources": [
-            { "title": "Businesskorea(15일 마감)", "url": "https://www.businesskorea.co.kr/news/articleView.html?idxno=278913" },
-            { "title": "뉴스핌(16일 마감)", "url": "https://www.newspim.com/news/view/20261016001249" },
-            { "title": "MTN(16일 마감)", "url": "https://news.mtn.co.kr/article/2026101616013691256" },
-            { "title": "지디넷코리아(아이폰 듀오)", "url": "https://zdnet.co.kr/view/?no=20261016083510" },
-            { "title": "지디넷코리아(삼성 감산)", "url": "https://zdnet.co.kr/view/?no=20261015164031" },
-            { "title": "TechCrunch(SK하이닉스)", "url": "https://techcrunch.com/2026/10/15/sk-hynix-bargains-for-chip-equipment-exports-to-its-china-facility-in-return-for-building-a-factory-in-us/" },
-            { "title": "MTN(인디애나 HBM)", "url": "https://news.mtn.co.kr/news-detail/2026082714031129264" },
-            { "title": "지디넷코리아(독파모)", "url": "https://zdnet.co.kr/view/?no=20261015173821" }
+            {
+              "title": "Businesskorea(15일 마감)",
+              "url": "https://www.businesskorea.co.kr/news/articleView.html?idxno=278913"
+            },
+            {
+              "title": "뉴스핌(16일 마감)",
+              "url": "https://www.newspim.com/news/view/20261016001249"
+            },
+            {
+              "title": "MTN(16일 마감)",
+              "url": "https://news.mtn.co.kr/article/2026101616013691256"
+            },
+            {
+              "title": "지디넷코리아(아이폰 듀오)",
+              "url": "https://zdnet.co.kr/view/?no=20261016083510"
+            },
+            {
+              "title": "지디넷코리아(삼성 감산)",
+              "url": "https://zdnet.co.kr/view/?no=20261015164031"
+            },
+            {
+              "title": "TechCrunch(SK하이닉스)",
+              "url": "https://techcrunch.com/2026/10/15/sk-hynix-bargains-for-chip-equipment-exports-to-its-china-facility-in-return-for-building-a-factory-in-us/"
+            },
+            {
+              "title": "MTN(인디애나 HBM)",
+              "url": "https://news.mtn.co.kr/news-detail/2026082714031129264"
+            },
+            {
+              "title": "지디넷코리아(독파모)",
+              "url": "https://zdnet.co.kr/view/?no=20261015173821"
+            }
           ]
         }
       ]
@@ -461,18 +1032,79 @@
             {
               "type": "reads",
               "items": [
-                { "title": "Using AI to reverse engineer hardware", "url": "https://blogs.gnome.org/uraeus/2026/10/15/aiandreverseengineerhardware/", "via": "gnome.org", "why": "오늘 GitHub 1위 rea와 같은 주제입니다. 드라이버 개발자가 AI로 하드웨어를 역공학해 본 실무 기록입니다.", "hn": { "id": "50104299", "points": 173, "comments": 151 } },
-                { "title": "동네 치과의 AX 전환기", "url": "https://news.hada.io/topic?id=35381", "via": "GeekNews 38점 · 댓글 29", "why": "작은 의료 사업장이 AI를 업무에 들인 과정입니다. 소규모 사업장 AX의 현실적인 비용과 걸림돌이 보입니다." },
-                { "title": "What I self-host", "url": "https://viceconsole.fyi/blog/2026/10/10/what-i-self-host/", "via": "viceconsole.fyi · GeekNews에도 소개", "why": "N100 미니 PC 한 대로 서비스 28개를 운영하는 셀프호스팅 스택 정리입니다. 댓글에 대안 도구가 많이 쌓였습니다.", "hn": { "id": "50109715", "points": 427, "comments": 268 } },
-                { "title": "Neural networks are clean", "url": "https://already-clean.goodfire.com/", "via": "goodfire.com", "why": "해석 가능성 연구 쪽 관점입니다. 신경망 내부 구조가 생각보다 정돈돼 있다는 주장입니다.", "hn": { "id": "50105647", "points": 637, "comments": 235 } },
-                { "title": "Meta’s new commercial terms will allow the scraping of news sites", "url": "https://www.niemanlab.org/2026/10/metas-new-commercial-terms-will-allow-the-scraping-of-news-sites-legal-experts-say/", "via": "niemanlab.org", "why": "10월 30일 시행되는 Meta 상업 약관을 법률가들이 어떻게 읽는지 정리했습니다. 웹사이트를 운영하는 사업자라면 확인할 만합니다.", "hn": { "id": "50111852", "points": 207, "comments": 81 } },
-                { "title": "Why I Wrote PGP (1991, revised 1999)", "url": "https://philzimmermann.com/EN/essays/WhyIWrotePGP.html", "via": "philzimmermann.com", "why": "암호화를 왜 모두가 써야 하는지에 대한 고전 에세이입니다. 오늘 광고망 스파이웨어 기사와 함께 읽으면 좋습니다.", "hn": { "id": "50084674", "points": 147, "comments": 51 } }
+                {
+                  "title": "Using AI to reverse engineer hardware",
+                  "url": "https://blogs.gnome.org/uraeus/2026/10/15/aiandreverseengineerhardware/",
+                  "via": "gnome.org",
+                  "why": "오늘 GitHub 1위 rea와 같은 주제입니다. 드라이버 개발자가 AI로 하드웨어를 역공학해 본 실무 기록입니다.",
+                  "hn": {
+                    "id": "50104299",
+                    "points": 173,
+                    "comments": 151
+                  }
+                },
+                {
+                  "title": "동네 치과의 AX 전환기",
+                  "url": "https://news.hada.io/topic?id=35381",
+                  "via": "GeekNews 38점 · 댓글 29",
+                  "why": "작은 의료 사업장이 AI를 업무에 들인 과정입니다. 소규모 사업장 AX의 현실적인 비용과 걸림돌이 보입니다."
+                },
+                {
+                  "title": "What I self-host",
+                  "url": "https://viceconsole.fyi/blog/2026/10/10/what-i-self-host/",
+                  "via": "viceconsole.fyi · GeekNews에도 소개",
+                  "why": "N100 미니 PC 한 대로 서비스 28개를 운영하는 셀프호스팅 스택 정리입니다. 댓글에 대안 도구가 많이 쌓였습니다.",
+                  "hn": {
+                    "id": "50109715",
+                    "points": 427,
+                    "comments": 268
+                  }
+                },
+                {
+                  "title": "Neural networks are clean",
+                  "url": "https://already-clean.goodfire.com/",
+                  "via": "goodfire.com",
+                  "why": "해석 가능성 연구 쪽 관점입니다. 신경망 내부 구조가 생각보다 정돈돼 있다는 주장입니다.",
+                  "hn": {
+                    "id": "50105647",
+                    "points": 637,
+                    "comments": 235
+                  }
+                },
+                {
+                  "title": "Meta’s new commercial terms will allow the scraping of news sites",
+                  "url": "https://www.niemanlab.org/2026/10/metas-new-commercial-terms-will-allow-the-scraping-of-news-sites-legal-experts-say/",
+                  "via": "niemanlab.org",
+                  "why": "10월 30일 시행되는 Meta 상업 약관을 법률가들이 어떻게 읽는지 정리했습니다. 웹사이트를 운영하는 사업자라면 확인할 만합니다.",
+                  "hn": {
+                    "id": "50111852",
+                    "points": 207,
+                    "comments": 81
+                  }
+                },
+                {
+                  "title": "Why I Wrote PGP (1991, revised 1999)",
+                  "url": "https://philzimmermann.com/EN/essays/WhyIWrotePGP.html",
+                  "via": "philzimmermann.com",
+                  "why": "암호화를 왜 모두가 써야 하는지에 대한 고전 에세이입니다. 오늘 광고망 스파이웨어 기사와 함께 읽으면 좋습니다.",
+                  "hn": {
+                    "id": "50084674",
+                    "points": 147,
+                    "comments": 51
+                  }
+                }
               ]
             }
           ],
           "sources": [
-            { "title": "Hacker News", "url": "https://news.ycombinator.com/" },
-            { "title": "GeekNews", "url": "https://news.hada.io/" }
+            {
+              "title": "Hacker News",
+              "url": "https://news.ycombinator.com/"
+            },
+            {
+              "title": "GeekNews",
+              "url": "https://news.hada.io/"
+            }
           ]
         }
       ]
@@ -489,11 +1121,26 @@
           "kicker": "AI의 시선",
           "title": "숫자는 많았고, 확인된 숫자는 적었다",
           "blocks": [
-            { "type": "p", "dropcap": true, "text": "오늘 다룬 숫자를 출처별로 나눠 보면 무게가 다릅니다. TSMC의 순이익과 코스피 종가는 공식 기록입니다. 반면 로드스터의 1초 미만 가속은 화면 타이머 없이 제시됐고, Anthropic의 매출은 투자자 전언이며, MAI-Base-2의 효율 배수와 caveman의 토큰 절감률은 발표한 쪽이 직접 잰 값입니다." },
-            { "type": "p", "text": "어느 것도 거짓이라는 근거는 없습니다. 다만 같은 날 같은 크기의 제목으로 나란히 퍼지면 그 차이가 잘 보이지 않습니다. 이 브리프가 모든 수치에 출처의 성격을 붙이는 이유입니다." },
-            { "type": "p", "text": "**에이전트 쪽에서 본 신호.** 오늘 트렌딩은 사실상 에이전트 도구 목록이었고, 그중 셋이 토큰을 줄이는 도구였습니다. 경쟁의 축이 \"어떤 모델을 쓰느냐\"에서 \"에이전트가 무엇을 얼마나 읽고, 어떤 도구를 믿고, 어떤 권한을 받느냐\"로 옮겨 가고 있습니다. 광고 한 번으로 감염되는 스파이웨어 기사가 보여 주듯, 에이전트에게 열어 준 실행 경로 하나는 곧 공격 경로가 됩니다." },
-            { "type": "pull", "text": "의견을 내는 쪽도 채점받아야 공정합니다. 아래 예측은 확인 시점에 결과를 공개합니다." },
-            { "type": "ledger" }
+            {
+              "type": "p",
+              "dropcap": true,
+              "text": "오늘 다룬 숫자를 출처별로 나눠 보면 무게가 다릅니다. TSMC의 순이익과 코스피 종가는 공식 기록입니다. 반면 로드스터의 1초 미만 가속은 화면 타이머 없이 제시됐고, Anthropic의 매출은 투자자 전언이며, MAI-Base-2의 효율 배수와 caveman의 토큰 절감률은 발표한 쪽이 직접 잰 값입니다."
+            },
+            {
+              "type": "p",
+              "text": "어느 것도 거짓이라는 근거는 없습니다. 다만 같은 날 같은 크기의 제목으로 나란히 퍼지면 그 차이가 잘 보이지 않습니다. 이 브리프가 모든 수치에 출처의 성격을 붙이는 이유입니다."
+            },
+            {
+              "type": "p",
+              "text": "**에이전트 쪽에서 본 신호.** 오늘 트렌딩은 사실상 에이전트 도구 목록이었고, 그중 셋이 토큰을 줄이는 도구였습니다. 경쟁의 축이 \"어떤 모델을 쓰느냐\"에서 \"에이전트가 무엇을 얼마나 읽고, 어떤 도구를 믿고, 어떤 권한을 받느냐\"로 옮겨 가고 있습니다. 광고 한 번으로 감염되는 스파이웨어 기사가 보여 주듯, 에이전트에게 열어 준 실행 경로 하나는 곧 공격 경로가 됩니다."
+            },
+            {
+              "type": "pull",
+              "text": "의견을 내는 쪽도 채점받아야 공정합니다. 아래 예측은 확인 시점에 결과를 공개합니다."
+            },
+            {
+              "type": "ledger"
+            }
           ],
           "sources": []
         }

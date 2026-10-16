@@ -5,7 +5,7 @@ import { T } from "./_components/blocks";
 
 export const metadata: Metadata = {
   title: { absolute: "Tech Radar · nodeman.io" },
-  description: "AI가 매일 아침 8시에 쓰는 테크 브리프. GitHub 트렌딩, IT 핵심 뉴스, 읽을거리, 확률을 붙인 예측 장부.",
+  description: "AI가 매일 아침 8시에 쓰는 테크 매거진. GitHub 트렌딩, IT 핵심 뉴스, 읽을거리, 확률을 붙인 예측 장부.",
 };
 
 export default function RadarIndex() {
@@ -14,68 +14,86 @@ export default function RadarIndex() {
   const ledger = getLedger();
   const done = ledger.filter((p) => p.status === "hit" || p.status === "miss");
   const hits = done.filter((p) => p.status === "hit").length;
+  const lines = latest ? (latest.cover?.big || latest.title).split("\n") : [];
 
   return (
-    <div className="rd-layout single">
-      <main className="rd-post">
-        <span className="rd-badge">
-          <b>AI</b>모든 글은 AI(Claude)가 작성하고 사람의 검토 없이 자동 발행됩니다
-        </span>
-        <h1 className="rd-title">Tech Radar</h1>
-        <p className="rd-lede">
-          매일 아침 8시, GitHub 트렌딩과 국내외 IT 뉴스, 읽을거리를 한 편으로 묶습니다. 숫자마다 출처의 성격을 표시하고, AI의 예측은 확률을 붙여 기록한 뒤 채점합니다.
-        </p>
-
-        {latest ? (
-          <Link href={`/radar/${latest.date}/`} className="rd-latest">
-            <span className="rd-label">최신호 · {formatKDate(latest.date)}</span>
-            <span className="t">{latest.title}</span>
-            <span className="l">
-              <T>{latest.lede}</T>
-            </span>
-            <ol>
-              {latest.quick.slice(0, 3).map((q, k) => (
-                <li key={k}>
-                  <T>{q}</T>
-                </li>
-              ))}
-            </ol>
-            <span className="go">전체 읽기 →</span>
-          </Link>
-        ) : (
-          <p className="rd-empty">첫 호는 다음 날 아침 8시에 발행됩니다.</p>
-        )}
-
-        <section className="rd-chap" id="archive">
-          <div className="rd-chap-h">
-            <span className="no">지난 호</span>
-            <h2>전체 목록</h2>
+    <main className="rd-book">
+      {latest ? (
+        <Link href={`/radar/${latest.date}/`} className="rd-sheet rd-cover rd-cover-link">
+          <div className="rd-rh">
+            <span>No.{String(dates.length).padStart(3, "0")} · 최신호</span>
+            <span>{formatKDate(latest.date)}</span>
           </div>
-          <ul className="rd-archive">
-            {dates.map((d) => {
-              const it = getIssue(d);
-              return (
-                <li key={d}>
-                  <span className="d">{d.replace(/-/g, ".")}</span>
-                  <Link href={`/radar/${d}/`}>{it.title}</Link>
-                </li>
-              );
-            })}
-          </ul>
-        </section>
-
-        <section className="rd-chap">
-          <div className="rd-chap-h">
-            <span className="no">예측 장부</span>
-            <h2>
-              {done.length ? `채점 ${done.length}건 중 ${hits}건 적중` : `대기 중인 예측 ${ledger.length}건`}
-            </h2>
-            <p>
-              <Link href="/radar/ledger/">예측 장부 전체 보기 →</Link>
-            </p>
+          <div className="rd-mast" aria-hidden="true">
+            TECH
+            <br />
+            RADAR
+            <small>데일리 테크 레이더</small>
           </div>
-        </section>
-      </main>
-    </div>
+          <div className="rd-cover-story single">
+            <div>
+              <span className="tag">COVER STORY</span>
+              <div className="rd-big">
+                {lines.map((l, k) => (
+                  <span key={k} style={{ display: "block" }}>
+                    {k === lines.length - 1 && lines.length > 1 ? <em>{l}</em> : l}
+                  </span>
+                ))}
+              </div>
+              <p>
+                <T>{latest.lede}</T>
+              </p>
+              <span className="go">이번 호 읽기 →</span>
+            </div>
+          </div>
+          <div className="rd-cover-foot">
+            <span>AI(Claude) 작성 · 매일 아침 8시 자동 발행</span>
+            <span>{latest.title}</span>
+          </div>
+        </Link>
+      ) : null}
+
+      <section className="rd-sheet">
+        <div className="rd-rh">
+          <span>Tech Radar</span>
+          <span>지난 호</span>
+        </div>
+        <div className="rd-head">
+          <span className="rd-badge">
+            <b>AI</b>모든 호는 AI(Claude)가 작성하고 사람의 검토 없이 자동 발행됩니다
+          </span>
+          <h1 className="rd-hed">Tech Radar</h1>
+          <p className="rd-dek">
+            매일 아침 8시, GitHub 트렌딩과 국내외 IT 뉴스, 읽을거리를 한 권으로 묶습니다. 숫자마다 출처의 성격을 표시하고, AI의 예측은 확률을 붙여 기록한 뒤 채점합니다.
+          </p>
+        </div>
+        <ol className="rd-toclist">
+          {dates.map((d) => {
+            const it = getIssue(d);
+            return (
+              <li key={d}>
+                <span className="sec">{d.replace(/-/g, ".")}</span>
+                <Link href={`/radar/${d}/`}>
+                  {it.title}
+                  <span className="d">{it.quick[0]?.replace(/\*\*/g, "")}</span>
+                </Link>
+                <span className="p">→</span>
+              </li>
+            );
+          })}
+        </ol>
+        <div className="rd-letter">
+          <span className="rd-label">예측 장부</span>
+          <p>
+            {done.length ? `채점 ${done.length}건 중 ${hits}건 적중했습니다.` : `확인을 기다리는 예측이 ${ledger.length}건 있습니다.`}{" "}
+            <Link href="/radar/ledger/">예측 장부 보기 →</Link>
+          </p>
+        </div>
+        <div className="rd-folio">
+          <span>nodeman.io</span>
+          <Link href="/radar/about/">발행 원칙</Link>
+        </div>
+      </section>
+    </main>
   );
 }

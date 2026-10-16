@@ -26,4 +26,5 @@ Personal homepage (`nodeman.io`) — single-page portfolio, terminal/galaxy them
 - Raw inputs come only from `.github/workflows/radar-collect.yml` (`scripts/radar/collect.mjs`, ~06:40 KST, or on demand by pushing `content/radar/requests/latest.txt`). Sandboxed sessions cannot fetch github.com/trending directly, and WebFetch copies can be stale — never take numbers from them.
 - `scripts/radar/validate.mjs` gates every deploy: numbers must match raw, raw must be fresh, excluded topics and conflict-of-interest rules are enforced.
 - Daily procedure: `docs/radar/routine.md`. Local check: `npm run radar:check` (offline build via `next build --webpack` with mocked Google Fonts).
+- Magazine layout: each issue renders as cover (blue) → 차례 → one sheet per section (running head + folio) → colophon; light with a prefers-color-scheme dark variant. Styles in `src/app/radar/radar.css`.
 - Issue pages are `noindex`; index, ledger and about pages are indexable.

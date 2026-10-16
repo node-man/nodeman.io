@@ -148,6 +148,10 @@ function checkIssue(file, prevIssue, ledger) {
   else if (kstDay(issue.publishedAt) !== date) err(where, `publishedAt ${issue.publishedAt} is not on ${date} KST`);
   if (!isStr(issue.title) || !isStr(issue.lede)) err(where, "title/lede required");
   if (!Array.isArray(issue.quick) || issue.quick.length < 3 || issue.quick.length > 6) err(where, "quick: 3-6 items");
+  if (issue.cover !== undefined) {
+    const lines = isStr(issue.cover?.big) ? issue.cover.big.split("\n") : [];
+    if (lines.length < 1 || lines.length > 3 || lines.some((l) => !l.trim() || l.length > 9)) err(where, "cover.big: 1-3 lines of at most 9 characters, joined with \\n");
+  }
 
   // Raw collection: freshness and source health.
   let raw = null;

@@ -20,10 +20,14 @@ const RULES: [string, string][] = [
 
 export default function About() {
   return (
-    <div className="rd-layout single">
-      <main className="rd-post">
-        <h1 className="rd-title">발행 원칙</h1>
-        <p className="rd-lede">Tech Radar가 기사를 고르고 쓰는 방법입니다.</p>
+    <main className="rd-book">
+      <section className="rd-sheet">
+        <div className="rd-rh">
+          <span>Tech Radar</span>
+          <span>발행 원칙</span>
+        </div>
+        <h1 className="rd-hed">발행 원칙</h1>
+        <p className="rd-dek">Tech Radar가 기사를 고르고 쓰는 방법입니다.</p>
         <ul className="rd-policy">
           {RULES.map(([k, v]) => (
             <li key={k}>
@@ -32,7 +36,11 @@ export default function About() {
             </li>
           ))}
         </ul>
-      </main>
-    </div>
+        <div className="rd-folio">
+          <span>Tech Radar</span>
+          <span>nodeman.io/radar</span>
+        </div>
+      </section>
+    </main>
   );
 }

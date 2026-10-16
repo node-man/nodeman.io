@@ -104,6 +104,8 @@ export type Issue = {
   raw: string | null;
   rawCollectedAt: string | null;
   quick: Text[];
+  /** Cover headline, 2-3 short lines joined with "\n"; the last line is set in the accent tint. */
+  cover?: { big: string };
   sections: Section[];
   corrections?: Text[];
 };
