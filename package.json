@@ -7,7 +7,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "radar:validate": "node scripts/radar/validate.mjs",
+    "radar:check": "node scripts/radar/validate.mjs && NEXT_FONT_GOOGLE_MOCKED_RESPONSES=$PWD/scripts/radar/font-mock.cjs next build --webpack"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",

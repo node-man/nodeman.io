@@ -1,0 +1,43 @@
+[
+  {
+    "id": "2026-10-16-1",
+    "issued": "2026-10-16",
+    "statement": "테슬라 3분기 실적 발표에서 로드스터 판매가가 공개되지 않는다",
+    "probability": 0.7,
+    "due": "2026-10-22",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-16-2",
+    "issued": "2026-10-16",
+    "statement": "morluto/rea의 일간 트렌딩 스타가 2주 뒤 1,000개 아래로 내려간다",
+    "probability": 0.75,
+    "due": "2026-10-30",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-16-3",
+    "issued": "2026-10-16",
+    "statement": "TSMC 4분기 매출이 가이던스 상단(543억 달러)을 넘는다",
+    "probability": 0.55,
+    "due": "2027-01-20",
+    "dueLabel": "2027.1",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-16-4",
+    "issued": "2026-10-16",
+    "statement": "Microsoft가 연내 MAI-Base-2 기반 모델의 일반 API를 공개한다",
+    "probability": 0.35,
+    "due": "2026-12-31",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-16-5",
+    "issued": "2026-10-16",
+    "statement": "로드스터 Performance 트림의 고객 인도가 2028년 안에 시작된다",
+    "probability": 0.35,
+    "due": "2028-12-31",
+    "status": "pending"
+  }
+]

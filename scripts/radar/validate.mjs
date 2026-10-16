@@ -21,7 +21,7 @@ const LEGAL = ["소송", "피소", "고소", "기소", "혐의", "제소", "laws
 // Copy that talks about the publication itself instead of the news.
 const META = ["샘플", "처음 만든", "Nodeman 편집", "편집자의 말", "이번 호부터"];
 const SELF = /anthropic|앤트로픽|claude|클로드/i;
-const RIVALS = /openai|오픈ai|chatgpt|gpt-|google|구글|gemini|제미나이|\bmeta\b|메타(?!데이터)|muse|xai|grok|deepseek|딥시크|mistral/i;
+const RIVALS = /microsoft|마이크로소프트|openai|오픈ai|chatgpt|gpt-|google|구글|gemini|제미나이|\bmeta\b|메타(?!데이터)|muse|xai|grok|deepseek|딥시크|mistral/i;
 
 const errors = [];
 const warns = [];
@@ -107,7 +107,8 @@ function checkBlock(b, where, ctx) {
       const r = b.repo;
       if (!need(isObj(r), "repo object")) break;
       need(isStr(r.fullName) && isNum(r.rank) && isNum(r.stars) && isNum(r.starsToday), "fullName/rank/stars/starsToday");
-      need(["try", "experiment", "watch", "reference"].includes(r.verdict), "verdict enum");
+      need(["try", "experiment", "watch", "reference", "none"].includes(r.verdict), "verdict enum");
+      if (/^anthropics\//i.test(r.fullName || "") && r.verdict !== "none") err(where, `${r.fullName}: Anthropic repositories take verdict "none" (conflict of interest)`);
       need(isStr(r.def) && Array.isArray(r.rows) && r.rows.length >= 1, "def + rows");
       const raw = ctx.raw?.github;
       if (!raw) {

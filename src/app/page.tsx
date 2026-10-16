@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 // Design feature flags (from Nodeman.dc.html props)
@@ -541,6 +542,7 @@ export default function Home() {
             <a href="#roles" className="nm-nav-link">Roles</a>
             <a href="#journey" className="nm-nav-link">Journey</a>
             <a href="#ai" className="nm-nav-link">AI</a>
+            <Link href="/radar/" className="nm-nav-link">Radar</Link>
           </div>
           <a href="#contact" className="nm-connect">connect</a>
         </div>

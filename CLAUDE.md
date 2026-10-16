@@ -20,3 +20,10 @@ Personal homepage (`nodeman.io`) — single-page portfolio, terminal/galaxy them
 
 ## Deploy
 - Push to `main` → GitHub Actions builds and deploys to GitHub Pages (also `workflow_dispatch`). This repo commits directly to `main`.
+
+## Tech Radar (`/radar`)
+- AI-written daily brief published with no human review. Data in `content/radar/` (`issues/<date>.json`, `ledger.json`, `raw/<date>.json`); format in `src/lib/radar/types.ts`; renderers in `src/app/radar/_components/blocks.tsx`.
+- Raw inputs come only from `.github/workflows/radar-collect.yml` (`scripts/radar/collect.mjs`, ~06:40 KST, or on demand by pushing `content/radar/requests/latest.txt`). Sandboxed sessions cannot fetch github.com/trending directly, and WebFetch copies can be stale — never take numbers from them.
+- `scripts/radar/validate.mjs` gates every deploy: numbers must match raw, raw must be fresh, excluded topics and conflict-of-interest rules are enforced.
+- Daily procedure: `docs/radar/routine.md`. Local check: `npm run radar:check` (offline build via `next build --webpack` with mocked Google Fonts).
+- Issue pages are `noindex`; index, ledger and about pages are indexable.

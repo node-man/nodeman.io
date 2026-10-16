@@ -100,7 +100,7 @@ function parseFeed(xml) {
     };
     let link = pick("link");
     if (!link || !link.trim()) {
-      const m = b.match(/<link[^>]*href="([^"]+)"/);
+      const m = b.match(/<link[^>]*href=['"]([^'"]+)['"]/);
       link = m ? m[1] : null;
     }
     const srcTag = b.match(/<source[^>]*>([\s\S]*?)<\/source>/);
@@ -119,10 +119,18 @@ async function collectFeed(f, fetchedAt) {
     const r = await get(f.url, { accept: "application/rss+xml, application/atom+xml, application/xml, text/xml" });
     if (!r.ok) return { ...f, status: "failed", error: `HTTP ${r.status}`, items: [] };
     const items = parseFeed(r.body).slice(0, 60);
+    // Some Korean CMS feeds label KST times as GMT. Items "from the future" by
+    // 8-10h are shifted back 9h and the feed is flagged.
+    let tzAdjusted = false;
+    const ahead = items.filter((i) => i.publishedAt && (new Date(i.publishedAt) - new Date(fetchedAt)) / 3600e3 > 1);
+    if (ahead.length && ahead.every((i) => (new Date(i.publishedAt) - new Date(fetchedAt)) / 3600e3 < 10)) {
+      for (const i of items) if (i.publishedAt) i.publishedAt = new Date(new Date(i.publishedAt).getTime() - 9 * 3600e3).toISOString();
+      tzAdjusted = true;
+    }
     const newest = items.map((i) => i.publishedAt).filter(Boolean).sort().at(-1) || null;
     const gapH = newest ? hoursBetween(fetchedAt, newest) : null;
     const status = !items.length ? "failed" : newest && gapH <= f.maxGapH ? "ok" : "stale";
-    return { ...f, status, fetchedAt, httpDate: r.date, cacheAge: r.age, newestItemAt: newest, gapHours: gapH, count: items.length, items };
+    return { ...f, status, fetchedAt, httpDate: r.date, cacheAge: r.age, newestItemAt: newest, gapHours: gapH, tzAdjusted, count: items.length, items };
   } catch (e) {
     return { ...f, status: "failed", error: String(e.message || e), items: [] };
   }
