@@ -1,0 +1,1102 @@
+{
+  "version": 1,
+  "date": "2026-10-17",
+  "publishedAt": "2026-10-17T07:44:00+09:00",
+  "title": "엔비디아가 노트북에 들어온 날",
+  "lede": "엔비디아의 첫 노트북용 PC 플랫폼 RTX 스파크가 6개 제조사 제품으로 출시됐습니다. 리뷰는 GPU와 로컬 AI 성능을 높이 샀지만 가격과 Arm용 윈도 호환성을 숙제로 꼽았습니다. 같은 날 PostgreSQL 19는 AI 리뷰가 찾아낸 결함 때문에 출시가 밀렸고, 애플의 첫 폴더블 아이폰은 예약 30분 만에 매진됐습니다.",
+  "raw": "content/radar/raw/2026-10-17.json",
+  "rawCollectedAt": "2026-10-16T21:41:09.640Z",
+  "quick": [
+    "**RTX 스파크 노트북 출시.** 미디어텍 Arm CPU와 블랙웰 GPU를 한 패키지에 담았고, 미국 시작가는 2,599달러입니다.",
+    "**PostgreSQL 19 정식판 연기.** 대형 기능 8~10개가 빠졌고 정식판은 11월 19일 전후로 예상됩니다.",
+    "**아이폰 듀오 30분 만에 매진.** 미국 온라인 배송 예정일이 내년 1월 말로 밀렸고, 애플 CEO는 메모리 공급을 위기로 규정했습니다.",
+    "**Waymo, 캐나다 첫 도시는 토론토.** 2028년 일반 승객 서비스를 목표로 시험 주행을 시작합니다.",
+    "**윤초, 2027년 5월부터 중단.** 국제도량형총회가 UTC와 천문시의 차이를 최대 1시간까지 두기로 했습니다."
+  ],
+  "cover": {
+    "big": "엔비디아,\n노트북에\n들어오다"
+  },
+  "sections": [
+    {
+      "id": "lead",
+      "kind": "lead",
+      "label": "커버스토리",
+      "title": "RTX 스파크, 윈도 노트북의 판을 흔들다",
+      "dek": "국내외 매체가 함께 다룬 오늘의 최대 화제입니다.",
+      "stories": [
+        {
+          "id": "rtx-spark",
+          "kicker": "PC · 10/16",
+          "title": "엔비디아 RTX 스파크 노트북, 리뷰와 함께 출시",
+          "hot": {
+            "count": 5,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "dropcap": true,
+              "text": "엔비디아의 노트북용 PC 플랫폼 RTX 스파크를 단 제품이 10월 16일 판매를 시작했습니다. 1차 제품은 델 XPS 16, Microsoft 서피스 랩톱 울트라, 에이수스 프로아트 P14·P16, HP 옴니북 울트라 16, 레노버 요가 9n, MSI 프레스티지 N16 등 6개 제조사 제품이고, 모두 Arm용 윈도 11을 씁니다. 예약 판매는 10월 8일부터 받았습니다."
+            },
+            {
+              "type": "p",
+              "text": "**무엇이 들었나.** 미디어텍이 설계한 Arm CPU 다이와 엔비디아 블랙웰 GPU 다이를 한 패키지에 묶은 구조입니다. 상위 칩 N1X는 CPU 20코어에 GPU 셰이더 6,144개이고, LPDDR5X 메모리를 최대 128GB까지 CPU와 GPU가 나눠 씁니다. 큰 메모리를 GPU가 직접 쓸 수 있어 대형 언어 모델을 노트북에서 돌리는 용도가 첫손에 꼽힙니다."
+            },
+            {
+              "type": "p",
+              "text": "**얼마인가.** 서피스 랩톱 울트라의 미국 시작가는 2,599달러이고, 리뷰에 쓰인 20코어·32GB·1TB 구성은 3,699달러, 128GB 최상위 구성은 5,899달러입니다. 국내 출시 일정과 가격은 아직 나오지 않았습니다."
+            },
+            {
+              "type": "p",
+              "text": "**리뷰는 어땠나.** GPU 성능과 로컬 AI 작업은 대체로 호평을 받았습니다. 반면 CPU 단일 코어 성능은 애플 M 시리즈보다 약하다는 평가가 많았고, 일부 앱은 에뮬레이션 계층 Prism을 거쳐야 합니다. PCWorld는 Adobe Premiere 정식판이 GPU를 인식하지 못해 베타판으로만 실행됐다고 전했고, Tom's Hardware는 무게와 팬 소음을 단점으로 꼽았습니다."
+            },
+            {
+              "type": "cards",
+              "title": "칩 구성 2종 · 엔비디아 발표·리뷰 기준",
+              "items": [
+                {
+                  "name": "N1X 20코어",
+                  "sub": "상위 구성",
+                  "rows": [
+                    [
+                      "CPU",
+                      "20코어 (고성능 10 + 효율 10)"
+                    ],
+                    [
+                      "GPU",
+                      "셰이더 6,144개"
+                    ],
+                    [
+                      "메모리",
+                      "32~128GB"
+                    ]
+                  ],
+                  "highlight": {
+                    "label": "서피스 32GB·1TB",
+                    "value": "$3,699"
+                  }
+                },
+                {
+                  "name": "N1X 18코어",
+                  "sub": "기본 구성",
+                  "rows": [
+                    [
+                      "CPU",
+                      "18코어 (9 + 9)"
+                    ],
+                    [
+                      "GPU",
+                      "셰이더 5,120개"
+                    ],
+                    [
+                      "메모리",
+                      "24~96GB"
+                    ]
+                  ],
+                  "highlight": {
+                    "label": "서피스 시작가",
+                    "value": "$2,599"
+                  }
+                }
+              ],
+              "footer": "**공통** Arm용 윈도 11 · CPU·GPU 메모리 공유"
+            },
+            {
+              "type": "stats",
+              "items": [
+                {
+                  "value": "10:43",
+                  "label": "Tom's Hardware 웹·영상 혼합 배터리 시험"
+                },
+                {
+                  "value": "7:57",
+                  "label": "PCWorld 4K 스트리밍 배터리 시험"
+                },
+                {
+                  "value": "14:35",
+                  "label": "HotHardware 영상 재생 배터리 시험"
+                },
+                {
+                  "value": "6곳",
+                  "label": "1차 출시 제조사"
+                }
+              ]
+            },
+            {
+              "type": "timeline",
+              "title": "RTX 스파크까지",
+              "points": [
+                {
+                  "date": "2025-10",
+                  "label": "데스크톱용 DGX Spark 출시",
+                  "kind": "past"
+                },
+                {
+                  "date": "2026-06",
+                  "label": "컴퓨텍스에서 노트북 공개",
+                  "kind": "past"
+                },
+                {
+                  "date": "2026-10-08",
+                  "label": "예약 판매 시작",
+                  "kind": "past"
+                },
+                {
+                  "date": "2026-10-16",
+                  "label": "출시·리뷰 공개",
+                  "kind": "now"
+                }
+              ]
+            },
+            {
+              "type": "quotes",
+              "items": [
+                {
+                  "who": "Tom's Hardware",
+                  "text": "Microsoft가 만든 가장 아름다운 노트북이지만, 로컬 AI 모델을 돌리지 않는 일반 사용자에게는 얻을 것이 적고 매우 비싸다고 평가했습니다."
+                },
+                {
+                  "who": "PCWorld",
+                  "text": "생산성·그래픽·AI를 한데 묶은 새로운 부류의 기기로 보면서도, 휴대용 AI 워크스테이션이 아니라면 가격을 정당화하기 어렵다고 봤습니다."
+                },
+                {
+                  "who": "HotHardware",
+                  "text": "GPU 성능을 동급 최고 수준으로 평가했고, 멀티코어 성능은 애플 M4 Pro와 겨룰 만하다고 측정했습니다."
+                }
+              ]
+            },
+            {
+              "type": "unknowns",
+              "title": "아직 확인되지 않은 것",
+              "items": [
+                "국내 출시 일정과 가격",
+                "NPU를 외부 앱이 쓸 수 있는지(리뷰마다 설명이 엇갈림)",
+                "커널 수준 안티치트 게임의 지원 시점",
+                "드라이버의 장기 안정성"
+              ]
+            }
+          ],
+          "ai": {
+            "kind": "opinion",
+            "stance": "AI 개발자에겐 첫 실질 대안, 일반 사용자에겐 이르다",
+            "confidence": 2,
+            "points": [
+              {
+                "k": "판단",
+                "v": "CUDA를 그대로 쓰면서 수십 GB 메모리를 GPU에 몰아줄 수 있는 첫 윈도 노트북이라는 점에서, 로컬 모델을 다루는 개발자에게는 의미가 큽니다. 일반 업무용 노트북으로는 아직 비싸고 호환성 확인이 필요합니다."
+              },
+              {
+                "k": "근거",
+                "v": "리뷰들이 GPU와 AI 성능에는 일관되게 높은 점수를 줬지만, 단일 코어 성능, 앱 호환성, 배터리 시간은 시험마다 크게 갈렸습니다. 같은 기기의 배터리 시간이 시험 방식에 따라 8시간에서 14시간 넘게까지 벌어졌습니다."
+              },
+              {
+                "k": "반론",
+                "v": "퀄컴 스냅드래곤 X 이후 Arm용 윈도 호환성은 빠르게 좋아졌고, 이번에는 주요 제조사 6곳이 첫날부터 참여했습니다. 하위 구성이 나오면 가격 문제도 줄어들 수 있습니다."
+              },
+              {
+                "k": "밝혀 둘 점",
+                "v": "이 글을 쓴 AI는 Anthropic이 만든 Claude입니다. Anthropic은 엔비디아, Microsoft와 투자·협력 관계가 있는 것으로 알려져 있습니다."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "title": "Tom's Hardware",
+              "url": "https://www.tomshardware.com/tablets/microsoft-surface/microsoft-surface-laptop-ultra-rtx-spark-review"
+            },
+            {
+              "title": "PCWorld",
+              "url": "https://www.pcworld.com/article/3258665/microsoft-surface-laptop-ultra-review.html"
+            },
+            {
+              "title": "The Verge",
+              "url": "https://www.theverge.com/tech/1012748/nvidia-rtx-spark-windows-arm-laptops-asus-hp-lenovo-impressions"
+            },
+            {
+              "title": "Tech Times(리뷰 종합)",
+              "url": "https://www.techtimes.com/articles/329104/20261016/rtx-spark-reviews-are-class-leading-gpu-meets-aging-cpu-cores-launch.htm"
+            },
+            {
+              "title": "Digital Citizen(가격·구성)",
+              "url": "https://www.digitalcitizen.life/surface-laptop-ultra-starts-at-2599-as-rtx-spark-pricing-draws-mostly-positive-reaction/"
+            },
+            {
+              "title": "아이뉴스24(참여 제조사)",
+              "url": "https://inews24.com/view/2013242"
+            },
+            {
+              "title": "디지털투데이",
+              "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=707798"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "headlines",
+      "kind": "headlines",
+      "label": "오늘의 화제",
+      "title": "여러 매체가 함께 다룬 이야기",
+      "stories": [
+        {
+          "id": "postgres-19",
+          "kicker": "데이터베이스 · 10/16",
+          "title": "AI 리뷰가 찾은 결함에 PostgreSQL 19 출시 연기",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "PostgreSQL 개발 그룹이 9월 말~10월 초로 예상되던 PostgreSQL 19 정식판 출시를 미뤘습니다. The Register는 정식판이 11월 19일 전후로 예상되며, 베타 기간에 대형 기능 8~10개가 빠져 PostgreSQL 20으로 넘어간다고 전했습니다. 2023년 SQL 표준에 들어간 속성 그래프 질의(SQL/PGQ)도 제외됐고, 테이블 잠금 없이 정리하는 `REPACK CONCURRENTLY`는 남았습니다."
+            },
+            {
+              "type": "p",
+              "text": "**AI가 한 일.** Snowflake 엔지니어링 블로그는 9월 기준 베타 이후 되돌린 커밋을 53건으로 집계하고, 여러 기여자가 AI 도구로 버그를 찾고 재현 사례를 만들었으며 늦은 되돌림 상당수가 AI 보조 리뷰에서 나왔다고 설명했습니다. 핵심 개발자 측은 AI 리뷰가 주로 가벼운 경계 조건 결함을 빠르게 쏟아낸다며, 이번 되돌림이 AI로 대충 짠 코드 탓은 아니라고 선을 그었습니다."
+            }
+          ],
+          "ai": {
+            "kind": "opinion",
+            "stance": "늦더라도 옳은 판단",
+            "confidence": 3,
+            "points": [
+              {
+                "k": "판단",
+                "v": "정식판을 미루고 기능을 덜어낸 것은 데이터베이스다운 선택입니다. 운영 환경은 당분간 PostgreSQL 18을 기준으로 두는 편이 안전합니다."
+              },
+              {
+                "k": "근거",
+                "v": "찾아낸 결함이 고칠 수 있는 양을 넘어서면, 범위를 줄이는 것 말고는 품질을 지킬 방법이 없습니다. 빠진 기능은 다음 버전에서 다시 들어올 예정입니다."
+              },
+              {
+                "k": "반론",
+                "v": "AI 리뷰가 사소한 결함까지 대량으로 보고하면 검토 부담이 커져 출시 주기가 계속 밀릴 수 있습니다. 결함의 경중을 거르는 절차가 함께 필요합니다."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "title": "The Register",
+              "url": "https://www.theregister.com/databases/2026/10/16/postgres-19-delayed-after-ai-reviewers-find-more-bugs-than-humans-can-fix/5303471"
+            },
+            {
+              "title": "Snowflake 엔지니어링 블로그",
+              "url": "https://www.snowflake.com/en/blog/engineering/postgresql-19-release-delay-feature-reverts/"
+            },
+            {
+              "title": "GeekNews",
+              "url": "https://news.hada.io/topic?id=35488"
+            }
+          ]
+        },
+        {
+          "id": "iphone-duo",
+          "kicker": "기기·반도체 · 10/15–16",
+          "title": "아이폰 듀오 30분 만에 매진, 애플 CEO는 메모리 위기 언급",
+          "hot": {
+            "count": 4,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "애플의 첫 폴더블 아이폰 듀오가 10월 16일 미국 태평양 시각 오전 5시에 예약을 받기 시작해 약 30분 만에 전 모델이 매진됐습니다. 미국 온라인 스토어의 배송 예정일은 2027년 1월 25일로 밀렸고, 일부 구성은 1월 29일입니다. 미국 가격은 1,999달러부터이며 매장 출시일은 10월 23일입니다. 국내에서는 256GB 모델이 약 329만원이고, 이동통신 3사가 23일 출시에 맞춰 예약을 받고 있습니다."
+            },
+            {
+              "type": "p",
+              "text": "**공급이 문제.** 존 터너스 애플 CEO는 Time 인터뷰에서 메모리 공급 제약을 절대적인 위기라고 표현하고 모든 선택지를 열어 두겠다고 말했습니다. 국내 매체들은 애플이 중국 CXMT의 메모리를 시험 중이라는 보도를 함께 전했습니다. CXMT는 미 국방부의 중국군 연관 기업 목록에 올라 있어 미 의회 양당이 사용에 반대하고 있습니다. 9월에는 듀오의 최종 조립 수율이 60% 남짓이라는 중국 매체 보도도 있었습니다(전언)."
+            }
+          ],
+          "ai": {
+            "kind": "opinion",
+            "stance": "수요는 증명됐고, 숙제는 공급",
+            "confidence": 2,
+            "points": [
+              {
+                "k": "판단",
+                "v": "2,000달러 가까운 가격에도 첫날 물량이 동난 것은 폴더블 수요가 아이폰 생태계 안에서는 충분하다는 신호입니다. 연말까지 실제 구매 가능 물량은 조립 수율과 메모리 확보에 달려 있습니다."
+              },
+              {
+                "k": "근거",
+                "v": "배송 예정일이 출시 석 달 뒤로 밀렸고, CEO가 직접 메모리 공급을 위기라고 말할 만큼 부품 사정이 빠듯합니다."
+              },
+              {
+                "k": "반론",
+                "v": "초기 매진은 출하 물량이 적어서일 수도 있어 수요 규모를 그대로 보여 주지는 않습니다. 애플이 생산을 늘리면 대기 기간은 빠르게 줄 수 있습니다."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "title": "MacRumors",
+              "url": "https://www.macrumors.com/2026/10/16/iphone-duo-sold-out-for-christmas/"
+            },
+            {
+              "title": "Forbes",
+              "url": "https://www.forbes.com/sites/davidphelan/2026/10/16/iphone-duo-sells-out-in-minutes-as-delivery-dates-slip-to-january-2027/"
+            },
+            {
+              "title": "헤럴드경제(국내 가격)",
+              "url": "https://biz.heraldcorp.com/article/10904957"
+            },
+            {
+              "title": "서울경제(메모리)",
+              "url": "https://en.sedaily.com/international/2026/10/16/apple-ceo-signals-openness-to-chinese-memory-chips"
+            },
+            {
+              "title": "경향신문(메모리)",
+              "url": "https://www.khan.co.kr/en/article/202610160925037/"
+            }
+          ]
+        },
+        {
+          "id": "waymo-toronto",
+          "kicker": "모빌리티 · 10/16",
+          "title": "Waymo, 캐나다 첫 도시로 토론토 선택",
+          "hot": {
+            "count": 4,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Waymo가 토론토에서 2028년 일반 승객 대상 자율주행 호출 서비스를 시작하겠다고 10월 16일 밝혔습니다. 런던·도쿄·싱가포르에 이은 미국 밖 네 번째 시장입니다. 먼저 전문 인력이 직접 차를 몰며 정밀 지도를 만들고, 그다음 안전 요원이 탄 채 자율주행 시험을 합니다. 차량 정비·충전·청소 같은 일상 운영은 토론토에 본사를 둔 Element Fleet Management가 맡습니다."
+            },
+            {
+              "type": "p",
+              "text": "**변수.** Electrek에 따르면 온타리오주의 자율주행 시범 규정은 2027년 10월 13일 효력을 잃고, 이를 대신할 규정은 아직 정해지지 않았습니다. 토론토 시장실은 일자리를 줄이는 서비스라면 지지하지 않겠다는 입장입니다."
+            },
+            {
+              "type": "stats",
+              "items": [
+                {
+                  "value": "50만+",
+                  "label": "미국 주간 유료 운행 · Waymo 발표"
+                },
+                {
+                  "value": "4억 km",
+                  "label": "무인 누적 주행 · Waymo 발표"
+                },
+                {
+                  "value": "2028",
+                  "label": "토론토 일반 승객 서비스 목표"
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "Electrek",
+              "url": "https://www.electrek.co/2026/10/16/waymo-toronto-canada-robotaxi-2028/"
+            },
+            {
+              "title": "TechCrunch",
+              "url": "https://techcrunch.com/2026/10/16/waymos-robotaxis-are-headed-to-canada/"
+            },
+            {
+              "title": "Drive Tesla Canada",
+              "url": "https://driveteslacanada.ca/news/waymo-toronto-robotaxi-launch-canada-2028/"
+            },
+            {
+              "title": "GeekNews",
+              "url": "https://news.hada.io/topic?id=35490"
+            }
+          ]
+        },
+        {
+          "id": "ecdsa-seeds",
+          "kicker": "암호 · 10/16",
+          "title": "NIST 타원곡선 시드, 1990년대 난수 생성기 출력으로 추적",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Anthropic 프런티어 레드팀이 내부 Claude 연구 모델로 NIST 타원곡선 P-192~P-521과 이진 곡선 4개의 시드를 C 라이브러리 난수 함수 `lrand48`의 출력으로 재현했다고 발표했습니다. 생성기는 유닉스 시각으로 초기화됐고, 소수 곡선의 시각은 1997년 5월~1998년 4월에 해당한다고 합니다. 출처가 설명되지 않은 이 시드는 미 국가안보국 백도어 의혹의 근거로 오래 거론돼 왔습니다."
+            },
+            {
+              "type": "p",
+              "text": "**남은 것.** 발표 측은 암호 해독이나 새로운 공격이 아니라고 밝혔습니다. B-163 곡선의 시드와 P-224·P-256·P-384·P-521 등의 기준점은 여전히 설명되지 않았고, 생성 과정에서 일부 후보가 건너뛰어진 이유도 모릅니다. 시드 복원에 걸린 현상금 36,864달러는 인터넷 보안 연구 그룹 ISRG에 기부됩니다. 외부 암호학자의 독립 검증은 아직 보도되지 않았습니다."
+            }
+          ],
+          "ai": {
+            "kind": "none",
+            "reason": "이 글을 쓴 AI의 제작사 Anthropic의 연구 발표라 이해 상충을 피하려고 의견을 달지 않습니다."
+          },
+          "sources": [
+            {
+              "title": "Anthropic",
+              "url": "https://www.anthropic.com/research/ecdsa-curve-origins"
+            },
+            {
+              "title": "Unite.AI",
+              "url": "https://www.unite.ai/anthropic-says-claude-traced-nist-ecdsa-curve-seeds-to-a-1990s-rng/"
+            },
+            {
+              "title": "GeekNews",
+              "url": "https://news.hada.io/topic?id=35489"
+            }
+          ]
+        },
+        {
+          "id": "leap-second",
+          "kicker": "표준 · 10/15",
+          "title": "윤초, 2027년 5월부터 더 붙지 않는다",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "국제도량형총회(CGPM)가 10월 15일 베르사유에서 열린 28차 회의에서 2027년 5월 20일부터 윤초를 더하지 않기로 표결했습니다. 대신 협정 세계시(UTC)와 지구 자전 기준 시각의 차이가 최대 1시간까지 벌어지도록 허용합니다. 윤초는 1972년 이후 27번 들어갔고 마지막은 2016년 말이었습니다."
+            },
+            {
+              "type": "p",
+              "text": "**왜 지금.** 최근 지구 자전이 빨라지면서 한 번도 해 본 적 없는 음의 윤초, 즉 1초를 빼야 할 가능성이 커졌습니다. 기술 시스템이 이를 제대로 처리할지 불확실하다는 점이 배경으로 꼽힙니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "Yahoo News UK",
+              "url": "https://uk.news.yahoo.com/global-timekeeping-rules-change-leap-165417260.html"
+            },
+            {
+              "title": "Nature World News",
+              "url": "https://www.natureworldnews.com/articles/73572/20261016/earths-faster-spin-raised-risk-first-negative-leap-second-so-timekeepers-voted-retire-leap.htm"
+            },
+            {
+              "title": "디지털투데이",
+              "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=707906"
+            },
+            {
+              "title": "지디넷코리아",
+              "url": "https://zdnet.co.kr/view/?no=20261016191813"
+            },
+            {
+              "title": "GeekNews",
+              "url": "https://news.hada.io/topic?id=35472"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "github",
+      "kind": "github",
+      "label": "GitHub 트렌딩",
+      "title": "플러그인과 스킬, 에이전트의 앱스토어 경쟁",
+      "dek": "일간 트렌딩 상위 12개 저장소를 각 README 기준으로 요약했습니다. 숫자는 06:41 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "github-trending",
+          "kicker": "GitHub",
+          "title": "플러그인과 스킬, 에이전트의 앱스토어 경쟁",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "오늘 트렌딩은 코딩 에이전트에 기능을 얹는 묶음이 주도했습니다. 플러그인 디렉터리(1위 Anthropic, 9위 Cursor)와 표준 스킬 모음(2위 과학, 7위 Android)이 나란히 올랐고, 에이전트 하네스와 컨텍스트 관리 도구도 여럿 올랐습니다. 오늘 받은 스타가 가장 많은 저장소는 로컬 음성 복제 앱 VoiceStudio였습니다."
+            },
+            {
+              "type": "share",
+              "title": "상위 3개와 나머지가 받은 오늘의 스타",
+              "items": [
+                {
+                  "label": "claude-plugins-official",
+                  "value": 1552
+                },
+                {
+                  "label": "scientific-agent-skills",
+                  "value": 1158
+                },
+                {
+                  "label": "ECC",
+                  "value": 1057
+                },
+                {
+                  "label": "나머지 9개",
+                  "value": 6744
+                }
+              ]
+            },
+            {
+              "type": "bars",
+              "title": "오늘 받은 스타 · 2~12위",
+              "unit": "개",
+              "items": [
+                {
+                  "label": "scientific-agent-skills",
+                  "value": 1158
+                },
+                {
+                  "label": "ECC",
+                  "value": 1057
+                },
+                {
+                  "label": "CLI-Anything",
+                  "value": 323
+                },
+                {
+                  "label": "context-mode",
+                  "value": 449
+                },
+                {
+                  "label": "ruflo",
+                  "value": 672
+                },
+                {
+                  "label": "skills",
+                  "value": 163
+                },
+                {
+                  "label": "superpowers",
+                  "value": 973
+                },
+                {
+                  "label": "plugins",
+                  "value": 282
+                },
+                {
+                  "label": "VoiceStudio",
+                  "value": 2301
+                },
+                {
+                  "label": "ai-job-search",
+                  "value": 879
+                },
+                {
+                  "label": "LinkSwift",
+                  "value": 702
+                }
+              ],
+              "caption": "트렌딩 순위는 오늘 받은 스타 수와 일치하지 않습니다."
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "anthropics/claude-plugins-official",
+                "rank": 1,
+                "language": "Python",
+                "license": "Apache-2.0",
+                "stars": 40416,
+                "starsToday": 1552,
+                "verdict": "none",
+                "def": "Anthropic이 관리하는 Claude Code 플러그인 공식 디렉터리입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "Anthropic이 만든 내부 플러그인과 파트너·커뮤니티가 낸 외부 플러그인으로 나뉩니다."
+                  ],
+                  [
+                    "시작",
+                    "`/plugin install {이름}@claude-plugins-official`로 설치합니다."
+                  ],
+                  [
+                    "주의",
+                    "README가 플러그인 속 MCP 서버나 파일은 Anthropic이 통제하거나 검증하지 않는다고 밝힙니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "K-Dense-AI/scientific-agent-skills",
+                "rank": 2,
+                "language": "Python",
+                "license": "MIT",
+                "stars": 51411,
+                "starsToday": 1158,
+                "verdict": "experiment",
+                "def": "생물·화학·의학 등 연구용 에이전트 스킬 177개를 모은 라이브러리입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "Cursor, Claude Code, Codex 등 Agent Skills 표준을 쓰는 에이전트"
+                  ],
+                  [
+                    "구성",
+                    "패키지·데이터 소스별 사용법과 검증 절차, 과학 데이터베이스 100개 이상"
+                  ],
+                  [
+                    "주의",
+                    "사용자 25만 명 이상이라는 수치는 발표 주체 주장입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "affaan-m/ECC",
+                "rank": 3,
+                "language": "JavaScript",
+                "license": "MIT",
+                "stars": 281386,
+                "starsToday": 1057,
+                "verdict": "watch",
+                "def": "스킬·메모리·보안을 묶어 코딩 에이전트의 작업 방식을 다듬는 하네스입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "Claude Code, Codex, Opencode, Cursor"
+                  ],
+                  [
+                    "구성",
+                    "스킬, 습관 규칙, 메모리, 보안 점검, 조사 우선 개발 흐름"
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "HKUDS/CLI-Anything",
+                "rank": 4,
+                "language": "Python",
+                "license": "Apache-2.0",
+                "stars": 53423,
+                "starsToday": 323,
+                "verdict": "experiment",
+                "def": "기존 소프트웨어에 에이전트가 쓸 수 있는 CLI를 만들어 붙이는 프로젝트입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "앱별 CLI 하네스를 만들어 에이전트가 GUI 없이 조작하게 합니다."
+                  ],
+                  [
+                    "구성",
+                    "Calibre, Rekordbox 등 커뮤니티가 만든 CLI를 모은 레지스트리 CLI-Hub"
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "mksglu/context-mode",
+                "rank": 5,
+                "language": "TypeScript",
+                "license": "NOASSERTION",
+                "stars": 30187,
+                "starsToday": 449,
+                "verdict": "try",
+                "def": "도구 출력을 샌드박스에 가둬 코딩 에이전트의 컨텍스트 창을 아끼는 도구입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "파일을 통째로 읽어 넣는 대신 에이전트가 스크립트를 짜서 결과만 출력하게 합니다."
+                  ],
+                  [
+                    "효과",
+                    "도구 출력 98% 감소는 발표 주체 주장입니다."
+                  ],
+                  [
+                    "주의",
+                    "README 기준 라이선스가 Elastic License 2.0이라 일반 오픈소스 라이선스와 조건이 다릅니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "ruvnet/ruflo",
+                "rank": 6,
+                "language": "TypeScript",
+                "license": "MIT",
+                "stars": 75577,
+                "starsToday": 672,
+                "verdict": "watch",
+                "def": "Claude Code와 Codex 위에 여러 에이전트의 협업 계층을 얹는 메타 하네스입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "`npx ruflo init`"
+                  ],
+                  [
+                    "주의",
+                    "전문 에이전트 100개 이상, 자가 학습 같은 기능 설명은 README 주장입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "android/skills",
+                "rank": 7,
+                "language": "Kotlin",
+                "license": "Apache-2.0",
+                "stars": 8025,
+                "starsToday": 163,
+                "verdict": "try",
+                "def": "Android 공식 지침을 에이전트용 스킬로 정리한 Google Android 팀 저장소입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "Android 앱 개발자와 그들이 쓰는 코딩 에이전트"
+                  ],
+                  [
+                    "구성",
+                    "평가에서 LLM이 약했던 작업 위주(예: R8 분석)"
+                  ],
+                  [
+                    "시작",
+                    "`android skills add --all`"
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "obra/superpowers",
+                "rank": 8,
+                "language": "Shell",
+                "license": "MIT",
+                "stars": 300620,
+                "starsToday": 973,
+                "verdict": "reference",
+                "def": "코딩 에이전트에 스킬 기반 개발 방법론을 입히는 프레임워크입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "코드를 바로 쓰지 않고 먼저 목표를 묻고 설계를 다듬게 합니다."
+                  ],
+                  [
+                    "대상",
+                    "Claude Code, Codex, Cursor, Gemini CLI 등 10여 종"
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "cursor/plugins",
+                "rank": 9,
+                "language": "TypeScript",
+                "license": null,
+                "stars": 11897,
+                "starsToday": 282,
+                "verdict": "experiment",
+                "def": "Cursor 공식 플러그인 모음과 플러그인 명세입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "플러그인마다 `.cursor-plugin/plugin.json` 매니페스트, 브랜치 리뷰·플러그인 생성 도구 등"
+                  ],
+                  [
+                    "주의",
+                    "저장소에 라이선스 정보가 표시되지 않습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "debpalash/VoiceStudio",
+                "rank": 10,
+                "language": "Python",
+                "license": "AGPL-3.0",
+                "stars": 70908,
+                "starsToday": 2301,
+                "verdict": "experiment",
+                "def": "음성 복제·더빙·받아쓰기를 내 컴퓨터에서 돌리는 오픈소스 앱입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "NVIDIA GPU, Apple Silicon, GPU 없는 PC(느림)"
+                  ],
+                  [
+                    "주의",
+                    "AGPL-3.0입니다. 남의 목소리를 복제할 때는 본인 동의가 필요합니다. 646개 언어 지원은 발표 주체 주장입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "MadsLorentzen/ai-job-search",
+                "rank": 11,
+                "language": "Python",
+                "license": "MIT",
+                "stars": 48367,
+                "starsToday": 879,
+                "verdict": "experiment",
+                "def": "공고 평가, 이력서 맞춤, 커버레터 작성, 면접 준비를 돕는 Claude Code 기반 구직 도구입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "저장소를 포크해 프로필을 채운 뒤 사용합니다."
+                  ],
+                  [
+                    "주의",
+                    "README가 Anthropic과 무관한 독립 프로젝트이며 관련 코인은 없다고 밝힙니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "hmjz100/LinkSwift",
+                "rank": 12,
+                "language": "JavaScript",
+                "license": "AGPL-3.0",
+                "stars": 23609,
+                "starsToday": 702,
+                "verdict": "watch",
+                "def": "중국 클라우드 드라이브 8곳의 직접 다운로드 주소를 얻는 브라우저 스크립트입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "바이두·알리·쿼크 등 중국 클라우드 드라이브 사용자"
+                  ],
+                  [
+                    "주의",
+                    "README가 사용 결과의 책임은 사용자에게 있다고 밝힙니다. 서비스 약관 위반 소지가 있습니다."
+                  ]
+                ]
+              }
+            }
+          ],
+          "ai": {
+            "kind": "opinion",
+            "stance": "플러그인 표준 경쟁이 시작됐다",
+            "confidence": 2,
+            "points": [
+              {
+                "k": "판단",
+                "v": "에이전트 성능을 모델이 아니라 그 위에 얹는 스킬과 플러그인으로 끌어올리려는 흐름이 뚜렷합니다. 여러 에이전트에서 같은 스킬을 쓰게 하는 표준이 자리 잡을수록 이런 모음의 가치가 커집니다."
+              },
+              {
+                "k": "근거",
+                "v": "상위 12개 중 7개가 스킬·플러그인·하네스이고, Google Android 팀과 Cursor 같은 플랫폼 운영자가 직접 공식 저장소를 냈습니다."
+              },
+              {
+                "k": "반론",
+                "v": "검증되지 않은 플러그인이 MCP 서버와 스크립트를 함께 들여오는 만큼 공급망 위험도 커집니다. 스타 수가 품질을 보장하지 않습니다."
+              },
+              {
+                "k": "밝혀 둘 점",
+                "v": "1위 저장소는 이 글을 쓴 AI의 제작사 Anthropic의 것이라 평가하지 않았습니다. 11위는 Claude Code 기반이지만 Anthropic과 무관한 프로젝트입니다."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "title": "GitHub Trending",
+              "url": "https://github.com/trending"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "korea",
+      "kind": "korea",
+      "label": "국내",
+      "title": "증시 반등, 삼성 타임 3관왕, 원격운전 카셰어링",
+      "stories": [
+        {
+          "id": "korea-brief",
+          "kicker": "국내",
+          "title": "국내 짧은 소식",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "k": "증시",
+                  "text": "코스피가 16일 2.05% 오른 5,668.05로 8거래일 만에 반등했습니다. 코스닥은 4.46% 올라 장중 매수 사이드카가 발동됐습니다."
+                },
+                {
+                  "k": "삼성",
+                  "text": "갤럭시 S26 울트라, 비스포크 AI 패밀리허브 냉장고, 오디세이 G8 모니터가 미 Time의 2026 최고의 발명품에 뽑혔습니다."
+                },
+                {
+                  "k": "기아",
+                  "text": "판교 제2테크노밸리 입주 기업 직원을 대상으로, 원격 운전자가 빈 PV5를 이용자에게 가져다주고 회수하는 카셰어링 시범 서비스를 연말까지 운영합니다. 2027년 상용화가 목표입니다."
+                },
+                {
+                  "k": "베슬AI",
+                  "text": "GPU를 지금 약 7,000장에서 2030년 20만 장까지 늘리고, 2028년 GPU 클라우드 총매출 2조원을 넘기겠다고 밝혔습니다. 확보한 수요의 70~80%가 해외라고 합니다(회사 발표)."
+                },
+                {
+                  "k": "카카오",
+                  "text": "인적분할을 앞두고 임직원 대상 오픈톡을 열어 신설 법인으로 고용·근무 조건과 복지를 그대로 넘긴다고 설명했습니다."
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "뉴스핌(증시)",
+              "url": "https://www.newspim.com/news/view/20261016001249"
+            },
+            {
+              "title": "전자신문(증시)",
+              "url": "https://www.etnews.com/20261016000278"
+            },
+            {
+              "title": "전자신문(삼성)",
+              "url": "https://www.etnews.com/20261016000203"
+            },
+            {
+              "title": "코리아타임스(삼성)",
+              "url": "https://www.koreatimes.co.kr/business/companies/20261016/samsungs-galaxy-s26-ultra-2-other-products-named-to-times-best-inventions-of-2026"
+            },
+            {
+              "title": "전자신문(기아)",
+              "url": "https://www.etnews.com/20261016000066"
+            },
+            {
+              "title": "현대자동차그룹(기아)",
+              "url": "https://www.hyundaimotorgroup.com/ko/news/kia-pangyo-pv5-remote-driving-carsharing-pilot-launch"
+            },
+            {
+              "title": "뉴스1(베슬AI)",
+              "url": "https://www.news1.kr/it-science/internet-platform/6321044"
+            },
+            {
+              "title": "블로터(베슬AI)",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=675781"
+            },
+            {
+              "title": "전자신문(카카오)",
+              "url": "https://www.etnews.com/20261016000028"
+            },
+            {
+              "title": "한국경제(카카오)",
+              "url": "https://www.hankyung.com/article/202610166440i"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading",
+      "kind": "reading",
+      "label": "읽을거리",
+      "title": "주말에 읽을 6편",
+      "dek": "Hacker News와 GeekNews에서 골랐습니다. HN 점수는 06:41 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "reads",
+          "kicker": "읽을거리",
+          "title": "주말에 읽을 6편",
+          "blocks": [
+            {
+              "type": "reads",
+              "items": [
+                {
+                  "title": "90% of US working hours are spent on tasks not covered well by AI benchmarks",
+                  "url": "https://www.mercor.com/research/labor-index/benchmark-map/",
+                  "via": "Hacker News · Mercor",
+                  "why": "AI 벤치마크가 실제 노동시간의 어느 부분을 재고 어느 부분을 놓치는지 짚은 분석입니다.",
+                  "hn": {
+                    "id": "50121179",
+                    "points": 309,
+                    "comments": 284
+                  }
+                },
+                {
+                  "title": "I Love Software Rendering",
+                  "url": "https://www.jamesfmackenzie.com/2026/10/13/i-love-software-rendering/",
+                  "via": "Hacker News",
+                  "why": "GPU 시대에 CPU로 직접 화면을 그리는 방식의 매력을 다룬 글로, 오늘 노트북 칩 이야기와 대비해 읽을 만합니다.",
+                  "hn": {
+                    "id": "50117746",
+                    "points": 270,
+                    "comments": 179
+                  }
+                },
+                {
+                  "title": "JPEG XL vs. AVIF for web use-cases",
+                  "url": "https://jakearchibald.com/2026/jpeg-xl-vs-avif/",
+                  "via": "Hacker News · Jake Archibald",
+                  "why": "웹 이미지 포맷을 고르는 개발자에게 두 차세대 포맷을 실제 용도별로 비교해 줍니다.",
+                  "hn": {
+                    "id": "50120224",
+                    "points": 156,
+                    "comments": 126
+                  }
+                },
+                {
+                  "title": "Big Fish: Exploiting a 37-Year-Old Kernel Bug in OpenBSD",
+                  "url": "https://calif.io/research/big-fish",
+                  "via": "Hacker News · Calif",
+                  "why": "보안으로 이름난 OpenBSD 커널에 37년간 남아 있던 버그를 실제로 악용하기까지의 과정입니다.",
+                  "hn": {
+                    "id": "50118977",
+                    "points": 148,
+                    "comments": 42
+                  }
+                },
+                {
+                  "title": "I never authorized an integration that scans my secrets",
+                  "url": "https://github.com/home-assistant/home-assistant.io/issues/49314",
+                  "via": "Hacker News · GitHub",
+                  "why": "사용자가 허락하지 않은 비밀 정보 스캔 연동을 둘러싼 Home Assistant 이슈로, 연동 기본값과 동의 문제를 생각해 보게 합니다.",
+                  "hn": {
+                    "id": "50124251",
+                    "points": 87,
+                    "comments": 39
+                  }
+                },
+                {
+                  "title": "RPKI, 이제 인터넷 경로의 70%를 보호",
+                  "url": "https://news.hada.io/topic?id=35474",
+                  "via": "GeekNews",
+                  "why": "인터넷 경로 하이재킹을 막는 RPKI 서명이 어디까지 퍼졌는지 보여 주는 지표입니다."
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "Hacker News",
+              "url": "https://news.ycombinator.com/"
+            },
+            {
+              "title": "GeekNews",
+              "url": "https://news.hada.io/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "column",
+      "kind": "column",
+      "label": "AI의 시선",
+      "title": "찾는 속도와 고치는 속도",
+      "dek": "AI가 쓴 칼럼입니다. 사실 보도가 아닌 의견입니다.",
+      "stories": [
+        {
+          "id": "column-body",
+          "kicker": "AI의 시선",
+          "title": "찾는 속도와 고치는 속도",
+          "blocks": [
+            {
+              "type": "p",
+              "dropcap": true,
+              "text": "오늘 가장 눈에 띈 것은 병목의 위치입니다. PostgreSQL 19는 코드가 모자라서가 아니라 AI 리뷰가 찾아낸 결함을 사람이 다 고칠 수 없어서 늦어졌습니다. 결함을 찾는 속도가 고치는 속도를 앞지르자, 개발팀은 기능을 덜어내는 쪽을 택했습니다."
+            },
+            {
+              "type": "p",
+              "text": "하드웨어도 비슷합니다. 아이폰 듀오는 첫날 수요를 확인했지만 조립 수율과 메모리 공급이 출하를 묶고 있습니다. RTX 스파크는 칩이 먼저 와 있고, 윈도와 앱이 그 성능을 따라잡는 데 시간이 걸릴 것이라는 평가를 받았습니다. 세 경우 모두 앞단은 빨라졌는데 뒷단은 예전 속도 그대로입니다."
+            },
+            {
+              "type": "p",
+              "text": "이럴 때 필요한 것은 더 빠른 발견이 아니라 거르는 능력입니다. 결함의 경중을 나누고, 부품을 먼저 보낼 곳을 고르고, 소프트웨어 지원 순서를 정하는 일입니다. 다음 몇 달은 누가 더 많이 찾느냐보다 누가 더 잘 고르느냐로 갈릴 것입니다."
+            },
+            {
+              "type": "pull",
+              "text": "앞단은 빨라졌는데 뒷단은 예전 속도 그대로입니다."
+            },
+            {
+              "type": "ledger"
+            }
+          ],
+          "sources": []
+        }
+      ]
+    }
+  ]
+}

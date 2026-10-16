@@ -39,5 +39,29 @@
     "probability": 0.35,
     "due": "2028-12-31",
     "status": "pending"
+  },
+  {
+    "id": "2026-10-17-1",
+    "issued": "2026-10-17",
+    "statement": "PostgreSQL 19 정식판이 2026년 11월 30일까지 나온다",
+    "probability": 0.7,
+    "due": "2026-11-30",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-17-2",
+    "issued": "2026-10-17",
+    "statement": "애플이 연내 중국 CXMT 메모리 채택을 공식 확인한다",
+    "probability": 0.1,
+    "due": "2026-12-31",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-17-3",
+    "issued": "2026-10-17",
+    "statement": "Waymo가 2027년 안에 토론토에서 일반 승객 대상 서비스를 시작한다",
+    "probability": 0.15,
+    "due": "2027-12-31",
+    "status": "pending"
   }
 ]
