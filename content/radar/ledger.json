@@ -63,5 +63,29 @@
     "probability": 0.15,
     "due": "2027-12-31",
     "status": "pending"
+  },
+  {
+    "id": "2026-10-18-1",
+    "issued": "2026-10-18",
+    "statement": "OpenCode 운영사가 10월 31일까지 침해 경위와 영향 범위를 담은 사후 보고서를 공개한다",
+    "probability": 0.45,
+    "due": "2026-10-31",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-18-2",
+    "issued": "2026-10-18",
+    "statement": "DeepSeek가 11월 30일까지 V4.1-Flash의 새 날짜 표기 체크포인트를 또 공개한다",
+    "probability": 0.35,
+    "due": "2026-11-30",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-18-3",
+    "issued": "2026-10-18",
+    "statement": "메르세데스-AMG가 연내 GT SUV 전기차의 미국 가격을 발표한다",
+    "probability": 0.3,
+    "due": "2026-12-31",
+    "status": "pending"
   }
 ]
