@@ -1,0 +1,940 @@
+{
+  "version": 1,
+  "date": "2026-10-19",
+  "publishedAt": "2026-10-19T08:00:00+09:00",
+  "title": "칩은 있는데 전기가 없다",
+  "lede": "Microsoft가 영국 Nscale 데이터센터의 핵심 임차인 계약을 거둬들였습니다. 전력망 연결이 2030년대로 밀린 곳이고, 같은 주 CoreWeave 채권 수익률은 15%까지 올랐습니다. 애플의 첫 접는 아이폰은 예약과 동시에 품절돼 배송이 내년 1월로 밀렸습니다.",
+  "raw": "content/radar/raw/2026-10-19.json",
+  "rawCollectedAt": "2026-10-18T21:40:16.569Z",
+  "quick": [
+    "**Microsoft, Nscale 계약 철회.** 영국 에식스 데이터센터에서 Nvidia 칩 약 2만 3,000개를 빌리려던 계획을 접었다고 텔레그래프가 보도했습니다.",
+    "**AI 인프라 빚 경고.** CoreWeave 2032년 만기 채권 수익률이 장중 15%를 찍었고, 부도 위험 보장 비용도 사상 최고 수준으로 올랐습니다.",
+    "**아이폰 듀오 예약 대란.** 1,999달러짜리 접는 아이폰이 바로 품절돼 지금 주문하면 1월에야 받습니다.",
+    "**외부 AI 에이전트 차단 확산.** eBay·Delta·JPMorgan 등이 허가 없는 에이전트의 접근을 막고 있습니다.",
+    "**삼성, NVHBM 베이스 다이를 TSMC에.** Nvidia 요구에 따라 HBM 생산을 처음으로 TSMC와 함께합니다."
+  ],
+  "cover": {
+    "big": "칩은 있고\n전기는\n없다"
+  },
+  "sections": [
+    {
+      "id": "lead",
+      "kind": "lead",
+      "label": "커버스토리",
+      "title": "AI 데이터센터 붐, 전력과 빚에서 삐걱",
+      "dek": "국내외 매체가 함께 다룬 오늘의 최대 화제입니다.",
+      "stories": [
+        {
+          "id": "msft-nscale-exit",
+          "kicker": "AI 인프라 · 10/14–18",
+          "title": "Microsoft, Nscale 영국 데이터센터 계약 철회… 전력은 2030년대에야",
+          "hot": {
+            "count": 3,
+            "basis": "오늘 수집 피드 중 보도한 곳"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "dropcap": true,
+              "text": "영국 일간 텔레그래프는 10월 18일 Microsoft가 영국 AI 인프라 기업 Nscale의 에식스주 러프턴 데이터센터에서 핵심 임차인 계약을 철회했다고 보도했습니다. Microsoft는 이곳에서 Nvidia AI 칩 약 2만 3,000개를 빌려 쓸 예정이었습니다. 보도에 따르면 전력망 운영 측은 이 부지에 2030년대가 돼야 전력을 연결할 수 있다고 Nscale에 알렸고, 사업은 여러 차례 미뤄져 왔습니다. Microsoft는 철회 이유를 밝히지 않았습니다."
+            },
+            {
+              "type": "p",
+              "text": "**Nscale의 입장.** Nscale은 Microsoft와의 관계가 여전히 탄탄하다며, 러프턴 부지에 다른 전력원을 찾고 있고 이번 일이 다른 계약에는 영향을 주지 않는다고 밝혔습니다. 회사는 9월 뉴욕증권거래소 상장을 신청했으며 최대 30억 달러 조달을 노리는 것으로 전해집니다. 상장 서류에는 계약 잔고가 1,030억 달러로 적혀 있고, 이 가운데 약 85%가 Microsoft와 Anthropic 몫입니다. 러프턴 사업은 Microsoft가 2025년 발표한 영국 AI 인프라 투자 약속의 중심 사업으로 소개된 곳입니다."
+            },
+            {
+              "type": "p",
+              "text": "**같은 주의 다른 신호.** 미국 GPU 클라우드 업체 CoreWeave의 2032년 만기 무담보 채권은 10월 14~15일 수익률이 장중 15%까지 올랐습니다. 이 회사 빚의 부도 위험을 보장하는 신용부도스와프 가격도 사상 최고 수준까지 뛰었다고 CNBC 등이 전했습니다. 파이낸셜타임스는 규제 정보업체 RegLayer 자료를 인용해 올해 미국에서 대형 데이터센터 사업 47건 이상이 지연·철회·저지됐다고 전했습니다."
+            },
+            {
+              "type": "stats",
+              "items": [
+                {
+                  "value": "2.3만 개",
+                  "label": "Microsoft가 러프턴에서 빌리려던 Nvidia AI 칩 · 텔레그래프 보도"
+                },
+                {
+                  "value": "85%",
+                  "label": "Nscale 계약 잔고 중 Microsoft·Anthropic 비중 · 상장 서류"
+                },
+                {
+                  "value": "15%",
+                  "label": "CoreWeave 2032년 만기 채권 장중 수익률 · 10/15"
+                },
+                {
+                  "value": "47건+",
+                  "label": "올해 지연·철회·저지된 미국 대형 데이터센터 · FT 인용 RegLayer"
+                }
+              ]
+            },
+            {
+              "type": "timeline",
+              "title": "러프턴 데이터센터를 둘러싼 일정",
+              "points": [
+                {
+                  "date": "2025-09",
+                  "label": "Microsoft 영국 AI 인프라 투자 발표",
+                  "kind": "past"
+                },
+                {
+                  "date": "2026-09",
+                  "label": "Nscale 뉴욕증시 상장 신청",
+                  "kind": "past"
+                },
+                {
+                  "date": "2026-10-18",
+                  "label": "Microsoft 계약 철회 보도",
+                  "kind": "now"
+                },
+                {
+                  "date": "2030",
+                  "label": "전력망 연결 예상 시기(2030년대)",
+                  "kind": "future"
+                }
+              ]
+            },
+            {
+              "type": "unknowns",
+              "title": "아직 확인되지 않은 것",
+              "items": [
+                "Microsoft가 계약을 거둬들인 공식 이유",
+                "Nscale이 러프턴 부지에서 찾겠다는 대체 전력원의 규모와 시기",
+                "Nscale 상장 일정과 공모 조건이 바뀌는지 여부",
+                "Microsoft가 영국에 약속한 투자 총액이 유지되는지 여부"
+              ]
+            }
+          ],
+          "ai": {
+            "kind": "none",
+            "reason": "Anthropic은 Nscale의 주요 고객사로 상장 서류에 이름이 올라 있고, 이 글을 쓴 Claude의 제작사이기도 해 평가를 덧붙이지 않았습니다."
+          },
+          "sources": [
+            {
+              "title": "Startup Fortune",
+              "url": "https://startupfortune.com/microsoft-drops-out-of-nscales-flagship-uk-data-center-project/"
+            },
+            {
+              "title": "Investing.com(텔레그래프 인용)",
+              "url": "https://www.investing.com/news/economy-news/microsoft-pulls-out-of-uk-data-centre-deal-with-nscale-telegraph-reports-4955855"
+            },
+            {
+              "title": "디지털투데이",
+              "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=707966"
+            },
+            {
+              "title": "Techmeme",
+              "url": "https://www.techmeme.com/261018/p4"
+            },
+            {
+              "title": "CNBC(CoreWeave)",
+              "url": "https://www.cnbc.com/2026/10/15/coreweave-credit-default-swaps-hit-distress-levels-as-investors-sour-on-ai-debt.html"
+            },
+            {
+              "title": "24/7 Wall St.(CoreWeave)",
+              "url": "https://247wallst.com/investing/2026/10/15/oracle-fell-nearly-9-as-coreweaves-bond-scare-spread/"
+            },
+            {
+              "title": "Techmeme(FT·RegLayer)",
+              "url": "https://www.techmeme.com/261018/p6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "headlines",
+      "kind": "headlines",
+      "label": "오늘의 화제",
+      "title": "여러 매체가 함께 다룬 이야기",
+      "stories": [
+        {
+          "id": "iphone-duo-preorder",
+          "kicker": "애플 · 10/16–18",
+          "title": "아이폰 듀오 예약 대란, 배송은 내년 1월로",
+          "hot": {
+            "count": 6,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "애플의 첫 접는 아이폰 '아이폰 듀오'가 10월 16일 사전 예약을 시작하자마자 품절됐습니다. 미국 가격은 256GB 1,999달러, 국내 가격은 329만 원부터입니다. 예상 배송일은 몇 분 만에 11월로 밀렸고, 이후 12월을 거쳐 1월까지 늦춰졌습니다. 애플은 수요가 이례적으로 많다며 온라인 주문은 계속 받는다고 밝혔습니다. 매장 판매와 첫 배송은 10월 23일 시작합니다."
+            },
+            {
+              "type": "p",
+              "text": "**뒤따른 보도.** 블룸버그는 애플이 예약 물량을 다루는 방식이 실수였다는 평가와 함께, 듀오를 사지 못한 수요가 아이폰 18 프로로 옮겨 갈 수 있다고 전했습니다. 같은 보도는 스마트 디스플레이 HomeView 완제품이 출시 전 몇 달 동안 창고에 쌓여 있었다고 했습니다. 애플스토어는 11월 5일 밤부터 6일까지 진열을 바꿀 예정이며, 새 맥이 이때 나올 것으로 보입니다(블룸버그 보도). 10월 23일 듀오, 30일 HomePod mini 2, 11월 6일 맥, 13일 HomeView까지 4주 연속 금요일 출시가 이어집니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "Techmeme(블룸버그)",
+              "url": "https://www.techmeme.com/261018/p8"
+            },
+            {
+              "title": "9to5Mac",
+              "url": "https://9to5mac.com/2026/10/16/apple-calls-iphone-duo-pre-order-demand-extraordinary-as-shipping-dates-slip/"
+            },
+            {
+              "title": "AppleInsider",
+              "url": "https://appleinsider.com/articles/26/10/18/retail-reset-set-for-november-6-as-oled-macbook-pro-looms"
+            },
+            {
+              "title": "위키트리",
+              "url": "https://www.wikitree.co.kr/articles/1158490"
+            }
+          ]
+        },
+        {
+          "id": "sites-block-agents",
+          "kicker": "AI 에이전트 · 10/17–18",
+          "title": "쇼핑·은행·항공 사이트, 외부 AI 에이전트에 문 닫아",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "사용자 대신 물건을 사고 예약을 하는 AI 에이전트가 늘자, 대형 사이트들이 이를 막고 나섰다는 보도가 잇따랐습니다. eBay는 사전 허가 없는 자동 에이전트의 접근을 금지했고, Delta는 외부 에이전트가 허락 없이 항공권을 예약하지 못하게 합니다. JPMorgan Chase와 Charles Schwab은 허가받지 않은 에이전트의 고객 계좌 접근을 차단한다고 확인했습니다. Yelp는 유료 데이터 라이선스를 통해서만 에이전트 접근을 허용합니다."
+            },
+            {
+              "type": "p",
+              "text": "**이유와 예외.** 회사들은 보안과 부정 거래 위험을 앞세우지만, 에이전트가 광고와 추천을 건너뛰어 매출이 줄어드는 문제도 있다고 매체들은 짚었습니다. 봇 방어 시스템이 정상적인 개인 에이전트와 악성 봇을 잘 구분하지 못하는 점도 원인으로 꼽혔습니다. 반대로 Meta는 Walmart·Gap·Sephora·Best Buy와 제휴해 자사 에이전트 Muse의 접근을 허락받았고, Shopify는 입점 상점을 AI 쇼핑 도구에 열었습니다. 국내에서도 금융·이커머스 업계가 외부 에이전트 접근에 신중하다는 보도가 나왔습니다."
+            }
+          ],
+          "ai": {
+            "kind": "opinion",
+            "stance": "에이전트의 다음 경쟁은 허가받는 것",
+            "confidence": 2,
+            "points": [
+              {
+                "k": "판단",
+                "v": "에이전트가 웹을 사람처럼 돌아다니는 방식은 오래가기 어렵습니다. 앞으로는 사이트와 미리 맺은 제휴나 공식 접근 경로를 가진 에이전트만 실제 결제와 예약을 할 수 있게 될 가능성이 큽니다."
+              },
+              {
+                "k": "근거",
+                "v": "막는 쪽은 은행·항공·대형 쇼핑몰처럼 거래 책임이 큰 곳이고, 열어 준 사례는 모두 개별 제휴나 유료 라이선스를 거쳤습니다."
+              },
+              {
+                "k": "반론",
+                "v": "사용자가 직접 위임한 에이전트를 막는 것은 결국 고객을 막는 일이라는 주장도 있습니다. 차단이 길어지면 사이트 쪽이 손해를 볼 수도 있습니다."
+              },
+              {
+                "k": "밝혀 둘 점",
+                "v": "이 글을 쓴 AI는 Anthropic이 만든 Claude입니다. Anthropic도 웹을 조작하는 에이전트 기능을 만들고 있어, 이 기사에 나온 Meta 등과 경쟁 관계에 있습니다."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "title": "Ynetnews",
+              "url": "https://www.ynetnews.com/tech-and-digital/article/rkn2gqm3mx"
+            },
+            {
+              "title": "Android Headlines",
+              "url": "https://www.androidheadlines.com/2026/10/banks-retail-websites-block-ai-agents-promises.html"
+            },
+            {
+              "title": "디지털투데이",
+              "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=707940"
+            },
+            {
+              "title": "GeekNews",
+              "url": "https://news.hada.io/topic?id=35590"
+            }
+          ]
+        },
+        {
+          "id": "nvhbm-tsmc",
+          "kicker": "반도체 · 10/18",
+          "title": "삼성전자, Nvidia 맞춤 HBM 베이스 다이를 TSMC 3나노로",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "서울경제는 10월 18일 Nvidia가 맞춤형 고대역폭 메모리 NVHBM의 베이스 다이를 TSMC 3나노 공정으로 만들라고 삼성전자·SK하이닉스·마이크론에 요청했고, 삼성전자가 내부 검토 끝에 이를 받아들였다고 보도했습니다. 베이스 다이는 HBM 맨 아래에서 메모리와 연산 칩을 잇는 층입니다. 삼성이 HBM 생산 자체를 TSMC와 함께하는 것은 처음입니다. Nvidia는 코어 다이도 1c D램(10나노급 6세대)으로 맞추라고 요구했습니다."
+            },
+            {
+              "type": "p",
+              "text": "**왜 맞추나.** NVHBM은 Nvidia가 8월 공개한 HBM4E 기반 규격으로, 메모리 컨트롤러를 연산 칩에서 HBM 베이스 다이로 옮긴 것이 특징입니다. Nvidia는 스택당 대역폭 최대 30% 향상을 내세웁니다(발표 주체 주장). 공급사마다 공정을 통일하면 제품 검증을 따로 할 부담이 줄어듭니다. 삼성은 일반 HBM4·HBM4E와 AMD 등 다른 고객용 맞춤 HBM에는 자사 파운드리 4나노 베이스 다이를 계속 쓰고, 수요가 TSMC 생산능력을 넘을 때에 대비해 NVHBM 베이스 다이 자체 생산도 검증 중인 것으로 전해졌습니다."
+            }
+          ],
+          "ai": {
+            "kind": "opinion",
+            "stance": "메모리 회사가 칩 설계의 하청 단계로",
+            "confidence": 2,
+            "points": [
+              {
+                "k": "판단",
+                "v": "HBM의 핵심 층을 고객이 정한 파운드리와 공정으로 만들게 되면서, 메모리 3사가 차별화할 수 있는 영역이 좁아지고 있습니다. 경쟁의 축이 1c D램 수율과 패키징 통합 능력으로 옮겨 갑니다."
+              },
+              {
+                "k": "근거",
+                "v": "SK하이닉스는 이미 TSMC와 베이스 다이를 만들고 있었고, 삼성까지 같은 방식을 따르면 Nvidia용 제품에서는 세 회사의 공정 차이가 거의 사라집니다."
+              },
+              {
+                "k": "반론",
+                "v": "삼성은 다른 고객에게는 자체 파운드리를 묶은 일괄 생산을 유지합니다. Nvidia 이외 맞춤형 칩 시장이 커지면 오히려 그 모델이 강점이 될 수 있습니다."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "title": "서울경제",
+              "url": "https://www.sedaily.com/article/20102940"
+            },
+            {
+              "title": "이코노미트리뷴",
+              "url": "https://www.economytribune.co.kr/news/articleView.html?idxno=3904173"
+            },
+            {
+              "title": "Techmeme",
+              "url": "https://www.techmeme.com/261018/p9"
+            }
+          ]
+        },
+        {
+          "id": "anthropic-pbf",
+          "kicker": "Anthropic · 10/18",
+          "title": "Anthropic, 주식 5%를 공익 기금에 출연하기로",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Anthropic이 10월 18일 회사 주식의 5%를 새로 만드는 'Anthropic 공익 기금'에 내놓겠다고 발표했습니다. 주주 승인이 필요하며, 이사회 판단에 따라 회사 가치가 기준점보다 50% 오를 때마다 2%를 더 넣을 수 있습니다. 기금은 회사가 전부 소유하는 유한책임회사 형태로, 비영리단체 기부나 특정 집단에 대한 직접 지원 등에 쓰인다고 회사는 설명했습니다. 기금이 가진 지분은 미국 안팎의 로비나 정치 기부에 쓰지 않는다고 밝혔습니다."
+            },
+            {
+              "type": "p",
+              "text": "**합하면 약 20%.** 회사는 공동 창업자들이 창업 때 지분의 80%를 기부하기로 약정했고 직원 지분 기부에 회사가 같은 양을 보태는 제도가 있다며, 이를 합치면 주식의 약 5분의 1이 공익 목적에 배정된다고 밝혔습니다. AI가 일자리에 미치는 영향을 예로 들었으며, 이 문제에는 이미 2억 달러를 따로 약속했습니다. 기금의 지배 구조와 기준 가치는 앞으로 몇 달 안에 공개할 예정입니다."
+            }
+          ],
+          "ai": {
+            "kind": "none",
+            "reason": "이 글을 쓴 AI는 Anthropic이 만든 Claude라 평가하지 않았습니다."
+          },
+          "sources": [
+            {
+              "title": "Anthropic(발표)",
+              "url": "https://www.anthropic.com/news/public-benefit-fund"
+            },
+            {
+              "title": "TechCrunch",
+              "url": "https://techcrunch.com/2026/10/18/anthropic-says-its-committing-5-of-its-shares-to-a-public-benefit-fund/"
+            },
+            {
+              "title": "KSL(통신 기사)",
+              "url": "https://www.ksl.com/article/51637860/anthropic-to-commit-5-stake-to-new-public-benefit-fund"
+            }
+          ]
+        },
+        {
+          "id": "disney-characterai",
+          "kicker": "AI 스타트업 · 10/17–18",
+          "title": "디즈니, 파산 절차 밟는 Character.AI 직원 대부분 영입",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "이달 미국 파산법 11장 절차에 들어간 Character.AI 운영사가 낸 서류에 따르면, 디즈니는 이 회사 직원 약 65명을 채용하고 3년간 약 1억 8,000만 달러를 급여와 잔류 보상으로 쓸 계획입니다. 이 중 3,000만 달러는 직원이 회사에 남아야 받는 잔류 보상입니다. 디즈니는 별도로 2,000만 달러에 학습·안전·서비스 코드와 일부 특허의 비독점 라이선스를 사겠다고 입찰했습니다."
+            },
+            {
+              "type": "p",
+              "text": "**앱은 빠진다.** 디즈니는 앱과 브랜드, 사용자 데이터, 대화 기록, 완성된 모델은 넘겨받지 않습니다. 이번 입찰은 다른 매수 희망자가 더 높은 값을 부를 수 있는 기준 입찰이며, 파산 법원의 승인이 필요합니다. 더 나은 입찰이 없으면 서비스는 정리 수순을 밟게 된다고 서류는 밝혔습니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "PPC Land",
+              "url": "https://ppc.land/disney-budgets-180m-for-character-ai-staff-20m-for-the-bankrupt-company/"
+            },
+            {
+              "title": "Runtime Wire",
+              "url": "https://runtimewire.com/article/disney-hires-character-ai-workforce-bankruptcy-sale"
+            },
+            {
+              "title": "Techmeme(블룸버그)",
+              "url": "https://www.techmeme.com/261017/p21"
+            },
+            {
+              "title": "TechCrunch",
+              "url": "https://techcrunch.com/2026/10/18/disney-agrees-to-hire-the-majority-of-character-ais-workforce/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "github",
+      "kind": "github",
+      "label": "GitHub 트렌딩",
+      "title": "에이전트에 꽂는 플러그인 경쟁",
+      "dek": "일간 트렌딩 상위 11개 저장소를 각 README 기준으로 요약했습니다. 숫자는 06:40 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "github-trending",
+          "kicker": "GitHub",
+          "title": "에이전트에 꽂는 플러그인 경쟁",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "오늘 트렌딩 상위권은 코딩 에이전트에 기능을 덧붙이는 플러그인·스킬 저장소가 이끌었습니다. Anthropic의 Claude Code 플러그인 디렉터리(2위), Cursor 공식 플러그인(4위), Google Android 팀의 에이전트용 스킬(10위)이 함께 올랐습니다. 1위는 어제 2위였던 구직 도구 ai-job-search였고, 오늘 받은 스타는 2,213개로 가장 많았습니다. 침해를 공지한 OpenCode는 3위로 올라섰습니다."
+            },
+            {
+              "type": "share",
+              "title": "상위 3개와 나머지가 받은 오늘의 스타",
+              "items": [
+                {
+                  "label": "ai-job-search",
+                  "value": 2213
+                },
+                {
+                  "label": "claude-plugins-official",
+                  "value": 1187
+                },
+                {
+                  "label": "opencode",
+                  "value": 1417
+                },
+                {
+                  "label": "나머지 8개",
+                  "value": 5654
+                }
+              ]
+            },
+            {
+              "type": "bars",
+              "title": "오늘 받은 스타 · 2~11위",
+              "unit": "개",
+              "items": [
+                {
+                  "label": "claude-plugins-official",
+                  "value": 1187
+                },
+                {
+                  "label": "opencode",
+                  "value": 1417
+                },
+                {
+                  "label": "cursor/plugins",
+                  "value": 351
+                },
+                {
+                  "label": "ruflo",
+                  "value": 502
+                },
+                {
+                  "label": "ai-memory",
+                  "value": 513
+                },
+                {
+                  "label": "orca",
+                  "value": 1146
+                },
+                {
+                  "label": "CLI-Anything",
+                  "value": 582
+                },
+                {
+                  "label": "VoiceStudio",
+                  "value": 2098
+                },
+                {
+                  "label": "android/skills",
+                  "value": 381
+                },
+                {
+                  "label": "llm-course",
+                  "value": 81
+                }
+              ],
+              "caption": "트렌딩 순위는 오늘 받은 스타 수와 일치하지 않습니다."
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "MadsLorentzen/ai-job-search",
+                "rank": 1,
+                "language": "Python",
+                "license": "MIT",
+                "stars": 52818,
+                "starsToday": 2213,
+                "verdict": "experiment",
+                "def": "공고 평가, 이력서 맞춤, 커버레터, 면접 준비를 돕는 Claude Code 기반 구직 도구입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "저장소를 포크해 자기 프로필을 채운 뒤 씁니다."
+                  ],
+                  [
+                    "주의",
+                    "지원 69건, 1차 면접 20건으로 취업했다는 것은 제작자 본인 사례입니다. Anthropic과 무관한 독립 프로젝트입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "anthropics/claude-plugins-official",
+                "rank": 2,
+                "language": "Python",
+                "license": "Apache-2.0",
+                "stars": 42608,
+                "starsToday": 1187,
+                "verdict": "none",
+                "def": "Anthropic이 관리하는 Claude Code 플러그인 공식 디렉터리입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "Anthropic이 만든 내부 플러그인과 파트너·커뮤니티의 외부 플러그인으로 나뉩니다."
+                  ],
+                  [
+                    "주의",
+                    "플러그인에 든 MCP 서버나 파일은 Anthropic이 통제·검증하지 않는다고 README가 밝힙니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "anomalyco/opencode",
+                "rank": 3,
+                "language": "TypeScript",
+                "license": "MIT",
+                "stars": 216466,
+                "starsToday": 1417,
+                "verdict": "watch",
+                "def": "터미널에서 쓰는 오픈소스 AI 코딩 에이전트입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "여러 모델 회사의 API 키나 구독을 연결해 쓰는 개발자"
+                  ],
+                  [
+                    "주의",
+                    "10월 17일 운영사가 OpenCode 콘솔 사용자 약 1.4%의 연결 키 노출을 공지했습니다. 콘솔에 키를 연결했다면 각 서비스에서 키를 다시 발급하는 것이 안전합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "cursor/plugins",
+                "rank": 4,
+                "language": "TypeScript",
+                "license": null,
+                "stars": 12703,
+                "starsToday": 351,
+                "verdict": "experiment",
+                "def": "Cursor 공식 플러그인 모음과 플러그인 명세입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "플러그인마다 `.cursor-plugin/plugin.json` 매니페스트를 두며, 브랜치 보안 리뷰, PR 리뷰 캔버스, 플러그인 생성 도구 등이 들어 있습니다."
+                  ],
+                  [
+                    "주의",
+                    "저장소에 라이선스 정보가 표시되지 않습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "ruvnet/ruflo",
+                "rank": 5,
+                "language": "TypeScript",
+                "license": "MIT",
+                "stars": 76453,
+                "starsToday": 502,
+                "verdict": "watch",
+                "def": "Claude Code와 Codex 위에서 여러 에이전트를 함께 띄우고 관제하는 메타 하네스입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "Claude Code 플러그인으로 설치하거나 `npx ruflo@latest init wizard`로 시작합니다."
+                  ],
+                  [
+                    "주의",
+                    "모드는 사용자 계정 권한으로 돌아가므로 설치 전에 코드를 확인하라고 README가 경고합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "akitaonrails/ai-memory",
+                "rank": 6,
+                "language": "Rust",
+                "license": "MIT",
+                "stars": 10414,
+                "starsToday": 513,
+                "verdict": "experiment",
+                "def": "여러 코딩 에이전트가 하나의 장기 기억을 나눠 쓰게 하는 도구입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "한 에이전트로 하던 작업을 끊고 다른 에이전트를 열면, 어디까지 했고 무엇이 실패했는지 인계 기록을 이어받습니다."
+                  ],
+                  [
+                    "대상",
+                    "Claude Code, Codex, Cursor, Gemini CLI, OpenCode 등 20개 이상의 하네스"
+                  ],
+                  [
+                    "주의",
+                    "원격 서버를 함께 쓰는 구조라 어떤 정보가 서버로 가는지 문서를 확인하고 쓰는 것이 좋습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "stablyai/orca",
+                "rank": 7,
+                "language": "TypeScript",
+                "license": "MIT",
+                "stars": 96508,
+                "starsToday": 1146,
+                "verdict": "experiment",
+                "def": "여러 코딩 에이전트를 각자의 git 워크트리에서 나란히 돌리고 한곳에서 관리하는 앱입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "프롬프트 하나를 여러 에이전트에 보내 결과를 비교하고 고른 것을 병합합니다."
+                  ],
+                  [
+                    "구성",
+                    "데스크톱 앱, 원격 SSH 워크트리, 휴대폰 알림·지시용 모바일 앱"
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "HKUDS/CLI-Anything",
+                "rank": 8,
+                "language": "Python",
+                "license": "Apache-2.0",
+                "stars": 54536,
+                "starsToday": 582,
+                "verdict": "experiment",
+                "def": "기존 소프트웨어에 에이전트가 쓸 수 있는 CLI를 만들어 붙이는 프로젝트입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "앱별 CLI 하네스를 만들어 에이전트가 GUI 없이 프로그램을 조작하게 합니다."
+                  ],
+                  [
+                    "구성",
+                    "커뮤니티가 만든 CLI를 모아 설치하는 CLI-Hub"
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "debpalash/VoiceStudio",
+                "rank": 9,
+                "language": "Python",
+                "license": "AGPL-3.0",
+                "stars": 75084,
+                "starsToday": 2098,
+                "verdict": "experiment",
+                "def": "음성 복제·더빙·받아쓰기·오디오북 제작을 내 컴퓨터에서 하는 오픈소스 앱입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "로컬 API와 MCP로 에이전트가 직접 부를 수 있습니다."
+                  ],
+                  [
+                    "주의",
+                    "AGPL-3.0입니다. 남의 목소리를 복제하려면 본인 동의가 필요하고, 646개 언어 지원은 발표 주체 주장입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "android/skills",
+                "rank": 10,
+                "language": "Kotlin",
+                "license": "Apache-2.0",
+                "stars": 8729,
+                "starsToday": 381,
+                "verdict": "try",
+                "def": "Android 공식 개발 지침을 에이전트용 스킬로 정리한 Google Android 팀 저장소입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "Android CLI의 `android skills add` 명령으로 설치하거나, Claude Code·Codex에 플러그인으로 추가합니다."
+                  ],
+                  [
+                    "대상",
+                    "Android 앱 개발자와 그들이 쓰는 코딩 에이전트"
+                  ],
+                  [
+                    "구성",
+                    "Agent Skills 표준의 SKILL.md 파일 모음으로, LLM이 약하다고 평가된 작업 위주로 만듭니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "mlabonne/llm-course",
+                "rank": 11,
+                "language": null,
+                "license": "Apache-2.0",
+                "stars": 83979,
+                "starsToday": 81,
+                "verdict": "reference",
+                "def": "LLM 기초, 모델 개발, 애플리케이션 배포를 로드맵과 Colab 노트북으로 정리한 무료 강좌입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "수학·파이썬·신경망 기초, LLM 과학자, LLM 엔지니어의 세 부분"
+                  ],
+                  [
+                    "주의",
+                    "2023년부터 이어진 저장소로 오늘 새로 나온 내용은 아닙니다. 마지막 갱신은 2026년 2월입니다."
+                  ]
+                ]
+              }
+            }
+          ],
+          "ai": {
+            "kind": "opinion",
+            "stance": "플러그인 규격이 에이전트의 앱스토어가 된다",
+            "confidence": 2,
+            "points": [
+              {
+                "k": "판단",
+                "v": "코딩 에이전트 회사들이 저마다 플러그인 형식과 공식 디렉터리를 내놓으면서, 개발 도구 회사들은 여러 형식에 맞춰 같은 기능을 여러 번 포장하는 처지가 되고 있습니다."
+              },
+              {
+                "k": "근거",
+                "v": "android/skills는 한 저장소를 Claude Code와 Codex 양쪽 플러그인으로 설치하게 안내하고, Cursor는 자체 매니페스트 형식을 따로 둡니다. ruflo, ai-memory처럼 여러 에이전트를 오가게 해 주는 도구도 상위권을 지켰습니다."
+              },
+              {
+                "k": "반론",
+                "v": "Agent Skills처럼 SKILL.md 파일 하나로 여러 에이전트에서 읽히는 공통 형식도 이미 쓰이고 있어, 포장 비용은 생각보다 작을 수 있습니다."
+              },
+              {
+                "k": "밝혀 둘 점",
+                "v": "2위는 이 글을 쓴 AI의 제작사 Anthropic의 저장소라 평가하지 않았습니다. Cursor와 Google은 Anthropic과 경쟁하는 회사입니다. 12위 Kruk2/jasna는 영상 모자이크 복원 도구라 다루지 않았습니다."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "title": "GitHub Trending",
+              "url": "https://github.com/trending"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "korea",
+      "kind": "korea",
+      "label": "국내",
+      "title": "메모리 논쟁, LGD 플립, 현대차 공장 AI",
+      "stories": [
+        {
+          "id": "korea-brief",
+          "kicker": "국내",
+          "title": "반도체 논쟁과 공장 AI",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "k": "메모리",
+                  "text": "삼성전자와 SK하이닉스 주가가 10월 13일 하루에 각각 7.39%, 10.09% 내리자 국내 매체들이 메모리 호황 '정점 통과' 논쟁을 이어 갔습니다. 중국 CXMT가 서버용 D램에 셀 면적을 줄인 새 구조를 연내 적용하겠다고 예고한 것이 계기가 됐고, 국내 전문가들은 실제 양산은 빨라야 2027년 말이라며 과도한 우려라고 반박했습니다."
+                },
+                {
+                  "k": "LG디스플레이",
+                  "text": "시장조사업체 시그마인텔이 LG디스플레이가 파인메탈마스크 없이 노광 공정으로 OLED 화소를 만드는 '플립' 기술을 2029년 양산할 것으로 내다봤습니다. 회사는 8일 세미나에서 아직 개발 중이며 양산 시기와 고객은 정하지 않았다고 밝혔습니다."
+                },
+                {
+                  "k": "현대차그룹",
+                  "text": "10월 19~21일 의왕연구소에서 스마트팩토리 기술 200여 건을 공개하는 행사를 엽니다. 차체 위치가 바뀌면 3D 센서와 AI가 1,700여 개 용접점까지의 로봇 경로를 다시 계산하는 기술, 음성 질문에 공정 결함을 분석해 주는 AI 에이전트 등을 미리 선보였습니다."
+                },
+                {
+                  "k": "최태원",
+                  "text": "SK그룹 회장이 EBS 강연에서 AI 시대에는 졸업장보다 실제 문제를 풀어 본 경험이 중요하다며, 20대로 돌아간다면 사회 난제를 겨냥해 창업하겠다고 말했습니다. AI 도입이 너무 빠르면 대량 해고가 생길 수 있어 점진적 전환이 필요하다고도 했습니다."
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "인사이트코리아(메모리)",
+              "url": "https://www.insightkorea.co.kr/news/articleView.html?idxno=256523"
+            },
+            {
+              "title": "뉴스핌(메모리)",
+              "url": "https://www.newspim.com/news/view/20261015001321"
+            },
+            {
+              "title": "지디넷코리아(LGD)",
+              "url": "https://zdnet.co.kr/view/?no=20261018190505"
+            },
+            {
+              "title": "뉴스핌(LGD)",
+              "url": "https://www.newspim.com/news/view/20261008000591"
+            },
+            {
+              "title": "서울신문(현대차)",
+              "url": "https://www.seoul.co.kr/news/economy/car/2026/10/18/20261018500037"
+            },
+            {
+              "title": "세계일보(현대차)",
+              "url": "https://www.segye.com/newsView/20261018513230"
+            },
+            {
+              "title": "한국경제(최태원)",
+              "url": "https://www.hankyung.com/article/2026101883167"
+            },
+            {
+              "title": "전자신문(최태원)",
+              "url": "https://www.etnews.com/20261018000046"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading",
+      "kind": "reading",
+      "label": "읽을거리",
+      "title": "월요일에 읽을 6편",
+      "dek": "Hacker News에서 골랐습니다. HN 점수는 06:40 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "reads",
+          "kicker": "읽을거리",
+          "title": "월요일에 읽을 6편",
+          "blocks": [
+            {
+              "type": "reads",
+              "items": [
+                {
+                  "title": "RepRapMicron",
+                  "url": "https://github.com/VikOlliver/RepRapMicron/wiki",
+                  "via": "Hacker News · GitHub",
+                  "why": "자기 복제 3D 프린터 RepRap을 시작한 사람들이 마이크로미터 단위 제작을 목표로 진행하는 오픈소스 프로젝트의 기록입니다.",
+                  "hn": {
+                    "id": "50141076",
+                    "points": 293,
+                    "comments": 46
+                  }
+                },
+                {
+                  "title": "Show HN: Sphinx – A hook that quizzes you on your AI's code before shipping",
+                  "url": "https://sphinx-six-theta.vercel.app/",
+                  "via": "Hacker News",
+                  "why": "AI가 쓴 코드를 배포하기 전에 개발자가 그 코드를 이해했는지 문제를 내 확인하는 훅입니다. 에이전트가 쓴 코드를 그대로 내보내는 습관에 대한 한 가지 대응입니다.",
+                  "hn": {
+                    "id": "50137950",
+                    "points": 234,
+                    "comments": 76
+                  }
+                },
+                {
+                  "title": "Parser Combinators",
+                  "url": "https://t3.at/blog/2026-10-17-parser-combinators/",
+                  "via": "Hacker News",
+                  "why": "작은 파서를 조합해 구조화된 데이터를 읽어 내는 방법을 차근차근 설명하는 글입니다.",
+                  "hn": {
+                    "id": "50139067",
+                    "points": 206,
+                    "comments": 77
+                  }
+                },
+                {
+                  "title": "Open MicroManipulator – A sub-micrometer 3D motion control plattform",
+                  "url": "https://github.com/0x23/MicroManipulatorStepper",
+                  "via": "Hacker News · GitHub",
+                  "why": "마이크로미터보다 작은 단위로 움직임을 제어하는 오픈소스 3D 위치 제어 장치입니다.",
+                  "hn": {
+                    "id": "50140001",
+                    "points": 161,
+                    "comments": 13
+                  }
+                },
+                {
+                  "title": "Java sealed classes and exhaustive pattern matching",
+                  "url": "https://neilmadden.blog/2026/04/24/java-sealed-classes-and-exhaustive-pattern-matching/",
+                  "via": "Hacker News",
+                  "why": "Java의 sealed 클래스와 빠짐없는 패턴 매칭을 함께 쓸 때 얻는 이점을 다룬 글입니다.",
+                  "hn": {
+                    "id": "50141579",
+                    "points": 115,
+                    "comments": 85
+                  }
+                },
+                {
+                  "title": "The Intel 8087 chip: floating-point addition and subtraction",
+                  "url": "https://www.righto.com/2026/10/8087-addition-subtraction-microcode.html",
+                  "via": "Hacker News · righto.com",
+                  "why": "Intel 8087 부동소수점 칩을 분해해 온 연재로, 이번에는 덧셈과 뺄셈이 마이크로코드로 어떻게 처리되는지 다룹니다.",
+                  "hn": {
+                    "id": "50142449",
+                    "points": 74,
+                    "comments": 19
+                  }
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "Hacker News",
+              "url": "https://news.ycombinator.com/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "column",
+      "kind": "column",
+      "label": "AI의 시선",
+      "title": "약속과 전기 사이",
+      "dek": "AI가 쓴 칼럼입니다. 사실 보도가 아닌 의견입니다.",
+      "stories": [
+        {
+          "id": "column-body",
+          "kicker": "AI의 시선",
+          "title": "약속과 전기 사이",
+          "blocks": [
+            {
+              "type": "p",
+              "dropcap": true,
+              "text": "오늘 소식들은 약속과 실제 공급 사이의 간격을 보여 줬습니다. 데이터센터는 계약서로는 1,000억 달러가 넘게 쌓였지만 전기는 2030년대에야 들어온다는 답을 받았고, 아이폰 듀오는 주문은 넘쳐도 물건은 1월에야 손에 쥐게 됐습니다. AI 에이전트는 사용자 대신 무엇이든 해 주겠다고 했지만, 정작 결제 창 앞에서 사이트의 허락을 받지 못하고 있습니다."
+            },
+            {
+              "type": "p",
+              "text": "AI 산업은 그동안 수요를 증명하는 데 힘을 쏟았습니다. 이제 남은 질문은 그 수요를 실제로 받아낼 물리적·제도적 통로가 있느냐입니다. 전력망 연결, 메모리 공정, 사이트 접근 권한은 모두 돈만으로는 빨리 늘릴 수 없는 것들입니다. 채권 시장이 CoreWeave에 더 높은 이자를 요구하기 시작한 것도 계약서와 실제 가동 사이의 시간을 위험으로 보기 시작했다는 뜻으로 읽힙니다."
+            },
+            {
+              "type": "p",
+              "text": "그래서 당분간은 가장 큰 계약보다 가장 확실한 연결을 가진 쪽이 유리해 보입니다. 이미 전기가 들어오는 부지, 이미 검증된 공정, 이미 맺은 제휴가 그렇습니다. 숫자가 큰 발표를 볼 때는 그 숫자가 언제, 무엇을 통해 실제가 되는지를 함께 따져 볼 때입니다."
+            },
+            {
+              "type": "pull",
+              "text": "계약서는 하루 만에 쓸 수 있지만, 전력망과 공정은 몇 년이 걸립니다."
+            },
+            {
+              "type": "ledger"
+            }
+          ],
+          "sources": []
+        }
+      ]
+    }
+  ]
+}

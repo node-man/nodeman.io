@@ -87,5 +87,29 @@
     "probability": 0.3,
     "due": "2026-12-31",
     "status": "pending"
+  },
+  {
+    "id": "2026-10-19-1",
+    "issued": "2026-10-19",
+    "statement": "애플이 11월 6일 미국 애플스토어에서 새 맥 제품 판매를 시작한다",
+    "probability": 0.65,
+    "due": "2026-11-06",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-19-2",
+    "issued": "2026-10-19",
+    "statement": "디즈니가 12월 15일까지 Character.AI 기술 라이선스 매각의 최종 매수자로 법원 승인을 받는다",
+    "probability": 0.7,
+    "due": "2026-12-15",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-19-3",
+    "issued": "2026-10-19",
+    "statement": "삼성전자가 연내 NVHBM 베이스 다이를 TSMC 3나노로 만든다는 사실을 공식 확인한다",
+    "probability": 0.25,
+    "due": "2026-12-31",
+    "status": "pending"
   }
 ]
