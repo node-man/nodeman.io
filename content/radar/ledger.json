@@ -111,5 +111,30 @@
     "probability": 0.25,
     "due": "2026-12-31",
     "status": "pending"
+  },
+  {
+    "id": "2026-10-20-1",
+    "issued": "2026-10-20",
+    "statement": "애플이 10월 28일 행사에서 터치스크린을 갖춘 맥북 프로를 공개한다",
+    "probability": 0.8,
+    "due": "2026-10-28",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-20-2",
+    "issued": "2026-10-20",
+    "statement": "MiniMax가 10월 23일까지 M3.1 Flash 모델 가중치를 공개한다",
+    "probability": 0.7,
+    "due": "2026-10-23",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-20-3",
+    "issued": "2026-10-20",
+    "statement": "머스크 또는 SpaceX가 2027년 3월 31일까지 어린이 주식 지급의 대상과 지급 방법을 공식 발표한다",
+    "probability": 0.4,
+    "due": "2027-03-31",
+    "dueLabel": "2027.3",
+    "status": "pending"
   }
 ]
