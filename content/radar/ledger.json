@@ -136,5 +136,30 @@
     "due": "2027-03-31",
     "dueLabel": "2027.3",
     "status": "pending"
+  },
+  {
+    "id": "2026-10-21-1",
+    "issued": "2026-10-21",
+    "statement": "SpaceX와 테슬라가 2027년 6월 30일까지 합병 계약 체결을 공식 발표한다",
+    "probability": 0.3,
+    "due": "2027-06-30",
+    "dueLabel": "2027.6",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-21-2",
+    "issued": "2026-10-21",
+    "statement": "Node.js가 10월 31일까지 eMudhra 중간 인증서 키를 거부하는 수정판을 정식 릴리스한다",
+    "probability": 0.6,
+    "due": "2026-10-31",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-21-3",
+    "issued": "2026-10-21",
+    "statement": "Microsoft가 연내 차세대 Xbox 휴대용 기기를 공식 발표한다",
+    "probability": 0.1,
+    "due": "2026-12-31",
+    "status": "pending"
   }
 ]

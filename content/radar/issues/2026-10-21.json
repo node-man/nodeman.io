@@ -1,0 +1,918 @@
+{
+  "version": 1,
+  "date": "2026-10-21",
+  "publishedAt": "2026-10-21T07:43:10+09:00",
+  "title": "AI가 스타링크를 앞지른 날",
+  "lede": "SpaceX의 3분기 AI 부문 매출이 75억 6,000만 달러로 스타링크 중심의 통신 부문을 넘어섰고, 머스크는 테슬라와의 합병을 검토할 특별위원회가 꾸려졌다고 밝혔습니다. 같은 날 인증기관 eMudhra의 중간 인증서 키 8개가 유출된 사실이 확인돼 브라우저와 Go가 긴급 차단에 나섰습니다.",
+  "raw": "content/radar/raw/2026-10-21.json",
+  "rawCollectedAt": "2026-10-20T21:42:21.010Z",
+  "quick": [
+    "**SpaceX 3분기 매출 161% 증가.** AI 부문이 75억 6,000만 달러로 통신 부문을 넘었고, 테슬라와의 합병을 검토할 특별위원회도 꾸려졌습니다.",
+    "**eMudhra 인증서 키 유출.** 중간 인증서 8개가 브라우저에서 차단됐고, Go로 만든 프로그램은 다시 빌드해야 합니다.",
+    "**Anthropic 상장 서류 초안.** 상반기 매출 163억 달러, 순손실 807억 달러였다고 월스트리트저널이 전했습니다.",
+    "**구글 TorchTPU 공개.** 장치 지정만 바꿔 PyTorch 코드를 TPU에서 돌리게 하는 백엔드를 오픈소스로 내놨습니다.",
+    "**Xbox 하드웨어 계획 보도.** 2027년 휴대용 기기, 2028년 차세대 콘솔을 낼 계획이라고 포춘이 전했습니다."
+  ],
+  "cover": {
+    "big": "AI가\n스타링크를\n앞질렀다"
+  },
+  "sections": [
+    {
+      "id": "lead",
+      "kind": "lead",
+      "label": "커버스토리",
+      "title": "SpaceX, AI 매출이 스타링크를 넘다",
+      "dek": "여러 매체가 함께 다룬 오늘의 최대 화제입니다.",
+      "stories": [
+        {
+          "id": "spacex-q3",
+          "kicker": "SpaceX · 10/20",
+          "title": "SpaceX 3분기 매출 161% 증가, AI가 스타링크 앞질러… 테슬라 합병 논의도",
+          "hot": {
+            "count": 4,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "dropcap": true,
+              "text": "SpaceX가 10월 20일 3분기 실적을 발표했습니다. 3분기 매출은 145억 7,500만 달러로 1년 전보다 161% 늘었고, 시장 예상치(약 128억 달러)를 웃돌았습니다. 영업이익은 27억 9,000만 달러, 순이익은 약 44억 달러였습니다(공식 실적). 2분기에는 영업손실을 냈던 회사입니다."
+            },
+            {
+              "type": "p",
+              "text": "**AI가 1위 사업으로.** 'Super Intelligence'로 이름을 바꾼 AI 부문 매출은 75억 6,000만 달러로 1년 전 8억 1,300만 달러에서 크게 늘었고, 스타링크가 중심인 통신 부문(52억 5,000만 달러, 69% 증가)을 넘어섰습니다. AI 부문은 4억 3,100만 달러의 영업이익을 내 1년 전 17억 달러 손실에서 흑자로 돌아섰습니다. 이 부문에는 Grok 같은 자체 AI 서비스와 외부 고객에게 빌려주는 컴퓨팅 용량이 함께 들어 있으며, 둘의 매출 비중은 공개하지 않았습니다. 로켓 사업인 우주 부문 매출은 17억 7,000만 달러로 6% 늘었습니다."
+            },
+            {
+              "type": "p",
+              "text": "**돈을 쓰는 속도.** 3분기 설비투자는 196억 달러로 1년 전 69억 달러의 세 배에 가깝고, 대부분이 AI 쪽에 들어갔습니다. 회사가 보유한 데이터센터 전력 용량은 9월 말 1.7GW로 6월 말 1.4GW에서 늘었습니다. 연간 실적 전망은 내놓지 않았습니다."
+            },
+            {
+              "type": "p",
+              "text": "**테슬라와의 합병 논의.** 일론 머스크 최고경영자는 실적 발표 통화에서 SpaceX와 테슬라가 각각 사외이사로 구성된 특별위원회를 꾸려 합병 가능성을 검토하고 있다고 밝혔습니다. 본인은 이해관계가 겹쳐 논의에 참여하지 않으며, 합병이 확정됐다고 말하는 것은 과장이라고 했습니다. 테슬라 주주 과반의 승인이 필요하다는 점도 높은 문턱으로 꼽았습니다. 테슬라는 10월 21일(미국 시각) 3분기 실적을 발표합니다."
+            },
+            {
+              "type": "stats",
+              "items": [
+                {
+                  "value": "145.8억 달러",
+                  "label": "3분기 매출 · 전년 대비 161% 증가 · 공식 실적"
+                },
+                {
+                  "value": "75.6억 달러",
+                  "label": "AI(Super Intelligence) 부문 매출 · 공식 실적"
+                },
+                {
+                  "value": "52.5억 달러",
+                  "label": "통신(스타링크) 부문 매출 · 69% 증가"
+                },
+                {
+                  "value": "196억 달러",
+                  "label": "3분기 설비투자 · 1년 전 69억 달러"
+                }
+              ]
+            },
+            {
+              "type": "bars",
+              "title": "3분기 부문별 매출",
+              "unit": "억 달러",
+              "items": [
+                {
+                  "label": "AI(Super Intelligence)",
+                  "value": 75.6
+                },
+                {
+                  "label": "통신(스타링크)",
+                  "value": 52.5
+                },
+                {
+                  "label": "우주(로켓)",
+                  "value": 17.7
+                }
+              ],
+              "caption": "SpaceX 3분기 실적 발표 기준입니다."
+            },
+            {
+              "type": "unknowns",
+              "title": "아직 확인되지 않은 것",
+              "items": [
+                "AI 부문 매출 가운데 컴퓨팅 임대와 자체 AI 서비스가 각각 차지하는 몫",
+                "테슬라와의 합병 조건, 일정, 성사 여부",
+                "올해 전체 설비투자 규모에 대한 회사의 공식 전망"
+              ]
+            }
+          ],
+          "ai": {
+            "kind": "none",
+            "reason": "Fortune은 SpaceX가 컴퓨팅 용량을 빌려주는 고객에 이 글을 쓴 Claude의 제작사 Anthropic이 포함된다고 전했습니다. 이해관계가 있어 평가를 덧붙이지 않았습니다."
+          },
+          "sources": [
+            {
+              "title": "Fortune",
+              "url": "https://fortune.com/2026/10/20/spacex-q3-profit-ai-si-elon-musk/"
+            },
+            {
+              "title": "Stock Titan",
+              "url": "https://www.stocktitan.net/articles/spacex-q3-2026-earnings-ai-revenue-passes-starlink"
+            },
+            {
+              "title": "TechCrunch",
+              "url": "https://techcrunch.com/2026/10/20/spacexs-ai-business-is-beating-expectations/"
+            },
+            {
+              "title": "Axios(합병 논의)",
+              "url": "https://www.axios.com/2026/10/20/spacex-tesla-merger-talks"
+            },
+            {
+              "title": "CNBC",
+              "url": "https://www.cnbc.com/2026/10/20/spacex-spcx-earnings-live-updates-q3-2026html.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "headlines",
+      "kind": "headlines",
+      "label": "오늘의 화제",
+      "title": "여러 매체가 함께 다룬 이야기",
+      "stories": [
+        {
+          "id": "emudhra-ca",
+          "kicker": "보안 · 10/17–20",
+          "title": "인증기관 eMudhra 중간 인증서 키 8개 유출, 브라우저·Go 긴급 차단",
+          "hot": {
+            "count": 3,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "인도 인증기관 eMudhra의 중간 인증서 8개의 개인 키가 유출된 사실을 Mozilla와 Google 크롬 루트 프로그램이 10월 20일 확인했습니다. 한 연구자가 10월 17일 저녁 각 키로 메시지에 서명해 키를 갖고 있음을 보이며 신고했습니다. 대상은 웹사이트용(DV·OV·EV) 인증서 6개와 코드 서명용 2개이고, 키가 어떻게 빠져나갔는지는 밝혀지지 않았습니다."
+            },
+            {
+              "type": "p",
+              "text": "**대응.** 크롬은 신고를 받은 지 2시간이 안 돼 차단 목록을 배포했고, Firefox도 같은 날 차단했습니다. 애플은 10월 19일, 마이크로소프트는 10월 20일 막았습니다. Mozilla는 이 인증서들이 연결된 emSign 루트 인증서를 신뢰 목록에서 뺐습니다. 크롬은 차단 전에 이 인증서들로 발급돼 공개 기록에 오른 웹사이트 인증서는 없었다고 밝혔습니다."
+            },
+            {
+              "type": "p",
+              "text": "**남는 위험.** 브라우저는 업데이트 없이 자동으로 차단되지만, 인증서 폐기 여부를 확인하지 않는 프로그램은 코드나 루트 인증서 묶음을 바꿀 때까지 계속 신뢰합니다. Go는 1.27.3과 1.26.10에서 이 키들을 거부하도록 고쳤으므로 Go로 만든 프로그램은 다시 빌드해야 하고, Python의 certifi와 Rust의 webpki-roots도 새 판이 나왔습니다. Node.js 수정은 아직 준비 중입니다."
+            }
+          ],
+          "ai": {
+            "kind": "opinion",
+            "stance": "브라우저 밖의 프로그램을 먼저 점검할 때",
+            "confidence": 2,
+            "points": [
+              {
+                "k": "판단",
+                "v": "이번 사고에서 브라우저 사용자는 할 일이 거의 없지만, 서버에서 도는 Go 바이너리나 Python 스크립트는 사람이 직접 다시 빌드하거나 패키지를 올려야 차단됩니다."
+              },
+              {
+                "k": "근거",
+                "v": "Go 1.25 이하는 지원이 끝나 수정판이 나오지 않고, certifi처럼 루트 묶음을 쓰는 프로그램은 갱신 전까지 문제 인증서를 신뢰합니다."
+              },
+              {
+                "k": "반론",
+                "v": "공개 기록에서 악용 사례가 확인되지 않았고, 크롬과 Firefox 차단이 매우 빨라 실제 피해 가능성은 제한적일 수 있습니다."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "title": "The Hacker News",
+              "url": "https://thehackernews.com/2026/10/eight-emudhra-ca-keys-compromised.html"
+            },
+            {
+              "title": "LWN.net",
+              "url": "https://lwn.net/Articles/1101643/"
+            },
+            {
+              "title": "공개 안내 페이지",
+              "url": "https://emudhra.we-have-a-problem.com/"
+            },
+            {
+              "title": "9to5Linux",
+              "url": "https://9to5linux.com/firefox-158-0-1-is-out-to-block-compromised-emudhra-intermediate-certificates"
+            }
+          ]
+        },
+        {
+          "id": "anthropic-s1",
+          "kicker": "Anthropic · 10/20",
+          "title": "Anthropic 상장 서류 초안, 상반기 매출 163억 달러",
+          "hot": {
+            "count": 4,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "월스트리트저널은 Anthropic이 미국 증권거래위원회에 비공개로 낸 상장 신고서 초안을 입수해 10월 20일 보도했습니다. 초안에 따르면 2026년 상반기 매출은 163억 달러로 1년 전 11억 달러에서 크게 늘었습니다. 같은 기간 순손실은 807억 달러인데, 이 가운데 약 720억 달러는 전환사채 등 자금 조달 수단과 관련된 현금이 나가지 않는 회계상 비용이라고 보도는 전했습니다."
+            },
+            {
+              "type": "p",
+              "text": "**집중과 비용.** 상반기 매출의 약 20%가 고객 두 곳에서 나왔고, 초안은 소수 고객 의존이 이어질 것이라고 위험 요인에 적었습니다. 블룸버그는 상반기 컴퓨팅·인프라 지출이 약 90억 달러였고, 앞으로 협상 중인 계약까지 합쳐 최대 7,500억 달러를 쓸 수 있다고 전했습니다. 상장 시점은 나오지 않았고, Anthropic은 보도에 대한 논평을 내지 않았습니다."
+            }
+          ],
+          "ai": {
+            "kind": "none",
+            "reason": "이 글을 쓴 Claude의 제작사 Anthropic에 관한 소식이어서 사실만 전하고 평가를 덧붙이지 않았습니다."
+          },
+          "sources": [
+            {
+              "title": "Investing.com(WSJ 인용)",
+              "url": "https://www.investing.com/news/stock-market-news/anthropic-revenue-hits-163-billion-as-preliminary-s1-outlines-ipo-risks--wsj-4960928"
+            },
+            {
+              "title": "Runtime Wire",
+              "url": "https://runtimewire.com/article/anthropic-draft-s1-revenue-loss-compute-costs"
+            },
+            {
+              "title": "Yahoo Finance",
+              "url": "https://finance.yahoo.com/video/anthropics-ipo-prospectus-reveals-807b-net-loss-210816826.html"
+            }
+          ]
+        },
+        {
+          "id": "google-torchtpu",
+          "kicker": "AI 칩 · 10/20",
+          "title": "구글, PyTorch를 TPU에서 그대로 돌리는 TorchTPU 공개",
+          "hot": {
+            "count": 3,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "구글이 10월 20일 PyTorch 콘퍼런스에서 PyTorch 코드를 자사 AI 칩 TPU에서 직접 돌리게 하는 백엔드 TorchTPU를 Apache 2.0 라이선스로 공개했습니다. Meta의 PyTorch 팀과 함께 만들었고, 기존 코드에서 장치 지정을 `cuda`에서 `tpu`로 바꾸는 정도면 된다는 것이 구글 설명입니다. 지금까지 TPU에서 PyTorch를 쓰던 통로인 PyTorch/XLA를 대신할 도구로 내세웠습니다."
+            },
+            {
+              "type": "p",
+              "text": "**성능과 한계.** 구글은 최신 TPU인 Ironwood 8,192개까지 키워 시험했고 Qwen 3 8B 학습에서 연산 활용률 52%를 냈다고 밝혔습니다(발표 주체 주장). 다만 기본 실행 방식으로는 느리고, 제 속도를 내려면 `torch.compile`을 써야 합니다. 하루 전 아마존이 자사 칩 트레이니엄용 TorchNeuron을 내놓은 데 이어, Nvidia GPU 밖으로 PyTorch 작업을 옮기려는 클라우드 업체의 움직임이 이어졌습니다."
+            }
+          ],
+          "ai": {
+            "kind": "none",
+            "reason": "구글은 이 글을 쓴 Claude의 제작사 Anthropic의 투자사이자 TPU 공급처여서 평가를 덧붙이지 않았습니다."
+          },
+          "sources": [
+            {
+              "title": "MarkTechPost",
+              "url": "https://www.marktechpost.com/2026/10/20/google-torchtpu-open-source-native-pytorch-tpu/"
+            },
+            {
+              "title": "Crypto Briefing",
+              "url": "https://cryptobriefing.com/google-open-sources-torchtpu-pytorch-tpus/"
+            },
+            {
+              "title": "GitHub(torch_tpu)",
+              "url": "https://github.com/google-pytorch/torch_tpu"
+            }
+          ]
+        },
+        {
+          "id": "xbox-plans",
+          "kicker": "게임 · 10/20",
+          "title": "Xbox, 2027년 휴대용 기기·2028년 차세대 콘솔 계획 보도",
+          "hot": {
+            "count": 3,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "포춘은 Xbox가 2027년 연말까지 차세대 휴대용 게임기를, 2028년 연말에 'Project Helix'로 불리는 차세대 콘솔을 내놓을 계획이라고 10월 20일 보도했습니다. 내부에서는 Helix의 소비자 가격을 1,200~1,800달러로 예상하고 있으며, 회사가 보조금을 얹지 않으면 이 가격대가 될 수 있다고 전했습니다. 모두 익명 관계자 전언이고 회사가 확인한 내용은 아닙니다."
+            },
+            {
+              "type": "p",
+              "text": "**구독과 인력.** Game Pass는 클라우드 게임, 멀티플레이 같은 기능을 골라 붙이는 방식으로 크게 바뀔 것이라고 포춘은 전했습니다. Xbox는 1년 동안 3,200명을 줄이는 계획 가운데 지금까지 1,868명을 감원했고, 11월과 1월에 추가 감원이 예정돼 있다는 보도도 함께 나왔습니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "Fortune",
+              "url": "https://fortune.com/2026/10/20/the-non-gamer-ceo-racing-to-save-microsofts-xbox/"
+            },
+            {
+              "title": "Video Games Chronicle",
+              "url": "https://www.videogameschronicle.com/news/report-claims-next-xbox-is-targeting-2028-and-could-cost-between-1200-and-1800/"
+            },
+            {
+              "title": "Kotaku",
+              "url": "https://kotaku.com/xbox-reportedly-wants-to-release-a-gaming-handheld-in-2027-despite-ongoing-turf-battles-with-windows-2000748034"
+            }
+          ]
+        },
+        {
+          "id": "iphone-duo-limit",
+          "kicker": "애플 · 10/20",
+          "title": "애플, 아이폰 듀오 1인 2대로 구매 제한",
+          "hot": {
+            "count": 3,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "애플이 접는 아이폰인 아이폰 듀오를 한 사람당 2대까지만 살 수 있게 제한했습니다. 미국, 영국, 일본, 스페인 온라인 스토어에서 같은 안내가 확인됐고, 사양과 관계없이 적용됩니다. 되팔이 수요를 막으려는 조치로 보이며, 이베이에서는 5,000달러가 넘는 판매 글도 올라왔다고 9to5Mac이 전했습니다."
+            },
+            {
+              "type": "p",
+              "text": "**배송.** 10월 16일 사전 주문이 시작되자마자 배송 예정일이 2027년 1월로 밀렸고, 애플 스토어는 1월 22일을 안내하고 있습니다. 일부 구매자는 예정일이 앞당겨졌다고 알렸습니다. 2대 제한이 언제부터 적용됐는지는 알려지지 않았습니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "9to5Mac",
+              "url": "https://9to5mac.com/2026/10/20/iphone-duo-orders-limited-to-two-per-customer-as-apple-tackles-scalping/"
+            },
+            {
+              "title": "Engadget",
+              "url": "https://www.engadget.com/2291389/apple-store-two-iphone-duo-limit/"
+            },
+            {
+              "title": "The Apple Post",
+              "url": "https://www.theapplepost.com/2026/10/20/73402/apple-limits-iphone-duo-orders-to-two-per-customer-in-the-us/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "github",
+      "kind": "github",
+      "label": "GitHub 트렌딩",
+      "title": "에이전트에 얹는 스킬들",
+      "dek": "일간 트렌딩 상위 저장소를 각 README 기준으로 요약했습니다. 숫자는 06:40 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "github-trending",
+          "kicker": "GitHub",
+          "title": "에이전트에 얹는 스킬들",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "오늘 트렌딩에는 코딩 에이전트에 끼워 쓰는 '스킬'이 여럿 올랐습니다. Cloudflare가 자사 취약점 탐지 체계의 출발점이라고 소개한 보안 감사 스킬(2위), 필요한 만큼만 코드를 쓰게 하는 ponytail(4위), 코드베이스를 지식 그래프로 바꾸는 graphify(7위)입니다. 1위 ai-job-search는 오늘도 가장 많은 스타(3,890개)를 받았습니다."
+            },
+            {
+              "type": "share",
+              "title": "상위 3개와 나머지가 받은 오늘의 스타",
+              "items": [
+                {
+                  "label": "ai-job-search",
+                  "value": 3890
+                },
+                {
+                  "label": "security-audit-skill",
+                  "value": 1680
+                },
+                {
+                  "label": "orca",
+                  "value": 1559
+                },
+                {
+                  "label": "나머지 9개",
+                  "value": 7568
+                }
+              ]
+            },
+            {
+              "type": "bars",
+              "title": "오늘 받은 스타 · 2~12위",
+              "unit": "개",
+              "items": [
+                {
+                  "label": "security-audit-skill",
+                  "value": 1680
+                },
+                {
+                  "label": "orca",
+                  "value": 1559
+                },
+                {
+                  "label": "ponytail",
+                  "value": 1396
+                },
+                {
+                  "label": "ComfyUI",
+                  "value": 1201
+                },
+                {
+                  "label": "ruflo",
+                  "value": 683
+                },
+                {
+                  "label": "graphify",
+                  "value": 906
+                },
+                {
+                  "label": "opencode",
+                  "value": 1256
+                },
+                {
+                  "label": "agency-agents",
+                  "value": 590
+                },
+                {
+                  "label": "headroom",
+                  "value": 555
+                },
+                {
+                  "label": "knowledge-work-plugins",
+                  "value": 262
+                },
+                {
+                  "label": "Kronos",
+                  "value": 719
+                }
+              ],
+              "caption": "트렌딩 순위는 오늘 받은 스타 수와 일치하지 않습니다."
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "MadsLorentzen/ai-job-search",
+                "rank": 1,
+                "language": "Python",
+                "license": "MIT",
+                "stars": 60298,
+                "starsToday": 3890,
+                "verdict": "experiment",
+                "def": "공고 평가, 이력서 맞춤, 커버레터, 면접 준비를 돕는 Claude Code 기반 구직 도구입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "저장소를 포크해 자기 프로필을 채운 뒤 Claude Code에서 씁니다."
+                  ],
+                  [
+                    "주의",
+                    "Anthropic과 무관한 독립 프로젝트라고 README가 밝히고 있습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "cloudflare/security-audit-skill",
+                "rank": 2,
+                "language": "JavaScript",
+                "license": "MIT",
+                "stars": 33938,
+                "starsToday": 1680,
+                "verdict": "try",
+                "def": "코딩 에이전트를 여러 단계로 나뉜 보안 감사 도구로 바꾸는 스킬입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "구조 파악, 취약점 탐색, 후보 검증, 결과 정리, 독립 재검증, 보고서 작성의 여섯 단계를 서로 분리된 에이전트로 돌립니다."
+                  ],
+                  [
+                    "효과",
+                    "발견 사항을 확인됨·검증 필요·기각으로 나눠 기계가 읽을 수 있는 파일로 남기고, 같은 저장소를 다시 돌리면 빈 곳을 이어서 살핍니다."
+                  ],
+                  [
+                    "주의",
+                    "Cloudflare 내부 체계의 출발점이 된 단일 저장소용 버전입니다. 결과는 사람이 다시 확인해야 합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "stablyai/orca",
+                "rank": 3,
+                "language": "TypeScript",
+                "license": "MIT",
+                "stars": 99615,
+                "starsToday": 1559,
+                "verdict": "experiment",
+                "def": "여러 코딩 에이전트를 각자의 git 워크트리에서 나란히 돌리고 한곳에서 관리하는 앱입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "프롬프트 하나를 여러 에이전트에 보내 결과를 비교하고 고른 것을 병합합니다."
+                  ],
+                  [
+                    "구성",
+                    "데스크톱 앱, 원격 SSH 워크트리, 휴대폰 알림 앱, 화면 요소를 클릭해 프롬프트로 보내는 디자인 모드"
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "DietrichGebert/ponytail",
+                "rank": 4,
+                "language": "JavaScript",
+                "license": "MIT",
+                "stars": 169472,
+                "starsToday": 1396,
+                "verdict": "experiment",
+                "def": "AI 에이전트가 꼭 필요한 코드만 쓰도록 이끄는 스킬입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "새 코드를 쓰기 전에 저장소에 이미 있는 부품과 표준 기능을 먼저 찾아 조합하게 합니다. 검증, 오류 처리, 보안 코드는 줄이지 않는 것이 원칙이라고 밝힙니다."
+                  ],
+                  [
+                    "효과",
+                    "코드 53%, 토큰 45%를 줄였다고 밝히지만 제작자가 Claude Code에서 직접 잰 수치입니다(제작자 주장)."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "Comfy-Org/ComfyUI",
+                "rank": 5,
+                "language": "Python",
+                "license": "GPL-3.0",
+                "stars": 140686,
+                "starsToday": 1201,
+                "verdict": "reference",
+                "def": "노드 그래프로 이미지·영상 생성 모델을 조합해 돌리는 GUI이자 백엔드입니다.",
+                "rows": [
+                  [
+                    "주의",
+                    "2023년부터 이어진 저장소로 오늘 새로 나온 것은 아닙니다. GPL-3.0입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "ruvnet/ruflo",
+                "rank": 6,
+                "language": "TypeScript",
+                "license": "MIT",
+                "stars": 77764,
+                "starsToday": 683,
+                "verdict": "watch",
+                "def": "Claude Code와 Codex 위에서 여러 에이전트를 함께 띄우고 관제하는 메타 하네스입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "Claude Code 플러그인으로 설치하거나 `npx ruflo@latest init wizard`로 설정합니다."
+                  ],
+                  [
+                    "주의",
+                    "자기 학습 기억 같은 기능 설명은 제작자 주장이고, 확장 모듈은 내 계정 권한으로 돌아가므로 코드를 확인하고 설치하라고 README가 적고 있습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "Graphify-Labs/graphify",
+                "rank": 7,
+                "language": "Python",
+                "license": "Apache-2.0",
+                "stars": 130104,
+                "starsToday": 906,
+                "verdict": "experiment",
+                "def": "코드, 문서, PDF를 질의할 수 있는 지식 그래프로 바꾸는 코딩 에이전트용 스킬입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "코드는 tree-sitter로 내 컴퓨터에서 분석하고, 연결마다 직접 읽은 것인지 추론한 것인지 표시합니다. 벡터 저장소를 쓰지 않습니다."
+                  ],
+                  [
+                    "주의",
+                    "문서·이미지 분석에는 쓰는 모델의 API를 거칩니다. 토큰 80% 절감 문구는 유료 클라우드 서비스 광고입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "anomalyco/opencode",
+                "rank": 8,
+                "language": "TypeScript",
+                "license": "MIT",
+                "stars": 218814,
+                "starsToday": 1256,
+                "verdict": "watch",
+                "def": "터미널과 데스크톱에서 쓰는 오픈소스 AI 코딩 에이전트입니다.",
+                "rows": [
+                  [
+                    "주의",
+                    "운영사 콘솔 침해로 저장된 API 키가 유출된 사건의 사후 경위가 아직 공개되지 않았습니다. 오픈소스 앱은 영향이 없다고 운영사는 밝혔습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "msitarzewski/agency-agents",
+                "rank": 9,
+                "language": "Shell",
+                "license": "MIT",
+                "stars": 162254,
+                "starsToday": 590,
+                "verdict": "reference",
+                "def": "분야별 역할을 맡긴 AI 에이전트 설정 파일 모음입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "데스크톱 앱이나 설치 스크립트로 Claude Code, Cursor, Codex 등에 넣습니다."
+                  ],
+                  [
+                    "주의",
+                    "각 에이전트는 성격과 작업 절차를 적은 프롬프트 파일이며, 결과 품질은 따로 검증되지 않았습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "headroomlabs-ai/headroom",
+                "rank": 10,
+                "language": "Python",
+                "license": "Apache-2.0",
+                "stars": 76694,
+                "starsToday": 555,
+                "verdict": "try",
+                "def": "도구 출력, 로그, 파일, RAG 조각을 LLM에 보내기 전에 압축해 토큰을 줄이는 계층입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "라이브러리, 로컬 프록시, MCP 서버 가운데 하나로 씁니다."
+                  ],
+                  [
+                    "효과",
+                    "코딩 에이전트 토큰 20%, JSON은 60~95%를 줄이면서 답은 같다고 밝힙니다(제작자 주장)."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "anthropics/knowledge-work-plugins",
+                "rank": 11,
+                "language": "Python",
+                "license": "Apache-2.0",
+                "stars": 30762,
+                "starsToday": 262,
+                "verdict": "none",
+                "def": "Claude Cowork용 직무별 플러그인 모음입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "영업, 고객 지원, 법무, 재무 등 직무별로 스킬, 커넥터, 명령어를 묶은 플러그인입니다."
+                  ],
+                  [
+                    "주의",
+                    "이 글을 쓴 Claude의 제작사 Anthropic의 저장소라 평가하지 않았습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "shiyu-coder/Kronos",
+                "rank": 12,
+                "language": "Python",
+                "license": "MIT",
+                "stars": 42298,
+                "starsToday": 719,
+                "verdict": "reference",
+                "def": "주가 봉차트 데이터에 맞춰 학습한 오픈소스 시계열 기반 모델입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "매개변수 410만 개짜리부터 크기별 모델을 Hugging Face에 공개했고 미세조정 스크립트도 있습니다."
+                  ],
+                  [
+                    "주의",
+                    "2025년 논문 기반이고 마지막 코드 변경은 4월입니다. 예측 결과를 투자 판단에 그대로 쓰기는 어렵습니다."
+                  ]
+                ]
+              }
+            }
+          ],
+          "sources": [
+            {
+              "title": "GitHub Trending",
+              "url": "https://github.com/trending"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "korea",
+      "kind": "korea",
+      "label": "국내",
+      "title": "보안 공시, 선박 수주, 자율주행 트럭",
+      "stories": [
+        {
+          "id": "korea-brief",
+          "kicker": "국내",
+          "title": "보안 공시 확대와 수주 소식",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "k": "보안 공시",
+                  "text": "정보보호 공시 의무를 모든 코스피·코스닥 상장사로 넓히는 시행령 개정안이 10월 20일 국무회의를 통과했습니다. 2027년 1월 1일부터 대상이 693곳에서 약 2,900곳으로 늘고, 소기업은 2029년부터 적용됩니다."
+                },
+                {
+                  "k": "조선",
+                  "text": "HD현대중공업과 HD현대삼호가 HMM에서 1만 3,000TEU급 컨테이너선 8척을 1조 9,196억 원에 수주했습니다. LNG와 기존 선박 연료를 함께 쓰는 배로, 2029년까지 차례로 인도합니다."
+                },
+                {
+                  "k": "자율주행",
+                  "text": "현대차·기아가 현대글로비스, 현대모비스, 라이드플럭스, 마스오토와 레벨4 자율주행 대형트럭 실증에 나섭니다. 내년 초 엑시언트 2대를 약 100km와 400km 물류 노선에 투입합니다."
+                },
+                {
+                  "k": "카카오",
+                  "text": "카카오가 인적분할을 앞두고 10월 20일 소액주주 질의응답을 열어 경영진 블록딜, 자회사 매각, 제3자 유상증자 계획이 없다고 밝혔습니다. 분할 비율은 확정되지 않았다고 했습니다."
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "보안뉴스(정보보호 공시)",
+              "url": "https://www.boannews.com/news/articleView.html?idxno=146533"
+            },
+            {
+              "title": "머니투데이(정보보호 공시)",
+              "url": "https://www.mt.co.kr/tech/2026/10/20/2026102011063847382"
+            },
+            {
+              "title": "블로터(정보보호 공시)",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=676181"
+            },
+            {
+              "title": "블로터(HMM)",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=676103"
+            },
+            {
+              "title": "파이낸셜뉴스(HMM)",
+              "url": "https://www.fnnews.com/news/202610201105298377"
+            },
+            {
+              "title": "지디넷코리아(자율주행 트럭)",
+              "url": "https://zdnet.co.kr/view/?no=20261020085738"
+            },
+            {
+              "title": "뉴스1(자율주행 트럭)",
+              "url": "https://www.news1.kr/industry/auto-industry/6325317"
+            },
+            {
+              "title": "블로터(카카오)",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=676129"
+            },
+            {
+              "title": "서울파이낸스(카카오)",
+              "url": "https://www.seoulfn.com/news/articleView.html?idxno=640554"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading",
+      "kind": "reading",
+      "label": "읽을거리",
+      "title": "수요일에 읽을 6편",
+      "dek": "Hacker News에서 골랐습니다. HN 점수는 06:40 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "reads",
+          "kicker": "읽을거리",
+          "title": "수요일에 읽을 6편",
+          "blocks": [
+            {
+              "type": "reads",
+              "items": [
+                {
+                  "title": "DeepInfer: High-performance inference framework for DeepSeek models",
+                  "url": "https://github.com/deepseek-ai/DeepInfer",
+                  "via": "Hacker News · GitHub",
+                  "why": "DeepSeek가 자사 API를 돌리는 추론 엔진을 Apache 2.0으로 공개했습니다. Nvidia 블랙웰과 화웨이 Ascend 950을 지원하지만, 지금은 V4.1-Flash 한 모델만 돌리고 KV 캐시 관리와 부하 분산은 빠져 있습니다.",
+                  "hn": {
+                    "id": "50163277",
+                    "points": 2031,
+                    "comments": 793
+                  }
+                },
+                {
+                  "title": "Voxtral 3",
+                  "url": "https://mistral.ai/news/voxtral-3/",
+                  "via": "Hacker News · Mistral",
+                  "why": "Mistral의 새 음성 인식 모델 발표로, 50개 넘는 언어 인식과 실시간 음성 에이전트 개발 도구를 함께 내놨습니다.",
+                  "hn": {
+                    "id": "50168396",
+                    "points": 433,
+                    "comments": 119
+                  }
+                },
+                {
+                  "title": "Tsrs: A Port of TypeScript to Rust",
+                  "url": "https://blog.cloudflare.com/typescript-rust-port/",
+                  "via": "Hacker News · Cloudflare",
+                  "why": "Cloudflare가 TypeScript 컴파일러를 Rust로 옮긴 작업을 소개한 글입니다.",
+                  "hn": {
+                    "id": "50165953",
+                    "points": 296,
+                    "comments": 139
+                  }
+                },
+                {
+                  "title": "Publish fake stats, get cited in LLMs",
+                  "url": "https://peec.ai/blog/publish-stats-get-cited-the-tactic-that-put-my-data-all-over-the-web",
+                  "via": "Hacker News · Peec AI",
+                  "why": "그럴듯한 통계를 올리면 AI 검색 답변에 인용된다는 실험 글로, AI 답변의 출처를 어디까지 믿을지 생각하게 합니다.",
+                  "hn": {
+                    "id": "50165801",
+                    "points": 295,
+                    "comments": 167
+                  }
+                },
+                {
+                  "title": "How I got over 300 Tor exit nodes removed",
+                  "url": "https://kaba.cx/posts/20261020_Tor/",
+                  "via": "Hacker News",
+                  "why": "한 사용자가 문제 있는 Tor 출구 노드 300여 개를 찾아 퇴출시키기까지의 과정을 적은 글입니다.",
+                  "hn": {
+                    "id": "50166257",
+                    "points": 273,
+                    "comments": 65
+                  }
+                },
+                {
+                  "title": "Facebook Pages require paid subscription to post more than two links per month",
+                  "url": "https://mastodon.gamedev.place/@AshleyGullen/117473851565913919",
+                  "via": "Hacker News · Mastodon",
+                  "why": "페이스북 페이지에서 한 달에 링크 3개 이상을 올리려면 유료 구독이 필요해졌다는 게시글로, 댓글이 300개를 넘었습니다.",
+                  "hn": {
+                    "id": "50167536",
+                    "points": 382,
+                    "comments": 331
+                  }
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "Hacker News",
+              "url": "https://news.ycombinator.com/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "column",
+      "kind": "column",
+      "label": "AI의 시선",
+      "title": "업데이트가 닿지 않는 곳",
+      "dek": "AI가 쓴 칼럼입니다. 사실 보도가 아닌 의견입니다.",
+      "stories": [
+        {
+          "id": "column-body",
+          "kicker": "AI의 시선",
+          "title": "업데이트가 닿지 않는 곳",
+          "blocks": [
+            {
+              "type": "p",
+              "dropcap": true,
+              "text": "eMudhra 사고에서 가장 눈에 띄는 숫자는 크롬의 대응 시간입니다. 신고를 받고 2시간이 안 돼 전 세계 크롬이 문제 인증서를 막았습니다. 사용자는 아무것도 하지 않았고, 대부분은 사고가 있었다는 것도 모를 것입니다."
+            },
+            {
+              "type": "p",
+              "text": "그런데 같은 인증서를 서버의 Go 프로그램과 Python 스크립트는 지금도 믿고 있을 수 있습니다. 이들은 누군가 다시 빌드하고 패키지를 올려야 바뀝니다. 지원이 끝난 Go 1.25 이하에는 수정판조차 없습니다. 보안은 가장 빠른 곳이 아니라 가장 늦게 갱신되는 곳의 속도로 움직입니다."
+            },
+            {
+              "type": "p",
+              "text": "오늘 GitHub 트렌딩 2위가 에이전트에게 보안 감사를 맡기는 스킬이었다는 점이 겹쳐 보입니다. 에이전트가 코드를 읽고 위험을 찾아 주는 일은 늘겠지만, 내 서버에 어떤 바이너리가 언제 빌드돼 돌고 있는지 아는 일은 여전히 운영하는 사람의 몫입니다. 오늘 할 일은 거창하지 않습니다. 직접 만든 Go 서비스의 빌드 버전과 certifi 버전부터 확인하는 것입니다."
+            },
+            {
+              "type": "pull",
+              "text": "보안은 가장 늦게 갱신되는 곳의 속도로 움직입니다."
+            },
+            {
+              "type": "ledger"
+            }
+          ],
+          "sources": []
+        }
+      ]
+    }
+  ]
+}
