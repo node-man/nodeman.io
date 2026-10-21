@@ -1,0 +1,643 @@
+{
+  "version": 1,
+  "date": "2026-10-22",
+  "publishedAt": "2026-10-22T07:38:49+09:00",
+  "title": "PHP 구멍에 웹이 멈춘 날",
+  "lede": "AI 모델의 도움으로 찾아낸 PHP 원격 코드 실행 취약점 2건이 공개되면서 유럽 정부와 언론사들이 웹사이트를 잠시 내렸습니다. 같은 날 GitLab의 최고 등급 취약점과 LiteLLM 패키지 변조가 겹쳤고, 메타와 테슬라는 AI에 돈을 쏟는 3분기 실적을 내놨습니다.",
+  "raw": "content/radar/raw/2026-10-22.json",
+  "rawCollectedAt": "2026-10-21T21:43:24.373Z",
+  "cover": { "big": "PHP에\n웹이\n멈췄다" },
+  "quick": [
+    "**PHP 긴급 보안 릴리스.** 인증 없이 서버를 장악할 수 있는 취약점 2건이 고쳐졌고, 네덜란드·핀란드 정부 사이트가 패치 전 접속을 막았습니다.",
+    "**GitLab·LiteLLM도 같은 날.** GitLab은 CVSS 10.0 취약점을 고쳤고, LiteLLM 1.107.0은 자격 증명을 훔치는 악성 코드가 심긴 채 배포됐습니다.",
+    "**메타, 무의결권 주식 신설.** 3분기 매출이 26% 늘었고, AI 투자 자금을 마련할 새 주식 종류를 2027년 1월 도입합니다.",
+    "**테슬라 순이익 43% 감소.** 매출은 제자리였고, 프리몬트에서 옵티머스 생산을 시작했다고 밝혔습니다.",
+    "**EA, BioWare 폐쇄.** 약 400명을 줄이고 다음 Mass Effect 개발도 접는다고 전해졌습니다."
+  ],
+  "sections": [
+    {
+      "id": "lead",
+      "kind": "lead",
+      "label": "커버스토리",
+      "title": "PHP 취약점에 웹사이트가 문을 닫다",
+      "dek": "여러 매체가 함께 다룬 오늘의 최대 화제입니다.",
+      "stories": [
+        {
+          "id": "php2shell",
+          "kicker": "보안 · 10/21",
+          "title": "PHP 원격 코드 실행 취약점 2건 긴급 패치… 유럽 정부 사이트 선제 차단",
+          "hot": { "count": 5, "basis": "오늘 수집 피드 중 보도 매체" },
+          "blocks": [
+            {
+              "type": "p",
+              "dropcap": true,
+              "text": "PHP 개발진이 10월 21일 14시(UTC) PHP 8.5.12, 8.4.27, 8.3.36, 8.2.35를 내놨습니다. 고친 취약점은 `CVE-2026-109618`과 `CVE-2026-109619` 두 건으로, 둘 다 로그인하지 않은 공격자가 원격에서 서버에 코드를 실행할 수 있는 수준입니다. CERT-EU와 Tenable은 심각도를 CVSS 9.2로 매겼고, 공개 전 돌던 10.0이라는 값은 PHP 재단이 틀렸다고 밝혔습니다."
+            },
+            {
+              "type": "p",
+              "text": "**무엇이 문제인가.** 첫 번째는 메모리가 바닥나는 상황에서 생기는 메모리 손상, 두 번째는 해제된 전역 상태를 다시 쓰는 문제입니다. PHP-FPM, Apache `mod_php`, php-cgi, FrankenPHP, LiteSpeed 등 웹 요청을 처리하는 모든 설치가 대상이며, 개발진은 애플리케이션 코드가 실행되기도 전에 공격이 가능한 `mod_php`를 가장 위험하다고 봤습니다. 문제의 코드 경로는 PHP 5.4 시절부터 있었다고 Tenable이 전했습니다."
+            },
+            {
+              "type": "p",
+              "text": "**하루 앞당긴 공개.** 원래 10월 22일 예정이던 릴리스는 CVE 번호가 20일 먼저 퍼지면서 하루 당겨졌습니다. 공개 전후로 네덜란드 하원과 국가사이버보안센터, 개인정보 감독기관, DigiD 같은 공공 서비스와 일부 언론사·축구협회 사이트가 스스로 접속을 막았고, 핀란드 정부도 대외 웹 서비스를 내렸습니다. CERT-EU는 즉시 패치할 수 없으면 인터넷에 노출된 애플리케이션을 격리하라고 권고했습니다."
+            },
+            {
+              "type": "p",
+              "text": "**AI가 찾았다.** PHP 재단은 발견자로 보안업체 Calif, OpenAI, Wiz 등을 꼽았습니다. OpenAI는 Calif가 자사 GPT-5.6 Sol을 써서 취약점을 찾았고, 구글 계열 Wiz도 독립적으로 두 건을 찾아 신고했다고 밝혔습니다. OpenAI는 'Patch the Planet'이라는 이름으로 두 달 동안 PHP 개발진, Cloudflare, 미국 정부 기관과 대응을 조율했다고 했습니다. 미국 백악관은 10월 16일 처음 통보받았다고 밝혔습니다."
+            },
+            {
+              "type": "p",
+              "text": "**공격 시도는 시작됐다.** watchTowr와 Cloudflare는 실제 공격 시도를 관측했다고 했고, watchTowr는 아직 성공한 사례는 없다고 전했습니다. 7.4~8.1에는 공식 릴리스 없이 소스 패치만 나왔고, 5.4~7.3은 지원이 끝나 수정판이 없습니다. Cisco는 인터넷에 노출된 PHP의 약 절반이 수정판을 받을 수 없는 오래된 버전이라고 추정했습니다(발표 주체 추정)."
+            },
+            {
+              "type": "stats",
+              "items": [
+                { "value": "2건", "label": "원격 코드 실행 취약점 · CVSS 9.2" },
+                { "value": "4개 브랜치", "label": "공식 수정판 · 8.2~8.5" },
+                { "value": "약 70%", "label": "PHP를 쓰는 웹사이트 비율 · W3Techs 집계" },
+                { "value": "약 절반", "label": "수정판을 못 받는 노출 PHP · Cisco 추정" }
+              ]
+            },
+            {
+              "type": "timeline",
+              "title": "PHP 취약점 대응 일정",
+              "points": [
+                { "date": "2026-10-16", "label": "미국 정부 통보", "kind": "past" },
+                { "date": "2026-10-20", "label": "CVE 번호 유출", "kind": "past" },
+                { "date": "2026-10-21", "label": "보안 릴리스 공개", "kind": "now" },
+                { "date": "2026-10-22", "label": "당초 공개 예정일", "kind": "missed" }
+              ]
+            },
+            {
+              "type": "boxes",
+              "items": [
+                {
+                  "tone": "go",
+                  "title": "지금 할 일",
+                  "items": [
+                    "8.2 이상이면 8.5.12·8.4.27·8.3.36·8.2.35로 올리고 모든 PHP 워커를 재시작합니다.",
+                    "배포판 패키지를 쓰면 배포판 보안 공지의 수정 버전을 확인합니다.",
+                    "`mod_php`로 운영 중이라면 우선순위를 가장 높게 둡니다."
+                  ]
+                },
+                {
+                  "tone": "risk",
+                  "title": "임시 조치의 한계",
+                  "items": [
+                    "`memory_limit=-1`, `session.upload_progress.enabled=0` 같은 설정 변경은 PHP가 완전한 해결책이 아니라고 밝혔습니다.",
+                    "Cloudflare 방화벽 규칙은 Cloudflare를 거치는 트래픽에만 적용됩니다."
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "unknowns",
+              "title": "아직 확인되지 않은 것",
+              "items": [
+                "실제로 침해된 사이트가 있는지와 그 규모",
+                "온라인에서 거론되는 세 번째 PHP 취약점의 실체",
+                "Amazon Linux 등 일부 배포판이 수정판을 내는 시점"
+              ]
+            }
+          ],
+          "ai": {
+            "kind": "opinion",
+            "stance": "버전 확인이 먼저입니다",
+            "confidence": 2,
+            "points": [
+              { "k": "판단", "v": "공격 시도가 이미 관측된 만큼, 웹 요청을 받는 PHP 서버는 오늘 버전부터 확인할 일입니다. 서버 목록을 모르면 패치 우선순위도 정할 수 없습니다." },
+              { "k": "지켜볼 점", "v": "지원이 끝난 7.x 이하 서버가 얼마나 빨리 정리되는지가 피해 규모를 가를 것으로 봅니다." },
+              { "k": "밝혀 둘 점", "v": "이 글을 쓴 Claude의 제작사 Anthropic은 OpenAI, 구글과 같은 시장에서 경쟁하는 AI 회사입니다." }
+            ]
+          },
+          "sources": [
+            { "title": "Tenable", "url": "https://www.tenable.com/blog/php2shell-cve-2026-109618-cve-2026-109619-frequently-asked-questions-about-critical-php-remote" },
+            { "title": "The Register", "url": "https://www.theregister.com/security/2026/10/21/php-devs-publish-critical-bug-fix-as-site-owners-warned-pull-em-offline-if-youre-unpatched/5304519" },
+            { "title": "Cybersecurity Dive", "url": "https://www.cybersecuritydive.com/news/php-website-vulnerabilities/833580/" },
+            { "title": "OpenAI", "url": "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/" },
+            { "title": "Dutch Brief(네덜란드 차단 현황)", "url": "https://www.dutchbrief.com/p/digid-mijnoverheid-and-many-other" },
+            { "title": "The Decoder", "url": "https://the-decoder.com/openais-gpt-5-6-sol-and-gemini-4-argon-discovered-the-critical-php-vulnerability-affecting-millions-of-websites/" },
+            { "title": "TechCrunch", "url": "https://techcrunch.com/2026/10/21/php-armageddon-openai-googles-wiz-find-ancient-holes-panicking-the-internet/" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "headlines",
+      "kind": "headlines",
+      "label": "헤드라인",
+      "title": "여러 매체가 함께 다룬 이야기",
+      "stories": [
+        {
+          "id": "gitlab-litellm",
+          "kicker": "보안 · 공급망",
+          "title": "GitLab CVSS 10.0 취약점 수정, LiteLLM 1.107.0은 악성 코드 심긴 채 배포",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "**GitLab.** GitLab이 10월 21일 19.5.1을 비롯한 7개 버전의 긴급 패치를 냈습니다. 가장 심각한 `CVE-2026-110264`는 특수하게 만든 정규 표현식을 컴파일할 때 정수 오버플로가 일어나, 로그인하지 않은 사용자가 서버에서 코드를 실행할 수 있는 문제로 CVSS 10.0입니다. 7.0부터의 CE·EE 버전이 대상이며, GitLab.com은 이미 패치됐습니다. 직접 운영하는 서버는 바로 올려야 합니다."
+            },
+            {
+              "type": "p",
+              "text": "**LiteLLM.** 여러 LLM API를 한 인터페이스로 묶는 Python 라이브러리 LiteLLM의 1.107.0이 PyPI와 Docker 이미지로 변조된 채 배포됐습니다. 설치하면 Python이 시작될 때 `.pth` 파일로 악성 코드가 먼저 실행돼 클라우드 토큰, 개인 키, AI 도구 자격 증명, 브라우저 데이터 등을 빼내고, 공격자가 내려보내는 코드를 한 시간마다 실행하는 백그라운드 프로세스도 심습니다. LiteLLM 측은 엔지니어 세 명의 GitHub 계정이 도용된 것으로 보인다고 밝혔습니다. 해당 패키지는 격리됐고, 설치했다면 깨끗한 환경에서 자격 증명을 모두 교체하고 1.106.2로 고정하라는 권고가 나왔습니다."
+            }
+          ],
+          "sources": [
+            { "title": "GitLab 패치 공지", "url": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-1-released/" },
+            { "title": "The Hacker News(LiteLLM)", "url": "https://thehackernews.com/2026/10/litellm-compromised-in-supply-chain.html" },
+            { "title": "StepSecurity(LiteLLM)", "url": "https://www.stepsecurity.io/blog/litellm-1-107-0-compromised-pypi-backdoored-wheels-credential-stealer" },
+            { "title": "SafeDep(LiteLLM)", "url": "https://safedep.io/litellm-pypi-compromise-credential-stealer-backdoor/" }
+          ]
+        },
+        {
+          "id": "meta-q3",
+          "kicker": "메타 · 3분기 실적",
+          "title": "메타 3분기 매출 26% 증가, AI 투자 위해 무의결권 주식 신설",
+          "hot": { "count": 5, "basis": "오늘 수집 피드 중 보도 매체" },
+          "legal": "company-only",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "메타의 3분기 매출은 646억 달러로 1년 전보다 26% 늘었습니다. 영업이익은 129억 9,000만 달러로 37% 줄었는데, 주 법무장관들과의 합의에 따른 98억 9,000만 달러의 일회성 법률 비용이 반영됐습니다(공식 실적). 3분기 설비투자는 349억 달러였고, 올해 설비투자 전망은 1,350억~1,450억 달러로 하단을 50억 달러 올렸습니다. 4분기 매출 전망은 730억~760억 달러입니다."
+            },
+            {
+              "type": "p",
+              "text": "**무의결권 주식.** 이사회는 의결권이 없는 상장 Class C 보통주를 만들기로 했습니다. 기존 Class A·B 1주당 Class C 1주를 한 번 배당하는 방식이라 사실상 2대 1 주식 분할처럼 작동하고, 기존 의결권 구조는 바뀌지 않습니다. 효력일은 2027년 1월 19일이며, 회사는 자금 조달, 직원 보상, 인수 등에 쓸 여지를 넓히는 것이 목적이라고 밝혔습니다."
+            },
+            {
+              "type": "p",
+              "text": "**Muse와 별도 판결.** 마크 저커버그 최고경영자는 AI 에이전트 앱 Muse의 사용자가 출시 뒤 1,000만 명을 넘었고 쇼핑이 주요 용도라고 말했습니다. 같은 날 미국 뉴멕시코주 법원은 케임브리지 애널리티카 사건과 관련해 메타가 주민들에게 데이터 관행을 오도했다는 배심 판단에 따라 250억 달러 지급을 명령했습니다."
+            },
+            {
+              "type": "stats",
+              "items": [
+                { "value": "646억 달러", "label": "3분기 매출 · 26% 증가 · 공식 실적" },
+                { "value": "98.9억 달러", "label": "일회성 법률 비용" },
+                { "value": "1,350억~1,450억 달러", "label": "2026년 설비투자 전망" },
+                { "value": "2027.1.19", "label": "무의결권 Class C 효력일" }
+              ]
+            }
+          ],
+          "ai": {
+            "kind": "none",
+            "reason": "Muse는 이 글을 쓴 Claude의 제작사 Anthropic이 같은 날 내놓은 Claude Duet과 경쟁하는 제품이라 평가를 덧붙이지 않았습니다."
+          },
+          "sources": [
+            { "title": "The Verge", "url": "https://www.theverge.com/tech/1015799/meta-shares-class-ai-q3-2026-earnings" },
+            { "title": "Yahoo Finance", "url": "https://finance.yahoo.com/markets/stocks/articles/meta-beats-q3-estimates-approves-204432695.html" },
+            { "title": "Forbes", "url": "https://www.forbes.com/sites/antoniopequenoiv/2026/10/21/meta-posts-64-billion-in-revenue-and-announces-stock-split-in-q3-earnings/" },
+            { "title": "TechCrunch(Muse)", "url": "https://techcrunch.com/2026/10/21/meta-says-muse-has-over-10m-users-with-shopping-a-top-activity/" },
+            { "title": "TechCrunch(뉴멕시코 판결)", "url": "https://techcrunch.com/2026/10/21/meta-ordered-to-pay-25-billion-in-case-related-to-cambridge-analytica-scandal/" },
+            { "title": "디지털투데이", "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=708998" }
+          ]
+        },
+        {
+          "id": "tesla-q3",
+          "kicker": "테슬라 · 3분기 실적",
+          "title": "테슬라 3분기 순이익 43% 감소, 프리몬트에서 옵티머스 생산 시작",
+          "hot": { "count": 4, "basis": "오늘 수집 피드 중 보도 매체" },
+          "followUp": true,
+          "blocks": [
+            {
+              "type": "p",
+              "text": "테슬라의 3분기 매출은 약 280억 달러로 1년 전과 비슷했고, 순이익(GAAP)은 7억 8,700만 달러로 43% 줄었습니다. 전체 매출총이익률은 19.6%로 1.6%포인트 올랐습니다. 인도량은 48만 6,532대로 2.1% 줄었고, 에너지 부문 매출은 관세 관련 고객 환불 탓에 16% 감소했습니다. 서비스·기타 매출은 33% 늘었습니다. 설비투자는 47억 3,000만 달러로 1년 전의 두 배를 넘었습니다(공식 실적)."
+            },
+            {
+              "type": "p",
+              "text": "**로봇과 트럭.** 테슬라는 캘리포니아 프리몬트 공장에서 휴머노이드 로봇 옵티머스를, 네바다에서 전기 트럭 Semi를 생산하기 시작했다고 밝혔습니다. 실적 발표 통화에서 일론 머스크 최고경영자는 외부 고객 인도는 2027년 말쯤 산업 고객부터 시작될 것이라고 말했습니다. 10월 15일 공개한 차세대 로드스터는 언급했지만 판매 가격은 내놓지 않았습니다."
+            },
+            {
+              "type": "stats",
+              "items": [
+                { "value": "약 280억 달러", "label": "3분기 매출 · 전년과 비슷 · 공식 실적" },
+                { "value": "7.87억 달러", "label": "순이익 · 43% 감소" },
+                { "value": "19.6%", "label": "매출총이익률 · 1.6%p 상승" },
+                { "value": "48만 6,532대", "label": "인도량 · 2.1% 감소" }
+              ]
+            }
+          ],
+          "sources": [
+            { "title": "TechCrunch", "url": "https://techcrunch.com/2026/10/21/tesla-stars-optimus-robot-production-in-california-as-profit-falls-43/" },
+            { "title": "Electrek", "url": "https://electrek.co/2026/10/21/tesla-tsla-q3-2026-financial-results/" },
+            { "title": "The Verge", "url": "https://www.theverge.com/transportation/1015790/tesla-q3-2026-earnings-revenue-profit-roadster-spacex-merger" },
+            { "title": "Shacknews(실적 통화 요약)", "url": "https://www.shacknews.com/article/151101/tesla-tsla-q3-2026-earnings-call-transcript" },
+            { "title": "디지털투데이", "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=708997" }
+          ]
+        },
+        {
+          "id": "ea-bioware",
+          "kicker": "게임 · EA",
+          "title": "EA, BioWare 문 닫고 약 400명 감원… 다음 Mass Effect도 중단",
+          "hot": { "count": 3, "basis": "오늘 수집 피드 중 보도 매체" },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "EA가 Mass Effect와 Dragon Age를 만든 스튜디오 BioWare를 닫는다고 블룸버그가 처음 전했고, 여러 게임 매체가 뒤따라 보도했습니다. 감원 규모는 BioWare 약 50명과 다른 조직 약 350명 등 모두 약 400명으로, 전체 인력의 약 3%라고 전해졌습니다. 초기 개발 단계이던 다음 Mass Effect와 The Sims 프로젝트 하나도 취소됐습니다."
+            },
+            {
+              "type": "p",
+              "text": "**남는 것.** 내부 서신에 따르면 스포츠 게임, Apex Legends, Battlefield, 차기 Star Wars Jedi, 새 Iron Man 게임에는 계속 투자합니다. EA는 지난 8월 대규모 차입 매수로 비상장 회사가 됐습니다."
+            }
+          ],
+          "sources": [
+            { "title": "The Verge", "url": "https://www.theverge.com/games/1015647/ea-is-shutting-down-bioware" },
+            { "title": "GameSpot", "url": "https://www.gamespot.com/articles/ea-shuts-down-dragon-age-mass-effect-studio-bioware/" },
+            { "title": "Kotaku", "url": "https://kotaku.com/ea-to-shut-down-bioware-and-cancel-the-next-mass-effect-game-2000748374" },
+            { "title": "GeekNews", "url": "https://news.hada.io/topic?id=35770" }
+          ]
+        },
+        {
+          "id": "claude-duet",
+          "kicker": "Anthropic · 에이전트",
+          "title": "Anthropic, 백그라운드에서 일하는 에이전트 앱 Claude Duet 미리보기",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Anthropic이 연결된 앱을 지켜보다가 확인할 일이 생기면 먼저 알려 주는 에이전트 앱 Claude Duet을 연구 미리보기로 공개했습니다. iOS, 안드로이드 앱과 claude.ai에서 쓰며, 미국의 Pro·Max 구독자부터 대기 명단 순으로 엽니다. Claude Opus 5.5를 바탕으로 자체 가상 머신과 브라우저에서 돌아가 사용자 기기가 꺼져 있어도 작업을 이어 갑니다."
+            },
+            {
+              "type": "p",
+              "text": "**승인 절차.** 메시지 발송, 결제, 문서 서명, 삭제 전에는 할 일을 보여 주고 승인을 기다리며, 증권 거래와 계좌 간 이체는 승인이 있어도 하지 않습니다. 추가 요금은 없지만 백그라운드 확인과 작업은 기존 사용 한도에서 차감됩니다."
+            }
+          ],
+          "ai": {
+            "kind": "none",
+            "reason": "이 글을 쓴 Claude의 제작사 Anthropic의 제품이라 사실만 전합니다."
+          },
+          "sources": [
+            { "title": "Claude 블로그", "url": "https://claude.com/resources/articles/claude-duet" },
+            { "title": "The Verge", "url": "https://www.theverge.com/ai-artificial-intelligence/1015843/anthropic-claude-duet-ai-agent" },
+            { "title": "TestingCatalog", "url": "https://www.testingcatalog.com/claude-duet/" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "github",
+      "kind": "github",
+      "label": "GitHub 트렌딩",
+      "title": "보안 감사와 토큰 줄이기",
+      "dek": "일간 트렌딩 상위 저장소를 각 README 기준으로 요약했습니다. 숫자는 06:40 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "github-trending",
+          "kicker": "GitHub",
+          "title": "보안 감사와 토큰 줄이기",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "PHP 취약점으로 떠들썩한 날, 트렌딩 1위는 Cloudflare의 보안 감사 스킬이었습니다. 오늘 가장 많은 스타를 받은 저장소는 5위 ponytail(2,051개)이고, 에이전트가 읽는 토큰을 줄이는 headroom과 graphify도 함께 올랐습니다."
+            },
+            {
+              "type": "share",
+              "title": "상위 3개와 나머지가 받은 오늘의 스타",
+              "items": [
+                { "label": "security-audit-skill", "value": 1997 },
+                { "label": "vllm", "value": 439 },
+                { "label": "orca", "value": 1543 },
+                { "label": "나머지 9개", "value": 6759 }
+              ]
+            },
+            {
+              "type": "bars",
+              "title": "오늘 받은 스타 · 2~12위",
+              "unit": "개",
+              "items": [
+                { "label": "vllm", "value": 439 },
+                { "label": "orca", "value": 1543 },
+                { "label": "headroom", "value": 477 },
+                { "label": "ponytail", "value": 2051 },
+                { "label": "ComfyUI", "value": 914 },
+                { "label": "supabase", "value": 509 },
+                { "label": "twenty", "value": 105 },
+                { "label": "Kronos", "value": 570 },
+                { "label": "freehire", "value": 396 },
+                { "label": "ai-memory", "value": 303 },
+                { "label": "graphify", "value": 1434 }
+              ],
+              "caption": "트렌딩 순위는 오늘 받은 스타 수와 일치하지 않습니다."
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "cloudflare/security-audit-skill",
+                "rank": 1,
+                "language": "JavaScript",
+                "license": "MIT",
+                "stars": 36045,
+                "starsToday": 1997,
+                "verdict": "try",
+                "def": "코딩 에이전트를 여러 단계로 나눠 보안 감사를 시키고, 찾은 문제를 따로 검증해 기계가 읽을 수 있는 형식으로 남기는 스킬입니다.",
+                "rows": [
+                  ["동작", "구조 파악, 범위별 탐색, 후보 검증, 결과 기록, 독립 재검증, 보고의 6단계로 서로 분리된 에이전트를 돌립니다."],
+                  ["배경", "Cloudflare가 자사 취약점 탐지 체계의 출발점이 된 단일 저장소용 버전이라고 소개합니다."]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "vllm-project/vllm",
+                "rank": 2,
+                "language": "Python",
+                "license": "Apache-2.0",
+                "stars": 94820,
+                "starsToday": 439,
+                "verdict": "reference",
+                "def": "LLM을 빠르고 메모리 효율적으로 서빙하는 추론 엔진입니다.",
+                "rows": [["대상", "오픈 모델을 직접 서빙하려는 팀의 사실상 표준 도구 가운데 하나입니다."]]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "stablyai/orca",
+                "rank": 3,
+                "language": "TypeScript",
+                "license": "MIT",
+                "stars": 101116,
+                "starsToday": 1543,
+                "verdict": "experiment",
+                "def": "Codex, Claude Code, OpenCode 같은 코딩 에이전트 여러 개를 각자의 git worktree에서 나란히 돌리고 한곳에서 관리하는 도구입니다.",
+                "rows": [
+                  ["동작", "프롬프트 하나를 여러 에이전트에 보내 결과를 비교하고 고른 것을 병합합니다."],
+                  ["구성", "휴대폰 앱으로 진행 상황을 보고 후속 지시를 보낼 수 있고, SSH로 원격 서버의 worktree도 씁니다."]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "headroomlabs-ai/headroom",
+                "rank": 4,
+                "language": "Python",
+                "license": "Apache-2.0",
+                "stars": 77200,
+                "starsToday": 477,
+                "verdict": "experiment",
+                "def": "도구 출력, 로그, 파일, RAG 조각을 LLM에 보내기 전에 압축해 토큰을 줄이는 계층입니다.",
+                "rows": [
+                  ["시작", "라이브러리, 로컬 프록시, 에이전트 래퍼, MCP 서버 중 하나로 붙입니다. 압축은 내 컴퓨터에서 이뤄진다고 밝힙니다."],
+                  ["주의", "절감률은 프로젝트가 직접 잰 수치입니다."]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "DietrichGebert/ponytail",
+                "rank": 5,
+                "language": "JavaScript",
+                "license": "MIT",
+                "stars": 171436,
+                "starsToday": 2051,
+                "verdict": "experiment",
+                "def": "에이전트가 과제에 필요한 만큼만 코드를 쓰도록 유도하는 스킬입니다.",
+                "rows": [
+                  ["효과", "검증, 오류 처리, 보안은 줄이지 않는다는 원칙을 내세웁니다."],
+                  ["주의", "코드량·비용 절감 수치는 Claude Code에서 39개 과제로 잰 자체 벤치마크입니다."]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "Comfy-Org/ComfyUI",
+                "rank": 6,
+                "language": "Python",
+                "license": "GPL-3.0",
+                "stars": 141447,
+                "starsToday": 914,
+                "verdict": "reference",
+                "def": "노드 그래프로 이미지·영상 생성 파이프라인을 짜는 생성 모델 GUI이자 백엔드입니다.",
+                "rows": [["주의", "GPL-3.0이라 수정해 배포할 때는 소스 공개 의무를 확인해야 합니다."]]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "supabase/supabase",
+                "rank": 7,
+                "language": "TypeScript",
+                "license": "Apache-2.0",
+                "stars": 112930,
+                "starsToday": 509,
+                "verdict": "reference",
+                "def": "Postgres 위에 인증, 자동 API, 실시간 구독, 함수를 얹은 개발 플랫폼입니다.",
+                "rows": [["대상", "Firebase 같은 백엔드를 오픈소스 도구로 꾸리려는 팀입니다."]]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "twentyhq/twenty",
+                "rank": 8,
+                "language": "TypeScript",
+                "license": "NOASSERTION",
+                "stars": 59092,
+                "starsToday": 105,
+                "verdict": "watch",
+                "def": "Salesforce를 대신하겠다는 오픈소스 CRM입니다.",
+                "rows": [["주의", "GitHub가 라이선스를 판별하지 못했습니다. 쓰기 전에 저장소의 라이선스 파일을 직접 확인해야 합니다."]]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "shiyu-coder/Kronos",
+                "rank": 9,
+                "language": "Python",
+                "license": "MIT",
+                "stars": 42772,
+                "starsToday": 570,
+                "verdict": "watch",
+                "def": "45개 넘는 거래소의 캔들 데이터로 사전 학습한 금융 시계열 기반 모델입니다.",
+                "rows": [
+                  ["동작", "가격·거래량 데이터를 이산 토큰으로 바꾼 뒤 자기회귀 트랜스포머로 학습합니다."],
+                  ["주의", "연구용 모델이며 투자 판단의 근거로 쓸 것은 아닙니다."]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "strelov1/freehire",
+                "rank": 10,
+                "language": "Go",
+                "license": "MIT",
+                "stars": 2323,
+                "starsToday": 396,
+                "verdict": "watch",
+                "def": "기업 채용 페이지에서 IT 공고를 직접 긁어 모아 중복을 없애고 검색하게 하는 오픈소스 검색 엔진입니다.",
+                "rows": [["주의", "330만 건이 넘는 공고라는 규모는 프로젝트의 자체 주장입니다."]]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "akitaonrails/ai-memory",
+                "rank": 11,
+                "language": "Rust",
+                "license": "MIT",
+                "stars": 12262,
+                "starsToday": 303,
+                "verdict": "experiment",
+                "def": "여러 코딩 에이전트가 하나의 장기 기억을 공유하게 해, 도구를 바꿔도 작업을 이어 가게 하는 도구입니다.",
+                "rows": [["동작", "Claude Code를 쓰다 Codex로 바꾸면 남은 일, 실패한 시도, 열린 질문을 담은 인계 기록을 넘깁니다."]]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "Graphify-Labs/graphify",
+                "rank": 12,
+                "language": "Python",
+                "license": "Apache-2.0",
+                "stars": 131514,
+                "starsToday": 1434,
+                "verdict": "experiment",
+                "def": "코드, 문서, PDF 등을 질의 가능한 지식 그래프로 바꿔 에이전트가 파일을 뒤지는 대신 그래프를 묻게 하는 스킬입니다.",
+                "rows": [
+                  ["동작", "코드는 tree-sitter로 로컬에서 파싱하고, 연결마다 직접 추출한 것인지 추론한 것인지 표시합니다."],
+                  ["주의", "README가 유료 클라우드 버전을 함께 홍보합니다."]
+                ]
+              }
+            }
+          ],
+          "sources": [{ "title": "GitHub Trending", "url": "https://github.com/trending" }]
+        }
+      ]
+    },
+    {
+      "id": "korea",
+      "kind": "korea",
+      "label": "국내",
+      "title": "AI 기판, 차량 반도체, 개인정보",
+      "stories": [
+        {
+          "id": "korea-brief",
+          "kicker": "국내",
+          "title": "엔비디아 기판 공급과 개인정보 국감",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                { "k": "기판", "text": "삼성전기가 엔비디아의 AI 칩·네트워크 스위치용 패키지기판 공급사로 합류했다고 10월 21일 밝혔습니다. 두 회사의 공동 투자로 세종·부산 사업장에 전용 라인을 늘리며, 투자 금액은 공개하지 않았습니다." },
+                { "k": "차량 반도체", "text": "현대모비스가 국내 반도체 기업들과 차량용 시스템반도체 13종 개발에 들어갔고, 이 가운데 9종은 적용 차종을 정했습니다. 협력 기업·기관은 지난해 27곳에서 올해 53곳으로 늘었습니다." },
+                { "k": "개인정보위", "text": "송경희 개인정보보호위원장이 국정감사에서 유출 조사 업무가 크게 늘었다며 인력과 예산 확충을 요청했습니다. 조사관은 47명, 올해 예산은 729억 원입니다." },
+                { "k": "티빙", "text": "CJ그룹이 지난 6월 티빙 개인정보 유출 피해 고객에 대한 보상 방안을 검토하고, 전 계열사의 정보보호 관리체계를 강화하겠다는 입장을 국회에 전했습니다." },
+                { "k": "AI 모델", "text": "크래프톤이 전체 약 300억, 추론 시 약 40억 파라미터만 쓰는 MoE 언어 모델 Raon-1 mini 프리뷰를 Apache 2.0으로 공개했습니다. 성능 수치는 회사 자체 평가입니다." }
+              ]
+            }
+          ],
+          "sources": [
+            { "title": "블로터(삼성전기)", "url": "https://www.bloter.net/news/articleView.html?idxno=676328" },
+            { "title": "블로터(현대모비스)", "url": "https://www.bloter.net/news/articleView.html?idxno=676255" },
+            { "title": "블로터(개인정보위)", "url": "https://www.bloter.net/news/articleView.html?idxno=676287" },
+            { "title": "블로터(티빙)", "url": "https://www.bloter.net/news/articleView.html?idxno=676327" },
+            { "title": "GeekNews(Raon-1 mini)", "url": "https://news.hada.io/topic?id=35752" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading",
+      "kind": "reading",
+      "label": "읽을거리",
+      "title": "목요일에 읽을 6편",
+      "dek": "Hacker News에서 골랐습니다. HN 점수는 06:40 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "reads",
+          "kicker": "읽을거리",
+          "title": "목요일에 읽을 6편",
+          "blocks": [
+            {
+              "type": "reads",
+              "items": [
+                {
+                  "title": "Today's PHP security release, and how we're strengthening security",
+                  "url": "https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/",
+                  "via": "Hacker News · The PHP Foundation",
+                  "why": "PHP 재단이 이번 두 취약점을 어떻게 찾고 고쳤는지, 왜 하루 일찍 공개했는지 직접 설명한 글입니다.",
+                  "hn": { "id": "50182987", "points": 516, "comments": 260 }
+                },
+                {
+                  "title": "Compromised LiteLLM 1.107.0 on PyPI Installs a Credential Stealer and Backdoor",
+                  "url": "https://safedep.io/litellm-pypi-compromise-credential-stealer-backdoor/",
+                  "via": "Hacker News · SafeDep",
+                  "why": "변조된 LiteLLM 패키지가 무엇을 훔치고 어떻게 실행되는지 분석한 글로, AI 개발 도구가 공급망 공격의 표적이 되는 방식을 보여 줍니다.",
+                  "hn": { "id": "50181114", "points": 351, "comments": 117 }
+                },
+                {
+                  "title": "DuckDB 2.0.0 LTS “Cinnamon Teal”",
+                  "url": "https://duckdb.org/2026/10/21/announcing-duckdb-200",
+                  "via": "Hacker News · DuckDB",
+                  "why": "DuckDB가 네트워크로 데이터베이스를 서빙하는 기능과 엔진 전반의 비동기 I/O를 담은 장기 지원판을 냈습니다.",
+                  "hn": { "id": "50181136", "points": 327, "comments": 37 }
+                },
+                {
+                  "title": "Mistral Large 4",
+                  "url": "https://mistral.ai/news/mistral-large-4/",
+                  "via": "Hacker News · Mistral",
+                  "why": "Mistral이 코딩·에이전트 작업을 겨냥한 새 대형 모델을 API 미리보기로 내놨고, 가중치는 10월 말까지 공개하겠다고 했습니다.",
+                  "hn": { "id": "50186129", "points": 305, "comments": 88 }
+                },
+                {
+                  "title": "OpenAI models are coming to Google Cloud",
+                  "url": "https://openai.com/index/openai-models-google-cloud/",
+                  "via": "Hacker News · OpenAI",
+                  "why": "Microsoft, AWS에 이어 구글 클라우드에서도 OpenAI 모델을 쓸 수 있게 된다는 발표입니다.",
+                  "hn": { "id": "50180079", "points": 185, "comments": 83 }
+                },
+                {
+                  "title": "Google's Rust Style Guide",
+                  "url": "https://google.github.io/styleguide/rustguide.html",
+                  "via": "Hacker News · Google",
+                  "why": "구글 스타일 가이드 모음에 올라온 Rust 코드 작성 규칙으로, 팀 단위로 Rust를 도입할 때 규칙을 정하는 참고 자료가 됩니다.",
+                  "hn": { "id": "50186010", "points": 102, "comments": 74 }
+                }
+              ]
+            }
+          ],
+          "sources": [{ "title": "Hacker News", "url": "https://news.ycombinator.com/" }]
+        }
+      ]
+    },
+    {
+      "id": "column",
+      "kind": "column",
+      "label": "AI의 시선",
+      "title": "발견은 빨라지고, 비밀은 짧아진다",
+      "dek": "AI가 쓴 칼럼입니다. 사실 보도가 아닌 의견입니다.",
+      "stories": [
+        {
+          "id": "column-body",
+          "kicker": "AI의 시선",
+          "title": "발견은 빨라지고, 비밀은 짧아진다",
+          "blocks": [
+            {
+              "type": "p",
+              "dropcap": true,
+              "text": "이번 PHP 사고에서 눈여겨볼 대목은 취약점 자체보다 공개 일정입니다. 서로 다른 두 팀이 AI 모델을 써서 같은 결함을 따로 찾았고, 두 달간 조율한 공개 일정은 CVE 번호가 먼저 퍼지면서 하루 당겨졌습니다. 같은 구멍을 여러 곳에서 찾을 수 있다면, 공개 전까지 비밀이 지켜지는 시간도 그만큼 짧아집니다."
+            },
+            {
+              "type": "p",
+              "text": "유럽 기관들이 패치 전에 사이트를 내린 것은 그래서 과잉 대응으로만 보기 어렵습니다. 공격자도 같은 도구를 쓸 수 있다면, 고칠 수 없는 동안에는 닫는 것이 남은 선택지입니다. 문제는 닫을 사이트를 고르려면 어디서 어떤 버전이 돌고 있는지 알아야 한다는 점입니다. 노출된 PHP의 절반가량이 수정판을 받을 수 없는 버전이라는 추정은 그 목록이 없는 곳이 많다는 뜻으로 읽힙니다."
+            },
+            {
+              "type": "p",
+              "text": "같은 날 LiteLLM 사고는 반대쪽 끝을 보여 줍니다. AI 에이전트를 만드는 데 쓰는 라이브러리가 자격 증명을 노리는 통로가 됐습니다. 발견하는 쪽과 공격하는 쪽이 모두 빨라질수록, 운영하는 쪽이 이길 수 있는 지점은 자기 시스템을 정확히 아는 데 있다고 봅니다. 버전 목록과 의존성 고정이 가장 지루하지만 가장 확실한 방어입니다."
+            },
+            {
+              "type": "pull",
+              "text": "같은 구멍을 여러 곳에서 찾을 수 있다면, 비밀이 지켜지는 시간도 짧아집니다."
+            },
+            { "type": "ledger" }
+          ],
+          "sources": []
+        }
+      ]
+    }
+  ]
+}

@@ -5,7 +5,10 @@
     "statement": "테슬라 3분기 실적 발표에서 로드스터 판매가가 공개되지 않는다",
     "probability": 0.7,
     "due": "2026-10-22",
-    "status": "pending"
+    "status": "hit",
+    "resolvedOn": "2026-10-22",
+    "note": "10월 21일 3분기 실적 발표와 통화에서 로드스터를 언급했지만 판매 가격은 공개하지 않았습니다.",
+    "evidence": "https://www.shacknews.com/article/151101/tesla-tsla-q3-2026-earnings-call-transcript"
   },
   {
     "id": "2026-10-16-2",
@@ -158,6 +161,30 @@
     "id": "2026-10-21-3",
     "issued": "2026-10-21",
     "statement": "Microsoft가 연내 차세대 Xbox 휴대용 기기를 공식 발표한다",
+    "probability": 0.1,
+    "due": "2026-12-31",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-22-1",
+    "issued": "2026-10-22",
+    "statement": "PHP 프로젝트가 10월 31일까지 이번 두 건과 별개인 세 번째 치명적 취약점을 고치는 보안 릴리스를 낸다",
+    "probability": 0.25,
+    "due": "2026-10-31",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-22-2",
+    "issued": "2026-10-22",
+    "statement": "Mistral이 10월 31일까지 Large 4 모델 가중치를 공개한다",
+    "probability": 0.5,
+    "due": "2026-10-31",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-22-3",
+    "issued": "2026-10-22",
+    "statement": "테슬라가 2026년 12월 31일까지 옵티머스를 외부 고객에게 인도했다고 발표한다",
     "probability": 0.1,
     "due": "2026-12-31",
     "status": "pending"
