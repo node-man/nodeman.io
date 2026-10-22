@@ -188,5 +188,29 @@
     "probability": 0.1,
     "due": "2026-12-31",
     "status": "pending"
+  },
+  {
+    "id": "2026-10-23-1",
+    "issued": "2026-10-23",
+    "statement": "Quad9가 11월 24일까지 프랑스 이용자 대상 서비스 중단 계획을 철회한다",
+    "probability": 0.15,
+    "due": "2026-11-24",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-23-2",
+    "issued": "2026-10-23",
+    "statement": "과기정통부가 10월 31일까지 민간 사이버위기 경보를 '관심'으로 다시 낮춘다",
+    "probability": 0.35,
+    "due": "2026-10-31",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-23-3",
+    "issued": "2026-10-23",
+    "statement": "The Browser Company가 Arc 종료일(12월 22일)을 늦춘다",
+    "probability": 0.1,
+    "due": "2026-12-22",
+    "status": "pending"
   }
 ]
