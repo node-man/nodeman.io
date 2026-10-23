@@ -129,7 +129,10 @@
     "statement": "MiniMax가 10월 23일까지 M3.1 Flash 모델 가중치를 공개한다",
     "probability": 0.7,
     "due": "2026-10-23",
-    "status": "pending"
+    "status": "hit",
+    "resolvedOn": "2026-10-24",
+    "note": "MiniMax가 10월 23일 M3.1 Flash(4,280억 매개변수) 가중치를 공개해 기한 당일에 맞췄습니다.",
+    "evidence": "https://technode.com/2026/10/23/minimax-releases-open-weights-for-428-billion-parameter-m3-1-flash-model/"
   },
   {
     "id": "2026-10-20-3",
@@ -211,6 +214,31 @@
     "statement": "The Browser Company가 Arc 종료일(12월 22일)을 늦춘다",
     "probability": 0.1,
     "due": "2026-12-22",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-24-1",
+    "issued": "2026-10-24",
+    "statement": "Moonshot이 11월 4일까지 Kimi K3.1 Pro 전체 가중치를 공개한다",
+    "probability": 0.75,
+    "due": "2026-11-04",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-24-2",
+    "issued": "2026-10-24",
+    "statement": "애플이 11월 13일까지 아이폰 듀오 화면 파손 보고에 대해 공식 입장을 낸다",
+    "probability": 0.25,
+    "due": "2026-11-13",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-24-3",
+    "issued": "2026-10-24",
+    "statement": "Counterpoint 집계 2026년 4분기 세계 PC 출하량이 전년 대비 20% 넘게 줄어든다",
+    "probability": 0.7,
+    "due": "2027-01-31",
+    "dueLabel": "2027.1",
     "status": "pending"
   }
 ]
