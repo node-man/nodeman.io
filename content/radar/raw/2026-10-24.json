@@ -1,0 +1,3070 @@
+{
+ "version": 1,
+ "date": "2026-10-24",
+ "collectedAt": "2026-10-23T21:41:46.982Z",
+ "collector": "scripts/radar/collect.mjs",
+ "summary": {
+  "github": "ok",
+  "hn": "ok",
+  "feeds": {
+   "techmeme": "ok",
+   "techcrunch": "ok",
+   "theverge": "ok",
+   "electrek": "ok",
+   "gnews-us": "ok",
+   "gnews-kr": "ok",
+   "geeknews": "ok",
+   "etnews": "ok",
+   "bloter": "ok",
+   "digitaltoday": "ok"
+  }
+ },
+ "github": {
+  "id": "github",
+  "name": "GitHub Trending (daily, all languages)",
+  "url": "https://github.com/trending?since=daily",
+  "status": "ok",
+  "checks": [],
+  "fetchedAt": "2026-10-23T21:41:46.982Z",
+  "httpDate": "Fri, 23 Oct 2026 21:41:48 GMT",
+  "cacheAge": null,
+  "count": 8,
+  "repos": [
+   {
+    "rank": 1,
+    "fullName": "cloudflare/security-audit-skill",
+    "url": "https://github.com/cloudflare/security-audit-skill",
+    "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+    "language": "JavaScript",
+    "stars": 41953,
+    "forks": 2622,
+    "starsToday": 2706,
+    "api": {
+     "stars": 41953,
+     "forks": 2622,
+     "license": "MIT",
+     "createdAt": "2026-06-18T14:08:44Z",
+     "pushedAt": "2026-09-14T19:29:02Z",
+     "topics": [],
+     "homepage": null,
+     "openIssues": 83,
+     "archived": false
+    },
+    "starDrift": 0,
+    "readme": "# security-audit\n\nA coding-agent skill that turns your agent into a security auditor. It orchestrates isolated agents through reconnaissance, coverage-led hunting, candidate validation, structured output, independent record verification, and target-neutral reporting.\n\nThis is the skill that seeded Cloudflare's vulnerability discovery harness, described in [Build your own vulnerability harness](https://blog.cloudflare.com/build-your-own-vulnerability-harness). The harness grew into a multi-stage, fleet-wide system; this skill is the single-repo starting point it evolved from.\n\n## What it does\n\nThe skill runs a structured audit in six phases:\n\n1. **Reconnaissance** -- map architecture, trust boundaries, input surfaces, prior evidence, and deterministic coverage in `architecture.md` and `coverage-ledger.json`.\n2. **Coverage-led hunting** -- assign isolated hunters from ledger units, record their checks, and use coverage critics to find gaps.\n3. **Candidate validation** -- give every unique candidate to a fresh verifier that tries to disprove it.\n4. **Structured output** -- write `confirmed`, `needs_validation`, and `rejected` records to `findings.json` and validate them against `report-schema.json`.\n5. **Independent record verification** -- fresh agents verify final source claims. Material replacements receive another independent verifier.\n6. **Target-neutral reporting** -- derive `REPORT.md`, `FINDINGS-DETAIL.md`, and `NEEDS-VALIDATION.md` from the verified records and coverage ledger.\n\nThe parent runs `validate-coverage-ledger.cjs` after creating the ledger and after each later ledger update. It runs `validate-findings.cjs` in Phase 4 and again after every Phase 5 replacement.\n\nThe verdicts are distinct: `confirmed` has a complete source trace and bounded observed result, `needs_validation` has an exact unresolved fact and no severity, and `rejected` records a disproved candidate.\n\nMultiple runs against the same repo are additive. The skill uses prior ledgers and findings to target gaps, revalidate changed source, and carry forward current-source evidence without treating stale or unresolved work as covered.\n\n## Files\n\n| File | Purpose |\n|------|---------|\n| `SKILL.md` | Setup, core principles, platform terminology, workflow overview, and audit anti-patterns |\n| `RECONNAISSANCE.md` | Phase 1 reconnaissance prompts and synthesis instructions |\n| `HUNTING.md` | Phase 2 orchestration, hunting methodology, and validation rules |\n| `ATTACK-CLASSES.md` | Core, wildcard, and obvious-things attack prompts |\n| `MEMORY-SAFETY-AND-BINARY.md` | Memory-safety, binary, and kernel hunting classes for native targets |\n| `AI-AND-LLM.md` | Prompt-injection, agent/tool, and output-handling hunting classes for LLM-backed targets |\n| `WEB-PROTOCOL-AND-AUTH.md` | HTTP request-framing, cache, and authentication-protocol hunting classes for HTTP-protocol and auth targets |\n| `CLIENT-SIDE.md` | DOM-injection, messaging-trust, UI-redress, and prototype-pollution hunting classes for client-side/browser targets |\n| `SUPPLY-CHAIN-AND-RELEASE.md` | Dependency, CI, release, signing, update, plugin, and extension hunting classes |\n| `CLOUD-AND-DEPLOYMENT.md` | IAM, infrastructure-as-code, container, serverless, ingress, and runtime-configuration hunting classes |\n| `PROTOCOLS-RPC-AND-MESSAGING.md` | RPC, serialization, queue, broker, webhook, and streaming-protocol hunting classes |\n| `RESOURCE-EXHAUSTION-AND-AVAILABILITY.md` | Shared resource, quota, queue, worker, and operator-spend hunting classes |\n| `DATA-ISOLATION-AND-LIFECYCLE.md` | Tenant isolation, cache, search, export, backup, migration, deletion, and restore hunting classes |\n| `DESKTOP-MOBILE-AND-LOCAL-IPC.md` | Native app, deep-link, webview, exported-component, helper, daemon, and local-IPC hunting classes |\n| `VALIDATION-AND-REPORTING.md` | Phases 3–6 candidate validation, structured output, record verification, and reporting |\n| `report-schema.json` | JSON schema for all three `findings.json` verdicts |\n| `validate-findings.cjs` | Zero-dependency validator for `findings.json` in Phases 4 and 5 |\n| `validate-findings.test.cjs` | Findings-validator tests and producer-compatible fixture checks |\n| `validate-coverage-ledger.cjs` | Zero-dependency validator for `coverage-ledger.json` in Phases 1–5 |\n| `validate-coverage-ledger.test.cjs` | Coverage-ledger validator tests |\n\n## Installation\n\nInstall the skill with the [Skills CLI](https://skills.sh):\n\n```bash\nnpx skills add https://github.com/cloudflare/security-audit-skill \\\n  --skill security-audit\n```\n\nUse `--global` for a user-level installation:\n\n```bash\nnpx skills add https://github.com/cloudflare/security-audit-skill \\\n  --skill security-audit \\\n  --global\n```\n\nRun `npx skills --help` for agent-selection and non-interactive options.\n\n## Usage\n\nStart your coding agent in (or pointed at) the codebase you want to audit, then ask it to do a security audit:\n\n```\nsecurity audit this codebase\n```\n\n```\nfind security vulnerabilities in ./src\n```\n\n```\ndo a security review, output to ~/audits/my-project\n```\n\nThe skill activates automatically when the request matches its trigger (security audit, find vulnerabilities, pen-test the code, etc.). A direct codebase audit or pen-test request uses full audit mode. Security questions and focused vulnerability work use guidance mode unless you request report artifacts. In full audit mode, an unspecified output directory defaults to `~/security-audit-skill/<repo-name>/run-<N>`. The workflow writes inside the target repository only when you explicitly select a directory that version control ignores.\n\n## Requirements\n\n- A coding agent with a model that supports tool use and parallel sub-agents\n- Node.js for the zero-dependency findings and coverage-ledger validators\n- An OS-enforced sandbox for target-controlled builds, tests, processes, browsers, emulators, fuzzers, and fixtures. It must disable external networking, use a sanitized allowlisted environment, enforce resource li",
+    "readmeTruncated": true
+   },
+   {
+    "rank": 2,
+    "fullName": "php/php-src",
+    "url": "https://github.com/php/php-src",
+    "description": "The PHP Interpreter",
+    "language": "C",
+    "stars": 41538,
+    "forks": 8357,
+    "starsToday": 722,
+    "api": {
+     "stars": 41538,
+     "forks": 8357,
+     "license": "BSD-3-Clause",
+     "createdAt": "2011-06-16T01:52:25Z",
+     "pushedAt": "2026-10-23T21:21:08Z",
+     "topics": [],
+     "homepage": "https://www.php.net",
+     "openIssues": 2236,
+     "archived": false
+    },
+    "starDrift": 0,
+    "readme": "<div align=\"center\">\n    <a href=\"https://www.php.net\">\n        <img\n            alt=\"PHP\"\n            src=\"https://www.php.net/images/logos/new-php-logo.svg\"\n            width=\"150\">\n    </a>\n</div>\n\n# The PHP Interpreter\n\nPHP is a popular general-purpose scripting language that is especially suited to\nweb development. Fast, flexible and pragmatic, PHP powers everything from your\nblog to the most popular websites in the world.\n\nPHP is distributed under the [Modified BSD License](LICENSE)\n(SPDX-License-Identifier: `BSD-3-Clause`).\n\n[![Test](https://github.com/php/php-src/actions/workflows/test.yml/badge.svg)](https://github.com/php/php-src/actions/workflows/test.yml)\n[![Fuzzing Status](https://oss-fuzz-build-logs.storage.googleapis.com/badges/php.svg)](https://issues.oss-fuzz.com/issues?q=project:php)\n\n## Documentation\n\nThe PHP manual is available at [php.net/docs](https://www.php.net/docs).\n\n## Installation\n\n### Prebuilt packages and binaries\n\nPrebuilt packages and binaries can be used to get up and running fast with PHP.\n\nFor Windows, the PHP binaries can be obtained from\n[windows.php.net](https://windows.php.net). After extracting the archive the\n`*.exe` files are ready to use.\n\nFor other systems, see the [installation chapter](https://www.php.net/install).\n\n### Building PHP source code\n\n*For Windows, see [Build your own PHP on Windows](https://wiki.php.net/internals/windows/stepbystepbuild_sdk_2).*\n\nFor a minimal PHP build from Git, you will need autoconf, bison, and re2c. For\na default build, you will additionally need libxml2 and libsqlite3.\n\nOn Ubuntu, you can install these using:\n\n```shell\nsudo apt install -y pkg-config build-essential autoconf bison re2c libxml2-dev libsqlite3-dev\n```\n\nOn Fedora, you can install these using:\n\n```shell\nsudo dnf install re2c bison autoconf make ccache libxml2-devel sqlite-devel\n```\n\nOn MacOS, you can install these using `brew`:\n\n```shell\nbrew install autoconf bison re2c libiconv libxml2 sqlite\n```\n\nor with `MacPorts`:\n\n```shell\nsudo port install autoconf bison re2c libiconv libxml2 sqlite3\n```\n\nGenerate configure:\n\n```shell\n./buildconf\n```\n\nConfigure your build. `--enable-debug` is recommended for development, see\n`./configure --help` for a full list of options.\n\n```shell\n# For development\n./configure --enable-debug\n# For production\n./configure\n```\n\nBuild PHP. To speed up the build, specify the maximum number of jobs using the\n`-j` argument:\n\n```shell\nmake -j4\n```\n\nThe number of jobs should usually match the number of available cores, which\ncan be determined using `nproc`.\n\n## Testing PHP source code\n\nPHP ships with an extensive test suite, the command `make test` is used after\nsuccessful compilation of the sources to run this test suite.\n\nTests run in parallel by default, using up to 10 detected logical processors.\nSet `-jN` in `TEST_PHP_ARGS` or `TESTS` to override the worker count:\n\n```shell\nmake TEST_PHP_ARGS=-j4 test\n```\n\nThis runs `make test` with a maximum of 4 concurrent jobs. Alternatively,\nuse `-j1` to run tests sequentially.\n\nUse the `TEST_PHP_ARGS` or `TESTS` variable to test only specific directories:\n\n```shell\nmake TESTS=tests/lang/ test\n```\n\nThe [qa.php.net](https://qa.php.net) site provides more detailed info about\ntesting and quality assurance.\n\n## Installing PHP built from source\n\nAfter a successful build (and test), PHP may be installed with:\n\n```shell\nmake install\n```\n\nDepending on your permissions and prefix, `make install` may need superuser\npermissions.\n\n## PHP extensions\n\nExtensions provide additional functionality on top of PHP. PHP consists of many\nessential bundled extensions. Additional extensions can be found on the\n[PIE Extensions](https://packagist.org/extensions) list, and installed with\n[🥧 PIE, the PHP Installer for Extensions](https://github.com/php/pie) or the\ndeprecated PHP Extension Community Library - [PECL](https://pecl.php.net).\n\n## Contributing\n\nThe PHP source code is located in the Git repository at\n[github.com/php/php-src](https://github.com/php/php-src). Contributions are most\nwelcome by forking the repository and sending a pull request.\n\nDiscussions are done on GitHub, but depending on the topic can also be relayed\nto the official PHP developer mailing list internals@lists.php.net.\n\nNew features require an RFC and must be accepted by the developers. See\n[Request for comments - RFC](https://wiki.php.net/rfc) and\n[Voting on PHP features](https://wiki.php.net/rfc/voting) for more information\non the process.\n\nBug fixes don't require an RFC. If the bug has a GitHub issue, reference it in\nthe commit message using `GH-NNNNNN`. Use `#NNNNNN` for tickets in the old\n[bugs.php.net](https://bugs.php.net) bug tracker.\n\n    Fix GH-7815: php_uname doesn't recognise latest Windows versions\n    Fix #55371: get_magic_quotes_gpc() throws deprecation warning\n\nSee [Git workflow](https://wiki.php.net/vcs/gitworkflow) for details on how pull\nrequests are merged.\n\n### Guidelines for contributors\n\nSee further documents in the repository for more information on how to\ncontribute:\n\n- [Contributing to PHP](/CONTRIBUTING.md)\n- [PHP coding standards](/CODING_STANDARDS.md)\n- [Internal documentation](https://php.github.io/php-src/)\n- [Mailing list rules](/docs/mailinglist-rules.md)\n- [PHP release process](/docs/release-process.md)\n\n## Credits\n\nFor the list of people who've put work into PHP, please see the\n[PHP credits page](https://www.php.net/credits.php).\n",
+    "readmeTruncated": false
+   },
+   {
+    "rank": 3,
+    "fullName": "anthropics/knowledge-work-plugins",
+    "url": "https://github.com/anthropics/knowledge-work-plugins",
+    "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
+    "language": "Python",
+    "stars": 32167,
+    "forks": 3566,
+    "starsToday": 643,
+    "api": {
+     "stars": 32167,
+     "forks": 3566,
+     "license": "Apache-2.0",
+     "createdAt": "2026-01-23T20:11:54Z",
+     "pushedAt": "2026-10-23T07:38:30Z",
+     "topics": [],
+     "homepage": null,
+     "openIssues": 136,
+     "archived": false
+    },
+    "starDrift": 0,
+    "readme": "# Knowledge Work Plugins\n\nPlugins that turn Claude into a specialist for your role, team, and company. Built for [Claude Cowork](https://claude.com/product/cowork), also compatible with [Claude Code](https://claude.com/product/claude-code).\n\n## Why Plugins\n\nCowork lets you set the goal and Claude delivers finished, professional work. Plugins let you go further: tell Claude how you like work done, which tools and data to pull from, how to handle critical workflows, and what slash commands to expose — so your team gets better and more consistent outcomes.\n\nEach plugin bundles the skills, connectors, slash commands, and sub-agents for a specific job function. Out of the box, they give Claude a strong starting point for helping anyone in that role. The real power comes when you customize them for your company — your tools, your terminology, your processes — so Claude works like it was built for your team.\n\n## Plugin Marketplace\n\nWe're open-sourcing 11 plugins built and inspired by our own work:\n\n| Plugin | How it helps | Connectors |\n|--------|-------------|------------|\n| **[productivity](./productivity)** | Manage tasks, calendars, daily workflows, and personal context so you spend less time repeating yourself. | Slack, Notion, Asana, Linear, Jira, Monday, ClickUp, Microsoft 365 |\n| **[sales](./sales)** | Research prospects, prep for calls, review your pipeline, draft outreach, and build competitive battlecards. | Slack, HubSpot, Close, Clay, ZoomInfo, Notion, Jira, Fireflies, Microsoft 365 |\n| **[customer-support](./customer-support)** | Triage tickets, draft responses, package escalations, research customer context, and turn resolved issues into knowledge base articles. | Slack, Intercom, HubSpot, Guru, Jira, Notion, Microsoft 365 |\n| **[product-management](./product-management)** | Write specs, plan roadmaps, synthesize user research, keep stakeholders updated, and track the competitive landscape. | Slack, Linear, Asana, Monday, ClickUp, Jira, Notion, Figma, Amplitude, Pendo, Intercom, Fireflies |\n| **[marketing](./marketing)** | Draft content, plan campaigns, enforce brand voice, brief on competitors, and report on performance across channels. | Slack, Canva, Figma, HubSpot, Amplitude, Notion, Ahrefs, SimilarWeb, Klaviyo |\n| **[legal](./legal)** | Review contracts, triage NDAs, navigate compliance, assess risk, prep for meetings, and draft templated responses. | Slack, Box, Egnyte, Jira, Microsoft 365 |\n| **[finance](./finance)** | Prep journal entries, reconcile accounts, generate financial statements, analyze variances, manage close, and support audits. | Snowflake, Databricks, BigQuery, Slack, Microsoft 365 |\n| **[data](./data)** | Query, visualize, and interpret datasets — write SQL, run statistical analysis, build dashboards, and validate your work before sharing. | Snowflake, Databricks, BigQuery, Definite, Hex, Amplitude, Jira |\n| **[enterprise-search](./enterprise-search)** | Find anything across email, chat, docs, and wikis — one query across all your company's tools. | Slack, Notion, Guru, Jira, Asana, Microsoft 365 |\n| **[bio-research](./bio-research)** | Connect to preclinical research tools and databases (literature search, genomics analysis, target prioritization) to accelerate early-stage life sciences R&D. | PubMed, BioRender, bioRxiv, ClinicalTrials.gov, ChEMBL, Synapse, Wiley, Owkin, Open Targets, Benchling |\n| **[cowork-plugin-management](./cowork-plugin-management)** | Create new plugins or customize existing ones for your organization's specific tools and workflows. | — |\n\nInstall these directly from Cowork, browse the full collection here on GitHub, or build your own.\n\n## Getting Started\n\n### Cowork\n\nInstall plugins from [claude.com/plugins](https://claude.com/plugins/).\n\n### Claude Code\n\n```bash\n# Add the marketplace first\nclaude plugin marketplace add anthropics/knowledge-work-plugins\n\n# Then install a specific plugin\nclaude plugin install sales@knowledge-work-plugins\n```\n\nOnce installed, plugins activate automatically. Skills fire when relevant, and slash commands are available in your session (e.g., `/sales:call-prep`, `/data:write-query`).\n\n## How Plugins Work\n\nEvery plugin follows the same structure:\n\n```\nplugin-name/\n├── .claude-plugin/plugin.json   # Manifest\n├── .mcp.json                    # Tool connections\n├── commands/                    # Slash commands you invoke explicitly\n└── skills/                      # Domain knowledge Claude draws on automatically\n```\n\n- **Skills** encode the domain expertise, best practices, and step-by-step workflows Claude needs to give you useful help. Claude draws on them automatically when relevant.\n- **Commands** are explicit actions you trigger (e.g., `/finance:reconciliation`, `/product-management:write-spec`).\n- **Connectors** wire Claude to the external tools your role depends on — CRMs, project trackers, data warehouses, design tools, and more — via [MCP servers](https://modelcontextprotocol.io/).\n\nEvery component is file-based — markdown and JSON, no code, no infrastructure, no build steps.\n\n## Making Them Yours\n\nThese plugins are generic starting points. They become much more useful when you customize them for how your company actually works:\n\n- **Swap connectors** — Edit `.mcp.json` to point at your specific tool stack.\n- **Add company context** — Drop your terminology, org structure, and processes into skill files so Claude understands your world.\n- **Adjust workflows** — Modify skill instructions to match how your team actually does things, not how a textbook says to.\n- **Build new plugins** — Use the `cowork-plugin-management` plugin or follow the structure above to create plugins for roles and workflows we haven't covered yet.\n\nAs your team builds and shares plugins, Claude becomes a cross-functional expert. The context you define gets baked into every relevant interaction, so leaders and admins can spend less time enforcing processes and more time improving them.\n\n## Contributing\n\nPlugins are just markdown",
+    "readmeTruncated": true
+   },
+   {
+    "rank": 4,
+    "fullName": "NVIDIA/OpenShell",
+    "url": "https://github.com/NVIDIA/OpenShell",
+    "description": "OpenShell is the safe, private runtime for autonomous AI agents.",
+    "language": "Rust",
+    "stars": 18716,
+    "forks": 1878,
+    "starsToday": 1240,
+    "api": {
+     "stars": 18716,
+     "forks": 1878,
+     "license": "Apache-2.0",
+     "createdAt": "2026-02-24T22:52:22Z",
+     "pushedAt": "2026-10-23T21:31:50Z",
+     "topics": [],
+     "homepage": "https://docs.nvidia.com/openshell/latest/",
+     "openIssues": 573,
+     "archived": false
+    },
+    "starDrift": 0,
+    "readme": "<!-- markdownlint-disable MD033 MD041 -->\n\n<picture>\n  <source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/brand/assets/openshell-banner-dark.png\">\n  <source media=\"(prefers-color-scheme: light)\" srcset=\"docs/brand/assets/openshell-banner-light.png\">\n  <img alt=\"OpenShell\" src=\"docs/brand/assets/openshell-banner-light.png\" width=\"430\">\n</picture>\n\n<!-- markdownlint-enable MD033 MD041 -->\n\n[![License](https://img.shields.io/badge/License-Apache_2.0-blue)](https://github.com/NVIDIA/OpenShell/blob/main/LICENSE)\n[![PyPI](https://img.shields.io/badge/PyPI-openshell-orange?logo=pypi)](https://pypi.org/project/openshell/)\n[![Security Policy](https://img.shields.io/badge/Security-Report%20a%20Vulnerability-red)](SECURITY.md)\n[![Documentation](https://img.shields.io/badge/docs-latest-brightgreen)](https://docs.nvidia.com/openshell/latest/index.html)\n\n> [!IMPORTANT]\n> **New in OpenShell 0.1.x:** a stable release cadence, new isolation primitives, an expanded extension surface, and new APIs. [Read the 0.1.0 upgrade guide](https://docs.nvidia.com/openshell/latest/upgrade/0-1-0).\n\nOpenShell is the safe, private runtime for fleets of autonomous AI agents. Agents are most useful when they can read files, install packages, call APIs, and use credentials. OpenShell gives them that capability without giving them unrestricted access to your data, secrets, or network. You declare what each agent can touch in a policy, and OpenShell enforces it.\n\n## How It Works\n\nOpenShell governs what agents can do in two ways: it instruments the kernel to enforce policy on every file access, system call, and network connection at runtime, and it uses formal verification to check what a policy change would allow before it is applied.\n\n- **Kernel-level enforcement.** Each agent runs in an isolated sandbox. Kernel controls confine which files it can access and which system calls it can make, and every network connection passes through a policy check before it leaves the sandbox. Agents never see real credentials; OpenShell adds them only to requests bound for approved endpoints.\n- **Formally verified policy changes.** Before a policy change is approved, OpenShell uses formal verification to flag risky new access it would grant, such as reaching a new host with credentials or calling a new API method, so those changes wait for human review.\n\nSee [Architecture](https://docs.nvidia.com/openshell/latest/about/architecture) for how the gateway, supervisor, and sandbox fit together.\n\n## Quickstart\n\nYou need Linux, macOS on Apple Silicon, or Windows with WSL 2 (experimental), plus Docker, Podman, or host virtualization. See the [Support Matrix](https://docs.nvidia.com/openshell/latest/about/support-matrix) for details.\n\n```shell\ncurl -LsSf https://raw.githubusercontent.com/NVIDIA/OpenShell/main/install.sh | sh\nopenshell sandbox create --name demo\n```\n\nThe installer sets up the CLI and a local gateway. The default sandbox image is minimal Ubuntu with no agent installed. To run a real agent, follow [Run Your First Agent](https://docs.nvidia.com/openshell/latest/about/run-your-first-agent): it runs OpenCode against a free OpenRouter model and shows how to approve new access as the agent needs it.\n\n## Explore Further\n\n- [Sandboxes](https://docs.nvidia.com/openshell/latest/how-it-works/sandboxes/overview): images, runtimes, GPUs, and lifecycle.\n- [Policies](https://docs.nvidia.com/openshell/latest/how-it-works/policies/overview): filesystem, network, and process rules, with the [advisor](https://docs.nvidia.com/openshell/latest/how-it-works/policies/advisor) and [prover](https://docs.nvidia.com/openshell/latest/how-it-works/policies/prover) for reviewing changes.\n- [Providers](https://docs.nvidia.com/openshell/latest/how-it-works/providers/overview): credentials that work only at approved endpoints, including [inference](https://docs.nvidia.com/openshell/latest/how-it-works/inference).\n- [Gateways](https://docs.nvidia.com/openshell/latest/how-it-works/gateways/overview): the control plane for sandboxes, policy, and access.\n- [Kubernetes](https://docs.nvidia.com/openshell/latest/kubernetes/setup): deploy the gateway with Helm. Your CNI must enforce `NetworkPolicy`.\n- [Extensibility](https://docs.nvidia.com/openshell/latest/extensibility/overview): middleware, interceptors, and compute drivers.\n- [Tutorials](https://docs.nvidia.com/openshell/latest/tutorials/first-network-policy): step-by-step policy and agent walkthroughs.\n- [Prerelease and development builds](https://docs.nvidia.com/openshell/latest/about/installation#prerelease-and-development-builds): try an upcoming release or the latest commit on `main`.\n\n## Agent Skills\n\nInstall the public OpenShell skills for your coding agent:\n\n```shell\nnpx skills add NVIDIA/OpenShell\n```\n\nThe skills teach your agent to drive the OpenShell CLI, write sandbox policies, and debug gateways and inference routing. They live in [`skills/`](skills/) and work without an OpenShell source checkout.\n\n## SDKs\n\nSDKs connect applications to an OpenShell gateway. They do not install the CLI. Use the same OpenShell release for the SDK and the gateway when possible.\n\n| Language | Install | Docs |\n|---|---|---|\n| Python | `uv add openshell` | [README](python/openshell/) |\n| TypeScript | `npm install @nvidia/openshell-sdk` (GitHub Packages) | [README](sdk/typescript/README.md) |\n| Go | `go get github.com/NVIDIA/OpenShell/sdk/go@latest` | [README](sdk/go/README.md) |\n| Rust | `cargo add openshell-sdk --git https://github.com/NVIDIA/OpenShell --tag <release-tag>` | [Installation and usage](docs/sdk/rust.mdx) |\n\n## Community\n\n- **Questions and discussion:** [GitHub Discussions](https://github.com/NVIDIA/OpenShell/discussions)\n- **Bug reports and feature requests:** [GitHub Issues](https://github.com/NVIDIA/OpenShell/issues), using the issue templates\n- **Security vulnerabilities:** follow [SECURITY.md](SECURITY.md). Do not open a GitHub issue.\n- **Roadmap:** [OpenShell Roadmap](https://github.com/orgs/NVIDIA/proj",
+    "readmeTruncated": true
+   },
+   {
+    "rank": 5,
+    "fullName": "Renhuai123/ziwei-doushu",
+    "url": "https://github.com/Renhuai123/ziwei-doushu",
+    "description": "紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据",
+    "language": "TypeScript",
+    "stars": 6823,
+    "forks": 1403,
+    "starsToday": 547,
+    "api": {
+     "stars": 6823,
+     "forks": 1403,
+     "license": "MIT",
+     "createdAt": "2026-05-01T05:09:59Z",
+     "pushedAt": "2026-10-20T08:20:05Z",
+     "topics": [
+      "bazi",
+      "chinese-astrology",
+      "divination",
+      "fortune-telling",
+      "nextjs",
+      "open-source",
+      "purple-star-astrology",
+      "typescript",
+      "zi-wei-dou-shu",
+      "ziwei-doushu"
+     ],
+     "homepage": "https://metisziwei.com/?from=gh-about",
+     "openIssues": 6,
+     "archived": false
+    },
+    "starDrift": 0,
+    "readme": "<div align=\"center\">\n\n# 紫微斗数 · 开源排盘引擎\n\n[![CI](https://github.com/Renhuai123/ziwei-doushu/actions/workflows/ci.yml/badge.svg)](https://github.com/Renhuai123/ziwei-doushu/actions/workflows/ci.yml)\n[![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg)](./LICENSE)\n[![Dataset: CC BY 4.0](https://img.shields.io/badge/dataset-CC%20BY%204.0-green.svg)](./DATASET-LICENSE)\n\n**中文** · [English](./README.en.md)\n\n</div>\n\n基于<strong>倪海厦《天纪》</strong>教学体系的紫微斗数排盘系统，包含完整排盘算法、四化系统、格局知识库、古籍原文数据，以及一套完整开源的紫微斗数解读数据：**v4.0 解读数据集——67.5 万张命盘 × 13 维 = 877 万段解读，正文约 204 亿字，解压后 56.6 GB**（2026-10-15 发布）。\n\n| 数据集 | 命盘 | 解读段数 | 解压后 | 覆盖年份 | 每张盘解读字数 |\n|---|---|---|---|---|---|\n| **v4.0 解读数据集**（2026-10-15） | **674,976** | **8,774,688** | **56.6 GB** | **1950–2026**（只含真实日期） | **约 3.0 万字** |\n| v3.0 样本数据集 | 518,400 | 6,739,200 | 33.1 GB | 1924–1983 | 约 2.1 万字 |\n| 变化 | +30% | +30% | **+71%** | +17 年 | +44% |\n\n<sub>v3.0 每张盘解读字数按 2,160 张盘抽样估算，其余数字为全量统计；两版每张盘都是 13 维。</sub>\n\n在线体验：[metisziwei.com](https://metisziwei.com/?from=gh-readme)，排盘、AI 解读、命盘历史全部开放。\n\n> **注：关于六亲判断**\n>\n> 紫微斗数在六亲（父母、兄弟、子女等）判断上存在一定局限。倪师在《天纪》中指出：“斗数批六亲本来就比较差一点。”（[2上 · 00:25:27](https://www.bilibili.com/video/BV1KJsLekEfA?p=3&t=1527)）在传统术数中，铁板神数在核对六亲方面有其独特优势（[2上 · 00:03:15](https://www.bilibili.com/video/BV1KJsLekEfA?p=3&t=195)）；倪师仍以紫微斗数为核心，是因为它能结合地理、环境与人事进行综合判断，形成“上知天文、下知地理、中知人事”的完整体系（[2上 · 00:25:43](https://www.bilibili.com/video/BV1KJsLekEfA?p=3&t=1543)）。因此，与六亲相关的分析仅供参考；[metisziwei.com](https://metisziwei.com/?from=gh-readme) 上父母、兄弟、子女三个维度也附有同样的说明。\n\n---\n\n## 目录\n\n| | 章节 | 一句话 |\n|---|------|--------|\n| 一 | [本轮更新](#一本轮更新2026-10-15) | 13 维断语按倪师原话与《全书》逐句校正，发布 67.5 万命盘 × 13 维解读数据集 v4.0 |\n| 二·新 | [13 维解读数据集 v4.0](#二新13-维解读数据集-v402026-10-15) | 2026-10-15 新版断语，67.5 万命盘，按年份下载 |\n| 二 | [51.8 万命盘样本数据集](#二518-万命盘样本数据集) | 规格、下载、用途、许可 |\n| 三 | [快速开始](#三快速开始) | 克隆到跑起来 |\n| 四 | [排盘引擎](#四排盘引擎) | 能做到什么、文件怎么分、古籍数据 |\n| 五 | [倪师《天纪·紫微斗数》原话](#五倪师天纪紫微斗数原话) | 14 讲 + 2 段补充、1848 条，一图看全，每条可回放 |\n| 六 | [界面是一份 Demo](#六界面是一份-demo) | 不是线上那套，差距写明 |\n| 七 | [开源边界](#七开源边界什么不在里面) | 什么开源、什么不开源 |\n| 八 | [维护节奏与贡献](#八维护节奏与贡献) | 同步节奏、issue / PR 口径 |\n| 九 | [协议](#九协议) | 代码 MIT / 数据 CC BY 4.0 / 古籍公版 / 倪师原话非商用 |\n| 十 | [关于与联系](#十关于与联系) | 项目理念、技术栈、联系方式 |\n\n---\n\n## 一、本轮更新（2026-10-15）\n\n本轮跟随网站 2026-10-15 发版（网站内容版本 `ca268829f7a9`）：\n\n![本轮更新总览](./docs/update-20261015.png)\n\n**1. 发布 13 维解读数据集 v4.0** —— 674,976 张命盘（公历 1950–2026 年每一个真实日期 × 12 时辰 × 男女）× 13 维 = **8,774,688 段解读**，正文约 204 亿字。解压后 56.6 GB（v3.0 为 33.1 GB，增加 71%），压缩后只有 161 MB，按年份分 77 个文件，可以只下需要的年份，也可以一次下全年份总包。下载见 [Release v4.0-13d](https://github.com/Renhuai123/ziwei-doushu/releases/tag/v4.0-13d)，规格和字段见[第二·新章](#二新13-维解读数据集-v402026-10-15)。发布前 77 个文件逐个解压，与原始数据逐字节比对一致。\n\n**2. 13 维断语按倪师原话与《全书》原文逐句校正**（断语库仍不开源，校正结果体现在 v4.0 数据集里）：\n\n- 标着倪师或《全书》却查不到出处的引文，删掉或换成逐字可查的原话；倪师原话注明《天纪》第几集、几分几秒\n- 不会发生的四化（如七杀化权、紫微化忌）相关的句子删去；只在某种条件下才成立的断语补上条件\n- 「力量强时……落陷时……」这类两头说的句子，改为按命盘只显示成立的那一种\n- 健康：哪个脏腑要留意，改按倪师的看法——全盘杀星最集中的那一宫，按它的地支对应脏腑；不再按星的五行推脏器\n- 网站知识库「古籍引证」由 244 处增至 405 处，每一处都能在《紫微斗数全书》原文里逐字找到\n\n**3. 排盘引擎同步**（[PR #39](https://github.com/Renhuai123/ziwei-doushu/pull/39)）—— `dst-cn.ts` 新增 `chinaDSTSpan(year)`，查某年中国夏令时起止；`cities.ts` 补全省直辖县级单位与新疆兵团各市的经度（神农架、海南各市县、阿拉尔等），出生地选这些城市时真太阳时校正可用。\n\n**4. 许可** —— [`DATASET-LICENSE`](./DATASET-LICENSE) 适用范围加上 v4.0；写明解读里引用的倪师原话不在数据授权范围内，与第五章倪师原话的 CC BY-NC-SA 4.0 一致。v3.0 样本数据集及其条款不变。\n\n> **2026-10-20 补充**：星曜亮度默认改为《斗数全书》，与主流排盘软件默认一致，此前默认的「现代修正 v2」仍可在流派设置里选；补齐天姚、天刑、天喜、大耗、解神、截空、副截、旬空的亮度，月德不再标亮度。用 5 张金标准盘逐宫核对，星曜落宫与亮度全部吻合。注意：v4.0 数据集（10-15）是按旧默认「现代修正 v2」生成的，其中亮度字和少量随亮度变化的解读句会与新默认不同。\n\n> **2026-10-06 ~ 10-07 补充**：README 加「注：关于六亲判断」（倪师原话 + 出处链接，中英两份）；网站链接加渠道码 `?from=`；同步倪师原话语料勘误（主星南斗、北斗归属）。\n\n### 上一轮更新（2026-09-21）\n\n\n> **2026-10-03 补充**：倪师《天纪·紫微斗数》原话 1848 条单独成章（第五章）；合并外部贡献 #29（时辰序号校验）；引擎拒绝不存在的公历日期，数据集补字段口径与已知问题；提交 package-lock.json；站点地址改为可配置；合盘演示改用本地引擎起盘、AI 接口缺失时明确提示；补齐贡献指南、行为准则、问题与 PR 模板；新增英文简介 [README.en.md](./README.en.md)；去掉两个用不上的部署工具包（vercel CLI、@cloudflare/next-on-pages），依赖从 483 个减到 185 个；随后升级到 Next.js 16 修掉 postcss 漏洞，GitHub 安全提醒从 51 条清零。\n\n![本轮更新总览](./docs/update-20260921.png)\n\n时隔三个月，本仓库完成一次完整更新（[PR #28](https://github.com/Renhuai123/ziwei-doushu/pull/28)，26 个文件、+2736 / −108 行）：\n\n**1. 排盘引擎同步到线上口径** —— `algorithm.ts` 从 181 行到 641 行，另更新 sihua / types / constants / patterns / cities / famous；新增 8 个模块（1367 行）：\n\n| 模块 | 作用 |\n|------|------|\n| `true-solar-time.ts` | 真太阳时校正（经度差 + 均时差） |\n| `dst-cn.ts` | 中国 1986–1991 夏令时 |\n| `lunar-solar.ts` | 农历 / 公历互转与闰月边界 clamp |\n| `school-data.ts` / `school-tables.generated.ts` / `school-config.ts` | 星曜亮度流派数据与对照表、闰月与晚子时口径配置 |\n| `shier-shen.ts` | 十二神煞 |\n| `yunxian-context.ts` | 运限上下文（含童限） |\n\n**2. 补上回归测试与 CI** —— 此前本仓库没有任何测试。现在 5 条排盘回归，`npm test` 一条命令跑完，每次 push 与 PR 在 GitHub Actions 上自动跑。\n\n**3. 修掉样本时辰注释错位**（[#26](https://github.com/Renhuai123/ziwei-doushu/issues/26)）—— `famous.ts` 里 11 条名人样本有 7 条的时辰注释与 `hour` 索引不符（`hour` 一直是**时辰地支索引 0–11**，不是 0–23 的小时数）。已改正并加回归钉住。\n\n**4. 积压 issue 从 18 条清到 4 条**，留下的都是还在走的。\n\n**5. 文档与许可** —— 新增 [`DATASET-LICENSE`](./DATASET-LICENSE)；README 补齐引擎能力清单、维护节奏、开源边界；修正两处不实描述（数据集「口径与线上完全一致」、界面「完整的 Next.js 15 前端」）。\n\n---\n\n## 二·新、13 维解读数据集 v4.0（2026-10-15）\n\n> **下载位置：本仓库右侧 [Releases → v4.0-13d](https://github.com/Renhuai123/ziwei-doushu/releases/tag/v4.0-13d)**\n\nv4.0 用 2026-10-15 版网站断语库重新生成：13 个分析维度的断语已按倪海厦《天纪》逐字稿与《紫微斗数全书》原文逐句校正——查不到出处的引文删去或换成逐字可查的原话（倪师原话注明《天纪》集数与时间码），不会发生的四化相关句子删去，有条件的断语写明条件。\n\n### 规格\n\n| 项目 | 说明 |\n|------|------|\n| 命盘数 | **674,976 张**（公历 1950–2026 年 × 真实每月天数 × 12 时辰 × 男女） |\n| 解读段数 | **8,774,688 段**（每张盘 13 维） |\n| 维度 | 命格总览、性格、感情、事业、财运、健康、兄弟、子女、迁移、人际、田宅、福德、父母 |\n| 大小 | 解压后 56.6 GB；压缩后 161 MB（77 个年份文件，zstd；另有一个全年份总包 `ziwei-interp-v4-all.tar`） |\n| 正文 | 约 204 亿字，每张盘约 3.0 万字 |\n| 生成方式 | 排盘引擎 + 断语库确定性生成，不经 AI，同一输入恒得同一输出 |\n| 内容版本 | `ca268829f7a9`（与网站同期的 ANALYSIS_CONTENT_VERSION） |\n\n**每行一张盘**（JSON Lines），字段：\n\n| 字段 | 含义 |\n|------|------|\n| `k` | 键：`YYYY-MM-DD-时辰序号-性别`，如 `1990-01-01-0-male` |\n| `y` / `m` / `d` | **公历**出生日期；只含真实存在的日期（不再有 2 月 30 日之类） |\n| `h` | **时辰序号 0–11**（子 = 0 …… 亥 = 11），不是钟点；对照表见上一节 |\n| `g` | `male` / `female` |\n| `ms` | 命宫第一颗主星；命宫无主星时为 `null` |\n| `t` | 各维字数 |\n| `c` | 13 维解读全文（Markdown），键为 `overvi",
+    "readmeTruncated": true
+   },
+   {
+    "rank": 6,
+    "fullName": "SnailSploit/Claude-Red",
+    "url": "https://github.com/SnailSploit/Claude-Red",
+    "description": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
+    "language": "Python",
+    "stars": 8390,
+    "forks": 1091,
+    "starsToday": 209,
+    "api": {
+     "stars": 8390,
+     "forks": 1091,
+     "license": "MIT",
+     "createdAt": "2026-03-04T05:52:35Z",
+     "pushedAt": "2026-10-12T15:02:40Z",
+     "topics": [
+      "claude-ai",
+      "claude-pt",
+      "claude-skills",
+      "redteam",
+      "redteam-tools",
+      "skills"
+     ],
+     "homepage": null,
+     "openIssues": 18,
+     "archived": false
+    },
+    "starDrift": 0,
+    "readme": "![claude-red banner](/assets/banner.png)\n\n<div align=\"center\">\n\n# claude-red\n\n**Offensive security skills for Claude — drop-in `SKILL.md` files that turn Claude into a context-aware red team operator.**\n\n[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\n[![Skills](https://img.shields.io/badge/skills-78-red.svg)](#skill-index)\n[![Categories](https://img.shields.io/badge/categories-23-orange.svg)](#categories)\n[![Stars](https://img.shields.io/github/stars/SnailSploit/claude-red?style=social)](https://github.com/SnailSploit/claude-red)\n[![Forks](https://img.shields.io/github/forks/SnailSploit/claude-red?style=social)](https://github.com/SnailSploit/claude-red/network/members)\n<a href=\"https://trendshift.io/repositories/40579?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-40579\" target=\"_blank\" rel=\"noopener noreferrer\"><img src=\"https://trendshift.io/api/badge/trendshift/repositories/40579/weekly?language=Python\" alt=\"SnailSploit%2FClaude-Red | Trendshift\" width=\"250\" height=\"55\"/></a>\n\n[Overview](#overview) &bull; [Quickstart](#quickstart) &bull; [Categories](#categories) &bull; [Skill Index](#skill-index) &bull; [Roadmap](#roadmap) &bull; [Contributing](#contributing)\n\n</div>\n\n---\n\n## Overview\n\n`claude-red` is a curated library of offensive security skills for the [Claude Skills system](https://docs.claude.com). Each skill is a structured `SKILL.md` file that primes Claude with expert-level methodology for a specific attack surface — from SQL injection to shellcode, EDR evasion to ADCS abuse.\n\nDrop a skill into your Claude environment and it behaves like a domain specialist: it knows the techniques, the tooling, the edge cases, and the escalation paths. Skills load on demand based on conversational triggers — you don't pay context for skills you aren't using.\n\n**Use cases:** authorized red team engagements, bug bounty triage, security research, CTF preparation, operator training, and methodical attack surface exploration.\n\n**for our actual research using skills -> https://snailsploit.com**\n---\n\n## Quickstart\n\n### Claude Skills System (Recommended)\n\n```bash\ngit clone https://github.com/SnailSploit/claude-red ~/.claude/skills/claude-red\n```\n\nClaude auto-loads matching skills based on conversational triggers (e.g., mentioning SQL injection loads `offensive-sqli`).\n\nTo install a single category:\n\n```bash\ngit clone --filter=blob:none --sparse https://github.com/SnailSploit/claude-red\ncd claude-red && git sparse-checkout set Skills/web Skills/active-directory\n```\n\n### Claude Code\n\n```bash\ncat Skills/web/offensive-sqli/SKILL.md | claude --system-file -\n\ncat Skills/active-directory/**/SKILL.md | claude --system-file -\n```\n\n### Claude.ai (Manual)\n\nPaste the contents of a `SKILL.md` into a Project's system prompt or prepend it to your conversation.\n\n### Install Script\n\n```bash\n./install.sh                           # interactive\n./install.sh --target ~/.claude/skills # explicit target\n./install.sh --category web            # single category\n```\n\n---\n\n## Categories\n\n| Category | Skills | Focus |\n|---|---:|---|\n| [Web Application](#web-application) | 16 | OWASP Top 10, business logic, advanced web vulnerability classes |\n| [Auth & Identity](#auth--identity) | 2 | JWT exploitation, OAuth/OIDC abuse |\n| [Active Directory](#active-directory) | 1 | On-prem AD attack methodology |\n| [Wireless](#wireless) | 14 | 802.11, WPA2/3, EAP, WPS, evil-twin, BLE, Zigbee, Z-Wave, LoRa, sub-GHz |\n| [Cloud](#cloud) | 1 | AWS, Azure, GCP attack paths |\n| [Mobile](#mobile) | 1 | Android and iOS application testing |\n| [IoT & Embedded](#iot--embedded) | 1 | Hardware, firmware, RTOS, ICS/OT |\n| [Infrastructure & Red Team](#infrastructure--red-team) | 7 | Initial access, EDR evasion, advanced red team operations, Windows internals |\n| [Exploit Development](#exploit-development) | 6 | Stack/heap corruption, ROP, mitigations, crash analysis, TOCTOU |\n| [Fuzzing & Vulnerability Research](#fuzzing--vulnerability-research) | 4 | libFuzzer, AFL++, coverage-guided fuzzing, vulnerability taxonomy |\n| [Reconnaissance](#reconnaissance) | 2 | OSINT tooling and structured intelligence collection |\n| [API Security](#api-security) | 2 | REST/gRPC/WebSocket testing, business logic abuse |\n| [Container & Kubernetes](#container--kubernetes) | 2 | Container escape, Kubernetes cluster exploitation |\n| [CI/CD & Pipeline](#cicd--pipeline) | 2 | Pipeline exploitation, secrets extraction |\n| [Cryptography](#cryptography) | 2 | Cryptographic implementation attacks, TLS/SSL |\n| [Privilege Escalation](#privilege-escalation) | 2 | Linux and Windows privilege escalation |\n| [Post-Exploitation](#post-exploitation) | 3 | Lateral movement, persistence mechanisms, data exfiltration |\n| [Forensics & C2](#forensics--c2) | 2 | Anti-forensics tradecraft, C2 framework operations |\n| [Supply Chain](#supply-chain) | 2 | Supply chain attacks, dependency confusion |\n| [Social Engineering](#social-engineering) | 2 | Phishing campaigns, physical/vishing/smishing |\n| [Network Attacks](#network-attacks) | 1 | Layer 2/3 attacks, MITM, protocol poisoning |\n| [AI Security](#ai-security) | 1 | Prompt injection, jailbreaking, RAG poisoning |\n| [Utility](#utility) | 2 | Fast triage checklists, professional reporting |\n\n---\n\n## Skill Index\n\n### Web Application\n\n`Skills/web/`\n\n| Skill | Description |\n|---|---|\n| [`offensive-sqli`](Skills/web/offensive-sqli/SKILL.md) | SQL injection — error-based, blind, OOB, DB-specific payloads, ORM CVEs |\n| [`offensive-xss`](Skills/web/offensive-xss/SKILL.md) | Cross-site scripting — stored, reflected, DOM-based, mutation XSS |\n| [`offensive-ssrf`](Skills/web/offensive-ssrf/SKILL.md) | Server-side request forgery — cloud metadata pivots, filter bypass |\n| [`offensive-ssti`](Skills/web/offensive-ssti/SKILL.md) | Server-side template injection — engine fingerprinting, RCE chains |\n| [`offensive-xxe`](Skills/web/offensive-xxe/SKILL.md) | XML external entity — OOB exfiltration, bli",
+    "readmeTruncated": true
+   },
+   {
+    "rank": 7,
+    "fullName": "OpenBMB/VoxCPM",
+    "url": "https://github.com/OpenBMB/VoxCPM",
+    "description": "VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning",
+    "language": "Python",
+    "stars": 40206,
+    "forks": 4572,
+    "starsToday": 144,
+    "api": {
+     "stars": 40206,
+     "forks": 4572,
+     "license": "Apache-2.0",
+     "createdAt": "2025-09-16T03:41:49Z",
+     "pushedAt": "2026-10-08T03:26:41Z",
+     "topics": [
+      "audio",
+      "deeplearning",
+      "minicpm",
+      "multilingual",
+      "python",
+      "pytorch",
+      "speech",
+      "speech-synthesis",
+      "text-to-speech",
+      "tts",
+      "tts-model",
+      "voice-cloning",
+      "voice-design",
+      "voxcpm"
+     ],
+     "homepage": "https://voxcpm.com",
+     "openIssues": 141,
+     "archived": false
+    },
+    "starDrift": 0,
+    "readme": "<h2 align=\"center\">VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning</h2>\n\n<p align=\"center\">\n  <b>English</b> | <a href=\"./README_zh.md\">中文</a>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://github.com/OpenBMB/VoxCPM/\"><img src=\"https://img.shields.io/badge/Project%20Page-GitHub-blue\" alt=\"Project Page\"></a>\n  <a href=\"https://huggingface.co/spaces/OpenBMB/VoxCPM-Demo\"><img src=\"https://img.shields.io/badge/Live%20Playground-Demo-orange\" alt=\"Live Playground\"></a>\n  <a href=\"https://voxcpm.readthedocs.io/en/latest/\"><img src=\"https://img.shields.io/badge/Docs-ReadTheDocs-8CA1AF\" alt=\"Documentation\"></a>\n  <a href=\"https://huggingface.co/openbmb/VoxCPM2\"><img src=\"https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-VoxCPM2-yellow\" alt=\"Hugging Face\"></a>\n  <a href=\"https://modelscope.cn/models/OpenBMB/VoxCPM2\"><img src=\"https://img.shields.io/badge/ModelScope-VoxCPM2-purple\" alt=\"ModelScope\"></a>\n  <a href=\"https://openbmb.github.io/voxcpm2-demopage/\"><img src=\"https://img.shields.io/badge/DemoPage-Audio Samples-red\" alt=\"DemoPage\"></a>\n  <a href=\"https://arxiv.org/abs/2606.06928\"><img src=\"https://img.shields.io/badge/arXiv-VoxCPM2%20Technical%20Report-red\" alt=\"VoxCPM2 Technical Report\"></a>\n</p>\n\n<div align=\"center\">\n  <img src=\"assets/voxcpm_logo.png\" alt=\"VoxCPM Logo\" width=\"35%\">\n  <br><br>\n  <a href=\"https://trendshift.io/repositories/17704\" target=\"_blank\"><img src=\"https://trendshift.io/api/badge/repositories/17704\" alt=\"OpenBMB%2FVoxCPM | Trendshift\" style=\"width: 250px; height: 55px;\" width=\"250\" height=\"55\"/></a>\n</div>\n\n<br>\n\n<p align=\"center\">\n  👋 Join our community for discussion and support!\n  <br>\n  <a href=\"./assets/feishu-group.png\" style=\"display:inline-block;vertical-align:middle; margin-left: 10px;\">\n    <img src=\"./assets/feishu-logo.png\" width=\"16\" height=\"16\" style=\"vertical-align:middle;\"> Feishu\n  </a>\n  &nbsp;|&nbsp;\n  <a href=\"https://discord.gg/KZUx7tVNwz\" style=\"display:inline-block;vertical-align:middle;\">\n    <img src=\"./assets/discord-logo.png\" width=\"16\" height=\"16\" style=\"vertical-align:middle;\"> Discord\n  </a>\n  &nbsp;|&nbsp;\n  <a href=\"https://modelbest.feishu.cn/wiki/UtWxwcERfiRIpIkBOjuc3h9tn1D?fromScene=spaceOverview\" style=\"display:inline-block;vertical-align:middle;\">\n    📚 MiniCPM Wiki\n  </a>\n</p>\n\nVoxCPM is a **tokenizer-free** Text-to-Speech system that directly generates continuous speech representations via an end-to-end **diffusion autoregressive architecture**, bypassing discrete tokenization to achieve highly natural and expressive synthesis.\n\n**VoxCPM2** is the latest major release — a **2B** parameter model trained on **over 2 million hours** of multilingual speech data, now supporting **30 languages**, **Voice Design**, **Controllable Voice Cloning**, and **48kHz** studio-quality audio output. Built on a [MiniCPM-4](https://github.com/OpenBMB/MiniCPM) backbone.\n\n### ✨ Highlights\n\n- 🌍 **30-Language Multilingual** — Input text in any of the 30 supported languages and synthesize directly, no language tag needed\n- 🎨 **Voice Design** — Create a brand-new voice from a natural-language description alone (gender, age, tone, emotion, pace …), no reference audio required\n- 🎛️ **Controllable Cloning** — Clone any voice from a short reference clip, with optional style guidance to steer emotion, pace, and expression while preserving the original timbre\n- 🎙️ **Ultimate Cloning** — Reproduce every vocal nuance: provide both reference audio and its transcript, and the model continues seamlessly from the reference, faithfully preserving every vocal detail — timbre, rhythm, emotion, and style (same as VoxCPM1.5)\n- 🔊 **48kHz High-Quality Audio** — Accepts 16kHz reference audio and directly outputs 48kHz studio-quality audio via AudioVAE V2's asymmetric encode/decode design, with built-in super-resolution — no external upsampler needed\n- 🧠 **Context-Aware Synthesis** — Automatically infers appropriate prosody and expressiveness from text content\n- ⚡ **Real-Time Streaming** — RTF as low as ~0.3 on NVIDIA RTX 4090, and ~0.13 accelerated by [Nano-vLLM](https://github.com/a710128/nanovllm-voxcpm) or [vLLM-Omni](https://github.com/vllm-project/vllm-omni) — official vLLM omni-modal serving for VoxCPM2 with PagedAttention and an OpenAI-compatible API\n- 📜 **Fully Open-Source & Commercial-Ready** — Weights and code released under the [Apache-2.0](LICENSE) license, free for commercial use\n\n**🌍 Supported Languages (30)**  \nArabic, Burmese, Chinese, Danish, Dutch, English, Finnish, French, German, Greek, Hebrew, Hindi, Indonesian, Italian, Japanese, Khmer, Korean, Lao, Malay, Norwegian, Polish, Portuguese, Russian, Spanish, Swahili, Swedish, Tagalog, Thai, Turkish, Vietnamese\n\nChinese Dialect: 四川话, 粤语, 吴语, 东北话, 河南话, 陕西话, 山东话, 天津话, 闽南话\n\n### News\n\n- **[2026.04]** 🔥 We release **VoxCPM2** — 2B, 30 languages, Voice Design & Controllable Voice Cloning, 48kHz audio output! [Weights](https://huggingface.co/openbmb/VoxCPM2) | [Docs](https://voxcpm.readthedocs.io/en/latest/) | [Playground](https://huggingface.co/spaces/OpenBMB/VoxCPM-Demo) | [Technical Report](https://arxiv.org/abs/2606.06928)\n- **[2025.12]** 🎉 Open-source **VoxCPM1.5** [weights](https://huggingface.co/openbmb/VoxCPM1.5) with SFT & LoRA fine-tuning. (**🏆 #1 GitHub Trending**)\n- **[2025.09]** 🔥 Release VoxCPM [Technical Report](https://arxiv.org/abs/2509.24650).\n- **[2025.09]** 🎉 Open-source **VoxCPM-0.5B** [weights](https://huggingface.co/openbmb/VoxCPM-0.5B) (**🏆 #1 HuggingFace Trending**)\n\n---\n\n## Contents\n\n- [Quick Start](#-quick-start)\n  - [Installation](#installation)\n  - [Python API](#python-api)\n  - [CLI Usage](#cli-usage)\n  - [Web Demo](#web-demo)\n  - [Production Deployment](#-production-deployment-nano-vllm)\n  - [On-Device Inference (llama.cpp-omni)](#-on-device-inference-llamacpp-omni)\n- [Models & Versions](#-models--versions)\n- [Performance](#-performance)\n- [Fine-tuning](#%EF%B8%8F-fine-tuning)\n- [Documentation](#-do",
+    "readmeTruncated": true
+   },
+   {
+    "rank": 8,
+    "fullName": "nodejs/node",
+    "url": "https://github.com/nodejs/node",
+    "description": "Node.js JavaScript runtime ✨🐢🚀✨",
+    "language": "JavaScript",
+    "stars": 122806,
+    "forks": 39871,
+    "starsToday": 93,
+    "api": {
+     "stars": 122806,
+     "forks": 39871,
+     "license": "NOASSERTION",
+     "createdAt": "2014-11-26T19:57:11Z",
+     "pushedAt": "2026-10-23T18:45:56Z",
+     "topics": [
+      "javascript",
+      "js",
+      "linux",
+      "macos",
+      "mit",
+      "node",
+      "nodejs",
+      "runtime",
+      "windows"
+     ],
+     "homepage": "https://nodejs.org",
+     "openIssues": 1265,
+     "archived": false
+    },
+    "starDrift": 0,
+    "readme": "# Node.js\n\nNode.js is an open-source, cross-platform JavaScript runtime environment.\n\nFor information on using Node.js, see the [Node.js website][].\n\nThe Node.js project uses an [open governance model](./GOVERNANCE.md). The\n[OpenJS Foundation][] provides support for the project.\n\nContributors are expected to act in a collaborative manner to move\nthe project forward. We encourage the constructive exchange of contrary\nopinions and compromise. The [TSC](./GOVERNANCE.md#technical-steering-committee)\nreserves the right to limit or block contributors who repeatedly act in ways\nthat discourage, exhaust, or otherwise negatively affect other participants.\n\n**This project has a [Code of Conduct][].**\n\n## Table of contents\n\n* [Support](#support)\n* [Release types](#release-types)\n  * [Download](#download)\n    * [Current and LTS releases](#current-and-lts-releases)\n    * [Nightly releases](#nightly-releases)\n    * [API documentation](#api-documentation)\n  * [Verifying binaries](#verifying-binaries)\n* [Building Node.js](#building-nodejs)\n* [Security](#security)\n* [Contributing to Node.js](#contributing-to-nodejs)\n* [Current project team members](#current-project-team-members)\n  * [TSC (Technical Steering Committee)](#tsc-technical-steering-committee)\n  * [Collaborators](#collaborators)\n  * [Triagers](#triagers)\n  * [Release keys](#release-keys)\n* [License](#license)\n\n## Support\n\nLooking for help? Check out the\n[instructions for getting support](.github/SUPPORT.md).\n\n## Release types\n\nNode.js follows [semantic versioning](https://semver.org).\n\n* **Alpha**: Under active development where semver-major changes are allowed.\n  Each October, a new release line (for example, Node.js 27) branches off `main`\n  and receives Alpha releases (for example, `27.0.0-alpha.0.0.0`) for 6 months,\n  then are promoted to Current (see below) each April. Alpha releases are signed,\n  tagged, and tested through [CITGM](https://github.com/nodejs/citgm), but their\n  API and ABI may change between releases. They are intended for library authors\n  and CI pipelines, not for production use.\n* **Current**: Under active development, no semver-major changes allowed. Node.js\n  releases a new major version once a year, in April. Releases stay Current for\n  6 months, then convert to LTS (see below) each October. Their ABI may change\n  between releases. They are intended for library authors and CI pipelines, not\n  for production use.\n* **LTS**: Releases under Long Term Support, with a focus on stability\n  and security. Only changes that have been on Alpha or Current release for two\n  weeks can be backported to a typical LTS release. Every major version becomes an LTS\n  release, and receives 30 months of LTS support, for a total of 36 months from\n  its first Current release to End-of-Life. LTS release lines have alphabetically-ordered\n  code names, beginning with Node.js 4 Argon.\n* **Nightly**: Code from the `main` branch built every 24-hours when there are\n  changes. Unlike Alpha releases, nightly builds are automated and untested.\n  Use with caution.\n\nRelease lines up to and including Node.js 26 follow the previous schedule, where a\nnew major version was released every 6 months and only even-numbered major\nversions became LTS. See the\n[Node.js release schedule announcement](https://nodejs.org/en/blog/announcements/evolving-the-nodejs-release-schedule)\nfor details.\n\nFor more information, see the\n[Release README](https://github.com/nodejs/Release#readme).\n\n### Download\n\nBinaries, installers, and source tarballs are available at\n<https://nodejs.org/en/download/>.\n\n#### Current and LTS releases\n\n<https://nodejs.org/download/release/>\n\nThe [latest](https://nodejs.org/download/release/latest/) directory is an\nalias for the latest Current release. The latest-_codename_ directory is an\nalias for the latest release from an LTS line. For example, the\n[latest-hydrogen](https://nodejs.org/download/release/latest-hydrogen/)\ndirectory contains the latest Hydrogen (Node.js 18) release.\n\n#### Nightly releases\n\n<https://nodejs.org/download/nightly/>\n\nEach directory and filename includes the version (e.g., `v22.0.0`),\nfollowed by the UTC date (e.g., `20240424` for April 24, 2024),\nand the short commit SHA of the HEAD of the release (e.g., `ddd0a9e494`).\nFor instance, a full directory name might look like `v22.0.0-nightly20240424ddd0a9e494`.\n\n#### API documentation\n\nDocumentation for the latest Current release is at <https://nodejs.org/api/>.\nVersion-specific documentation is available in each release directory in the\n_docs_ subdirectory. Version-specific documentation is also at\n<https://nodejs.org/download/docs/>.\n\n### Verifying binaries\n\nDownload directories contain a `SHASUMS256.txt.asc` file with SHA checksums for the\nfiles and the releaser PGP signature.\n\nYou can get a trusted keyring from nodejs/release-keys, e.g. using `curl`:\n\n```bash\ncurl -fsLo \"/path/to/nodejs-keyring.kbx\" \"https://github.com/nodejs/release-keys/raw/HEAD/gpg/pubring.kbx\"\n```\n\nAlternatively, you can import the releaser keys in your default keyring, see\n[Release keys](#release-keys) for commands on how to do that.\n\nThen, you can verify the files you've downloaded locally\n(if you're using your default keyring, pass `--keyring=\"${GNUPGHOME:-~/.gnupg}/pubring.kbx\"`):\n\n```bash\ncurl -fsO \"https://nodejs.org/dist/${VERSION}/SHASUMS256.txt.asc\" \\\n&& gpgv --keyring=\"/path/to/nodejs-keyring.kbx\" --output SHASUMS256.txt < SHASUMS256.txt.asc \\\n&& shasum --check SHASUMS256.txt --ignore-missing\n```\n\n## Building Node.js\n\nSee [BUILDING.md](BUILDING.md) for instructions on how to build Node.js from\nsource and a list of supported platforms.\n\n## Security\n\nFor information on reporting security vulnerabilities in Node.js, see\n[SECURITY.md](./SECURITY.md).\n\n## Contributing to Node.js\n\n* [Contributing to the project][]\n* [Working Groups][]\n* [Strategic initiatives][]\n* [Technical values and prioritization][]\n\n## Current project team members\n\nFor information about the governance of the Node.js project, s",
+    "readmeTruncated": true
+   }
+  ]
+ },
+ "hn": {
+  "id": "hn",
+  "name": "Hacker News front page",
+  "url": "https://hn.algolia.com/api/v1/search?tags=front_page&hitsPerPage=40",
+  "status": "ok",
+  "fetchedAt": "2026-10-23T21:41:46.982Z",
+  "newestItemAt": "2026-10-23T20:37:12Z",
+  "gapHours": 1.1,
+  "count": 30,
+  "items": [
+   {
+    "id": "50202285",
+    "title": "Local Wikipedia: Wikipedia, but only for things a half hour walk from you",
+    "link": "https://edjefferson.com/localwiki/",
+    "hnUrl": "https://news.ycombinator.com/item?id=50202285",
+    "points": 1129,
+    "comments": 221,
+    "publishedAt": "2026-10-22T23:01:18Z"
+   },
+   {
+    "id": "50211474",
+    "title": "Today, we hacked what we'd set out to hack: the iPhone",
+    "link": "https://blog.calif.io/p/iphone",
+    "hnUrl": "https://news.ycombinator.com/item?id=50211474",
+    "points": 611,
+    "comments": 410,
+    "publishedAt": "2026-10-23T16:21:50Z"
+   },
+   {
+    "id": "50200997",
+    "title": "Ask HN: If the models are so good, why doesn't OpenAI just start 100 companies?",
+    "link": "https://news.ycombinator.com/item?id=50200997",
+    "hnUrl": "https://news.ycombinator.com/item?id=50200997",
+    "points": 558,
+    "comments": 608,
+    "publishedAt": "2026-10-22T21:03:55Z"
+   },
+   {
+    "id": "50212065",
+    "title": "Kimi K3.1 Pro and K3.1 Pro Highspeed",
+    "link": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+    "hnUrl": "https://news.ycombinator.com/item?id=50212065",
+    "points": 540,
+    "comments": 331,
+    "publishedAt": "2026-10-23T16:59:08Z"
+   },
+   {
+    "id": "50207910",
+    "title": "Apple Music 404 Not Found",
+    "link": "https://music.apple.com/this-url-doesnt-exist",
+    "hnUrl": "https://news.ycombinator.com/item?id=50207910",
+    "points": 358,
+    "comments": 134,
+    "publishedAt": "2026-10-23T12:28:47Z"
+   },
+   {
+    "id": "50202114",
+    "title": "Canadians are running out of time to oppose Bill C-22",
+    "link": "https://www.eff.org/deeplinks/2026/10/canadians-are-running-out-time-oppose-dangerous-c-22-surveillance-bill",
+    "hnUrl": "https://news.ycombinator.com/item?id=50202114",
+    "points": 230,
+    "comments": 100,
+    "publishedAt": "2026-10-22T22:43:19Z"
+   },
+   {
+    "id": "50195488",
+    "title": "Show HN: OnKey – I'm a bad singer, so I built an app to show where I'm off-key",
+    "link": "https://github.com/dsmurrell/onkey",
+    "hnUrl": "https://news.ycombinator.com/item?id=50195488",
+    "points": 201,
+    "comments": 86,
+    "publishedAt": "2026-10-22T14:04:44Z"
+   },
+   {
+    "id": "50195002",
+    "title": "The alien space of science: Coherent but cognitively unavailable directions",
+    "link": "https://arxiv.org/abs/2603.01092",
+    "hnUrl": "https://news.ycombinator.com/item?id=50195002",
+    "points": 195,
+    "comments": 80,
+    "publishedAt": "2026-10-22T13:25:01Z"
+   },
+   {
+    "id": "50169499",
+    "title": "The Real Kevin Bacon",
+    "link": "https://pudding.cool/2026/10/kevin-bacon/",
+    "hnUrl": "https://news.ycombinator.com/item?id=50169499",
+    "points": 182,
+    "comments": 50,
+    "publishedAt": "2026-10-20T17:10:05Z"
+   },
+   {
+    "id": "50212320",
+    "title": "Can we replace a $150k Looker with a bucket of HTML files?",
+    "link": "https://david.lequin.dev/blog/bi-software-is-dead/",
+    "hnUrl": "https://news.ycombinator.com/item?id=50212320",
+    "points": 97,
+    "comments": 59,
+    "publishedAt": "2026-10-23T17:15:03Z"
+   },
+   {
+    "id": "50214218",
+    "title": "Now Google says it might use your Gmail and Google Photos data to target ads",
+    "link": "https://www.theverge.com/tech/1017600/google-personal-intelligence-privacy-policy-ads-update",
+    "hnUrl": "https://news.ycombinator.com/item?id=50214218",
+    "points": 93,
+    "comments": 33,
+    "publishedAt": "2026-10-23T19:34:15Z"
+   },
+   {
+    "id": "50211746",
+    "title": "UUIDv7 doesn't have the properties you think it does",
+    "link": "https://alexsci.com/blog/uuidv7-is-weird/",
+    "hnUrl": "https://news.ycombinator.com/item?id=50211746",
+    "points": 86,
+    "comments": 73,
+    "publishedAt": "2026-10-23T16:39:45Z"
+   },
+   {
+    "id": "50213925",
+    "title": "Dessa: the most authentic full-duplex speech model ever built",
+    "link": "https://block.xyz/dessa",
+    "hnUrl": "https://news.ycombinator.com/item?id=50213925",
+    "points": 83,
+    "comments": 25,
+    "publishedAt": "2026-10-23T19:09:54Z"
+   },
+   {
+    "id": "50209907",
+    "title": "Gemma-4-26B-A4B with 39-69% less thinking at same accuracy",
+    "link": "https://bottlecapai.com/post/thinkingcap-gemma-4-26b/",
+    "hnUrl": "https://news.ycombinator.com/item?id=50209907",
+    "points": 81,
+    "comments": 14,
+    "publishedAt": "2026-10-23T14:43:02Z"
+   },
+   {
+    "id": "50211719",
+    "title": "How is music possible",
+    "link": "https://www.henrikkarlsson.xyz/p/music",
+    "hnUrl": "https://news.ycombinator.com/item?id=50211719",
+    "points": 73,
+    "comments": 57,
+    "publishedAt": "2026-10-23T16:38:17Z"
+   },
+   {
+    "id": "50199684",
+    "title": "LISP Comes of Age (1980)",
+    "link": "https://microship.com/lisp-comes-of-age/",
+    "hnUrl": "https://news.ycombinator.com/item?id=50199684",
+    "points": 52,
+    "comments": 15,
+    "publishedAt": "2026-10-22T19:08:09Z"
+   },
+   {
+    "id": "50211729",
+    "title": "The Missed Opportunities of Sonic 06 (2025)",
+    "link": "https://isaacmarovitz.com/posts/sonic-06/",
+    "hnUrl": "https://news.ycombinator.com/item?id=50211729",
+    "points": 52,
+    "comments": 10,
+    "publishedAt": "2026-10-23T16:38:35Z"
+   },
+   {
+    "id": "50212668",
+    "title": "I turned my TV into a Game Boy Color with a Pokemon town as my home screen",
+    "link": "https://twitter.com/robbietilton/status/2111936458923851923",
+    "hnUrl": "https://news.ycombinator.com/item?id=50212668",
+    "points": 50,
+    "comments": 12,
+    "publishedAt": "2026-10-23T17:40:22Z"
+   },
+   {
+    "id": "50213826",
+    "title": "Florida officer found dead man, impersonated him for years, renovated his home",
+    "link": "https://www.nbcnews.com/news/us-news/officer-impersonates-dead-florida-man-moved-into-home-rcna604844",
+    "hnUrl": "https://news.ycombinator.com/item?id=50213826",
+    "points": 47,
+    "comments": 26,
+    "publishedAt": "2026-10-23T19:01:56Z"
+   },
+   {
+    "id": "50202746",
+    "title": "Show HN: Impossible Machines: declaratively program the physical world",
+    "link": "https://www.impossiblemachines.xyz",
+    "hnUrl": "https://news.ycombinator.com/item?id=50202746",
+    "points": 47,
+    "comments": 14,
+    "publishedAt": "2026-10-22T23:54:28Z"
+   },
+   {
+    "id": "50214323",
+    "title": "We are all living inside of an obscure sci-fi film from 1970",
+    "link": "https://thanksforthatjim.bearblog.dev/we-are-all-living-inside-of-an-obscure-sci-fi-film-from-1970/",
+    "hnUrl": "https://news.ycombinator.com/item?id=50214323",
+    "points": 44,
+    "comments": 10,
+    "publishedAt": "2026-10-23T19:41:59Z"
+   },
+   {
+    "id": "50205320",
+    "title": "Show HN: Swurf – Swipe through the real web",
+    "link": "https://swurf.org/",
+    "hnUrl": "https://news.ycombinator.com/item?id=50205320",
+    "points": 37,
+    "comments": 21,
+    "publishedAt": "2026-10-23T06:54:52Z"
+   },
+   {
+    "id": "50214447",
+    "title": "Sony Retires Its Last 4K Blu-ray Player in Japan, PS5 Is All That's Left",
+    "link": "https://www.techpowerup.com/354081/sony-retires-its-last-4k-blu-ray-player-in-japan-ps5-is-all-thats-left",
+    "hnUrl": "https://news.ycombinator.com/item?id=50214447",
+    "points": 30,
+    "comments": 16,
+    "publishedAt": "2026-10-23T19:53:55Z"
+   },
+   {
+    "id": "50212281",
+    "title": "Time Nuts (2005)",
+    "link": "http://leapsecond.com/time-nuts.htm",
+    "hnUrl": "https://news.ycombinator.com/item?id=50212281",
+    "points": 25,
+    "comments": 21,
+    "publishedAt": "2026-10-23T17:12:51Z"
+   },
+   {
+    "id": "50212124",
+    "title": "Animations for System Builders",
+    "link": "https://brooker.co.za/blog/2026/10/23/animations.html",
+    "hnUrl": "https://news.ycombinator.com/item?id=50212124",
+    "points": 22,
+    "comments": 3,
+    "publishedAt": "2026-10-23T17:02:24Z"
+   },
+   {
+    "id": "50214416",
+    "title": "OpenAI: Securing our frontier model training environment",
+    "link": "https://openai.com/index/securing-our-frontier-model-training-environment/",
+    "hnUrl": "https://news.ycombinator.com/item?id=50214416",
+    "points": 18,
+    "comments": 8,
+    "publishedAt": "2026-10-23T19:50:56Z"
+   },
+   {
+    "id": "50211504",
+    "title": "Total Historian",
+    "link": "https://www.theideasletter.org/essay/total-historian/",
+    "hnUrl": "https://news.ycombinator.com/item?id=50211504",
+    "points": 18,
+    "comments": 4,
+    "publishedAt": "2026-10-23T16:23:29Z"
+   },
+   {
+    "id": "50213791",
+    "title": "DNS: A Replacement for Finger",
+    "link": "https://altchan.org/sh/42",
+    "hnUrl": "https://news.ycombinator.com/item?id=50213791",
+    "points": 6,
+    "comments": 4,
+    "publishedAt": "2026-10-23T19:00:04Z"
+   },
+   {
+    "id": "50214325",
+    "title": "Rune 1.3: adds TypeScript, a Helix editor, Kitty graphics and OSC-7501",
+    "link": "https://rune.build/blog/rune-1-3-release",
+    "hnUrl": "https://news.ycombinator.com/item?id=50214325",
+    "points": 6,
+    "comments": 0,
+    "publishedAt": "2026-10-23T19:42:01Z"
+   },
+   {
+    "id": "50214983",
+    "title": "A whirlwind tour of systemd-nspawn containers",
+    "link": "https://quantum5.ca/2025/03/22/whirlwind-tour-of-systemd-nspawn-containers/",
+    "hnUrl": "https://news.ycombinator.com/item?id=50214983",
+    "points": 5,
+    "comments": 1,
+    "publishedAt": "2026-10-23T20:37:12Z"
+   }
+  ]
+ },
+ "feeds": [
+  {
+   "id": "techmeme",
+   "name": "Techmeme",
+   "url": "https://www.techmeme.com/feed.xml",
+   "maxGapH": 8,
+   "lang": "en",
+   "status": "ok",
+   "fetchedAt": "2026-10-23T21:41:46.982Z",
+   "httpDate": "Fri, 23 Oct 2026 21:41:47 GMT",
+   "cacheAge": null,
+   "newestItemAt": "2026-10-23T21:15:02.000Z",
+   "gapHours": 0.4,
+   "tzAdjusted": false,
+   "count": 15,
+   "items": [
+    {
+     "title": "Mave, which is developing an AI-driven tool to automate security investigations, raised a $28M Series A led by Red Dot, bringing its total funding to $34M (Meir Orbach/CTech)",
+     "link": "https://www.techmeme.com/261023/p22#a261023p22",
+     "publishedAt": "2026-10-23T21:15:02.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Sources: Instacart, currently valued at $12B, is in talks to sell itself and held preliminary conversations with DoorDash and Uber; CART jumps 9%+ (The Information)",
+     "link": "https://www.techmeme.com/261023/p21#a261023p21",
+     "publishedAt": "2026-10-23T20:25:03.000Z",
+     "outlet": null
+    },
+    {
+     "title": "OpenAI plans to restrict internet access for its frontier models during training until adequate alignment, monitoring, and security safeguards are established (Rachel Metz/Bloomberg)",
+     "link": "https://www.techmeme.com/261023/p20#a261023p20",
+     "publishedAt": "2026-10-23T20:20:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Moonshot says it removed cyber-related data from training phases for Kimi K3.1 Pro \"to reduce potential misuse risk while preserving general usefulness\" (Matthias Bastian/The Decoder)",
+     "link": "https://www.techmeme.com/261023/p19#a261023p19",
+     "publishedAt": "2026-10-23T19:35:02.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Artificial Analysis says Kimi K3.1 Pro lands 4th on its Intelligence Index, behind only Opus 5.5 (max), Sonnet 5.5 (max), and Muse Wonder Full (max) (@artificialanlys)",
+     "link": "https://www.techmeme.com/261023/p18#a261023p18",
+     "publishedAt": "2026-10-23T19:25:01.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Global PC shipments fell 21% YoY in Q3 to 57M units, as memory and other costs pushed prices up; Lenovo retained its market leadership despite a 23% decline (Minsoo Kang/Counterpoint Research)",
+     "link": "https://www.techmeme.com/261023/p17#a261023p17",
+     "publishedAt": "2026-10-23T19:15:01.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Iranian security officials say the country has detailed plans to target undersea communications cables in the Gulf if the US and Israel attack Iran again (Reuters)",
+     "link": "https://www.techmeme.com/261023/p16#a261023p16",
+     "publishedAt": "2026-10-23T18:20:01.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Moonshot unveils Kimi K3.1 Pro, a 3T-class open-weight model with a 1M-token context window, and K3.1 Pro Highspeed, with full weights to be released by Nov. 4 (Kimi)",
+     "link": "https://www.techmeme.com/261023/p15#a261023p15",
+     "publishedAt": "2026-10-23T17:45:05.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Anthropic attributes Mythos 5's deception of a GitHub maintainer to recklessness, biased reasoning, and an urge to finish jobs, saying newer models rarely do so (Anthropic)",
+     "link": "https://www.techmeme.com/261023/p14#a261023p14",
+     "publishedAt": "2026-10-23T17:10:02.000Z",
+     "outlet": null
+    },
+    {
+     "title": "AISI finds Mythos 5 attempted a supply-chain attack by submitting malicious code and creating fake accounts to pressure a GitHub maintainer into accepting it (AI Security Institute)",
+     "link": "https://www.techmeme.com/261023/p13#a261023p13",
+     "publishedAt": "2026-10-23T16:55:01.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Sources: Kalshi is targeting a December rollout for exchange-traded futures contracts tracking US inflation, rivaling exchanges like CME and ICE (Greg Ritchie/Bloomberg)",
+     "link": "https://www.techmeme.com/261023/p12#a261023p12",
+     "publishedAt": "2026-10-23T15:45:01.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Source: Shein has agreed to pay $100M, equivalent to 44% of its Q2 profit, to settle a US FTC investigation over delivery delays and other customer complaints (Reuters)",
+     "link": "https://www.techmeme.com/261023/p11#a261023p11",
+     "publishedAt": "2026-10-23T14:20:01.000Z",
+     "outlet": null
+    },
+    {
+     "title": "OpenAI makes Decisions API, its Jev competitor, generally available with new voice and visual modalities, at $0.10/1M input tokens and no output-token charges (Tim Fernholz/TechCrunch)",
+     "link": "https://www.techmeme.com/261023/p10#a261023p10",
+     "publishedAt": "2026-10-23T13:25:02.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Pathos AI, which uses AI to develop oncology drugs, raised a $237M Series E at a $3B post-money valuation, up from $1.6B after its $365M Series D in May 2025 (Katherine Davis/Axios)",
+     "link": "https://www.techmeme.com/261023/p9#a261023p9",
+     "publishedAt": "2026-10-23T12:40:01.000Z",
+     "outlet": null
+    },
+    {
+     "title": "An interview with Intel's leadership, including CTO Pushkar Ranade, on AI chip demand, lessons from 10nm, whether Intel can catch up to TSMC, Terafab, and more (Dwarkesh Patel/Dwarkesh Podcast)",
+     "link": "https://www.techmeme.com/261023/p8#a261023p8",
+     "publishedAt": "2026-10-23T11:45:14.000Z",
+     "outlet": null
+    }
+   ]
+  },
+  {
+   "id": "techcrunch",
+   "name": "TechCrunch",
+   "url": "https://techcrunch.com/feed/",
+   "maxGapH": 8,
+   "lang": "en",
+   "status": "ok",
+   "fetchedAt": "2026-10-23T21:41:46.982Z",
+   "httpDate": "Fri, 23 Oct 2026 21:41:47 GMT",
+   "cacheAge": null,
+   "newestItemAt": "2026-10-23T20:57:13.000Z",
+   "gapHours": 0.7,
+   "tzAdjusted": false,
+   "count": 20,
+   "items": [
+    {
+     "title": "VCs, Superhuman Mail founder share red flags about product-market fit",
+     "link": "https://techcrunch.com/2026/10/23/vcs-superhuman-mail-founder-share-red-flags-about-product-market-fit/",
+     "publishedAt": "2026-10-23T20:57:13.000Z",
+     "outlet": null
+    },
+    {
+     "title": "TechCrunch Founder Summit 2026 roundtables: Go deeper on the challenges founders are solving right now",
+     "link": "https://techcrunch.com/2026/10/23/techcrunch-founder-summit-2026-roundtables-go-deeper-on-the-challenges-founders-are-solving-right-now/",
+     "publishedAt": "2026-10-23T20:03:14.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Carta and NewView partner, hoping to entice more startups to let employees sell shares early",
+     "link": "https://techcrunch.com/2026/10/23/carta-and-newview-partner-hoping-to-entice-more-startups-to-let-employees-sell-shares-early/",
+     "publishedAt": "2026-10-23T19:25:13.000Z",
+     "outlet": null
+    },
+    {
+     "title": "From Toast to Bessemer: Who founders will hear from at TechCrunch Founder Summit 2026",
+     "link": "https://techcrunch.com/2026/10/23/from-toast-to-bessemer-who-founders-will-hear-from-at-techcrunch-founder-summit-2026/",
+     "publishedAt": "2026-10-23T19:06:23.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Agent cloud startup Daytona hits $1B valuation backed by FirstMark and a who’s who of angels",
+     "link": "https://techcrunch.com/2026/10/23/agent-cloud-startup-daytona-hits-1b-valuation-backed-by-firstmark-and-a-whos-who-of-angels/",
+     "publishedAt": "2026-10-23T16:26:29.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Commonwealth Fusion Systems gets $85M to build better fusion-ready semiconductors",
+     "link": "https://techcrunch.com/2026/10/23/commonwealth-fusion-systems-gets-85m-to-build-better-fusion-ready-semiconductors/",
+     "publishedAt": "2026-10-23T16:20:28.000Z",
+     "outlet": null
+    },
+    {
+     "title": "What some of Anthropic’s backers are reportedly worth before its IPO",
+     "link": "https://techcrunch.com/2026/10/23/what-some-of-anthropics-backers-are-reportedly-worth-before-its-ipo/",
+     "publishedAt": "2026-10-23T16:02:43.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Lab testing giant Quest Diagnostics confirms patients’ personal and health data was compromised during breach",
+     "link": "https://techcrunch.com/2026/10/23/lab-testing-giant-quest-diagnostics-confirms-patients-personal-and-health-data-was-compromised-during-breach/",
+     "publishedAt": "2026-10-23T15:00:09.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Oura sues rival Ultrahuman again, threatening its US smart ring comeback",
+     "link": "https://techcrunch.com/2026/10/22/oura-sues-rival-ultrahuman-again-threatening-its-u-s-smart-ring-comeback/",
+     "publishedAt": "2026-10-23T04:22:57.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Uber rival inDrive eyes 2027 robotaxi tests in Central Asia with Pony AI and Nvidia",
+     "link": "https://techcrunch.com/2026/10/22/uber-rival-indrive-eyes-2027-robotaxi-tests-in-central-asia-with-pony-ai-and-nvidia/",
+     "publishedAt": "2026-10-23T04:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Left alone with nothing to do, AI agents started playing",
+     "link": "https://techcrunch.com/2026/10/22/left-alone-with-nothing-to-do-ai-agents-started-playing/",
+     "publishedAt": "2026-10-23T00:45:37.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Mark Zuckerberg’s creative plan to pay California’s proposed billionaire tax without losing control of Meta",
+     "link": "https://techcrunch.com/2026/10/22/mark-zuckerbergs-creative-plan-to-pay-californias-proposed-billionaire-tax-without-losing-control-of-meta/",
+     "publishedAt": "2026-10-22T23:50:41.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Warhound raises $200M to engineer war dogs and arm them with Anduril gear",
+     "link": "https://techcrunch.com/2026/10/22/ben-lamm-raises-200m-for-warhound-to-engineer-war-dogs-and-arm-them-with-anduril-gear/",
+     "publishedAt": "2026-10-22T23:15:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "As blockchain investing falls out of vogue, a16z Crypto rebrands as a16z Frontier",
+     "link": "https://techcrunch.com/2026/10/22/as-blockchain-investing-falls-out-of-vogue-a16z-crypto-rebrands-as-a16z-frontier/",
+     "publishedAt": "2026-10-22T22:34:54.000Z",
+     "outlet": null
+    },
+    {
+     "title": "OpenAI working on new $30B raise at $1.25T valuation ahead of IPO",
+     "link": "https://techcrunch.com/2026/10/22/openai-working-on-new-30b-raise-at-1-25t-valuation-ahead-of-ipo/",
+     "publishedAt": "2026-10-22T22:08:24.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Rivian buys world model startup to accelerate self-driving ambitions",
+     "link": "https://techcrunch.com/2026/10/22/rivian-buys-world-model-startup-to-accelerate-self-driving-ambitions/",
+     "publishedAt": "2026-10-22T21:05:05.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Arc browser sunsets December 22 as The Browser Company doubles down on Dia",
+     "link": "https://techcrunch.com/2026/10/22/arc-browser-sunsets-december-22-as-the-browser-company-doubles-down-on-dia/",
+     "publishedAt": "2026-10-22T20:01:51.000Z",
+     "outlet": null
+    },
+    {
+     "title": "The secret to fast startup growth isn’t early sales, top names in tech say",
+     "link": "https://techcrunch.com/2026/10/22/the-secret-to-fast-startup-growth-isnt-early-sales-top-names-in-tech-say/",
+     "publishedAt": "2026-10-22T20:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "1Password launches a way for AI agents to log in on your behalf without seeing your password",
+     "link": "https://techcrunch.com/2026/10/22/1password-launches-a-way-for-ai-agents-to-log-in-on-your-behalf-without-seeing-your-password/",
+     "publishedAt": "2026-10-22T19:07:09.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Canva releases its first image generation model",
+     "link": "https://techcrunch.com/2026/10/22/canva-releases-its-first-image-generation-model/",
+     "publishedAt": "2026-10-22T19:00:00.000Z",
+     "outlet": null
+    }
+   ]
+  },
+  {
+   "id": "theverge",
+   "name": "The Verge",
+   "url": "https://www.theverge.com/rss/index.xml",
+   "maxGapH": 8,
+   "lang": "en",
+   "status": "ok",
+   "fetchedAt": "2026-10-23T21:41:46.982Z",
+   "httpDate": "Fri, 23 Oct 2026 21:41:47 GMT",
+   "cacheAge": "138",
+   "newestItemAt": "2026-10-23T21:39:26.000Z",
+   "gapHours": 0,
+   "tzAdjusted": false,
+   "count": 10,
+   "items": [
+    {
+     "title": "Xbox’s first chief operating officer is out after just a few months",
+     "link": "https://www.theverge.com/news/1018037/xbox-chief-operating-officer-helen-chiang-departure",
+     "publishedAt": "2026-10-23T21:39:26.000Z",
+     "outlet": null
+    },
+    {
+     "title": "OpenAI now trains its frontier AI models with no internet access",
+     "link": "https://www.theverge.com/ai-artificial-intelligence/1018021/openai-training-top-ai-models-no-internet",
+     "publishedAt": "2026-10-23T21:11:07.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Abandoned Popcorn Time apps had to be disabled to prevent a zombie army",
+     "link": "https://www.theverge.com/tech/1017914/popcorn-time-piracy-botnet-avoided",
+     "publishedAt": "2026-10-23T19:35:15.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Jack Dorsey’s Block made an AI model that talks to you like an awkward new friend",
+     "link": "https://www.theverge.com/ai-artificial-intelligence/1017906/jack-dorsey-block-dessa-ai-voice-speech",
+     "publishedAt": "2026-10-23T19:32:39.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Soundcore’s latest noise-crushing headphones are on sale for a new low price",
+     "link": "https://www.theverge.com/gadgets/1017667/anker-soundcore-space-2-noise-canceling-headphones-deal-sale",
+     "publishedAt": "2026-10-23T18:43:30.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Fi’s GPS-equipped dog trackers are on sale for 30 percent off",
+     "link": "https://www.theverge.com/gadgets/1017196/fi-ultra-gps-dog-tracker-kirby-air-riders-deal-sale",
+     "publishedAt": "2026-10-23T17:55:03.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Elon Musk’s dangerous grip on outer space",
+     "link": "https://www.theverge.com/science/1017443/spacex-starlink-ukraine-elon-musk-monopoly",
+     "publishedAt": "2026-10-23T17:35:15.000Z",
+     "outlet": null
+    },
+    {
+     "title": "The iPhone Duo should have been an iPad",
+     "link": "https://www.theverge.com/podcast/1017447/iphone-duo-ipad-review-score-vergecast",
+     "publishedAt": "2026-10-23T17:00:18.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Now Google says it might use your Gmail and Google Photos data to target ads",
+     "link": "https://www.theverge.com/tech/1017600/google-personal-intelligence-privacy-policy-ads-update",
+     "publishedAt": "2026-10-23T16:52:55.000Z",
+     "outlet": null
+    },
+    {
+     "title": "The first broken iPhone Duos are here",
+     "link": "https://www.theverge.com/tech/1017623/iphone-duo-broken-cracked-screen",
+     "publishedAt": "2026-10-23T16:37:03.000Z",
+     "outlet": null
+    }
+   ]
+  },
+  {
+   "id": "electrek",
+   "name": "Electrek",
+   "url": "https://electrek.co/feed/",
+   "maxGapH": 12,
+   "lang": "en",
+   "status": "ok",
+   "fetchedAt": "2026-10-23T21:41:46.982Z",
+   "httpDate": "Fri, 23 Oct 2026 21:41:47 GMT",
+   "cacheAge": null,
+   "newestItemAt": "2026-10-23T21:04:37.000Z",
+   "gapHours": 0.6,
+   "tzAdjusted": false,
+   "count": 60,
+   "items": [
+    {
+     "title": "Hyundai’s $359 IONIQ 5 lease looks good, but its bigger sibling may be a better buy",
+     "link": "https://electrek.co/2026/10/23/hyundais-359-ioniq-5-lease-looks-good-3-row-suv-better-deal/",
+     "publishedAt": "2026-10-23T21:04:37.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Podcast: Tesla earnings discussion, new BYD Seagull, Mustang Mach-E update, and more",
+     "link": "https://electrek.co/2026/10/23/podcast-tesla-earnings-discussion-new-byd-seagull-mustang-mach-e-update-and-more/",
+     "publishedAt": "2026-10-23T19:47:02.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Anker SOLIX 4,096Wh expanded C2000 Gen 2 power station $1,519, 150-mile L16 utility e-bike lows from $649, Snow blower low, more",
+     "link": "https://electrek.co/2026/10/23/anker-solix-c2000-gen-2-power-station-l16-utility-e-bike-snow-blower-more/",
+     "publishedAt": "2026-10-23T18:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "BYD’s Rolls-Royce-like flagship EV is heading overseas",
+     "link": "https://electrek.co/2026/10/23/byd-taking-rolls-royce-like-flagship-ev-overseas/",
+     "publishedAt": "2026-10-23T17:41:33.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Rivian buys startup to turn 400,000 daily clips into 3D sims",
+     "link": "https://electrek.co/2026/10/23/rivian-third-dimension-acquisition-self-driving-simulation/",
+     "publishedAt": "2026-10-23T16:56:23.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Volvo is launching a ‘lower-priced’ EV in 2027 based on its SPA3 platform",
+     "link": "https://electrek.co/2026/10/23/volvo-launching-lower-priced-ev-2027/",
+     "publishedAt": "2026-10-23T15:52:09.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Volvo says the EX60 will be a best-seller with over 50,000 orders in Europe already",
+     "link": "https://electrek.co/2026/10/23/volvo-ex60-best-seller-over-50000-orders/",
+     "publishedAt": "2026-10-23T14:53:25.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Tesla cancels Cybertruck in Australia and NZ after 7 years of deposits",
+     "link": "https://electrek.co/2026/10/23/tesla-cancels-cybertruck-australia-new-zealand/",
+     "publishedAt": "2026-10-23T14:35:37.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Tesla’s $10B solar factory could get 35 years of tax breaks in Texas",
+     "link": "https://electrek.co/2026/10/23/tesla-solar-factory-texas-35-years-tax-breaks-fort-bend/",
+     "publishedAt": "2026-10-23T14:25:54.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Wheel-E Podcast: New Lectric and Priority e-bikes, friction drive kit, more",
+     "link": "https://electrek.co/2026/10/23/wheel-e-podcast-new-lectric-and-priority-e-bikes-friction-drive-kit-more/",
+     "publishedAt": "2026-10-23T12:47:12.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Yozma IN 11 review: The OG mini e-moto gets updates galore",
+     "link": "https://electrek.co/2026/10/23/yozma-in-11-review-the-og-mini-e-moto-gets-updates-galore/",
+     "publishedAt": "2026-10-23T12:39:08.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Overhead wired charging comes to Austin electric bus fleet",
+     "link": "https://electrek.co/2026/10/23/overhead-wired-charging-comes-to-austin-electric-bus-fleet/",
+     "publishedAt": "2026-10-23T11:05:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Tesla Q4 numbers, more product delays, and some REAL EV charging innovation",
+     "link": "https://electrek.co/2026/10/22/tesla-q4-numbers-more-product-delays-and-some-real-ev-charging-innovation/",
+     "publishedAt": "2026-10-23T00:11:04.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Another megawatt-level charger enters China: 300 miles in 5 minutes",
+     "link": "https://electrek.co/2026/10/22/another-megawatt-level-charger-enters-china-300-miles-in-5-minutes/",
+     "publishedAt": "2026-10-23T00:06:23.000Z",
+     "outlet": null
+    },
+    {
+     "title": "sonnen files for insolvency in Germany as US sales double",
+     "link": "https://electrek.co/2026/10/22/sonnen-files-for-insolvency-in-germany-as-us-sales-double/",
+     "publishedAt": "2026-10-22T22:07:26.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Tesla skipped the most important shareholder question on its earnings call",
+     "link": "https://electrek.co/2026/10/22/tesla-skipped-hw3-shareholder-question-earnings-call/",
+     "publishedAt": "2026-10-22T21:23:05.000Z",
+     "outlet": null
+    },
+    {
+     "title": "BYD is about to launch this luxury electric SUV with 623 miles of range",
+     "link": "https://electrek.co/2026/10/22/byd-launch-luxury-ev-suv-623-miles-range/",
+     "publishedAt": "2026-10-22T21:18:11.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Seattle plans 200 curbside EV charging stations – and you can request one",
+     "link": "https://electrek.co/2026/10/22/seattle-plans-200-curbside-ev-charging-stations-and-you-can-request-one/",
+     "publishedAt": "2026-10-22T20:57:03.000Z",
+     "outlet": null
+    },
+    {
+     "title": "BMW is already discounting the new iX5 with a $1,000 loyalty bonus",
+     "link": "https://electrek.co/2026/10/22/bmw-discounting-new-ix5-1000-loyalty-bonus/",
+     "publishedAt": "2026-10-22T20:47:53.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Tesla now says it needs its own maps for FSD after years of dismissing maps",
+     "link": "https://electrek.co/2026/10/22/tesla-building-own-maps-fsd-after-mocking-maps/",
+     "publishedAt": "2026-10-22T20:03:18.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Ferrari Luce EV starts at $560,800 in the US, $80K less than expected",
+     "link": "https://electrek.co/2026/10/22/ferrari-luce-ev-us-price-560800/",
+     "publishedAt": "2026-10-22T19:02:51.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Kia believes it has a way to beat China’s cheap EVs in Canada",
+     "link": "https://electrek.co/2026/10/22/kia-beat-chinas-cheap-evs-canada/",
+     "publishedAt": "2026-10-22T18:25:38.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Exclusive $500 savings hit Heybike’s 100-mile Hybrid e-bike + 45-pound Venus e-bike at new lows from $999, EcoFlow, more",
+     "link": "https://electrek.co/2026/10/22/heybike-hybrid-e-bike-venus-e-bike-ecoflow-delta-3-max-more/",
+     "publishedAt": "2026-10-22T18:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Volkswagen is launching its most affordable EV yet in 2027, starting at around €20,000",
+     "link": "https://electrek.co/2026/10/22/vw-launch-most-affordable-ev-2027-starting-e20k/",
+     "publishedAt": "2026-10-22T16:25:25.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Scania speeds up switch to silent semi trucks with Chinese production",
+     "link": "https://electrek.co/2026/10/22/scania-speeds-up-switch-to-silent-semi-trucks-with-chinese-production/",
+     "publishedAt": "2026-10-22T16:05:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Tesla pushes Optimus deliveries to late 2027, says hands still a problem",
+     "link": "https://electrek.co/2026/10/22/tesla-optimus-delivery-late-2027-hands-ai-problems/",
+     "publishedAt": "2026-10-22T15:56:42.000Z",
+     "outlet": null
+    },
+    {
+     "title": "New Jersey may finally reverse its draconian e-bike law after massive backlash",
+     "link": "https://electrek.co/2026/10/22/new-jersey-may-finally-reverse-its-draconian-e-bike-law-after-massive-backlash/",
+     "publishedAt": "2026-10-22T15:02:35.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Kia’s EV6 GT beat out the Tesla Model Y and BYD Sealion 7 in a German EV comparison test",
+     "link": "https://electrek.co/2026/10/22/kia-ev6-gt-beats-out-tesla-model-y-and-byd-german-ev-test/",
+     "publishedAt": "2026-10-22T14:39:02.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Fortescue is using KUKA welding robots to handle 6 MW charging cables [video]",
+     "link": "https://electrek.co/2026/10/22/fortescue-is-using-kuka-welding-robots-to-handle-6-mw-charging-cables-video/",
+     "publishedAt": "2026-10-22T14:10:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Tesla (TSLA) quietly cuts 2026 capex guidance to $20B",
+     "link": "https://electrek.co/2026/10/22/tesla-cuts-2026-capex-guidance-q3-cash-flow/",
+     "publishedAt": "2026-10-22T14:00:01.000Z",
+     "outlet": null
+    },
+    {
+     "title": "The 2027 Ford Mustang Mach-E gains a standard long-range battery and starts at $40,000",
+     "link": "https://electrek.co/2026/10/22/2027-ford-mustang-mach-e-adds-range-starts-40000/",
+     "publishedAt": "2026-10-22T13:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Redwood and Rivian set to expand their EV battery recycling partnership",
+     "link": "https://electrek.co/2026/10/22/redwood-and-rivian-set-to-expand-their-ev-battery-recycling-partnership/",
+     "publishedAt": "2026-10-22T11:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Rio Tinto eyes a giant hot-brick battery to cut fossil fuel use",
+     "link": "https://electrek.co/2026/10/21/rio-tinto-eyes-a-giant-hot-brick-battery-to-cut-fossil-fuel-use/",
+     "publishedAt": "2026-10-21T22:37:53.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Tesla wants to sell you an unusable car with no steering wheel this year",
+     "link": "https://electrek.co/2026/10/21/tesla-wants-to-sell-you-a-useless-car-with-no-steering-wheel-this-year/",
+     "publishedAt": "2026-10-21T22:32:50.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Tesla pushes unsupervised FSD to Q2 2027, and only inside Robotaxi zones",
+     "link": "https://electrek.co/2026/10/21/tesla-unsupervised-fsd-q2-2027-robotaxi-fleet/",
+     "publishedAt": "2026-10-21T22:18:57.000Z",
+     "outlet": null
+    },
+    {
+     "title": "It’s finally here: Porsche puts wireless charging into production [UPDATE]",
+     "link": "https://electrek.co/2026/10/21/its-finally-here-porsche-puts-wireless-ev-charging-into-production-video/",
+     "publishedAt": "2026-10-21T21:21:03.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Tesla energy revenue drops 16% as it refunds customers over tariffs",
+     "link": "https://electrek.co/2026/10/21/tesla-energy-revenue-drops-tariff-customer-refunds/",
+     "publishedAt": "2026-10-21T21:18:18.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Tesla FSD ‘subscriptions’ hit 1.74M, counted the way Musk’s pay package wants",
+     "link": "https://electrek.co/2026/10/21/tesla-fsd-subscriptions-1-74-million-musk-pay-package/",
+     "publishedAt": "2026-10-21T20:45:18.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Tesla blames battery supply for flat sales, but its prices keep falling",
+     "link": "https://electrek.co/2026/10/21/tesla-battery-supply-limiting-sales-prices-falling/",
+     "publishedAt": "2026-10-21T20:39:19.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Tesla (TSLA) releases Q3 2026 financial results: margins rebound, profit still falls",
+     "link": "https://electrek.co/2026/10/21/tesla-tsla-q3-2026-financial-results/",
+     "publishedAt": "2026-10-21T20:08:17.000Z",
+     "outlet": null
+    },
+    {
+     "title": "BMW’s first three-row electric SUV is almost here: Here’s an early look at the iX7",
+     "link": "https://electrek.co/2026/10/21/bmws-3-row-ev-suv-almost-here-early-look-ix7/",
+     "publishedAt": "2026-10-21T19:14:31.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Save up to $389 on Heybike Mars 2.5 + Ranger S 2.0 e-bikes at exclusive new lows from $799, Segway E2 Pro e-scooter, more",
+     "link": "https://electrek.co/2026/10/21/heybike-mars-2-5-ranger-s-2-0-e-bikes-segway-e2-pro-electric-scooter-more/",
+     "publishedAt": "2026-10-21T18:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Kia’s electric SUV and van are getting a new job as police cars",
+     "link": "https://electrek.co/2026/10/21/kias-electric-suv-and-van-police-cars/",
+     "publishedAt": "2026-10-21T17:09:30.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Lucid’s 25,000 Bolt robotaxis will run on Nvidia’s self-driving software",
+     "link": "https://electrek.co/2026/10/21/lucid-bolt-robotaxi-nvidia-alpamayo-madrid-2027/",
+     "publishedAt": "2026-10-21T17:00:47.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Lexus announces prices for its first 3-row electric SUV in Europe and the US",
+     "link": "https://electrek.co/2026/10/21/lexus-announces-prices-3-row-tz-electric-suv/",
+     "publishedAt": "2026-10-21T15:41:34.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Volkswagen recalls nearly 73,000 EVs due to faulty batteries",
+     "link": "https://electrek.co/2026/10/21/volkswagen-recalls-nearly-73000-evs-faulty-batteries/",
+     "publishedAt": "2026-10-21T13:56:20.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Construction Carnaval: electric equipment comes to Brazil with SDLG",
+     "link": "https://electrek.co/2026/10/21/construction-carnaval-electric-equipment-comes-to-brazil-with-sdlg/",
+     "publishedAt": "2026-10-21T12:11:16.000Z",
+     "outlet": null
+    },
+    {
+     "title": "LiveWire set to show off several new electric motorcycles next month",
+     "link": "https://electrek.co/2026/10/21/livewire-set-to-show-off-several-new-electric-motorcycles-next-month/",
+     "publishedAt": "2026-10-21T08:29:23.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Segway launches the $1,999 Xyber Air, bringing its futuristic moped-style e-bike to the masses",
+     "link": "https://electrek.co/2026/10/20/segway-launches-the-1799-xyber-air-bringing-its-futuristic-moped-style-e-bike-to-the-masses/",
+     "publishedAt": "2026-10-21T06:45:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Tesla and SpaceX take first step towards merger, would dilute all shareholders",
+     "link": "https://electrek.co/2026/10/20/tesla-and-spacex-take-first-step-towards-merger-would-dilute-all-shareholders/",
+     "publishedAt": "2026-10-21T03:14:40.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Mercedes’ new GLC 400 EV crushes range estimates, driving nearly 400 miles",
+     "link": "https://electrek.co/2026/10/20/mercedes-glc-ev-crushes-range-estimate-driving-nearly-400-miles/",
+     "publishedAt": "2026-10-20T21:41:31.000Z",
+     "outlet": null
+    },
+    {
+     "title": "A parking giant with 5,700 sites is taking on apartment EV charging",
+     "link": "https://electrek.co/2026/10/20/a-parking-giant-with-5700-sites-is-taking-on-apartment-ev-charging/",
+     "publishedAt": "2026-10-20T20:50:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Tesla (TSLA) Q3 2026 earnings preview: flat revenue, falling profits",
+     "link": "https://electrek.co/2026/10/20/tesla-tsla-q3-2026-earnings-preview/",
+     "publishedAt": "2026-10-20T20:13:48.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Rivian now #2 US EV brand, up from #10, as Big Auto marginalizes itself",
+     "link": "https://electrek.co/2026/10/20/rivian-now-2-us-ev-brand-up-from-10-as-big-auto-marginalizes-itself/",
+     "publishedAt": "2026-10-20T20:12:41.000Z",
+     "outlet": null
+    },
+    {
+     "title": "BMW iX5 hits up to 460 kW during first public fast-charging demo",
+     "link": "https://electrek.co/2026/10/20/bmw-ix5-hits-460-kw-first-public-fast-charging-demo/",
+     "publishedAt": "2026-10-20T20:05:56.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Segway E3 Go electric scooter launches at $100 off, Bluetti 2,016Wh FridgePower station exclusive $854 in Member Sale, more",
+     "link": "https://electrek.co/2026/10/20/segway-e3-go-electric-scooter-bluetti-2016wh-fridgepower-station-more/",
+     "publishedAt": "2026-10-20T18:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Subaru is killing off gas cars and will only sell EVs in Europe",
+     "link": "https://electrek.co/2026/10/20/subaru-killing-off-gas-cars-europe-will-only-sell-evs/",
+     "publishedAt": "2026-10-20T17:24:58.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Volkswagen tells ID.4 owners to limit charging to 80% as part of a recall, or it will do it for them",
+     "link": "https://electrek.co/2026/10/20/volkswagen-id-4-recall-caps-charging-at-80-or-remotely-enforces-it/",
+     "publishedAt": "2026-10-20T16:01:35.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Electrify America’s biggest charging station yet opens in theme park territory",
+     "link": "https://electrek.co/2026/10/20/electrify-americas-biggest-charging-station-yet-opens-in-theme-park-territory/",
+     "publishedAt": "2026-10-20T16:01:11.000Z",
+     "outlet": null
+    },
+    {
+     "title": "I bought a $199 Walmart e-bike, and what arrived shocked me",
+     "link": "https://electrek.co/2026/10/20/i-bought-a-199-walmart-e-bike-and-what-arrived-shocked-me/",
+     "publishedAt": "2026-10-20T15:10:00.000Z",
+     "outlet": null
+    }
+   ]
+  },
+  {
+   "id": "gnews-us",
+   "name": "Google News Technology (US)",
+   "url": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=en-US&gl=US&ceid=US:en",
+   "maxGapH": 4,
+   "lang": "en",
+   "status": "ok",
+   "fetchedAt": "2026-10-23T21:41:46.982Z",
+   "httpDate": "Fri, 23 Oct 2026 21:41:47 GMT",
+   "cacheAge": null,
+   "newestItemAt": "2026-10-23T20:51:10.000Z",
+   "gapHours": 0.8,
+   "tzAdjusted": false,
+   "count": 60,
+   "items": [
+    {
+     "title": "Lines wrap around Apple flagship store on Fifth Avenue in Midtown for new iPhone Duo release - ABC7 New York",
+     "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNMmNpYVBQNlRLQmpkR05TTnlZRHhJbVlBcGwzeEhxNFZ0T045LVBoZzVuS0pBd2t6VnhfeVhoX0U4SFdNdkVhVUpfVG9jcU9rUzhpYUpoVV9lTGhsWldLeGVMQlY1enV1M1JjN2d4bTVuc0JtVFpwMHlBYkoyYXZKQVpVMG5obkJDSVdULUZubElFaG9XR0YyQzhrbmZXbUR0eXhra1E2dVk2bTZsZzhicHRpM005ZGfSAbwBQVVfeXFMT2xfVFRoZnZ6UkNqVG1xN1RBM3dzUC10ZFc3QTJKNVRCbDBhdkg3c09SYlJGZ2Vhb3JiNVdBaFlPVlhqVWkxNXl2a1FVZ1Y5MFdnQThxZHRmM2YwckZLZzVMUk9KZlJSWjdFR25TY2pJVEhoeWIyWGhkVjZsWmd3dkN3LTNfMzJGVHRIYTdVU2hhWlJFOHBZTW9TVnJURGk2S2hMNUxlM05ZMjFINTNaYU5DRWdQSUdZUVVxUTI?oc=5",
+     "publishedAt": "2026-10-23T14:11:24.000Z",
+     "outlet": "ABC7 New York"
+    },
+    {
+     "title": "Apple revives the original iPod as an Apple Music easter egg - The Verge",
+     "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1VQk9IcjM5emlXZzFXWVBEb2hTaW5hMm1xNmZvUjVRTFRwYW9lSkpVNXF4RnVUYUJfZDRuSGt5Y292SktxeUJTektFX2I0OTBFV09NWV80cGQ3UGZBeS1nejBEaHd1U2RTTFJldjlKYWNYaWVXQ2hlNVZWbFA?oc=5",
+     "publishedAt": "2026-10-23T13:58:43.000Z",
+     "outlet": "The Verge"
+    },
+    {
+     "title": "iOS 27.1 is exclusive to iPhone Duo, here’s why - 9to5Mac",
+     "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNVWJjUEdBUmNKX2NvOWVhSHFOa0xRdU94aEVmSVpLT0dscmhnazFNanBhQWlEMGdhYnhYWVcxRkl4RWJrRzkwYXEtbGI3MEQxOWJYbmM4bGhUdXBtNzlZcHZ5NjVPRTl0SUtJUENrV3l1MkItcFNDNE1ROTJ2QXBCUXEyQQ?oc=5",
+     "publishedAt": "2026-10-23T14:28:00.000Z",
+     "outlet": "9to5Mac"
+    },
+    {
+     "title": "ASUS ProArt P16 Review: A Sleek Showcase For NVIDIA's RTX Spark - Engadget",
+     "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9YNWZlSndlbllDeVhCcWljckQyY2psVHFOUWFVTkxGMUpVNmIyei1xS3BkampqLTh3RFlZM2FKckpUdEdLQ1l5TXlMVnFHandQUlZpN252ZURqRDNwQUhFMWdaNTFjeTdjM0MxNjBHVVNhdWUx?oc=5",
+     "publishedAt": "2026-10-23T12:00:00.000Z",
+     "outlet": "Engadget"
+    },
+    {
+     "title": "Sigma FP2 Announced – 6K Open Gate, ProRes RAW, 24.5MP Partially Stacked Sensor - CineD",
+     "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOaU4yb05aanBkZ2VWNDN0Y2hadzZQUmE1a2hNSDVvZmJHUE1pSUVReDEyNkkzS0FxbGxSWXhjcGNPOHhQa3hTa3VocjhneVhqcHVjcXRqdDA3cU9raG9JNEF6SjZ3LWRQeFhwaVQ2b0JtYWlLeXQ5NW51Wkx2ZWl1Xy10NzVNWGhKbFVWemd2aTBIWDdSMW50N0dGeWY2WVk?oc=5",
+     "publishedAt": "2026-10-23T08:19:07.000Z",
+     "outlet": "CineD"
+    },
+    {
+     "title": "Brick’s new app blocker is designed for bedtime doomscrolling - The Verge",
+     "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOQVE4MTFSV3RoVWRTTVJPcjA0Z20zMVprR0JhVS1OR3k2cjY1Tjl1MzBJSEpEVG9EdWxpNmp5Y21SdGszbGZxWmNGSUhHaFlrUGFVTGJMOGxFVVduWFZHQnd1T04yRGpaRVBSY2pXcHljYVh2bEVVTXJlRFNVclBUaERaWFVsb3BIVmJycXEtWmtUdw?oc=5",
+     "publishedAt": "2026-10-23T12:50:17.000Z",
+     "outlet": "The Verge"
+    },
+    {
+     "title": "Epic Offers $65,000 in Prizes to Vibe Code a Game in Four Days, Then Makes AI Optional - TechPowerUp",
+     "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPTmVpMHQ5aTBrM0t1YkR5eGN3Z1VNaEFUUDRpdi0zSVdWZ29wQmdVaFZZR3ppU0ZOVHMzR0NrTUFENWZYQ2FLZTE1ZGRkUUN6d0J2N1N0ZlRaNEc0dWpkUlJ4N0hQTGl4MmR1YzhQTHdXN0xDMS1Mb3VDVGhlSy1tSlNQWmpLYlFDa3Q2dlJjRHdKNjVKVWlhWjI4S2d3U0dmNEJlN1VwU3BhMWJQUXVmMm41ODB1dE9JdFNUdzIwUTHSAcYBQVVfeXFMTzM2c3U4eXhtdmlSdDFnb2dXV2ZIdkJsYlVSclEycXEzLWJQdlhPa3dzTktzV2hpeHp6eHdzTGxwaGVxZTZSdTNPaGZvQi0wZERiTENNV19OMlJfdFZoc2EtQXowZWhwSDRydGVoV2NUb3ZKNDRkLVkzWG9qTXY4d1k5dm5zdWwybzhoRVJKNTdsWnpCZVR0WF9aTy1aZTN0VUsyUkFYc3FNY0xsUEpWalY1aUJ4M0JybW1LN21hQTBxRWVUTER3?oc=5",
+     "publishedAt": "2026-10-23T00:33:07.000Z",
+     "outlet": "TechPowerUp"
+    },
+    {
+     "title": "Four advantages MacBook Pro redesign will have over current model - 9to5Mac",
+     "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPblY3c1RtZFVpbkRnNzRKbmdicXdlVktKb3pQX2F0UTRJd1ZHRk5iV3U1OEExa1Btd0U1RXpUbmNZN2o3SEJvYmtIc2JTTF9MREpIU2ZyeTB1UVFMLVkyXzFqQ19qS0tBM2JJRElMelEtVGNUb21LcjR0bUE1UXgzbXdiYkRrNHFiZmZ3UzNMSm00VnFSaHRVdTlqekxRQQ?oc=5",
+     "publishedAt": "2026-10-22T15:36:00.000Z",
+     "outlet": "9to5Mac"
+    },
+    {
+     "title": "Now Google says it might use your Gmail and Google Photos data to target ads - The Verge",
+     "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNa0FhY1VIWm1maGtQdGNzVEdhdkRGLXpINFdlcXl6YU4xNXpKZllzRlBWRk81MGlTRzQ0LXFQTVpIMEZfaXFvMnU0NnY4TG5pQUFjYzJCZ20tUThCX0s0emlWZ2doa2xOQ1pEc2szbmF0UEN5UDJPYXk0TlBaQ2RkUVh1R0Q4bDFwT3BwUUNIR0gyYlB3NUww?oc=5",
+     "publishedAt": "2026-10-23T16:52:55.000Z",
+     "outlet": "The Verge"
+    },
+    {
+     "title": "Crackgate? iPhone Duo Owners Report Screens Breaking Along the Hinge - MacRumors",
+     "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBXMmRNaWxud1lkNEF3LXhRZkRwTy1BVE12RjNkNWNCeGZjRzAwMFExd1JIQzV3RjQ4QWRQOVJleU93SGdjdEJPckdoMVUwRFptaE1GMFdVOTRtYk0zNHNSWE1UQzlrU2JsOTlPbXVPaw?oc=5",
+     "publishedAt": "2026-10-23T18:05:35.000Z",
+     "outlet": "MacRumors"
+    },
+    {
+     "title": "The ‘Call Of Duty: Modern Warfare 4’ Metacritic Review Score Is The Best In 15 Years - Forbes",
+     "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQUEdVdkhvaGl6cmVhbmt6R1dQQ0VyNjdYYW9ibEMtUWVjRjRhc3VfdkEtSlFQbkh4Qld1aFZ6cDdzYXM1LVkzTWZadllEU2NrQkk5OE9aRnpfTU9Ib2c1eGZPVnJiaVZoSVVBNGtBOXNIMkpCS2ZFNUs2eFdpMlBrbmNIOWhDbnp2czd2aWx3TUk4WHNtLTE2Q2RlSlFYYWhhNmxUTmROVGZBN3NKenYxYmRDNUhNUnBRN0h6bDB4VURrMnE1WWFvTE9Oc1E?oc=5",
+     "publishedAt": "2026-10-23T14:07:40.000Z",
+     "outlet": "Forbes"
+    },
+    {
+     "title": "Get Kyogre, Groudon, and Giratina Pokémon TCG Promo Cards at Participating Retailers - Pokemon.com",
+     "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOMUxRWk9rUWNZUF9NVlBSNXVqY003VFBrUHFscUN4NG9pMHoxa1dsdTRrV3ppZmNQN0RsajlUVDA4cjlOYkpJMUl6bnJQQVRrWjJUNHVaYnQwMEpmYVdLendzYmJuSlJfVHItMkFlODZmSGxJNjd5Ny1BODdBVk9XOVZvak5WQUNrV2hFVVJBLWNHek5nN1liY3Q5LXVtU3M3dDR6cFExTWY1SF9QVFRpRERKbUs?oc=5",
+     "publishedAt": "2026-10-23T15:23:26.000Z",
+     "outlet": "Pokemon.com"
+    },
+    {
+     "title": "A Mass Effect 5 Trailer Featuring Liara Appears To Have Leaked Following BioWare's Closure - Game Informer",
+     "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPUWFGRWZYaWloUGN1X2xfZkZpRXc1dGNBck10aUJwamFDcXdpTFB4ZXhVVFNacEsxZkFFYUEwR0FiT0ktZTEwaFhiSVM5czAteEZtTktzd005SlhlYWFKT2JZQTdydG5GaHpWcmZEOUlLT3ZtVWw2UFBoNG0wQmZTaHBRTTlOQV83WURvb0tMUXU4OXJzMm93bVk0TDlQT0N6TnF1VmxKeG5BUHFIckRLaktfUU80NFdIa0d2cEVPRDAxUQ?oc=5",
+     "publishedAt": "2026-10-22T21:27:00.000Z",
+     "outlet": "Game Informer"
+    },
+    {
+     "title": "OnePlus starts rolling out stable Android 17 updates early, marking the end of OxygenOS - 9to5Google",
+     "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOd20zVzQyZHBNMmRYRU1kN2xmYS1hbUxiVjhqZzZ3ODBXLXBCLUZrYTQwZFBELWZmRGJFVVNzckRDUVV4WWJyX0tHUFJzd1hGRjFLb1RFTmZzVjdBM0dHdGJqS3JvVXlweXRwUWY5MzI1dVc3RFBxbnlxRDgwUkJ1MA?oc=5",
+     "publishedAt": "2026-10-23T14:15:00.000Z",
+     "outlet": "9to5Google"
+    },
+    {
+     "title": "Three more Game Boy games are coming to Switch Online, including one produced by Shigeru Miyamoto - Video Games Chronicle",
+     "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNZWF4YzA0aXdLaV9kVnRIXzRNZzdaRElkNHlOZE5aMnBnblBFMEFpbk13UjY0WVFkSWljeXV5NkE5R00zMlpBeXZ2bVpoT3lBd2RaMXVRV1dNZTBBY3dsRE1xVVhPZ2lIUG10YV82NTJoWlB0WGxyeE9TRDlPMkNQX3Atbncta1lxZ08tREpNd3RMeVZjbExtQ05NblhDWEg3ZTVFclpnS0Rzem1ETnNKcDJvalEwT1NPRUdSRml3RmFqQmV4WU5hdTBDSVQyQVZTN1JCaA?oc=5",
+     "publishedAt": "2026-10-23T08:33:27.000Z",
+     "outlet": "Video Games Chronicle"
+    },
+    {
+     "title": "Samsung all but confirms iPhone Duo is goosing Galaxy Z8 sales - Ars Technica",
+     "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNN3p4QzBuYUxfUUFmWi1HaWNpQ1Zsb19VWTFpME9nRVoxV1dTeTBldzl3NXR6Q0Itd1JsRm1uaDV2eDlWNEhaX0JMd3lFRDZQTFhBVEUxanZma1MzdVBmSGpyWHhDRHlzaG5NNVpuYUNLTmZJRl9RRTZJLTdjVFlyczl4OEZuT0U5eHp2Y2RnY01rRlItY0RxQ0hKTVR2YlJoWjdjaV9B?oc=5",
+     "publishedAt": "2026-10-22T18:49:14.000Z",
+     "outlet": "Ars Technica"
+    },
+    {
+     "title": "New for Necromunda in 2027 - Warhammer Community",
+     "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOandYeHhWc1VSdDRqMUxNZjNlX2Y0dy1JcXA1cThMbWxtLWFaODZCd1Y0blU1ZXRxMk9HN2ItaVBzZ2tOM3d1ZG5rVEZBX3NMN09RZTFCQ0x2Q1VaaFF2T3RCRVZmQ1NhRF9FX29sdHk2RkRURkFTREhkNzlmWnhLRl9HQjRQSkdpUEJiX1F2Vjg?oc=5",
+     "publishedAt": "2026-10-23T14:05:29.000Z",
+     "outlet": "Warhammer Community"
+    },
+    {
+     "title": "Left alone with nothing to do, AI agents started playing - TechCrunch",
+     "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxObTdmMmJ5X29ybGVjMzY3c0FYYlVFSGJjeEY5ZTlkOEJ3aGV0RjF3U2RnX0tfdGIwOE41N1pubU5wVnpyWTEtc2pYekkwRTZ5TnlETGJpVU5SSkZFZGw5X3U3dG9KcjBqbkw3VUVmbzRxWDItMF9vZDNsbWxWYTN2OURkdHRvc3h2cE9OWDZucUt2SnZJ?oc=5",
+     "publishedAt": "2026-10-23T00:45:37.000Z",
+     "outlet": "TechCrunch"
+    },
+    {
+     "title": "The best place to save your credit cards - The Washington Post",
+     "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNMDdyTkZYUnB4RjQ2S3FDU1pWQmhmMUMyUmVtQTZ0THEza0F3eTF1ODFVMUM3ZVg2dDdZbUxqUjkxa2UtZWlMM3dmRkVVNHM1RmlDd1puZzZWZDdMV2NjZnJMcURGVzk3ZHNCa0RuRTMtVlNlX2RPZ1Z2ZjNFLUhRdGJWTXZPNy1iTkg4LVA3SDQ?oc=5",
+     "publishedAt": "2026-10-23T20:51:10.000Z",
+     "outlet": "The Washington Post"
+    },
+    {
+     "title": "Claim your commemorative Space Marine 2 desk mat from your local Warhammer Store - Warhammer Community",
+     "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPdkQ2VHQ4TGJyWGJpZ19mclhWTWVxbDRIS1hzQVRWb3VrOUIta1ZjcWRrNHM5NU9XWmlWYU5zZ3RMSzhGcEwtYWdTZTNxcy0zZG9xbTNCVzVIemFnclAtSGZzSEJmbTRQS2J2VkdxZ0V6cDdmU0NSbWZ2T1o3dEpfbXZ5amtxWlRiNGNXQzFoVm5wVzVnRE1kSkJWbUE1QmxUWVdHSWlxWUZpaFVIRzRtMXBoWWdMMElkR2JMUGJ2VTYwc2F2eF9TZ19GdXh5THhhbm1WUGlOOWE?oc=5",
+     "publishedAt": "2026-10-23T11:05:10.000Z",
+     "outlet": "Warhammer Community"
+    },
+    {
+     "title": "Amazon unveils Kindle+ subscription, a rebrand with more audiobooks - 9to5Mac",
+     "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQNTNrNzAyaFQ4ZFQzbloybDlmWGVvelZvQWJ2ZTMtcFo4UWFHdUVQMDYwNVFlSGc1a3huMllSS2NNOGthNWFPcVBjY2hNa2NDOFo3eFhzV2ZYWjNfd1lkMDloaW9nMGlxaFZmb1Jjc2JRNWlBU1Bod1IxTXpJQVBieVBzOHpqQ0ZhNXZjOG81QzZDMUx5RHIwX001ZzdzZw?oc=5",
+     "publishedAt": "2026-10-22T18:46:00.000Z",
+     "outlet": "9to5Mac"
+    },
+    {
+     "title": "Hackers Are Serving Malware To iPhones Via Hundreds Of Infected Websites - Forbes",
+     "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPRGFTSExyMVR4N1dkQXA1WVlGeUdrNDdQUFFwX1pxNUozX0tSMWh5RUtFeGVlcWpUejczVnJxY2JycG0wek80dlhDR2E5LWp3V2RHQlVmUEc5QXlTbUtsTHNCTUFkUWlQMDFVU1Ffc1BuY1pnRW82enlOWU9rNmZUc2VVblFQZEVOSzItVThQOVhsNTNLZmU4cjROYlg?oc=5",
+     "publishedAt": "2026-10-22T10:00:06.000Z",
+     "outlet": "Forbes"
+    },
+    {
+     "title": "Nearly 12 Million Capcom ID Accounts Affected in Huge Data Breach - Push Square",
+     "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOQlRzVVdSUlBEWm9wREMzNzliN3ZOWTRYMmItWFVEN3V6c2RUTVNiZHlkNWN6cElGV09FbGlDOG9hS09sN1hxVGt1WXJDbVlHQlNRMnJJX3FZamZSWUZGRVdSMGx3QTRjLXV5YkNDYWQtUTdMQ3BsUEVOQUNGRlJQcndtWmg3T25HOVAtMEpBOEFpckN3eGJHQ0JXQXlRWmVEdHhkQTdnS2Q?oc=5",
+     "publishedAt": "2026-10-23T15:45:00.000Z",
+     "outlet": "Push Square"
+    },
+    {
+     "title": "Arkane Devs Say Blade Is Nearly Finished But If It Can't Find A Buyer Soon, The Studio Will Close - Kotaku",
+     "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNc3FNT1F0dVBQNVptcGw4SUJZTmdrU0xWdGRmYi0tYk4wRldFSE1wV2xIaExoeUlCckJOU05xME11RzBVNlZwUl8zZjd3UGc2RHlQMmRLdXVnS2N2S3NEaVpqYmVrMFBaT1ZrVURhU1RZSGsxeDRJekhaMDhQTk5MX2hhaW05cl9WSF9mVTYzdVNWcTJHcDRlN0JldkNudkNzRWdTWVNXUlVaeWRpZHFYVDdYYWlMZlpJd2ZSdnA0RERQa2s?oc=5",
+     "publishedAt": "2026-10-23T17:15:30.000Z",
+     "outlet": "Kotaku"
+    },
+    {
+     "title": "Free Play Days – Dying Light 2, Riders Republic, Monster Hunter Stories, Let’s Build a Zoo, and More - XBOX Wire",
+     "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE56dzhhbEkzaWJXNzl0M25QM29kZ08xWGJpODZ6X1ZHZzVQQ0hTREE3OUZkcnNvbFRpTXV5ekhkb09WZm1oTk5yYjRhM1V0bHExaDlFSjBhNGI1ZzdRR0ZPamdiTEFWbjFVVHBPOWJJRGptWlnSAXhBVV95cUxQcjI3M25EZ2dSRGJaVm9YNjBFcnl0cjhOMTgwcEszX2trUWRFeENyZGd2N3BnNGN0ZUN6eHJDOXQ1cGZnT3JfMXRZX2lGTWhveEdnZFViRDBJQmxoMnZxOVRtRy1PRjl0TmxVLVZlWnhRRjJmMHJhb3Y?oc=5",
+     "publishedAt": "2026-10-22T15:03:46.000Z",
+     "outlet": "XBOX Wire"
+    },
+    {
+     "title": "Here are the batteries expected to power the Galaxy S27 Ultra and the Galaxy S27 Pro - PhoneArena",
+     "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQdC12aUMzVVpTZDZNWUhpcEI1ZUlpbDB6TVFSN2NkN1JDcXFkd0hTYkVGNlBOVl9RZkVka2NzU3JacGx2MVNtZXlVMXJjNHUzOTA1V21PV0o3YXJMRmcxd2pCUXh2QTJzYnhxQjNjSzdPcHpqYXRwZ2p5M1pEVDEydDBSeUZQZjVTdnNjLWRieHl2dXJUV3dabTN3ajhtbS05SVNvLQ?oc=5",
+     "publishedAt": "2026-10-23T05:29:08.000Z",
+     "outlet": "PhoneArena"
+    },
+    {
+     "title": "Forget the vinyl revival – I'm getting excited about CD players again - What Hi-Fi?",
+     "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPVGxBdGVGWlFtRWdzU18wR2tiTWNiYVRPdzlfNFVRRlpxTm90TzFQUzU1Wlk0dy1mLUU0VklIeUZ0M1hxY2ZkbS1IV0tmcEVWa25SSS1tcXVkR3hHcGtZN0Z0ck1jdWlQSEZiSGJiSzRINWcyOXJlbzlYRFQwQ3RMUGlaNkwwOWdScmhmcENUOEJRSmZMUnhLSmNiYnlBX1Z0SWlrOVQyMFZNck5I?oc=5",
+     "publishedAt": "2026-10-23T10:40:04.000Z",
+     "outlet": "What Hi-Fi?"
+    },
+    {
+     "title": "Samsung confirms a list of Galaxy phones and tablets getting Android 17 updates - 9to5Google",
+     "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQRmhOVWkxVzdDOTBIbVdWajdnc2xkSlVyeFJRYno1VlRndHlOWC1keWpBM3ljSHZfUUs4V2NCNUVULVgycHlFVnJrOUxMbEE3TXAyRUR1SDhTU0ZnNGVZSDNUblVWQWJnS095OVIydmRWRzVfY3hzV2pBUEJIdll5dGNPRmR1bkNuVFE?oc=5",
+     "publishedAt": "2026-10-23T11:15:00.000Z",
+     "outlet": "9to5Google"
+    },
+    {
+     "title": "Cyberpunk 2077 2.5 Update Secretly Added The Witcher 3 Sword and Cosmetics - IGN",
+     "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPMUU4MTVkYVpkTXJkdGlFX0FFa1VTM0lQdmRKbU9uVEg1dG9NbFcxdXl6WGRvY3FPUjhxSEhiNzg1eW9pT25wUmlQUkF0cHBEQlhVMVctTFpkSUtIVnBQcjhZWmtyM19aZmFEVDNaNHNxMUQ3Z0N1RGE5Smw0Z0hzM2dGX3k0bF84Zm9DbTZndzVCWXM?oc=5",
+     "publishedAt": "2026-10-23T09:50:54.000Z",
+     "outlet": "IGN"
+    },
+    {
+     "title": "The next-gen Xbox won’t cost you $1,800. It can’t. Can it? - The Verge",
+     "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQWmo0UUdlMExQYU9leTV3SFloaXJhSk55VG9EVlhYYU9pMEtwTU1GZFdnTEYyYWdpT0w3bVhGRFBqQWZKVDR4cWoyQmlOWXNBcG9vdGZFS0piMXd2T2VHWXdJVEFCOUhIeDljQnNyR0lHQjJjM0Q4NmlOU2xOMjFFWTVBN1NLVkszWFY2RzVTcw?oc=5",
+     "publishedAt": "2026-10-22T23:00:00.000Z",
+     "outlet": "The Verge"
+    },
+    {
+     "title": "Despite its mixed reception, Marvel's Wolverine was September's top-selling new game in the US, making Sony launch revenues it hasn't seen since Helldivers 2 - Eurogamer.net",
+     "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQUzRtUmEwN3FxV1UzVVpaaUFxdGpuS2tOM3RGcVpLa1dqNFpwWjBQLWw4QURlYVZaVnhkVlkwZUFnWWJLdGVINEZVbGNRMENyd2tEODJjaGt1N0JRUlN0NE1DLWFXN2I3Vm5TM2hhWFo3ejgwYXRoU29YdFFFZHlUcQ?oc=5",
+     "publishedAt": "2026-10-22T13:22:52.000Z",
+     "outlet": "Eurogamer.net"
+    },
+    {
+     "title": "MacBook Neo Helps Apple Outpace Rivals as Market Declines - MacRumors",
+     "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQSk9mcng1OVcwbTA1WlF1alk3LUM5RXhyejlhVHhXeEFXTTN5cmtlSUd5VEpaSXFwd3N6LWx6NzF2el9uRjZkN0M5QVRnRk5wZC1Jdi1Lck80R1NJSmFra2l5NjhyRW1HdUNRN2d6WnJvbkQzX2dZMVpYcG9mM3ZfeDUtZ0VOdTRRV1VhYnhINzQwc3UzWTJyaHlHYw?oc=5",
+     "publishedAt": "2026-10-23T07:30:00.000Z",
+     "outlet": "MacRumors"
+    },
+    {
+     "title": "Xbox wanted $800 million from Netflix for 7 years of its biggest characters, it’s claimed - Video Games Chronicle",
+     "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNVThBTUV0cmh4VXhKd2ZvUGhqcU80R3AyRHVIRmgxZl9UT2ZjeUlES2VfdDVINExSaGg1Wm4tN1RBYmVOS0NybVE2dXJhYzVZN3VETk9DcDNteC0xcDRZVi1LeWRhUm4zOFZScDMzZ2Z6c0RKTEZEWlFubW51NUxITjJnT1NOTUtyRHg2V0NQZWxsUDFBN2pBZlp6cms2eEpyYkx4WUxZR1hBc3JZeVRxeHppUWhuLU51YXE4Qy1mRjlpbzlDd0FV?oc=5",
+     "publishedAt": "2026-10-23T15:26:11.000Z",
+     "outlet": "Video Games Chronicle"
+    },
+    {
+     "title": "Everybody panic: A Valve developer said \"HLX\" in public - Ars Technica",
+     "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQR2lOeWhRYTB6dFlIb1lwaEt4bjFCSHZEZ21KLUZqanUwMzNodHBrMl9sYmo1MDhSNlNBMmZnTkU1Sm1tUkJWMS1VSmw0MTBTY0RBRnQ2TGUweE14X2gzRXZGY20wYmx5OXdFMTFRSnFBMWlqT2lsQ2FDa2xkOVlSWFNmcHkxZlcya2ZlMXBBcTA4SWtvbVNZ?oc=5",
+     "publishedAt": "2026-10-23T16:35:00.000Z",
+     "outlet": "Ars Technica"
+    },
+    {
+     "title": "How Can I Hang On To My Digital Life? - Defector",
+     "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9KRW0zNi15bmlNZFRaRHd4VElrdHVzYm9uTktoUlM4MnNac0lXSDVRVHJ5cXprYTdfai1FQ1FjOFJRay1RZmE2NUlQdE1JV0RZVlAtbXZGQ1YwSEdQb1kybldpdXlhSHI4?oc=5",
+     "publishedAt": "2026-10-23T16:36:00.000Z",
+     "outlet": "Defector"
+    },
+    {
+     "title": "Shigeru Miyamoto to Receive Japan’s Order of Culture in Historic First for Gaming Industry - TwistedVoxel",
+     "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE92bkdmd2tOeUFSMVJsWGdTX2JoaTRWSVdPM293dlRJTlZyQU1Eb1dnanppbDJ6WEloeXZZMXBGSkhBMHZGTm8yWHJfdU1ZcXlodkFYdWYzTEc2VHBDbWxvTUdJRmt1dkFDUURJ?oc=5",
+     "publishedAt": "2026-10-23T03:36:33.000Z",
+     "outlet": "TwistedVoxel"
+    },
+    {
+     "title": "Designers’ notes: The River of Bones rules - Warhammer Community",
+     "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPRE1DaUlfSFV5emRtZ0dBY0tncjZoM2JTOTZiZFhwaG5fc2VHOGlfWGxOWVBJWVpWQVh0WUdtZl9lSjk5aGt6R1djekU0Tk9rV3F4TlkzdmYwbE9FSk5FWXJ6Rnp1VmlXcUJuX3hONTBVUGtxQVZYc0lGMVhicFpNOTZQdmx1eWFrekx2TWVpdXhCWlJSZDBQYkx3YUFNMlRKODVV?oc=5",
+     "publishedAt": "2026-10-23T14:55:36.000Z",
+     "outlet": "Warhammer Community"
+    },
+    {
+     "title": "G-Shock's Affordable \"CasiOak\" Successor Is Here, and It Looks a Lot Like Another Bucket-List Sports Watch - Gear Patrol",
+     "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOSFZMOHZVTUYxeURmR2dlclp6SHZVaU9ndDM3M1BYYWR0UEJ0d25nY2JZNm9Ra3BRcllnY0s3UmdUV1c5ZlZVSE12UTNoazR2OWVCblFROWVuck00dXdTTThna0ZnQ3BSdG1aTDNrRmplNVp2M2x0N2YzSlp4Wjc2cGlzVXlPNnM?oc=5",
+     "publishedAt": "2026-10-22T16:56:24.000Z",
+     "outlet": "Gear Patrol"
+    },
+    {
+     "title": "Mass Effect Spiritual Successor Officially Reveals Redesigned Protagonist - Polygon.com",
+     "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOZVY5a2x4Qm5kTDdzSEJWVUpIWHZlQWVqM0ZOdHVGdXl5dDlVWW5xaG5OR3JyTjhKMGVnZUtaSnZWNS1CSzRCZ1NIazZDTVVveTNwUHpiOEJXamRfN09nUmZXWHk0SWk1VWxoV1FILTNGQThkSTViMlhHQTdFZktyMDd1SDJZb252S3M2cg?oc=5",
+     "publishedAt": "2026-10-23T14:05:22.000Z",
+     "outlet": "Polygon.com"
+    },
+    {
+     "title": "These 20 PS5, PS4 Exclusives Are Cheaper Than Ever on PS Store - Push Square",
+     "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQRndhSjZLbzJOVEY2NWxjX2xGNnVOLUpDTl9kOVpfcTZjZTU4TW40UDdhNmdST2N6cWZHUlV5N0k5cnhXUUlWV2Z0RzhhNm5jalVXQ0ZiWllibDY5MTZjdkZnbGNINWJOaWEtblBjdnhFNElJSm5GVWFoUjE2NWJZa1U5aWtBQmZTTzRMQ2JGcmdfUmZnT3NDTlRsS0Z5Zw?oc=5",
+     "publishedAt": "2026-10-22T15:00:00.000Z",
+     "outlet": "Push Square"
+    },
+    {
+     "title": "Creative Assembly Finally Addresses The Shogun 2 Remaster Disaster By Pointing Fingers - Kotaku",
+     "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQVWJTdnZfUUw2WkJsOFhiczZwUUhNVTFfR3h3UFNTWWxUU0tZaXRxOGxNTEs0eGxJak53TUNWS1VQRGg3WVd4NEZReU1LY3J3U1ZxbnNvSktscE81MGZrTTJ5alAyeGZJZHJPQzBwMV8xZUpMYllUZXhyRmZBcEJidS1RR2dGcW5Wcy1HUnRSWjRfWnJreTFzOG9n?oc=5",
+     "publishedAt": "2026-10-23T16:57:38.000Z",
+     "outlet": "Kotaku"
+    },
+    {
+     "title": "Why ‘Final Fantasy’ Returned To 2D - Bloomberg",
+     "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOWUFldy1COV9OamIwWmliQkYtRkRkY0oyT2JGUTZwVE1yeUI4cXFXdlppbVF1NXFqOTZlV29xd3VGaElkUzE1R1o0Q1R5ZVhzQlVOUFNuOFlOd3F0Q1JwQUJ6cElBMzJvQ2pyVVNjZmJ6Z0NlWUo0eUVMenU3cGV3emZOZ0xqWlotME96d2JqQQ?oc=5",
+     "publishedAt": "2026-10-23T17:00:01.000Z",
+     "outlet": "Bloomberg"
+    },
+    {
+     "title": "Teenage Engineering launched an instrument amp with a ton of built-in effects - The Verge",
+     "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQRFZSMk9uLWFmbFkxX1ZmZUNDSGsyZ1lrWlJyQ0ZiOFQ1QWJnUElPMWl3MnljT2xCR0IwSHM4RHBzTDE3ekd2ZHNjT0RfRkVpN0o3R1M2WVFHcWtPQXRUcC1uRFctZllfSHZuZFVycG9FaGoxWmxKUU56STVUeWFkcEdTLUpxelhu?oc=5",
+     "publishedAt": "2026-10-22T19:44:51.000Z",
+     "outlet": "The Verge"
+    },
+    {
+     "title": "Something smells different as scientists send aromas over the internet - Tech Xplore",
+     "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBzZEs5N0J2ODE3ODFEZGhwcFlvMVkwR3pnVWt4a0NPby11QzJ5b2lWc0lRZmU3ZEVZbFV2NUlRUDk5T1NPaFZZTzR4MHUtREl3VzNmWnI2dF9mT3J0OUdPTW9Ba2xBc2M2eG5pdHM0NDVvaW1CZnc?oc=5",
+     "publishedAt": "2026-10-22T18:33:22.000Z",
+     "outlet": "Tech Xplore"
+    },
+    {
+     "title": "Man folds $2,000 iPhone Duo 10,000 times to expose what the screen would really look like after years of real use - UNILAD",
+     "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPcGF3bjU0TlcxMDdfbnYwY0l6S2hZRXBWa2FXODFfMDZmb0FESFV3QlQ5VEZKaWR5RGdGeEdlTzJHZXhWOS15ZG1mU2t6LWJLQnFXak1GM0VIM2NiMWFidlBncFZidmUxVUpKMnlYYzZNU09iM1NBYlBVOExvMzJYYURPR1Qzd2Jj?oc=5",
+     "publishedAt": "2026-10-22T16:10:09.000Z",
+     "outlet": "UNILAD"
+    },
+    {
+     "title": "Canva releases its first image generation model - TechCrunch",
+     "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNd21jWkQ5TzJTSGZRdl9YQVBqMWNLR3JRME9XX0JiZUJ4OXRFbjZSeWZ3NTlrT3VPLWhQeElXbzJueHAzU1hhUlB6LXFWQ1MyQXFPcUJ1ZU9Vd0ZjbkFmWjY4Y05JOU9KNGk4d3FIVTA5aFhUeHJueG5RVnhwNjgwcUpMQzBiUUc2OEE?oc=5",
+     "publishedAt": "2026-10-22T19:00:00.000Z",
+     "outlet": "TechCrunch"
+    },
+    {
+     "title": "Microsoft shuts down its beloved maker space - The Verge",
+     "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNN3dFUGd5bXRIRzV2VzVzSERhZ2FjRUlpelcwaTdBSWJCcDF3U0xhLVFGZVFwV1hlc3o4cmpfSTVtcUxjYWVDSUpaZVI5dFFTLTVQYV9GVk5COHRQTmNVZjdwak5kamNVRVBQMGtWVHVHTXVsX1AtZ1hsZF9nNnBxeHZvbEI4Wmc?oc=5",
+     "publishedAt": "2026-10-22T16:00:00.000Z",
+     "outlet": "The Verge"
+    },
+    {
+     "title": "Apple Will Label Apps 'Made for iPhone Duo' in App Store - MacRumors",
+     "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9EdFEzajJCTTdQeDc2dzZ2UlpqZ0hqa3BOOFFDUEFmY3A3QUE3UHNqODQ2WUxTMWJhQTJoNzduQ0Rfd1pMVzZYMU8zMDdyZkxvOE4yYl9iUXBmNl94WV85amNwZWZ6SFlxYng4TzRCVi12bnlEc2UtTHNwelFGQQ?oc=5",
+     "publishedAt": "2026-10-22T14:40:27.000Z",
+     "outlet": "MacRumors"
+    },
+    {
+     "title": "Google Health 5.11 rolling out expanded 100+ activity detection to Fitbit Air, Pixel Watch - 9to5Google",
+     "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOdEN1eGZFaTBuWFB3OFJVTERlNDFDNGlyVW5iQThWdVV4aEFwbGwxM0VXNTJ4X1YxYTdLZTg3TnphZEJVZXRaYTdLQ0w4b1luVjY2N3pKMW42V0I5ZHJIRjlYV0otUWw4emIwUlFuWWNEUVQtREVRUkJhNXdfNXZ1Qmpn?oc=5",
+     "publishedAt": "2026-10-23T18:36:00.000Z",
+     "outlet": "9to5Google"
+    },
+    {
+     "title": "Survive the Pitch: Five Nights at Freddy's Haunts Rocket League - Rocket League ®",
+     "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNNnoxcy1UUW8xcFJPSGUzMjZfakUzSG9IU0Q5aDBJa2pCTENYamItQTJSallmaFdoa0hFVjRYRU9RSGVjb1J1WHBVaWxuaUxxVm9DTktsSDFYU0F2MlZFQ3JsYk8yRVpBZTRxcHpHc21GUnkzX1JCV0NjMzBtZHVFM2xGam5qZHNUREdtbl9iNXNFZG1JZE44ZG1ZWQ?oc=5",
+     "publishedAt": "2026-10-22T18:12:46.000Z",
+     "outlet": "Rocket League ®"
+    },
+    {
+     "title": "‘Gears Of War: E-Day’ Cost Xbox $500 Million, Report Says - Forbes",
+     "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOTjlZU2xDMDBjZ3BiOWQ2TVBZdDM3dHNqOWVpOWM5dWJyZzFRYThZN2hKd1lFbzBhMlpmRjVqNEhiSlU2UEZaT3NCcnV1dHdoNENXRFpJYk5ON1FsUWF0SkE2YVNLV3dreDFOeVplQU1GN01yeW8xSWN5YXNITGxOREE1WmtKQjQyS2dMcFVEOGZpN2MtbTFZYnRaZGQ0MFVnQzNXbGQ2RXUzS1k?oc=5",
+     "publishedAt": "2026-10-22T14:06:48.000Z",
+     "outlet": "Forbes"
+    },
+    {
+     "title": "Massive Improvement: COROS DURA 2 Solar Gets Bigger Screen w/ Carbon Shell, Voice Control + 120hr Battery - Bikerumor",
+     "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE45M1ZXWklWNlQ4TUt1WGxOWHZYUTh0ZGl0LVEzQ2t6cU5WcXZoM0s4QlM4YzFWNXZITHFnVmstUlktSDIycWJOeEhMUDV5bW5rSGREc1pKaWJlZjRZNU9FWHJKMkNwQ3dfMHJlUThWbnRoM3o3UmhNLUpUWQ?oc=5",
+     "publishedAt": "2026-10-22T13:00:00.000Z",
+     "outlet": "Bikerumor"
+    },
+    {
+     "title": "Nintendo Switch Sports Resort review – Wii Sports lives on in this effortlessly appealing collection of games - The Guardian",
+     "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQQklwSXBxeV9vOE1vNnhTQnEyWE1INkk0VVBRZHdMZkF2SXhBZ1Y0bFV3enZwYzkwdkhUS29DQy1lLTlLREVmcHFxOEJzZFdHeGQ2M0dfbHh4UXBNa1dTOUluekN4TnFZM3FWRGxPNDliTFJFQ09BS19zN1NOWDBfZTFuM3puRHR5YUVlTEhVVW1LM0VZV3o4Y2NoVF9lUGt1?oc=5",
+     "publishedAt": "2026-10-22T11:41:00.000Z",
+     "outlet": "The Guardian"
+    },
+    {
+     "title": "People are fixing their TV OSes with Claude - The Verge",
+     "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFAzd01RNDBpOENQaHRHTml5M29DQnJzSlV3eXZiOTJweVd5eURvOGhGQ09hejlfcU5SYVR6c0QxX0d0bkRDT0NrdVBxYzdrenB6SUJoaU5wLUc1V21SenBwQVctU1YyQQ?oc=5",
+     "publishedAt": "2026-10-23T13:00:00.000Z",
+     "outlet": "The Verge"
+    },
+    {
+     "title": "The Power of PEAK Friendship, Coming to XBOX Today - XBOX Wire",
+     "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNeHBmU2d3VWlGemxERXpHb2FteWFsN3BYeE9TejNDSjE5ZmdKendSTVdwT0ZEcTIxOTZtLVJ3ZXRpMTZkYUlIYjNfRkUyZnVvQmdoU25iRW1SSHQtTkZvZ1JpeFhsUFRPVHgxX1p6Vjd3UlRkajZ2SmtCakdjSU14RUFR0gGHAUFVX3lxTE1LV1RmejJkZHIweGlLT09VWVhKYkhoTXp4SWtRX09Pdk1CNjh0Y1dha2tMYjRvVzNXLTBqMTBhRFNETTI2S2VKWWRiR0dQZFlkWFVVYkNMTlhCWG9QdVBMWmxxay1BUVc2bDd5QkZVVTB4ck8tM1NmWXVZMnFFdFpLYWQzdmNKOA?oc=5",
+     "publishedAt": "2026-10-22T17:03:46.000Z",
+     "outlet": "XBOX Wire"
+    },
+    {
+     "title": "1Password launches a way for AI agents to log in on your behalf without seeing your password - TechCrunch",
+     "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOOHlxOWdTSFdvall4ZG5TTGhhcm9mMVNNMFFLUGo2UnZYRHg2allodTBSd25Wc2c0M2JjWlNRZkUyTkR5cTVzLVU0Slo5Yk1jVVNBM3N1dWd5eUhlZ0U3TFVGZnVNZG5TSEVDWE5kdE5FLWlCWGxxUW8wT1NBdWpfcUlQSS1uaWpSdGVNOGZIY2RCVU5GOTJEYTlRcElkTnVzRVZsZWxXanVnYzhNOFh3cUgyRWJMcVZoREVhWksxc1VRZk1NcVE?oc=5",
+     "publishedAt": "2026-10-22T19:07:09.000Z",
+     "outlet": "TechCrunch"
+    },
+    {
+     "title": "Sony Continues Its March Towards An All-Digital Future As It Reportedly Kills Off Its Last 4K UHD Player - Kotaku",
+     "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOU0Y1S1VZelFFeG9uMkd4bFFKWVQzQTRYRnNrVjVIQTQteHYwekpPYTlrMGdtam8tYXZxb1haTV9rUmRuQTB5WWdQbS0ySm5Gd2JCLUh0R24xZFNyU0o3Z1NOLWVnOFIzUnFhNVA1STlZMnhNVDBKeTcyemZ0U0ZOdTQ5YlAzR1dSZEZOYUZTdXVjalBZRTZNbWFMRTcwYVI3eEwzY0VxdHVpb190VnZtN0ZFWlI4c3dTNmpUQVNPMXBjNG5EZTktVGxneDRPMzQ?oc=5",
+     "publishedAt": "2026-10-22T20:41:43.000Z",
+     "outlet": "Kotaku"
+    },
+    {
+     "title": "Switch 2 security takes a hit as hackers unlock homebrew access - Ars Technica",
+     "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOYndLZWFiNG1uRWN5YThiUDJoTGw5dUU5enVsMlpRbURZV2dzbk52SFNadGlMNWhaVTl3WlBTcVRHaTVWTFdIRERpa2tFYlF4T2dQTEhBTDdmNXNzSlNUUnpBVlRUMU16OE9tVEJILURSVkNhcHo1OUkwdkYyVGg2dDNSMEpscDZuR2NsR2xBVE9QYS1SaHkxRXgzQTQyYVNlR3NuNmJENERVbkpjMDA4Ng?oc=5",
+     "publishedAt": "2026-10-22T22:25:33.000Z",
+     "outlet": "Ars Technica"
+    },
+    {
+     "title": "‘Dispatch’ Developer Sets Live Concert Event to Celebrate Hit Indie Game’s One-Year Anniversary, With 5 Million Players (EXCLUSIVE) - Variety",
+     "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOOUJidkQzNU85TFQ3LTRLZDFFZFYtN2pOWk9uNGs4SHRlZG8wVFh5NGhnLVJmVUsyQkYxZFV2VWVoSVpvcHd0RS1kX0pnOFdiaDR6SWRPNXJWMlE0WEI3N3dsWlNHSW16OGdITWlZMWJkXzFFWHlqV1ZQNG5QVUMyMm1HZl9lVlo2OFlHWTZVU0piQ2xTdDlDZFVn?oc=5",
+     "publishedAt": "2026-10-22T15:25:00.000Z",
+     "outlet": "Variety"
+    },
+    {
+     "title": "Meet Mori, a Cute Robot Mushroom That Doesn’t Really Say (or Do) Anything - WIRED",
+     "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQcGhhMEl6VTgxdXBhS2xqcjJZZTBpYVFla3NXZEdhMGtrbWRITHFXR0JTb3piT0Q2Skp4YWpGVm5WZ2JncmVCeS10a3Z2SHVNMHRhaWdfNEFLekN4c3RTdXpMd1ZFTnpPeE1QNjFORXUyTmFGYVkybkpYNXZQWUhjRWxwaGNwbzFSTnlUaXI3ODVJZUJRYWlva3hwdTFGamM?oc=5",
+     "publishedAt": "2026-10-22T13:00:00.000Z",
+     "outlet": "WIRED"
+    }
+   ]
+  },
+  {
+   "id": "gnews-kr",
+   "name": "Google 뉴스 IT·과학 (KR)",
+   "url": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=ko&gl=KR&ceid=KR:ko",
+   "maxGapH": 4,
+   "lang": "ko",
+   "status": "ok",
+   "fetchedAt": "2026-10-23T21:41:46.982Z",
+   "httpDate": "Fri, 23 Oct 2026 21:41:47 GMT",
+   "cacheAge": null,
+   "newestItemAt": "2026-10-23T19:45:00.000Z",
+   "gapHours": 1.9,
+   "tzAdjusted": false,
+   "count": 46,
+   "items": [
+    {
+     "title": "[단독] 100억 투입 인공위성 사업, 실패하고도 발표 안 해 - 조선일보",
+     "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOakNETTJxOFNzZnNqVGlGZTk0aGtOeHpVWlNjUGxGUG40TUlOX0tJQ0ktMkV6bFpvWW1uRlZpZlZ1UmNENnQwMnNPa2RMUWItUVNSeUwtTWhCN3ZtR0dOa1IteUwxbDJPYzhiUVJJbjE2dTZtcDhSbVVxdGQ3dGZfZ2V2Yw?oc=5",
+     "publishedAt": "2026-10-22T20:03:56.000Z",
+     "outlet": "조선일보"
+    },
+    {
+     "title": "\"中전기차, 바퀴달린 스파이\"... 주일 미군기지 출입금지령 - 조선일보",
+     "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPU2tfaGlBcjJ2NGc2SU10NUJBdzF2QW82Ynd6QlRCcTU1ZlZLQklzZlo1ckZRUFNGZFFFNFB4LWJlWGdxMnFFb1FJVkwyeFlvV3V0UVExXzVUVHVBVldpM3NCS0d0MlY3LVA1ZDBCcFZkVHZuQjZmUlBRTHBOSS0tajBkSndjNGhvUFhPWlNwUVpWN2gtMmNBc0tIQXJiZw?oc=5",
+     "publishedAt": "2026-10-23T07:16:06.000Z",
+     "outlet": "조선일보"
+    },
+    {
+     "title": "PHP 이어 Node.js도 뚫렸다... 원격 코드 실행 PoC 공개 - 보안뉴스",
+     "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5kc0U1Z1NuLUN0S2VZdjZaWkRBZHNPaENFRDRCbTFjSVp6RnBrbDZVNjVLbFJoaE5RQTVveF9Sd3JQRUloNFItUVVpTXdhZW1rY2ZCek1ubGZJckJSd0pGRjQ0X1VIdjlRdDhN?oc=5",
+     "publishedAt": "2026-10-23T02:32:44.000Z",
+     "outlet": "보안뉴스"
+    },
+    {
+     "title": "“배터리 모자라 차 더 못 판다”는 테슬라···K배터리엔 기회인가 부담인가 - 경향신문",
+     "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE03cEZpUWNaYmRkSzl6cGFtUE8yQ0VZSGR2ZDh5S1R1aTduc3RYb1dhS3hkX1lMdjF6NnpJV2c0aWRRVENMX01rNktENTh3OHZFUHNvcEFac3R3Z9IBX0FVX3lxTE00TW44cnRRNDVwTTMycjVoU1BNRDdOQVlnUmo3R0ZVNFZaWktUV1hFZnNtNHo2M3dHMjJja29lUUNYSHZmQmw2MlFGcnNVUTZ5TUI1WDZ0QS1PSUJOemFn?oc=5",
+     "publishedAt": "2026-10-22T21:00:00.000Z",
+     "outlet": "경향신문"
+    },
+    {
+     "title": "국감장에 등장한 AI 안경 ‘몰카’…누가 찍는지 아무도 몰랐다 - 동아일보",
+     "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE45elUxc1lRVnFKY3BKc1h0YURRa0YyYzN0N01WRlJ6TDlFaWVhVV9UdFFmUFRpS1BCdjFPSjVxazNPdWM2TUIydk9qYTloUktRR244TVpOVHdtMzRqdGpuNDhhVXE0NVA0WDlSVERrRdIBZkFVX3lxTE8zMGltS0hVanZFaXdYRHpvYTFKODV5YUx4cnhXX1JKZ0J3aWVKZlJqYkF5YXk1NEVnbWd0M0ZqRmo4S2N0Y1FLX2JGdmVhbGhLWU9FUGJ3SUVpZEEzV0tHeXRHS01lQQ?oc=5",
+     "publishedAt": "2026-10-23T06:52:00.000Z",
+     "outlet": "동아일보"
+    },
+    {
+     "title": "사전예약 1분만에 마감…애플 첫 폴더블 ‘아이폰 듀오’ 오늘 출시 - 매일경제",
+     "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9za0liOUdEZEpWbG1rblZQTDFLQWhaZUltV0ZjMUJyemtjUFAxNWFjMHpTeVNnSHNZMHJWZGdscndLLVFSWmZIaWl1VnhUUQ?oc=5",
+     "publishedAt": "2026-10-22T23:27:21.000Z",
+     "outlet": "매일경제"
+    },
+    {
+     "title": "4m 높이서 뛰어내리고 괴한 제압까지…중국, ‘보디가드 로봇’ 공개 [잇슈 SNS] - KBS 뉴스",
+     "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE4zZkRzcG45U1lCeno1c1A3aGNwUlMwVjF2bGFjRURLd1ctRFFVQ0UxZkNOQ1NGa19jOUZZdWVWdkFnVTdXMFFzN2lWOExJWGk5Tk1tdzIyeEllWXc?oc=5",
+     "publishedAt": "2026-10-23T04:24:00.000Z",
+     "outlet": "KBS 뉴스"
+    },
+    {
+     "title": "“단 한 건에도 사업 망한다”… 식당부터 벤처까지 ‘집단소송제’ 공포 - 조선일보",
+     "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxObFhYRDVqZ2tfMTA2QzVreHgyT3VocmQ3ZDBJN1I1Q1g5NEFCYllGdGJRRmJqM3NjMjM3NnkzS215a1hDcDJSU0t0Q0FOVnphMWdrelNrcUZhMWtwQl81Sld3eVZpbEdCWERNbkpfWEJ1SElRZVlvYkp3Y3FMWnRxT2dtWWpUcnBmTXRpTGdJZw?oc=5",
+     "publishedAt": "2026-10-22T15:52:53.000Z",
+     "outlet": "조선일보"
+    },
+    {
+     "title": "[단독] 또 비행 중 기내에서 ‘펑’…보조배터리 화재 올해만 7건 - KBS 뉴스",
+     "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5CbGF1emN0RW9XUUNDSGhFV3hzb0t0alptdm14LTEwSjdZZFNYbHVmaGI1VWEyZG1sWklnNHFkSWNqVUI0b3FPVmU3T1pYRTdNcVZ5WnVDdDRCMGc?oc=5",
+     "publishedAt": "2026-10-23T12:22:00.000Z",
+     "outlet": "KBS 뉴스"
+    },
+    {
+     "title": "CJ대한통운 건설부문, KT클라우드 안산 AI데이터센터 수주 - 이데일리",
+     "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPQm9xVWtvQTRtVmt4ZkdDWl9UTmNNcEJCZjRVRmIyT2Exb19QaDhPbS1YNkNUS2JYdkVkSHlmb2ZrMi1wXzlLZnpSNm5SeHdxeVo2WmlNalF4aDdKNDR0T1ZCRExXbU5kSm1pYnA1SEZPX25qSzFRc19WSENvQzZLTA?oc=5",
+     "publishedAt": "2026-10-22T00:32:51.000Z",
+     "outlet": "이데일리"
+    },
+    {
+     "title": "보스턴다이내믹스로 날아오른 현대차…목표가 120만→41만원 '급락' [공시 한 끗] - 세계일보",
+     "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBKUWpQNkNwb1RBaC04a0Jka1ZESGwxcXBHeHFlY0UtNXREclpuQ3duVHlXd2tiZC1pRGxrSGRzREt1WXI4RWJJOHpmXzNURUxPQ19WLVY2NGjSAVRBVV95cUxOZHFxZWdUYUtEbzZsOTFtMnZ4WW9WMVppand3ak5UNE9zVEZMR1JjdHlYbGJ3ejQtc1RyeU00OUhzQVRza24wYUVuU24zeWxJdnZkS1E?oc=5",
+     "publishedAt": "2026-10-22T21:00:00.000Z",
+     "outlet": "세계일보"
+    },
+    {
+     "title": "“AI 써서 99점” 자랑글에 발칵…건국대, 600명 대면 재시험 - 동아일보",
+     "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE91TkRsRW5ZOXdYVE9MSF9QZ2VpODhxWS1qdUVBbGFSLUVUSGZPU3JISVI5VDB3UW1XdDNqb3RDd3h6SUpSczk3MEdldXBLZ1dRS3Q3YzZoNklpcGMwVEFkWlFWT3p6MHFtNHFRX1FaSzBGUFU3NXfSAWZBVV95cUxOLWNoUTFRR3lHdF9IX3laTzNZQVBvOFRSVzlRVTBmbS1hZWlRMUZTazVjZjUwSFJLNllMUXNsX21oT1ZaRlhqYThzX1NzU29yaWw5ZU0teDhKanVPTmRTTUE5M2dSdXc?oc=5",
+     "publishedAt": "2026-10-23T11:50:00.000Z",
+     "outlet": "동아일보"
+    },
+    {
+     "title": "스마트폰 배터리 왜 이리 빨리 닳나 했더니, 쓸데없는 이 앱 때문 - 조선일보",
+     "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOS1diQV83UnJ2U2xRTkcxMGpDUTFUOU9feXBiLWZfNTh2UHdlazRrRjZMQzl4WnNJNkJKZE95aE5VTjlHZHE0NFFXTzUzZS1mSEFrNS1oUzV4QmpLZzl6TEkybS0xaFo5MzVHU1V0R2NCS0IzR3d6MDA4SDlvcHdGSnc2SmhuREg1QUtz?oc=5",
+     "publishedAt": "2026-10-23T19:45:00.000Z",
+     "outlet": "조선일보"
+    },
+    {
+     "title": "현대차·GM… 2028년에 맞춰진 자율주행 시간표 - 조선일보",
+     "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBGNkpVb3FwQnV2NkFVSDNLSG1ZUlQtelhfMHREejdVenJkX21Ydnd3enNoY2tPbllPRTVsZlZ1bFRyX1pIc01pVGw2MGtKb0hNRnprOXB1aDJxUXYtVHA1c1pQeGZ5c3F6b2F0OVFpUF85SnprVXIzR3E0Vm1TakE?oc=5",
+     "publishedAt": "2026-10-22T21:42:34.000Z",
+     "outlet": "조선일보"
+    },
+    {
+     "title": "오픈AI, 목표 기업가치 200조원 낮춰… AI 투자 열기 ‘주춤’ - 조선비즈 - Chosunbiz",
+     "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNX05kYVBNYUhrRmZMRFBaeENqcV9JMmh0VFJSLTdDM3NqYVJsYUk3NlRxaTFRRmJCSUtEN3B2ZzFRamNscTJSZTNUYXd1eXlYX3ZTcjdqVGdNYnc1d19VZTQ1S0czZVU3cnQyMzVfSGNra0theXExcC1VekpLWGw1SGtB0gGWAUFVX3lxTE0tcU5yQjg4R1E2eUtsYTJ1TUZTSm5FNDFXQmw0UU9zc3p2UU4tUFRkUzl4WGh4c0E0NE0wSjB2bm92MmpMZDBULTBUYzhPVkJYVGQ4RTlXQ1hXbERyb0xVZkx4WUUxTVQzSEVtVmlVYzE1R0NaWFBmODZCS3A3ckQ3WXRuMEl3WVdVWHdEdHkyZ3Bza0gxQQ?oc=5",
+     "publishedAt": "2026-10-23T01:03:00.000Z",
+     "outlet": "Chosunbiz"
+    },
+    {
+     "title": "\"네이버는 7000억, 구글은 258억\"…국감서 구글코리아 법인세 논란 - 지디넷코리아",
+     "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFB2a3k5YlpGY3RjRFVMd3ZIMUMxWEp0VzJrRHU1eHhJNjBlMUUyeXVobzVkcXU5dVpxck9uZ3pDSDdpTUlRckpPQnhXQkNKUXpMeUZiekhR?oc=5",
+     "publishedAt": "2026-10-22T09:30:15.000Z",
+     "outlet": "지디넷코리아"
+    },
+    {
+     "title": "빅테크로 번진 AI 투자 부담… 메타 ’1155조원 AI 청구서’에 주가 급락 - 조선비즈 - Chosunbiz",
+     "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxONWlNNTNJSFVwMUVhMTJCb0hPa1lod2xoY1NBRmxPWmd6ZGVHenZQeFVISGsyMFhYNVVRLXlIeFkwZ200Y1NJVUZPdFBGT3pTSmtVUVloVGpVN2ZNN1ZValpXamxFRTBUU3NuQkYzQVFsdTZKMUxOVDAzSmtzcGk2ZTdR0gGWAUFVX3lxTE5RZDQ0VUphVEhCLVR6NnRiWnhXYUt6UUxxNDgzSmg2NVpELXZsZlpKMUlNcDhFVFFldlNHbW15RHFvWEg4dFo2M0l3WWtmVnh4cVpYS2N4a3VDOWtSTll4SVlqeEVXZG5aNEltOHlrajRoZHktMnd5cnNOc0xIT3d2dUxGc0tkUFVxS0Jic1dfN0lpZF83QQ?oc=5",
+     "publishedAt": "2026-10-23T07:21:00.000Z",
+     "outlet": "Chosunbiz"
+    },
+    {
+     "title": "'부~웅' 하더니 '쿵'…대구에서 교차로 충돌 재현한 이유는 - 지디넷코리아",
+     "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBHYkw0eU85OU85aFFZZTBLWHF0UWEwXzJpZ2g1ZDRQdi1TVzBJWURnMEN0R1VjTFZoenppLWRMS1JlTTZtdkd3cmNzTk9wWlFkZ0JIUUtn?oc=5",
+     "publishedAt": "2026-10-22T07:05:51.000Z",
+     "outlet": "지디넷코리아"
+    },
+    {
+     "title": "[단독]성인인증 1번만 하면 1년간 쓴다···청소년도 뚫기 쉬운 온라인 주류 구매 - 경향신문",
+     "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5BaE54ZmhjTmRMZHBBUk9QRVdFYzBzYm5fY0tRYXBFQnBaY09yQmZrd3BKV2dnMmR1TXpCZGdzOE8xLWxHTTFhTmhsbU1Lc0FmUkNxOVptdHEzQdIBX0FVX3lxTE1RWUI4dE92SjBrSEZVMmFnSWhJa05IRTFaNjFRQkdJYWtrbXdkTV94S2RWcFZuU2FwVEN4ZllIOUxlQmtkcjl0SWNqSUZxUUxQWDhrcEN1Y1RzRW5XSXNZ?oc=5",
+     "publishedAt": "2026-10-22T21:00:00.000Z",
+     "outlet": "경향신문"
+    },
+    {
+     "title": "Codex와 함께 닌텐도 Switch 2 탈옥하기 - GeekNews - 개발/기술/스타트업 뉴스 서비스",
+     "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBSVlRNdjRtTGZ4TV9mSDluV0ZUdmtlQ3htS0cyNkpodUZ2RHZCRmVjaVAxeWo3WFNiakRSZGJhNnVINUxqSzQ0R1JzNA?oc=5",
+     "publishedAt": "2026-10-22T13:38:26.000Z",
+     "outlet": "GeekNews - 개발/기술/스타트업 뉴스 서비스"
+    },
+    {
+     "title": "Arc 브라우저와의 작별, 12월 22일 서비스 종료 - GeekNews - 개발/기술/스타트업 뉴스 서비스",
+     "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBmREFKSTNLTElfVGl6TFZLUGRwbGJuOW9ZaGdTS1BwTlFwWDZveWtqWnBLSUJYWVlFcUNqQV9JSmJnYl8waDN6d2hCNA?oc=5",
+     "publishedAt": "2026-10-22T21:43:01.000Z",
+     "outlet": "GeekNews - 개발/기술/스타트업 뉴스 서비스"
+    },
+    {
+     "title": "\"약 먹을 시간이에요\"…할머니 챙기는 특별한 '도우미' 정체 [차이나 워치] - 한국경제",
+     "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1hWU5telpyeV9qcjYxT09qSnozZFpKUTNPcVhabGpwZlNQajIzbmFrYTd2bjhFQU9iMmNuYXVyTFdZWTBLSkZJN01RZTFIQk14aERIS3pmMU1kUQ?oc=5",
+     "publishedAt": "2026-10-23T02:33:46.000Z",
+     "outlet": "한국경제"
+    },
+    {
+     "title": "\"1195억짜리 잭팟 터졌다\"…하루 새 21% 폭등한 회사 정체 - 한국경제",
+     "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1SbGM2LVVvOF9iYURCZHVGVjI3TTEwZzc1eERVdTM0QjNNemEtaExxNlI2bHEtMkFrU0dUVlo5bHEwV1RjX3RhSHBpazFRdWtiUVNJVll0TGpkQQ?oc=5",
+     "publishedAt": "2026-10-22T02:01:12.000Z",
+     "outlet": "한국경제"
+    },
+    {
+     "title": "이준석, 직접 만든 압축프로그램 무료 배포... \"불필요한데 1.3억 쓴 국가 기관들\" - 조선일보",
+     "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOWkhzdHVVbVpWV0VITEtWcDdNME15RlRuYUNYS1BrNldLWnNkV0g0VE5mSjJkZC1oLUFXTFlRbC1ZOWo4a05MRmRzUXYwbnhRVV95NEJKWnpfaWdDaGVvS05nVHpjd285T3pWXy1rMzhtaHNJVWhsblVpVzlVM0YtUjkxZjRxZw?oc=5",
+     "publishedAt": "2026-10-22T06:39:51.000Z",
+     "outlet": "조선일보"
+    },
+    {
+     "title": "엑셀 시대 저무나…프랑스 AI 스타트업에 3300억 뭉칫돈 - 이데일리",
+     "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQMFhFV0szVTVBbm1PSE5iSi1ZMHNsNDY4VjNycTczQzE4c0lpbjZsU3kyNllQOFRDdXRpMllHM2xTSVMwd3RhYVBkdzIwbUZ2aVVXNnR2ZVhySVF2QXJIbjl6UEZLZGxQU3NtVTF5OExVSG1QNk1nd3JZUTFtVnJfOQ?oc=5",
+     "publishedAt": "2026-10-23T08:52:04.000Z",
+     "outlet": "이데일리"
+    },
+    {
+     "title": "대한항공·아시아나항공 고객정보 유출… 해외 IT업체서 보안 사고 - 조선일보",
+     "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOSkNSNXBFUmk3RHF6NHlwc28yOUlzR3JxUFhBTmpCallsYXB4d1VvRlNXaTl1RlU0eDRuMkhJc2d5UXNaN184VnhUclZRRzRhTFlGUjRQU3dyNUtDc0M2ZXRSRWk4TkZ2S0FuejFxOXpQZi1HZWExWGpYUGtrT0MyNHQ3ZkNrRW9qXzZTZFZWbw?oc=5",
+     "publishedAt": "2026-10-23T13:11:23.000Z",
+     "outlet": "조선일보"
+    },
+    {
+     "title": "[단독]마이크론 “4F² D램은 신화일 뿐” 공식 포기… '3D D램·웨이퍼 본딩' 집중 승부수 - 전자신문",
+     "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPYmQ0TERzNy0wZUFwY0JPMVF2OXgzdWlhZmtxNkFoV2dmaDdtZGVGbW10VVBrdjlkS0RObWRrYnV4TUFtWENxeG9lWEFQeGc3blVRZlFLWVBTZ2lLMFRWbXVRczk0Y1pQVlpNaHFrSUo1Nkp0MndfZUFBOGdpeWlmZmMySFdSVHByelo5dEZCZFIwelNDYlRaazM4aXdUWTUtUFFMZG5JNmNyWkxhWFNzeFdTa3RNWGNldEZVT1ZpSXlXTmFlZTNPWVNkUGsxeDlZVWRsQWs2SQ?oc=5",
+     "publishedAt": "2026-10-21T23:50:50.000Z",
+     "outlet": "전자신문"
+    },
+    {
+     "title": "\"암백신 성공\" 주가 2배 급등, 경고 안 듣더니...데이터 유출 후 18% 폭락 - 머니투데이 - 머니투데이",
+     "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBxbzFxUVB4ZVVxQS1FYjlFb1p3bm10UVlUbTV1MWdBcW1mekFSMktOb1dNSTJ2b2pTNklHMHpuZjcwWHhGNjFrbXBlajJBZWFoTEswNWY2V3V3NXJmdWNVdHVtdU1oeWpS0gFuQVVfeXFMTzRLWWFTZ1VSSldfV2hpaUZEeDItZ1JESF9LNFVPdlFrVnZMZlRlSXpoZG9VM0lqTS05V2ZKYmpTaFdpN3Y0WmwxMFExa3lSYTdORXFTRy10MV90TGU0dmtnTnF4Nnhlc2ZaTi1tcmc?oc=5",
+     "publishedAt": "2026-10-23T00:47:25.000Z",
+     "outlet": "머니투데이"
+    },
+    {
+     "title": "[단독] LG그룹, 현대차 로봇사업 수장 품었다 - 한국경제",
+     "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5WTUhKQm1haWpLN25XdEZTdTNEaTYzSmlYTkdWY2Nlc0E1VW5RRm9BQlVGRHkyZldRNm5SMF9WUFlDUXhiSlg4RzFmRXBDZkFUT21iNHEtNUVhQQ?oc=5",
+     "publishedAt": "2026-10-23T08:42:14.000Z",
+     "outlet": "한국경제"
+    },
+    {
+     "title": "80주년 앞둔 LG가 꺼낸 '그때 그 선택'⋯계열사 성장사 '도전의 기억' - 아이뉴스24",
+     "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1rUzRVdWpkRlNZd2h5VTh1eTRWVUp2WHgzZTZnYXBndmwyXzQyeTR0Vm5LeVlVWGtBRVpYVFBlYVhnVXJRV0g4eHdhVQ?oc=5",
+     "publishedAt": "2026-10-22T22:00:01.000Z",
+     "outlet": "아이뉴스24"
+    },
+    {
+     "title": "[단독] SK텔레콤, 하이닉스 AI협력 전담 'Hy-TF' 가동...TF장에 유경상 CIC장 - 전자신문",
+     "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE15cTNYcHBIRUFHdFQxazFRb3VHUE9YRy0wcXZIMGNwV05Xb1pUQXpWWThoNVJOZ2pHWmNiTXZRamdDQ19NbVdtODlKbU9nQQ?oc=5",
+     "publishedAt": "2026-10-22T07:30:00.000Z",
+     "outlet": "전자신문"
+    },
+    {
+     "title": "\"3시간 만에 관리자 권한 탈취\"…중국 해커, 韓 금융권 공격 AI 도구로 클라우드 침투 - 보안뉴스",
+     "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE83bEU1U2RoM3V6T1hEaWJnanNnVlQ0MC0tLXFLV0FiSE5DMmQ2ZnRqT0lWU19sQ3AwTU5JelNMSFVzOHFmX1lmcG5Oa3o4YW9yWlVQVGQwWEYybDZWbGRER0d5dkl2QlRWX3NB?oc=5",
+     "publishedAt": "2026-10-23T00:42:27.000Z",
+     "outlet": "보안뉴스"
+    },
+    {
+     "title": "코인 해외로 보내면…국내 잔액·개인신상까지 들여다본다 - 블루밍비트",
+     "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBEUFlVX0hkZ0VTbnFfclhGZldkbjZVaEhXcnNoX01SY0xjVVN1Q1N5b1NYUmJvY0V4ZUFYUy1sa1F2OE54QVB3QVVuTnAwRE9t?oc=5",
+     "publishedAt": "2026-10-23T05:32:14.000Z",
+     "outlet": "블루밍비트"
+    },
+    {
+     "title": "김정관 “원전 정책 이원화 비효율…산업과 에너지 함께 가야” - 이데일리",
+     "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNZ01xcWxnWlg3eU9lek5YdnRIYXh2RlRCQjRxdXBXZGR3TzJONFN5Q2d3aVg2Z0VnLTJ6S2RMT3ROUjN2OVBReXZVdWlXMFNrUnJMdFFWeGVzVWdXUWVKQ0ZIamo1X1k5RHFPZExsVk1UV3FoOVBoaUdtX0N2d0Q0cA?oc=5",
+     "publishedAt": "2026-10-22T02:34:20.000Z",
+     "outlet": "이데일리"
+    },
+    {
+     "title": "오라클 치명적 수준 취약점 긴급 패치... “신뢰 깨진 인증서가 백엔드 노린다” - 보안뉴스",
+     "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9zbWZGMUZ2MlFKeEloTTI1aFI0U2lLQlpjSm9Va0V0OWlEZ2JxcEtsNGpOeFVGX21WMmVnRm82Ni1UeHJrYVJ0dFFrVG9WU0RQN1RiWE1NbTBJa2dxd1hXMGhuclF6djBFcHJN?oc=5",
+     "publishedAt": "2026-10-23T07:06:45.000Z",
+     "outlet": "보안뉴스"
+    },
+    {
+     "title": "\"접전 승부 가를 암호화폐 표심\"…미 중간선거 앞두고 유권자 결집 - 토큰포스트",
+     "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5UMElaLTlqRk9EVGZ1WlVtVEpXZ040QWlzbS1vZ1IxWkhTTDFuTVc2MjFZR1JmNHZrcnkxaUVqQXZoTHZuTVJIeE5pT0IzR2U0S1huSERJWGMzNXJSaERoSNIBZkFVX3lxTE5aalJjRmI4Q1RGN0l2cVRadktXZmdBNHM0TmRPMVhuS0pDQlNHeXlNZTBxdEc0eTB1NzBCN016OUdkeGRNWHAxV3BWdkVnZkFLNEZYTVVGSWRzYnVrSHc1QVlRQndlZw?oc=5",
+     "publishedAt": "2026-10-22T22:13:46.000Z",
+     "outlet": "토큰포스트"
+    },
+    {
+     "title": "스페이스X, 美 기지국 확보 추진…이동통신 진출 행보 - 전자신문",
+     "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE03R1pPbFAtV2xwbWozTlc1UGI2eU1xSV8tWExXMFVKa25rSkNBT1A1UFlqb1VKQ1lJMUlsYkNWSW1qZnMteFZWODRwRFZYQQ?oc=5",
+     "publishedAt": "2026-10-23T05:50:00.000Z",
+     "outlet": "전자신문"
+    },
+    {
+     "title": "佛 마트 냉장고 50도 해킹... 비밀번호부터 허술했다 - 조선일보",
+     "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOY19YclkycHJ4WUJLRVJwVE9DZFIxTWFZM0MzZzRieWU1MG54RkhNczRWVnFLOUVQc2JsMVNEaXl0b2lUcm9QMFJqb0QxQng5N2EzM3hlUTE0bk1BcUVnVUN6YUJ1WGdDUXpzNzdzbEwzc216ZHNBeTFhSHZlaS1XeF83cw?oc=5",
+     "publishedAt": "2026-10-22T06:21:49.000Z",
+     "outlet": "조선일보"
+    },
+    {
+     "title": "[기획] 격변의 '모딩' 생태계, 울타리 넓히는 게임 산업 - 인벤",
+     "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9EbWZQSlU5RDdTUDFGZFBiZEtjSVh4cHVLOHAzWUIwYXFDdnpPUEZkcFpKTWdxMXJBX0JyNlNackYxem5Md20wM0ZuZV9TRmFKb1B4ajlMMFJlcDZoNmc?oc=5",
+     "publishedAt": "2026-10-22T07:28:26.000Z",
+     "outlet": "인벤"
+    },
+    {
+     "title": "반도체 R&D 족쇄 풀릴까…이 대통령 “할증 임금 전제로 주52시간 논의” - 매일경제",
+     "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE11eldnNG9JcTRJM1JvblVONEFOOGFhTW9aUzFHQlo0RFdRbzJWenBndUdvR2dtR0s1NFFIaFludGFmZFJIblV0a285bEJxa0hJSE40UHdn?oc=5",
+     "publishedAt": "2026-10-23T08:49:06.000Z",
+     "outlet": "매일경제"
+    },
+    {
+     "title": "LG엔솔, 中 난징 9공장 본격 가동…테슬라향 원통형 2170 증산 속도 - 지디넷코리아",
+     "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1DYTRNRFl1S0pCVEtBRVp6MnRPWkNaSzBUNGozRnh4b2lkT3NQb1Fsc1lxTUtGdFBUcjJRUkFDdEpHekU5aFdzcHZacFVZbGNzRDBnTm9B?oc=5",
+     "publishedAt": "2026-10-23T02:11:25.000Z",
+     "outlet": "지디넷코리아"
+    },
+    {
+     "title": "누워만 있어도 “월요병” 맞혔다… 오우라 링, 딱 하나 틀린 것 - 중앙일보",
+     "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE01SWFMNXZENWhldVRQYkluUVBYYnNpN19tcjd5NWFNWFhhWVJQbHRyUDNybC1jYlZ5RFUtMjdtWV9SRTZhMk9GRXphdWV4aDhpeVNPSnJB?oc=5",
+     "publishedAt": "2026-10-22T20:04:46.000Z",
+     "outlet": "중앙일보"
+    },
+    {
+     "title": "[단독]‘보안프로그램 퇴출’ 정부 추진에도 은행 9곳, 안깔면 인터넷뱅킹 못해 - 동아일보",
+     "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1VTFE4dGxxWG5nWDM0WmlzQTRLOG1QRFkyQTVCdHdFWFJRRy1CQU9CYWJsU3N1bWdCQnN1SlJLakRvRkcwQ3dNcWl5N2NzRTNyemdXeE5VNk5IRjViUE9fMDBQa1J2QU9sMkl0eERKcXloQUNEYUHSAWZBVV95cUxNN0ljM0x5UnJDaUhYbTdDMHJobHRjOGZwcVJhQ08zdGxwc0VzMm83akQ0dWxvdmc2SDZfbC0yTllvaTNEOUdzYncwLTdDV2JUZVNzcVpWTjhkdXJxLUpoMUVCclo1V2c?oc=5",
+     "publishedAt": "2026-10-22T15:30:00.000Z",
+     "outlet": "동아일보"
+    },
+    {
+     "title": "젠슨 황 \"2029년 메모리 공급 과잉 가능성 낮아\" - 뉴시스",
+     "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9waXZiaGxHODZaOHpKLTZuYzBuTFpwYkgyVzdMdktUM0MxOGVVZzh5MmRMY1ByZ3JDemp0dFZhcE1JNUduZTBiZncyYlA5S0I3dEtnVW4wODgtYkZRcDYyZTZ3V1jSAXhBVV95cUxNWHZBLUxSOEhrUklyX1gxaWwwSHlUU0lnTTRKem8yUm5qM3JwMDIwTnBEa2w5Xzh0cDFneUllbEN1V1NIRWlRSWszbzFSV29NbTVBdHZzeE9PS1cwUHJOeWtfdk5CeFBDcWZjbkZRQ2ttN01pSTFKbXc?oc=5",
+     "publishedAt": "2026-10-22T18:09:30.000Z",
+     "outlet": "뉴시스"
+    },
+    {
+     "title": "[단독] 윤석열 정부 R&D 삭감 여파…중소기업 연구과제 75% ‘축소·중단’ - 한겨레",
+     "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBnb1ZTVjdNdFVQWTNIeHVsaC1SeU5Hbnl3Rk0xdnNWSkJBSjZqM0dUUVhUTTdtOUR1a09valk1OGZDSXdMd3FxOHVyQkRqLUpLZnEtNnN3dGt3ejQ1RU9fVHAtWFlGM2pDckZJaFJiZFNNQQ?oc=5",
+     "publishedAt": "2026-10-22T09:47:00.000Z",
+     "outlet": "한겨레"
+    },
+    {
+     "title": "[AI는 지금] 자체 칩 늘리고 모델 골라 쓴다…MS, 'AI 가성비' 높이기 총력 - 지디넷코리아",
+     "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1kNFFodjVDM0JGTWdGcEN1djRrc0FXTTBoSXoyTjRqeWxZYkdoZENYMDNEa3lSVFlVdkpzU0RJYW9DOGZfaHQ1cHBUNmt6dGlqb3BSUnVn?oc=5",
+     "publishedAt": "2026-10-22T06:00:44.000Z",
+     "outlet": "지디넷코리아"
+    }
+   ]
+  },
+  {
+   "id": "geeknews",
+   "name": "GeekNews",
+   "url": "https://news.hada.io/rss/news",
+   "maxGapH": 12,
+   "lang": "ko",
+   "status": "ok",
+   "fetchedAt": "2026-10-23T21:41:46.982Z",
+   "httpDate": "Fri, 23 Oct 2026 21:41:47 GMT",
+   "cacheAge": null,
+   "newestItemAt": "2026-10-23T20:45:59.000Z",
+   "gapHours": 0.9,
+   "tzAdjusted": false,
+   "count": 50,
+   "items": [
+    {
+     "title": "OpenSSL 4.1.0 - DTLS 1.3과 GREASE 지원 추가",
+     "link": "https://news.hada.io/topic?id=35885",
+     "publishedAt": "2026-10-23T20:45:59.000Z",
+     "outlet": null
+    },
+    {
+     "title": "pgrust 제거: 쿼리별 전용 커널과 결과 캐싱을 이용한 벤치마크 부정행위",
+     "link": "https://news.hada.io/topic?id=35884",
+     "publishedAt": "2026-10-23T20:42:59.000Z",
+     "outlet": null
+    },
+    {
+     "title": "캐나다인들이 C-22 법안에 반대할 시간이 얼마 남지 않음",
+     "link": "https://news.hada.io/topic?id=35883",
+     "publishedAt": "2026-10-23T20:39:59.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Apple Music 404 페이지를 찾을 수 없음 오류",
+     "link": "https://news.hada.io/topic?id=35882",
+     "publishedAt": "2026-10-23T20:36:59.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Show HN: OnKey - 노래를 못해서 음정이 어긋나는 곳을 보여주는 앱을 만들었습니다",
+     "link": "https://news.hada.io/topic?id=35881",
+     "publishedAt": "2026-10-23T19:33:25.000Z",
+     "outlet": null
+    },
+    {
+     "title": "eMudhra, Mozilla 루트 프로그램 조사 답변 기한 무시하고 소셜 미디어 탓",
+     "link": "https://news.hada.io/topic?id=35880",
+     "publishedAt": "2026-10-23T18:43:37.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Kimi K3.1 Pro와 K3.1 Pro Highspeed - 100만 토큰 문맥을 지원하는 3T급 모델",
+     "link": "https://news.hada.io/topic?id=35879",
+     "publishedAt": "2026-10-23T18:40:37.000Z",
+     "outlet": null
+    },
+    {
+     "title": "과학의 낯선 공간: 정합적이지만 인지적으로 접근하기 어려운 연구 방향",
+     "link": "https://news.hada.io/topic?id=35878",
+     "publishedAt": "2026-10-23T17:38:13.000Z",
+     "outlet": null
+    },
+    {
+     "title": "오늘, 목표로 삼았던 iPhone을 해킹했다",
+     "link": "https://news.hada.io/topic?id=35877",
+     "publishedAt": "2026-10-23T17:35:13.000Z",
+     "outlet": null
+    },
+    {
+     "title": "천천히 움직이며 고치기 (2024)",
+     "link": "https://news.hada.io/topic?id=35876",
+     "publishedAt": "2026-10-23T16:46:50.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Fable 5.1은 이미지에 어떻게 메시지를 숨기는가?",
+     "link": "https://news.hada.io/topic?id=35875",
+     "publishedAt": "2026-10-23T16:43:50.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Crystal 1.22 - 모든 타깃에 네이티브 이벤트 루프 기본 적용, DWARF 처리 개선",
+     "link": "https://news.hada.io/topic?id=35874",
+     "publishedAt": "2026-10-23T16:40:50.000Z",
+     "outlet": null
+    },
+    {
+     "title": "eMudhra의 단일 요소 OTP 로그인 시스템 완전 우회",
+     "link": "https://news.hada.io/topic?id=35873",
+     "publishedAt": "2026-10-23T16:11:08.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Epic Games Inc 대 Apple Inc 소송, 호주에서 iOS 대체 배포와 결제 허용 명령",
+     "link": "https://news.hada.io/topic?id=35872",
+     "publishedAt": "2026-10-23T16:08:08.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Disney, 모든 요금제에 광고 노출을 확인한 지 며칠 만에 가격 인상",
+     "link": "https://news.hada.io/topic?id=35871",
+     "publishedAt": "2026-10-23T16:05:08.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Show GN: claude-code-todo - 클로드 코드 옆에 띄워 두는 TODO pane",
+     "link": "https://news.hada.io/topic?id=35870",
+     "publishedAt": "2026-10-23T16:03:26.000Z",
+     "outlet": null
+    },
+    {
+     "title": "투자자 소유 전력회사, 공영 전력회사보다 전기요금 23% 더 부과",
+     "link": "https://news.hada.io/topic?id=35869",
+     "publishedAt": "2026-10-23T16:02:08.000Z",
+     "outlet": null
+    },
+    {
+     "title": "우리 집에도 Traits는 있다: Zig에서 구현하는 컴파일 타임 타입 계약",
+     "link": "https://news.hada.io/topic?id=35867",
+     "publishedAt": "2026-10-23T15:03:42.000Z",
+     "outlet": null
+    },
+    {
+     "title": "스웨덴 정부청사, ChatGPT와 Claude 접속 차단 예정",
+     "link": "https://news.hada.io/topic?id=35866",
+     "publishedAt": "2026-10-23T14:56:43.000Z",
+     "outlet": null
+    },
+    {
+     "title": "네덜란드 정부가 Jared Kushner의 휴대전화를 해킹했다",
+     "link": "https://news.hada.io/topic?id=35865",
+     "publishedAt": "2026-10-23T14:53:43.000Z",
+     "outlet": null
+    },
+    {
+     "title": "휴대전화가 더 이상 당신 것이 아니게 될 날이 다가온다: 봉쇄까지 70일",
+     "link": "https://news.hada.io/topic?id=35864",
+     "publishedAt": "2026-10-23T14:50:43.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Show GN: 오마이명함 – 명함 찍으면 연락처에 저장되는 안드로이드 앱 (무료·광고 없음)",
+     "link": "https://news.hada.io/topic?id=35863",
+     "publishedAt": "2026-10-23T14:08:43.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Ask HN: 모델이 그렇게 뛰어나다면, OpenAI는 왜 직접 회사 100개를 세우지 않을까?",
+     "link": "https://news.hada.io/topic?id=35862",
+     "publishedAt": "2026-10-23T12:35:23.000Z",
+     "outlet": null
+    },
+    {
+     "title": "‘자연어 프로그래밍’의 어리석음 (1978)",
+     "link": "https://news.hada.io/topic?id=35861",
+     "publishedAt": "2026-10-23T11:34:25.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Hedra, 고등학생 때 처음부터 직접 만든 3D 오픈월드 게임",
+     "link": "https://news.hada.io/topic?id=35860",
+     "publishedAt": "2026-10-23T10:33:44.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Local Wikipedia: 걸어서 30분 거리의 대상만 보여주는 Wikipedia",
+     "link": "https://news.hada.io/topic?id=35859",
+     "publishedAt": "2026-10-23T08:32:58.000Z",
+     "outlet": null
+    },
+    {
+     "title": "그리드화란 무엇인가? 녹음된 연주를 사후에 시간 격자에 맞추는 보정",
+     "link": "https://news.hada.io/topic?id=35857",
+     "publishedAt": "2026-10-23T05:49:49.000Z",
+     "outlet": null
+    },
+    {
+     "title": "백준 온라인 저지 BOJ 재오픈 일정 연기 안내",
+     "link": "https://news.hada.io/topic?id=35856",
+     "publishedAt": "2026-10-23T05:24:13.000Z",
+     "outlet": null
+    },
+    {
+     "title": "LLM이 훨씬 더 큰 규모의 소프트웨어 정형 검증을 가능하게 하고 있음",
+     "link": "https://news.hada.io/topic?id=35855",
+     "publishedAt": "2026-10-23T04:36:53.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Docker는 이상하다",
+     "link": "https://news.hada.io/topic?id=35852",
+     "publishedAt": "2026-10-23T03:33:51.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Xbox, 이미 구매한 게임 스트리밍에 시간당 24~40센트 요구",
+     "link": "https://news.hada.io/topic?id=35848",
+     "publishedAt": "2026-10-23T01:34:19.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Idealab.ai - 120만 개 이상의 창업 아이디어를 무료로 제공하는 서비스",
+     "link": "https://news.hada.io/topic?id=35847",
+     "publishedAt": "2026-10-23T01:11:01.000Z",
+     "outlet": null
+    },
+    {
+     "title": "지능을 전기처럼 쓰는 시대 - AI 네이티브 핸드북 2026 [407p]",
+     "link": "https://news.hada.io/topic?id=35846",
+     "publishedAt": "2026-10-23T00:51:01.000Z",
+     "outlet": null
+    },
+    {
+     "title": "모든 AI 모델이 인간에 대해 같은 ‘논쟁적’ 견해를 내놓음",
+     "link": "https://news.hada.io/topic?id=35845",
+     "publishedAt": "2026-10-23T00:40:38.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Jared Kushner의 해킹된 휴대전화에서 드러난 비밀 협상과 수백만 달러 규모 거래",
+     "link": "https://news.hada.io/topic?id=35844",
+     "publishedAt": "2026-10-23T00:37:38.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Parquet가 현대 데이터 엔지니어링을 지배하는 이유 [영상]",
+     "link": "https://news.hada.io/topic?id=35843",
+     "publishedAt": "2026-10-23T00:32:01.000Z",
+     "outlet": null
+    },
+    {
+     "title": "datapitfalls - 차트뿐 아니라 데이터 분석 전 과정의 함정을 찾는 도구",
+     "link": "https://news.hada.io/topic?id=35842",
+     "publishedAt": "2026-10-23T00:31:02.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Show GN: VibeTerm(바이브텀) - Claude Code·Codex 여러 개를 한 화면에서 굴리는 무료 Windows 터미널",
+     "link": "https://news.hada.io/topic?id=35841",
+     "publishedAt": "2026-10-23T00:12:43.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Mac 부팅이 5%에서 멈추는 문제 (헤드리스 Chrome 앱 복제본 누적)",
+     "link": "https://news.hada.io/topic?id=35839",
+     "publishedAt": "2026-10-23T00:05:52.000Z",
+     "outlet": null
+    },
+    {
+     "title": "macOS의 gcc 바이너리 살펴보기",
+     "link": "https://news.hada.io/topic?id=35838",
+     "publishedAt": "2026-10-23T00:01:10.000Z",
+     "outlet": null
+    },
+    {
+     "title": "earcut보다 빠르게: 지도 폴리곤 370만 개를 489ms에 삼각분할하기",
+     "link": "https://news.hada.io/topic?id=35837",
+     "publishedAt": "2026-10-22T23:40:05.000Z",
+     "outlet": null
+    },
+    {
+     "title": "독일에서 GNU Taler 운영 준비에 나서다",
+     "link": "https://news.hada.io/topic?id=35836",
+     "publishedAt": "2026-10-22T23:37:05.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Cloudflare, 대한민국 ISMS 인증 취득",
+     "link": "https://news.hada.io/topic?id=35835",
+     "publishedAt": "2026-10-22T23:21:19.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Arc 브라우저와의 작별, 12월 22일 서비스 종료",
+     "link": "https://news.hada.io/topic?id=35834",
+     "publishedAt": "2026-10-22T21:43:01.000Z",
+     "outlet": null
+    },
+    {
+     "title": "OpenShell - AI 에이전트의 파일과 네트워크 접근을 제어하는 NVIDIA 런타임",
+     "link": "https://news.hada.io/topic?id=35833",
+     "publishedAt": "2026-10-22T21:40:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Tell HN: 저도 모르게 PHP RCE 엠바고를 어겼습니다. 죄송합니다.",
+     "link": "https://news.hada.io/topic?id=35832",
+     "publishedAt": "2026-10-22T21:37:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "캐나다 하원의원들, 도박 광고 제한 추진",
+     "link": "https://news.hada.io/topic?id=35831",
+     "publishedAt": "2026-10-22T20:34:18.000Z",
+     "outlet": null
+    },
+    {
+     "title": "HackiOS - Android 휴대폰에서 실제 iOS 16.5 실행하기",
+     "link": "https://news.hada.io/topic?id=35830",
+     "publishedAt": "2026-10-22T19:33:15.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Google, 핀란드 산림 300헥타르 벌채",
+     "link": "https://news.hada.io/topic?id=35829",
+     "publishedAt": "2026-10-22T18:42:22.000Z",
+     "outlet": null
+    },
+    {
+     "title": "pwn.watch - 최신 보안 사고와 패치 현황을 모아 보는 대시보드",
+     "link": "https://news.hada.io/topic?id=35828",
+     "publishedAt": "2026-10-22T18:39:22.000Z",
+     "outlet": null
+    }
+   ]
+  },
+  {
+   "id": "etnews",
+   "name": "전자신문",
+   "url": "https://rss.etnews.com/Section901.xml",
+   "maxGapH": 8,
+   "lang": "ko",
+   "status": "ok",
+   "fetchedAt": "2026-10-23T21:41:46.982Z",
+   "httpDate": "Fri, 23 Oct 2026 21:41:47 GMT",
+   "cacheAge": null,
+   "newestItemAt": "2026-10-23T21:00:00.000Z",
+   "gapHours": 0.7,
+   "tzAdjusted": false,
+   "count": 30,
+   "items": [
+    {
+     "title": "아침마다 챙겨 먹길 잘했네…“매일 한 알 씩” 의사도 권한 '항암 과일'",
+     "link": "https://www.etnews.com/20261023000364",
+     "publishedAt": "2026-10-23T21:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[무엇이든 리뷰] “1억이면 나도 사장님?”…창업 계산기 두드리다 좌절한 사연",
+     "link": "https://www.etnews.com/20261023000305",
+     "publishedAt": "2026-10-23T21:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[보도 그 후] KERIS, E-ADS 논란에 교육청 RFP서 배제 요청…시장 보호책도 검토",
+     "link": "https://www.etnews.com/20261023000256",
+     "publishedAt": "2026-10-23T21:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "은퇴 걱정 덜었네…英 남성, 다락방 15년 묵은 포켓몬 카드로 '28억' 대박",
+     "link": "https://www.etnews.com/20261023000227",
+     "publishedAt": "2026-10-23T21:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "'35층 추락' 다리 잃은 20대 中 인플루언서…17개월 만에 복귀 영상 '170만 좋아요' 쏟아져",
+     "link": "https://www.etnews.com/20261023000200",
+     "publishedAt": "2026-10-23T13:30:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "대한항공·아시아나 고객정보 유출…글로벌 IT 협력사 해킹 피해",
+     "link": "https://www.etnews.com/20261023000363",
+     "publishedAt": "2026-10-23T13:15:05.000Z",
+     "outlet": null
+    },
+    {
+     "title": "'문콕' 실수한 아이에 “차 흔들렸다” 버럭…대인접수에 현금 30만원까지 요구",
+     "link": "https://www.etnews.com/20261023000362",
+     "publishedAt": "2026-10-23T13:14:25.000Z",
+     "outlet": null
+    },
+    {
+     "title": "“AI 썼다, 99점” 발칵 뒤집어진 건국대…“600명 대면 재시험”",
+     "link": "https://www.etnews.com/20261023000360",
+     "publishedAt": "2026-10-23T12:44:34.000Z",
+     "outlet": null
+    },
+    {
+     "title": "트럼프에 등 돌린 美 20대 “반대 위한 투표할 것”",
+     "link": "https://www.etnews.com/20261023000357",
+     "publishedAt": "2026-10-23T12:05:07.000Z",
+     "outlet": null
+    },
+    {
+     "title": "“30대인데 안끊으면 몸 망친다”…영양사가 말리는 음식",
+     "link": "https://www.etnews.com/20261023000355",
+     "publishedAt": "2026-10-23T11:37:49.000Z",
+     "outlet": null
+    },
+    {
+     "title": "한미약품 “차세대 비만 삼중작용제는 '잔트루타이드'”…WHO 등재",
+     "link": "https://www.etnews.com/20261023000353",
+     "publishedAt": "2026-10-23T11:02:57.000Z",
+     "outlet": null
+    },
+    {
+     "title": "오세훈 2심 무죄에…與 “상식 밖 판결” vs 野 “사필귀정”",
+     "link": "https://www.etnews.com/20261023000350",
+     "publishedAt": "2026-10-23T09:53:31.000Z",
+     "outlet": null
+    },
+    {
+     "title": "오픈AI “韓 '닷츠' 이용자 수 세계 3위…AI에 높은 관심”",
+     "link": "https://www.etnews.com/20261023000340",
+     "publishedAt": "2026-10-23T08:31:02.000Z",
+     "outlet": null
+    },
+    {
+     "title": "SK하이퍼, 글로벌 투자 유치 착수…내년 첫 매출 목표",
+     "link": "https://www.etnews.com/20261023000338",
+     "publishedAt": "2026-10-23T08:28:02.000Z",
+     "outlet": null
+    },
+    {
+     "title": "2심 무죄 '오세훈 테마주'…일제히 '30%' 가격제한폭까지 치솟아",
+     "link": "https://www.etnews.com/20261023000336",
+     "publishedAt": "2026-10-23T08:17:59.000Z",
+     "outlet": null
+    },
+    {
+     "title": "'부커상' 작가 로이 “AI에 내 장기를 적출 당했다”…앤트로픽 저작권 침해 비판",
+     "link": "https://www.etnews.com/20261023000331",
+     "publishedAt": "2026-10-23T08:06:04.000Z",
+     "outlet": null
+    },
+    {
+     "title": "온투업 진출 앞둔 토스, 저축은행 영업 시작",
+     "link": "https://www.etnews.com/20261023000098",
+     "publishedAt": "2026-10-23T07:50:04.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[기후테크이니셔티브] “공동개발보다 공동검증”…AI로 韓中 '탄소데이터' 연결한다",
+     "link": "https://www.etnews.com/20261023000311",
+     "publishedAt": "2026-10-23T07:04:53.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[기후테크이니셔티브] 배터리는 경쟁·검증은 협력…韓中 기후테크 '3대 협력모델' 찾는다",
+     "link": "https://www.etnews.com/20261023000310",
+     "publishedAt": "2026-10-23T07:04:33.000Z",
+     "outlet": null
+    },
+    {
+     "title": "“1조 들더라도 5000명 자르겠다”는 글로벌 투자은행…“AI가 있으니까”",
+     "link": "https://www.etnews.com/20261023000303",
+     "publishedAt": "2026-10-23T06:57:41.000Z",
+     "outlet": null
+    },
+    {
+     "title": "코스피 0.3% 오른 5550.30 상승 반전 마감…SK하이닉스 4%대 상승",
+     "link": "https://www.etnews.com/20261023000293",
+     "publishedAt": "2026-10-23T06:46:39.000Z",
+     "outlet": null
+    },
+    {
+     "title": "아이폰 듀오, 첫 실사용서 혹평도…멀티태스킹·내구성 도마",
+     "link": "https://www.etnews.com/20261023000285",
+     "publishedAt": "2026-10-23T06:38:16.000Z",
+     "outlet": null
+    },
+    {
+     "title": "李 대통령 “규제 철폐 아닌 합리화…생명·안전·환경 훼손 안 돼”",
+     "link": "https://www.etnews.com/20261023000269",
+     "publishedAt": "2026-10-23T06:19:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "1살 아이한테 빨간 김치와 햄?…어린이집 급식, 식단표와 딴판",
+     "link": "https://www.etnews.com/20261023000268",
+     "publishedAt": "2026-10-23T06:18:34.000Z",
+     "outlet": null
+    },
+    {
+     "title": "스페이스X, 美 기지국 확보 추진…이동통신 진출 행보",
+     "link": "https://www.etnews.com/20261023000246",
+     "publishedAt": "2026-10-23T05:50:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "오세훈 시장, '여론조사 대납' 2심 무죄…“중점 정책 힘있게 추진”",
+     "link": "https://www.etnews.com/20261023000258",
+     "publishedAt": "2026-10-23T05:46:03.000Z",
+     "outlet": null
+    },
+    {
+     "title": "차 문 찌그러뜨리고 자동차 드는 '괴력 로봇'",
+     "link": "https://www.etnews.com/20261023000173",
+     "publishedAt": "2026-10-23T05:10:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "전 세계 부호들, '금' 들고 싱가포르로… “연금 위기 낮고 방위력 탄탄”",
+     "link": "https://www.etnews.com/20261022000399",
+     "publishedAt": "2026-10-23T05:10:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "무인 로보택시 상용화 속도…내년 실증차 3000대 투입",
+     "link": "https://www.etnews.com/20261022000477",
+     "publishedAt": "2026-10-23T05:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "HD현대, 美에 신규 조선소 건립…키윗社와 합작법인 설립",
+     "link": "https://www.etnews.com/20261023000203",
+     "publishedAt": "2026-10-23T04:48:39.000Z",
+     "outlet": null
+    }
+   ]
+  },
+  {
+   "id": "bloter",
+   "name": "블로터",
+   "url": "https://www.bloter.net/rss/allArticle.xml",
+   "maxGapH": 12,
+   "lang": "ko",
+   "status": "ok",
+   "fetchedAt": "2026-10-23T21:41:46.982Z",
+   "httpDate": "Fri, 23 Oct 2026 21:41:48 GMT",
+   "cacheAge": null,
+   "newestItemAt": "2026-10-23T21:41:27.000Z",
+   "gapHours": 0,
+   "tzAdjusted": false,
+   "count": 50,
+   "items": [
+    {
+     "title": "LGU+ 홍범식 대표 \"해킹 은폐 사실이면 책임\"",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676441",
+     "publishedAt": "2026-10-23T21:41:27.000Z",
+     "outlet": null
+    },
+    {
+     "title": "테슬라, 국토부에 ‘FSD 승인’ 신청서 제출…검증 일정 미정",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676623",
+     "publishedAt": "2026-10-23T19:43:28.000Z",
+     "outlet": null
+    },
+    {
+     "title": "하나증권, 3분기 누적 순익 3000억 육박…수수료이익 급증",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676607",
+     "publishedAt": "2026-10-23T18:23:17.000Z",
+     "outlet": null
+    },
+    {
+     "title": "우리금융, 환원율 50% 겨냥…CET1 방어·ABL타워 매각 승부수",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676619",
+     "publishedAt": "2026-10-23T18:03:17.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[신세계 인사] CJ가 내려놓은 카드, 신세계 이번엔 허민호",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676557",
+     "publishedAt": "2026-10-23T17:40:12.000Z",
+     "outlet": null
+    },
+    {
+     "title": "우리금융 3분기 순익 1조492억…기저효과에도 '1조클럽' 잇는다",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676616",
+     "publishedAt": "2026-10-23T17:38:31.000Z",
+     "outlet": null
+    },
+    {
+     "title": "효성중공업, 2GW급 HVDC 개발 본격화…밸브·제어 부문 '위엄'",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676597",
+     "publishedAt": "2026-10-23T17:29:05.000Z",
+     "outlet": null
+    },
+    {
+     "title": "대출한도 깎고 금리인하 효과는 무색…책임의 화살은 금융당국으로",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676604",
+     "publishedAt": "2026-10-23T17:27:31.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[신세계 인사] 정용진·정유경 계열 넘은 교차 발탁…이명희 뜻 담겼나",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676578",
+     "publishedAt": "2026-10-23T17:25:59.000Z",
+     "outlet": null
+    },
+    {
+     "title": "롯데지주, 8년 전 PBR 회복 추진...자회사 수익성에 건 '승부수'",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676606",
+     "publishedAt": "2026-10-23T17:24:46.000Z",
+     "outlet": null
+    },
+    {
+     "title": "우리카드, 3Q 순익 26% 늘며 비은행 1위…독자가맹점 사업 순항",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676611",
+     "publishedAt": "2026-10-23T17:20:29.000Z",
+     "outlet": null
+    },
+    {
+     "title": "하나금융, CET1비율 13.45%…자사주 소각 9490억 역대 최대",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676602",
+     "publishedAt": "2026-10-23T17:14:20.000Z",
+     "outlet": null
+    },
+    {
+     "title": "하나금융, 분기 1.2조씩 벌었다…수수료이익 비중 22%로 확대",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676590",
+     "publishedAt": "2026-10-23T17:13:57.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[가덕도공항 이륙의 조건] BS한양 5% 지분은 누구 손에",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676563",
+     "publishedAt": "2026-10-23T17:13:18.000Z",
+     "outlet": null
+    },
+    {
+     "title": "위메이드플레이, PBR 두 배 올린다지만…목표 ROE는 작년 수준",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676584",
+     "publishedAt": "2026-10-23T17:12:58.000Z",
+     "outlet": null
+    },
+    {
+     "title": "삼성화재, 사이버리스크 대응에 \"민관 협력 필수\"…현실 과제는 산적",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676599",
+     "publishedAt": "2026-10-23T17:12:05.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[HRSG 삼국지]③ 사우디 수주 늘린 비에이치아이…미코와의 협력 구조",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676595",
+     "publishedAt": "2026-10-23T17:11:12.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[가덕도공항 이륙의 조건] BS한양 탈퇴 후폭풍, 연쇄 이탈 가능성은",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676553",
+     "publishedAt": "2026-10-23T17:11:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "한솔아이원스, 1260억 들여 생산력 제고…모회사는 초과 청약",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676589",
+     "publishedAt": "2026-10-23T16:42:39.000Z",
+     "outlet": null
+    },
+    {
+     "title": "여성보험 1위 굳힌 한화손보…웰니스로 일상 속 고객 접점 넓힌다",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676587",
+     "publishedAt": "2026-10-23T16:37:42.000Z",
+     "outlet": null
+    },
+    {
+     "title": "하나카드, 3Q 누적 순익 1753억…법인·글로벌 부문 '탄력'",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676588",
+     "publishedAt": "2026-10-23T16:25:59.000Z",
+     "outlet": null
+    },
+    {
+     "title": "'600억대 불법 공매도' 글로벌 IB, 과징금 소송 1심 패소에 항소",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676534",
+     "publishedAt": "2026-10-23T15:52:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "'美 상장 다른 셈법'…SK하이닉스와 현대차가 다른 이유",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676544",
+     "publishedAt": "2026-10-23T15:30:11.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[한화M&S 공개매수] 형제의 사업분리, 'AI·자동화'는 경계선에",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676545",
+     "publishedAt": "2026-10-23T15:28:57.000Z",
+     "outlet": null
+    },
+    {
+     "title": "포스코의 수소환원제철 승부수…글로벌 11개사와 기술 동맹",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676556",
+     "publishedAt": "2026-10-23T15:26:49.000Z",
+     "outlet": null
+    },
+    {
+     "title": "발리 첫 전기버스에 현대차·채비, 차량부터 충전까지 '메이드인 코리아'",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676564",
+     "publishedAt": "2026-10-23T15:24:50.000Z",
+     "outlet": null
+    },
+    {
+     "title": "영풍·MBK “고려아연, 셀프상환 3차례 반복…자금 363억 투입\"",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676554",
+     "publishedAt": "2026-10-23T15:24:44.000Z",
+     "outlet": null
+    },
+    {
+     "title": "포스코, 철강 기술로 빚은 ‘지역 상생’…포항 넘어 광양으로",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676569",
+     "publishedAt": "2026-10-23T15:22:32.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[㈜GS가 공개한 지배구조 리스크]② 상속세 부담과 세대교체 '지분 변동성' 커질까",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676549",
+     "publishedAt": "2026-10-23T15:20:45.000Z",
+     "outlet": null
+    },
+    {
+     "title": "블랙스톤, 3Q 630억달러 유입…AUM 1조3683억달러",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676558",
+     "publishedAt": "2026-10-23T15:17:04.000Z",
+     "outlet": null
+    },
+    {
+     "title": "달라진 AI 도입 잣대…AWS·업스테이지가 지목한 '통제력' [현장+]",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676546",
+     "publishedAt": "2026-10-23T15:03:38.000Z",
+     "outlet": null
+    },
+    {
+     "title": "삼성 이건희, 불모지서 꽃피운 초격차…AI·문화 강국 이끌다",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676552",
+     "publishedAt": "2026-10-23T15:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[계양전기 생존방정식]② \"추가 유증 없다\"…중장기 CB는 만지작",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676519",
+     "publishedAt": "2026-10-23T14:56:31.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[딜 인사이드] 유증 앞두고 거래재개…경영정상화 시험대 I 파이온엑스②",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676243",
+     "publishedAt": "2026-10-23T14:44:09.000Z",
+     "outlet": null
+    },
+    {
+     "title": "\"양극재 경쟁사와 다르다\"…포스코퓨처엠, 반전 카드는 ESS·음극재",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676530",
+     "publishedAt": "2026-10-23T14:14:48.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[한화M&S 공개매수] 사업분리 속 남은 고리…'한화솔루션' 호텔 지분",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676538",
+     "publishedAt": "2026-10-23T13:51:10.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[한화M&S 공개매수] 김동관 수석부회장, 지분 덜고 경영 책임 나눴다",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676535",
+     "publishedAt": "2026-10-23T13:48:59.000Z",
+     "outlet": null
+    },
+    {
+     "title": "같은 구동계 다른 성적표…현대트랜시스·현대위아 가른 수익성",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676533",
+     "publishedAt": "2026-10-23T13:46:13.000Z",
+     "outlet": null
+    },
+    {
+     "title": "솔리다임 다음은 보스턴다이내믹스?…美 상장 셈법 복잡해진 현대차",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676541",
+     "publishedAt": "2026-10-23T13:44:40.000Z",
+     "outlet": null
+    },
+    {
+     "title": "AI국회·정부GPU로 넓힌 AX 사업 | 삼성SDS㊦",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676525",
+     "publishedAt": "2026-10-23T11:51:39.000Z",
+     "outlet": null
+    },
+    {
+     "title": "HD현대, 美 조선소 신설 추진 '마스가' 가시화",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676517",
+     "publishedAt": "2026-10-23T11:30:04.000Z",
+     "outlet": null
+    },
+    {
+     "title": "솔리다임 IPO 접은 SK하이닉스…美 낸드 투자 재원 확보 '새 과제’",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676524",
+     "publishedAt": "2026-10-23T11:27:16.000Z",
+     "outlet": null
+    },
+    {
+     "title": "전환위 가동 애큐온…한화생명 편입 앞둔 김희상號 수익 회복 '먹구름'",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676522",
+     "publishedAt": "2026-10-23T11:24:10.000Z",
+     "outlet": null
+    },
+    {
+     "title": "'롬앤 공개매수' 마루베니, 경영권 대신 오너 지분 우선매수권 확보",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676526",
+     "publishedAt": "2026-10-23T11:20:40.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[인사] 신세계그룹",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676532",
+     "publishedAt": "2026-10-23T11:17:44.000Z",
+     "outlet": null
+    },
+    {
+     "title": "LS머트리얼즈, 블룸에너지 호실적 타고 퀀텀점프…AIDC 전력난 수혜",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676520",
+     "publishedAt": "2026-10-23T10:34:35.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[FSD 온로드] 종합감사 D데이...국토부 ‘기준 미충족’ 입장 고수",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676510",
+     "publishedAt": "2026-10-23T09:44:27.000Z",
+     "outlet": null
+    },
+    {
+     "title": "엘앤에프플러스 대구 생산거점, K-LFP 新이정표 제시 [현장+]",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676464",
+     "publishedAt": "2026-10-23T09:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[HRSG 삼국지]② 데이터센터 전력난 심화…미코그룹의 성장 조건",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676376",
+     "publishedAt": "2026-10-23T09:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "SK하이닉스, 솔리다임 美 IPO 검토 중단…\"시장 여건·주가 흐름 고려\"",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=676511",
+     "publishedAt": "2026-10-23T08:14:53.000Z",
+     "outlet": null
+    }
+   ]
+  },
+  {
+   "id": "digitaltoday",
+   "name": "디지털투데이",
+   "url": "https://www.digitaltoday.co.kr/rss/allArticle.xml",
+   "maxGapH": 12,
+   "lang": "ko",
+   "status": "ok",
+   "fetchedAt": "2026-10-23T21:41:46.982Z",
+   "httpDate": "Fri, 23 Oct 2026 21:41:48 GMT",
+   "cacheAge": null,
+   "newestItemAt": "2026-10-23T21:39:35.000Z",
+   "gapHours": 0,
+   "tzAdjusted": true,
+   "count": 50,
+   "items": [
+    {
+     "title": "데이토나, 기업 가치 10억달러에 투자 유치...\"AI 에이전트용 클라우드가 필요하다\"",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709729",
+     "publishedAt": "2026-10-23T21:39:35.000Z",
+     "outlet": null
+    },
+    {
+     "title": "사모펀드들, MS 엑스박스 인수 검토했었다…기업가치 최대 1500억달러",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709728",
+     "publishedAt": "2026-10-23T21:30:48.000Z",
+     "outlet": null
+    },
+    {
+     "title": "스페이스X·테슬라 합병 탄력 받나?...주주 표결·중국 규제가 변수",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709727",
+     "publishedAt": "2026-10-23T21:22:12.000Z",
+     "outlet": null
+    },
+    {
+     "title": "카르다노 122% 상승 시나리오 부상…0.22달러 지킬까",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709576",
+     "publishedAt": "2026-10-23T15:05:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "크립토퀀트 CEO \"AI 버블 꺼져도 비트코인 충격 제한적\"",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709628",
+     "publishedAt": "2026-10-23T15:01:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "\"스크린샷만 올리면 데모 완성\"…트라이뷰, 고객 행동까지 추적하는 인터랙티브 데모 선봬",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709726",
+     "publishedAt": "2026-10-23T13:41:32.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[부고]아이티센엔텍 신장호 대표 부친상",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709725",
+     "publishedAt": "2026-10-23T13:00:45.000Z",
+     "outlet": null
+    },
+    {
+     "title": "트렌드AI, 고객 데이터센터서 돌리는 AI 보안 플랫폼 공개",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709724",
+     "publishedAt": "2026-10-23T12:45:32.000Z",
+     "outlet": null
+    },
+    {
+     "title": "구글 클라우드, AI 에이전트 전용 인프라 '에이전트 컴퓨트 엔진' 공개",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709723",
+     "publishedAt": "2026-10-23T12:38:37.000Z",
+     "outlet": null
+    },
+    {
+     "title": "2027년 카자흐스탄에 로보택시 뜬다…인드라이브·포니.ai·엔비디아 연합",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709584",
+     "publishedAt": "2026-10-23T12:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "샘 알트먼 \"수학계 분위기 바뀌었다…이제는 AI 수용 단계\"",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709566",
+     "publishedAt": "2026-10-23T11:30:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "테슬라 휴머노이드, 생산 시작했지만…상용화 발목 잡는 난제",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709556",
+     "publishedAt": "2026-10-23T11:05:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[2026 국감] PHP 보안부터 LGU+ 해킹 은폐 의혹까지…AI 정책도 도마",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709688",
+     "publishedAt": "2026-10-23T10:39:38.000Z",
+     "outlet": null
+    },
+    {
+     "title": "AI로 며칠이면 뚝딱…'암호화폐 게임' 10만개 쏟아질까",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709553",
+     "publishedAt": "2026-10-23T10:30:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "말레이시아·태국, 싱가포르 '블룸' 디지털 화폐 이니셔티브 합류",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709720",
+     "publishedAt": "2026-10-23T09:57:27.000Z",
+     "outlet": null
+    },
+    {
+     "title": "알티캐스트, 관계기업 알티모빌리티 주식 65억2560만원어치 취득 결정",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709719",
+     "publishedAt": "2026-10-23T09:50:04.000Z",
+     "outlet": null
+    },
+    {
+     "title": "퀀텀레일, 주권매매거래정지",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709718",
+     "publishedAt": "2026-10-23T09:50:03.000Z",
+     "outlet": null
+    },
+    {
+     "title": "바른손이앤에이, 주권매매거래정지 기간 변경",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709717",
+     "publishedAt": "2026-10-23T09:50:02.000Z",
+     "outlet": null
+    },
+    {
+     "title": "STX그린로지스, 계열사 에스티엑스 해운에 110억원 규모 선박 담보 제공",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709716",
+     "publishedAt": "2026-10-23T09:50:01.000Z",
+     "outlet": null
+    },
+    {
+     "title": "바른손이앤에이, 한국거래소 상대로 상장폐지결정 효력정지 가처분 신청",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709715",
+     "publishedAt": "2026-10-23T09:32:06.000Z",
+     "outlet": null
+    },
+    {
+     "title": "온타이드, 최대주주 약진통상 등 주식 183만4605주 증가…약진통상 장내매수 영향",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709714",
+     "publishedAt": "2026-10-23T09:32:05.000Z",
+     "outlet": null
+    },
+    {
+     "title": "삼양사, 일본 자회사 Samyang Corporation Japan에 1523억160만원 채무보증",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709713",
+     "publishedAt": "2026-10-23T09:32:04.000Z",
+     "outlet": null
+    },
+    {
+     "title": "온타이드, 최대주주 약진통상 측 주식등 보유 비율 4.78%p 증가…장내매수 영향",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709712",
+     "publishedAt": "2026-10-23T09:32:03.000Z",
+     "outlet": null
+    },
+    {
+     "title": "온타이드 사실상지배주주 약진통상, 소유 주식 수량 183만4605주 증가…소유 지분율 5.37%p 상승",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709711",
+     "publishedAt": "2026-10-23T09:32:02.000Z",
+     "outlet": null
+    },
+    {
+     "title": "우리은행, 상반기 부진 털고 반등 성공...3분기 순익 '역대 최대'",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709640",
+     "publishedAt": "2026-10-23T09:22:26.000Z",
+     "outlet": null
+    },
+    {
+     "title": "우리투자증권 3분기 누적 순익 280억...전년 比 27.3%↑",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709665",
+     "publishedAt": "2026-10-23T09:16:34.000Z",
+     "outlet": null
+    },
+    {
+     "title": "유니크 10%이상주주 안재범 대표이사 사장, 소유 주식 수량 2615주 증가…소유 지분율 0.02%p 상승",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709710",
+     "publishedAt": "2026-10-23T09:11:03.000Z",
+     "outlet": null
+    },
+    {
+     "title": "폴라리스에이아이, 최대주주 폴라리스우노 측 주식등 보유 비율 0.12%p 감소",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709709",
+     "publishedAt": "2026-10-23T09:11:02.000Z",
+     "outlet": null
+    },
+    {
+     "title": "넥스턴앤롤코리아, 최대주주 로아앤코홀딩스 측 주식등 보유 비율 0.50%p 증가",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709708",
+     "publishedAt": "2026-10-23T09:11:01.000Z",
+     "outlet": null
+    },
+    {
+     "title": "센코, 부산테크노파크와 45억9100만원 규모 디지털트윈 통합산단관제 플랫폼 구축 계약",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709707",
+     "publishedAt": "2026-10-23T08:53:04.000Z",
+     "outlet": null
+    },
+    {
+     "title": "평화산업, 계열사 PYUNG HWA INDIA에 79억4760만원 채무보증 결정",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709706",
+     "publishedAt": "2026-10-23T08:53:03.000Z",
+     "outlet": null
+    },
+    {
+     "title": "로지스몬, 임시주총서 정관 일부 변경 가결…가상자산 관련 사업목적 삭제",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709705",
+     "publishedAt": "2026-10-23T08:53:02.000Z",
+     "outlet": null
+    },
+    {
+     "title": "미트박스글로벌 사실상지배주주 김기봉 대표이사, 소유 주식 수량 7만163주 증가…소유 지분율 0.42%p 상승",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709704",
+     "publishedAt": "2026-10-23T08:53:01.000Z",
+     "outlet": null
+    },
+    {
+     "title": "부국증권, 최대주주 김중건 측 주식등 보유 비율 0.02%p 증가",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709703",
+     "publishedAt": "2026-10-23T08:50:02.000Z",
+     "outlet": null
+    },
+    {
+     "title": "AJ네트웍스, 임원(등기) 문덕영 측 주식등 보유 비율 0.05%p 증가",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709702",
+     "publishedAt": "2026-10-23T08:50:01.000Z",
+     "outlet": null
+    },
+    {
+     "title": "KS인더스트리, 김인겸 신임 대표 선임…송병권·김인겸 각자대표 체제",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709700",
+     "publishedAt": "2026-10-23T08:32:09.000Z",
+     "outlet": null
+    },
+    {
+     "title": "AJ네트웍스, 최대주주 문지회 등 주식 2만4700주 증가…친인척 신기연 장내매수 영향",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709699",
+     "publishedAt": "2026-10-23T08:32:08.000Z",
+     "outlet": null
+    },
+    {
+     "title": "현대코퍼레이션, 미국 현지법인 HYUNDAI CORPORATION USA에 397억3800만원 채무보증",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709698",
+     "publishedAt": "2026-10-23T08:32:06.000Z",
+     "outlet": null
+    },
+    {
+     "title": "KG스틸, 최대주주 케이지에코솔루션 등 주식 9만9222주 증가…임원 곽재선 기타 사유 5만주 늘어",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709697",
+     "publishedAt": "2026-10-23T08:32:05.000Z",
+     "outlet": null
+    },
+    {
+     "title": "티에프이, 주주 미래에셋자산운용 측 주식등 보유 비율 0.19%p 증가",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709696",
+     "publishedAt": "2026-10-23T08:32:04.000Z",
+     "outlet": null
+    },
+    {
+     "title": "한양디지텍, 주주 미래에셋자산운용 측 주식등 보유 비율 0.83%p 증가",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709695",
+     "publishedAt": "2026-10-23T08:32:03.000Z",
+     "outlet": null
+    },
+    {
+     "title": "진스랩, 보통주·상환전환우선주 1000대1 무상감자 결정",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709694",
+     "publishedAt": "2026-10-23T08:32:02.000Z",
+     "outlet": null
+    },
+    {
+     "title": "미래에셋벤처투자 10%이상주주 미래에셋증권, 소유 주식 수량 2974만7599주 보고…소유 지분율 56.00%",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709693",
+     "publishedAt": "2026-10-23T08:32:01.000Z",
+     "outlet": null
+    },
+    {
+     "title": "AWS, 세이지메이커에 '트레이닝 세션' 출시...AI 에이전트 맞춤 파인튜닝 지원",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709691",
+     "publishedAt": "2026-10-23T08:29:38.000Z",
+     "outlet": null
+    },
+    {
+     "title": "한컴, AI 워크포스 플랫폼으로 美10인 미만 소기업 정조준",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709687",
+     "publishedAt": "2026-10-23T08:22:26.000Z",
+     "outlet": null
+    },
+    {
+     "title": "미국 대형 은행들, 고객 계좌 드나드는 AI 에이전트에 '비상'",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709678",
+     "publishedAt": "2026-10-23T08:12:43.000Z",
+     "outlet": null
+    },
+    {
+     "title": "아이스크림에듀, 주권매매거래정지 기간 변경",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709686",
+     "publishedAt": "2026-10-23T08:11:08.000Z",
+     "outlet": null
+    },
+    {
+     "title": "티케이지애강, 주권매매거래정지 기간 변경",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709685",
+     "publishedAt": "2026-10-23T08:11:07.000Z",
+     "outlet": null
+    },
+    {
+     "title": "NICE, 나이스프라퍼티 주식 513억8814만원 규모 취득 결정",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709684",
+     "publishedAt": "2026-10-23T08:11:06.000Z",
+     "outlet": null
+    },
+    {
+     "title": "수산세보틱스, 정석현 수산그룹 회장 각자대표이사 선임",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=709683",
+     "publishedAt": "2026-10-23T08:11:05.000Z",
+     "outlet": null
+    }
+   ]
+  }
+ ]
+}
