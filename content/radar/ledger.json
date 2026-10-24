@@ -240,5 +240,29 @@
     "due": "2027-01-31",
     "dueLabel": "2027.1",
     "status": "pending"
+  },
+  {
+    "id": "2026-10-25-1",
+    "issued": "2026-10-25",
+    "statement": "PHP 프로젝트가 11월 30일까지 CVE-2026-115560 수정을 담은 정식 릴리스를 낸다",
+    "probability": 0.8,
+    "due": "2026-11-30",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-25-2",
+    "issued": "2026-10-25",
+    "statement": "Instacart가 2026년 12월 31일까지 매각 계약 체결을 공식 발표한다",
+    "probability": 0.2,
+    "due": "2026-12-31",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-25-3",
+    "issued": "2026-10-25",
+    "statement": "Block이 11월 30일까지 Dessa를 대기자 명단 없이 누구나 쓸 수 있게 공개한다",
+    "probability": 0.1,
+    "due": "2026-11-30",
+    "status": "pending"
   }
 ]
