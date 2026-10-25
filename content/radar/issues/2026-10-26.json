@@ -1,0 +1,887 @@
+{
+  "version": 1,
+  "date": "2026-10-26",
+  "publishedAt": "2026-10-26T07:41:20+09:00",
+  "title": "아이폰 듀오 균열, 진단은 밖에서 먼저",
+  "lede": "아이폰 듀오 안쪽 화면이 힌지를 따라 깨진다는 보고가 사흘째 이어지는 가운데, iFixit과 유튜버들이 기기를 뜯어 힌지 부근을 유력한 원인 후보로 짚었습니다. 애플은 아직 공식 입장을 내지 않았고, 사흘 뒤인 28일에는 터치스크린 맥북 프로 발표가 예정돼 있다고 블룸버그가 전했습니다.",
+  "raw": "content/radar/raw/2026-10-26.json",
+  "rawCollectedAt": "2026-10-25T21:40:50.066Z",
+  "quick": [
+    "**아이폰 듀오 분해.** iFixit은 임시 수리 점수 5점(10점 만점)을 주면서, 화면 균열이 힌지 중앙 지지대와 케이블 틈이 만나는 지점에 몰려 있다고 분석했습니다.",
+    "**터치 맥북 프로 28일 전망.** 블룸버그는 애플이 14·16인치 OLED 터치 모델을 보도자료로 발표하고, macOS가 마지막 입력 방식에 맞춰 화면 요소를 바꾼다고 전했습니다.",
+    "**AI 데이터센터 자금 경색 신호.** 머스크는 SpaceX가 GPU용 부채 400억 달러를 마련했다고 밝혔고, 완공 지연 위약금 요구는 하루 500만 달러를 넘어섰다는 보도가 나왔습니다.",
+    "**Kimi K3.1 Pro 홍보 지침 논란.** 유료 협찬 표시를 빼라는 크리에이터 지침 캡처가 돌았지만 진위와 작성 주체는 확인되지 않았고, Moonshot은 입장을 내지 않았습니다.",
+    "**가상자산 과세 네 번째 유예 가닥.** 청와대가 2027년 1월 시행을 2029년으로 미루는 쪽으로 기울었다는 보도가 이어졌고, 최종 방침은 정해지지 않았습니다."
+  ],
+  "cover": {
+    "big": "진단은\n밖에서"
+  },
+  "sections": [
+    {
+      "id": "lead",
+      "kind": "lead",
+      "label": "커버스토리",
+      "title": "아이폰 듀오 균열, 원인 찾기는 밖에서",
+      "dek": "여러 매체가 함께 다룬 오늘의 최대 화제입니다.",
+      "stories": [
+        {
+          "id": "iphone-duo-teardown",
+          "kicker": "애플 · 아이폰 듀오",
+          "followUp": true,
+          "title": "iFixit, 아이폰 듀오 뜯어 보니… 화면 균열은 힌지 지지대 부근에 몰려",
+          "hot": {
+            "count": 5,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "iFixit이 10월 25일 아이폰 듀오 분해 결과를 공개했습니다. 출시일인 23일부터 안쪽 화면이 접히는 선을 따라 금이 가거나 밝은 줄이 생겼다는 사용자 보고가 이어진 뒤 나온 첫 분해 분석입니다. iFixit은 보고된 파손이 디스플레이 케이블이 지나는 틈과 힌지 중앙 지지대가 만나는 지점, 케이블 경로보다 약간 아래에 몰려 있다고 짚었습니다. 여러 모서리가 만나 응력이 모이는 자리라는 설명입니다."
+            },
+            {
+              "type": "p",
+              "text": "원인은 아직 가설 단계입니다. iFixit은 접을 때 중앙 지지대가 충분히 내려가지 않아 한 점에 힘이 쏠릴 가능성을 시뮬레이션으로 제시했지만, 확정된 답은 없다고 밝혔습니다. 화면이 물리적으로 깨지지 않고 배선 결함만으로도 같은 증상이 날 수 있다는 점도 함께 적었습니다. 같은 날 유튜버 CuriousHagi는 파손된 기기를 분해해 균열이 시작된 자리에서 위아래보다 얇은 힌지 부품 하나가 떨어져 나간 것을 확인했다고 AppleInsider가 전했습니다."
+            },
+            {
+              "type": "p",
+              "text": "먼지도 변수로 꼽힙니다. 하루 앞서 JerryRigEverything의 내구성 시험에서는 IP68 등급인데도 먼지가 힌지로 들어가 기기를 닫아 두는 자석이 제 역할을 못 했고, 굽힘 시험 뒤 안쪽 화면에 지워지지 않는 초록 줄이 생겼습니다. iFixit의 형광 분말 시험에서도 분말이 힌지까지 닿아 서걱거리는 소리를 냈지만, 갤럭시 Z 폴드8이나 픽셀 11 프로 폴드보다는 덜 들어갔다고 했습니다. iFixit은 IP 등급이 폴더블 힌지까지 보장하지는 않는다고 덧붙였습니다."
+            },
+            {
+              "type": "p",
+              "text": "수리 측면의 평가는 엇갈립니다. iFixit은 바깥 화면과 배터리가 깔끔하게 떨어지고 부품 접근이 쉬운 편이라며 지금까지 폴더블 가운데 가장 높은 임시 점수 5점을 줬습니다. 감점의 대부분은 안쪽 화면과 힌지 몫이었습니다. 보증이 없으면 안쪽 화면 수리비는 999달러이고, 나노 텍스처 커버층만 바꾸는 비용은 AppleCare 가입 시 19달러, 미가입 시 49달러입니다. 파손 규모는 알 수 없습니다. AppleInsider가 애플 매장 7곳에 확인한 결과 24일에는 화면 파손 반납이 없었고, 25일 재확인에서 1건이 나왔습니다."
+            },
+            {
+              "type": "stats",
+              "items": [
+                {
+                  "value": "5/10",
+                  "label": "iFixit 임시 수리 점수 (폴더블 중 최고)"
+                },
+                {
+                  "value": "999달러",
+                  "label": "보증 외 안쪽 화면 수리비 (iFixit)"
+                },
+                {
+                  "value": "19.1Wh",
+                  "label": "배터리 두 개 합계 용량 (7.5 + 11.6Wh)"
+                },
+                {
+                  "value": "1건",
+                  "label": "AppleInsider가 매장 7곳에서 확인한 파손 반납 (25일)"
+                }
+              ]
+            },
+            {
+              "type": "timeline",
+              "title": "아이폰 듀오 출시 뒤 나흘",
+              "points": [
+                {
+                  "date": "2026-10-23",
+                  "label": "출시, 첫 화면 파손 보고",
+                  "kind": "past"
+                },
+                {
+                  "date": "2026-10-24",
+                  "label": "JerryRigEverything 먼지 시험 실패",
+                  "kind": "past"
+                },
+                {
+                  "date": "2026-10-25",
+                  "label": "iFixit·CuriousHagi 분해",
+                  "kind": "now"
+                },
+                {
+                  "date": "2026-10-28",
+                  "label": "맥북 프로 발표 전망",
+                  "kind": "future"
+                },
+                {
+                  "date": "2026-10-30",
+                  "label": "28개국 2차 출시",
+                  "kind": "future"
+                }
+              ]
+            },
+            {
+              "type": "boxes",
+              "items": [
+                {
+                  "tone": "go",
+                  "title": "산 사람이 할 일",
+                  "items": [
+                    "접히는 선 부근에 밝은 줄이나 금이 보이면 바로 애플에 접수해 기록을 남깁니다.",
+                    "모래나 먼지가 많은 곳에서는 힌지를 여닫지 않는 편이 안전합니다.",
+                    "커버층은 교체용 부품이지만 애플은 직접 떼어 내지 말라고 안내합니다."
+                  ]
+                },
+                {
+                  "tone": "risk",
+                  "title": "남은 위험",
+                  "items": [
+                    "보증이 끝난 뒤 안쪽 화면이 깨지면 수리비가 기기값의 절반에 이릅니다.",
+                    "원인이 힌지 설계라면 출시 초기 물량 전체에 해당할 수 있습니다."
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "unknowns",
+              "title": "아직 모르는 것",
+              "items": [
+                "애플이 파손을 결함으로 인정하고 별도 수리 정책을 낼지",
+                "파손이 실제로 얼마나 많은 기기에서 일어났는지",
+                "힌지 부품, 먼지, 배선 가운데 어느 쪽이 주원인인지"
+              ]
+            }
+          ],
+          "ai": {
+            "kind": "opinion",
+            "stance": "첫 세대 폴더블은 한 번 더 기다릴 만합니다",
+            "confidence": 2,
+            "points": [
+              {
+                "k": "근거",
+                "v": "독립 분해 두 건이 같은 힌지 구간을 가리켰고, 수리비는 보증 밖에서 999달러입니다."
+              },
+              {
+                "k": "판단",
+                "v": "아직 파손 건수는 적어 보이지만, 설계 문제라면 소프트웨어 업데이트로 고칠 수 없습니다. 이미 샀다면 보증 기간 안에 증상을 기록해 두는 편이 유리합니다."
+              },
+              {
+                "k": "반론",
+                "v": "매장 확인 사례가 1건에 그쳐, 소셜미디어에 보이는 것보다 드문 문제일 수도 있습니다."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "title": "iFixit: iPhone Duo Teardown",
+              "url": "https://www.ifixit.com/News/119895/iphone-duo-teardown"
+            },
+            {
+              "title": "The Verge: iFixit's look inside the iPhone Duo",
+              "url": "https://www.theverge.com/tech/1018233/ifixit-iphone-duo-teardown-repairability-hinge"
+            },
+            {
+              "title": "MacRumors: iFixit iPhone Duo Teardown Points to Possible Cause of Screen Cracks",
+              "url": "https://www.macrumors.com/2026/10/25/ifixit-iphone-duo-teardown/"
+            },
+            {
+              "title": "AppleInsider: Hinge damage suspected to be behind iPhone Duo screen cracks",
+              "url": "https://appleinsider.com/articles/26/10/25/hinge-damage-suspected-to-be-behind-iphone-duo-screen-cracks"
+            },
+            {
+              "title": "MacRumors: iPhone Duo Fails JerryRigEverything's Dusty Durability Test",
+              "url": "https://www.macrumors.com/2026/10/24/iphone-duo-fails-jerryrigeverything-test/"
+            },
+            {
+              "title": "9to5Mac: iFixit tears down iPhone Duo",
+              "url": "https://9to5mac.com/2026/10/25/ifixit-tears-down-iphone-duo-finds-possible-causes-of-early-screen-failures/"
+            },
+            {
+              "title": "PhoneArena: iPhone Duo teardown exposes two likely culprits",
+              "url": "https://www.phonearena.com/news/iphone-duo-teardown-exposes-two-likely-culprits-behind-those-broken-screens_id184291"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "headlines",
+      "kind": "headlines",
+      "label": "헤드라인",
+      "title": "여러 매체가 함께 다룬 이야기",
+      "stories": [
+        {
+          "id": "macbook-pro-touch",
+          "kicker": "애플 · 맥",
+          "title": "터치 OLED 맥북 프로, 28일 보도자료로 발표 전망… macOS도 손가락에 맞춰",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "블룸버그는 애플이 10월 28일 OLED 터치스크린을 단 14인치·16인치 맥북 프로를 보도자료로 발표한다고 전했습니다. 같은 날 로스앤젤레스에서 열리는 'Pro and tell' 초청 행사는 발표 뒤 제품을 직접 만져 보는 자리가 될 것으로 보입니다. 칩은 3월에 나온 M5 Pro·M5 Max를 그대로 쓰고, 화면 위쪽 노치 대신 다이내믹 아일랜드가 들어가며, 겉모습은 지금과 비슷하되 더 가볍다는 내용입니다."
+            },
+            {
+              "type": "p",
+              "text": "보도에 따르면 macOS는 사용자가 마지막으로 화면을 만졌는지 트랙패드를 썼는지에 따라 컨트롤을 다르게 보여 주고, 버튼을 누르면 손가락 주변에 메뉴가 펼쳐지며, Dock과 메뉴 막대도 터치에 맞게 손봤습니다. 애플은 터치를 키보드·트랙패드를 대신하는 것이 아닌 추가 입력 수단으로 내세울 것으로 알려졌습니다. 가격은 공개되지 않았고, MacRumors는 현재 미니 LED 모델(14인치 2,499달러부터)보다 최대 500달러 오를 수 있다는 전망을 전했습니다(전언)."
+            }
+          ],
+          "sources": [
+            {
+              "title": "Techmeme: Apple tweaked macOS for its OLED touch MacBook Pro (Bloomberg)",
+              "url": "https://www.techmeme.com/261025/p8#a261025p8"
+            },
+            {
+              "title": "MacRumors: Apple Reportedly Announcing New MacBook Pro With OLED Touchscreen on Wednesday",
+              "url": "https://www.macrumors.com/2026/10/25/macbook-pro-with-touchscreen-on-wednesday/"
+            },
+            {
+              "title": "Tom's Guide: The touchscreen MacBook Pro OLED is coming with a 'new interface'",
+              "url": "https://www.tomsguide.com/computing/macbooks/the-touchscreen-macbook-pro-oled-is-coming-with-a-new-interface-and-it-could-be-the-biggest-upgrade-in-years"
+            }
+          ]
+        },
+        {
+          "id": "instagram-apple-tv",
+          "kicker": "앱 · 인스타그램",
+          "title": "인스타그램, 애플 TV 앱 출시… 릴스·긴 영상·라이브를 TV로",
+          "hot": {
+            "count": 3,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "인스타그램이 애플 TV용 앱을 내놨습니다. 팔로하는 크리에이터의 릴스와 긴 영상, 라이브 방송을 TV에서 보고, 다른 기기에서 보던 영상을 이어 볼 수 있습니다. tvOS 26.0 이상이 필요하고, MacRumors는 앱 메타데이터상 10월 23일 배포된 것으로 보인다고 전했습니다."
+            },
+            {
+              "type": "p",
+              "text": "인스타그램의 TV 앱은 2025년 12월 미국 아마존 파이어 TV 시험으로 시작해 2026년 2월 구글 TV, 6월 삼성 스마트 TV로 넓어졌고, 애플 TV가 그 뒤를 이었습니다. 처음에는 관심사별 채널로 릴스를 자동 재생하는 구성이었다가, 6월부터 긴 크리에이터 영상과 시리즈, 라이브를 더하겠다고 밝혀 왔습니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "Techmeme: Instagram launches an Apple TV app",
+              "url": "https://www.techmeme.com/261025/p3#a261025p3"
+            },
+            {
+              "title": "The Verge: Now you can watch Instagram Reels on your Apple TV",
+              "url": "https://www.theverge.com/tech/1018253/now-you-can-watch-instagram-reels-on-your-apple-tv"
+            },
+            {
+              "title": "MacRumors: Instagram Launches Apple TV App With Reels and More",
+              "url": "https://www.macrumors.com/2026/10/25/instagram-launches-apple-tv-app/"
+            },
+            {
+              "title": "Digital Trends: You can now watch Instagram Reels on Apple TV",
+              "url": "https://www.digitaltrends.com/home-theater/seo-slug-instagram-apple-tv-app-reels/"
+            }
+          ]
+        },
+        {
+          "id": "ai-datacenter-debt",
+          "kicker": "AI 인프라 · 금융",
+          "title": "AI 데이터센터 돈줄 신호 셋… GPU 부채 400억 달러, 지연 위약금 하루 500만 달러",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "머스크는 10월 25일 X에 SpaceX가 GPU 구매용 부채 400억 달러를 마련했다고 밝혔습니다(발표 주체 주장). 로이터에 따르면 머스크는 이 돈이 1~2분기에 들어올 GPU를 위한 조기 상환 가능 부채라고 설명했고, 데이터센터 업체에 대한 부채 시장의 신용 공급이 막혀 200곳이 넘는 네오클라우드가 정리와 통합을 겪을 것이라고 주장했습니다. 로이터는 SpaceX가 투자 등급 신용과 스타링크·발사 매출 덕에 차입 여력을 유지했다고 짚었습니다."
+            },
+            {
+              "type": "p",
+              "text": "공사 일정도 비용이 됐습니다. The Information은 데이터센터 임차인들이 전력과 시설 인도가 늦어질 때 받는 위약금으로 하루 500만 달러 넘게 요구하고 있으며, 올봄에는 100만 달러 수준이었다고 보도했습니다. 보험 중개사 Marsh는 이런 위험을 덮는 '인도 지연' 보험을 따로 만들었습니다. 같은 날 블룸버그는 2023년 Blackstone 등이 CoreWeave에 빌려준 23억 달러 대출이 칩을 담보로 한 대출의 본보기가 됐고, 이 시장이 1조 달러 규모로 커지고 있다고 분석했습니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "Reuters (Investing.com): Musk says SpaceX raised $40 billion in debt for GPUs",
+              "url": "https://www.investing.com/news/stock-market-news/musk-says-spacex-raised-40-billion-in-debt-for-gpus-4971248"
+            },
+            {
+              "title": "Techmeme: Elon Musk says SpaceX closed $40B in GPU debt",
+              "url": "https://www.techmeme.com/261025/p11#a261025p11"
+            },
+            {
+              "title": "Techmeme: Data center tenants now demand $5M+ a day in late-delivery fees (The Information)",
+              "url": "https://www.techmeme.com/261025/p10#a261025p10"
+            },
+            {
+              "title": "AI Weekly: Data Center Late Fees Jump to $5M a Day, Marsh Rolls Out Cover",
+              "url": "https://aiweekly.co/alerts/data-center-late-fees-jump-to-5m-a-day-marsh-rolls-out-cover"
+            },
+            {
+              "title": "Techmeme: How a Blackstone-led loan to CoreWeave became a blueprint for chip-backed debt (Bloomberg)",
+              "url": "https://www.techmeme.com/261025/p6#a261025p6"
+            },
+            {
+              "title": "Blackstone: CoreWeave secures $2.3 billion debt financing facility",
+              "url": "https://www.blackstone.com/news/press/coreweave-secures-2-3-billion-debt-financing-facility-led-by-magnetar-capital-and-blackstone-to-meet-surging-demand-and-ongoing-expansion-of-specialized-cloud-infrastructure-to-power-ai/"
+            }
+          ]
+        },
+        {
+          "id": "kimi-creator-brief",
+          "kicker": "AI 모델 · Moonshot",
+          "followUp": true,
+          "title": "Kimi K3.1 Pro, '협찬 표시 빼라' 홍보 지침 진위 논란",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Moonshot의 Kimi K3.1 Pro 출시일인 10월 23일, 한 크리에이터가 X에 홍보 지침이라며 캡처를 올렸습니다. 유료 협찬 표시를 붙이지 말고, 게시 전 초안을 승인받으며, 경쟁 상용 모델과 같은 수준을 훨씬 싼값에 쓰는 공개 모델로 소개하라는 내용이었습니다. 이 크리에이터는 대가를 제안받았지만 참여하지 않았다고 밝혔습니다."
+            },
+            {
+              "type": "p",
+              "text": "VentureBeat와 Implicator는 이 문서가 독립적으로 확인되지 않았고, Moonshot이 직접 썼는지 외부 대행사가 만들었는지, 몇 명이 받았는지도 불분명하다고 전했습니다. 지침대로 올라간 유료 게시물도 아직 확인되지 않았고, Moonshot은 25일까지 공식 입장을 내지 않았습니다. 성능 쪽에서는 Artificial Analysis 종합 지수에서 55점으로 전작보다 11점 올라 전체 4위에 올랐고, Moonshot은 가중치를 11월 4일 공개하겠다고 밝힌 상태입니다."
+            }
+          ],
+          "ai": {
+            "kind": "none",
+            "reason": "Kimi는 이 글을 쓴 Claude의 제작사 Anthropic의 모델과 직접 비교되며 경쟁하는 제품이라 의견을 싣지 않습니다."
+          },
+          "sources": [
+            {
+              "title": "VentureBeat: Moonshot's Kimi K3.1 Pro flirts with open weights leadership amid paid influencer scandal allegations",
+              "url": "https://venturebeat.com/technology/moonshots-kimi-k3-1-pro-flirts-with-open-weights-leadership-amid-paid-influencer-scandal-allegations"
+            },
+            {
+              "title": "Implicator: Unverified Kimi Brief Told Creators to Skip Paid Labels",
+              "url": "https://www.implicator.ai/kimi-k3-1-pro-launch-hit-by-unverified-brief-telling-creators-to-skip-ad-labels/"
+            },
+            {
+              "title": "Techmeme: Kimi K3.1 Pro's debut draws scrutiny (VentureBeat)",
+              "url": "https://www.techmeme.com/261025/p2#a261025p2"
+            },
+            {
+              "title": "GeekNews: Kimi K3.1, Artificial Analysis에서 55점 기록",
+              "url": "https://news.hada.io/topic?id=35984"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "github",
+      "kind": "github",
+      "label": "GitHub 트렌딩",
+      "title": "에이전트 클라이언트와 디자인 스킬",
+      "dek": "일간 트렌딩 상위 저장소를 각 README 기준으로 요약했습니다. 숫자는 06:40 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "github-trending",
+          "kicker": "GitHub",
+          "title": "에이전트 클라이언트와 디자인 스킬",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Cloudflare의 보안 감사 스킬이 오늘 스타 2,874개로 가장 많이 받았지만 순위는 10위였고, 1위는 Claude Code와 Codex를 한 화면에서 부리는 오픈소스 에이전트 클라이언트 cindy였습니다. AI 티가 나는 화면을 걸러 내는 디자인 스킬 hallmark와 impeccable이 이틀째 함께 상위권을 지켰습니다. 오늘 목록은 11개입니다."
+            },
+            {
+              "type": "share",
+              "title": "상위 3개와 나머지가 받은 오늘의 스타",
+              "items": [
+                {
+                  "label": "cindy",
+                  "value": 677
+                },
+                {
+                  "label": "hallmark",
+                  "value": 1359
+                },
+                {
+                  "label": "VoiceStudio",
+                  "value": 1588
+                },
+                {
+                  "label": "나머지 8개",
+                  "value": 5958
+                }
+              ]
+            },
+            {
+              "type": "bars",
+              "title": "오늘 받은 스타 · 2~11위",
+              "unit": "개",
+              "items": [
+                {
+                  "label": "hallmark",
+                  "value": 1359
+                },
+                {
+                  "label": "VoiceStudio",
+                  "value": 1588
+                },
+                {
+                  "label": "impeccable",
+                  "value": 1113
+                },
+                {
+                  "label": "microduck",
+                  "value": 657
+                },
+                {
+                  "label": "TradingAgents",
+                  "value": 636
+                },
+                {
+                  "label": "ziwei-doushu",
+                  "value": 255
+                },
+                {
+                  "label": "thinkrail",
+                  "value": 52
+                },
+                {
+                  "label": "coolify",
+                  "value": 192
+                },
+                {
+                  "label": "security-audit-skill",
+                  "value": 2874
+                },
+                {
+                  "label": "claude-seo",
+                  "value": 179
+                }
+              ]
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "makecindy/cindy",
+                "rank": 1,
+                "language": "TypeScript",
+                "license": "Apache-2.0",
+                "stars": 4769,
+                "starsToday": 677,
+                "verdict": "experiment",
+                "def": "여러 에이전트 실행 도구와 모델을 하나로 묶어 내 컴퓨터의 실제 파일과 앱으로 일을 끝내게 하는 오픈소스 데스크톱·모바일 클라이언트입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "Claude Code와 Codex를 첫 실행 도구로 지원하고, 작업 도중 도구와 모델을 바꿔도 작업 공간과 기억, 스킬이 이어진다고 설명합니다."
+                  ],
+                  [
+                    "구성",
+                    "Electron 데스크톱 앱과 React Native 모바일 앱을 담은 pnpm 모노레포입니다."
+                  ],
+                  [
+                    "주의",
+                    "클라이언트만 공개돼 있고, 공식 서비스를 쓰면 사용량이 별도로 차감됩니다. 기존 구독이나 직접 발급한 API 키, 로컬 모델로도 쓸 수 있습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "Nutlope/hallmark",
+                "rank": 2,
+                "language": "CSS",
+                "license": "MIT",
+                "stars": 33581,
+                "starsToday": 1359,
+                "verdict": "try",
+                "def": "코딩 에이전트가 만든 웹 화면이 AI가 만든 티를 내지 않도록 붙잡아 두는 디자인 스킬입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "48개 테마 가운데 세 가지를 골라 페이지를 짜고, 실제 브라우저에서 기계가 만든 듯한 패턴을 검사합니다."
+                  ],
+                  [
+                    "대상",
+                    "Claude Code, Codex, Cursor, OpenCode에서 쓸 수 있으며, Together AI가 만들었습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "debpalash/VoiceStudio",
+                "rank": 3,
+                "language": "Python",
+                "license": "AGPL-3.0",
+                "stars": 86589,
+                "starsToday": 1588,
+                "verdict": "experiment",
+                "def": "음성 복제, 더빙, 받아쓰기, 오디오북 제작을 내 컴퓨터에서 처리하는 오픈소스 음성 작업 도구입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "기본 엔진은 k2-fsa/OmniVoice이며 646개 언어를 지원한다고 밝힙니다. 로컬 API와 MCP로 에이전트에 연결할 수 있습니다."
+                  ],
+                  [
+                    "시작",
+                    "macOS·Linux 설치 스크립트나 릴리스 파일로 설치하고, GPU가 없으면 CPU로 느리게 돌아갑니다."
+                  ],
+                  [
+                    "주의",
+                    "AGPL-3.0 라이선스입니다. 남의 목소리를 복제할 때는 당사자 동의가 필요합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "pbakaus/impeccable",
+                "rank": 4,
+                "language": "Rust",
+                "license": "Apache-2.0",
+                "stars": 87562,
+                "starsToday": 1113,
+                "verdict": "try",
+                "def": "AI 코딩 도구가 만드는 프론트엔드 디자인의 상투적인 패턴을 줄이는 디자인 가이드 스킬입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "스킬 1개, 명령 24개, AI가 만든 화면의 흔한 패턴을 잡는 결정적 검사 규칙 62개를 담았다고 설명합니다."
+                  ],
+                  [
+                    "시작",
+                    "프로젝트 루트에서 `npx impeccable install` 뒤 코딩 도구 안에서 `/impeccable init`을 실행합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "pollen-robotics/microduck",
+                "rank": 5,
+                "language": "Rust",
+                "license": "Apache-2.0",
+                "stars": 11572,
+                "starsToday": 657,
+                "verdict": "watch",
+                "def": "강화학습 정책으로 걷는 키 약 25cm, 무게 800g의 작은 두 발 오리 로봇의 소프트웨어입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "RK3566 보드에서 50Hz 제어 루프가 서보 15개를 신경망 정책으로 움직이고, 넘어지면 스스로 일어난다고 설명합니다."
+                  ],
+                  [
+                    "구성",
+                    "정책 학습은 별도 저장소 microduck_rl(MuJoCo, PPO)에서 하고, 이 저장소는 ONNX로 내보낸 정책을 불러 씁니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "TauricResearch/TradingAgents",
+                "rank": 6,
+                "language": "Python",
+                "license": "Apache-2.0",
+                "stars": 114473,
+                "starsToday": 636,
+                "verdict": "reference",
+                "def": "분석가, 연구원, 트레이더 역할의 LLM 에이전트가 토론해 매매 판단을 내리는 구조를 실험하는 연구용 프레임워크입니다.",
+                "rows": [
+                  [
+                    "최근",
+                    "10월 v0.7.0에서 판단 직후 종가 기준 백테스트 채점 등을 더했습니다."
+                  ],
+                  [
+                    "주의",
+                    "논문에서 출발한 연구 도구이며, 실제 투자 판단의 근거로 삼을 결과물은 아닙니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "Renhuai123/ziwei-doushu",
+                "rank": 7,
+                "language": "TypeScript",
+                "license": "MIT",
+                "stars": 7514,
+                "starsToday": 255,
+                "verdict": "reference",
+                "def": "중국 전통 명리인 자미두수의 명반을 계산하는 오픈소스 엔진과 해석 데이터셋입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "1950~2026년 날짜별 명반 67만여 개에 대한 해석 877만 단락(압축 해제 시 56.6GB)을 공개했습니다."
+                  ],
+                  [
+                    "주의",
+                    "코드는 MIT, 데이터는 CC BY 4.0이지만 인용한 강의 원문은 비상업 조건입니다. 해석 문장 라이브러리 자체는 공개하지 않았습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "JetBrains/thinkrail",
+                "rank": 8,
+                "language": "TypeScript",
+                "license": "Apache-2.0",
+                "stars": 1531,
+                "starsToday": 52,
+                "verdict": "experiment",
+                "def": "JetBrains가 인큐베이터 프로젝트로 내놓은, 에이전트 중심의 가벼운 IDE입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "오픈소스 코딩 에이전트 pi를 중심에 두고, 작업 공간을 분리하며, 살아 있는 명세와 재사용 스킬로 프로젝트 지식을 쌓습니다."
+                  ],
+                  [
+                    "주의",
+                    "확장 기능 지원은 아직 개발 중이라고 밝힙니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "coollabsio/coolify",
+                "rank": 9,
+                "language": "PHP",
+                "license": "Apache-2.0",
+                "stars": 64257,
+                "starsToday": 192,
+                "verdict": "reference",
+                "def": "SSH만 되는 내 서버에 앱, 데이터베이스, 서비스를 배포하는 자체 호스팅 PaaS입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "Git 푸시마다 배포, PR 미리보기, 롤백, 자동 HTTPS, 백업을 지원하고 360개가 넘는 원클릭 서비스를 제공합니다."
+                  ],
+                  [
+                    "효과",
+                    "Coolify를 그만 써도 이미 띄운 서비스는 그대로 돌아간다고 설명합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "cloudflare/security-audit-skill",
+                "rank": 10,
+                "language": "JavaScript",
+                "license": "MIT",
+                "stars": 46679,
+                "starsToday": 2874,
+                "verdict": "try",
+                "def": "코딩 에이전트에게 단계별 보안 감사를 시키고, 찾은 문제를 따로 검증해 기계가 읽는 형식으로 남기는 스킬입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "구조 파악, 범위별 탐색, 후보 검증, 기록, 독립 재검증, 보고를 서로 분리된 에이전트 단계로 돌립니다."
+                  ],
+                  [
+                    "배경",
+                    "Cloudflare 사내 취약점 탐색 시스템의 출발점이 된 단일 저장소용 버전입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "AgriciDaniel/claude-seo",
+                "rank": 11,
+                "language": "Python",
+                "license": "MIT",
+                "stars": 20736,
+                "starsToday": 179,
+                "verdict": "watch",
+                "def": "웹사이트 하나를 받아 기술 SEO, 콘텐츠, 구조화 데이터, AI 검색 노출을 점검하고 우선순위별 조치 목록을 주는 Claude Code 플러그인입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "하위 스킬 26개와 전문 에이전트 19개로 이뤄져 있고, 한 번 감사에 10~15분이 걸린다고 밝힙니다."
+                  ],
+                  [
+                    "주의",
+                    "개인 개발자의 서드파티 플러그인이며, 성과 수치는 제작자가 자기 사이트로 잰 것입니다."
+                  ]
+                ]
+              }
+            }
+          ],
+          "sources": [
+            {
+              "title": "GitHub Trending (daily)",
+              "url": "https://github.com/trending?since=daily"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "korea",
+      "kind": "korea",
+      "label": "국내",
+      "title": "과세 유예와 갤럭시A 감산",
+      "stories": [
+        {
+          "id": "korea-brief",
+          "kicker": "국내",
+          "title": "가상자산 과세, 갤럭시A, 엑시노스, 경상흑자",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "k": "가상자산 과세",
+                  "text": "청와대가 2027년 1월 시행 예정인 가상자산 소득 과세를 2029년으로 2년 미루는 쪽으로 가닥을 잡았다는 보도가 이어졌습니다. 확정되면 2020년 제도 도입 뒤 네 번째 유예입니다. 미국의 국제 거래정보 교환(CARF) 참여가 2029년이라는 점과 청년층 여론이 배경으로 꼽혔고, 청와대는 최종 방침은 정해지지 않았다는 입장입니다."
+                },
+                {
+                  "k": "갤럭시A",
+                  "text": "전자신문은 삼성전자가 4분기 갤럭시A 생산을 연초 계획보다 약 20% 줄였다고 업계 전언을 인용해 보도했습니다. 메모리값 급등으로 일부 저가폰은 메모리가 부품 원가의 절반을 넘었다는 설명입니다. 갤럭시A는 삼성 스마트폰 출하량의 약 70%를 차지하며, 삼성의 공식 확인은 없습니다."
+                },
+                {
+                  "k": "엑시노스 2700",
+                  "text": "삼성전자의 차세대 모바일 칩 엑시노스 2700이 사내 시험에서 퀄컴 최신 칩보다 CPU 멀티코어 점수가 약 20% 높게 나왔다는 업계 전언이 보도됐습니다. 2세대 2나노 공정으로 만들어 내년 초 갤럭시 S27에 들어갈 예정이며, 독립적으로 검증된 수치는 아닙니다."
+                },
+                {
+                  "k": "경상흑자",
+                  "text": "IMF 통계로 한국의 2분기 경상수지 흑자는 1,166억 달러로 중국에 이어 2위였고, 독일(523억 달러)과 일본(506억 달러)의 합계를 처음 넘었습니다. 반도체 수출이 흑자를 끌어올렸다는 분석입니다(공식 통계)."
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "전자신문: 靑, 가상자산 과세 '또 유예' 가닥",
+              "url": "https://www.etnews.com/20261025000076"
+            },
+            {
+              "title": "아시아경제: 靑, 가상자산 과세 '네 번째 유예' 가닥 왜?",
+              "url": "https://view.asiae.co.kr/article/2026102517522309926"
+            },
+            {
+              "title": "서울신문: '가상자산 과세' 또 유예로 기울 듯",
+              "url": "https://seoul.co.kr/news/politics/congress/2026/10/25/20261025500069"
+            },
+            {
+              "title": "전자신문: \"갤럭시A 20% 감산\"…삼성, 칩플레이션 대응",
+              "url": "https://www.etnews.com/20261023000235"
+            },
+            {
+              "title": "전자신문: 갤A 감산 장기화 땐 점유율 흔들",
+              "url": "https://www.etnews.com/20261025000073"
+            },
+            {
+              "title": "헤럴드경제: 삼성 엑시노스 2700, 내부 테스트서 퀄컴 넘었다",
+              "url": "https://biz.heraldcorp.com/article/10913810"
+            },
+            {
+              "title": "천지일보: 삼성 '엑시노스 2700' 내부 성능 시험서 퀄컴 최신 칩 앞서",
+              "url": "https://www.newscj.com/news/articleView.html?idxno=3442879"
+            },
+            {
+              "title": "세계일보: 韓 2분기 경상흑자, 사상 첫 '獨·日 합계' 추월",
+              "url": "https://www.segye.com/newsView/20261025509692"
+            },
+            {
+              "title": "전자신문: 반도체가 끌어올린 한국 경상흑자",
+              "url": "https://www.etnews.com/20261025000066"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading",
+      "kind": "reading",
+      "label": "읽을거리",
+      "title": "월요일에 읽을 5편",
+      "dek": "주로 Hacker News에서 골랐습니다. HN 점수는 06:40 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "reads",
+          "kicker": "읽을거리",
+          "title": "월요일에 읽을 5편",
+          "blocks": [
+            {
+              "type": "reads",
+              "items": [
+                {
+                  "title": "We should be more ambitious with the software we build",
+                  "url": "https://danluu.com/ambitious/",
+                  "via": "Dan Luu",
+                  "why": "코딩 에이전트로 만드는 비용이 줄었으니 더 큰 소프트웨어를 시도해야 하고, 이제 병목은 작성이 아니라 검증이라며 퍼징과 속성 기반 테스트를 권하는 글입니다.",
+                  "hn": {
+                    "id": "50225695",
+                    "points": 719,
+                    "comments": 664
+                  }
+                },
+                {
+                  "title": "The Goose Programming Language",
+                  "url": "https://aardappel.github.io/goose/",
+                  "via": "aardappel",
+                  "why": "힙 없이 값을 컴파일러가 관리하는 스택에만 두는 방식으로 메모리 안전성을 얻었다는 시스템 언어로, 자체 벤치마크 16종에서 C++·안전한 Rust보다 빨랐다고 주장합니다.",
+                  "hn": {
+                    "id": "50224100",
+                    "points": 549,
+                    "comments": 341
+                  }
+                },
+                {
+                  "title": "A 10-year-old CNN outperforms frontier LLMs for skin cancer diagnosis",
+                  "url": "https://lynchlab.net/llm-skin-cancer",
+                  "via": "Lynch Lab",
+                  "why": "조직검사로 확진된 피부 병변 200건에서 2015년 구조의 작은 CNN이 최신 범용 LLM 두 개보다 첫 진단 정확도가 20%포인트가량 높았다는 실험으로, 표본이 작다는 한계도 스스로 밝혔습니다.",
+                  "hn": {
+                    "id": "50233779",
+                    "points": 310,
+                    "comments": 160
+                  }
+                },
+                {
+                  "title": "JetBrains Thinkrail",
+                  "url": "https://github.com/JetBrains/thinkrail",
+                  "via": "GitHub",
+                  "why": "IDE 회사가 자사 IDE가 아닌 오픈소스 에이전트 pi를 중심에 둔 별도 도구를 실험한다는 점에서 볼 만합니다.",
+                  "hn": {
+                    "id": "50233294",
+                    "points": 115,
+                    "comments": 77
+                  }
+                },
+                {
+                  "title": "r/opensource just banned AI, non-English speakers, and more",
+                  "url": "https://www.theverge.com/ai-artificial-intelligence/1018217/reddit-opensource-ai-ban",
+                  "via": "The Verge",
+                  "why": "AI로 만든 프로젝트와 영어가 아닌 글을 막은 Reddit 오픈소스 게시판의 새 규칙과, 하루 만에 대안 게시판이 생긴 반발을 다룹니다."
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "Hacker News front page",
+              "url": "https://news.ycombinator.com/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "column",
+      "kind": "column",
+      "label": "AI의 시선",
+      "title": "제조사보다 빠른 검증",
+      "dek": "AI가 쓴 칼럼입니다. 사실 보도가 아닌 의견입니다.",
+      "stories": [
+        {
+          "id": "column-body",
+          "kicker": "AI의 시선",
+          "title": "제조사보다 빠른 검증",
+          "blocks": [
+            {
+              "type": "p",
+              "dropcap": true,
+              "text": "아이폰 듀오가 출시된 지 사흘 만에 화면 균열의 유력한 위치와 가설 세 가지가 나왔습니다. 만든 회사가 아니라 수리 업체와 유튜버들이 기기를 뜯어서 얻은 결과입니다. 같은 주말 Kimi K3.1 Pro를 둘러싼 홍보 지침 논란에서도 문서의 진위를 따지고 성능 수치를 다시 잰 쪽은 외부의 기자와 평가 기관이었고, 두 회사는 아직 말이 없습니다."
+            },
+            {
+              "type": "p",
+              "text": "제품을 검증하는 속도가 제품을 내놓은 쪽의 해명 속도를 앞지르는 일이 잦아졌습니다. 분해 영상과 벤치마크는 하루면 나오지만, 회사의 공식 입장은 원인 조사와 법무 검토를 거쳐야 합니다. 그 사이의 공백을 채우는 것은 외부 검증이고, 소비자는 그 결과를 보고 사거나 기다리는 판단을 내립니다."
+            },
+            {
+              "type": "p",
+              "text": "이 흐름은 개발 도구에서도 같습니다. Dan Luu가 짚었듯 코드를 쓰는 비용이 떨어지면 남는 일은 그것이 맞는지 확인하는 일입니다. 확인 장치를 먼저 갖춘 쪽이 해명을 기다리는 쪽보다 빨리 움직입니다. 다만 외부 검증도 표본이 작거나 가설에 머물 수 있다는 점은 iFixit 스스로 밝힌 대로입니다."
+            },
+            {
+              "type": "pull",
+              "text": "만드는 속도가 빨라질수록, 믿을 근거는 확인하는 쪽에서 나옵니다."
+            },
+            {
+              "type": "ledger"
+            }
+          ],
+          "sources": []
+        }
+      ]
+    }
+  ]
+}
