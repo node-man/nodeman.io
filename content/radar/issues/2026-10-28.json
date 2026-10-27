@@ -1,0 +1,858 @@
+{
+  "version": 1,
+  "date": "2026-10-28",
+  "publishedAt": "2026-10-28T07:40:16+09:00",
+  "title": "애플 M6 맥 먼저 공개, 구글은 지니 4",
+  "lede": "애플이 행사 하루 전 보도자료로 M6 칩을 넣은 14인치 맥북 프로와 24인치 아이맥을 공개했습니다. 같은 날 구글 딥마인드는 소리와 대화까지 만드는 월드 모델 지니 4를 내놨고, OpenAI와 앤트로픽은 컴퓨터과학의 오래된 가설을 AI 모델이 반증했다고 각각 발표했습니다.",
+  "raw": "content/radar/raw/2026-10-28.json",
+  "rawCollectedAt": "2026-10-27T21:39:06.519Z",
+  "cover": {
+    "big": "M6 맥,\n하루 먼저"
+  },
+  "quick": [
+    "**M6 맥북 프로·아이맥 공개.** 14인치 맥북 프로는 1,999달러, 아이맥은 1,499달러부터이며 11월 6일 출시됩니다. 디자인은 그대로입니다.",
+    "**구글 지니 4.** 실시간으로 조작하는 가상 세계에 소리와 대화를 함께 만듭니다. 지금은 일부 테스터용 연구 미리보기입니다.",
+    "**지수 시간 가설 반증 주장.** OpenAI와 앤트로픽이 몇 시간 차이로 같은 결론을 발표했고, 외부 검증은 이제 시작입니다.",
+    "**PHP2Shell 실제 악용 확인.** 미국 CISA가 악용 목록에 올렸고, 국정원은 공공 시스템 운영 일시 중지 권고를 검토하고 있습니다.",
+    "**네이버, 브룩필드와 약 12조 원 계약.** 특수목적법인이 GPU와 데이터센터를 확보해 네이버클라우드에 빌려주는 구조입니다."
+  ],
+  "sections": [
+    {
+      "id": "lead",
+      "kind": "lead",
+      "label": "커버스토리",
+      "title": "애플, M6 맥북 프로와 아이맥 공개",
+      "dek": "여러 매체가 함께 다룬 오늘의 최대 화제입니다.",
+      "stories": [
+        {
+          "id": "apple-m6-macs",
+          "kicker": "애플 · 맥",
+          "title": "애플, M6 칩 넣은 14인치 맥북 프로·아이맥 공개… 11월 6일 출시",
+          "hot": {
+            "count": 5,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "애플이 10월 27일(현지 시각) 보도자료로 M6 칩을 넣은 14인치 맥북 프로와 24인치 아이맥을 공개했습니다. 사전 주문은 28일 오전 10시 10분(미국 태평양 시각)에 열리고, 출시일은 11월 6일입니다. 두 제품 모두 외관은 이전 세대와 같습니다."
+            },
+            {
+              "type": "p",
+              "text": "**맥북 프로.** 시작 가격은 1,999달러이며 16GB 통합 메모리와 1TB 저장 공간이 기본입니다. 메모리는 32GB까지 고를 수 있습니다. M6는 12코어 CPU와 12코어 GPU를 갖췄고, 애플은 M5 모델보다 그래픽이 최대 30%, AI 작업이 최대 25% 빠르다고 밝혔습니다(발표 주체 주장). 배터리는 최대 24시간이며, 자체 N1 칩으로 Wi-Fi 7과 블루투스 6을 지원합니다. 이번 제품은 기본형 M5 모델을 대체하고, M5 Pro·M5 Max 모델은 계속 판매됩니다."
+            },
+            {
+              "type": "p",
+              "text": "**아이맥.** 10코어 CPU·10코어 GPU 구성이 1,499달러부터입니다. 4.5K 해상도의 24인치 화면과 7가지 색상은 그대로이고, 애플은 M4 모델보다 기기 내 AI 처리가 최대 5배 빠르다고 밝혔습니다(발표 주체 주장)."
+            },
+            {
+              "type": "p",
+              "text": "**행사는 따로 있다.** 애플은 28일(현지 시각) 로스앤젤레스에서 'Pro and Tell'이라는 이름의 행사를 엽니다. 이날 OLED 터치스크린을 단 상위 맥북 프로가 나온다는 보도가 이어지고 있지만, 애플이 확인한 내용은 아닙니다(전언). 애플은 같은 주에 Pages, Keynote, Numbers에 AI 비서를 붙인 베타도 내놨습니다. 월 12.99달러인 Creator Studio 구독자 대상이며 지금은 미국 영어만 지원합니다."
+            },
+            {
+              "type": "stats",
+              "items": [
+                {
+                  "value": "1,999달러",
+                  "label": "14인치 맥북 프로 시작가 (미국)"
+                },
+                {
+                  "value": "1,499달러",
+                  "label": "24인치 아이맥 시작가 (미국)"
+                },
+                {
+                  "value": "최대 30%",
+                  "label": "M5 대비 그래픽 성능 (애플 주장)"
+                },
+                {
+                  "value": "11월 6일",
+                  "label": "출시일"
+                }
+              ]
+            },
+            {
+              "type": "unknowns",
+              "title": "아직 모르는 것",
+              "items": [
+                "28일 행사에서 터치스크린 맥북 프로가 실제로 나올지, 나온다면 가격과 칩",
+                "M6 성능 수치에 대한 외부 벤치마크",
+                "국내 출시일과 가격"
+              ]
+            }
+          ],
+          "ai": {
+            "kind": "opinion",
+            "stance": "기본형을 행사에서 떼어 낸 것 자체가 신호입니다",
+            "confidence": 2,
+            "points": [
+              {
+                "k": "읽는 법",
+                "v": "가장 많이 팔리는 기본형을 보도자료로 먼저 내보낸 것은 행사 무대를 상위 모델에 비워 두려는 배치로 보입니다."
+              },
+              {
+                "k": "사는 쪽에서",
+                "v": "기본형은 디자인 변화가 없어 지금 사도 손해 볼 일이 적고, 화면이나 입력 방식이 바뀌길 기다린다면 하루 뒤 발표를 보고 정해도 늦지 않습니다."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "title": "TechCrunch — Apple unveils new 14-inch MacBook Pro with M6 chip",
+              "url": "https://techcrunch.com/2026/10/27/apple-unveils-new-14-inch-macbook-pro-with-m6-chip/"
+            },
+            {
+              "title": "MacRumors — M6 14-Inch MacBook Pro: Pre-Orders and Release Date Announced",
+              "url": "https://www.macrumors.com/2026/10/27/m6-14-inch-macbook-pro-pre-orders-release-date/"
+            },
+            {
+              "title": "9to5Mac — Apple unveils new 14-inch MacBook Pro powered by M6",
+              "url": "https://9to5mac.com/2026/10/27/apple-unveils-new-14-inch-macbook-pro-powered-by-m6/"
+            },
+            {
+              "title": "Tom's Hardware — Apple adds M6 to 14-inch MacBook Pro and iMac",
+              "url": "https://www.tomshardware.com/laptops/macbooks/apple-adds-m6-to-14-inch-macbook-pro-and-imac-starts-at-usd1-999"
+            },
+            {
+              "title": "디지털투데이 — 애플, M6 칩 기반 맥북 프로·아이맥 동시 공개",
+              "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=710421"
+            },
+            {
+              "title": "GeekNews — Apple, M6 탑재 신규 iMac 공개",
+              "url": "https://news.hada.io/topic?id=36120"
+            },
+            {
+              "title": "iClarified — Apple adds Intelligent Assistant to Pages, Numbers and Keynote",
+              "url": "https://www.iclarified.com/102987/apple-adds-intelligent-assistant-to-pages-numbers-and-keynote-for-iphone-and-ipad"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "headlines",
+      "kind": "headlines",
+      "label": "헤드라인",
+      "title": "여러 매체가 함께 다룬 이야기",
+      "stories": [
+        {
+          "id": "genie-4",
+          "kicker": "구글 딥마인드 · 월드 모델",
+          "title": "구글 딥마인드 '지니 4' 공개… 소리·대화까지 만드는 실시간 가상 세계",
+          "hot": {
+            "count": 5,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "구글 딥마인드가 10월 27일 월드 모델 지니 4를 연구 미리보기로 공개했습니다. 글로 장면을 지시하면 사용자가 키보드로 돌아다닐 수 있는 가상 세계를 실시간으로 만들고, 이번에는 배경음과 음악, 등장인물의 대화까지 함께 생성합니다. 진행 중에 날씨나 카메라 위치를 바꾸거나 사람과 물체를 추가하는 지시도 바로 반영됩니다. 생성한 영상과 소리에는 모두 SynthID 워터마크가 들어갑니다."
+            },
+            {
+              "type": "p",
+              "text": "구글은 쓰임새로 로봇·에이전트 학습 환경과 영화 사전 시각화를 꼽았습니다. 로봇 실험에서는 Gemini 모델이 작업을 단계로 나누고 지니 4가 그 장면을 실시간으로 시뮬레이션했습니다. TechCrunch는 장면 일관성이 최대 2분으로 전작의 두 배라고 전했고, 구글은 오래 돌릴수록 사물과 화면이 어긋나고 음향 정확도와 화면 속 글자는 아직 풀지 못했다고 밝혔습니다. 지금은 일부 테스터만 쓸 수 있으며, 앞으로 몇 주 안에 Google AI Ultra 구독자(Project Genie)와 Gemini API·AI Studio 초기 파트너에게 열릴 예정입니다."
+            }
+          ],
+          "ai": {
+            "kind": "opinion",
+            "stance": "당장은 놀이보다 시뮬레이터로서 값어치가 큽니다",
+            "confidence": 2,
+            "points": [
+              {
+                "k": "의미",
+                "v": "로봇 학습에는 실제로 해 보기 어려운 장면을 싸게 많이 만들어 보는 일이 중요한데, 실시간으로 조작 가능한 세계는 그 비용을 낮춥니다."
+              },
+              {
+                "k": "한계",
+                "v": "몇 분 안에 사물이 어긋난다면 긴 작업을 검증하는 용도로는 아직 부족합니다. 시뮬레이션에서 배운 것이 현실에서도 통하는지는 별도로 확인해야 합니다."
+              },
+              {
+                "k": "밝혀 둘 점",
+                "v": "이 글을 쓴 Claude는 앤트로픽이 만든 AI이고, 앤트로픽은 구글과 AI 모델 시장에서 경쟁합니다. 이 점을 감안해 읽어 주십시오."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "title": "Google DeepMind — Genie 4: A new generation of world simulation",
+              "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/"
+            },
+            {
+              "title": "TechCrunch — Google's Genie 4 world model adds audio, more realistic worlds, and real-time steering",
+              "url": "https://techcrunch.com/2026/10/27/googles-genie-4-world-model-adds-audio-more-realistic-worlds-and-real-time-steering/"
+            },
+            {
+              "title": "The Verge — Google's next Genie AI model generates more realistic experiences",
+              "url": "https://www.theverge.com/tech/1019076/google-genie-4-ai-model"
+            },
+            {
+              "title": "디지털투데이 — 구글 딥마인드, 월드 모델 '지니 4' 공개",
+              "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=710419"
+            },
+            {
+              "title": "GeekNews — Genie 4",
+              "url": "https://news.hada.io/topic?id=36119"
+            }
+          ]
+        },
+        {
+          "id": "eth-refuted-claims",
+          "kicker": "AI · 이론 컴퓨터과학",
+          "title": "OpenAI·앤트로픽, AI 모델이 '지수 시간 가설' 반증했다고 잇따라 발표",
+          "hot": {
+            "count": 4,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "OpenAI가 10월 26일 내부 모델이 지수 시간 가설(ETH)을 반증했다고 발표했습니다. ETH는 1999년 제기된 가설로, 3-SAT 같은 논리 문제는 변수가 늘수록 풀이 시간이 지수적으로 늘 수밖에 없다는 가정입니다. 수많은 계산 복잡도 결과가 이 가설을 전제로 깔고 있습니다. OpenAI는 같은 날 해석학의 국소 평활화 추측과 4차원 양자장론의 존재 증명도 모델이 해냈다고 주장했습니다. ETH 증명은 증명 검증 언어 Lean으로 확인했다며 GitHub에 올렸고, 물리학 자료는 아직 공개하지 않았습니다."
+            },
+            {
+              "type": "p",
+              "text": "몇 시간 뒤 앤트로픽도 자체 결과를 GitHub에 올렸습니다. 내부 Claude 연구 모델이 10월 16일 3-SAT를 준지수 시간에 푸는 알고리즘을 찾았고, 증명을 Lean 4로 형식화했다는 내용입니다. 논문은 OpenAI도 비슷한 결과를 주장했다고 적었고, 두 회사는 따로 작업한 것으로 보도됐습니다. 앤트로픽 논문은 이 알고리즘이 변수가 약 10의 1만 제곱 개를 넘어야 무차별 탐색보다 빨라져 실용적 의미는 없다고 밝혔고, Lean 코드를 사람이 직접 검토한 적은 아직 없다고 적었습니다."
+            },
+            {
+              "type": "p",
+              "text": "ETH를 처음 제안한 연구자들과 MIT 연구자가 OpenAI 결과의 독립 검토를 꾸리기로 했습니다. 이들은 참여가 결과를 보증하는 것은 아니라고 선을 그었습니다. OpenAI는 이번 결과가 현재 암호 체계를 깨지는 않는다고 확인했다고 밝혔습니다. 한편 연구자들 사이에서는 OpenAI가 성과를 분야별로 골라 공개하는 방식에 대한 불만도 나왔습니다."
+            }
+          ],
+          "ai": {
+            "kind": "none",
+            "reason": "이 글을 쓴 Claude를 만든 앤트로픽이 같은 결과를 주장한 당사자라 의견을 싣지 않고 사실만 전합니다."
+          },
+          "sources": [
+            {
+              "title": "TechCrunch — Frontier AI labs say their models refuted the Exponential Time Hypothesis",
+              "url": "https://techcrunch.com/2026/10/27/frontier-ai-labs-say-their-models-refuted-the-exponential-time-hypothesis-what-does-that-mean/"
+            },
+            {
+              "title": "The Next Web — OpenAI says its AI model has disproved the Exponential Time Hypothesis",
+              "url": "https://thenextweb.com/news/openai-exponential-time-hypothesis-false-kakeya-yang-mills"
+            },
+            {
+              "title": "OfficeChai — Anthropic says Claude too independently disproved Exponential Time Hypothesis",
+              "url": "https://officechai.com/ai/anthropic-says-claude-too-independently-disproved-exponential-time-hypothesis-on-the-same-day-as-openai/"
+            },
+            {
+              "title": "The Verge — Researchers are getting tired of OpenAI gatekeeping its breakthroughs",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1019921/openai-breakthrough-math-computer-science-physics"
+            },
+            {
+              "title": "GeekNews — OpenAI, AI로 지수 시간 가설 반증 등 성과 발표",
+              "url": "https://news.hada.io/topic?id=36069"
+            }
+          ]
+        },
+        {
+          "id": "php2shell-kev",
+          "kicker": "보안 · PHP",
+          "title": "PHP2Shell 실제 악용 확인… 미 CISA 목록 등재, 국정원은 운영 중지 권고 검토",
+          "hot": {
+            "count": 3,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "followUp": true,
+          "blocks": [
+            {
+              "type": "p",
+              "text": "미국 사이버보안·인프라보안청(CISA)이 10월 26일 PHP 원격 코드 실행 취약점 `CVE-2026-109618`과 `CVE-2026-109619`를 '알려진 악용 취약점(KEV)' 목록에 올렸습니다. 연방 민간기관은 10월 29일까지 조치해야 합니다. CISA는 어느 기관이 뚫렸는지는 밝히지 않았습니다. 아마존은 공개 나흘 전인 10월 17일부터 공격 시도를 봤다고 밝혔고, Perplexity의 보안 담당자는 24일 미끼 서버(허니팟)에서 실제 원격 코드 실행이 성공한 기록을 공개했습니다. 다만 공격에 유리하게 설정한 환경이었다는 단서가 붙었습니다."
+            },
+            {
+              "type": "p",
+              "text": "국내에서는 국정원이 27일 국가·공공기관에 시스템 운영 일시 중지를 권고할지 검토하고 있다고 밝혔습니다. 아직 권고는 나오지 않았고 대상도 정해지지 않았습니다. 수정판은 8.5.12, 8.4.27, 8.3.36, 8.2.35이며, 패치 뒤 PHP 프로세스를 재시작해야 합니다. 8.1 이하는 수정판이 없어 상위 버전으로 옮겨야 합니다. 인터넷 검색 엔진 Censys는 영향받는 버전을 쓰는 PHP 서비스가 3,251만 개가 넘는다고 추산했습니다(발표 주체 추정)."
+            }
+          ],
+          "sources": [
+            {
+              "title": "TechCrunch — US government says hackers are now exploiting critical PHP web bugs",
+              "url": "https://techcrunch.com/2026/10/27/us-government-says-hackers-are-now-exploiting-critical-php-web-bugs/"
+            },
+            {
+              "title": "The Register — CISA confirms PHP2Shell under attack",
+              "url": "https://www.theregister.com/cyber-crime/2026/10/27/cisa-confirms-php2shell-under-attack-as-researchers-clock-successful-exploits/5305681"
+            },
+            {
+              "title": "The Hacker News — CISA Confirms Active Exploitation of Two PHP2Shell Flaws",
+              "url": "https://thehackernews.com/2026/10/cisa-confirms-active-exploitation-of.html"
+            },
+            {
+              "title": "블로터 — 국정원, PHP 취약점 잇따르자 \"공공 전산망 일시 중지 검토\"",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=676885"
+            },
+            {
+              "title": "파이낸셜뉴스 — 국정원, 공공기관 PHP 보안취약 시스템에 '운영 중지' 권고 검토",
+              "url": "https://www.fnnews.com/news/202610271011474995"
+            }
+          ]
+        },
+        {
+          "id": "anthropic-s1-margins",
+          "kicker": "Anthropic · 상장",
+          "title": "앤트로픽 S-1 뜯어보기… 상반기 매출총이익률 85%",
+          "hot": {
+            "count": 3,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "followUp": true,
+          "blocks": [
+            {
+              "type": "p",
+              "text": "전날 공개된 앤트로픽 상장 신청서(S-1)를 두고 세부 분석이 이어졌습니다. 신고서를 분석한 투자자와 매체들은 2026년 상반기(6월 30일까지 6개월) 매출총이익률을 85%로 집계했습니다. 같은 분석에서 잉여현금흐름 이익률은 최근 6개월 21%, 최근 12개월 11%였습니다(분석가 집계). 모델을 돌려 버는 매출이 원가를 감당하기 어렵다는 회의론과는 다른 숫자라는 해석이 나왔습니다."
+            },
+            {
+              "type": "p",
+              "text": "지배구조 분석도 이어졌습니다. 공동창업자 7명이 만든 회사가 가진 클래스 F 주식 1주가 의결권 50.1%를 갖지만 경제적 권리는 없고, 창업자가 회사를 떠나거나 일정 지분을 팔면 이 의결권 몫을 잃습니다. 남은 창업자가 2명 이하가 되면 클래스 F는 단계적으로 없어집니다. 장기이익신탁이 가진 클래스 T 주식은 이사회 과반을 선임합니다."
+            }
+          ],
+          "ai": {
+            "kind": "none",
+            "reason": "이 글을 쓴 Claude는 앤트로픽이 만든 AI라 이해관계가 있어 의견을 싣지 않고 사실만 전합니다."
+          },
+          "sources": [
+            {
+              "title": "Tech Times — Anthropic Founders Keep 50% Vote Through LLC Share",
+              "url": "https://www.techtimes.com/articles/329523/20261027/anthropic-founders-keep-50-vote-through-llc-share-retail-ant-buyers-get-no-say-over-ai-risk.htm"
+            },
+            {
+              "title": "Clouded Judgement — Anthropic: Benchmarking the S-1 Data",
+              "url": "https://cloudedjudgement.substack.com/p/anthropic-benchmarking-the-s-1-data"
+            },
+            {
+              "title": "TechCrunch — Who's really in charge at Anthropic after the IPO?",
+              "url": "https://techcrunch.com/2026/10/27/whos-really-in-charge-at-anthropic-after-the-ipo/"
+            },
+            {
+              "title": "The Verge — Anthropic's elaborate plan to keep Wall Street at bay",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1019470/anthropic-ipo-resist-investor-pressure-cut-corners-safety"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "github",
+      "kind": "github",
+      "label": "GitHub 트렌딩",
+      "title": "디자인 스킬, 하루 더",
+      "dek": "일간 트렌딩 상위 저장소를 각 README 기준으로 요약했습니다. 숫자는 06:40 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "github-trending",
+          "kicker": "GitHub",
+          "title": "디자인 스킬, 하루 더",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "랜딩 페이지 디자인 스킬을 모은 ai-design-skills가 1위에 올랐고, 오늘 스타를 가장 많이 받은 저장소는 2위 hallmark(2,859개)였습니다. impeccable까지 더하면 상위 5개 가운데 3개가 코딩 에이전트의 화면 디자인을 다듬는 스킬입니다. 개발 방법론을 스킬로 묶은 superpowers와 개인 맞춤 학습 에이전트 DeepTutor도 새로 올라왔습니다."
+            },
+            {
+              "type": "share",
+              "title": "상위 3개와 나머지가 받은 오늘의 스타",
+              "items": [
+                {
+                  "label": "ai-design-skills",
+                  "value": 1395
+                },
+                {
+                  "label": "hallmark",
+                  "value": 2859
+                },
+                {
+                  "label": "openbot",
+                  "value": 794
+                },
+                {
+                  "label": "나머지 7개",
+                  "value": 8446
+                }
+              ]
+            },
+            {
+              "type": "bars",
+              "title": "오늘 받은 스타 · 2~10위",
+              "unit": "개",
+              "items": [
+                {
+                  "label": "hallmark",
+                  "value": 2859
+                },
+                {
+                  "label": "openbot",
+                  "value": 794
+                },
+                {
+                  "label": "superpowers",
+                  "value": 608
+                },
+                {
+                  "label": "impeccable",
+                  "value": 1458
+                },
+                {
+                  "label": "cindy",
+                  "value": 1446
+                },
+                {
+                  "label": "postiz",
+                  "value": 953
+                },
+                {
+                  "label": "ECC",
+                  "value": 1183
+                },
+                {
+                  "label": "DeepTutor",
+                  "value": 1587
+                },
+                {
+                  "label": "thinkrail",
+                  "value": 1211
+                }
+              ]
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "elayadesign/ai-design-skills",
+                "rank": 1,
+                "language": null,
+                "license": "MIT",
+                "stars": 9129,
+                "starsToday": 1395,
+                "verdict": "try",
+                "def": "Claude Code, Cursor, Codex 같은 AI 코딩 도구에 넣어 쓰는 디자인 스킬 모음입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "지금은 랜딩 페이지를 처음부터 만드는 스킬 하나가 들어 있습니다. 요구 사항 질문, 페이지 구조, 전환용 문구, 글꼴·간격·모션 규칙까지 다룹니다."
+                  ],
+                  [
+                    "시작",
+                    "스킬 폴더를 `.claude/skills/`에 복사하거나 `SKILL.md`를 각 도구의 규칙 파일에 붙여 넣습니다. 디자인 값은 파일 끝 한 구역에 모여 있어 고쳐 쓰기 쉽습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "Nutlope/hallmark",
+                "rank": 2,
+                "language": "CSS",
+                "license": "MIT",
+                "stars": 38825,
+                "starsToday": 2859,
+                "verdict": "try",
+                "def": "코딩 에이전트가 만든 웹 화면이 AI가 만든 티를 내지 않도록 막아 주는 디자인 스킬입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "48개 테마 가운데 세 가지를 골라 페이지를 짜고, 실제 브라우저에서 기계가 만든 듯한 패턴을 검사한 뒤 새 맥락의 검토 에이전트가 마지막 판정을 내립니다."
+                  ],
+                  [
+                    "구성",
+                    "대비·초점·모바일 레이아웃처럼 절대 넘지 않는 기준과 이유가 있으면 넘길 수 있는 기본값 검사를 나눴습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "nightly-labs/openbot",
+                "rank": 3,
+                "language": "TypeScript",
+                "license": "NOASSERTION",
+                "stars": 2337,
+                "starsToday": 794,
+                "verdict": "experiment",
+                "def": "Codex, Claude Code, Grok 등 여러 에이전트에게 각자 작업 공간과 대화창을 주고 서로 메시지를 주고받게 하는 로컬 데스크톱 앱입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "에이전트별 작업 큐, 파일 전달, 내장 브라우저, 에이전트 사이 메시지를 한 앱에서 다룹니다."
+                  ],
+                  [
+                    "주의",
+                    "개발 미리보기 단계라 에이전트가 승인 없이 파일 수정, 명령 실행, 네트워크 사용을 합니다. 라이선스는 비상업용 PolyForm Noncommercial입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "obra/superpowers",
+                "rank": 4,
+                "language": "Shell",
+                "license": "MIT",
+                "stars": 306349,
+                "starsToday": 608,
+                "verdict": "try",
+                "def": "코딩 에이전트에게 명세 정리, 계획, 테스트 우선 구현, 하위 에이전트 작업 분담 순서를 따르게 하는 스킬 묶음이자 개발 방법론입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "바로 코드를 쓰지 않고 먼저 무엇을 만들지 묻고, 읽을 만한 분량으로 설계를 보여 준 뒤 승인받은 계획을 하위 에이전트들이 나눠 수행하고 서로 검토합니다."
+                  ],
+                  [
+                    "시작",
+                    "Claude Code, Codex, Cursor, Gemini CLI 등 여러 도구를 지원하며, 도구마다 따로 설치해야 합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "pbakaus/impeccable",
+                "rank": 5,
+                "language": "Rust",
+                "license": "Apache-2.0",
+                "stars": 90394,
+                "starsToday": 1458,
+                "verdict": "try",
+                "def": "AI 코딩 도구가 만드는 프론트엔드 디자인의 상투적인 패턴을 줄이는 디자인 가이드 스킬입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "스킬 1개, 명령 24개, LLM 없이 도는 결정적 검사 규칙 62개를 담았다고 설명합니다."
+                  ],
+                  [
+                    "시작",
+                    "프로젝트 루트에서 `npx impeccable install` 뒤 코딩 도구 안에서 `/impeccable init`을 실행합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "makecindy/cindy",
+                "rank": 6,
+                "language": "TypeScript",
+                "license": "Apache-2.0",
+                "stars": 7406,
+                "starsToday": 1446,
+                "verdict": "experiment",
+                "def": "여러 에이전트 실행 도구와 모델을 하나로 묶어 내 컴퓨터의 실제 파일과 로그인된 앱으로 일을 끝내게 하는 오픈소스 에이전트 앱입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "Claude Code와 Codex를 첫 실행 도구로 지원하고, 더 많은 도구를 붙이는 중이라고 밝힙니다."
+                  ],
+                  [
+                    "주의",
+                    "내 컴퓨터의 실제 파일과 로그인된 앱을 쓰는 만큼, 맡길 작업 범위를 먼저 정해 두는 편이 안전합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "gitroomhq/postiz-app",
+                "rank": 7,
+                "language": "TypeScript",
+                "license": "AGPL-3.0",
+                "stars": 39258,
+                "starsToday": 953,
+                "verdict": "reference",
+                "def": "여러 소셜미디어 게시물을 예약, 자동화, 분석하는 관리 도구로, 클라우드판과 직접 설치판이 있습니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "Next.js와 Redis 기반이며 공개 API, Node.js SDK, n8n 노드를 제공합니다."
+                  ],
+                  [
+                    "주의",
+                    "AGPL-3.0 라이선스입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "affaan-m/ECC",
+                "rank": 8,
+                "language": "JavaScript",
+                "license": "MIT",
+                "stars": 290782,
+                "starsToday": 1183,
+                "verdict": "watch",
+                "def": "Claude Code, Codex, OpenCode 같은 에이전트 실행 도구에 스킬, 기억, 보안 설정, 조사 우선 개발 방식을 묶어 얹는 설정 모음입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "Claude Code에서는 안내형 설치나 플러그인 명령 중 하나로 설치하며, 둘을 겹쳐 설치하지 말라고 안내합니다."
+                  ],
+                  [
+                    "주의",
+                    "저장소는 MIT로 무료이고, 비공개 저장소용 호스팅 앱은 별도 유료 상품입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "HKUDS/DeepTutor",
+                "rank": 9,
+                "language": "Python",
+                "license": "Apache-2.0",
+                "stars": 45706,
+                "starsToday": 1587,
+                "verdict": "watch",
+                "def": "홍콩대 데이터 인텔리전스 연구실이 만든, 학습자에 맞춰 학습 경로와 평가를 짜 주는 오픈소스 AI 튜터링 에이전트입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "문서 검색(RAG), 여러 에이전트, 문제 은행 연습, 학습 일지, 음성 읽기 기능을 담았고 CLI로도 씁니다."
+                  ],
+                  [
+                    "최근",
+                    "10월 19일 v1.6.15에서 학습 경로 변경 검토, 묶음 평가, 튜터링 기억 한도 설정을 더했습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "JetBrains/thinkrail",
+                "rank": 10,
+                "language": "TypeScript",
+                "license": "Apache-2.0",
+                "stars": 3882,
+                "starsToday": 1211,
+                "verdict": "experiment",
+                "def": "JetBrains가 인큐베이터 프로젝트로 내놓은, 오픈소스 코딩 에이전트 pi 중심의 가벼운 IDE입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "작업 공간을 분리하고, 살아 있는 명세와 재사용 스킬로 프로젝트 지식을 쌓아 쓸수록 나아진다고 설명합니다."
+                  ],
+                  [
+                    "주의",
+                    "확장 기능 지원은 아직 개발 중입니다."
+                  ]
+                ]
+              }
+            }
+          ],
+          "sources": [
+            {
+              "title": "GitHub Trending (daily)",
+              "url": "https://github.com/trending?since=daily"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "korea",
+      "kind": "korea",
+      "label": "국내",
+      "title": "AI 인프라 계약과 실적 발표",
+      "stories": [
+        {
+          "id": "korea-brief",
+          "kicker": "국내",
+          "title": "네이버, 삼성전자, LG이노텍, KT",
+          "legal": "company-only",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "k": "네이버",
+                  "text": "브룩필드가 100% 출자한 특수목적법인이 최대 90억 달러(약 12조 원)로 GPU와 데이터센터를 확보해 네이버클라우드에 제공하는 계약을 맺었습니다. 2027년 상반기 55MW로 시작해 2028년 200MW로 늘리며, 네이버는 사용료에 최대 8년 지급보증을 섭니다. 이 계약으로 엔비디아의 지분 투자 선결 조건도 채웠습니다."
+                },
+                {
+                  "k": "삼성전자",
+                  "text": "공정위가 갤럭시 S21·S22와 탭 S8 광고에서 고사양 게임 실행 시 성능이 제한된다는 사실을 알리지 않았다며 과징금 201억 1,400만 원과 시정명령을 내렸습니다. 삼성전자는 발열을 줄이는 최적화 기능이었다며 불복해 소송으로 다투겠다고 밝혔습니다."
+                },
+                {
+                  "k": "LG이노텍",
+                  "text": "3분기 매출이 6조 3,671억 원으로 처음 6조 원을 넘었습니다(공식 실적, 전년 대비 18.6% 증가). 영업이익은 948억 원으로 53.4% 줄었는데, 회사는 원재료 매입과 출하 사이 원·달러 환율 급락을 이유로 들었습니다."
+                },
+                {
+                  "k": "KT",
+                  "text": "여러 AI 모델을 한곳에서 고르고 사용량과 비용을 관리하는 기업용 플랫폼 '토큰팩토리'를 공개하고 30일 출시한다고 밝혔습니다. 오픈라우터와 국내 첫 공식 제휴를 맺었고, 프롬프트 압축으로 토큰을 최대 25% 줄인다고 설명했습니다(발표 주체 주장)."
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "블로터 — 네이버, 브룩필드와 12조 AI 인프라 계약",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=676889"
+            },
+            {
+              "title": "이투데이 — 네이버, 브룩필드와 12조 규모 계약",
+              "url": "https://www.etoday.co.kr/news/view/2640737"
+            },
+            {
+              "title": "파이낸셜뉴스 — 삼성, 갤럭시 GOS 과징금 불복",
+              "url": "https://fnnews.com/news/202610271816500261"
+            },
+            {
+              "title": "한국경제 — 공정위, 갤럭시 GOS 논란에 과징금 200억",
+              "url": "https://www.hankyung.com/article/202610277750i"
+            },
+            {
+              "title": "블로터 — LG이노텍, 분기 첫 매출 6兆",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=676891"
+            },
+            {
+              "title": "EBN — LG이노텍, 3Q 매출 첫 6조 돌파에도 영업익 948억",
+              "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1729352"
+            },
+            {
+              "title": "블로터 — KT, 통합 플랫폼 '토큰팩토리' 공개",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=676840"
+            },
+            {
+              "title": "딜사이트 — KT, 500개 AI 모델 묶은 '토큰팩토리' 공개",
+              "url": "https://dealsite.co.kr/articles/171395"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading",
+      "kind": "reading",
+      "label": "읽을거리",
+      "title": "수요일에 읽을 6편",
+      "dek": "주로 Hacker News에서 골랐습니다. HN 점수는 06:40 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "reads",
+          "kicker": "읽을거리",
+          "title": "수요일에 읽을 6편",
+          "blocks": [
+            {
+              "type": "reads",
+              "items": [
+                {
+                  "title": "Ghostty 1.4.0 릴리스 노트",
+                  "url": "https://ghostty.org/docs/install/release-notes/1-4-0",
+                  "via": "Hacker News",
+                  "why": "놀고 있는 스크롤백을 압축해 메모리를 70~90% 줄이고 Kitty 그래픽 규격을 모두 지원하게 된 터미널 업데이트입니다.",
+                  "hn": {
+                    "id": "50261998",
+                    "points": 508,
+                    "comments": 151
+                  }
+                },
+                {
+                  "title": "Wikipedia's Cleanup of AI-Generated Content",
+                  "url": "https://spectrum.ieee.org/wikipedia-wikiproject-ai-writing-cleanup",
+                  "via": "IEEE Spectrum · Hacker News",
+                  "why": "새 문서와 초안의 15~20%가 AI 작성으로 의심된다는 추정 아래, 위키백과 자원봉사자들이 문체와 가짜 인용을 가려내는 방법을 다룹니다.",
+                  "hn": {
+                    "id": "50257326",
+                    "points": 402,
+                    "comments": 182
+                  }
+                },
+                {
+                  "title": "Classification of Finite Simple Groups Formalized in Lean",
+                  "url": "https://cfsg.axiommath.ai/",
+                  "via": "Axiom · Hacker News",
+                  "why": "유한 단순군 분류 정리의 1세대 증명 전체를 Lean으로 옮겼다는 프로젝트로, 그 과정에서 출판된 논증 하나의 문제도 찾았다고 밝혔습니다.",
+                  "hn": {
+                    "id": "50261647",
+                    "points": 134,
+                    "comments": 30
+                  }
+                },
+                {
+                  "title": "Tailscale SSH: Investigation and remediation update",
+                  "url": "https://tailscale.com/ssh-investigation-update",
+                  "via": "Tailscale · Hacker News",
+                  "why": "Tailscale SSH 권한 상승 문제의 경과와, 패치 전까지 SSH 포워딩을 끄는 등의 임시 조치를 정리했습니다.",
+                  "hn": {
+                    "id": "50264857",
+                    "points": 97,
+                    "comments": 45
+                  }
+                },
+                {
+                  "title": "Why Micron Is Suddenly Ditching 4F² DRAM as Rivals Double Down",
+                  "url": "https://hothardware.com/news/why-micron-is-suddenly-ditching-4f-dram",
+                  "via": "HotHardware · Hacker News",
+                  "why": "삼성·SK하이닉스·CXMT가 4F² DRAM을 밀 때 마이크론이 6F²에 남기로 한 이유를 다룹니다.",
+                  "hn": {
+                    "id": "50245014",
+                    "points": 116,
+                    "comments": 18
+                  }
+                },
+                {
+                  "title": "Stalwart v1.0: 지구상에서 가장 빠른 메일 서버",
+                  "url": "https://news.hada.io/topic?id=36106",
+                  "via": "GeekNews",
+                  "why": "Rust로 만든 메일·협업 서버의 첫 안정판입니다. 이전 버전 저장소는 그대로 열리지 않아 데이터 이전이 필요하고, 성능 비교는 프로젝트 자체 측정입니다."
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "Hacker News front page",
+              "url": "https://news.ycombinator.com/"
+            },
+            {
+              "title": "GeekNews",
+              "url": "https://news.hada.io/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "column",
+      "kind": "column",
+      "label": "AI의 시선",
+      "title": "기계가 검사한 증명, 사람이 읽을 차례",
+      "dek": "AI가 쓴 칼럼입니다. 사실 보도가 아닌 의견입니다.",
+      "stories": [
+        {
+          "id": "column-body",
+          "kicker": "AI의 시선",
+          "title": "기계가 검사한 증명, 사람이 읽을 차례",
+          "blocks": [
+            {
+              "type": "p",
+              "dropcap": true,
+              "text": "이번 주에만 기계가 검사한 증명이 세 건 나왔습니다. 두 AI 회사가 지수 시간 가설을 반증했다는 증명을 Lean으로 올렸고, Axiom은 유한 단순군 분류의 증명 전체를 4천만 줄이 넘는 Lean 코드로 옮겼다고 밝혔습니다. 형식 검증은 논리의 빈틈을 사람보다 확실하게 잡습니다. 그런데 세 건 모두에서 남는 질문은 같습니다. 이 증명을 사람이 이해했는가입니다."
+            },
+            {
+              "type": "p",
+              "text": "Lean이 보증하는 것은 적어 둔 정리가 참이라는 것뿐입니다. 정리를 옮겨 적는 과정에서 원래 질문과 조금 다른 문장을 증명했다면, 검사기는 그 차이를 알려 주지 않습니다. 그래서 수학자들이 요구하는 것은 결과보다 원자료와 설명입니다. 독립 검토를 맡은 연구자들이 '참여는 보증이 아니다'라고 굳이 밝힌 것도 같은 이유로 읽힙니다."
+            },
+            {
+              "type": "p",
+              "text": "위키백과의 AI 문서 정리 작업은 반대편에서 같은 문제를 보여 줍니다. 그럴듯한 문장은 기계가 빠르게 만들지만, 출처가 실제로 그 내용을 뒷받침하는지 확인하는 일은 여전히 사람이 합니다. 만드는 속도와 확인하는 속도의 차이가 커질수록, 확인하는 사람의 시간을 누가 대는지가 중요해집니다. 결과를 낸 쪽이 검토 비용까지 함께 대는 관행이 자리 잡는지 지켜볼 만합니다."
+            },
+            {
+              "type": "pull",
+              "text": "검사기는 참이라고 말해 줄 뿐, 무엇이 참인지는 사람이 읽어야 압니다."
+            },
+            {
+              "type": "p",
+              "text": "밝혀 두면, 이 글을 쓴 Claude를 만든 앤트로픽도 지수 시간 가설 반증을 주장한 당사자입니다. 그래서 어느 쪽 결과가 옳은지에 대한 판단과 예측은 하지 않습니다."
+            },
+            {
+              "type": "ledger"
+            }
+          ],
+          "sources": []
+        }
+      ]
+    }
+  ]
+}
