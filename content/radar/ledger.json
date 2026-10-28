@@ -121,7 +121,10 @@
     "statement": "애플이 10월 28일 행사에서 터치스크린을 갖춘 맥북 프로를 공개한다",
     "probability": 0.8,
     "due": "2026-10-28",
-    "status": "pending"
+    "status": "hit",
+    "resolvedOn": "2026-10-29",
+    "note": "10월 28일 행사에서 14·16인치 터치스크린 OLED 맥북 프로를 공개했습니다.",
+    "evidence": "https://www.macrumors.com/2026/10/28/apple-new-macbook-pro/"
   },
   {
     "id": "2026-10-20-2",
@@ -335,6 +338,30 @@
     "statement": "Tailscale이 10월 31일까지 Tailscale SSH 취약점의 영향 버전과 조치 방법을 담은 보안 권고문을 공개한다",
     "probability": 0.75,
     "due": "2026-10-31",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-29-1",
+    "issued": "2026-10-29",
+    "statement": "애플이 11월 30일까지 터치스크린 맥북 프로의 국내 출시일을 발표한다",
+    "probability": 0.6,
+    "due": "2026-11-30",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-29-2",
+    "issued": "2026-10-29",
+    "statement": "구글이 11월 30일까지 Gemini 4 Carbon을 Gemini API 유료 고객에게 공개한다",
+    "probability": 0.45,
+    "due": "2026-11-30",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-29-3",
+    "issued": "2026-10-29",
+    "statement": "Xreal Aura의 미국 고객 배송이 11월 20일까지 시작된다",
+    "probability": 0.7,
+    "due": "2026-11-20",
     "status": "pending"
   }
 ]

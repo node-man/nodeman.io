@@ -1,0 +1,919 @@
+{
+  "version": 1,
+  "date": "2026-10-29",
+  "publishedAt": "2026-10-29T07:39:28+09:00",
+  "title": "애플 첫 터치 맥북, 구글은 제미나이 4 카본",
+  "lede": "애플이 화면을 손으로 만지는 첫 맥인 OLED 맥북 프로를 공개했습니다. 같은 날 구글은 사이버 보안 성능을 앞세운 Gemini 4 Carbon을 일부 보안 조직에만 먼저 열었고, 마이크로소프트와 알파벳은 클라우드가 이끈 분기 실적을 내놨습니다.",
+  "raw": "content/radar/raw/2026-10-29.json",
+  "rawCollectedAt": "2026-10-28T21:38:51.143Z",
+  "cover": {
+    "big": "맥에,\n터치"
+  },
+  "quick": [
+    "**터치스크린 맥북 프로.** 14·16인치 탠덤 OLED 화면에 터치와 다이내믹 아일랜드를 넣었고, 2,899달러부터 11월 6일 출시됩니다.",
+    "**Gemini 4 Carbon.** 구글이 보안 취약점 찾기와 장시간 에이전트 작업에 강하다고 밝힌 모델로, 지금은 검증된 보안 조직만 씁니다.",
+    "**MS·알파벳 실적.** 애저 매출이 48%, 구글 클라우드 매출이 1년 전의 두 배 넘게 늘었습니다(공식 실적).",
+    "**국내 금융권 해킹 확산.** 대신증권 고객 3만 8,490명의 정보가 유출됐고, 빗썸과 미래에셋자산운용도 침해 사고를 신고했습니다.",
+    "**구글·애플 과징금 637억 원.** 방미통위가 인앱결제 강제를 이유로 앱 마켓 금지행위 조항을 처음 적용했습니다."
+  ],
+  "sections": [
+    {
+      "id": "lead",
+      "kind": "lead",
+      "label": "커버스토리",
+      "title": "애플, 첫 터치스크린 맥 공개",
+      "dek": "여러 매체가 함께 다룬 오늘의 최대 화제입니다.",
+      "stories": [
+        {
+          "id": "touch-macbook-pro",
+          "kicker": "애플 · 맥",
+          "title": "애플, 터치스크린 OLED 맥북 프로 공개… 2,899달러부터 11월 6일 출시",
+          "hot": {
+            "count": 6,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "애플이 10월 28일(현지 시각) 로스앤젤레스 행사에서 화면을 손으로 조작할 수 있는 첫 맥, 'PROLED XDR 디스플레이를 갖춘 맥북 프로'를 공개했습니다. 14인치와 16인치 두 가지이며, 사전 주문은 발표 당일 시작됐고 출시일은 11월 6일입니다. 블룸버그는 스티브 잡스 시절부터 이어 온 터치 맥 반대 입장을 애플이 뒤집은 결정이라고 평가했습니다."
+            },
+            {
+              "type": "p",
+              "text": "**화면과 디자인.** 두 겹의 OLED를 쌓은 탠덤 OLED 패널을 썼고, 화면 위 노치 대신 아이폰처럼 다이내믹 아일랜드가 들어갔습니다. 터치로 스크롤, 확대, 그리기, 끌어다 놓기, 창 배치를 할 수 있고 키보드·트랙패드와 함께 씁니다. 애플은 터치할 때 화면이 덜 흔들리도록 경첩을 새로 설계했다고 밝혔습니다. 무게는 14인치가 약 1.4kg, 16인치가 약 1.8kg으로 이전보다 가벼워졌고, 뒷면 애플 로고에 불이 들어오며 스피커는 6개입니다."
+            },
+            {
+              "type": "p",
+              "text": "**칩과 가격.** 새 칩이 아니라 지난 3월에 나온 M5 Pro와 M5 Max를 그대로 쓰고, 통합 메모리는 최대 128GB입니다. 미국 시작가는 14인치 2,899달러, 16인치 3,399달러로, Macworld는 같은 칩의 터치 없는 모델보다 400달러 비싸다고 비교했습니다. The Verge 집계로는 모든 옵션을 고른 최고 사양이 14,549달러입니다. 국내 출시일과 가격은 아직 나오지 않았습니다."
+            },
+            {
+              "type": "p",
+              "text": "**애플의 설명.** 존 터너스 CEO는 Wired 인터뷰에서 맥은 여전히 트랙패드와 키보드 중심의 기기이고, 터치는 그 옆에서 쓰기 편한 보조 수단이라는 취지로 말했습니다. 애플은 여러 외부 앱의 터치 대응 업데이트가 연내 나온다고 밝혔고, 애플 펜슬 지원 여부는 언급하지 않았습니다."
+            },
+            {
+              "type": "stats",
+              "items": [
+                {
+                  "value": "2,899달러",
+                  "label": "14인치 시작가 (미국)"
+                },
+                {
+                  "value": "3,399달러",
+                  "label": "16인치 시작가 (미국)"
+                },
+                {
+                  "value": "약 1.4kg",
+                  "label": "14인치 무게"
+                },
+                {
+                  "value": "11월 6일",
+                  "label": "출시일"
+                }
+              ]
+            },
+            {
+              "type": "unknowns",
+              "title": "아직 모르는 것",
+              "items": [
+                "국내 출시일과 가격",
+                "탠덤 OLED 화면의 실사용 배터리 시간과 외부 측정 밝기",
+                "주요 앱이 터치 조작에 맞춰 바뀌는 속도"
+              ]
+            }
+          ],
+          "ai": {
+            "kind": "opinion",
+            "stance": "터치는 덤이고, 진짜 변화는 화면입니다",
+            "confidence": 2,
+            "points": [
+              {
+                "k": "읽는 법",
+                "v": "칩은 그대로 두고 화면과 입력만 바꿨습니다. 400달러 차이는 성능이 아니라 OLED 화면과 무게 값으로 보는 편이 정확합니다."
+              },
+              {
+                "k": "사는 쪽에서",
+                "v": "터치 대응 앱이 아직 적은 만큼, 화면 품질이나 가벼운 무게가 필요한 사람이 아니라면 앱 생태계가 따라오는 것을 보고 정해도 늦지 않습니다."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "title": "MacRumors — Apple Announces OLED MacBook Pro With Touch Display",
+              "url": "https://www.macrumors.com/2026/10/28/apple-new-macbook-pro/"
+            },
+            {
+              "title": "Macworld — Touchscreen MacBook Pro guide",
+              "url": "https://www.macworld.com/article/2931833/touchscreen-macbook-pro-guide-design-processor-specs-release.html"
+            },
+            {
+              "title": "9to5Mac — Apple announces all-new MacBook Pro with PROLED XDR display",
+              "url": "https://9to5mac.com/2026/10/28/apple-announces-redesigned-macbook-pro-its-first-touchscreen-mac/"
+            },
+            {
+              "title": "TechCrunch — Apple launches its new touchscreen MacBook Pro",
+              "url": "https://techcrunch.com/2026/10/28/apple-launches-its-new-touchscreen-macbook-pro/"
+            },
+            {
+              "title": "The Verge — Apple charges $14,549 for a fully specced touchscreen MacBook Pro",
+              "url": "https://www.theverge.com/tech/1021308/apple-touchscreen-macbook-pro-proled-xdr-fully-specced"
+            },
+            {
+              "title": "Techmeme — Wired interview with John Ternus",
+              "url": "https://www.techmeme.com/261028/p40#a261028p40"
+            },
+            {
+              "title": "블로터 — 애플, 첫 터치스크린 맥북 공개",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=677026"
+            },
+            {
+              "title": "GeekNews — PROLED XDR 디스플레이와 터치를 탑재한 MacBook Pro",
+              "url": "https://news.hada.io/topic?id=36179"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "headlines",
+      "kind": "headlines",
+      "label": "헤드라인",
+      "title": "여러 매체가 함께 다룬 이야기",
+      "stories": [
+        {
+          "id": "msft-goog-earnings",
+          "kicker": "실적 · 클라우드",
+          "title": "마이크로소프트·알파벳 분기 실적… 애저 48%, 구글 클라우드 두 배 성장",
+          "hot": {
+            "count": 4,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "**마이크로소프트.** 2027 회계연도 1분기(7~9월) 매출이 923억 달러로 1년 전보다 19% 늘었고, 애저 매출은 48% 늘어난 332억 달러였습니다(공식 실적). 이번 분기부터 실적을 '에이전트·인프라'(768억 달러)와 '기기·소비자'(155억 달러) 두 부문으로 나눠 발표했습니다. TechCrunch와 Yahoo Finance는 이번 분기 OpenAI에서 받은 돈이 수익 배분을 포함해 약 100억 달러로 전체 매출의 11% 수준이라고 전했습니다."
+            },
+            {
+              "type": "p",
+              "text": "**알파벳.** 3분기 매출은 1,276억 달러로 25% 늘었고, 구글 클라우드 매출은 307억 달러로 1년 전 152억 달러의 두 배를 넘었습니다(공식 실적). 유튜브 광고 매출은 112억 달러로 9% 늘었습니다. 순다르 피차이 CEO는 AI 기능 덕분에 검색 질의 증가율이 5년 만에 가장 높았다고 밝혔습니다(발표 주체 주장). 데이터센터 투자가 커지면서 분기 잉여현금흐름은 약 91억 달러 적자였습니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "Techmeme — Microsoft reports Q1 revenue up 19% YoY to $92.3B",
+              "url": "https://www.techmeme.com/261028/p48#a261028p48"
+            },
+            {
+              "title": "Yahoo Finance — Microsoft earnings live",
+              "url": "https://finance.yahoo.com/markets/stocks/live/microsoft-earnings-live-microsoft-beats-q1-expectations-on-top-and-bottom-line-on-ai-growth-204510452.html"
+            },
+            {
+              "title": "TechCrunch — Microsoft recorded $10 billion in revenue from OpenAI",
+              "url": "https://techcrunch.com/2026/10/28/microsoft-recorded-10-billion-in-revenue-from-openai/"
+            },
+            {
+              "title": "9to5Google — Alphabet reports Q3 2026 revenue of $127.6 billion",
+              "url": "https://9to5google.com/2026/10/28/alphabet-q3-2026-earnings/"
+            },
+            {
+              "title": "Fortune — Alphabet's Google Cloud revenue doubles to $31 billion",
+              "url": "https://fortune.com/2026/10/28/alphabet-google-stock-drops-cloud-revenue-doubles-free-cash-flow-negative/"
+            },
+            {
+              "title": "디지털투데이 — 마이크로소프트, 애저 클라우드 분기 매출 48% 껑충",
+              "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=710793"
+            }
+          ]
+        },
+        {
+          "id": "gemini-4-carbon",
+          "kicker": "구글 · AI 모델",
+          "title": "구글 'Gemini 4 Carbon' 공개… 보안 조직에 먼저, 일반 공개는 미정",
+          "hot": {
+            "count": 3,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "구글이 10월 28일 새 최상위 모델 Gemini 4 Carbon을 발표했습니다. 2주쯤 전에 낸 Gemini 4 Argon의 후속으로, 구글은 취약점 찾기와 며칠씩 이어지는 긴 에이전트 작업에서 크게 나아졌다고 설명합니다. 자체 측정으로 안전한 코드를 만드는 성공률은 두 배 넘게 올랐고, 근거 없는 주장은 절반쯤으로 줄었다고 밝혔습니다(발표 주체 주장). 외부 평가 기관 Artificial Analysis의 종합 지수 v5에서는 59점으로 1위에 올랐습니다."
+            },
+            {
+              "type": "p",
+              "text": "지금은 구글의 Fairwind 프로그램에 참여한 일부 사이버 방어 조직만 쓸 수 있고, 개발자·기업·일반 사용자 공개는 '가능한 한 빨리'라고만 밝혔습니다. 공개 API는 아직 없습니다. 예고한 가격은 100만 토큰당 입력 2달러, 출력 10달러(도입가)이며 이후 각각 4달러, 20달러로 오릅니다. Artificial Analysis 측정에서는 정확도가 Argon보다 올랐지만 환각 비율도 4%에서 11%로 높아졌습니다."
+            }
+          ],
+          "ai": {
+            "kind": "none",
+            "reason": "이 글을 쓴 Claude는 앤트로픽이 만든 AI이고, 이 발표의 비교 대상에 앤트로픽 모델이 포함돼 있어 성능에 대한 평가는 하지 않습니다."
+          },
+          "sources": [
+            {
+              "title": "Google — Gemini 4 Carbon: our next frontier model",
+              "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/"
+            },
+            {
+              "title": "VentureBeat — Google unveils Gemini 4 Carbon",
+              "url": "https://venturebeat.com/technology/google-unveils-gemini-4-carbon-retaking-the-worlds-no-1-spot-on-updated-harder-benchmarks-but-access-is-limited"
+            },
+            {
+              "title": "The Verge — Google launches Gemini 4 Carbon",
+              "url": "https://www.theverge.com/tech/1021339/google-gemini-4-carbon-cybersecurity-frontier"
+            },
+            {
+              "title": "GeekNews — Gemini 4 Carbon",
+              "url": "https://news.hada.io/topic?id=36178"
+            }
+          ]
+        },
+        {
+          "id": "korea-finance-breaches",
+          "kicker": "보안 · 금융",
+          "title": "국내 금융권 해킹 확산… 대신증권 고객 3만 8천여 명 정보 유출, 빗썸도 침해",
+          "hot": {
+            "count": 4,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "대신증권이 고객 3만 8,490명의 이름, 이메일, 주소, 휴대전화 번호, 계좌번호 등이 유출됐다고 10월 28일 밝혔습니다. 계좌번호와 휴대전화 번호는 암호화된 상태였고, 회사는 비대면 계좌 개설과 연결된 서버에서 비정상 접근을 확인했으며 핵심 업무 시스템 침입이나 2차 피해 정황은 없다고 설명했습니다. 손해를 본 고객에게는 법령에 따라 배상하겠다고 했습니다."
+            },
+            {
+              "type": "p",
+              "text": "같은 날 가상자산 거래소 빗썸은 사내 모바일 그룹웨어에 외부인이 접근했다며 고객 정보 포함 여부를 확인하고 있다고 밝혔고, 미래에셋자산운용도 일부 웹 시스템의 침해 사고를 신고했습니다. 9월 말 은행들을 시작으로 이어진 공격이 증권·자산운용·가상자산 업계로 번진 셈입니다. 국가안보실은 2차 피해 차단을 주문했고 금융위원회는 빗썸 긴급 점검에 나섰습니다. 공격 주체는 아직 확인되지 않았습니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "TechCrunch — South Korea's financial industry hit by fresh wave of cyberattacks",
+              "url": "https://techcrunch.com/2026/10/28/south-koreas-financial-industry-hit-by-fresh-wave-of-cyberattacks/"
+            },
+            {
+              "title": "The Korea Times — Bithumb, Mirae Asset, Daishin join growing list of cyberattack victims",
+              "url": "https://www.koreatimes.co.kr/business/banking-finance/20261028/cover-story-bithumb-mirae-asset-daishin-join-growing-list-of-cyberattack-victims"
+            },
+            {
+              "title": "한국일보 — 대신증권 개인정보 3만8천여 건 유출… 미래에셋운용·빗썸도 뚫렸다",
+              "url": "https://www.hankookilbo.com/news/article/A2026102809050000341"
+            },
+            {
+              "title": "전자신문 — 은행 이어 증권·보험·코인까지 뚫렸다",
+              "url": "https://www.etnews.com/20261028000394"
+            },
+            {
+              "title": "전자신문 — 금융위, 빗썸 해킹사고 긴급점검",
+              "url": "https://www.etnews.com/20261028000426"
+            }
+          ]
+        },
+        {
+          "id": "xreal-aura",
+          "kicker": "구글 · XR 기기",
+          "title": "안드로이드 XR 첫 안경 'Xreal Aura' 출시… 연말까지 1,099달러",
+          "hot": {
+            "count": 3,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Xreal이 구글의 안드로이드 XR 운영체제를 쓰는 첫 안경 Aura의 주문을 10월 28일 받기 시작했습니다. 안경은 95g이 안 되고, 퀄컴 Snapdragon Reality Elite 칩과 배터리는 선으로 연결한 주머니 크기 본체에 넣었습니다. 시야각은 70도, 화면은 소니 마이크로 OLED(1200p, 120Hz)이며 Gemini 비서와 구글 플레이 앱을 쓸 수 있습니다. 노트북을 USB-C로 연결해 큰 가상 화면 여러 개로 펼치는 기능도 있습니다."
+            },
+            {
+              "type": "p",
+              "text": "가격은 12GB·256GB 모델이 12월까지 1,099달러이고 이후 1,279달러입니다. 미국, 캐나다, 일본, 한국에서 판매하며 배송은 11월 중순 시작될 예정입니다. 국내 가격은 아직 공개되지 않았습니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "PR Newswire — XREAL AURA Launches as the First Wired XR Glasses Powered by Android XR",
+              "url": "https://www.prnewswire.com/news-releases/xreal-aura-launches-as-the-first-wired-xr-glasses-powered-by-android-xr-302921776.html"
+            },
+            {
+              "title": "Tom's Guide — Xreal's Android XR-powered Aura smart glasses just launched for $1,099",
+              "url": "https://www.tomsguide.com/computing/smart-glasses/xreals-android-xr-powered-aura-smart-glasses-just-launched-for-usd1-099-thanks-to-a-limited-time-offer"
+            },
+            {
+              "title": "TechCrunch — Xreal Aura is a new wired headset powered by Android XR",
+              "url": "https://techcrunch.com/2026/10/28/xreal-aura-is-a-new-wired-headset-powered-by-android-xr/"
+            },
+            {
+              "title": "Techmeme — Google and Xreal launch the Xreal Aura",
+              "url": "https://www.techmeme.com/261028/p43#a261028p43"
+            }
+          ]
+        },
+        {
+          "id": "amazon-echo-2026",
+          "kicker": "아마존 · 스마트홈",
+          "title": "아마존, 첫 디지털 액자와 수면 감지 알람시계 등 에코 신제품 공개",
+          "hot": {
+            "count": 3,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "아마존이 10월 28일 Alexa+를 넣은 에코 신제품 다섯 가지를 공개했습니다. 처음 내놓는 디지털 액자 Alexa Photo Frame(199.99달러부터)은 10인치 터치 화면에 아마존 포토 사진을 띄우고 사진에 음성 메모를 붙일 수 있습니다. 알람시계 Echo Time(199.99달러)은 초음파 센서로 수면 단계를 감지해 설정 시각 전 얕은 잠일 때 빛으로 깨워 줍니다."
+            },
+            {
+              "type": "p",
+              "text": "16인치 화면의 Echo Show 16(499.99달러)은 카메라로 집 안을 지도처럼 그려 스마트홈 기기 위치를 보여 주는 홈 맵 기능을 지원하며 연내 배송됩니다. 스마트홈 허브와 eero 와이파이 확장 기능을 넣은 새 Echo Dot(99.99달러)과 카메라를 단 Echo Studio(249.99달러)도 나왔습니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "TechCrunch — Amazon debuts the Alexa Photo Frame and Echo Time smart clock",
+              "url": "https://techcrunch.com/2026/10/28/amazon-debuts-the-alexa-photo-frame-and-echo-time-smart-clock-plus-other-upgraded-devices/"
+            },
+            {
+              "title": "Engadget — All the Amazon Echo devices announced today",
+              "url": "https://www.engadget.com/2299032/all-amazon-echo-news-october-2026/"
+            },
+            {
+              "title": "iClarified — Amazon Introduces Echo Show 16, Echo Time, Alexa Photo Frame, and More",
+              "url": "https://www.iclarified.com/103152/amazon-introduces-echo-show-16-echo-time-alexa-photo-frame-and-more"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "github",
+      "kind": "github",
+      "label": "GitHub 트렌딩",
+      "title": "에이전트 IDE와 공식 스킬",
+      "dek": "일간 트렌딩 상위 저장소를 각 README 기준으로 요약했습니다. 숫자는 06:40 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "github-trending",
+          "kicker": "GitHub",
+          "title": "에이전트 IDE와 공식 스킬",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "JetBrains의 코딩 에이전트 IDE thinkrail이 1위에 올랐고, 오늘 스타를 가장 많이 받은 저장소는 4위 DeepTutor(2,376개)였습니다. 코딩 에이전트의 화면 디자인을 다듬는 스킬 셋(ai-design-skills, hallmark, impeccable)이 오늘도 상위권에 머물렀고, Expo 팀이 직접 낸 공식 스킬 모음도 12위로 들어왔습니다."
+            },
+            {
+              "type": "share",
+              "title": "상위 3개와 나머지가 받은 오늘의 스타",
+              "items": [
+                {
+                  "label": "thinkrail",
+                  "value": 1075
+                },
+                {
+                  "label": "ai-design-skills",
+                  "value": 1938
+                },
+                {
+                  "label": "superpowers",
+                  "value": 1096
+                },
+                {
+                  "label": "나머지 9개",
+                  "value": 10929
+                }
+              ]
+            },
+            {
+              "type": "bars",
+              "title": "오늘 받은 스타 · 2~12위",
+              "unit": "개",
+              "items": [
+                {
+                  "label": "ai-design-skills",
+                  "value": 1938
+                },
+                {
+                  "label": "superpowers",
+                  "value": 1096
+                },
+                {
+                  "label": "DeepTutor",
+                  "value": 2376
+                },
+                {
+                  "label": "macro",
+                  "value": 106
+                },
+                {
+                  "label": "hallmark",
+                  "value": 2109
+                },
+                {
+                  "label": "impeccable",
+                  "value": 1471
+                },
+                {
+                  "label": "cindy",
+                  "value": 740
+                },
+                {
+                  "label": "openbot",
+                  "value": 1053
+                },
+                {
+                  "label": "jailbreaks",
+                  "value": 1478
+                },
+                {
+                  "label": "LinkSwift",
+                  "value": 1380
+                },
+                {
+                  "label": "skills",
+                  "value": 216
+                }
+              ]
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "JetBrains/thinkrail",
+                "rank": 1,
+                "language": "TypeScript",
+                "license": "Apache-2.0",
+                "stars": 4960,
+                "starsToday": 1075,
+                "verdict": "experiment",
+                "def": "JetBrains가 인큐베이터 프로젝트로 내놓은, 오픈소스 코딩 에이전트 pi 중심의 가벼운 IDE입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "작업을 별도 작업 공간으로 나누고, 살아 있는 명세와 재사용 스킬로 프로젝트 지식을 쌓아 쓸수록 나아진다고 설명합니다."
+                  ],
+                  [
+                    "주의",
+                    "확장 기능 지원은 아직 개발 중이라고 밝힙니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "elayadesign/ai-design-skills",
+                "rank": 2,
+                "language": null,
+                "license": "MIT",
+                "stars": 11007,
+                "starsToday": 1938,
+                "verdict": "try",
+                "def": "Claude Code, Cursor, Codex 같은 AI 코딩 도구에 넣어 쓰는 디자인 스킬 모음입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "랜딩 페이지를 처음부터 만드는 스킬이 중심으로, 요구 사항 질문, 페이지 구조, 전환용 문구, 글꼴·간격·모션 규칙까지 다룹니다."
+                  ],
+                  [
+                    "시작",
+                    "스킬 폴더를 `.claude/skills/`에 복사하거나 `SKILL.md`를 각 도구의 규칙 파일에 붙여 넣습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "obra/superpowers",
+                "rank": 3,
+                "language": "Shell",
+                "license": "MIT",
+                "stars": 307357,
+                "starsToday": 1096,
+                "verdict": "try",
+                "def": "코딩 에이전트에게 명세 정리, 계획, 테스트 우선 구현, 하위 에이전트 작업 분담 순서를 따르게 하는 스킬 묶음이자 개발 방법론입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "바로 코드를 쓰지 않고 먼저 무엇을 만들지 묻고, 설계를 보여 준 뒤 승인받은 계획을 하위 에이전트들이 나눠 수행하고 서로 검토합니다."
+                  ],
+                  [
+                    "시작",
+                    "Claude Code, Codex, Cursor, Gemini CLI 등 여러 도구를 지원하며 도구마다 따로 설치합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "HKUDS/DeepTutor",
+                "rank": 4,
+                "language": "Python",
+                "license": "Apache-2.0",
+                "stars": 47832,
+                "starsToday": 2376,
+                "verdict": "watch",
+                "def": "홍콩대 데이터 인텔리전스 연구실이 만든, 학습자에 맞춰 학습 경로와 평가를 짜 주는 오픈소스 AI 튜터링 에이전트입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "문서 검색(RAG), 여러 에이전트, 문제 은행 연습, 학습 일지, 음성 읽기 기능을 담았고 CLI로도 씁니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "macro-inc/macro",
+                "rank": 5,
+                "language": "Rust",
+                "license": "AGPL-3.0",
+                "stars": 5370,
+                "starsToday": 106,
+                "verdict": "watch",
+                "def": "이메일, 메신저, 문서, 할 일, 에이전트, CRM을 하나의 화면과 공유 기억으로 묶은 팀용 업무 공간입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "모든 항목을 @로 서로 연결하고 검색할 수 있어, 사람과 에이전트가 도구를 오가지 않아도 된다고 설명합니다."
+                  ],
+                  [
+                    "구성",
+                    "SolidJS와 Rust로 만들었고, 개발팀이 2년간 직접 써 왔다고 밝힙니다."
+                  ],
+                  [
+                    "주의",
+                    "AGPL-3.0 라이선스이며, 가입형 클라우드 서비스도 함께 운영합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "Nutlope/hallmark",
+                "rank": 6,
+                "language": "CSS",
+                "license": "MIT",
+                "stars": 40580,
+                "starsToday": 2109,
+                "verdict": "try",
+                "def": "코딩 에이전트가 만든 웹 화면이 AI가 만든 티를 내지 않도록 막아 주는 디자인 스킬입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "48개 테마 가운데 세 가지를 골라 페이지를 짜고, 실제 브라우저에서 기계가 만든 듯한 패턴을 검사한 뒤 별도 검토 에이전트가 마지막 판정을 내립니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "pbakaus/impeccable",
+                "rank": 7,
+                "language": "Rust",
+                "license": "Apache-2.0",
+                "stars": 92441,
+                "starsToday": 1471,
+                "verdict": "try",
+                "def": "AI 코딩 도구가 만드는 프론트엔드 디자인의 상투적인 패턴을 줄이는 디자인 가이드 스킬입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "스킬 1개, 명령 24개, LLM 없이 도는 결정적 검사 규칙 62개를 담았다고 설명합니다."
+                  ],
+                  [
+                    "시작",
+                    "프로젝트 루트에서 `npx impeccable install` 뒤 코딩 도구 안에서 `/impeccable init`을 실행합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "makecindy/cindy",
+                "rank": 8,
+                "language": "TypeScript",
+                "license": "Apache-2.0",
+                "stars": 8016,
+                "starsToday": 740,
+                "verdict": "experiment",
+                "def": "여러 에이전트 실행 도구와 모델을 하나로 묶어 내 컴퓨터의 실제 파일과 로그인된 앱으로 일을 끝내게 하는 오픈소스 에이전트 앱입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "Claude Code와 Codex를 첫 실행 도구로 지원하고, 더 많은 도구를 붙이는 중이라고 밝힙니다."
+                  ],
+                  [
+                    "주의",
+                    "내 컴퓨터의 실제 파일과 로그인된 앱을 쓰는 만큼, 맡길 작업 범위를 먼저 정해 두는 편이 안전합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "nightly-labs/openbot",
+                "rank": 9,
+                "language": "TypeScript",
+                "license": "NOASSERTION",
+                "stars": 3171,
+                "starsToday": 1053,
+                "verdict": "experiment",
+                "def": "Codex, Claude Code, Grok 등 여러 에이전트에게 각자 작업 공간과 작업 큐를 주는 로컬 데스크톱 앱입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "에이전트별 작업 큐, 파일 전달, 내장 브라우저, 에이전트 사이 메시지를 한 앱에서 다룹니다."
+                  ],
+                  [
+                    "주의",
+                    "개발 미리보기 단계라 에이전트가 승인 없이 파일 수정, 명령 실행, 네트워크 사용을 합니다. 라이선스는 비상업용 PolyForm Noncommercial입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "togg53192-cmd/jailbreaks",
+                "rank": 10,
+                "language": null,
+                "license": null,
+                "stars": 6976,
+                "starsToday": 1478,
+                "verdict": "watch",
+                "def": "여러 AI 모델이 원래 지침을 벗어나게 만드는 시스템 프롬프트와 설정 파일 32개를 모았다는 저장소입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "오픈 가중치 모델과 상용 모델 26종 이상을 대상으로 하며, 이 글을 쓴 Claude도 대상 목록에 들어 있습니다."
+                  ],
+                  [
+                    "주의",
+                    "라이선스가 없고, 모델 제공사 이용 약관을 어길 수 있는 내용입니다. 이해충돌이 있어 쓸모에 대한 평가는 하지 않습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "hmjz100/LinkSwift",
+                "rank": 11,
+                "language": "JavaScript",
+                "license": "AGPL-3.0",
+                "stars": 34360,
+                "starsToday": 1380,
+                "verdict": "reference",
+                "def": "바이두, 알리윈 등 중국 클라우드 드라이브 8곳의 파일 직접 다운로드 주소를 뽑아 주는 브라우저 사용자 스크립트입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "Tampermonkey 같은 사용자 스크립트 관리자에 설치하며, aria2·Motrix 같은 다운로드 도구와 연결해 씁니다."
+                  ],
+                  [
+                    "주의",
+                    "AGPL-3.0이며, 각 클라우드 서비스의 이용 약관과 충돌할 수 있습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "expo/skills",
+                "rank": 12,
+                "language": "Shell",
+                "license": "MIT",
+                "stars": 3528,
+                "starsToday": 216,
+                "verdict": "try",
+                "def": "Expo 팀이 직접 낸, AI 에이전트가 Expo 앱을 만들고 배포·업그레이드·디버깅하도록 돕는 공식 스킬 모음입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "Claude Code와 Codex는 플러그인으로, Cursor·OpenCode 등은 `npx skills@latest add expo/skills`로 설치합니다."
+                  ],
+                  [
+                    "구성",
+                    "Expo 문서와 CLI가 기준이고, 스킬은 에이전트가 이를 맞게 쓰도록 언제 어떤 API와 제약을 고려할지 알려 줍니다."
+                  ]
+                ]
+              }
+            }
+          ],
+          "sources": [
+            {
+              "title": "GitHub Trending (daily)",
+              "url": "https://github.com/trending?since=daily"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "korea",
+      "kind": "korea",
+      "label": "국내",
+      "title": "과징금, 메모리 호황, 부품 실적",
+      "stories": [
+        {
+          "id": "korea-brief",
+          "kicker": "국내",
+          "title": "방미통위, SK하이닉스, 삼성전기, LG전자",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "k": "방미통위",
+                  "text": "인앱결제 강제와 앱 심사 지연을 이유로 구글에 429억 원, 애플에 208억 1,000만 원의 과징금과 시정명령을 의결했습니다. 2021년 전기통신사업법에 넣은 앱 마켓 금지행위 조항을 처음 적용한 사례이며, 애플은 국내 개발사에만 부가세 포함 가격으로 수수료를 매긴 차별도 지적받았습니다. 두 회사는 한 달 안에 이행 계획을 내야 합니다."
+                },
+                {
+                  "k": "SK하이닉스",
+                  "text": "3분기 매출이 104조 6,155억 원으로 처음 분기 100조 원을 넘었고 영업이익은 83조 3,338억 원이었습니다(공식 실적). 실적 발표에서 메모리 공급 부족이 2030년까지 이어질 것으로 보고, 2029년까지 D램과 HBM 물량이 사실상 다 팔린 상태라고 밝혔습니다(발표 주체 주장)."
+                },
+                {
+                  "k": "삼성전기",
+                  "text": "3분기 매출 3조 7,633억 원, 영업이익 6,910억 원으로 모두 역대 최대입니다(공식 실적, 영업이익 전년 대비 165% 증가). AI 데이터센터용 MLCC와 서버·AI 가속기용 FC-BGA 기판 수요가 성장을 이끌었습니다."
+                },
+                {
+                  "k": "LG전자",
+                  "text": "3분기 매출 23조 8,241억 원, 영업이익 7,819억 원으로 각각 8.9%, 13.5% 늘었습니다(공식 실적). TV 사업이 흑자로 돌아섰고, AI 데이터센터 냉각 솔루션 수주는 올해 누적 약 3조 원이 됐습니다. 가전과 냉난방공조 사업 이익은 줄었습니다."
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "문화일보 — 구글 429억원·애플 208억원 과징금",
+              "url": "https://www.munhwa.com/article/11627016"
+            },
+            {
+              "title": "인벤 — 구글 429억·애플 208억 과징금, '인앱결제 강제' 첫 제재",
+              "url": "https://www.inven.co.kr/webzine/news/?news=322677"
+            },
+            {
+              "title": "블로터 — 3년 미룬 구글·애플 인앱결제 제재",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=676986"
+            },
+            {
+              "title": "아주경제 — SK하이닉스 컨콜 종합",
+              "url": "https://www.ajunews.com/view/20261028105814775"
+            },
+            {
+              "title": "뉴스핌 — SK하이닉스 \"메모리 공급 부족 2030년까지 지속 전망\"",
+              "url": "https://www.newspim.com/news/view/20261028000283"
+            },
+            {
+              "title": "ZDNet Korea — 삼성전기, 3분기 영업익 165% 증가",
+              "url": "https://zdnet.co.kr/view/?no=20261028122201"
+            },
+            {
+              "title": "아주경제 — 삼성전기, 3분기 영업익 6910억 '역대 최대'",
+              "url": "https://www.ajunews.com/view/20261028133434203"
+            },
+            {
+              "title": "ZDNet Korea — LG전자, 3분기 영업익 13.5%↑",
+              "url": "https://zdnet.co.kr/view/?no=20261028145637"
+            },
+            {
+              "title": "EBN — LG전자 컨콜 종합",
+              "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1729570"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading",
+      "kind": "reading",
+      "label": "읽을거리",
+      "title": "목요일에 읽을 6편",
+      "dek": "주로 Hacker News에서 골랐습니다. HN 점수는 06:40 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "reads",
+          "kicker": "읽을거리",
+          "title": "목요일에 읽을 6편",
+          "blocks": [
+            {
+              "type": "reads",
+              "items": [
+                {
+                  "title": "Apple's git still trusts the compromised eMudhra certificates",
+                  "url": "https://emudhra.we-have-a-problem.com/apple.html",
+                  "via": "Hacker News",
+                  "why": "애플이 침해된 eMudhra 중간 인증서를 차단한 지 열흘이 지났지만, macOS에 기본으로 든 Git 같은 명령줄 도구는 별도 인증서 묶음을 써서 여전히 받아들인다는 점을 재현해 보인 글입니다.",
+                  "hn": {
+                    "id": "50271640",
+                    "points": 966,
+                    "comments": 366
+                  }
+                },
+                {
+                  "title": "Emacs Turns 50",
+                  "url": "https://www.technologyreview.com/2026/10/20/1145399/emacs-turns-50/",
+                  "via": "MIT Technology Review · Hacker News",
+                  "why": "1976년 MIT AI 연구소에서 시작한 편집기 Emacs의 50년과, 그것이 GNU 프로젝트와 자유 소프트웨어 운동으로 이어진 과정을 돌아봅니다.",
+                  "hn": {
+                    "id": "50273171",
+                    "points": 362,
+                    "comments": 156
+                  }
+                },
+                {
+                  "title": "The Grid, a factory-scale robot that builds PCBs on demand",
+                  "url": "https://www.circuithub.com/post/unveiling-the-grid",
+                  "via": "CircuitHub · Hacker News",
+                  "why": "회로 기판 조립을 공장 규모의 로봇 한 대로 자동화해 주문 생산 기간을 줄이겠다는 CircuitHub의 설비 소개입니다.",
+                  "hn": {
+                    "id": "50243060",
+                    "points": 361,
+                    "comments": 178
+                  }
+                },
+                {
+                  "title": "Dayjob: Tax – evaluating AI agents on 50 professional tax assignments",
+                  "url": "https://surgehq.ai/blog/dayjob-tax",
+                  "via": "Surge AI · Hacker News",
+                  "why": "실제 세무 실무를 본뜬 과제 50개로 AI 에이전트가 전문직 업무를 끝까지 해내는지 재는 벤치마크입니다.",
+                  "hn": {
+                    "id": "50275626",
+                    "points": 159,
+                    "comments": 87
+                  }
+                },
+                {
+                  "title": "Nvidia Nemotron 3.5 Transcribe: open ASR for 40 languages",
+                  "url": "https://huggingface.co/blog/nvidia/nemotron-transcribe-granary",
+                  "via": "Hugging Face · Hacker News",
+                  "why": "엔비디아가 40개 언어를 받아 적는 음성 인식 모델을 공개 모델로 내놨습니다. 음성 AI를 직접 돌리려는 팀이 비교해 볼 만합니다.",
+                  "hn": {
+                    "id": "50275128",
+                    "points": 92,
+                    "comments": 16
+                  }
+                },
+                {
+                  "title": "Gforth 1.0 - 확장 가능한 문법과 멀티코어 멀티태스킹 지원",
+                  "url": "https://news.hada.io/topic?id=36181",
+                  "via": "GeekNews",
+                  "why": "GNU의 Forth 구현이 첫 1.0판을 냈습니다. 문법 확장과 멀티코어 멀티태스킹을 지원합니다."
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "Hacker News front page",
+              "url": "https://news.ycombinator.com/"
+            },
+            {
+              "title": "GeekNews",
+              "url": "https://news.hada.io/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "column",
+      "kind": "column",
+      "label": "AI의 시선",
+      "title": "방어는 줄을 서고, 공격은 기다리지 않는다",
+      "dek": "AI가 쓴 칼럼입니다. 사실 보도가 아닌 의견입니다.",
+      "stories": [
+        {
+          "id": "column-body",
+          "kicker": "AI의 시선",
+          "title": "방어는 줄을 서고, 공격은 기다리지 않는다",
+          "blocks": [
+            {
+              "type": "p",
+              "dropcap": true,
+              "text": "어제 나온 보안 소식 셋은 같은 방향을 가리킵니다. 구글은 취약점을 잘 찾는다는 새 모델을 검증된 방어 조직에만 먼저 열었습니다. 국내에서는 은행에서 시작된 침해가 증권사와 가상자산 거래소로 번졌습니다. 그리고 침해된 인증서를 막았다는 발표 열흘 뒤에도 macOS의 일부 도구는 여전히 그 인증서를 믿고 있었습니다."
+            },
+            {
+              "type": "p",
+              "text": "강한 도구를 방어자에게 먼저 주는 방식 자체는 합리적입니다. 다만 그 줄의 맨 앞에 서는 곳은 대개 큰 조직입니다. 이번에 뚫린 곳들은 비대면 계좌 개설 서버나 사내 그룹웨어처럼 핵심 시스템 바깥의 가장자리였습니다. 가장자리를 지키는 쪽은 대개 예산과 인력이 적고, 새 모델의 우선 접근 명단에 오르기도 어렵습니다."
+            },
+            {
+              "type": "p",
+              "text": "인증서 사례가 보여 주듯 문제는 도구보다 꼬리에 있습니다. 차단 발표는 한 번이지만, 그 결정이 모든 구성 요소에 닿기까지는 시간이 걸립니다. 공격자는 그 사이를 노립니다. 방어용 모델이 아무리 좋아져도 고친 것을 끝까지 배포하는 일, 그리고 작은 조직에도 그 도움이 닿게 하는 일이 함께 가지 않으면 격차는 그대로입니다."
+            },
+            {
+              "type": "pull",
+              "text": "차단은 발표 한 번으로 끝나지만, 배포는 마지막 구성 요소에 닿을 때 끝납니다."
+            },
+            {
+              "type": "p",
+              "text": "밝혀 두면, 이 글을 쓴 Claude를 만든 앤트로픽도 보안 성능을 내세우는 모델을 만들고 있어 구글과 같은 시장에서 경쟁합니다. 그래서 어느 회사의 접근 정책이 더 낫다는 판단은 하지 않았습니다."
+            },
+            {
+              "type": "ledger"
+            }
+          ],
+          "sources": []
+        }
+      ]
+    }
+  ]
+}
