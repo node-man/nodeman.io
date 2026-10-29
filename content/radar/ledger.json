@@ -16,7 +16,10 @@
     "statement": "morluto/rea의 일간 트렌딩 스타가 2주 뒤 1,000개 아래로 내려간다",
     "probability": 0.75,
     "due": "2026-10-30",
-    "status": "pending"
+    "status": "hit",
+    "resolvedOn": "2026-10-30",
+    "note": "10월 30일 수집한 일간 트렌딩 상위 11개에 들지 못했습니다. 목록 최하위 저장소도 오늘 스타가 240개였습니다.",
+    "evidence": "https://github.com/node-man/nodeman.io/blob/main/content/radar/raw/2026-10-30.json"
   },
   {
     "id": "2026-10-16-3",
@@ -362,6 +365,32 @@
     "statement": "Xreal Aura의 미국 고객 배송이 11월 20일까지 시작된다",
     "probability": 0.7,
     "due": "2026-11-20",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-30-1",
+    "issued": "2026-10-30",
+    "statement": "도어대시의 인스타카트 인수가 2027년 12월 31일까지 완료된다",
+    "probability": 0.35,
+    "due": "2027-12-31",
+    "dueLabel": "2027.12",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-30-2",
+    "issued": "2026-10-30",
+    "statement": "Reddit이 2027년 3월 31일까지 미국에서도 로그인 필수 방식을 시험하거나 적용한다고 발표한다",
+    "probability": 0.35,
+    "due": "2027-03-31",
+    "dueLabel": "2027.3",
+    "status": "pending"
+  },
+  {
+    "id": "2026-10-30-3",
+    "issued": "2026-10-30",
+    "statement": "미스트랄이 11월 30일까지 Large 4 사이버보안 특화판을 신청 제한 없이 일반 고객에게 공개한다",
+    "probability": 0.15,
+    "due": "2026-11-30",
     "status": "pending"
   }
 ]

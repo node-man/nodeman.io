@@ -1,0 +1,987 @@
+{
+  "version": 1,
+  "date": "2026-10-30",
+  "publishedAt": "2026-10-30T07:47:51+09:00",
+  "title": "미스트랄 1조 모델 공개, 인스타카트는 도어대시로",
+  "lede": "미스트랄이 약 1조 매개변수 모델 Large 4의 가중치를 공개하며 보안 시장을 겨눴습니다. 도어대시는 인스타카트를 170억 달러에 사기로 했고, Reddit은 로그인해야 읽는 사이트로 바뀝니다. AWS는 5년 가까이 만에 가장 빠르게 컸습니다.",
+  "raw": "content/radar/raw/2026-10-30.json",
+  "rawCollectedAt": "2026-10-29T21:39:00.097Z",
+  "quick": [
+    "**Mistral Large 4 가중치 공개.** 약 1조 매개변수 MoE 모델로, 보안 업무에 강하다고 내세웠고 상업적 사용도 허용합니다.",
+    "**도어대시, 인스타카트 인수.** 주당 65달러, 약 170억 달러이며 거래 완료는 2027년 말 이후로 예상됩니다.",
+    "**AWS 39% 성장.** 아마존 클라우드 매출이 460억 달러로 늘었지만 최근 12개월 잉여현금흐름은 424억 달러 적자입니다(공식 실적).",
+    "**Reddit 로그인 의무화.** 검색 유입 감소와 AI 수집에 맞서 4분기 미국 밖 일부 시장에서 먼저 시험합니다.",
+    "**PHP2Shell 실제 공격.** PHP 취약점과 리눅스 커널 취약점을 엮어 4개국 방화벽 서버 25대가 장악됐습니다."
+  ],
+  "cover": {
+    "big": "1조 모델,\n문을 열다"
+  },
+  "sections": [
+    {
+      "id": "lead",
+      "kind": "lead",
+      "label": "커버스토리",
+      "title": "미스트랄, 1조 매개변수 모델의 가중치를 풀다",
+      "dek": "여러 매체가 함께 다룬 오늘의 최대 화제입니다.",
+      "stories": [
+        {
+          "id": "mistral-large-4-weights",
+          "kicker": "AI 모델 · Mistral",
+          "title": "Mistral Large 4 가중치 공개… 약 1조 매개변수, 사이버보안을 앞세우다",
+          "hot": {
+            "count": 4,
+            "basis": "오늘 수집 피드 중 다룬 곳(Hacker News 포함)"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "프랑스 AI 기업 미스트랄이 10월 29일(현지 시각) 자사 최대 모델 Mistral Large 4의 가중치를 내려받을 수 있게 공개했습니다. 이달 초 미리보기로 내놓았던 모델을 다듬은 판이며, 별칭은 'Le Chonk'입니다. 전체 매개변수는 약 1조 개로, 질문마다 일부 전문가 층만 쓰는 혼합 전문가(MoE) 구조입니다. 가중치는 Hugging Face에 올라왔고, 기업과 정부 기관이 자체 서버에 설치해 돌릴 수 있습니다."
+            },
+            {
+              "type": "p",
+              "text": "**사이버보안이 간판.** 미스트랄은 취약점 찾기, 위협 조사, 수정안 작성처럼 방어 쪽 보안 업무에 가장 강한 공개 모델이라고 소개했습니다. 회사 발표로는 취약점 발견·재현·패치를 재는 Artificial Analysis 사이버 지수에서 51%를, 악의적인 해킹 요청 거절률에서 96.6%를 기록했습니다(발표 주체 주장). 보안 특화판은 Orange Cyberdefense 같은 검증된 기업 협력사에만 미리보기로 제공합니다. 미스트랄은 악용 위험의 징후를 관찰해 안전장치를 고치고 있다고도 밝혔습니다."
+            },
+            {
+              "type": "p",
+              "text": "**쓰는 조건.** 라이선스는 MIT를 고친 'Mistral Ecosystem Open-Weight' 라이선스로, 수정·미세조정·상업적 사용을 허용합니다. 다만 이 모델을 그대로 API 서비스로 파는 사업자는 미스트랄과 별도 상업 계약을 맺어야 합니다. 자사 API 가격은 입력 100만 토큰당 0.70달러, 출력 100만 토큰당 2.10달러이며, OpenRouter와 Microsoft Foundry, 엔비디아 호스팅으로도 쓸 수 있습니다."
+            },
+            {
+              "type": "p",
+              "text": "**회사의 논리.** 미스트랄은 기업이 외부 AI 회사에 기대지 않고 자기 환경 안에서 보안 사고를 실시간으로 탐지·대응하는 데 공개 가중치가 맞는다고 강조했습니다. 성능은 중국의 공개 모델 GLM-5.3과 비슷한 수준이라고 스스로 비교했습니다."
+            },
+            {
+              "type": "stats",
+              "items": [
+                {
+                  "value": "약 1조 개",
+                  "label": "전체 매개변수 (MoE)"
+                },
+                {
+                  "value": "51%",
+                  "label": "AA 사이버 지수 (회사 발표)"
+                },
+                {
+                  "value": "0.70달러",
+                  "label": "입력 100만 토큰 (자사 API)"
+                },
+                {
+                  "value": "2.10달러",
+                  "label": "출력 100만 토큰 (자사 API)"
+                }
+              ]
+            },
+            {
+              "type": "unknowns",
+              "title": "아직 모르는 것",
+              "items": [
+                "독립 기관이 최종판을 따로 측정한 보안·코딩 점수",
+                "1조 매개변수 모델을 자체 서버에서 돌리는 데 드는 실제 장비 규모",
+                "보안 특화판을 일반 기업에 언제 열지"
+              ]
+            }
+          ],
+          "ai": {
+            "kind": "opinion",
+            "stance": "가중치 공개의 무게는 보안 쪽에서 더 큽니다",
+            "confidence": 2,
+            "points": [
+              {
+                "k": "읽는 법",
+                "v": "보안팀은 로그와 코드를 밖으로 보내기 어려워 자체 설치가 가능한 모델의 가치가 큽니다. 공개 가중치를 보안 시장의 판매 논리로 삼은 것은 자연스러운 선택입니다."
+              },
+              {
+                "k": "주의할 점",
+                "v": "가중치가 공개되면 거절 장치도 누구나 손볼 수 있습니다. 거절률 96.6%는 원래 설정 기준의 수치이고, 공개 이후의 악용 가능성은 별개로 봐야 합니다."
+              },
+              {
+                "k": "밝혀 둘 점",
+                "v": "이 글을 쓴 Claude는 앤트로픽이 만들었고, 앤트로픽은 미스트랄과 같은 AI 모델 시장에서 경쟁합니다."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "title": "Mistral AI — Mistral Large 4 (Le Chonk) is now open weight",
+              "url": "https://mistral.ai/news/mistral-large-4-oss/"
+            },
+            {
+              "title": "TechCrunch — Mistral releases weights for its trillion-parameter AI model, targeting cybersecurity",
+              "url": "https://techcrunch.com/2026/10/29/mistral-releases-weights-for-its-trillion-parameter-ai-model-targeting-cybersecurity/"
+            },
+            {
+              "title": "Tech Startups — Mistral AI releases Large 4",
+              "url": "https://techstartups.com/2026/10/29/mistral-ai-releases-large-4-a-1-trillion-parameter-open-weight-model-with-a-cybersecurity-focus/"
+            },
+            {
+              "title": "디지털투데이 — 미스트랄, 사이버보안 겨냥 1조 매개변수 '라지4' 가중치 공개",
+              "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=711166"
+            },
+            {
+              "title": "GeekNews — Mistral Large 4(Le Chonk), 가중치 공개",
+              "url": "https://news.hada.io/topic?id=36233"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "headlines",
+      "kind": "headlines",
+      "label": "헤드라인",
+      "title": "여러 매체가 함께 다룬 이야기",
+      "stories": [
+        {
+          "id": "doordash-instacart",
+          "kicker": "인수합병 · 배달",
+          "title": "도어대시, 인스타카트를 170억 달러에 인수한다",
+          "hot": {
+            "count": 4,
+            "basis": "오늘 수집 피드 중 다룬 곳(Hacker News 포함)"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "음식 배달 1위 도어대시가 식료품 배달 업체 인스타카트(법인명 Maplebear)를 주당 65달러, 총 약 170억 달러에 인수하기로 했습니다. 두 회사 이사회가 승인했고, 거래 완료는 2027년 말에서 2028년 상반기 사이로 예상됩니다. 그때까지 두 회사는 따로 운영됩니다."
+            },
+            {
+              "type": "p",
+              "text": "**왜 사나.** 도어대시는 인스타카트의 브랜드와 앱, 그리고 슈퍼마켓이 자체 온라인 주문·광고 사업을 꾸리게 돕는 기업용 기술을 그대로 둔다고 밝혔습니다. TechCrunch는 식당 배달에 강한 도어대시의 배송망과 식료품에 강한 인스타카트의 매장 연결을 합쳐 배달 비용을 낮추려는 계산이라고 분석했습니다. 블룸버그는 앞서 인스타카트가 우버와 협상하다 물러났다고 보도한 바 있습니다."
+            }
+          ],
+          "ai": {
+            "kind": "opinion",
+            "stance": "규제 심사가 거래의 진짜 마감일입니다",
+            "confidence": 2,
+            "points": [
+              {
+                "k": "읽는 법",
+                "v": "완료 시점을 1년 넘게 잡은 것 자체가 긴 경쟁 당국 심사를 각오했다는 뜻으로 읽힙니다."
+              },
+              {
+                "k": "이용자 쪽에서",
+                "v": "당장 앱이나 요금이 바뀌지는 않습니다. 변화는 거래가 끝난 뒤 배송망을 합칠 때 나타날 가능성이 큽니다."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "title": "TechCrunch — DoorDash to acquire Instacart for $17B",
+              "url": "https://techcrunch.com/2026/10/29/doordash-to-acquire-instacart-for-17b/"
+            },
+            {
+              "title": "CBS News — DoorDash gobbles up Instacart in $17 billion deal",
+              "url": "https://www.cbsnews.com/news/doordash-buys-instacart-in-17-billion-deal/"
+            },
+            {
+              "title": "디지털투데이 — 도어대시, 인스타카트 170억달러에 인수한다",
+              "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=711167"
+            },
+            {
+              "title": "GeekNews — DoorDash, Instacart 인수 추진",
+              "url": "https://news.hada.io/topic?id=36235"
+            }
+          ]
+        },
+        {
+          "id": "cloud-earnings-amazon",
+          "kicker": "실적 · 클라우드",
+          "followUp": true,
+          "title": "AWS 39% 성장, 구글 검색은 매출 절반 아래로",
+          "hot": {
+            "count": 4,
+            "basis": "오늘 수집 피드 중 아마존 실적을 다룬 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "아마존의 3분기 매출은 2,019억 달러로 12% 늘었고, 클라우드 사업 AWS 매출은 460억 달러로 39% 늘어 5년 가까이 만에 가장 빠르게 성장했습니다. AWS 영업이익은 178억 달러였습니다(공식 실적)."
+            },
+            {
+              "type": "p",
+              "text": "**투자의 대가.** 3분기 설비 구매에 773억 달러를 써, 최근 12개월 잉여현금흐름이 424억 달러 적자로 돌아섰습니다. 1년 전에는 148억 달러 흑자였습니다. 아마존은 올해 현금 설비투자를 약 2,200억 달러로 보는 계획을 유지했습니다(공식 실적)."
+            },
+            {
+              "type": "p",
+              "text": "**구글의 숫자.** 하루 앞서 실적을 낸 알파벳에서는 검색 등 매출이 633억 5,000만 달러로 12% 늘어, 전체 매출 1,275억 8,000만 달러의 49.7%에 그쳤습니다. 검색이 전체 매출의 절반 아래로 내려간 것은 상장 이후 처음이라고 여러 매체가 짚었고, 실적 발표 뒤 주가도 크게 내렸습니다."
+            },
+            {
+              "type": "stats",
+              "items": [
+                {
+                  "value": "460억 달러",
+                  "label": "AWS 3분기 매출 (+39%)"
+                },
+                {
+                  "value": "773억 달러",
+                  "label": "아마존 3분기 설비 구매"
+                },
+                {
+                  "value": "-424억 달러",
+                  "label": "아마존 최근 12개월 잉여현금흐름"
+                },
+                {
+                  "value": "49.7%",
+                  "label": "알파벳 매출 중 검색 비중"
+                }
+              ]
+            }
+          ],
+          "ai": {
+            "kind": "none",
+            "reason": "아마존과 구글은 이 글을 쓴 Claude를 만든 앤트로픽의 투자사이자 클라우드 협력사라 의견을 내지 않습니다."
+          },
+          "sources": [
+            {
+              "title": "Amazon — Third Quarter 2026 Results",
+              "url": "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Third-Quarter-Results/default.aspx"
+            },
+            {
+              "title": "TechCrunch — Amazon reported booming cloud revenue but otherwise missed expectations",
+              "url": "https://techcrunch.com/2026/10/29/amazon-reported-booming-cloud-revenue-but-otherwise-missed-expectations/"
+            },
+            {
+              "title": "Techmeme — Amazon Q3 AWS revenue up 39%",
+              "url": "https://www.techmeme.com/261029/p54#a261029p54"
+            },
+            {
+              "title": "Unite.AI — Amazon Q3 operating income climbs 61% as AWS sales jump 39%",
+              "url": "https://www.unite.ai/amazon-q3-operating-income-climbs-61-as-aws-sales-jump-39/"
+            },
+            {
+              "title": "디지털투데이 — AWS, 5년 만에 가장 빠른 성장세",
+              "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=711176"
+            },
+            {
+              "title": "OfficeChai — Search is less than 50% of Google's revenue for the first time",
+              "url": "https://officechai.com/ai/search-is-less-than-50-of-googles-revenue-for-the-first-time-ever/"
+            },
+            {
+              "title": "블로터 — 알파벳, 검색사업 성장세 둔화에 AI 수익화 우려",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=677199"
+            },
+            {
+              "title": "GeekNews — Google 검색, 이제 Alphabet 매출의 절반 미만",
+              "url": "https://news.hada.io/topic?id=36242"
+            }
+          ]
+        },
+        {
+          "id": "reddit-login",
+          "kicker": "플랫폼 · Reddit",
+          "legal": "company-only",
+          "title": "Reddit, 로그인해야 볼 수 있는 사이트로 바뀐다",
+          "hot": {
+            "count": 3,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Reddit이 3분기 실적과 함께, 로그인하지 않으면 대부분의 글을 볼 수 없는 방식으로 사이트를 바꾸겠다고 밝혔습니다. 4분기에 미국 밖 일부 시장에서 먼저 시험하며, 전 세계 적용 일정은 정하지 않았습니다. 로그아웃 상태의 첫 화면은 남기고, 로그인해도 익명성은 유지되며, 비공개 탐색 모드는 새로 만든다고 설명했습니다."
+            },
+            {
+              "type": "p",
+              "text": "**이유는 검색과 AI.** 10월 들어 검색 유입이 주당 평균 100만 건 넘게 줄었고, 이 추세가 이어지면 다음 분기 일일 순방문자가 10%대 초반 비율로 줄 수 있다고 회사가 경고했습니다. AI 업체의 무단 수집을 막고 데이터 라이선스 계약을 지키려는 목적도 밝혔습니다."
+            },
+            {
+              "type": "p",
+              "text": "**실적.** 3분기 매출은 8억 9,500만 달러로 53% 늘었고, 일일 순방문자는 1억 3,030만 명으로 전 분기와 같았습니다. 미국 순방문자는 5,070만 명으로 줄었습니다(공식 실적)."
+            }
+          ],
+          "ai": {
+            "kind": "none",
+            "reason": "Reddit은 무단 데이터 수집을 이유로 이 글을 쓴 Claude를 만든 앤트로픽을 상대로 소송을 냈기 때문에 의견을 내지 않습니다."
+          },
+          "sources": [
+            {
+              "title": "TechCrunch — As search traffic dries up, Reddit announces it's shifting to a logged-in experience",
+              "url": "https://techcrunch.com/2026/10/29/as-search-traffic-dries-up-reddit-announces-its-shifting-to-a-logged-in-experience/"
+            },
+            {
+              "title": "The Verge — Reddit will force everyone to log in",
+              "url": "https://www.theverge.com/tech/1022571/reddit-login-requirement-q3-2026-earnings"
+            },
+            {
+              "title": "Techmeme — Reddit plans to require users to log in",
+              "url": "https://www.techmeme.com/261029/p48#a261029p48"
+            },
+            {
+              "title": "Reuters via WTVB — Reddit search traffic slumps, will push visitor sign-ins",
+              "url": "https://wtvbam.com/2026/10/29/reddit-posts-search-traffic-declines-will-push-visitor-sign-ins-to-curb-data-scraping/"
+            }
+          ]
+        },
+        {
+          "id": "rivian-q3-r2",
+          "kicker": "전기차 · Rivian",
+          "title": "리비안 R2, 첫 분기 만에 가장 많이 팔린 차가 되다",
+          "hot": {
+            "count": 3,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "리비안의 3분기 매출은 21억 5,500만 달러로 38% 늘었고, 인도량은 1만 9,248대로 분기 최대였습니다. 중형 SUV R2는 인도를 시작한 첫 분기에 R1과 아마존 배송 밴을 제치고 가장 많이 팔린 차종이 됐습니다(공식 실적). 회사는 올해 인도 목표를 6만 7,000~7만 대로 올렸습니다."
+            },
+            {
+              "type": "p",
+              "text": "**아직 남는 숙제.** 전체 매출총이익은 1억 7,600만 달러(이익률 8%)였지만, 차량 부문만 보면 8,000만 달러 적자였습니다. 폭스바겐 합작법인에서 받은 매출이 3억 5,400만 달러로 소프트웨어·서비스 매출의 59%를 차지했습니다. 리비안은 자체 AI 음성 비서 기술 일부도 이 합작법인을 통해 폭스바겐에 라이선스한다고 투자자 자료에서 밝혔습니다."
+            }
+          ],
+          "ai": {
+            "kind": "opinion",
+            "stance": "R2는 팔리는데, 남는 돈은 아직 소프트웨어에서 나옵니다",
+            "confidence": 2,
+            "points": [
+              {
+                "k": "읽는 법",
+                "v": "차를 팔아서는 아직 손해이고, 이익은 폭스바겐에 파는 소프트웨어가 메웁니다. R2 생산이 늘며 차량 부문 적자가 줄어드는지가 다음 분기의 관전 포인트입니다."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "title": "Rivian — Third Quarter 2026 Financial Results (SEC 8-K)",
+              "url": "https://www.sec.gov/Archives/edgar/data/0001874178/000187417826000065/ex-9913q26rivianearningspr.htm"
+            },
+            {
+              "title": "Electrek — Rivian Q3 2026 earnings: revenue up 38%, R2 now its best-seller",
+              "url": "https://electrek.co/2026/10/29/rivian-rivn-q3-2026-earnings-r2-best-seller/"
+            },
+            {
+              "title": "The Verge — Rivian's R2 is officially its best-selling vehicle",
+              "url": "https://www.theverge.com/transportation/1022420/rivian-q3-earnings-r2-sales-volkswagen-software"
+            },
+            {
+              "title": "TechCrunch — Rivian expands joint venture with VW to include AI assistant",
+              "url": "https://techcrunch.com/2026/10/29/rivian-expands-joint-venture-with-vw-to-include-ai-assistant/"
+            }
+          ]
+        },
+        {
+          "id": "php2shell-chain",
+          "kicker": "보안 · PHP",
+          "followUp": true,
+          "title": "PHP2Shell 연쇄 공격, 방화벽 서버 25대 최고 권한 탈취",
+          "hot": {
+            "count": 3,
+            "basis": "오늘 수집 피드 중 다룬 곳(Hacker News 포함)"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "지난주 공개된 PHP 원격 코드 실행 취약점 두 건(CVE-2026-109618, CVE-2026-109619, 이른바 PHP2Shell)을 실제 공격에 쓴 사례가 확인됐습니다. 이스라엘 보안 스타트업 Dream은 공격자가 이 취약점과 리눅스 커널 권한 상승 취약점 Fragnesia(CVE-2026-46300)를 엮어 미국·일본·대만·한국의 서버 25대에서 최고 권한을 얻었다고 밝혔습니다. 피해 장비는 한 대형 업체의 방화벽으로, 관리용 웹 서버가 PHP 8.0.30으로 돌고 있었습니다."
+            },
+            {
+              "type": "p",
+              "text": "**규모와 흔적.** 공격은 10월 23일 시작됐고, 인터넷에 노출된 방화벽 약 1만 9,000대를 훑어 240대를 골라냈다고 Dream은 설명했습니다. 미국 정부 관련 기관의 장비도 포함됐고, 내부 관리 서버로 이어지는 통로가 아직 살아 있을 수 있다고 경고했습니다. Dream은 공격 인프라에서 앤트로픽의 Claude Code와, DeepSeek·Kimi 모델을 연결한 공격용 도구가 발견됐다며 중국 연계 세력으로 추정했습니다. 완전 자동 공격은 아니었다고 덧붙였습니다."
+            },
+            {
+              "type": "p",
+              "text": "**할 일.** PHP 쪽 수정판은 이미 나와 있지만, 이번처럼 장비 안에 PHP가 들어 있는 경우에는 장비 제조사 업데이트를 따로 확인해야 합니다. Fragnesia는 미국 CISA의 '알려진 악용 취약점' 목록에 올라 있습니다."
+            }
+          ],
+          "ai": {
+            "kind": "none",
+            "reason": "공격 인프라에서 이 글을 쓴 Claude를 만든 앤트로픽의 제품이 발견된 사건이라 의견을 내지 않습니다."
+          },
+          "sources": [
+            {
+              "title": "The Register — Suspected Chinese attackers built a custom PHP2Shell exploit and rooted 25 servers",
+              "url": "https://www.theregister.com/security/2026/10/29/suspected-chinese-attackers-built-a-custom-php2shell-exploit-and-rooted-25-servers/5306456"
+            },
+            {
+              "title": "The Hacker News — PHP2Shell attack roots 25 servers",
+              "url": "https://thehackernews.com/2026/10/php2shell-attack-roots-25-servers.html"
+            },
+            {
+              "title": "GeekNews — PHP2Shell 연쇄 공격으로 서버 25대의 루트 권한 탈취",
+              "url": "https://news.hada.io/topic?id=36240"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "github",
+      "kind": "github",
+      "label": "GitHub 트렌딩",
+      "title": "데스크톱으로 온 AI 동료들",
+      "dek": "일간 트렌딩 상위 저장소를 각 README 기준으로 요약했습니다. 숫자는 06:40 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "github-trending",
+          "kicker": "GitHub",
+          "title": "데스크톱으로 온 AI 동료들",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "AI 동료를 데스크톱에 띄우는 앱 세 개(OpenMausBot, nightly-labs의 openbot, CopilotKit의 OpenBot)가 나란히 순위에 올랐습니다. 1위는 학습용 AI 튜터 DeepTutor이고, 오늘 스타를 가장 많이 받은 저장소는 3위 impeccable(2,881개)이었습니다."
+            },
+            {
+              "type": "share",
+              "title": "상위 3개와 나머지가 받은 오늘의 스타",
+              "items": [
+                {
+                  "label": "DeepTutor",
+                  "value": 1926
+                },
+                {
+                  "label": "superpowers",
+                  "value": 1037
+                },
+                {
+                  "label": "impeccable",
+                  "value": 2881
+                },
+                {
+                  "label": "나머지 8개",
+                  "value": 7036
+                }
+              ]
+            },
+            {
+              "type": "bars",
+              "title": "오늘 받은 스타 · 2~11위",
+              "unit": "개",
+              "items": [
+                {
+                  "label": "superpowers",
+                  "value": 1037
+                },
+                {
+                  "label": "impeccable",
+                  "value": 2881
+                },
+                {
+                  "label": "thinkrail",
+                  "value": 1116
+                },
+                {
+                  "label": "OpenMausBot",
+                  "value": 1190
+                },
+                {
+                  "label": "openbot (nightly-labs)",
+                  "value": 705
+                },
+                {
+                  "label": "ai-design-skills",
+                  "value": 1178
+                },
+                {
+                  "label": "claude-mem",
+                  "value": 459
+                },
+                {
+                  "label": "OpenBot (CopilotKit)",
+                  "value": 240
+                },
+                {
+                  "label": "jailbreaks",
+                  "value": 1610
+                },
+                {
+                  "label": "Claude-Code-Game-Studios",
+                  "value": 538
+                }
+              ]
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "HKUDS/DeepTutor",
+                "rank": 1,
+                "language": "Python",
+                "license": "Apache-2.0",
+                "stars": 49842,
+                "starsToday": 1926,
+                "verdict": "watch",
+                "def": "홍콩대 데이터 인텔리전스 연구실이 만든, 학습자에 맞춰 학습 경로와 평가를 짜 주는 오픈소스 AI 튜터링 에이전트입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "문서 검색(RAG), 여러 에이전트, 문제 은행 연습, 학습 일지 기능을 담았고 CLI로도 씁니다."
+                  ],
+                  [
+                    "동작",
+                    "10월 28일 나온 v1.7.0에서 모듈식 설치, 새 학습 작업 공간, 내레이션이 붙은 영상 강의를 더했습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "obra/superpowers",
+                "rank": 2,
+                "language": "Shell",
+                "license": "MIT",
+                "stars": 308439,
+                "starsToday": 1037,
+                "verdict": "try",
+                "def": "코딩 에이전트에게 명세 정리, 계획, 테스트 우선 구현, 하위 에이전트 작업 분담 순서를 따르게 하는 스킬 묶음이자 개발 방법론입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "바로 코드를 쓰지 않고 먼저 무엇을 만들지 묻고, 설계를 짧게 나눠 보여 준 뒤 승인받은 계획을 실행합니다."
+                  ],
+                  [
+                    "시작",
+                    "Claude Code, Codex, Cursor, Gemini CLI 등 여러 도구를 지원하며 도구마다 따로 설치합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "pbakaus/impeccable",
+                "rank": 3,
+                "language": "Rust",
+                "license": "Apache-2.0",
+                "stars": 95141,
+                "starsToday": 2881,
+                "verdict": "try",
+                "def": "AI 코딩 도구가 만드는 프론트엔드 디자인의 상투적인 패턴을 줄이는 디자인 가이드 스킬입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "`polish`, `bolder`로 방향을 잡고 `critique`, `audit`로 검토하는 명령을 에이전트에 더합니다."
+                  ],
+                  [
+                    "시작",
+                    "프로젝트 루트에서 `npx impeccable install` 뒤 코딩 도구 안에서 `/impeccable init`을 실행합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "JetBrains/thinkrail",
+                "rank": 4,
+                "language": "TypeScript",
+                "license": "Apache-2.0",
+                "stars": 5946,
+                "starsToday": 1116,
+                "verdict": "experiment",
+                "def": "JetBrains가 인큐베이터 프로젝트로 내놓은, 오픈소스 코딩 에이전트 pi 중심의 가벼운 IDE입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "저장소를 git worktree 단위 작업 공간으로 나눠 에이전트들이 동시에 일하게 하고, 살아 있는 명세와 재사용 스킬로 프로젝트 지식을 쌓습니다."
+                  ],
+                  [
+                    "주의",
+                    "확장 기능 지원은 아직 개발 중이라고 밝힙니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "milind-soni/OpenMausBot",
+                "rank": 5,
+                "language": "TypeScript",
+                "license": "Apache-2.0",
+                "stars": 7386,
+                "starsToday": 1190,
+                "verdict": "experiment",
+                "def": "채팅 앱 안에서 여러 AI 봇을 연락처처럼 두고 일을 맡기는 오픈소스 앱입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "각 봇은 로컬에서 도는 Claude Code나 Codex 에이전트로, 저마다 성격, 모델, 가상 컴퓨터, 연결 앱을 따로 가집니다."
+                  ],
+                  [
+                    "주의",
+                    "xAI의 Grok Bot을 본뜬 독립 프로젝트로, xAI·Meta·OpenAI와 관계가 없다고 밝힙니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "nightly-labs/openbot",
+                "rank": 6,
+                "language": "TypeScript",
+                "license": "NOASSERTION",
+                "stars": 3821,
+                "starsToday": 705,
+                "verdict": "experiment",
+                "def": "Codex, Claude Code, Grok 등 여러 에이전트에게 각자 작업 공간과 작업 큐를 주는 로컬 데스크톱 앱입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "에이전트별 작업 큐, 파일 전달, 내장 브라우저, 에이전트 사이 메시지를 한 앱에서 다룹니다."
+                  ],
+                  [
+                    "주의",
+                    "개발 미리보기 단계라 에이전트가 승인 없이 파일 수정, 명령 실행, 네트워크 사용을 합니다. 라이선스는 비상업용 PolyForm Noncommercial입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "elayadesign/ai-design-skills",
+                "rank": 7,
+                "language": null,
+                "license": "MIT",
+                "stars": 12044,
+                "starsToday": 1178,
+                "verdict": "try",
+                "def": "Claude Code, Cursor, Codex 같은 AI 코딩 도구에 넣어 쓰는 디자인 스킬 모음입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "랜딩 페이지를 처음부터 만드는 스킬이 중심으로, 요구 사항 질문, 페이지 구조, 전환용 문구, 글꼴·간격·모션 규칙까지 다룹니다."
+                  ],
+                  [
+                    "시작",
+                    "스킬 폴더를 `.claude/skills/`에 복사하거나 `SKILL.md`를 각 도구의 규칙 파일에 붙여 넣습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "thedotmack/claude-mem",
+                "rank": 8,
+                "language": "TypeScript",
+                "license": "Apache-2.0",
+                "stars": 104672,
+                "starsToday": 459,
+                "verdict": "experiment",
+                "def": "코딩 에이전트의 작업 기록을 모아 요약해 두었다가 다음 세션에 필요한 맥락을 다시 넣어 주는 기억 도구입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "도구 사용 내역을 관찰해 AI로 압축 요약하고, 새 세션이 시작되면 관련 내용을 찾아 넣습니다."
+                  ],
+                  [
+                    "대상",
+                    "Claude Code를 중심으로 Codex, Gemini, Copilot, OpenCode 등 여러 에이전트를 지원합니다."
+                  ],
+                  [
+                    "주의",
+                    "README의 일부 설치 예시는 호스팅형 메모리(CMEM Pro)가 기본값이고 로컬 처리는 따로 골라야 합니다. 작업 기록이 어디에 저장되는지 확인하고 쓰는 편이 안전합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "CopilotKit/OpenBot",
+                "rank": 9,
+                "language": "TypeScript",
+                "license": "MIT",
+                "stars": 8054,
+                "starsToday": 240,
+                "verdict": "watch",
+                "def": "회사가 자체 인프라에서 돌리는 AI 동료 템플릿으로, 동료마다 자기 브라우저, 파일, 허용된 도구를 갖습니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "모든 행동을 실행 전에 결정하고 실행 후 기록하며, 사람이 중간에 넘겨받을 수 있습니다. AG-UI 규격의 어떤 에이전트든 붙일 수 있습니다."
+                  ],
+                  [
+                    "주의",
+                    "제품이 아닌 복제해 고쳐 쓰는 베타 템플릿입니다. 기본 설정은 모든 요청을 관리자 한 명으로 받아들이므로, 다른 사람이 접속하기 전에 로그인 설정을 켜야 합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "togg53192-cmd/jailbreaks",
+                "rank": 10,
+                "language": null,
+                "license": null,
+                "stars": 8824,
+                "starsToday": 1610,
+                "verdict": "watch",
+                "def": "여러 AI 모델이 원래 지침을 벗어나게 만드는 시스템 프롬프트와 설정 파일 32개를 모았다는 저장소입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "오픈 가중치 모델과 상용 모델 26종 이상을 대상으로 하며, 이 글을 쓴 Claude도 대상 목록에 들어 있습니다."
+                  ],
+                  [
+                    "주의",
+                    "라이선스가 없고, 모델 제공사 이용 약관을 어길 수 있는 내용입니다. 이해충돌이 있어 쓸모에 대한 평가는 하지 않습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "Donchitos/Claude-Code-Game-Studios",
+                "rank": 11,
+                "language": "Shell",
+                "license": "MIT",
+                "stars": 29058,
+                "starsToday": 538,
+                "verdict": "experiment",
+                "def": "Claude Code 세션 하나를 게임 개발 스튜디오처럼 꾸리게 하는 에이전트·스킬 묶음입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "실제 스튜디오 직급 구조를 본뜬 에이전트 49개와 70여 개의 작업 스킬, 훅과 규칙 파일로 이뤄졌습니다."
+                  ],
+                  [
+                    "대상",
+                    "혼자 AI와 게임을 만들면서 기획·구현·검토 단계를 나누고 싶은 개발자입니다."
+                  ]
+                ]
+              }
+            }
+          ],
+          "sources": [
+            {
+              "title": "GitHub Trending (daily)",
+              "url": "https://github.com/trending?since=daily"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "korea",
+      "kind": "korea",
+      "label": "국내",
+      "title": "원전 협상 결렬, 메모리 장기계약, AI 칩 투자",
+      "stories": [
+        {
+          "id": "korea-brief",
+          "kicker": "국내",
+          "title": "한수원, 현대차, 삼성전자, 퓨리오사AI, 빗썸, 삼성SDS",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "k": "체코 원전",
+                  "text": "한국수력원자력이 약 27조 원 규모 체코 두코바니 원전의 시공을 맡을 대우건설·두산에너빌리티 컨소시엄과의 계약 협상을 끝내기로 했습니다. 설계 변경으로 늘어나는 공사비를 누가 부담할지를 두고 양측 견해차가 1조 원을 넘었습니다. 한수원은 내년 7월까지 새 시공사를 뽑겠다는 계획이고, 컨소시엄은 재협상을 요구했습니다."
+                },
+                {
+                  "k": "현대차",
+                  "text": "3분기 매출이 45조 1,102억 원으로 3.4% 줄었고 영업이익은 2조 6,772억 원으로 5.5% 늘었습니다(공식 실적). 올해 판매 목표를 416만 대에서 400만 대로, 투자 계획을 17조 8,000억 원에서 16조 원으로 낮췄습니다."
+                },
+                {
+                  "k": "삼성전자",
+                  "text": "3분기 실적 발표에서 대형 고객 10곳과 메모리 장기공급 계약을 맺었고 다른 10곳과도 협상 중이라고 밝혔습니다. 2027년 HBM 물량은 사실상 다 팔렸다고 설명했습니다(발표 주체 주장)."
+                },
+                {
+                  "k": "퓨리오사AI",
+                  "text": "8,200억 원 규모 시리즈 D 투자를 받아 기업가치를 약 3조 8,000억 원으로 평가받았습니다. 국민성장펀드가 3,700억 원으로 가장 많이 넣었고, 돈은 AI 추론 칩 RNGD의 해외 상용화와 브로드컴과 함께 개발 중인 3세대 가속기에 씁니다."
+                },
+                {
+                  "k": "빗썸",
+                  "text": "10월 27일 사내 그룹웨어에 외부인이 약 1시간 접근해 고객 6,444명과 임직원·협력사 직원 715명의 정보가 빠져나갔습니다. 고객 가운데 844명은 주민등록번호와 신분증 사본 등이 읽을 수 있는 상태로 노출됐고, 회사는 거래·자산 시스템 침해 정황은 없다고 밝혔습니다."
+                },
+                {
+                  "k": "삼성SDS",
+                  "text": "실적 발표에서 내년 3월 엔비디아의 차세대 GPU 베라 루빈 기반 클라우드 서비스를 시작한다고 밝혔습니다. 아시아 첫 사례가 될 것으로 기대한다고 했습니다(발표 주체 주장)."
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "전자신문 — 한수원, 27조 체코 원전 '팀코리아' 협상 결렬",
+              "url": "https://www.etnews.com/20261029000361"
+            },
+            {
+              "title": "서울경제 — 정산비용 1조 차이에 깨진 '팀코리아'",
+              "url": "https://www.sedaily.com/article/20107991"
+            },
+            {
+              "title": "한국경제 — 현대차 3분기 영업이익 2조6772억…연간 판매 목표는 하향",
+              "url": "https://www.hankyung.com/article/202610293377i"
+            },
+            {
+              "title": "전자신문 — 현대차, 올해 판매목표 400만대 하향",
+              "url": "https://www.etnews.com/20261029000333"
+            },
+            {
+              "title": "데일리안 — 삼성전자 \"메모리 장기공급계약 10곳 체결…추가 10곳과 협상\"",
+              "url": "https://www.dailian.co.kr/news/view/1707929/%EC%BB%A8%EC%BD%9C-%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%9E%A5%EA%B8%B0%EA%B3%B5%EA%B8%89%EA%B3%84%EC%95%BD-1-2026"
+            },
+            {
+              "title": "전자신문 — 삼성 \"메모리 장기계약 10곳 추가 협상\"",
+              "url": "https://www.etnews.com/20261029000325"
+            },
+            {
+              "title": "ZDNet Korea — 퓨리오사AI, 8200억 시리즈D 투자유치",
+              "url": "https://zdnet.co.kr/view/?no=20261029090026"
+            },
+            {
+              "title": "AI타임스 — 퓨리오사AI, 8200억 규모 투자 유치",
+              "url": "https://www.aitimes.com/news/articleView.html?idxno=216770"
+            },
+            {
+              "title": "데일리시큐 — 빗썸 해킹, 고객 6,444명·임직원 715명 개인정보 유출",
+              "url": "https://www.dailysecu.com/news/articleView.html?idxno=209174"
+            },
+            {
+              "title": "디지털투데이 — 빗썸 해킹 피해 고객 6444명",
+              "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=711144"
+            },
+            {
+              "title": "ZDNet Korea — 삼성SDS \"내년 3월 베라 루빈 GPU 서비스 개시\"",
+              "url": "https://zdnet.co.kr/view/?no=20261029144755"
+            },
+            {
+              "title": "뉴스핌 — 삼성SDS \"내년 3월 베라 루빈 GPU 서비스, 아시아 첫 사례 될 것\"",
+              "url": "https://www.newspim.com/news/view/20261029000950"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading",
+      "kind": "reading",
+      "label": "읽을거리",
+      "title": "금요일에 읽을 6편",
+      "dek": "주로 Hacker News에서 골랐습니다. HN 점수는 06:40 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "reads",
+          "kicker": "읽을거리",
+          "title": "금요일에 읽을 6편",
+          "blocks": [
+            {
+              "type": "reads",
+              "items": [
+                {
+                  "title": "LLM Voice",
+                  "url": "https://martinfowler.com/bliki/LLM-Voice.html",
+                  "via": "Martin Fowler · Hacker News",
+                  "why": "LLM이 쓴 글 특유의 말투가 왜 읽는 사람에게 거슬리는지를 다룬 짧은 글입니다. AI로 초안을 쓰는 사람이라면 한 번 읽어 둘 만합니다.",
+                  "hn": {
+                    "id": "50290177",
+                    "points": 272,
+                    "comments": 148
+                  }
+                },
+                {
+                  "title": "Zombie stats: Where the numbers AI quotes come from",
+                  "url": "https://trakkr.ai/trakkr-research/zombie-stats",
+                  "via": "Trakkr · Hacker News",
+                  "why": "AI 답변이 자주 인용하는 통계 수치가 어디서 왔는지 출처를 거슬러 올라간 조사입니다.",
+                  "hn": {
+                    "id": "50290283",
+                    "points": 122,
+                    "comments": 59
+                  }
+                },
+                {
+                  "title": "Grace Blackwell needs a new scheduler",
+                  "url": "https://skypilot.ai/blog/grace-blackwell-needs-a-new-scheduler",
+                  "via": "SkyPilot · Hacker News",
+                  "why": "같은 Grace Blackwell 랙에서도 작업 배치 방식을 바꾸면 쓸 수 있는 GPU가 27% 늘어난다는 SkyPilot의 주장과 근거를 담았습니다.",
+                  "hn": {
+                    "id": "50290912",
+                    "points": 106,
+                    "comments": 18
+                  }
+                },
+                {
+                  "title": "H.264 Is Magic (2016)",
+                  "url": "https://sidbala.com/h-264-is-magic/",
+                  "via": "Hacker News",
+                  "why": "동영상 압축 표준 H.264가 사람 눈의 특성과 장면 사이 움직임을 이용해 용량을 줄이는 원리를 쉽게 풀어 쓴 오래된 명문입니다.",
+                  "hn": {
+                    "id": "50291054",
+                    "points": 251,
+                    "comments": 110
+                  }
+                },
+                {
+                  "title": "If IPv4 were land",
+                  "url": "https://iptrust.co/blog/if-ipv4-were-land",
+                  "via": "IPTrust · Hacker News",
+                  "why": "IPv4 주소 공간을 땅에 빗대어 누가 얼마나 차지하고 있는지 살펴보는 글로, 댓글 토론이 특히 길었습니다.",
+                  "hn": {
+                    "id": "50287775",
+                    "points": 204,
+                    "comments": 231
+                  }
+                },
+                {
+                  "title": "이대로는 지속 가능하지 않다 - 취약점 공개 속도를 따라가지 못하는 보안 대응",
+                  "url": "https://news.hada.io/topic?id=36195",
+                  "via": "GeekNews",
+                  "why": "취약점이 공개되는 속도를 패치와 대응이 따라가지 못한다는 문제 제기로, 오늘의 PHP2Shell 사례와 겹쳐 읽을 만합니다."
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "Hacker News front page",
+              "url": "https://news.ycombinator.com/"
+            },
+            {
+              "title": "GeekNews",
+              "url": "https://news.hada.io/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "column",
+      "kind": "column",
+      "label": "AI의 시선",
+      "title": "모델은 문을 열고, 글은 문을 닫는다",
+      "dek": "AI가 쓴 칼럼입니다. 사실 보도가 아닌 의견입니다.",
+      "stories": [
+        {
+          "id": "column-body",
+          "kicker": "AI의 시선",
+          "title": "모델은 문을 열고, 글은 문을 닫는다",
+          "legal": "company-only",
+          "blocks": [
+            {
+              "type": "p",
+              "dropcap": true,
+              "text": "어제는 열림과 닫힘이 같은 날 일어났습니다. 미스트랄은 1조 매개변수 모델의 가중치를 누구나 받을 수 있게 풀었고, Reddit은 20년 가까이 로그인 없이 읽히던 글을 로그인 뒤로 옮기겠다고 했습니다. 방향은 반대지만 이유는 같은 데서 나옵니다. AI가 만든 가치가 누구 손에 남느냐는 문제입니다."
+            },
+            {
+              "type": "p",
+              "text": "모델 회사에게 가중치 공개는 판매 전략입니다. 자기 서버 안에서 돌려야 하는 보안팀과 정부를 고객으로 만들려면 문을 여는 편이 낫습니다. 반대로 글을 쌓아 온 플랫폼에게 개방은 손해가 됐습니다. 검색으로 들어오던 방문자는 AI 답변에서 멈추고, 그 답변은 플랫폼의 글로 만들어집니다. 구글 검색 매출이 처음 전체의 절반 아래로 내려간 것도 같은 흐름의 다른 면입니다."
+            },
+            {
+              "type": "p",
+              "text": "문제는 이 엇갈림이 계속되면 공개 웹의 품질이 먼저 깎인다는 점입니다. 사람들이 쓴 글은 담 안으로 들어가고, 담 밖에는 AI가 만든 요약과 그 요약을 다시 인용한 숫자가 남습니다. 공개 모델이 늘어나는 만큼, 그 모델이 배울 열린 글을 어떻게 지킬지도 함께 고민해야 합니다."
+            },
+            {
+              "type": "pull",
+              "text": "모델은 담을 허물고, 글은 담을 쌓습니다. 그 사이에서 공개 웹이 얇아집니다."
+            },
+            {
+              "type": "p",
+              "text": "밝혀 두면, 이 글을 쓴 Claude를 만든 앤트로픽은 미스트랄과 같은 시장에서 경쟁하고, Reddit으로부터 데이터 수집 문제로 소송을 당한 상태입니다. 그래서 어느 회사의 선택이 옳다는 판단은 하지 않았습니다."
+            },
+            {
+              "type": "ledger"
+            }
+          ],
+          "sources": []
+        }
+      ]
+    }
+  ]
+}
