@@ -1,0 +1,2905 @@
+{
+ "version": 1,
+ "date": "2026-11-10",
+ "collectedAt": "2026-11-09T21:38:11.430Z",
+ "collector": "scripts/radar/collect.mjs",
+ "summary": {
+  "github": "ok",
+  "hn": "ok",
+  "feeds": {
+   "techmeme": "ok",
+   "techcrunch": "ok",
+   "theverge": "ok",
+   "electrek": "ok",
+   "gnews-us": "ok",
+   "gnews-kr": "stale",
+   "geeknews": "ok",
+   "etnews": "ok",
+   "bloter": "ok",
+   "digitaltoday": "ok"
+  }
+ },
+ "github": {
+  "id": "github",
+  "name": "GitHub Trending (daily, all languages)",
+  "url": "https://github.com/trending?since=daily",
+  "status": "ok",
+  "checks": [],
+  "fetchedAt": "2026-11-09T21:38:11.430Z",
+  "httpDate": "Mon, 09 Nov 2026 21:38:12 GMT",
+  "cacheAge": null,
+  "count": 11,
+  "repos": [
+   {
+    "rank": 1,
+    "fullName": "anthropics/skills",
+    "url": "https://github.com/anthropics/skills",
+    "description": "Public repository for Agent Skills",
+    "language": "Python",
+    "stars": 190815,
+    "forks": 22434,
+    "starsToday": 1052,
+    "api": {
+     "stars": 190815,
+     "forks": 22434,
+     "license": null,
+     "createdAt": "2025-09-22T15:53:31Z",
+     "pushedAt": "2026-11-06T22:32:32Z",
+     "topics": [
+      "agent-skills"
+     ],
+     "homepage": null,
+     "openIssues": 1505,
+     "archived": false
+    },
+    "starDrift": 0,
+    "readme": "> **Note:** This repository contains Anthropic's implementation of skills for Claude. For information about the Agent Skills standard, see [agentskills.io](http://agentskills.io).\n\n[![skills.sh](https://skills.sh/b/anthropics/skills)](https://skills.sh/anthropics/skills)\n\n# Skills\nSkills are folders of instructions, scripts, and resources that Claude loads dynamically to improve performance on specialized tasks. Skills teach Claude how to complete specific tasks in a repeatable way, whether that's creating documents with your company's brand guidelines, analyzing data using your organization's specific workflows, or automating personal tasks.\n\nFor more information, check out:\n- [What are skills?](https://support.claude.com/en/articles/12512176-what-are-skills)\n- [Using skills in Claude](https://support.claude.com/en/articles/12512180-using-skills-in-claude)\n- [How to create custom skills](https://support.claude.com/en/articles/12512198-creating-custom-skills)\n- [Equipping agents for the real world with Agent Skills](https://anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills)\n\n# About This Repository\n\nThis repository contains skills that demonstrate what's possible with Claude's skills system. These skills range from creative applications (art, music, design) to technical tasks (testing web apps, MCP server generation) to enterprise workflows (communications, branding, etc.).\n\nEach skill is self-contained in its own folder with a `SKILL.md` file containing the instructions and metadata that Claude uses. Browse through these skills to get inspiration for your own skills or to understand different patterns and approaches.\n\nMany skills in this repo are open source (Apache 2.0). We've also included the document creation & editing skills that power [Claude's document capabilities](https://www.anthropic.com/news/create-files) under the hood in the [`skills/docx`](./skills/docx), [`skills/pdf`](./skills/pdf), [`skills/pptx`](./skills/pptx), and [`skills/xlsx`](./skills/xlsx) subfolders. These are also open source (Apache 2.0), and we wanted to share them with developers as a reference for more complex skills that are actively used in a production AI application.\n\n## Disclaimer\n\n**These skills are provided for demonstration and educational purposes only.** While some of these capabilities may be available in Claude, the implementations and behaviors you receive from Claude may differ from what is shown in these skills. These skills are meant to illustrate patterns and possibilities. Always test skills thoroughly in your own environment before relying on them for critical tasks.\n\n# Skill Sets\n- [./skills](./skills): Skill examples for Creative & Design, Development & Technical, Enterprise & Communication, and Document Skills\n- [./spec](./spec): The Agent Skills specification\n- [./template](./template): Skill template\n\n# Try in Claude Code, Claude.ai, and the API\n\n## Claude Code\nYou can register this repository as a Claude Code Plugin marketplace by running the following command in Claude Code:\n```\n/plugin marketplace add anthropics/skills\n```\n\nThen, to install a specific set of skills:\n1. Select `Browse and install plugins`\n2. Select `anthropic-agent-skills`\n3. Select `document-skills` or `example-skills`\n4. Select `Install now`\n\nAlternatively, directly install either Plugin via:\n```\n/plugin install document-skills@anthropic-agent-skills\n/plugin install example-skills@anthropic-agent-skills\n```\n\nAfter installing the plugin, you can use the skill by just mentioning it. For instance, if you install the `document-skills` plugin from the marketplace, you can ask Claude Code to do something like: \"Use the PDF skill to extract the form fields from `path/to/some-file.pdf`\"\n\n## Claude.ai\n\nThese example skills are all already available to paid plans in Claude.ai. \n\nTo use any skill from this repository or upload custom skills, follow the instructions in [Using skills in Claude](https://support.claude.com/en/articles/12512180-using-skills-in-claude#h_a4222fa77b).\n\n## Claude API\n\nYou can use Anthropic's pre-built skills, and upload custom skills, via the Claude API. See the [Skills API Quickstart](https://docs.claude.com/en/api/skills-guide#creating-a-skill) for more.\n\n# Creating a Basic Skill\n\nSkills are simple to create - just a folder with a `SKILL.md` file containing YAML frontmatter and instructions. You can use the **template-skill** in this repository as a starting point:\n\n```markdown\n---\nname: my-skill-name\ndescription: A clear description of what this skill does and when to use it\n---\n\n# My Skill Name\n\n[Add your instructions here that Claude will follow when this skill is active]\n\n## Examples\n- Example usage 1\n- Example usage 2\n\n## Guidelines\n- Guideline 1\n- Guideline 2\n```\n\nThe frontmatter requires only two fields:\n- `name` - A unique identifier for your skill (lowercase, hyphens for spaces)\n- `description` - A complete description of what the skill does and when to use it\n\nThe markdown content below contains the instructions, examples, and guidelines that Claude will follow. For more details, see [How to create custom skills](https://support.claude.com/en/articles/12512198-creating-custom-skills).\n\n# Partner Skills\n\nSkills are a great way to teach Claude how to get better at using specific pieces of software. As we see awesome example skills from partners, we may highlight some of them here:\n\n- **Notion** - [Notion Skills for Claude](https://www.notion.so/notiondevs/Notion-Skills-for-Claude-28da4445d27180c7af1df7d8615723d0)\n",
+    "readmeTruncated": false
+   },
+   {
+    "rank": 2,
+    "fullName": "meta/astryx",
+    "url": "https://github.com/meta/astryx",
+    "description": "An open source design system that's fully customizable and agent ready",
+    "language": "TypeScript",
+    "stars": 19718,
+    "forks": 1502,
+    "starsToday": 3324,
+    "api": {
+     "stars": 19718,
+     "forks": 1502,
+     "license": "MIT",
+     "createdAt": "2026-01-09T16:20:32Z",
+     "pushedAt": "2026-11-09T21:33:17Z",
+     "topics": [],
+     "homepage": "http://astryx.atmeta.com",
+     "openIssues": 682,
+     "archived": false
+    },
+    "starDrift": 0,
+    "readme": "<!-- SYNC CONTRACT: Architecture changes require documentation updates. -->\n\n<div align=\"center\">\n\n<img src=\"https://lookaside.facebook.com/assets/astryx/Astryx-Banner.png\" alt=\"Astryx\" width=\"100%\" />\n\n# Astryx\n\nAn open source design system that's fully customizable and built for how we build now: <br/> by people and the agents working alongside them.\n\n**Currently in Beta** · Built on [React 19+](https://react.dev) and [StyleX](https://stylexjs.com)\n\n[![npm version](https://img.shields.io/npm/v/@astryxdesign/core?label=npm&color=cb3837&logo=npm)](https://www.npmjs.com/package/@astryxdesign/core)\n[![license MIT](https://img.shields.io/npm/l/@astryxdesign/core?color=blue)](LICENSE)\n[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/meta/astryx/wiki/Contributing)\n\n[![Docs](https://img.shields.io/badge/Docs-astryx.atmeta.com-6741d9?logo=readthedocs&logoColor=white)](https://astryx.atmeta.com)\n[![Storybook](https://img.shields.io/badge/Storybook-live-ff4785?logo=storybook&logoColor=white)](https://astryx.atmeta.com/storybook/)\n[![Sandbox](https://img.shields.io/badge/Sandbox-playground-A9792B)](https://astryx.atmeta.com/sandbox/)\n\n**[Docs](https://astryx.atmeta.com)** · **[Storybook](https://astryx.atmeta.com/storybook/)** · **[Sandbox](https://astryx.atmeta.com/sandbox/)** · **[Contributing](https://github.com/meta/astryx/wiki/Contributing)** · **[Discord](https://discord.com/invite/XnsUcFykEP)**\n\n</div>\n\n## Overview\n\nAstryx is an open source design system that grew inside Meta over the last eight years, where it became the most-used and largest design system in the company — powering 13,000+ apps and shaped by the engineers, designers, and product teams who depend on it every day.\n\nIt ships 150+ accessible components, brand-level theming, dark mode, ready-to-ship templates, and a CLI as one cohesive system. You import pre-built CSS and use typed React components — no build plugin, no styling library to adopt — and both people and AI assistants build with the same tooling.\n\n**What makes Astryx different:**\n\n- **Open internals.** Components are built to be composed at any level, not locked behind a closed top-level API. The building blocks you'd reach for are exported directly, and when you need to go deeper, swizzle ejects a component's full source into your project to own.\n- **No styling lock-in.** Astryx authors its styles with StyleX, but that's invisible to consumers. Override with `className` using Tailwind, CSS modules, or plain CSS — whatever your project already uses.\n- **Customize without wrapping.** A theme is a set of CSS custom property overrides, so a designer can make Astryx unmistakably theirs without forking or wrapping component source.\n- **Built for people and agents.** The API, docs, and CLI are designed together so a person and an AI assistant build the same way, from the same reference.\n\n## Getting Started\n\nAstryx requires **React 19** or later (`react` and `react-dom` are peer dependencies of `@astryxdesign/core`).\n\nInstall Astryx, a theme, and its peer dependencies:\n\n```bash\n# npm\nnpm install @astryxdesign/core @astryxdesign/theme-neutral @stylexjs/stylex\nnpm install -D @astryxdesign/cli\n\n# pnpm\npnpm add @astryxdesign/core @astryxdesign/theme-neutral @stylexjs/stylex\npnpm add -D @astryxdesign/cli\n\n# yarn\nyarn add @astryxdesign/core @astryxdesign/theme-neutral @stylexjs/stylex\nyarn add -D @astryxdesign/cli\n```\n\nYou can also install the CLI once for your computer, so `astryx` works in any folder and every coding agent knows Astryx; in a project, it still runs that project's own version:\n\n```bash\nnpm i -g @astryxdesign/cli\n```\n\nProject install, global install, or both? `astryx docs global/project-global-or-both` compares them (both is recommended), and `astryx docs global` explains how global mode works.\n\nThe simplest setup is a few CSS imports plus a theme provider — no build plugin, no PostCSS or Babel config. See the **[@astryxdesign/core README](packages/core/README.md#quick-start)** for the full guide (Next.js, Tailwind, Vite, and CDN).\n\nFor reliable CLI access, add a script to your `package.json`:\n\n```json\n\"scripts\": {\n  \"astryx\": \"node node_modules/@astryxdesign/cli/clients/cli/bin/astryx.mjs\"\n}\n```\n\nThen use it as `npm run astryx -- component --list`. This avoids path errors when AI assistants or new developers invoke the CLI directly.\n\n## Packages\n\n| Package                                    | Description                                                                                          | README                             |\n| ------------------------------------------ | ---------------------------------------------------------------------------------------------------- | ---------------------------------- |\n| [`@astryxdesign/core`](packages/core)      | Components, theme system, and utilities                                                              | [README](packages/core/README.md)  |\n| [`@astryxdesign/cli`](packages/cli)        | CLI tooling: component docs, templates, scaffolding, themes, and codemods                            | [README](packages/cli/README.md)   |\n| [`@astryxdesign/build`](packages/build)    | Build plugins for StyleX source builds                                                               | [README](packages/build/README.md) |\n| [`@astryxdesign/theme-*`](packages/themes) | Seven ready-made, fully customizable themes (neutral, butter, chocolate, matcha, stone, gothic, y2k) | [README](packages/themes)          |\n\n> `@astryxdesign/lab` (experimental components) is used internally for Storybook and the sandbox and is not published to npm. `@astryxdesign/vega` (Vega/Vega-Lite chart wrapper) and `@astryxdesign/charts` (chart components) are published to npm only under the `@canary` dist-tag — there is no stable release yet.\n\n## Principles\n\nThese are the promises Astryx makes to the people building on it.\n\n- **Guidance over enforcement.** Components give you capability rather than guardra",
+    "readmeTruncated": true
+   },
+   {
+    "rank": 3,
+    "fullName": "sherlock-project/sherlock",
+    "url": "https://github.com/sherlock-project/sherlock",
+    "description": "Hunt down social media accounts by username across social networks",
+    "language": "Python",
+    "stars": 106847,
+    "forks": 12370,
+    "starsToday": 4294,
+    "api": {
+     "stars": 106847,
+     "forks": 12370,
+     "license": "MIT",
+     "createdAt": "2018-12-24T14:30:48Z",
+     "pushedAt": "2026-11-09T05:14:34Z",
+     "topics": [
+      "cli",
+      "cti",
+      "cybersecurity",
+      "forensics",
+      "hacktoberfest",
+      "information-gathering",
+      "infosec",
+      "linux",
+      "osint",
+      "pentesting",
+      "python",
+      "python3",
+      "reconnaissance",
+      "redteam",
+      "sherlock",
+      "tools"
+     ],
+     "homepage": "https://sherlockproject.xyz",
+     "openIssues": 400,
+     "archived": false
+    },
+    "starDrift": 0,
+    "readme": "<p align=\"center\">\n  <br>\n  <a href=\"https://sherlockproject.xyz/\" target=\"_blank\"><img src=\"images/sherlock-logo.png\" alt=\"sherlock\"/></a>\n  <br>\n  <span>Hunt down social media accounts by username across <a href=\"https://sherlockproject.xyz/sites\">400+ social networks</a></span>\n  <br>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://sherlockproject.xyz/installation\">Installation</a>\n  &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;\n  <a href=\"https://sherlockproject.xyz/usage\">Usage</a>\n  &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;\n  <a href=\"https://sherlockproject.xyz/contribute\">Contributing</a>\n</p>\n\n<p align=\"center\">\n<img width=\"70%\" height=\"70%\" src=\"images/demo.png\" alt=\"demo\"/>\n</p>\n\n\n## Installation\n\n<div align=\"center\">\n  <a href=\"https://sponsors.sherlockproject.xyz/go/readme-1\"><img src=\"https://sponsors.sherlockproject.xyz/banner/readme-1\" width=\"100%\"></a>\n</div>\n\n<div align=\"center\">\n<a href=\"https://sponsors.sherlockproject.xyz/go/readme-2\"><img src=\"https://sponsors.sherlockproject.xyz/banner/readme-2\" width=\"49.8%\"></a>&#8202;&#8202;<a href=\"https://sponsors.sherlockproject.xyz/go/readme-3\"><img src=\"https://sponsors.sherlockproject.xyz/banner/readme-3\" width=\"49.8%\"></a>\n</div>\n\n<br>\n\n> [!WARNING]  \n> Packages for ParrotOS and Ubuntu 24.04, maintained by a third party, appear to be __broken__.  \n> Users of these systems should defer to [`uv`](https://docs.astral.sh/uv/)/`pipx`/`pip` or Docker.\n\n| Method | Notes |\n| - | - |\n| `pipx install sherlock-project` | `pip` or [`uv`](https://docs.astral.sh/uv/) may be used in place of `pipx` |\n| `docker run -it --rm sherlock/sherlock` |\n| `dnf install sherlock-project` | |\n\nCommunity-maintained packages are available for Debian (>= 13), Ubuntu (>= 22.10), Homebrew, Kali, and BlackArch. These packages are not directly supported or maintained by the Sherlock Project.\n\nSee all alternative installation methods [here](https://sherlockproject.xyz/installation).\n\n## General usage\n\nTo search for only one user:\n```bash\nsherlock user123\n```\n\nTo search for more than one user:\n```bash\nsherlock user1 user2 user3\n```\n\nAccounts found will be stored in an individual text file with the corresponding username (e.g ```user123.txt```).\n\n```console\n$ sherlock --help\nusage: sherlock [-h] [--version] [--verbose] [--folderoutput FOLDEROUTPUT] [--output OUTPUT] [--csv] [--xlsx] [--site SITE_NAME] [--proxy PROXY_URL] [--dump-response]\n                [--json JSON_FILE] [--timeout TIMEOUT] [--print-all] [--print-found] [--no-color] [--browse] [--local] [--nsfw] [--txt] [--ignore-exclusions]\n                USERNAMES [USERNAMES ...]\n\nSherlock: Find Usernames Across Social Networks (Version 0.16.0)\n\npositional arguments:\n  USERNAMES             One or more usernames to check with social networks. Check similar usernames using {?} (replace to '_', '-', '.').\n\noptions:\n  -h, --help            show this help message and exit\n  --version             Display version information and dependencies.\n  --verbose, -v, -d, --debug\n                        Display extra debugging information and metrics.\n  --folderoutput FOLDEROUTPUT, -fo FOLDEROUTPUT\n                        If using multiple usernames, the output of the results will be saved to this folder.\n  --output OUTPUT, -o OUTPUT\n                        If using single username, the output of the result will be saved to this file.\n  --csv                 Create Comma-Separated Values (CSV) File.\n  --xlsx                Create the standard file for the modern Microsoft Excel spreadsheet (xlsx).\n  --site SITE_NAME      Limit analysis to just the listed sites. Add multiple options to specify more than one site.\n  --proxy PROXY_URL, -p PROXY_URL\n                        Make requests over a proxy. e.g. socks5://127.0.0.1:1080\n  --dump-response       Dump the HTTP response to stdout for targeted debugging.\n  --json JSON_FILE, -j JSON_FILE\n                        Load data from a JSON file or an online, valid, JSON file. Upstream PR numbers also accepted.\n  --timeout TIMEOUT     Time (in seconds) to wait for response to requests (Default: 60)\n  --print-all           Output sites where the username was not found.\n  --print-found         Output sites where the username was found (also if exported as file).\n  --no-color            Don't color terminal output\n  --browse, -b          Browse to all results on default browser.\n  --local, -l           Force the use of the local data.json file.\n  --nsfw                Include checking of NSFW sites from default list.\n  --txt                 Enable creation of a txt file\n  --ignore-exclusions   Ignore upstream exclusions (may return more false positives)\n```\n\n## Credits\n\nThank you to everyone who has contributed to Sherlock! ❤️\n\n<a href=\"https://github.com/sherlock-project/sherlock/graphs/contributors\">\n  <img src=\"https://contrib.rocks/image?&columns=25&max=10000&&repo=sherlock-project/sherlock\" alt=\"contributors\"/>\n</a>\n\n## Star History\n\n<picture>\n  <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://api.star-history.com/svg?repos=sherlock-project/sherlock&type=Date&theme=dark\" />\n  <source media=\"(prefers-color-scheme: light)\" srcset=\"https://api.star-history.com/svg?repos=sherlock-project/sherlock&type=Date\" />\n  <img alt=\"Sherlock Project Star History Chart\" src=\"https://api.star-history.com/svg?repos=sherlock-project/sherlock&type=Date\" />\n</picture>\n\n## License\n\nMIT © Sherlock Project<br/>\nCreator - [Siddharth Dushantha](https://github.com/sdushantha)\n\n<!-- Reference Links -->\n\n[ext_pypi]: https://pypi.org/project/sherlock-project/\n[ext_brew]: https://formulae.brew.sh/formula/sherlock\n",
+    "readmeTruncated": false
+   },
+   {
+    "rank": 4,
+    "fullName": "google-deepmind/mujoco",
+    "url": "https://github.com/google-deepmind/mujoco",
+    "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+    "language": "C++",
+    "stars": 16868,
+    "forks": 1988,
+    "starsToday": 579,
+    "api": {
+     "stars": 16868,
+     "forks": 1988,
+     "license": "Apache-2.0",
+     "createdAt": "2021-08-27T12:25:48Z",
+     "pushedAt": "2026-11-09T12:57:21Z",
+     "topics": [
+      "mujoco",
+      "physics",
+      "robotics"
+     ],
+     "homepage": "https://mujoco.org",
+     "openIssues": 305,
+     "archived": false
+    },
+    "starDrift": 0,
+    "readme": "<h1>\n  <a href=\"https://mujoco.org\"><img alt=\"MuJoCo\" src=\"banner.png\" width=\"100%\"/></a>\n</h1>\n\n<p>\n  <a href=\"https://mujoco.org\" alt=\"Website\">\n    <img src=\"https://img.shields.io/badge/website-mujoco.org-0053d6\">\n  </a>\n  <a href=\"https://github.com/google-deepmind/mujoco/actions/workflows/build.yml?query=branch%3Amain\" alt=\"GitHub Actions\">\n    <img src=\"https://img.shields.io/github/actions/workflow/status/google-deepmind/mujoco/build.yml?branch=main\">\n  </a>\n  <a href=\"https://mujoco.readthedocs.io/\" alt=\"Documentation\">\n    <img src=\"https://readthedocs.org/projects/mujoco/badge/?version=latest\">\n  </a>\n  <a href=\"https://github.com/google-deepmind/mujoco/blob/main/LICENSE\" alt=\"License\">\n    <img src=\"https://img.shields.io/github/license/google-deepmind/mujoco\">\n  </a>\n</p>\n\n**MuJoCo** stands for **Mu**lti-**Jo**int dynamics with **Co**ntact. It is a\ngeneral purpose physics engine that aims to facilitate research and development\nin robotics, biomechanics, graphics and animation, machine learning, and other\nareas which demand fast and accurate simulation of articulated structures\ninteracting with their environment.\n\nThis repository is maintained by [Google DeepMind](https://www.deepmind.com/).\n\nMuJoCo has a C API and is intended for researchers and developers. The runtime\nsimulation module is tuned to maximize performance and operates on low-level\ndata structures that are preallocated by the built-in XML compiler. The library\nincludes interactive visualization in native desktop windows and web browsers.\nMuJoCo further exposes a large number of utility functions for computing\nphysics-related quantities.\n\nWe also provide [Python bindings] and a plug-in for the [Unity] game engine.\n\n## Documentation\n\nMuJoCo's documentation can be found at [mujoco.readthedocs.io]. Upcoming\nfeatures due for the next release can be found in the [changelog] in the\n\"latest\" branch.\n\n## Getting Started\n\n1. **Try MuJoCo in your browser.**\nVisit [mujoco.org](https://mujoco.org) to explore MuJoCo on desktop or mobile\nwith nothing to install, or open [live.mujoco.org](https://live.mujoco.org) to\ninspect and drag and drop your own models in the WebAssembly version of the\n[MuJoCo Studio] app (slower than native C, since it runs in WebAssembly).\n\n2. **Run a viewer on your machine.**\nFollow the [Getting Started] guide in the documentation to download a prebuilt\nrelease and run the [MuJoCo Studio] app or the classic `simulate` viewer (shown\nin [this video](https://www.youtube.com/watch?v=P83tKA1iz2Y)) on your machine.\n\n3. **Explore our online IPython notebooks.**\nIf you are a Python user, you might want to start with our tutorial notebooks\nrunning on Google Colab:\n\n - The **introductory** tutorial teaches MuJoCo basics:\n   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/google-deepmind/mujoco/blob/main/python/tutorial.ipynb)\n - The **Model Editing** tutorial shows how to create and edit models procedurally:\n   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/google-deepmind/mujoco/blob/main/python/mjspec.ipynb)\n - The **rollout** tutorial shows how to use the multithreaded `rollout` module:\n   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/google-deepmind/mujoco/blob/main/python/rollout.ipynb)\n - The **LQR** tutorial synthesizes a linear-quadratic controller, balancing a\n   humanoid on one leg:\n   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/google-deepmind/mujoco/blob/main/python/LQR.ipynb)\n - The **least-squares** tutorial explains how to use the Python-based nonlinear\n   least-squares solver:\n   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/google-deepmind/mujoco/blob/main/python/least_squares.ipynb)\n - The **MJX** tutorial provides usage examples of\n   [MuJoCo XLA](https://mujoco.readthedocs.io/en/stable/mjx.html), a branch of MuJoCo written in JAX:\n   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/google-deepmind/mujoco/blob/main/mjx/tutorial.ipynb)\n - The **differentiable physics** tutorial trains locomotion policies with\n   analytical gradients automatically derived from MuJoCo's physics step:\n   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/google-deepmind/mujoco/blob/main/mjx/training_apg.ipynb)\n\n## Installation\n\n### Prebuilt binaries\n\nVersioned releases are available as precompiled binaries from the GitHub\n[releases page], built for Linux (x86-64 and AArch64), Windows (x86-64 only),\nand macOS (universal). This is the recommended way to use the software.\n\n### Building from source\n\nUsers who wish to build MuJoCo from source should consult the [build from\nsource] section of the documentation. However, note that the commit at\nthe tip of the `main` branch may be unstable.\n\n### Python (>= 3.11)\n\nThe native Python bindings, which come pre-packaged with a copy of MuJoCo, can\nbe installed from [PyPI] via:\n\n```bash\npip install mujoco\n```\n\nNote that Pre-built Linux wheels target `manylinux2014`, see\n[here](https://github.com/pypa/manylinux) for compatible distributions. For more\ninformation such as building the bindings from source, see the [Python bindings]\nsection of the documentation.\n\n## Versioning\n\nWe aim to release MuJoCo in the first week of each month. Our versioning\nstandards changed to modified Semantic Versioning in 3.5.0,\nsee [versioning](VERSIONING.md) for details.\n\n## Contributing\n\nWe welcome community engagement: questions, requests for help, bug reports and\nfeature requests. To read more about bug reports, feature requests and more\nambitious contributions, please see our [contributors guide](CONTRIBUTING.md)\n",
+    "readmeTruncated": true
+   },
+   {
+    "rank": 5,
+    "fullName": "anthropics/claude-quickstarts",
+    "url": "https://github.com/anthropics/claude-quickstarts",
+    "description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
+    "language": "Python",
+    "stars": 19968,
+    "forks": 3308,
+    "starsToday": 560,
+    "api": {
+     "stars": 19968,
+     "forks": 3308,
+     "license": "MIT",
+     "createdAt": "2024-08-29T19:52:32Z",
+     "pushedAt": "2026-11-06T19:37:57Z",
+     "topics": [],
+     "homepage": null,
+     "openIssues": 239,
+     "archived": false
+    },
+    "starDrift": 0,
+    "readme": "# Claude Quickstarts\n\nClaude Quickstarts is a collection of projects designed to help developers quickly get started with building  applications using the Claude API. Each quickstart provides a foundation that you can easily build upon and customize for your specific needs.\n\n## Getting Started\n\nTo use these quickstarts, you'll need an Claude API key. If you don't have one yet, you can sign up for free at [console.anthropic.com](https://console.anthropic.com).\n\n## Available Quickstarts\n\n### Customer Support Agent\n\nA customer support agent powered by Claude. This project demonstrates how to leverage Claude's natural language understanding and generation capabilities to create an AI-assisted customer support system with access to a knowledge base.\n\n[Go to Customer Support Agent Quickstart](./customer-support-agent)\n\n### Financial Data Analyst\n\nA financial data analyst powered by Claude. This project demonstrates how to leverage Claude's capabilities with interactive data visualization to analyze financial data via chat.\n\n[Go to Financial Data Analyst Quickstart](./financial-data-analyst)\n\n### Computer Use Demo\n\nAn environment and tools that Claude can use to control a desktop computer. This project demonstrates how to leverage the computer use capabilities of Claude, including support for the latest `computer_toolset_20260801` toolset shape, where each computer action is a member tool the model calls by name.\n\n[Go to Computer Use Demo Quickstart](./computer-use-demo)\n\n### Computer Use Best Practices\n\nA pedagogical, native-macOS reference implementation of a computer-use agent. Unlike the containerized Computer Use Demo, this project runs directly against the macOS desktop (run it in a VM!) and demonstrates common patterns for building more reliable and cost-effective computer-use agents: explicit tool definitions, correct image sizing and pruning, prompt caching, server-side compaction, batched tool calls, a sandboxed shell, and trajectory recording. It pairs with Anthropic's [computer-use best-practices guide](https://claude.com/blog/best-practices-for-computer-and-browser-use-with-claude).\n\n[Go to Computer Use Best Practices Quickstart](./computer-use-best-practices)\n\n### Browser Use Demo\n\nA complete reference implementation for browser automation powered by Claude. This project demonstrates how to give Claude the ability to navigate websites, inspect and interact with DOM elements, extract content, and fill forms using a custom Playwright-backed browser tool.\n\n[Go to Browser Use Demo Quickstart](./browser-use-demo)\n\n### Browser Toolset Quickstart\n\nThe minimal CDP example of Claude's browser toolset (`browser_toolset_20260801`), in Python and TypeScript. It has a small driver for one Chromium tab over the Chrome DevTools Protocol, a script that runs the driver with the tool runner, and a script that exercises it without a model. It shows the interface and is not production code.\n\n[Go to Browser Toolset Quickstart](./browser-toolset)\n\n### Computer Toolset Quickstart\n\nThe minimal VNC example of Claude's computer toolset (`computer_toolset_20260801`), in Python and TypeScript. It has a small driver for one desktop over VNC (the RFB protocol, no VNC library), a script that runs the driver with the tool runner, and a script that exercises it without a model. It shows the interface and is not production code.\n\n[Go to Computer Toolset Quickstart](./computer-toolset)\n\n### Autonomous Coding Agent\n\nAn autonomous coding agent powered by the Claude Agent SDK. This project demonstrates a two-agent pattern (initializer + coding agent) that can build complete applications over multiple sessions, with progress persisted via git and a feature list that the agent works through incrementally.\n\n[Go to Autonomous Coding Agent Quickstart](./autonomous-coding)\n\n### Managed Agents: Chat SDK\n\nA browser chat app powered by Claude Managed Agents and Vercel's Chat SDK. This project demonstrates how to pair a persistent Managed Agents session per conversation with a chat surface: a research analyst researches with web search and streams its brief token by token while a live feed shows the tool calls. The same handler runs on Slack, Teams, Discord, Telegram, or WhatsApp by swapping the Chat SDK adapter.\n\n[Go to Managed Agents Chat SDK Quickstart](./managed-agents/chat-sdk)\n\n### Managed Agents with CopilotKit and AG-UI\n\nA personal finance assistant chat app built on a Claude Managed Agent and rendered with CopilotKit. This project demonstrates how to bridge a managed-agent session to the AG-UI protocol, stream replies token by token with event deltas, and render agent tool calls as interactive generative UI components in the chat.\n\n[Go to Managed Agents with CopilotKit Quickstart](./managed-agents/copilot-kit-ag-ui)\n\n### Managed Agents: Daily Brief\n\nA scheduled agent that reads your Slack channels and GitHub pull requests each weekday and posts one short brief to Slack, built on Claude Managed Agents. This project demonstrates a deployment defined entirely as files applied with `ant apply` (agent, environment, two memory stores, vault, cron deployment), a read-only preferences store next to a read-write state store, and run steps designed to fail well unattended: per-source bookmarks, a ledger against repeats, and a source that could not be read reported as unreadable rather than as a quiet day.\n\n[Go to Managed Agents Daily Brief Quickstart](./managed-agents/daily-brief)\n\n### Managed Agents: Knowledge Wiki\n\nA deal-room knowledge wiki built with Claude Managed Agents. This project demonstrates how to distill a document corpus once into a versioned memory-store knowledge wiki — using one dynamic workflow run that extracts, resolves, and consolidates — then answer repeated analyst questions from the wiki with provenance on every fact and a lower per-question cost than raw-document search. The worked example is a real M&A data room fetched from public SEC EDGAR filings.\n\n[Go to Managed Agents Knowledge Wiki Quickstart](./m",
+    "readmeTruncated": true
+   },
+   {
+    "rank": 6,
+    "fullName": "garrytan/gbrain",
+    "url": "https://github.com/garrytan/gbrain",
+    "description": "Garry's Opinionated OpenClaw/Hermes Agent Brain",
+    "language": "TypeScript",
+    "stars": 32089,
+    "forks": 4760,
+    "starsToday": 215,
+    "api": {
+     "stars": 32089,
+     "forks": 4760,
+     "license": "MIT",
+     "createdAt": "2026-04-05T14:40:56Z",
+     "pushedAt": "2026-11-09T21:36:31Z",
+     "topics": [],
+     "homepage": null,
+     "openIssues": 780,
+     "archived": false
+    },
+    "starDrift": 0,
+    "readme": "<h1><picture><source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/images/brand/gbrain-wordmark-light.svg\"><img src=\"docs/images/brand/gbrain-wordmark.svg\" alt=\"GBrain\" height=\"52\"></picture></h1>\n\n**Give the agent you already use a memory you control.** GBrain stores explicit facts with their sources, supports corrections and withdrawal, and makes the same memory available across your agents. Start with keyless memory and keyword retrieval; add semantic search, synthesis, and background enrichment when you need them.\n\nGBrain is MIT-licensed and free to self-host; gbrain.io is optional paid hosting.\n\n> [!TIP]\n> **Need hosted? First time running an agent?** Try **[gbrain.io](https://gbrain.io/?ref=readme)**, hosted GBrain, for the easiest experience: one brain for you and your team, connected to ChatGPT, Claude and Cursor, with nothing to install or keep online. Stuck? Email support@gbrain.io and a person will set it up with you, free.\n\n**Keep skills beside knowledge.** New local brains include memory skills in their\ncontent root. Agents can join an authorized catalog; only approved editors can\npublish. Managed coding-agent installs add an owned native router; restart and\nreal-use verification are separate steps. Staged migration preserves sharing\nchoices and personal edits. See [shared brain skills](docs/guides/shared-brain-skills.md).\n\n## Choose your setup\n\n1. **Add GBrain to my existing agent — recommended.** Keep your agent's identity and save memory inside its environment. No new personal-agent identity or private repository is required. Start with the guide for **[Grok Bot](docs/guides/grok-bot.md)**, **[Muse](docs/guides/muse.md)**, or **[Codex / Claude Code](docs/tutorials/connect-coding-agent.md)**. [Other harnesses](#connect-gbrain-to-your-ai-client-mcp).\n2. **Use the brain on my own computer from everywhere.** One command publishes it over MCP on your Tailscale tailnet and keeps it running: `gbrain mcp expose` (add `--funnel` for cloud agents such as Grok Bot, Muse and ChatGPT). Follow **[use your brain from anywhere over MCP](docs/guides/remote-mcp.md)**. **Say to your agent:** *\"use my brain over mcp\"* — *\"put my brain on tailscale\"*.\n3. **Connect my existing hosted brain.** Follow **[hosted harness access](docs/guides/hosted-harness-access.md)** to choose native OAuth or a private machine connection. For dashboard login, clients, and permissions, use **[MCP administration](docs/mcp/ADMIN.md)** with the server's separate owner credential. Delegation is an explicit choice.\n\nGrok **Bot** and Grok **Build** are different products. Muse's personal agent and **Muse Code** are different products too. Muse already has native editable memory; GBrain adds an explicit, portable record with provenance and shared access. See each guide's dated evidence and remaining verification steps.\n\nI'm Garry Tan, President and CEO of Y Combinator. I built GBrain to run my own AI agents. It's the production brain behind my OpenClaw and Hermes deployments: **155,795 pages, 24,589 people, 5,340 companies**, 66 cron jobs running autonomously. My agent ingests meetings, emails, tweets, voice calls, and original ideas while I sleep. It enriches every person and company it encounters. It fixes its own citations and consolidates memory overnight. I wake up smarter than when I went to bed — and so will you.\n\n**It works as a company brain too.** Authenticated remote clients are constrained by source and operation grants plus visibility filters. Local files and shared database credentials are a different trust boundary: sources alone do not isolate those callers. The authorization tests exercise specific access paths, not a universal no-leak guarantee. Read the [sharing boundaries](docs/architecture/brains-and-sources.md#what-confines-remote-callers-and-what-does-not) and [company-brain tutorial](docs/tutorials/company-brain.md) before setting up shared access.\n\nAlongside keyword and semantic retrieval, GBrain offers two optional ways to use your stored knowledge:\n\n- **A synthesis layer that gives you the actual answer.** Synthesized, well-cited prose across people, companies, deals, and ideas. Not \"here are 10 chunks that mention your query\"; an actual answer with citations and an explicit note on what the brain doesn't know yet. The gap analysis is the part that changes how you use the brain.\n- **A typed knowledge graph.** Trusted local page writes extract supported references without LLM calls when auto-linking is enabled. Remote `put_page` edges arrive later, via sweeps, maintenance or `add_link`. Ask \"who works at acme-example?\": walks are breadth-first, milliseconds on dense clusters ([how](docs/architecture/RETRIEVAL.md#breadth-first-graph-walks)). On BrainBench relationship questions, relationship retrieval lifts production **R@5 from 0.6626 to 0.7241** ([benchmark](docs/architecture/RETRIEVAL.md#the-benchmark)); 0.9791 is the `graph-oracle-parse` upper bound, not a product score.\n\nThe point of building a 150K-page brain is to use it as a strategic moat. To never lose context. To query what's in your own head without re-reading it. The brain layer is what makes the moat usable. The 24/7 dream cycle is what keeps it sharp. Both run on your hardware, your DB, your keys.\n\nIt's easier to ship a daemon that runs 24/7 to ingest, enrich, and consolidate than it is to keep an agent in chat working hard. GBrain is that daemon, generalized. Install in 30 minutes. Your agent does the work. As my personal agent gets smarter, so does yours.\n\n> **Start keyless.** Your harness subscription and any separately configured model API usage are different costs. The optional personal-agent bootstrap takes about 15 minutes; always-on enrichment needs its own compute and API configuration.\n\nDurable preferences and facts can be shared across agents; transient task and\nharness configuration state stay local. Configured cloud embedding, reranking,\nextraction, and synthesis providers can receive text, and the harness model se",
+    "readmeTruncated": true
+   },
+   {
+    "rank": 7,
+    "fullName": "vercel-labs/agent-browser",
+    "url": "https://github.com/vercel-labs/agent-browser",
+    "description": "Browser automation CLI for AI agents",
+    "language": "Rust",
+    "stars": 48397,
+    "forks": 3296,
+    "starsToday": 914,
+    "api": {
+     "stars": 48397,
+     "forks": 3296,
+     "license": "Apache-2.0",
+     "createdAt": "2026-01-11T05:38:15Z",
+     "pushedAt": "2026-11-09T19:30:52Z",
+     "topics": [],
+     "homepage": "https://agent-browser.dev",
+     "openIssues": 541,
+     "archived": false
+    },
+    "starDrift": 0,
+    "readme": "# agent-browser\n\nBrowser automation for AI agents: open pages, read them as an accessibility tree, and act on elements from the shell.\n\n<p>\n  <a href=\"https://vercel.com/labs#labs-products\"><img alt=\"Vercel Labs Product\" src=\"https://img.shields.io/badge/LABS-PRODUCT-0a0a0a.svg?style=for-the-badge&amp;logo=Vercel&amp;labelColor=000000\" height=\"28\"></a>\n  <a href=\"https://www.npmjs.com/package/agent-browser\"><img alt=\"npm version: agent-browser\" src=\"https://img.shields.io/npm/v/agent-browser.svg?style=for-the-badge&amp;labelColor=000000\" height=\"28\"></a>\n  <a href=\"https://github.com/vercel-labs/agent-browser/blob/main/LICENSE\"><img alt=\"License: Apache-2.0\" src=\"https://img.shields.io/github/license/vercel-labs/agent-browser.svg?style=for-the-badge&amp;labelColor=000000\" height=\"28\"></a>\n  <a href=\"https://www.npmjs.com/package/agent-browser\"><img alt=\"npm downloads per month: agent-browser\" src=\"https://img.shields.io/npm/dm/agent-browser.svg?style=for-the-badge&amp;labelColor=000000&amp;label=npm%20downloads\" height=\"28\"></a>\n  <a href=\"https://skills.sh/vercel-labs/agent-browser\"><img alt=\"skills.sh\" src=\"https://skills.sh/b/vercel-labs/agent-browser?style=for-the-badge\" height=\"28\"></a>\n</p>\n\nagent-browser is a native Rust CLI that gives an AI agent a browser it can drive one command at a time. `snapshot` returns the page as compact text with a ref such as `@e1` for each element. The agent acts on a ref, reads the page again to check the result, and repeats. The browser stays open between commands, so each step is one short shell call.\n\n## Install\n\n```bash\nnpm install -g agent-browser\nagent-browser install           # download Chrome for Testing (first time only)\n```\n\n- **Homebrew:** `brew install agent-browser`, then `agent-browser install`.\n- **Linux:** `agent-browser install --with-deps` also installs the browser's system libraries.\n- **No install:** `npx agent-browser open example.com`.\n\nProject installs, building from source, `upgrade`, and `doctor` are covered in [Installation](https://agent-browser.dev/installation).\n\n## Quick start\n\n```bash\nagent-browser open example.com\nagent-browser snapshot -i       # interactive elements, each with a ref\nagent-browser click @e1         # act on a ref from that snapshot\nagent-browser get url           # check the result\nagent-browser close\n```\n\nThe snapshot for `example.com`:\n\n```\n- link \"Learn more\" [ref=e1]\n```\n\n- Refs describe the page at the time of the snapshot. After navigation or a DOM change, take a new snapshot before using refs again.\n- CSS selectors, text, XPath, and semantic locators also work, for example `agent-browser find role button click --name \"Submit\"`. See [Selectors](https://agent-browser.dev/selectors).\n- A click fails, instead of reporting success, when the target is hidden, disabled, outside the viewport, or covered by another element such as a consent banner. Dismiss the covering element, take a new snapshot, and retry.\n\nThe full walkthrough is in the [quick start](https://agent-browser.dev/quick-start).\n\n## How it works\n\nThe CLI sends each command to a background daemon that starts on the first command and controls the browser over the Chrome DevTools Protocol. Each `--session` gets its own daemon and browser. By default, the daemon closes a headless browser and exits after one hour without commands, saving state first when [session persistence](https://agent-browser.dev/sessions) is configured.\n\nChrome for Testing is the default browser. You can also attach to a running Chrome with `--cdp` or `--auto-connect` ([CDP mode](https://agent-browser.dev/cdp-mode)), select the [Lightpanda](https://agent-browser.dev/engines/lightpanda) or [Obscura](https://agent-browser.dev/engines/obscura) engine with `--engine`, drive Mobile Safari in the [iOS Simulator](https://agent-browser.dev/ios), or use a cloud browser provider such as [Browserbase](https://agent-browser.dev/providers/browserbase), [Browserless](https://agent-browser.dev/providers/browserless), [Browser Use](https://agent-browser.dev/providers/browser-use), [Kernel](https://agent-browser.dev/providers/kernel), or [AgentCore](https://agent-browser.dev/providers/agentcore).\n\n## For AI agents\n\nThe CLI ships skills that match its version:\n\n```bash\nagent-browser skills get core                 # the core loop, refs, waiting, and common workflows\nagent-browser skills get core --ref commands  # one reference, such as the full command list\nagent-browser skills get core --full          # adds the full command reference and templates\nagent-browser skills list                     # specialized skills: electron, slack, dogfood, and more\n```\n\nInstall the discovery skill into an agent harness from [skills.sh](https://skills.sh/vercel-labs/agent-browser):\n\n```bash\nnpx skills add vercel-labs/agent-browser\n```\n\nThe installed skill is a thin stub that tells the agent to load `agent-browser skills get core`, so its instructions always match the installed CLI. Or add this to your `AGENTS.md`:\n\n```markdown\nUse `agent-browser` for browser automation. Before the first use, run\n`agent-browser skills get core` and follow it.\n```\n\nFor MCP clients, `agent-browser mcp` starts an MCP server over stdio. See [MCP server](https://agent-browser.dev/commands#mcp-server).\n\n## Commands\n\nRun `agent-browser --help` for the full list, or `agent-browser <command> --help` for one command.\n\n| Group | Commands | Docs |\n|---|---|---|\n| Navigate and read | `open`, `back`, `forward`, `reload`, `read`, `snapshot`, `get`, `is` | [Core](https://agent-browser.dev/commands#core), [Snapshots](https://agent-browser.dev/snapshots) |\n| Interact | `click`, `dblclick`, `fill`, `type`, `press`, `keyboard`, `hover`, `focus`, `select`, `check`, `uncheck`, `scroll`, `drag`, `upload`, `mouse`, `find` | [Core](https://agent-browser.dev/commands#core), [Find elements](https://agent-browser.dev/commands#find-elements) |\n| Wait | `wait` | [Wait](https://agent-browser.dev/commands#wait) |\n| Capture | `screenshot`, `pdf`, `recor",
+    "readmeTruncated": true
+   },
+   {
+    "rank": 8,
+    "fullName": "ruvnet/RuView",
+    "url": "https://github.com/ruvnet/RuView",
+    "description": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
+    "language": "Rust",
+    "stars": 103386,
+    "forks": 13397,
+    "starsToday": 245,
+    "api": {
+     "stars": 103386,
+     "forks": 13397,
+     "license": "MIT",
+     "createdAt": "2025-06-07T04:32:30Z",
+     "pushedAt": "2026-11-09T21:36:19Z",
+     "topics": [
+      "claude",
+      "claude-code",
+      "esp32",
+      "firmware",
+      "home-assistant",
+      "home-automation",
+      "iot",
+      "mcp",
+      "monitoring",
+      "networking",
+      "pose-estimation",
+      "react",
+      "rf",
+      "self-learning",
+      "spatial-intelligence",
+      "typescript",
+      "webassembly",
+      "wifi",
+      "wifi-security"
+     ],
+     "homepage": "https://cognitum.one",
+     "openIssues": 567,
+     "archived": false
+    },
+    "starDrift": 0,
+    "readme": "# π RuView\n\n<p align=\"center\">\n  <a href=\"https://cognitum.one/seed\">\n    <img src=\"assets/ruview-hero-h3-v3.gif\" alt=\"RuView - WiFi DensePose — animated visualization of real-time pose estimation, breathing, and heart-rate sensing through WiFi\" width=\"100%\">\n  </a>\n</p>\n\n[![RuView: spaces become signals, with an animated conceptual RF field](assets/readme/hero-spatial-v6.svg)](docs/user-guide.md)\n\n<table>\n<tr>\n<td align=\"center\" width=\"33%\"><a href=\"docs/user-guide.md\"><img src=\"assets/readme/nav-start-spatial-v4.svg\" width=\"180\" alt=\"Start here\" /></a><br/><a href=\"docs/user-guide.md\">Start here</a></td>\n<td align=\"center\" width=\"33%\"><a href=\"firmware/esp32-csi-node/README.md\"><img src=\"assets/readme/nav-hardware-spatial-v4.svg\" width=\"180\" alt=\"Hardware\" /></a><br/><a href=\"firmware/esp32-csi-node/README.md\">Hardware</a></td>\n<td align=\"center\" width=\"33%\"><a href=\"https://huggingface.co/ruvnet/wifi-densepose-pretrained\"><img src=\"assets/readme/nav-models-spatial-v4.svg\" width=\"180\" alt=\"Models\" /></a><br/><a href=\"https://huggingface.co/ruvnet/wifi-densepose-pretrained\">Models</a></td>\n</tr>\n<tr>\n<td align=\"center\" width=\"33%\"><a href=\"harness/ruview/README.md\"><img src=\"assets/readme/nav-agents-spatial-v4.svg\" width=\"180\" alt=\"AI toolkit\" /></a><br/><a href=\"harness/ruview/README.md\">AI toolkit</a></td>\n<td align=\"center\" width=\"33%\"><a href=\"docs/integrations/home-assistant.md\"><img src=\"assets/readme/nav-home-spatial-v4.svg\" width=\"180\" alt=\"Smart home\" /></a><br/><a href=\"docs/integrations/home-assistant.md\">Smart home</a></td>\n<td align=\"center\" width=\"33%\"><a href=\"https://cognitum.one/seed\"><img src=\"assets/readme/nav-seed-spatial-v4.svg\" width=\"180\" alt=\"Cognitum Seed\" /></a><br/><a href=\"https://cognitum.one/seed\">Cognitum Seed</a></td>\n</tr>\n</table>\n\n<p align=\"center\">\n  <a href=\"https://ruos.cognitum.one\">\n    <img src=\"assets/ruos-animated.svg\" alt=\"RuView — WiFi becomes spatial awareness, with Ruflo coordination and a ruOS sensing workspace\" width=\"100%\">\n  </a>\n</p>\n\n\n## **See through walls with WiFi** ##\n\n**Turn ordinary WiFi into a spatial intelligence / sensing system.** Detect people, measure breathing and heart rate, track movement, and monitor rooms — through walls, in the dark, with no cameras or wearables. Just physics.\n\nWorks natively with the four major smart-home ecosystems: **[Home Assistant](docs/integrations/home-assistant.md)** via the HA-DISCO MQTT publisher, **[Apple Home & HomePod](docs/user-guide-apple-homepod.md)** as a discoverable HAP-1.1 bridge, **[Google Home](docs/integrations/home-assistant.md)** + **[Amazon Alexa](docs/integrations/home-assistant.md)** via the same HA bridge or a [Matter](docs/adr/ADR-122-bfld-ruview-ha-matter-exposure.md) endpoint. Siri, Google Assistant, and Alexa can voice presence and vitals by room with zero custom skills.\n\n[![Works with Home Assistant](https://img.shields.io/badge/Works%20with-Home%20Assistant-blue?logo=home-assistant&logoColor=white&labelColor=41BDF5)](docs/integrations/home-assistant.md) [![Works with Matter](https://img.shields.io/badge/Works%20with-Matter-blue?labelColor=4285F4)](docs/adr/ADR-122-bfld-ruview-ha-matter-exposure.md) [![Works with Apple Home](https://img.shields.io/badge/Works%20with-Apple%20Home-black?logo=apple)](docs/user-guide-apple-homepod.md) [![Works with Google Home](https://img.shields.io/badge/Works%20with-Google%20Home-blue?logo=googlehome)](docs/integrations/home-assistant.md) [![Works with Alexa](https://img.shields.io/badge/Works%20with-Alexa-blue?logo=amazon&logoColor=white&labelColor=00CAFF)](docs/integrations/home-assistant.md)\n\n> Drop into any **Home Assistant** install with one `--mqtt` flag. Or pair into **Apple Home / Google Home / Alexa / SmartThings** as a Matter Bridge. Ships 21 entities per node (11 raw signals + 10 inferred semantic states: someone-sleeping, possible-distress, room-active, elderly-inactivity-anomaly, meeting-in-progress, bathroom-occupied, fall-risk-elevated, bed-exit, no-movement, multi-room-transition) plus 3 starter HA Blueprints. See [`docs/integrations/home-assistant.md`](docs/integrations/home-assistant.md) · [ADR-115](docs/adr/ADR-115-home-assistant-integration.md).\n\n### π RuView is a WiFi sensing platform that turns radio signals into spatial intelligence.\n\nEvery WiFi router already fills your space with radio waves. When people move, breathe, or even sit still, they disturb those waves in measurable ways. RuView captures these disturbances using Channel State Information (CSI) from low-cost ESP32 sensors and turns them into actionable data: who's there, what they're doing, and whether they're okay.\n\n[![Explore RuView sensing, models and automation](assets/readme/header-features-spatial-v4.svg)](docs/user-guide.md)\n\n**What it senses:**\n- **Presence and occupancy** — detect people through walls, count them, track entries and exits\n- **Vital signs** — breathing rate and heart rate, contactless, while sleeping or sitting\n- **Activity recognition** — walking, sitting, gestures, falls — from temporal CSI patterns\n- **Environment mapping** — RF fingerprinting identifies rooms, detects moved furniture, spots new objects\n- **Sleep quality** — overnight monitoring with sleep stage classification and apnea screening\n\n**Also included:**\n\n- **Camera-free pose** — estimate 17 body keypoints from WiFi CSI\n- **Built-in model workflow** — record CSI, train models, load RVF files, and switch LoRA profiles\n- **Local automation** — HOMECORE provides state, history, automations, signed Wasm plugins, voice hooks, and HomeKit support\n- **Unified RF world model** — combine WiFi CSI, radar, UWB, and cellular sensing in one privacy-bounded scene model; accuracy is still synthetic until real-data validation\n- **Governed evidence** — attach privacy policy, uncertainty, provenance, and witness records to sensing events\n- **RuView MetaHarness** — use an AI operator to onboard, calibrate, train, verify, and check sensing claims\n\n<!-- ruview-capability-cards -->\n<t",
+    "readmeTruncated": true
+   },
+   {
+    "rank": 9,
+    "fullName": "ZhuLinsen/daily_stock_analysis",
+    "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+    "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+    "language": "Python",
+    "stars": 68766,
+    "forks": 56372,
+    "starsToday": 505,
+    "api": {
+     "stars": 68766,
+     "forks": 56372,
+     "license": "MIT",
+     "createdAt": "2026-01-10T06:43:20Z",
+     "pushedAt": "2026-11-09T14:14:52Z",
+     "topics": [
+      "a-stock",
+      "ai-agent",
+      "aigc",
+      "llm",
+      "quant",
+      "quantitative-finance",
+      "quantitative-trading"
+     ],
+     "homepage": "https://dsa.zhulinsen.tech",
+     "openIssues": 37,
+     "archived": false
+    },
+    "starDrift": 0,
+    "readme": "<div align=\"center\">\n\n# 📈 股票智能分析系统\n\n[![GitHub stars](https://img.shields.io/github/stars/ZhuLinsen/daily_stock_analysis?style=social)](https://github.com/ZhuLinsen/daily_stock_analysis/stargazers)\n[![arXiv](https://img.shields.io/badge/arXiv-2608.26990-b31b1b.svg)](https://arxiv.org/abs/2608.26990)\n[![CI](https://github.com/ZhuLinsen/daily_stock_analysis/actions/workflows/ci.yml/badge.svg)](https://github.com/ZhuLinsen/daily_stock_analysis/actions/workflows/ci.yml)\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)\n[![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-Ready-2088FF?logo=github-actions&logoColor=white)](https://github.com/features/actions)\n[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white)](https://hub.docker.com/r/zhulinsen/daily_stock_analysis)\n\n<p align=\"center\">\n  <img src=\"https://trendshift.io/api/badge/trendshift/repositories/18527/daily?language=Python\" alt=\"#1 Python Repository Of The Day | Trendshift\" width=\"250\" height=\"55\"/>&nbsp;<a href=\"https://hellogithub.com/repository/ZhuLinsen/daily_stock_analysis\" target=\"_blank\"><img src=\"https://api.hellogithub.com/v1/widgets/recommend.svg?rid=6daa16e405ce46ed97b4a57706aeb29f&claim_uid=pfiJMqhR9uvDGlT&theme=neutral\" alt=\"Featured｜HelloGitHub\" width=\"230\" /></a>\n</p>\n\n> 🤖 基于 AI 大模型的 A股/港股/美股/日股/韩股/台股自选股智能分析系统，每日自动分析并推送「决策仪表盘」到企业微信/飞书/Telegram/Discord/Slack/邮箱\n\n[**产品预览**](#-产品预览) · [**功能特性**](#-功能特性) · [**快速开始**](#-快速开始) · [**推送效果**](#-推送效果) · [**文档中心**](docs/INDEX.md) · [**完整指南**](docs/full-guide.md)\n\n简体中文 | [English](docs/README_EN.md) | [繁體中文](docs/README_CHT.md)\n\n</div>\n\n<details open>\n<summary><strong>💖 赞助商 (Sponsors)</strong></summary>\n<hr>\n<div align=\"center\">\n  <p><a href=\"https://modelflare.dev/sign-up?utm_source=github&amp;utm_campaign=daily_stock_analysis\"><img src=\"./docs/assets/modelflare_banner_zh.png\" alt=\"Modelflare\" width=\"720\"></a><br>感谢 <strong>Modelflare</strong> 赞助本项目！由美国 Havenbyte LLC 运营，满血稳定不掺水，低成本接入 GPT、Claude、Gemini、Grok 及 40+ 图片/视频模型。指定 OpenAI 分组提供 <strong>65% / 75% / 85% 每日缓存命中率保障</strong>；单笔充值 <strong>US$20 解锁 GPT 0.015x</strong>，<strong>US$50 解锁 Claude 0.03x</strong>。<a href=\"https://modelflare.dev/sign-up?utm_source=github&amp;utm_campaign=daily_stock_analysis\">专属链接注册</a></p>\n  <hr>\n  <p>\n    <a href=\"https://serpapi.com/github-daily-stock-analysis\" target=\"_blank\"><img src=\"./docs/assets/serpapi_banner_zh.png\" alt=\"轻松抓取搜索引擎上的实时金融新闻数据 - SerpApi\" width=\"300\" height=\"141\" style=\"width: 300px; height: 141px; object-fit: contain;\"></a>\n  </p>\n</div>\n</details>\n\n\n## 🖥️ 产品预览\n\n<p align=\"center\">\n  <img src=\"docs/assets/readme_workspace_tour_20260510.gif\" alt=\"DSA Web 工作台演示\" width=\"720\">\n</p>\n\n## ✨ 功能特性\n\n| 能力 | 覆盖内容 |\n|------|------|\n| AI 决策报告 | 核心结论、评分、趋势、买卖点位、风险警报、催化因素、操作检查清单 |\n| 多市场数据聚合 | 覆盖 A股、港股、美股、日股、韩股、台股和 ETF，支持行情、K 线、技术指标、新闻、公告、基本面与报告辅助数据；不同市场的数据源和能力边界见 [市场支持边界](docs/market-support.md) |\n| Web / 桌面工作台 | 手动分析、任务进度、历史报告、完整 Markdown、回测、持仓、配置管理、浅色 / 深色主题 |\n| Agent 策略问股 | 多轮追问，支持均线、缠论、波浪、趋势、热点、事件、成长、预期等 15 种内置策略，覆盖 Web/Bot/API |\n| 智能导入与补全 | 图片、CSV/Excel、剪贴板导入；股票代码/名称/拼音/别名补全 |\n| 自动化与推送 | GitHub Actions、Docker、本地定时任务、FastAPI 服务和企业微信/飞书/Telegram/Discord/Slack/邮件推送 |\n\n> 功能细节、字段契约、基本面 P0 超时语义、交易纪律、数据源优先级、Web/API 行为请看 [完整配置与部署指南](docs/full-guide.md)。\n\n### 技术栈与数据来源\n\n| 类型 | 支持 |\n|------|------|\n| AI 模型 | [Modelflare](https://modelflare.dev/sign-up?utm_source=github&utm_campaign=daily_stock_analysis)、[AIHubMix](https://inferera.com/?aff=CfMq)、Gemini、OpenAI 兼容、DeepSeek、通义千问、Claude、Ollama 本地模型等 |\n| 行情数据 | AkShare、Tushare、Pytdx、Baostock、YFinance、Longbridge |\n| 新闻搜索 | [Anspire](https://open.anspire.cn/dsa?share_code=QFBC0FYC)、[SerpAPI](https://serpapi.com/github-daily-stock-analysis)、[Tavily](https://tavily.com/)、[Bocha](https://open.bocha.cn/)、[Brave](https://brave.com/search/api/)、[MiniMax](https://platform.minimaxi.com/)、SearXNG |\n| 社交舆情 | [Stock Sentiment API](https://api.adanos.org/docs)（Reddit / X / Polymarket，仅美股，可选） |\n\n> 项目默认内置 AkShare、Baostock、YFinance 等免费行情源，可零配置运行；免费源受上游限流、接口变动和网络波动影响，稳定性不保证。长期定时、批量分析或更稳定行情建议配置 Tushare、Longbridge 等 token 型数据源，适用市场、Actions 映射和 fallback 规则见 [数据源配置](docs/full-guide.md#数据源配置)。\n\n## 🚀 快速开始\n\n### 方式一：[GitHub Actions（推荐）](https://www.bilibili.com/video/BV11FEb66EXG/)\n\n> 5 分钟完成部署，零成本，无需服务器。\n\n\n#### 1. Fork 本仓库\n\n点击右上角 `Fork` 按钮（顺便点个 Star⭐ 支持一下）\n\n#### 2. 配置 Secrets\n\n`Settings` → `Secrets and variables` → `Actions` → `New repository secret`\n\n**AI 模型配置（至少配置一个）**\n\n默认先选一个模型服务商并填写 API Key；需要多模型、图片识别、本地模型或高级路由时，再参考 [LLM 配置指南](docs/LLM_CONFIG_GUIDE.md)。\n\n| Secret 名称 | 说明 | 必填 |\n|------------|------|:----:|\n| `MODELFLARE_KEY` | [Modelflare](https://modelflare.dev/sign-up?utm_source=github&utm_campaign=daily_stock_analysis) API Key，低成本接入全球热门大模型 | **推荐** |\n| `AIHUBMIX_KEY` | [AIHubMix](https://inferera.com/?aff=CfMq) API Key，一Key切换使用全系模型，无需科学上网，本项目可享 10% 优惠 | **推荐** |\n| `GEMINI_API_KEY` | Google Gemini API Key | 可选 |\n| `ANTHROPIC_API_KEY` | Anthropic Claude API Key | 可选 |\n| `OPENAI_API_KEY` | OpenAI 兼容 API Key（支持 DeepSeek、通义千问等） | 可选 |\n| `OPENAI_BASE_URL` / `OPENAI_MODEL` | 使用 OpenAI 兼容服务时填写 | 可选 |\n\n> Ollama 更适合本地 / Docker 部署，GitHub Actions 推荐使用云端 API。\n\n**通知渠道配置（至少配置一个）**\n\n| Secret 名称 | 说明 |\n|------------|------|\n| `WECHAT_WEBHOOK_URL` | 企业微信机器人 |\n| `FEISHU_WEBHOOK_URL` | 飞书机器人 |\n| `TELEGRAM_BOT_TOKEN` + `TELEGRAM_CHAT_ID` | Telegram |\n| `DISCORD_WEBHOOK_URL` | Discord Webhook |\n| `SLACK_BOT_TOKEN` + `SLACK_CHANNEL_ID` | Slack Bot |\n| `EMAIL_SENDER` + `EMAIL_PASSWORD` | 邮件推送 |\n\n更多渠道、签名校验、分组邮件、Markdown 转图片等配置见 [通知渠道详细配置](docs/full-guide.md#通知渠道详细配置)。\n\n**自选股配置（必填）**\n\n| Secret 名称 | 说明 | 必填 |\n|------------|------|:----:|\n| `STOCK_LIST` | 自选股代码，如 `600519,hk00700,AAPL,7203.T,005930.KS,2330.TW`；已登记指数显式代码（如 `sh000016`、`930606.CSI`）经一次性 `--stocks` 或 GitHub Actions 入口支持，规则见 [指数自选股配置](docs/full-guide.md#指数自选股配置) | ✅ |\n\n**新闻源配置（推荐）**\n\n新闻源会显著影响舆情、公告、事件和催化因素质量，建议至少配置一个搜索服务。\n\n| Secret 名称 ",
+    "readmeTruncated": true
+   },
+   {
+    "rank": 10,
+    "fullName": "homeassistant-ai/ha-mcp",
+    "url": "https://github.com/homeassistant-ai/ha-mcp",
+    "description": "Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants.",
+    "language": "Python",
+    "stars": 5879,
+    "forks": 287,
+    "starsToday": 31,
+    "api": {
+     "stars": 5879,
+     "forks": 287,
+     "license": "MIT",
+     "createdAt": "2025-09-14T13:23:45Z",
+     "pushedAt": "2026-11-09T19:09:22Z",
+     "topics": [
+      "ai",
+      "claude",
+      "hacs",
+      "home-assistant",
+      "home-automation",
+      "llm",
+      "mcp",
+      "model-context-protocol"
+     ],
+     "homepage": "https://homeassistant-ai.github.io/ha-mcp/",
+     "openIssues": 26,
+     "archived": false
+    },
+    "starDrift": 0,
+    "readme": "> **Breaking change (v7.3.0):** `ha_config_set_yaml` has been moved to [beta](docs/beta.md).\n\n<div align=\"center\">\n  <img src=\"https://raw.githubusercontent.com/homeassistant-ai/ha-mcp/master/docs/img/ha-mcp-logo.png\" alt=\"Home Assistant MCP Server Logo\" width=\"300\"/>\n\n  # HA-MCP — Manage Home Assistant with AI\n\n  <!-- mcp-name: io.github.homeassistant-ai/ha-mcp -->\n\n  <p align=\"center\">\n    <img src=\"https://img.shields.io/badge/tools-87-blue\" alt=\"87 Tools\">\n    <a href=\"https://github.com/homeassistant-ai/ha-mcp/releases\"><img src=\"https://img.shields.io/github/v/release/homeassistant-ai/ha-mcp\" alt=\"Release\"></a>\n    <a href=\"https://github.com/homeassistant-ai/ha-mcp/actions/workflows/e2e-tests.yml\"><img src=\"https://img.shields.io/github/actions/workflow/status/homeassistant-ai/ha-mcp/e2e-tests.yml?branch=master&label=E2E%20Tests\" alt=\"E2E Tests\"></a>\n    <a href=\"LICENSE.md\"><img src=\"https://img.shields.io/github/license/homeassistant-ai/ha-mcp.svg\" alt=\"License\"></a>\n    <br>\n    <a href=\"https://github.com/homeassistant-ai/ha-mcp/commits/master\"><img src=\"https://img.shields.io/github/commit-activity/m/homeassistant-ai/ha-mcp.svg\" alt=\"Activity\"></a>\n    <a href=\"https://github.com/jlowin/fastmcp\"><img src=\"https://img.shields.io/badge/Built%20with-FastMCP-purple\" alt=\"Built with FastMCP\"></a>\n    <img src=\"https://img.shields.io/python/required-version-toml?tomlFilePath=https%3A%2F%2Fraw.githubusercontent.com%2Fhomeassistant-ai%2Fha-mcp%2Fmaster%2Fpyproject.toml\" alt=\"Python Version\">\n    <a href=\"https://github.com/sponsors/julienld\"><img src=\"https://img.shields.io/badge/GitHub_Sponsors-☕-blueviolet\" alt=\"GitHub Sponsors\"></a>\n    <a href=\"https://homeassistant-ai.github.io/ha-mcp/\"><img src=\"https://img.shields.io/badge/Website-docs-teal\" alt=\"Website\"></a>\n  </p>\n\n  <p align=\"center\">\n    <em>Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants.</em>\n  </p>\n</div>\n\n---\n\n![Demo with Claude Desktop](https://raw.githubusercontent.com/homeassistant-ai/ha-mcp/master/docs/img/demo.webp)\n\n---\n\n## 🚀 Get Started\n\nThe recommended way to run ha-mcp is the **HA-MCP integration**. It installs into Home Assistant through HACS (the built-in Marketplace on Home Assistant 2026.11+), runs the full server **in-process**, and works on **every** Home Assistant installation type — Home Assistant OS, Supervised, Container, and Core — with full feature parity. It is the easiest setup in every case: setup asks for an administrator access token and how clients may connect.\n\n**Add it to Home Assistant via HACS or, on Home Assistant 2026.11+, the Marketplace (the preferred install):**\n\n[![Add HA-MCP to HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=homeassistant-ai&repository=ha-mcp&category=integration)\n\n**Quick start:**\n\n> The setup below is for version 9.0.0 (October 28, 2026) and later; earlier versions show a shorter setup form without the administrator account step.\n\n1. Install the **HA-MCP integration** (requires **Home Assistant 2026.8.0 or newer**; see [compatibility details](docs/in-process-server.md#requirements)). On **Home Assistant 2026.8–2026.10**, open HACS, search for **HA-MCP**, then **Download**.\n   On **Home Assistant 2026.11 or newer**, open **Settings → Marketplace**, accept its first-run warning, and search for **HA-MCP**, then **Install**. HA-MCP is in the default catalog, so installing it and receiving its updates do not require connecting GitHub or adding a custom repository. The badge above also opens its catalog page.\n   Already installed from the earlier `homeassistant-ai/ha-mcp-integration` repository? It keeps receiving the same releases. On the Marketplace, keep GitHub connected for its background checks on that custom repository.\n   Older installed releases may still appear as **HA-MCP Custom Component**; searching for **HA-MCP** matches both names.\n2. **Restart Home Assistant.**\n3. Decide which administrator account the server acts as. Either create a long-lived access token on your own account (your profile → **Security** → **Long-lived access tokens** → **Create token**; it works from anywhere if it leaks, and the server's changes show under your name), or, safer, create an account just for HA-MCP under **Settings → People → Add person** with **Allow login**, **Local access only** and **Administrator** on. Never use your own login for the second option.\n4. Go to **Settings → Devices & Services → Add Integration**, search for **HA-MCP** and choose **HA-MCP Server**. Paste your token, or enter the user name and password of the account you made for HA-MCP (HA-MCP creates its token), pick how clients may connect — **Remote access through Home Assistant** (start with **Secret URL**, the simplest; **Home Assistant sign-in** adds a login) and/or **Network access: Local network** — then click **Submit**. Both start disabled, so a client on another device needs one of them.\n5. Copy the connect URL from the entry's **Configure** screen (**Settings → Devices & Services → “HA-MCP — Manage Home Assistant with AI” → HA-MCP Server → Configure**). A notification confirms the server started and points you there.\n6. Paste that URL into your AI client — done.\n\n**Connect URL.** The Configure screen gives you a Home Assistant webhook URL for remote clients — `https://<your-ha-domain>/api/webhook/<webhook-id>` through Nabu Casa or any reverse proxy already pointed at Home Assistant (locally, `http://<ha-host>:8123/api/webhook/<webhook-id>`). For clients on the same network, the server is also reachable directly at `http://<ha-ip>:9584/private_<random>`.\n\n- **Replaces other install methods:** the in-process server is a complete, standalone ha-mcp install — it takes the place of the app (add-on), Docker, and uvx/PyPI (stdio) methods. Run only one; do not run the in-process server alongside another install.\n- **Local only?** Leave remote access disabled at setup (or turn off **Remo",
+    "readmeTruncated": true
+   },
+   {
+    "rank": 11,
+    "fullName": "milind-soni/OpenMausBot",
+    "url": "https://github.com/milind-soni/OpenMausBot",
+    "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+    "language": "TypeScript",
+    "stars": 19577,
+    "forks": 2682,
+    "starsToday": 1589,
+    "api": {
+     "stars": 19577,
+     "forks": 2682,
+     "license": "Apache-2.0",
+     "createdAt": "2026-08-11T18:58:55Z",
+     "pushedAt": "2026-11-09T21:24:52Z",
+     "topics": [
+      "ai-agents",
+      "claude-code",
+      "codex",
+      "computer-use",
+      "docker",
+      "electron",
+      "grok",
+      "grok-bot",
+      "grok-bot-alternative",
+      "self-hosted",
+      "typescript"
+     ],
+     "homepage": "https://www.mausbot.com/",
+     "openIssues": 916,
+     "archived": false
+    },
+    "starDrift": 0,
+    "readme": "<div align=\"center\">\n\n# OpenMausBot\n\n**The open-source Grok Bot alternative: your own team of AI bots, in a chat app.**\n\n[**openmausbot.com**](https://www.openmausbot.com) &nbsp;·&nbsp; [Download](https://www.openmausbot.com/download) &nbsp;·&nbsp; [Open source Grok Bot alternative, compared](https://www.openmausbot.com/blog/grok-bot-vs-openmausbot)\n\n<sub>OpenMausBot is an open-source Grok Bot alternative: an independent project inspired by **Grok Bot**, and the open-source alternative to **Meta Muse**, **OpenAI dots** and **Cue by Manus** — bring-your-own-agent, local-first, on the models you already have. Also known as **MausBot**; formerly **OpenGrokBot**. Not affiliated with xAI, Meta, OpenAI or Manus.</sub>\n\nEvery bot in the sidebar is a real agent — Claude or Codex running locally under the hood — with its own\npersonality, its own model, its own cloud computer, and its own connected apps.\nTalk to them like contacts. Watch them work. Approve what matters.\n\n![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)\n![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)\n![Electron](https://img.shields.io/badge/Electron-macOS%20%C2%B7%20Windows%20%C2%B7%20Ubuntu-2B2E3A?logo=electron&logoColor=9FEAF9)\n![Agents](https://img.shields.io/badge/agents-Claude%20·%20Codex-d97757)\n[![Release](https://img.shields.io/github/v/release/milind-soni/OpenMausBot?label=release&color=1084fe&cacheSeconds=300)](https://github.com/milind-soni/OpenMausBot/releases/latest)\n![PRs](https://img.shields.io/badge/PRs-welcome-38d591)\n\n<br>\n\n<a href=\"https://github.com/milind-soni/OpenMausBot/releases/latest/download/OpenMausBot.dmg\">\n  <img src=\"https://img.shields.io/github/v/release/milind-soni/OpenMausBot?style=for-the-badge&label=%E2%AC%87%EF%B8%8F%20%20Download%20for%20Mac%20%28Apple%20silicon%29&labelColor=070707&color=1084fe&cacheSeconds=300\" alt=\"Download the latest OpenMausBot for Mac with Apple silicon (.dmg)\" height=\"40\">\n</a>\n&nbsp;\n<a href=\"https://github.com/milind-soni/OpenMausBot/releases/latest/download/OpenMausBot-intel.dmg\">\n  <img src=\"https://img.shields.io/github/v/release/milind-soni/OpenMausBot?style=for-the-badge&label=%E2%AC%87%EF%B8%8F%20%20Download%20for%20Mac%20%28Intel%29&labelColor=070707&color=2a9d8f&cacheSeconds=300\" alt=\"Download the latest OpenMausBot for Intel Macs (.dmg)\" height=\"40\">\n</a>\n&nbsp;\n<a href=\"https://github.com/milind-soni/OpenMausBot/releases/latest/download/OpenMausBot-setup.exe\">\n  <img src=\"https://img.shields.io/github/v/release/milind-soni/OpenMausBot?style=for-the-badge&label=%E2%AC%87%EF%B8%8F%20%20Download%20for%20Windows&labelColor=070707&color=4cc2ff&cacheSeconds=300\" alt=\"Download the latest OpenMausBot for Windows (.exe)\" height=\"40\">\n</a>\n&nbsp;\n<a href=\"https://github.com/milind-soni/OpenMausBot/releases/latest/download/OpenMausBot-amd64.deb\">\n  <img src=\"https://img.shields.io/github/v/release/milind-soni/OpenMausBot?style=for-the-badge&label=%E2%AC%87%EF%B8%8F%20%20Download%20for%20Ubuntu&labelColor=070707&color=e95420&cacheSeconds=300\" alt=\"Download the latest OpenMausBot for Ubuntu (.deb)\" height=\"40\">\n</a>\n\n<sub>[latest release](https://github.com/milind-soni/OpenMausBot/releases/latest) &nbsp;·&nbsp; macOS: Apple silicon & Intel · signed & notarized .dmg &nbsp;·&nbsp; Windows: x64 installer &nbsp;·&nbsp; Ubuntu 24.04 x64: .deb or AppImage beta &nbsp;·&nbsp; [all releases](https://github.com/milind-soni/OpenMausBot/releases)</sub>\n\n<br>\n\n<a href=\"https://github.com/sponsors/milind-soni\">\n  <img src=\"https://img.shields.io/badge/%E2%9D%A4%EF%B8%8F%20%20Support%20OpenMausBot-GitHub%20Sponsors-38d591?style=for-the-badge&labelColor=070707\" alt=\"Support OpenMausBot via GitHub Sponsors\" height=\"40\">\n</a>\n\n<br>\n<br>\n\n<sub>Powered by <a href=\"https://boat.dev\">boat.dev</a></sub>\n<br>\n<a href=\"https://boat.dev\">\n  <picture>\n    <source media=\"(prefers-color-scheme: dark)\" srcset=\"docs/assets/sponsors/boat-logo-white.svg\">\n    <img src=\"docs/assets/sponsors/boat-logo.svg\" alt=\"Boat (boat.dev)\" height=\"34\">\n  </picture>\n</a>\n\n<br>\n<br>\n\n<img src=\"docs/screenshots/hero.png\" alt=\"OpenMausBot — a Telegram-style chat app where every chat is a real AI agent\" width=\"900\">\n\n</div>\n\n---\n\n> ⚠️ **No affiliation with any cryptocurrency.** OpenMausBot has no token. Any coin using the OpenMausBot, Maus, or SupaMaus name is not created, endorsed, or affiliated with this project or its maintainer. I have received no tokens, payment, or allocation from anyone, and I will not be endorsing any token.\n\n## Why\n\nOne assistant in one box is the wrong shape for agents. OpenMausBot is an independent, open-source project inspired by **Grok Bot** —\nit keeps the idea (AI as a *messaging app*: a roster of bots you chat with, each with its own personality,\nmemory of its thread, model, computer, and apps) and rebuilds it open, local-first, and on the agents you\nalready have:\n\n- **Bring your own agents.** Bots run on the `claude`, `codex`, and `grok` CLIs installed on your own machine\n  — your existing logins and subscriptions, no new accounts, no proxy in the middle. Point any engine at a\n  custom CLI binary (a versioned build or wrapper) in **Settings → Engines**.\n- **Local first.** One small harness server on `127.0.0.1` owns every agent process. Transcripts, keys, and\n  events live in `~/.openmausbot`, not a cloud.\n- **Agents with hands.** Each bot can use a cloud Linux desktop, an isolated Local VM, or—where the platform\n  safety boundary is currently certified—your own computer, plus 500+ apps through Composio. Host control is\n  available on macOS and Ubuntu Xorg after explicit opt-in. Ubuntu Wayland host control remains disabled while\n  issue #345 is resolved.\n\n## The open-source alternative to Grok Bot, Muse, dots and Cue\n\nFour closed personal-agent products shipped in seven weeks of 2026, and each one keeps the model, the\ncomputer and your data on its maker's side of the line. OpenMausBot is the open-source ve",
+    "readmeTruncated": true
+   }
+  ]
+ },
+ "hn": {
+  "id": "hn",
+  "name": "Hacker News front page",
+  "url": "https://hn.algolia.com/api/v1/search?tags=front_page&hitsPerPage=40",
+  "status": "ok",
+  "fetchedAt": "2026-11-09T21:38:11.430Z",
+  "newestItemAt": "2026-11-09T20:04:55Z",
+  "gapHours": 1.6,
+  "count": 30,
+  "items": [
+   {
+    "id": "50424581",
+    "title": "Fold Epic Paper Airplanes",
+    "link": "https://www.foldableflight.com",
+    "hnUrl": "https://news.ycombinator.com/item?id=50424581",
+    "points": 730,
+    "comments": 126,
+    "publishedAt": "2026-11-09T12:19:22Z"
+   },
+   {
+    "id": "50429906",
+    "title": "Claude Fable 5.2 and Mythos 5.2",
+    "link": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+    "hnUrl": "https://news.ycombinator.com/item?id=50429906",
+    "points": 707,
+    "comments": 390,
+    "publishedAt": "2026-11-09T18:56:29Z"
+   },
+   {
+    "id": "50422069",
+    "title": "Is Opus 5.5 nerfed? Thinking patterns changed on November 3",
+    "link": "https://twitter.com/shanemelaugh/status/2119192075505893695",
+    "hnUrl": "https://news.ycombinator.com/item?id=50422069",
+    "points": 630,
+    "comments": 425,
+    "publishedAt": "2026-11-09T07:04:25Z"
+   },
+   {
+    "id": "50427362",
+    "title": "Payments Canada announces launch of Canada's Real-Time Rail (RTR) payment system",
+    "link": "https://www.payments.ca/canada-launches-real-time-rail-bringing-247-payment-infrastructure-national-economy",
+    "hnUrl": "https://news.ycombinator.com/item?id=50427362",
+    "points": 405,
+    "comments": 220,
+    "publishedAt": "2026-11-09T16:00:45Z"
+   },
+   {
+    "id": "50428801",
+    "title": "When will this stop? The Raspberry Pi 5 16GB SBC now sells for $385",
+    "link": "https://www.cnx-software.com/2026/11/03/when-will-this-stop-the-raspberry-pi-5-16gb-sbc-now-sells-for-385/",
+    "hnUrl": "https://news.ycombinator.com/item?id=50428801",
+    "points": 221,
+    "comments": 185,
+    "publishedAt": "2026-11-09T17:42:55Z"
+   },
+   {
+    "id": "50426175",
+    "title": "Magenta solar panels may be agrivoltaics' cleverest trick yet",
+    "link": "https://www.anthropocenemagazine.org/2026/10/magenta-solar-panels-may-be-agrivoltaics-cleverest-trick-yet/",
+    "hnUrl": "https://news.ycombinator.com/item?id=50426175",
+    "points": 212,
+    "comments": 117,
+    "publishedAt": "2026-11-09T14:31:39Z"
+   },
+   {
+    "id": "50424157",
+    "title": "What is malloc doing, anyway?",
+    "link": "https://benmandrew.com/articles/what-is-malloc-doing-anyway",
+    "hnUrl": "https://news.ycombinator.com/item?id=50424157",
+    "points": 187,
+    "comments": 47,
+    "publishedAt": "2026-11-09T11:31:05Z"
+   },
+   {
+    "id": "50431058",
+    "title": "USPS now offers official ZIP Code boundary polygons",
+    "link": "https://postalpro.usps.com/zcb",
+    "hnUrl": "https://news.ycombinator.com/item?id=50431058",
+    "points": 171,
+    "comments": 77,
+    "publishedAt": "2026-11-09T19:58:59Z"
+   },
+   {
+    "id": "50429024",
+    "title": "Our Smallest, Most Efficient Model: Muse Ember",
+    "link": "https://research.meta.ai/blog/muse-ember",
+    "hnUrl": "https://news.ycombinator.com/item?id=50429024",
+    "points": 169,
+    "comments": 70,
+    "publishedAt": "2026-11-09T17:58:46Z"
+   },
+   {
+    "id": "50426899",
+    "title": "Cryptocurrency lawsuit: Ethereum Foundation required \"suicide pledge\"",
+    "link": "https://www.denverpost.com/2026/11/06/ethereum-suicide-pledge-lawsuit-mandate-boulder-crypto/",
+    "hnUrl": "https://news.ycombinator.com/item?id=50426899",
+    "points": 164,
+    "comments": 158,
+    "publishedAt": "2026-11-09T15:23:57Z"
+   },
+   {
+    "id": "50425303",
+    "title": "Children of Men: The future is a mirror for the present",
+    "link": "https://reactormag.com/children-of-men-the-future-is-a-mirror-for-the-present/",
+    "hnUrl": "https://news.ycombinator.com/item?id=50425303",
+    "points": 144,
+    "comments": 108,
+    "publishedAt": "2026-11-09T13:27:01Z"
+   },
+   {
+    "id": "50429734",
+    "title": "E-means: 10x faster k-means at equal loss",
+    "link": "https://e-means.github.io/",
+    "hnUrl": "https://news.ycombinator.com/item?id=50429734",
+    "points": 134,
+    "comments": 8,
+    "publishedAt": "2026-11-09T18:45:43Z"
+   },
+   {
+    "id": "50428907",
+    "title": "Show HN: Every satellite that passed over any place this week, and its photos",
+    "link": "https://www.watched.earth",
+    "hnUrl": "https://news.ycombinator.com/item?id=50428907",
+    "points": 123,
+    "comments": 27,
+    "publishedAt": "2026-11-09T17:51:31Z"
+   },
+   {
+    "id": "50424366",
+    "title": "Try Gleam",
+    "link": "https://nchagnet.eu/blog/you-should-try-gleam",
+    "hnUrl": "https://news.ycombinator.com/item?id=50424366",
+    "points": 107,
+    "comments": 112,
+    "publishedAt": "2026-11-09T11:55:14Z"
+   },
+   {
+    "id": "50426207",
+    "title": "Zebkit – Chromium as an embeddable library",
+    "link": "https://github.com/ikey4u/zebkit",
+    "hnUrl": "https://news.ycombinator.com/item?id=50426207",
+    "points": 104,
+    "comments": 37,
+    "publishedAt": "2026-11-09T14:34:00Z"
+   },
+   {
+    "id": "50429545",
+    "title": "DeepX claims inference up to 100B parameters at less than 5 W",
+    "link": "https://www.eetimes.com/deepx-tapes-out-second-gen-chip-projects-6-7x-performance-gain-with-lpddr5x-pim/",
+    "hnUrl": "https://news.ycombinator.com/item?id=50429545",
+    "points": 104,
+    "comments": 13,
+    "publishedAt": "2026-11-09T18:33:58Z"
+   },
+   {
+    "id": "50429426",
+    "title": "Google Gemini routes personal Drive files and emails to human annotators",
+    "link": "https://github.com/thisisme6598/gemini_files/",
+    "hnUrl": "https://news.ycombinator.com/item?id=50429426",
+    "points": 96,
+    "comments": 18,
+    "publishedAt": "2026-11-09T18:24:38Z"
+   },
+   {
+    "id": "50430621",
+    "title": "CUI – Native UI components for C",
+    "link": "https://yappologistic.github.io/CUI/",
+    "hnUrl": "https://news.ycombinator.com/item?id=50430621",
+    "points": 75,
+    "comments": 43,
+    "publishedAt": "2026-11-09T19:35:16Z"
+   },
+   {
+    "id": "50427934",
+    "title": "Show HN: DBDelve – Open-Source DB Client Made with Rust and GPUI",
+    "link": "https://news.ycombinator.com/item?id=50427934",
+    "hnUrl": "https://news.ycombinator.com/item?id=50427934",
+    "points": 74,
+    "comments": 24,
+    "publishedAt": "2026-11-09T16:36:38Z"
+   },
+   {
+    "id": "50431144",
+    "title": "Claude Fable 5.2 Scores 65 on Artificial Analysis, Highest So Far",
+    "link": "https://artificialanalysis.ai/models/claude-fable-5-2",
+    "hnUrl": "https://news.ycombinator.com/item?id=50431144",
+    "points": 70,
+    "comments": 30,
+    "publishedAt": "2026-11-09T20:04:55Z"
+   },
+   {
+    "id": "50429430",
+    "title": "Infineon marks innovation milestone with 300mm power silicon carbide wafer",
+    "link": "https://www.infineon.com/press-release/2026/infpr202611-028",
+    "hnUrl": "https://news.ycombinator.com/item?id=50429430",
+    "points": 64,
+    "comments": 26,
+    "publishedAt": "2026-11-09T18:25:01Z"
+   },
+   {
+    "id": "50426831",
+    "title": "Pigshell: Unix the Web",
+    "link": "http://pigshell.com/v/0.6.4/",
+    "hnUrl": "https://news.ycombinator.com/item?id=50426831",
+    "points": 50,
+    "comments": 18,
+    "publishedAt": "2026-11-09T15:18:19Z"
+   },
+   {
+    "id": "50429636",
+    "title": "Show HN: MeowDisplay Is iPhone Mirroring, but in Reverse",
+    "link": "https://meowdisplay.app/",
+    "hnUrl": "https://news.ycombinator.com/item?id=50429636",
+    "points": 49,
+    "comments": 19,
+    "publishedAt": "2026-11-09T18:39:22Z"
+   },
+   {
+    "id": "50386246",
+    "title": "A primer on GPUs and kernel optimization",
+    "link": "https://www.nabo.dev/blogs/kernel-primer",
+    "hnUrl": "https://news.ycombinator.com/item?id=50386246",
+    "points": 40,
+    "comments": 0,
+    "publishedAt": "2026-11-05T23:48:04Z"
+   },
+   {
+    "id": "50413970",
+    "title": "Show HN: Recalc – Spreadsheet where cells can be Claude Code or Codex terminals",
+    "link": "https://github.com/sshah03/recalc",
+    "hnUrl": "https://news.ycombinator.com/item?id=50413970",
+    "points": 18,
+    "comments": 1,
+    "publishedAt": "2026-11-08T15:12:07Z"
+   },
+   {
+    "id": "50429812",
+    "title": "Show HN: Someone Was Here – Find out who used your Mac while you were away",
+    "link": "https://someonewashere.app/",
+    "hnUrl": "https://news.ycombinator.com/item?id=50429812",
+    "points": 17,
+    "comments": 6,
+    "publishedAt": "2026-11-09T18:50:56Z"
+   },
+   {
+    "id": "50411515",
+    "title": "Deuterium's Impact on OLED Displays (2024)",
+    "link": "https://www.oled-info.com/deuteriums-impact-oled-displays",
+    "hnUrl": "https://news.ycombinator.com/item?id=50411515",
+    "points": 13,
+    "comments": 6,
+    "publishedAt": "2026-11-08T08:52:33Z"
+   },
+   {
+    "id": "50430991",
+    "title": "Parking-app convenience fees in 312 U.S. cities (median $0.35 per session)",
+    "link": "https://parkgraph.com/parking-app-fees",
+    "hnUrl": "https://news.ycombinator.com/item?id=50430991",
+    "points": 7,
+    "comments": 1,
+    "publishedAt": "2026-11-09T19:55:53Z"
+   },
+   {
+    "id": "50405274",
+    "title": "An ode to livelyness analysis; SSA to registers",
+    "link": "https://xnacly.me/posts/2026/an-ode-to-livelyness-analysis/",
+    "hnUrl": "https://news.ycombinator.com/item?id=50405274",
+    "points": 6,
+    "comments": 0,
+    "publishedAt": "2026-11-07T15:17:31Z"
+   },
+   {
+    "id": "50428266",
+    "title": "Y/N (YC S23) is hiring a growth lead to distribute superhuman A.I. storytelling",
+    "link": "https://www.ycombinator.com/companies/yn/jobs/TjDn3YZ-founding-growth-marketer",
+    "hnUrl": "https://news.ycombinator.com/item?id=50428266",
+    "publishedAt": "2026-11-09T17:00:06Z"
+   }
+  ]
+ },
+ "feeds": [
+  {
+   "id": "techmeme",
+   "name": "Techmeme",
+   "url": "https://www.techmeme.com/feed.xml",
+   "maxGapH": 8,
+   "lang": "en",
+   "status": "ok",
+   "fetchedAt": "2026-11-09T21:38:11.430Z",
+   "httpDate": "Mon, 09 Nov 2026 21:38:11 GMT",
+   "cacheAge": null,
+   "newestItemAt": "2026-11-09T21:15:14.000Z",
+   "gapHours": 0.4,
+   "tzAdjusted": false,
+   "count": 15,
+   "items": [
+    {
+     "title": "AI infrastructure provider Fireworks says hackers accessed some customers' datasets, incomplete model weights, and billing information over the past month (Anna Tong/Forbes)",
+     "link": "https://www.techmeme.com/261109/p42#a261109p42",
+     "publishedAt": "2026-11-09T21:15:14.000Z",
+     "outlet": null
+    },
+    {
+     "title": "SpaceX plans a gas-fired power plant and super-compute facility in Starbase, TX, with ~$24B of investment for initial phases, per a public hearing notice (Bloomberg)",
+     "link": "https://www.techmeme.com/261109/p41#a261109p41",
+     "publishedAt": "2026-11-09T21:00:48.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Anthropic prices Fable 5.2 and Mythos 5.2 at $8/1M input and $40/1M output tokens, down 20% from 5.1; fast mode costs $16/1M input and $80/1M output tokens (Frederic Lardinois/The New Stack)",
+     "link": "https://www.techmeme.com/261109/p40#a261109p40",
+     "publishedAt": "2026-11-09T20:00:51.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Anthropic says during prerelease testing Mythos 5.2 and Fable 5.2 formalized the proof of Fermat's Last Theorem and solved two open black hole physics problems (Jay Peters/The Verge)",
+     "link": "https://www.techmeme.com/261109/p39#a261109p39",
+     "publishedAt": "2026-11-09T19:15:01.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Anthropic releases Mythos 5.2 and Fable 5.2, saying they are \"best for the most ambitious, open-ended technical work\", with outputs up to 30% faster than 5.1 (Anthropic)",
+     "link": "https://www.techmeme.com/261109/p38#a261109p38",
+     "publishedAt": "2026-11-09T19:02:08.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Mavria, which aims to build modular data centers that can be shipped by trucks, raised $130M across pre-seed and seed rounds at a $1B valuation led by Paradigm (Jennifer Hiller/Wall Street Journal)",
+     "link": "https://www.techmeme.com/261109/p37#a261109p37",
+     "publishedAt": "2026-11-09T18:50:03.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Elliptic: hackers behind the $6.3B Binance heist created at least six memecoins on the NEAR blockchain network to launder about $430,000 of stolen funds (Emily Nicolle/Bloomberg)",
+     "link": "https://www.techmeme.com/261109/p36#a261109p36",
+     "publishedAt": "2026-11-09T18:35:01.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Meta releases Muse Ember, its smallest and most cost-efficient AI model yet, saying it delivers more intelligence per dollar than Haiku 5.5 and GPT-6 Luna (Russell Brandom/TechCrunch)",
+     "link": "https://www.techmeme.com/261109/p35#a261109p35",
+     "publishedAt": "2026-11-09T18:15:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Uber launches Uber Parking, an in-app parking reservation tool powered by its SpotHero acquisition, in 15 US cities, including Chicago, NYC, and San Francisco (Andrew J. Hawkins/The Verge)",
+     "link": "https://www.techmeme.com/261109/p34#a261109p34",
+     "publishedAt": "2026-11-09T17:15:14.000Z",
+     "outlet": null
+    },
+    {
+     "title": "French officials say Iran's Revolutionary Guards were behind the cyberattacks that knocked out commercial refrigerators and freezers across France in October (Reuters)",
+     "link": "https://www.techmeme.com/261109/p33#a261109p33",
+     "publishedAt": "2026-11-09T17:05:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Sources: a Commerce Department investigation into Megaspeed for allegedly smuggling Nvidia chips to China was transferred to the DOJ after Nvidia intervened (New York Times)",
+     "link": "https://www.techmeme.com/261109/p32#a261109p32",
+     "publishedAt": "2026-11-09T16:20:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "In a 60 Minutes interview, Trump says the DOJ threatened a top exec at \"one of the big\" AI companies over \"bad\" activities and this \"person totally changed\" (Stevie Bonifield/The Verge)",
+     "link": "https://www.techmeme.com/261109/p31#a261109p31",
+     "publishedAt": "2026-11-09T16:10:02.000Z",
+     "outlet": null
+    },
+    {
+     "title": "An interview with ex-Shein Executive Chair Donald Tang who insists it was his decision to step down ahead of the troubled IPO, Shein's valuation rout, and more (Patrick Jenkins/Financial Times)",
+     "link": "https://www.techmeme.com/261109/p30#a261109p30",
+     "publishedAt": "2026-11-09T16:01:27.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Disney and Adobe sign a multiyear deal to build proprietary \"artist-led\" generative AI models with Adobe Firefly Foundry to support Disney's production pipeline (Jess Weatherbed/The Verge)",
+     "link": "https://www.techmeme.com/261109/p29#a261109p29",
+     "publishedAt": "2026-11-09T15:50:01.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Draft law: the EU's Digital Fairness Act would require companies to let adults disable addictive features and will target AI systems that simulate relationships (Bloomberg)",
+     "link": "https://www.techmeme.com/261109/p28#a261109p28",
+     "publishedAt": "2026-11-09T15:40:00.000Z",
+     "outlet": null
+    }
+   ]
+  },
+  {
+   "id": "techcrunch",
+   "name": "TechCrunch",
+   "url": "https://techcrunch.com/feed/",
+   "maxGapH": 8,
+   "lang": "en",
+   "status": "ok",
+   "fetchedAt": "2026-11-09T21:38:11.430Z",
+   "httpDate": "Mon, 09 Nov 2026 21:38:11 GMT",
+   "cacheAge": null,
+   "newestItemAt": "2026-11-09T20:55:34.000Z",
+   "gapHours": 0.7,
+   "tzAdjusted": false,
+   "count": 20,
+   "items": [
+    {
+     "title": "Fervo now has $12B in orders for its geothermal power tech",
+     "link": "https://techcrunch.com/2026/11/09/fervo-now-has-12b-in-orders-for-its-geothermal-power-tech/",
+     "publishedAt": "2026-11-09T20:55:34.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Jensen Huang pulls out of ElevenLabs Summit amid Nvidia controversy",
+     "link": "https://techcrunch.com/2026/11/09/jensen-huang-pulls-out-of-elevenlabs-summit-amid-nvidia-controversy/",
+     "publishedAt": "2026-11-09T20:09:06.000Z",
+     "outlet": null
+    },
+    {
+     "title": "YouTube streaming data returns to Billboard charts, ending major disagreement",
+     "link": "https://techcrunch.com/2026/11/09/youtube-streaming-data-returns-to-billboard-charts-ending-major-disagreement/",
+     "publishedAt": "2026-11-09T19:39:41.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Anthropic releases new Mythos and Fable models amid RSI concerns",
+     "link": "https://techcrunch.com/2026/11/09/anthropic-releases-new-mythos-and-fable-models-amid-rsi-concerns/",
+     "publishedAt": "2026-11-09T19:24:51.000Z",
+     "outlet": null
+    },
+    {
+     "title": "AI hardware startup Nominal triples valuation to $3B in 8 months",
+     "link": "https://techcrunch.com/2026/11/09/ai-hardware-startup-nominal-triples-valuation-to-3b-in-8-months/",
+     "publishedAt": "2026-11-09T19:21:46.000Z",
+     "outlet": null
+    },
+    {
+     "title": "France blames Iran for mass-hacks targeting freezers in grocery stores and blood banks",
+     "link": "https://techcrunch.com/2026/11/09/france-blames-iran-for-mass-hacks-targeting-freezers-in-grocery-stores-and-blood-banks/",
+     "publishedAt": "2026-11-09T19:19:24.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Jensen Huang’s affair with alleged Chinese spy puts Nvidia’s China ambitions under scrutiny",
+     "link": "https://techcrunch.com/2026/11/09/jensen-huangs-affair-with-alleged-chinese-spy-puts-nvidias-china-ambitions-under-scrutiny/",
+     "publishedAt": "2026-11-09T18:09:52.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Meta releases Muse Ember, a new lightweight model for agent execution",
+     "link": "https://techcrunch.com/2026/11/09/meta-releases-muse-ember-a-new-lightweight-model-for-agent-execution/",
+     "publishedAt": "2026-11-09T18:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Uber launches parking service following SpotHero acquisition, with an eye on robotaxis",
+     "link": "https://techcrunch.com/2026/11/09/uber-launches-parking-service-following-spothero-acquisition-with-an-eye-on-robotaxis/",
+     "publishedAt": "2026-11-09T17:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Anthropic joins AI’s natural gas frenzy, buys $3.4B worth of turbines",
+     "link": "https://techcrunch.com/2026/11/09/anthropic-joins-ais-natural-gas-frenzy-buys-3-4b-worth-of-turbines/",
+     "publishedAt": "2026-11-09T16:56:54.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Medium’s new TK app brings AI assistance directly into the writing process",
+     "link": "https://techcrunch.com/2026/11/09/mediums-new-tk-app-brings-ai-assistance-directly-into-the-writing-process/",
+     "publishedAt": "2026-11-09T16:12:28.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Meta expands Instagram’s AI age-guessing tech globally",
+     "link": "https://techcrunch.com/2026/11/09/meta-expands-instagrams-ai-age-guessing-tech-globally/",
+     "publishedAt": "2026-11-09T15:32:27.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Waymo robotaxis kept illegally passing school buses after software fix, feds say",
+     "link": "https://techcrunch.com/2026/11/09/waymo-robotaxis-kept-illegally-passing-school-buses-after-software-fix-feds-say/",
+     "publishedAt": "2026-11-09T15:24:59.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Meet Drops, the new music app bringing back the fun of sharing songs with friends",
+     "link": "https://techcrunch.com/2026/11/09/meet-drops-the-new-music-app-bringing-back-the-fun-of-sharing-songs-with-friends/",
+     "publishedAt": "2026-11-09T14:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Automattic debuts a platform to deploy vibe-coding apps amid a changing internet",
+     "link": "https://techcrunch.com/2026/11/09/automattic-debuts-a-platform-to-deploy-vibe-coding-apps-amid-a-changing-internet/",
+     "publishedAt": "2026-11-09T14:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Musk says Tesla will refund some Cybertruck deposits, defends decision to end production",
+     "link": "https://techcrunch.com/2026/11/09/musk-says-tesla-will-refund-some-cybertruck-deposits-defends-decision-to-end-production/",
+     "publishedAt": "2026-11-09T13:43:28.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Tesla expands robotaxi service to San Antonio",
+     "link": "https://techcrunch.com/2026/11/09/tesla-expands-robotaxi-service-to-san-antonio/",
+     "publishedAt": "2026-11-09T11:30:24.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Is Jensen Huang’s job on the line? Yale’s Jeffrey Sonnenfeld estimates it’s ‘about a 50-50’",
+     "link": "https://techcrunch.com/2026/11/08/is-jensen-huangs-job-on-the-line-yales-jeffrey-sonnenfeld-estimates-its-about-a-50-50/",
+     "publishedAt": "2026-11-09T05:26:29.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Apps to distract you from the endless cycle of doomscrolling",
+     "link": "https://techcrunch.com/2026/11/08/apps-to-distract-you-from-the-endless-cycle-of-doomscrolling/",
+     "publishedAt": "2026-11-08T22:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Nvidia will investigate CEO Jensen Huang’s relationship with possible Chinese spy",
+     "link": "https://techcrunch.com/2026/11/08/nvidia-says-its-investigating-ceo-jensen-huangs-relationship-with-possible-chinese-spy/",
+     "publishedAt": "2026-11-08T21:00:11.000Z",
+     "outlet": null
+    }
+   ]
+  },
+  {
+   "id": "theverge",
+   "name": "The Verge",
+   "url": "https://www.theverge.com/rss/index.xml",
+   "maxGapH": 8,
+   "lang": "en",
+   "status": "ok",
+   "fetchedAt": "2026-11-09T21:38:11.430Z",
+   "httpDate": "Mon, 09 Nov 2026 21:38:11 GMT",
+   "cacheAge": "2045",
+   "newestItemAt": "2026-11-09T19:09:58.000Z",
+   "gapHours": 2.5,
+   "tzAdjusted": false,
+   "count": 10,
+   "items": [
+    {
+     "title": "Apple’s $50 Intelligence Usage Packs extend access to some AI features",
+     "link": "https://www.theverge.com/tech/1030084/apple-intelligence-usage-packs-ai-features-creator-studio-logic-pro",
+     "publishedAt": "2026-11-09T19:09:58.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Anthropic launches new Claude Fable and Mythos 5.2 models",
+     "link": "https://www.theverge.com/ai-artificial-intelligence/1030005/anthropic-claude-fable-mythos-5-2",
+     "publishedAt": "2026-11-09T19:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "You can grab three months of Game Pass Ultimate for under $20 per month",
+     "link": "https://www.theverge.com/gadgets/1029998/game-pass-ultimate-three-months-lego-pokemon-pikachu-deal-sale",
+     "publishedAt": "2026-11-09T18:35:25.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Instagram’s Effect Builder makes new filters from AI prompts",
+     "link": "https://www.theverge.com/tech/1030061/instagram-ai-effect-builder-filters",
+     "publishedAt": "2026-11-09T18:07:23.000Z",
+     "outlet": null
+    },
+    {
+     "title": "James Gunn is out as DC movie leader",
+     "link": "https://www.theverge.com/entertainment/1030022/james-gunn-peter-safran-dc-studios-out-leaving",
+     "publishedAt": "2026-11-09T17:39:57.000Z",
+     "outlet": null
+    },
+    {
+     "title": "The future of AI hinges on… Jensen Huang’s sex life?",
+     "link": "https://www.theverge.com/ai-artificial-intelligence/1029990/jensen-huang-the-spy-who-loved-me",
+     "publishedAt": "2026-11-09T17:36:08.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Uber wants to park your car now, too",
+     "link": "https://www.theverge.com/transportation/1029776/uber-parking-launch-spothero-robotaxis",
+     "publishedAt": "2026-11-09T17:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Sony’s new PlayStation Portal handheld includes ‘additional’ internal storage",
+     "link": "https://www.theverge.com/news/1029822/sony-playstation-portal-japan-model-additional-storage",
+     "publishedAt": "2026-11-09T16:23:31.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Trump’s 60 Minutes interview touched on AI safety, threat to arrest an AI exec",
+     "link": "https://www.theverge.com/ai-artificial-intelligence/1029802/trump-60-minutes-ai",
+     "publishedAt": "2026-11-09T15:50:38.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Disney and Adobe are building generative AI tools together",
+     "link": "https://www.theverge.com/tech/1029773/disney-adobe-generative-ai-partnership",
+     "publishedAt": "2026-11-09T15:38:56.000Z",
+     "outlet": null
+    }
+   ]
+  },
+  {
+   "id": "electrek",
+   "name": "Electrek",
+   "url": "https://electrek.co/feed/",
+   "maxGapH": 12,
+   "lang": "en",
+   "status": "ok",
+   "fetchedAt": "2026-11-09T21:38:11.430Z",
+   "httpDate": "Mon, 09 Nov 2026 21:38:11 GMT",
+   "cacheAge": null,
+   "newestItemAt": "2026-11-09T19:13:49.000Z",
+   "gapHours": 2.4,
+   "tzAdjusted": false,
+   "count": 60,
+   "items": [
+    {
+     "title": "Toyota sells 3 electric SUVs, but which one is best for you?",
+     "link": "https://electrek.co/2026/11/09/toyota-sells-3-electric-suvs-which-one-is-best/",
+     "publishedAt": "2026-11-09T19:13:49.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Yozma IN 10 Pro e-dirt bike hits exclusive new $1,614 low, Anker early Black Friday security sale $1,100 off, EcoFlow, more",
+     "link": "https://electrek.co/2026/11/09/yozma-in-10-pro-electric-dirt-bike-anker-black-friday-security-sale-ecoflow-more/",
+     "publishedAt": "2026-11-09T19:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "The electric Vespa just got better where it actually matters",
+     "link": "https://electrek.co/2026/11/09/the-electric-vespa-just-got-better-where-it-actually-matters/",
+     "publishedAt": "2026-11-09T18:48:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Ford’s EV batteries retain more than 90% health after 100,000 miles",
+     "link": "https://electrek.co/2026/11/09/fords-ev-batteries-retain-over-90-health-after-100000-miles/",
+     "publishedAt": "2026-11-09T17:12:53.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Musk admits Tesla doesn’t have enough talent to build more than one car at a time after exodus",
+     "link": "https://electrek.co/2026/11/09/tesla-deep-bench-gone-musk-admits-talent-shortage/",
+     "publishedAt": "2026-11-09T16:41:29.000Z",
+     "outlet": null
+    },
+    {
+     "title": "BYD is going all out on its ultra-luxury EV with coach doors and 1,000+ km of range [Images]",
+     "link": "https://electrek.co/2026/11/09/byds-ultra-luxury-ev-coach-doors-1000-km-range/",
+     "publishedAt": "2026-11-09T15:32:57.000Z",
+     "outlet": null
+    },
+    {
+     "title": "LiveWire just showed off its biggest electric motorcycle lineup yet",
+     "link": "https://electrek.co/2026/11/09/livewire-just-showed-off-its-biggest-electric-motorcycle-lineup-yet/",
+     "publishedAt": "2026-11-09T15:13:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Tesla launches Robotaxi in San Antonio with a 274 sq mi geofence on paper",
+     "link": "https://electrek.co/2026/11/09/tesla-robotaxi-san-antonio-launch-geofence/",
+     "publishedAt": "2026-11-09T14:36:37.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Musk says Cybertruck isn’t dying from weak sales — the numbers disagree",
+     "link": "https://electrek.co/2026/11/09/musk-cybertruck-demand-claim-data/",
+     "publishedAt": "2026-11-09T13:56:47.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Electric dirt bikes keep getting called e-bikes. The bicycle industry wants that to stop",
+     "link": "https://electrek.co/2026/11/09/electric-dirt-bikes-keep-getting-called-e-bikes-the-bicycle-industry-wants-that-to-stop/",
+     "publishedAt": "2026-11-09T12:54:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Going the distance: these electric semi trucks cover over 600 miles EVERY DAY",
+     "link": "https://electrek.co/2026/11/09/going-the-distance-these-electric-semi-trucks-cover-over-600-miles-every-day/",
+     "publishedAt": "2026-11-09T12:33:13.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Here are the best electric bikes you can buy at every price level in November 2026",
+     "link": "https://electrek.co/2026/11/08/here-are-the-best-electric-bikes-you-can-buy-at-every-price-level/",
+     "publishedAt": "2026-11-08T18:52:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "French carmaker Renault wants to get into the military robot business",
+     "link": "https://electrek.co/2026/11/08/french-carmaker-renault-wants-to-get-into-the-military-robot-business/",
+     "publishedAt": "2026-11-08T17:19:39.000Z",
+     "outlet": null
+    },
+    {
+     "title": "New ID. AURA is the mainstream EV VW needs – but its software is the real story",
+     "link": "https://electrek.co/2026/11/08/new-id-aura-is-the-mainstream-ev-vw-needs-but-its-software-is-the-real-story/",
+     "publishedAt": "2026-11-08T13:42:16.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Everyone wants an electric pickup truck. I want more electric 125cc motorcycles",
+     "link": "https://electrek.co/2026/11/08/everyone-wants-an-electric-pickup-truck-i-want-more-electric-125cc-motorcycles/",
+     "publishedAt": "2026-11-08T09:37:36.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Tesla deemed liable for fraud after Solar Roof ‘experiment’ on a home",
+     "link": "https://electrek.co/2026/11/07/tesla-solar-roof-fraud-liable-experiment-lawsuit/",
+     "publishedAt": "2026-11-07T16:01:23.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Harbinger scores another $240M in latest investment round",
+     "link": "https://electrek.co/2026/11/07/harbinger-scores-another-240m-in-latest-investment-round/",
+     "publishedAt": "2026-11-07T12:53:45.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Yamaha’s new electric scooter takes aim at Europe’s 125cc commuters",
+     "link": "https://electrek.co/2026/11/07/yamahas-new-electric-scooter-takes-aim-at-europes-125cc-commuters/",
+     "publishedAt": "2026-11-07T12:30:10.000Z",
+     "outlet": null
+    },
+    {
+     "title": "5 American, 6 Canadian: Workhorse W56 arrives in the True North",
+     "link": "https://electrek.co/2026/11/07/5-american-6-canadian-workhorse-w56-arrives-in-the-true-north/",
+     "publishedAt": "2026-11-07T12:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Honda just showed off its first high-end electric mountain bike",
+     "link": "https://electrek.co/2026/11/07/honda-just-showed-off-its-first-high-end-electric-mountain-bike/",
+     "publishedAt": "2026-11-07T11:51:36.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Amazon set to deploy more than 3,000 TATA electric delivery trucks",
+     "link": "https://electrek.co/2026/11/06/amazon-set-to-deploy-more-than-3000-tata-electric-delivery-trucks/",
+     "publishedAt": "2026-11-07T01:43:36.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Apollo’s newest electric scooter is also its lowest-cost yet",
+     "link": "https://electrek.co/2026/11/06/apollos-newest-electric-scooter-is-also-its-lowest-cost-yet/",
+     "publishedAt": "2026-11-06T21:46:19.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Hyundai’s $359 IONIQ 5 lease looks like a deal, but don’t overlook its bigger sibling",
+     "link": "https://electrek.co/2026/11/06/hyundais-359-ioniq-5-lease-deal-bigger-sibling/",
+     "publishedAt": "2026-11-06T21:38:04.000Z",
+     "outlet": null
+    },
+    {
+     "title": "EVgo opens its first Tesla Superchargers, with hundreds more planned",
+     "link": "https://electrek.co/2026/11/06/evgo-opens-its-first-tesla-superchargers-with-hundreds-more-planned/",
+     "publishedAt": "2026-11-06T20:44:43.000Z",
+     "outlet": null
+    },
+    {
+     "title": "BYD is launching this 5-seat luxury electric SUV next week with over 1,000 km of range",
+     "link": "https://electrek.co/2026/11/06/byd-launching-5-seat-luxury-suv-next-week-with-1000-km-range/",
+     "publishedAt": "2026-11-06T20:32:41.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Podcast: Tesla kills the Cybertruck, EVs are surging, and more",
+     "link": "https://electrek.co/2026/11/06/podcast-tesla-kills-the-cybertruck-evs-are-surging-and-more/",
+     "publishedAt": "2026-11-06T19:55:25.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Bluetti Apex 200 2,560Wh power station exclusive $1,044 in Early Black Friday deals, Velotric e-bikes up to $760 off, Segway, more",
+     "link": "https://electrek.co/2026/11/06/bluetti-apex-200-2560wh-power-station-black-friday-velotric-e-bikes-segway-more/",
+     "publishedAt": "2026-11-06T19:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "BMW is throwing in $500 in free public charging with its new 2027 iX3, i5, and i7 EVs",
+     "link": "https://electrek.co/2026/11/06/bmw-offers-500-free-public-charging-new-2027-ix3-i5-i7-evs/",
+     "publishedAt": "2026-11-06T18:50:52.000Z",
+     "outlet": null
+    },
+    {
+     "title": "The BMW iX3 smashed its EPA range rating, driving well over 400 miles in a real-world test",
+     "link": "https://electrek.co/2026/11/06/bmw-ix3-crushes-epa-range-driving-400-miles-real-world-test/",
+     "publishedAt": "2026-11-06T17:11:26.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Kia’s PV7 electric van stretches over 17 feet and seats 9",
+     "link": "https://electrek.co/2026/11/06/kia-pv7-electric-van-stretches-over-17-feet-seats-9/",
+     "publishedAt": "2026-11-06T15:30:14.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Tesla hikes Cybertruck prices up to 10% after announcing it will kill production",
+     "link": "https://electrek.co/2026/11/06/tesla-raises-cybertruck-prices-after-ending-production/",
+     "publishedAt": "2026-11-06T14:03:57.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Lucid teases its cheaper sub-$50,000 Cosmos EV in new video and images",
+     "link": "https://electrek.co/2026/11/06/lucid-cosmos-teaser-cheaper-ev-new-images/",
+     "publishedAt": "2026-11-06T13:42:07.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Liebherr expands excavator range with new, 250-tonne electric model",
+     "link": "https://electrek.co/2026/11/06/liebherr-expands-excavator-range-with-new-250-tonne-electric-model/",
+     "publishedAt": "2026-11-06T12:49:41.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Zoomlion says its new, 1,600 hp hybrid tractor is the world’s most powerful",
+     "link": "https://electrek.co/2026/11/06/zoomlion-says-its-new-1600-hp-hybrid-tractor-is-the-worlds-most-powerful/",
+     "publishedAt": "2026-11-06T11:48:09.000Z",
+     "outlet": null
+    },
+    {
+     "title": "BYD’s electric hypercar hits 312 mph, first production car over 500 km/h",
+     "link": "https://electrek.co/2026/11/06/byd-yangwang-u9-xtreme-first-production-car-500-km-h/",
+     "publishedAt": "2026-11-06T11:40:27.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Tesla to end Cybertruck production as sales stall at ~10% of plan",
+     "link": "https://electrek.co/2026/11/06/tesla-ending-cybertruck-production-sales-10-percent-plan/",
+     "publishedAt": "2026-11-06T11:33:25.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Energica rises from the ashes with plans for cheaper electric motorcycles",
+     "link": "https://electrek.co/2026/11/06/energica-rises-from-the-ashes-with-plans-for-cheaper-electric-motorcycles/",
+     "publishedAt": "2026-11-06T09:50:19.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Janus Electric secures battery supply deal for its battery-swap semi truck",
+     "link": "https://electrek.co/2026/11/05/janus-electric-secures-battery-supply-deal-for-its-battery-swap-semi-truck/",
+     "publishedAt": "2026-11-05T23:57:13.000Z",
+     "outlet": null
+    },
+    {
+     "title": "E-quipment highlight: Jungheinrich launches new forklift for Asian markets",
+     "link": "https://electrek.co/2026/11/05/e-quipment-highlight-jungheinrich-launches-new-forklift-for-asian-markets/",
+     "publishedAt": "2026-11-05T23:08:44.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Ford’s electric pickup is suddenly selling like hotcakes at 50% off used",
+     "link": "https://electrek.co/2026/11/05/fords-electric-pickup-selling-like-hotcakes-50-off-used/",
+     "publishedAt": "2026-11-05T22:17:39.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Kia’s EV5 spotted with an updated design and a huge new infotainment display",
+     "link": "https://electrek.co/2026/11/05/kias-ev5-spotted-with-updated-design-huge-display/",
+     "publishedAt": "2026-11-05T20:55:44.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Meta-backed 250 MW solar farm breaks ground in Arkansas",
+     "link": "https://electrek.co/2026/11/05/meta-backed-250-mw-solar-farm-breaks-ground-in-arkansas/",
+     "publishedAt": "2026-11-05T20:10:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "EcoFlow DELTA Gen4 Series power stations launch at up to $1,435 off, Segway Myon e-bike $400 off, Lectric Black Friday Sale, more",
+     "link": "https://electrek.co/2026/11/05/ecoflow-delta-gen4-power-stations-segway-myon-e-bike-lectric-black-friday-sale-more/",
+     "publishedAt": "2026-11-05T19:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Hyundai is recalling nearly 30,000 Kona Electric vehicles due to an airbag software defect",
+     "link": "https://electrek.co/2026/11/05/hyundai-recalling-nearly-30000-kona-evs-airbag-defect/",
+     "publishedAt": "2026-11-05T18:45:25.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Tesla wants its sworn Cybercab answers to NHTSA kept entirely secret",
+     "link": "https://electrek.co/2026/11/05/tesla-cybercab-nhtsa-sworn-answers-confidential/",
+     "publishedAt": "2026-11-05T18:32:57.000Z",
+     "outlet": null
+    },
+    {
+     "title": "BYD’s newest EV is about as big as a Toyota Camry, but brings a lot more tech for $23K",
+     "link": "https://electrek.co/2026/11/05/byds-newest-ev-big-as-toyota-camry-a-lot-more-tech-for-23k/",
+     "publishedAt": "2026-11-05T17:52:20.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Segway launches new electric motorcycle that’s so safe it has seatbelts",
+     "link": "https://electrek.co/2026/11/05/segway-launches-new-electric-motorcycle-thats-so-safe-it-has-seatbelts/",
+     "publishedAt": "2026-11-05T17:13:27.000Z",
+     "outlet": null
+    },
+    {
+     "title": "New Jersey is putting 10 MW of community solar on warehouse roofs",
+     "link": "https://electrek.co/2026/11/05/new-jersey-is-putting-10-mw-of-community-solar-on-warehouse-roofs/",
+     "publishedAt": "2026-11-05T16:23:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Toyota updates the 2027 RAV4 PHEV with an NACS port and up to 52 miles of EV range",
+     "link": "https://electrek.co/2026/11/05/toyota-updates-rav4-phev-nacs-port-52-miles-ev-range/",
+     "publishedAt": "2026-11-05T15:40:08.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Electric cars are about to overtake petrol in the UK, data shows",
+     "link": "https://electrek.co/2026/11/05/uk-ev-sales-october-2026-electric-cars-overtake-petrol/",
+     "publishedAt": "2026-11-05T14:58:23.000Z",
+     "outlet": null
+    },
+    {
+     "title": "DeepWay electric semi arrives in New Zealand, and gets a new name",
+     "link": "https://electrek.co/2026/11/05/deepway-electric-semi-arrives-in-new-zealand-and-gets-a-new-name/",
+     "publishedAt": "2026-11-05T12:10:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Aniioki A9 Pro Max review: Basically an electric motorcycle that you can pedal",
+     "link": "https://electrek.co/2026/11/05/aniioki-a9-pro-max-review-basically-an-electric-motorcycle-that-you-can-pedal/",
+     "publishedAt": "2026-11-05T11:25:13.000Z",
+     "outlet": null
+    },
+    {
+     "title": "BLUETTI’s flexible $1,099 Apex 200 backs up your home – and powers your RV",
+     "link": "https://electrek.co/2026/11/04/bluetti-apex-200-backs-up-your-home-and-powers-your-rv/",
+     "publishedAt": "2026-11-05T02:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "High gas prices are pumping up used EV sales: these are FLYING off the lot",
+     "link": "https://electrek.co/2026/11/04/high-gas-prices-are-pumping-up-used-ev-sales-these-are-flying-off-the-lot/",
+     "publishedAt": "2026-11-05T01:13:53.000Z",
+     "outlet": null
+    },
+    {
+     "title": "First: Volvo CE Electric equipment does the work, without disturbing the wildlife",
+     "link": "https://electrek.co/2026/11/04/first-volvo-ce-electric-equipment-does-the-work-without-disturbing-the-wildlife/",
+     "publishedAt": "2026-11-04T23:23:15.000Z",
+     "outlet": null
+    },
+    {
+     "title": "GM is recalling more than 67,000 Cadillac and Chevy EVs over a brake software defect",
+     "link": "https://electrek.co/2026/11/04/gm-recalls-67000-cadillac-chevy-evs-over-brake-software-defect/",
+     "publishedAt": "2026-11-04T22:15:04.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Ford Fathom EV pickup prices will range from $28,350 to the high $30Ks",
+     "link": "https://electrek.co/2026/11/04/ford-fathom-ev-pickup-prices-range-from-28350-to-high-30ks/",
+     "publishedAt": "2026-11-04T20:53:10.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Home Depot early Black Friday sale arrives, Fanttik USB-C pruning shears $80, WORX 9-in-1 leaf blower $91, more",
+     "link": "https://electrek.co/2026/11/04/green-deals-nov-4/",
+     "publishedAt": "2026-11-04T19:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Range Rover is axing its two cheapest SUVs, making way for a new entry-level EV",
+     "link": "https://electrek.co/2026/11/04/range-rover-drops-two-cheapest-suvs-new-entry-level-ev/",
+     "publishedAt": "2026-11-04T18:46:28.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Germany’s EV share hits record 37% as BEVs beat gas and diesel combined",
+     "link": "https://electrek.co/2026/11/04/germany-electric-car-sales-record-37-percent-share/",
+     "publishedAt": "2026-11-04T18:20:03.000Z",
+     "outlet": null
+    }
+   ]
+  },
+  {
+   "id": "gnews-us",
+   "name": "Google News Technology (US)",
+   "url": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=en-US&gl=US&ceid=US:en",
+   "maxGapH": 4,
+   "lang": "en",
+   "status": "ok",
+   "fetchedAt": "2026-11-09T21:38:11.430Z",
+   "httpDate": "Mon, 09 Nov 2026 21:38:12 GMT",
+   "cacheAge": null,
+   "newestItemAt": "2026-11-09T20:34:04.000Z",
+   "gapHours": 1.1,
+   "tzAdjusted": false,
+   "count": 60,
+   "items": [
+    {
+     "title": "Apple’s $50 Intelligence Usage Packs extend access to some AI features - The Verge",
+     "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOeEY1X0ZFY0k5R0ZvNEUzcU5qT2FYeFJhNF9WQjBZRHVrVmFUd0ZMdE45TDV6d0tRMVk0NXIzYmRYLWY5MmtvdmlFclhlTm9BQzRBQTBrUnJ1ZGtNeUtPaUkxLXZUVXVHVzV5MWxCNjAzeVp0SzFlam9lWHpYVFNwUUdBdzVJQ1RQd20teEtNTXIzNkViREVPa0lmbUpwRUVaYThBNTloN18?oc=5",
+     "publishedAt": "2026-11-09T19:09:58.000Z",
+     "outlet": "The Verge"
+    },
+    {
+     "title": "Vulnerability that lets hackers SSH into Linux devices is under active exploitation - Ars Technica",
+     "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQSTNQRG9EUC12Ymp2UXY5d2pibmlQZnlZeUVsRm9TMjVWb3A3RktFZ04yYjlDa2g5cHJnLU9uN0JzSzgyZmVqUlBuWm1mLTRYWWFpbUpmM2ZqcEd1RERodFVORTVMaVV5VXA1aDNCRG1qd1VnamVjbE9nUHQzd2RmdEVQR2xCZ2NaWWhaTndETlplY0VFa3FaLTFYMUFNT0N0aEM2NGhDNC1RdXI2UnhuSjU3NHE0N19KNFpmUzJrUmJURWc?oc=5",
+     "publishedAt": "2026-11-09T19:41:34.000Z",
+     "outlet": "Ars Technica"
+    },
+    {
+     "title": "Exclusive: Here’s Your First Look at Memory, Samsung’s Take on Pixel Screenshots - SammyGuru",
+     "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1sYWNGc014RjdPTm1nS2RIYzA3RnlCUHlud2hsbGdhMDR6TS15RUljemRtdDZyc1FXVmhlSGJ3Tm52emRHS0g2czVKdklUSHpuakpxblJaclpOY0ZaeGNralhXSG1wRlV5dTg5eU5ZTQ?oc=5",
+     "publishedAt": "2026-11-08T21:34:07.000Z",
+     "outlet": "SammyGuru"
+    },
+    {
+     "title": "Epic Games Launcher is coming to SteamOS - The Verge",
+     "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNcXR3ZmtxLVVLaEd0aElfaXl3LWV3RnE0Y0tKa2ZhY0xFallKN3N4VUptQjJNNFhxaF9OamJjbjdMSGVyeXE2NTJacXBwQndJX3hpYzBuZUl4dHNwSHozWXRYRl9SN01EZU9xemNaS1lhMzUtbjd5NHJiRm55R0dYZ2xlTVdjdw?oc=5",
+     "publishedAt": "2026-11-08T20:52:05.000Z",
+     "outlet": "The Verge"
+    },
+    {
+     "title": "This is the most affordable phone plan I've found — and it still has unlimited talk, text, and data - AOL.com",
+     "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOUG91Um9KNS1lV29yQ0NNYXJzN09GdnZjRWFaSWpWVlQ0Tl85M0MtbU9iOVRTSThudnlhRUo3dGlhdW5oeXlRcHhyczNxRUg0SUZndUdoM29qcU9lcnFrRXFZRm1DWVc3Qk1SZGI3enRoeldnVjZvbU1hMGVUalJZMU5jaXd6aDd1M1ZQLXJ2dV9KTFpWWmFNRW9tdUdUakgtSGVoS3JTYWM2dDFjdEpTMlZHMUFidlNDcGx5LXRrZ3I5clZqS3NFMGZHdHVjMDZlaERMc0NR?oc=5",
+     "publishedAt": "2026-11-05T15:08:47.000Z",
+     "outlet": "AOL.com"
+    },
+    {
+     "title": "\"Art, including characters, terrain, animations, cutscenes and UI\" Bandai Namco and Monolith Soft helped out with Ocarina of Time on Switch 2 - Eurogamer.net",
+     "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPbktsYmFhMWl1TGVNZnViX21UQUFEay1wTkRCcTMzaWVHTlV2SVZtSFdQUEowVUVqZlhESmozMkV1UFB4Z1hSSEFUekdIMzkzNG1jT3hkSmdra3JPcFp6NldwYXA1Yy1TMjVqOWxpZkcyRHR3cVM1ZmdMaUc0REI3Y1lR?oc=5",
+     "publishedAt": "2026-11-09T12:45:50.000Z",
+     "outlet": "Eurogamer.net"
+    },
+    {
+     "title": "Samsung starts rolling out stable One UI 9 with Wear OS 7 to Galaxy Watch 8 series - Android Authority",
+     "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPRUFUOUJzNUxfaUhKQ1FRbTc5OXVZYnZrSUFEckVGdmt0MXJLTGJXVjN1aHd4Zm5YcVJCVXJOQWE3SExxREpKYno5MkdXNVJnUFdwX2JEcDZ2WDk0TGhBeUluSEJFQk93ZktDZjg2U3RFQ1hSRXhTWE4yYWRld1hzZ3Nfa2NSYXl1ZUZSSUhVcWJYWk0?oc=5",
+     "publishedAt": "2026-11-09T08:41:00.000Z",
+     "outlet": "Android Authority"
+    },
+    {
+     "title": "Leak reveals details for more iPhone 18 models launching early 2027 - 9to5Mac",
+     "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOdXBRQWZQTUxFVFR0NkdRMHV3LTNPT1lPU2VfUmxZRXNHSFpaeWRobHM0cnU0cTR0N2E3MTB5aWx1YlBheS1welFTZ2NNWV9OX3lmRmdtem1WbGlRMWFPci05M2p5M3Y4Sjc0UUpmYm9DLUNUb3lZQ29MTExlT1QxTURQaDhReXMyS3FJVkE2OGxFcFozVkFPX1l0YzAxOVpo?oc=5",
+     "publishedAt": "2026-11-09T14:50:00.000Z",
+     "outlet": "9to5Mac"
+    },
+    {
+     "title": "OpenAI Launches GPT-6 Cyber After AI Helps Find 81 Firefox Flaws, 948 Linux Exploits - The Hacker News",
+     "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPX2ZfWDZjZ0ZiM2VHMU5CWDFwNFdZR093TTh1RUVYN3h2NkRVWnBCdEUyWkhTOUhBMEd5di13STkxVlBCTXlMcFJTS2tZS20wT1lkOE03UGd2VnpkSG1Sb2F1cWtISFB5UEFJY2RhT19DV3N3djNmaEI0SDVWUVlTbg?oc=5",
+     "publishedAt": "2026-11-06T14:58:00.000Z",
+     "outlet": "The Hacker News"
+    },
+    {
+     "title": "Apple Reportedly Wants Siri AI to Be More Agentic Next Year - PCMag",
+     "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOQ1pxYUVCRG9rZ3JKOElvdXA2d2NkcWdFeUZScmdFSTdrbXJfRk41TmRscDBzTmtiUlNQZ2otS0o3dVItaWVaeWEteWtWOFh5bmRGdGRWRldXcFBzNmRjWEw3enpiU1BBS0hZUXZ6NEJObnVUZUNXX3RwbVRreDZPMlpGQ2p4WS1vUU9zb2xvQQ?oc=5",
+     "publishedAt": "2026-11-09T09:32:03.000Z",
+     "outlet": "PCMag"
+    },
+    {
+     "title": "iPhone Duo ‘crackgate’ could be at an end, as leaker claims Apple has figured out why some screens have been randomly breaking - Tom's Guide",
+     "link": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxPZGc0NG9ISHFOM3JOSWI2Z21GcHp6dEwyUVJZdlVZSmFoS3BLaHJVNXJGWWpYeEFHS3hKeEZaZW14LUFBVWpvQWhmOXlHN2pGSGk0cHRMZEpjZFNhTnhMRUFPSnNDSm9iREk4QW1RVFUyOW1HcU5MTU56bl9qcC03YkU0VG9GTmJQelpPcXQtSGFFMlpja0gzMVZES28wWXg5WDV2UHNST3lnYTFrYk9ackFLcVZMc1VjVFNkLUw5elYwWUx1dkZ1Rk5HaVVLNHY3Zm5aN3NONWZkM3VJWkw5ZWtNMUpIc05qSVdkb24xYVVQZWpldnc?oc=5",
+     "publishedAt": "2026-11-09T11:58:53.000Z",
+     "outlet": "Tom's Guide"
+    },
+    {
+     "title": "Exclusive: Samsung Is Testing a Galaxy AI Premium Subscription - SammyGuru",
+     "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE0yekJEaUszTVBTZW9iQ1lWVG1jenhrZ3hnT2xwdmpEemMwMThSdm9NV3c1bUVNWnE3VDdHWWk3Sm1Nb0pKVDBhN3VXNEc4NXBRd2EzUEN1eGVUQm02THVBOVI0eGZvdEd0cFZCRDQtaHk?oc=5",
+     "publishedAt": "2026-11-08T19:59:34.000Z",
+     "outlet": "SammyGuru"
+    },
+    {
+     "title": "The wait is almost over for this blockbuster video game. I see 35% upside in the stock - CNBC",
+     "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOZzRtNE1zMjNTVERUblBITFJkenAyd2w2Um0zMG9WNHhKa1RQY0hUOE5NUFVnLUg1Tkh3VlUtS3daNk91Zko4WjFOb1lmQkxlWmpXd2ZRTEgxNHE0Vk5OTVhkbjdOS3VqZDFjV0x0dHVOWDFycll5d09tdjI1clZNLVZSVHhRQzd3enZhQy03NE55U2lYVjVLNWRvalBvUWQ2ZC0xSG9DSlVTTndYY0dHX0U4ZXFTNHZTQk9QRmZBeGNMeGdrWXhB?oc=5",
+     "publishedAt": "2026-11-09T20:07:26.000Z",
+     "outlet": "CNBC"
+    },
+    {
+     "title": "Claude can design electronic prototypes from start to finish - Anthropic",
+     "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBCTmk0c0tyNmVjUlFGNGlCZUtLSkxDQS13Unc1LUVXanhOVmt2a2xTLUQ2Vm5LZ2RLQnMzVUhUQXFLTVBfd1VQZi01V0ppVkZLU0VIcXNJT3V3Ul9ZSEFUS3l6S2ZLY0tHOVgxNw?oc=5",
+     "publishedAt": "2026-11-09T18:58:57.000Z",
+     "outlet": "Anthropic"
+    },
+    {
+     "title": "Explore the desert with a new Arcane Journal - Warhammer Community",
+     "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQRjBXcHpuSmJlSUpUM0FTZUNVaG5fblJnclE4QnNBcWM5UElMSkJCWlAzdEZ5Y3hNN1JFal9GOVZQSUpXWXNkZG9xdlRxclJ4cWdQaXotYjkxNmhZZjdtbjZYZEtCUlZmRVYyQXpBdXFQWkV2ZWxESGhBTjRWZjlXYnJab3FZS0dDYmdXd0doMkMwZ1JsRm1xX1E4ellqOHhEZVFnTjdrQXE?oc=5",
+     "publishedAt": "2026-11-09T14:57:59.000Z",
+     "outlet": "Warhammer Community"
+    },
+    {
+     "title": "Google Store previews Black Friday 2026 deals, starting Nov. 19 - 9to5Google",
+     "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9HdDl1RlBXODc2QXhzUXhTZGdZUkQ3UVpPZ3NTalNfVjBzc19PeTg4Nm1neGd3NExFRmJ5aUhUbjU0LWNBVHRfbm9mbEtzQU1OZHRmdnZ1T2VXSU12OEZ5MUlrU2t0UTlnN0hqV0h6R04xVlE?oc=5",
+     "publishedAt": "2026-11-09T18:29:00.000Z",
+     "outlet": "9to5Google"
+    },
+    {
+     "title": "The Mustang Shelby GT350 Is Coming Back With An NA V8 And A Manual: Report - Motor1.com",
+     "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5RWUpPT2ZWa0cxME1uSjF3Q2RxUlZBRUY0Tnlha25XUnNYVkFzZ3ZzLVU2Rks2a2w0MEtvUEgxZVo1dlBjeF9IdjdEUEtIM2JmUnRMOHQ0VFZQYzZTUmc4LTBjR3A0ZlM5U2VrYmlMSXpYMkNMTk92aXNR?oc=5",
+     "publishedAt": "2026-11-09T06:46:00.000Z",
+     "outlet": "Motor1.com"
+    },
+    {
+     "title": "Introducing: Ming 51.01 Halo Dress Watch in Crystallised Titanium - Monochrome Watches",
+     "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOR1dibWFkY3Y2MzFuU2dueUFHQVBaOU00bVBRdk9namU1ZjcwQ2Z4Q2Zjc1ozdXRib1ZMaFU0Z21NRVNwaVVOVGFWbnh1aVhzSVUzbkJjbE5GbXdBU1NqaWYyYWR2ZXBnaGVGSmNwcEYzUDJXRXVnSDJDZVFJeUlISUlkclM0bnJVd29rTTVnNG1QeTdnQ0stdmh6cUNCVnhCY3BFS0dRQ01JTHNadWtOUXlqNXJWZHpsNFpwZno4VlY?oc=5",
+     "publishedAt": "2026-11-09T13:01:18.000Z",
+     "outlet": "Monochrome Watches"
+    },
+    {
+     "title": "The Legend of Zelda: Ocarina of Time Remake Dataminers Uncover Potential Majora's Mask, Master Quest DLC Hints - IGN",
+     "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOdEd3eFhnZW42Qm4xLVpMRU5BUURkZWZVNWhteVhKMWVqMGg2U21Xal8yLVFlZHVLSktKSnIxZzlqU3V5TmJxbWxsd2NpZHRUdXlTWjhZeldNWEZheDVnWlhHazc1OUVEemZQQThWSnlDUFl5Tm41eHFoVmNLYTlEM0I3UnVSWFBzaXVadU9mQUJTOXUtMG0tU3VabE5mVklrNWptaHNiSkllN2MzQ0lIV3ExWUxhNXNXRURHRUhkLXNQUk1LVEI4clZJYXRPQXllM1E?oc=5",
+     "publishedAt": "2026-11-09T18:15:13.000Z",
+     "outlet": "IGN"
+    },
+    {
+     "title": "Sony’s new PlayStation Portal handheld includes ‘additional’ internal storage - The Verge",
+     "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOT0VyLXlUbnJTWnNwUjN0SzRzVklkRDZJZTRGU3drSzNxUTRnNDdSR3h0MjV3OUZVeDYtNU5FaVJrNHVOdnpPT0xNQlZXUmkyWTBHb0xKZmVhbW12eTIzaDJYUVFuaS1pem5PTURNay03RWpTNDZqSWdtZEVrTkQwSVpEZk5HUVBUTkVCd1c1Uk5fa3dZd21Z?oc=5",
+     "publishedAt": "2026-11-09T16:23:31.000Z",
+     "outlet": "The Verge"
+    },
+    {
+     "title": "Meet Drops, the new music app bringing back the fun of sharing songs with friends - TechCrunch",
+     "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQUXBvU1U1T2t3dzFSTld2Ry1XWEhCMnJZNVdNam55d1FtV0xCN3hhNXA3Qm51MFpNVUI5bHRrc0NZa2h0bFJZVFUxTFlzZlRFUmxCZkxzU0hMaWpUTkRrVEs2aTEzaEE5cEpfYlZDTERXejJvNTJMdHY5NmYzRlFIQ1U3Ym0wcUpKbm5tWUh0R0xQVTVHbm5xNDNyOVdxYjZCb3NSZDE3T2VRcmUxZ3BBc1RWVmFyQQ?oc=5",
+     "publishedAt": "2026-11-09T14:00:00.000Z",
+     "outlet": "TechCrunch"
+    },
+    {
+     "title": "Atelier Karia: The Night Kingdom & the Guide of Memories ‘Story’ trailer, digital pre-orders now available - Gematsu",
+     "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPb2MzanA5djYxTF9JYjFHdGtJOTV5SS1aaUFpcnpobkE2UXJJWEp3US1jdXRvMHBNVlUtQWl1LUJYWmxqaHVrOUc3ME9RWTBYQlotUFFtcS1ZVDd6RzByTGZwZWY3Yk9FWmZKckNTTGV4V2l2RjJFb2E4UXNSRjVOUGxxRlByXzlVcU1YTDY3WmRVb2p6MEdSc09Ia1dLekZteExiOC15TlRFb2pQMjc1VWt1bmwwMzJSZFI1MlJiRHVLNTNpSHdFY2Z0QzI?oc=5",
+     "publishedAt": "2026-11-09T13:00:03.000Z",
+     "outlet": "Gematsu"
+    },
+    {
+     "title": "Common supplement could help fight psoriasis, scientists discover - Science Daily",
+     "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5JdHdMZ2FxTjYydTFmQ2hQZXR2YXJIWU5zOGpRelV2U241TkVxdmxscHFfTTZoUG1EWERLbGtPay1ZMUZnX01ESUpPWS1tMTREY0R2QW1HVzBGUGphNU9EbmVrLUNPSllvODd5cl93TQ?oc=5",
+     "publishedAt": "2026-11-09T11:46:01.000Z",
+     "outlet": "Science Daily"
+    },
+    {
+     "title": "Fortnite officially confirms Pirate Shop Access Token drop rate as players hunt for item which makes entire shop free - Video Games Chronicle",
+     "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNM1pTVUdRYzYxQ0YyTC03SjFjTmN0SktnRUVZZVVKeFVDajN5WUpfUW13Z1hPalE4clU3Yl9OR2Zsb19vcnFfUzlMdHZfcHRiLVRRaGo4dUdTcUVKci1kSE0wVGZidTVTLXl0c0F3Q21ZN2xkVVVVZmI0U3Rkc3owTFhDMUdfdjFfUmo1d3hPVHEzTHlXcUdldTVlWUlUcWJhLUl3YWlZcGczT1FXN3lDYS00dG45NnBnVzRZelphbjB4YXkwakQ1bkZBWWVLUmFDNU5OMEY0eVJIM001M3NjS1ZBMUZadGFmc1VDbXFmTXY?oc=5",
+     "publishedAt": "2026-11-09T09:52:07.000Z",
+     "outlet": "Video Games Chronicle"
+    },
+    {
+     "title": "‘GTA 6 Online’ Info Found In Pre-Loaded ‘GTA 6’ Files And Backend - Forbes",
+     "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPZnRaYVNYaHNOZlZ1Ty1OS0diOFFvTVF0NmdHQmhwLUtEVVA3c3Q0dzZ1dG9yMnRqX09BWTNKSWE5d3k2TkViM2xYSF9qTFB2RTRxWF80M2RBWk81SmMzWE9IeDBSamNWVEpTUkJTbm50X0hYNTU0d0ViQnJVNUNESl9obWlNOEk5cHFTQTVYMm9NSmJON0FFdFZydm0tbkxxX2ItMUhsSXNpMnp1VlktVk5B?oc=5",
+     "publishedAt": "2026-11-09T14:10:46.000Z",
+     "outlet": "Forbes"
+    },
+    {
+     "title": "'Grand Theft Auto VI' is almost here. What to know about the characters, music and billions at stake - AP News",
+     "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQbnJrbHE5SXBnU3h4ZjViR0FJNGdwYW0ybkFhQUtndEFMd0FBUUp0b2x1eWE2QWpVX2NWQWM2Q3c4NVJPcEFMaHpUQ0YtRGtOMnZoSEdPTEg3SmVCajdTam1PRVdMT0UxWXhabkZPRnhqYXBEMlF3UEJPRkVzSVpTVEZOQkdFVVhRTHc?oc=5",
+     "publishedAt": "2026-11-09T18:51:00.000Z",
+     "outlet": "AP News"
+    },
+    {
+     "title": "My Hero Ultra Rumble Mobile teaser trailer - Gematsu",
+     "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE4taGJJUG5rYUdpc1NaX3oxUjFYX0l3a1E4S0RpQ3ZPMjh2d2F2RnV4eUVlLS1uTzdzd3JlWDFGZjdJd3JpM3BraW5MVnlyMlU2OU4wWlBuMFN3N1dXdGJWWThnUS1veHRJdl9aVE9JcUZUN0J6dFJQcnZwMzRjUlU?oc=5",
+     "publishedAt": "2026-11-08T15:00:59.000Z",
+     "outlet": "Gematsu"
+    },
+    {
+     "title": "Yes, it runs 'Doom': Satellite plays iconic game in world's 1st demonstration of orbital voice control - Space",
+     "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPMnd2RjIwZmFoaTd5eWhiY2N5enhmcnBjZUcyWEhkdDhjaDN0dXZUSjJRMXZ1MnI2ZFd5SmZZcE9lM1VQSVdCaVo2aGlZLXk2RXJWTTRFZndNQVFhLUl2TmExZU11OVBKNWIyYVd2aFRaYnJWZXZFdnNrcDdRczFILVY5QUo4VEhhMERxTlRpbWVxU0k4Yk5EMzF0V1FkRjRfcjJtS0VwQ1dJbnRkRERtM3FIY3pWUUZrdkNyLVRHM3k0X2F5bEtXS0NJMUdlVUVORlljNDhxUmRxN0FOa3YxRzRB?oc=5",
+     "publishedAt": "2026-11-09T11:00:00.000Z",
+     "outlet": "Space"
+    },
+    {
+     "title": "Apple Releases iOS 27.2.1 With Bug Fixes - MacRumors",
+     "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOczFlY1ZUejZJU0REY2phbkYwWDRxM0RrcU4tc3hKRHhVaXdoZVhuWGJlZzZfdEFyLUZscW5PT1BxR2pxVDZsWXJmM3NlM0lQWlJLcEJNeWVCbFJVU1VGcVZrT3ExUVFON2tBQUVJNWRBUWUzZXl4UWstMmFxUmhYQXFHRng?oc=5",
+     "publishedAt": "2026-11-09T18:09:57.000Z",
+     "outlet": "MacRumors"
+    },
+    {
+     "title": "Skydance Games Layoffs Hit Following Warner Bros. Merger - Variety",
+     "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNNXBvR1ZjdjItQjBxMmxwZjQ4enlUNktadXM2eFBQcVJuV3RTYnhwb2pvY01HSDU5R3lDTW1LbVBSNGJ6NmpCWDRTTHRzbGFVcE5QLW5tcUFkTFV4VkhlV3N4NWtnMkgzQUNjOFhfTXI0NGhuY2FWaVh2bllwU3p5MUFzUXJCSFJjRnJB?oc=5",
+     "publishedAt": "2026-11-09T19:35:00.000Z",
+     "outlet": "Variety"
+    },
+    {
+     "title": "Beloved Mario Content Creator Says His Health Is Failing But 'Only Blindness Or Death' Will Stop Him From Posting Mario Facts - Kotaku",
+     "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQMFM3bm1LMy10dURFY1VVTHN5ZHhubzl0enpLdks5ZnN0MW15VjdfR0ZQTklMYnlhM2JDTnQ2RkkzTjViQlprRW16bnRNYXZXRFRCU2NhSVFYRDdvRGRuUktRY0ZaZVdhaVljS3JtZmRyN3QwbzZvbFlMdk42NHdlMzRBV0MxY3JBcjlyZXRzcGYwVlhHWmhqTzVTSWtXRzE0Q05SV0FCTXVTX2l4VjJXVGhXWTRkYTJWUHRGcmNhcmR2V1pPdXRKRmN1YVVYY0FYQXJSRl9ZbTZjempQNnpkUEc4bUJGUUF2?oc=5",
+     "publishedAt": "2026-11-09T15:30:00.000Z",
+     "outlet": "Kotaku"
+    },
+    {
+     "title": "AMD Confirms Excessive SSD Writes in Radeon Drivers, Fix Coming with Adrenalin 26.11.1 - TechPowerUp",
+     "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPQ1BMQmVYdlNsZ3hUUGhRS2xObHJ1NWNiR29CdTJYX2oxRDVqZWg1RXVWTUtvU3B6bmhvbkltVFhmemkwQjVRVlZmMWdObjdiTjJmaGJsX2MyNHRUX2x4ejk1S3NEeno4NWtBbGxNeU1hc1ZUd0FzRjE0Tkh5Nk5udHRUY1gyWlR5bldIamlhZzF5OWV0YTBzZTBhV3pGU2Rlc3hMNlJZemtOSm0xOUxrbnZ4VVNLR1RKZUxsNdIBwgFBVV95cUxNbE8wUmZVRnN5TEtvSjVKQzJaMXJSZG1wMnlGUmRDRDRReUY1RW14LWNxWjhHeFhmdHpCZGFkcFNoMWJ4blF6WlZGbHBPaHVTUnlfOTBsOWJkRzF3dkRiMVNPa185dmpJOW0xN1U3REIzYmJNdzR6MFE0ZTN6eXB0eDM2U0NNTTczSmExSmt4VnA3cXJvMjZVLUZuQ2dxQmYxbTFoa19BbWoyVW10NWlBZEprdXkwNXM0NjdMejVBem9wQQ?oc=5",
+     "publishedAt": "2026-11-09T13:20:18.000Z",
+     "outlet": "TechPowerUp"
+    },
+    {
+     "title": "Hollow Knight Silksong physical editions mention multiple \"free content packs\" incoming, and call Sea of Sorrow a \"giant expansion\" - Eurogamer.net",
+     "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNTmZDemR3bXpZUTNFMkVpd3FsS2dsVUNPSkFPRUM0OHVKdk4xQUYtRjZmSThtSGdXMFN6ekcxU2VhU25Tcm8yMUZyd21rVXBUamhfbVdUTEt0LU5mdjU4Z2FlZmpvSnZxeFZ3RzZhWkZfYUVCVm05OHRuZy0wTDNyVWxtZHZqcDNJN2tlQW1DUmRmVFZU?oc=5",
+     "publishedAt": "2026-11-09T17:51:10.000Z",
+     "outlet": "Eurogamer.net"
+    },
+    {
+     "title": "Anticipated Warhammer 40K tactical RPG Dark Heresy gets a release date - Eurogamer.net",
+     "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBtaDdNb01uMGQxV2dGRFoyMEM1M3N5ZktGZlkxTTZhQkhCbzJkNS1MRnJFM0s1YVZ1ck5neUZzeHV5cDFUQjkyWExidl9oSm0wYm9ETXRkc2gzdENKOTV3Z1FOSEp6Wm9mX0htcThKRVE?oc=5",
+     "publishedAt": "2026-11-09T16:50:00.000Z",
+     "outlet": "Eurogamer.net"
+    },
+    {
+     "title": "Making a $300 PS5 Instead of a $1,200 PS6 Would Be 'True Innovation', Says Ex-PlayStation Boss - Push Square",
+     "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOQlhKTFJYaktWUXN6em5GYWpPTHFWcVdFZUp1SmlGeEp3RWY0amI4alFsSHFnbVVXM0ZoaEtnV2dYaTBlOXU5bWdzaG1UNGQwZXRaUEV1OE02NEE1R2Q2M3JJZnRheGFYTHVzM3hOR3BHcGItUDBQNHdzckRLbEpTcXhxUVdGR2FQSVc5Y1FhUzFyamVXblFBdmMwZ05zV3NWblljc3NUdzhFLU9XeWJKTmVnVWhjM2I5V1JXNm5JVlhLOVpHN1k0LUdPZkR6Z28?oc=5",
+     "publishedAt": "2026-11-09T13:00:00.000Z",
+     "outlet": "Push Square"
+    },
+    {
+     "title": "Logitech’s MX Master 4 Gets Dev And Creator Special Editions - Forbes",
+     "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNeHU1WnVSVEl5WmtHdXgycldTZmdFTFBLS0oxVTVsbVVYaVpsc0pPZDNCX0xwY1M2OUFucE9YUGFBZjdPUWpHWGtoaXA2TGctVWtLNzVhbGJicWh4U0lUdUhpQTgtX2JzNTA0RHE0MGFqN3F5aHJtOFFNYUJISEJwSEpfSFZpVW8wQU45YzJ1WW9nX1FaUDJsazhWZkpMYVBrVDY5Z2NwdmN5Q18xeDRvQ1lB?oc=5",
+     "publishedAt": "2026-11-09T11:15:02.000Z",
+     "outlet": "Forbes"
+    },
+    {
+     "title": "The Pokémon TCG 30th Celebration Elite Trainer Box is live at Amazon: Shop now for under market price - Mashable",
+     "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOb0pfVXQ0dVJQb3BWQkgyTjJBNzc4VDRQMzNQNkNCbDNnczlwN3lxTnpzZlQyVVZRQnBLcGthU2F3bDZvN0tqY3dwTU5DNVBib0dzX2t4OWJXV1hPZGFaX1FqcG0tUkNFWDcxQklqbmltSkpvbi15eGxieUVwZkVNaVE5ZlJJb1BPaldN?oc=5",
+     "publishedAt": "2026-11-08T11:45:58.000Z",
+     "outlet": "Mashable"
+    },
+    {
+     "title": "AMD Ryzen 7 9850X3D crashes to lowest ever price, now cheaper than 9800X3D - Club386",
+     "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5rY1QybzhZLUlzZ2xSTXljcENvUDZfbnBQS085MVA5eDU0bmtLLTJCV0g3YlNOekNuRFptZ1NYTXlKeDI5OUtrVy04VmJQbm1rRUdIOWFldGxRM1YyTUllZkhwR05wU3BkNHdLeDdYWjE?oc=5",
+     "publishedAt": "2026-11-09T10:50:34.000Z",
+     "outlet": "Club386"
+    },
+    {
+     "title": "Yoshi Is Finally Due To Arrive In Lego Form In A New Adult Set For 2027 - Kotaku",
+     "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOZ2xtWnFTSFFscEhwNUk2STVaVkR4NHA4OFZqRXltUnEyX1BXZkxkUG9VcmF4Z25Gbi1RMDUzYW0taEtxYU91U0pFaWhGMU1DUVRJODFrSUpueVkwNmpIMlNuSzRJSmFXbjQtN1VZczY4b3ZOWkcwYm1xQ05wLWZiVDdMUzBfeWd4d0s0bnhLbUpLTUE?oc=5",
+     "publishedAt": "2026-11-09T13:00:46.000Z",
+     "outlet": "Kotaku"
+    },
+    {
+     "title": "More Fun iPhone Duo Apps: 30 New Picks to Try - MacRumors",
+     "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9HRFNCcG8wNWhOc2dyVEtBbGxIdjlqLXpDdVFtRWlQanktaC02cGkxN1B5czZoS2NSZS13RV8wOUtYYVgtUTc3eE1MRFlhZ2RXaTg5SWlCcnM1SFFybXJ2VkMxS1dnakdwS3ppd1dBZDgtdw?oc=5",
+     "publishedAt": "2026-11-06T23:27:45.000Z",
+     "outlet": "MacRumors"
+    },
+    {
+     "title": "BioWare Veteran Mark Darrah Has Revealed an Internal Pitch for Dragon Age 4 That Was Never Shared With Fans - IGN",
+     "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPaENaV2xZMW02WDdGNTNiNzFSdjZCZVRseFpfVW94X2xKQXhOWWo3RzRvYXYtcThFc0lGRmhQV2ktX0h5WmZTTXRVek9QRm40TU0xUGp4NGhmalZhdWdBWDRzMi1QZ1c2MlpsM2xyZ04tNGd3Qmtsc0ZhVjlfUnZaY2pKY0dNdnlXVWhrTWlmclpBaDNfcTdGdjZEaUc3eWNSdmlLQmF3eWs0cTZ1TGg4YzJCYlF2SHF6QUtBbHdOZjhCRWc5OHJGNHpwQQ?oc=5",
+     "publishedAt": "2026-11-09T17:00:55.000Z",
+     "outlet": "IGN"
+    },
+    {
+     "title": "'GTA 6' Preorder Sales Hit $751 Million 2 Weeks Ahead of Release. Are Investors Ignoring Take-Two Stock Opportunity? - Yahoo Finance",
+     "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOd0tEbjNpaWxoT2hOODFtcEdETFJCWjZUazN1d2JXV1dTWGdqbUptR0I0NXBUMUowb181NVZheE9tdjNOdzJhT1FZQTREdE5UTm1fMGNkd1RqSGhfVGdKWUZWeHowYWp1SW9OeGF6RjByNWxZSWpodWozSFVJYVFITmxRZ09OcHNYNU00Wi01Q0Ztak0?oc=5",
+     "publishedAt": "2026-11-08T03:41:09.000Z",
+     "outlet": "Yahoo Finance"
+    },
+    {
+     "title": "Is this the shocking conclusion to the Galaxy S27 Ultra processor mystery? - PhoneArena",
+     "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNSV9UYWg3d1lWdGdKaTNkTlRIdmROUmw0Ri05d1Ffa3ZteGtYSjZmQW5hVUVFUUZTWHBaY293QThMaUg0YmM4MGVvMWlWcmgtYjUyTU9GMVR5SG11YzhqQVVrTEluUnRuVFBlVld1NllTaEt2WFduWS1WU3YzRUxpOEwwa3RtYXRUbEFGaE1Mc1FrNnh4Qlc1ZEdMU1VPLTQwNE85bFRaY3JXUQ?oc=5",
+     "publishedAt": "2026-11-09T04:46:54.000Z",
+     "outlet": "PhoneArena"
+    },
+    {
+     "title": "World of Warcraft civil war erupts as 'retail Andys' beg Blizzard to make WoW: Forever easier. They should ignore it. - Windows Central",
+     "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOSmdqOWdSdjFkY1BjYy10TXQ2U3phNWJvYnNkcHNGM2dXQ1dwQlNydGRYR2VTRFEwQ2otTk95UVdZZHVSZWpLTWlLVmJISW9rczBLajcxaHFmUkFsYkxmMTdoUVRTdlB3NUs4aVdRVnBBby1WeE4wZGtkcmMybzR4LXNKOGRndTFpYmloTzFueGxfMk1TNG9yY3lWOGVuVlVhX3FNelk2ZU5ZMXFZTEtGVDNJV3dydTQ2ejQwWXQtZVdNVndmOWJXNUFGblNaMDhkRWZR?oc=5",
+     "publishedAt": "2026-11-09T13:00:00.000Z",
+     "outlet": "Windows Central"
+    },
+    {
+     "title": "‘Even if Someone Does Get It Running on PC, That’s Not Going to Be a Good Experience’ – Why AI Cloning Won’t Sink GTA 6’s Launch, but Could Reshape Game Development - IGN",
+     "link": "https://news.google.com/rss/articles/CBMikgJBVV95cUxQNnQ4N2Y5QkVVMGtfcFlMQVFoQmltVDRKclVrVU1MNnJtQ243LVdTbUVjYmRWVGtMcHl0M2FydUZMNGVNemdJWUdfV0F6VUt2aUhyRUNEbmhfZnhpbTNNZlFjMUpBSXQtNjdPcElxZm8zb2d4WklXbXprR2tMdlFvMkxKRHkyRTBBT1RKTjh2Q2dwSGZhbG0zUXh1ako3cThoam1JYW5XN0FiVkxqb3NNM2J6X1JkWFZyT0NSN21QZEdNRURTX09vVUNEUkdWeC03SGU5UzBWdUczWXRkUEZKTmVZcUtHZXBRZUxIRXl1VmlsTXh1MXNKajMwU3V6X3BsMDIyZVN5cEp2TXYyUEZiTi1B?oc=5",
+     "publishedAt": "2026-11-09T15:30:00.000Z",
+     "outlet": "IGN"
+    },
+    {
+     "title": "A Free GTA 6 Competitor Is Blowing Up on Steam - Polygon.com",
+     "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9fMjdnRElzUmMxcmhpMGozMmZ2VFh6cTVVUnI2ZVRPc0F3eU54VWtiRm1iRWlrTFhYN3J3SFNmLUtuNjRtQjJBTHgta2FuNDFYbFZCTkxwa2xYSWhpUVRKSjVIaVpZdjNkOTFQaTlkUzl2dUV5?oc=5",
+     "publishedAt": "2026-11-09T16:15:47.000Z",
+     "outlet": "Polygon.com"
+    },
+    {
+     "title": "Apple’s M5 MacBook Air is down to its lowest price since July - The Verge",
+     "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOaVZBOS11TzZJMUZSUmtjVnFfRzh5RDU4TldBU2QyMHFxQkpIMWZWQmctTmxRNFBKcXd0dHNzcXpwZTJBMFhDZy1LM1hKZE1FY3MwRXhuWmpldm5PenBUMXFBX1RGRjNmdG55MVJ1Ql8tVEM0VFZCeExITXdZNDhJV3d4XzYtTWxtVGc?oc=5",
+     "publishedAt": "2026-11-08T16:00:00.000Z",
+     "outlet": "The Verge"
+    },
+    {
+     "title": "Bring Khazalite might to armies of Order with Regiments of Renown - Warhammer Community",
+     "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPT1JzbGtFNENzd2ZKY3JuSlJCNEdMeS1ES3o1UzZjV0NJYXVCMzd1bVdFSnJVZU1HMVNmV2lKcnJMbGZlQVBNR2E5REhLU1F5VnJ3dldOUElkSEJsbW8xS0psRjFNOVJ3STg4N05BbUQwdEctVUkwMy1FVndndFJ2eU9meHRUU1dBSklSdnVBRmxrQkpHQ2pRaUV4anU2RVkzSDhWYS1mQkw3UGhSR2lSX1o3NVQyVEh3Q2x6aFB6NjhFYVRu?oc=5",
+     "publishedAt": "2026-11-05T13:57:16.000Z",
+     "outlet": "Warhammer Community"
+    },
+    {
+     "title": "Poll: Which Zelda: Ocarina Of Time HUD Option Is Your Favourite? - Nintendo Life",
+     "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQckpuS0RYUTRRamZhUk1ERXdTWFNUcE4tdGV3RzFTV29ZRGVmdE5UZnNpMUxrRFFFaUxiSHBwZFB3WXhQNHRWTE1jd2NkRlhyQ19kZXJhUGpERHZvZEU1RkloUXF4YmZRaXFfRTE3WTJNam5KZkRhVGd6REs4UnFJdzFJM2tpNFVWYU1CRDdzZUtielVSeFhwa0tZaXhxaUlC?oc=5",
+     "publishedAt": "2026-11-09T18:00:00.000Z",
+     "outlet": "Nintendo Life"
+    },
+    {
+     "title": "Introducing: Awake Sơn Mài Silver Leaf Collection - Hodinkee",
+     "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9lM1VkaXE1VDU3Z041TlJmTVhmTlpWLU5iUzdhUnZYLW5BMF9QcndKNjVYcmNUOHlxa0JqWEwwbENDNmx4bTNEM0wzaUM2clZxMjRPcW9tbndsWTRQSDRKRkRiclNzUzJxZlpJMzNGT01ONldXYUxTc3pB?oc=5",
+     "publishedAt": "2026-11-09T13:00:00.000Z",
+     "outlet": "Hodinkee"
+    },
+    {
+     "title": "Zelda Switch 2 restock retailers: Where to buy the 40th anniversary console - Mashable",
+     "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1HNlhTMVg3UUJqT2M3ZUViQUlpdlFIcFNUWVk1NGk2SnVHYXR6TlYxa0p0azRBWlFsUFFmRTlONnpjWFQ2OE9QYjYtYXluSzctdzZuaE9oRDhZV3lLS1pHLUt4eGF2R2NIc09ITU0wWC1QZkcxNVJhZDNNNA?oc=5",
+     "publishedAt": "2026-11-09T20:34:04.000Z",
+     "outlet": "Mashable"
+    },
+    {
+     "title": "Hundreds of Artex AI hacking tools found publicly exposed to the web - TechCrunch",
+     "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQcF9OeVJwTUFMSVpxN3MyMHNJSm1TS3FIWTlkdWxBLUxDRVFoRkxIWmtfVEF2SjkzaGZhNUJKOXh4Mnl0Q0NWemxSTDR5dDVnLTV3dHhCVHhYVG9KbTNtQkRjS0lkdWQzdzdfa0pubVRIUXVVTUk0dWp4NEhTc3BncmtyZVFWdWROUTJWTExKNUhQWWVyS2I5OUkxWlJ4dXRWN255ZURR?oc=5",
+     "publishedAt": "2026-11-06T18:44:38.000Z",
+     "outlet": "TechCrunch"
+    },
+    {
+     "title": "Samsung P9 Express microSDXC SD Cards for Nintendo Switch 2 are at three-month low prices - Neowin",
+     "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQS216V2EtZWdUTnVoNmFYZG8yaDZDdFJjdGZNSnJlRVFSLWRvamp0bklPRUlmTnNoQ2VLc3Y3d0ZKd0tWR3VrejNOQUsycV9lUnV6bzdqYUxzaEFOZUFmS1djSlk3UUtTbmw2VzZyYXp3Znh0bE5SQnloNVZ5WU9GaTNreFp4Z192SWlJak9nc0NKRE13N2dJcWRwbU1pUUNWVDRVUVpFM2cyWXJMTm03N3UwMDR3ems0QUlR?oc=5",
+     "publishedAt": "2026-11-08T15:46:15.000Z",
+     "outlet": "Neowin"
+    },
+    {
+     "title": "Gears of War: E-Day celebrates franchise's 20th Anniversary with free Raam skin - TrueAchievements",
+     "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE83RW5NVTgyd09uV2FTUW5IdmFzVlI4dWoxV194SW9FaXN2RmROVjFqRXVJWDlXS3l5bV9zZTJsM1lzYW1IcnBDTkdXRUR6VlFUWkd2eFBMWWlJYTdINk5namhuZC13MkpuUF8zNjFMSjRsa0dPRVJqd3ZsQQ?oc=5",
+     "publishedAt": "2026-11-09T11:07:09.000Z",
+     "outlet": "TrueAchievements"
+    },
+    {
+     "title": "BioWare Co-Founder/Beamdog CEO Trent Oster Says He’s Running the Numbers on Saving Mass Effect and Wants the Original Band Back Together, Starting with James Ohlen - Wccftech",
+     "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPYUhRSlQ4Z3B6cWNQd0dzZFk3dExGeWpPc1U5NnZldDg5bTBDLU9ZLUZpWl8xS3RpTWtrZWlkX2lDX19aQ0E5U1l1czQ5aVpkUlIxSVgydXEzNE05dk9RMDU1QkZHUFl2Smx3YjVYN0RWRzBYaG9zR0JLUEx5ekxPWWpTX2NtbW_SAYwBQVVfeXFMTUJkOVRwcWdaT0JpUnRNTXZMVVFqYXhDVXF6dEFoVVJpRUhnYmptcWFIbW5UWF9nOTVwcTVuT3V3SDI5VERmbzZLTm94Z0xCcW1TMzNRVXZDbU9DTFJNZFMwT2NvYUppQ29vMGx3enlSQVhzZ05UN2FGeTBKTWpGLUhHN1VlelJBME11LXI?oc=5",
+     "publishedAt": "2026-11-09T19:00:00.000Z",
+     "outlet": "Wccftech"
+    },
+    {
+     "title": "Apple Launching Two More New Products This Friday - MacRumors",
+     "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNZ3VnU1VDT0J6bkM2bE9rVmNBaFRNa1JPSS1BU0hGclBSRGpBSGtJWFBEb0UxQzJlTGpULVF3TmdValZvRTBNclNNUEl4VEN2YUs5dWFkRC1ZRWN2ZkJtZTBFLUo1YVltMl9za0V3U3dmY1k2RlV0aDVSVE5BZjd1OXBFUXk0ckpvR3ZielFR?oc=5",
+     "publishedAt": "2026-11-09T12:19:28.000Z",
+     "outlet": "MacRumors"
+    },
+    {
+     "title": "Despite Nintendo Switch 2 sales dropping by 37% it is still 6 million ahead of original Switch - My Nintendo News",
+     "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOdTFzZFBDSndyZTNua2x2RTNqWG50VTAzMWpjUm9WS3ZTTW5oVlJGczMwNnJfeXZfZzhmS0MweUdmRGhhdmlYcnVkQUxvN29PdF9WNjdEN1FqdE1yb1hSWGJ1TDJ5MzdPd094Zm84azRwcmxxWXhSZlAxQlNKckx1UDJ4VTF4T1Z0WW51Z3U4al9GenpxdUZZd3o2R0wtRVFaNHd6UlA5WTFWVTI4Um95WmhkQWdwYTJ3ZWNlbHhqU0NJUExpQjgyVjBZbGc?oc=5",
+     "publishedAt": "2026-11-08T12:40:18.000Z",
+     "outlet": "My Nintendo News"
+    },
+    {
+     "title": "Book Review: ‘The Telephone,’ by James Gleick - The New York Times",
+     "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOY0lCWTVReVhUdWEyYTJNUW41NU80T2NDRExfcndnSTZhbmwyVTczNDhFaWZJbXEtTjRKN0ljZzdqQlhuQi1kQU9BbFB2STBhYkFRZjFzZzI1Uk5DZjdlbmNqeERJZURqa1lSZFk0VnVfSlVPSXYxWllzdldHT2xtNFpBQVpOUQ?oc=5",
+     "publishedAt": "2026-11-08T10:00:45.000Z",
+     "outlet": "The New York Times"
+    },
+    {
+     "title": "'The Best RPG I've Played This Year' - Queen's Domain Is A Low-Key GOTY Contender On Xbox - Pure Xbox",
+     "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQWkJ0LUJSYmNaWFFReHJvVVB4MjRCbHJDdGladHh1UU16cEY3MmdLTmNjY2NXNHNSTDh0aXl0blVmRjRaN3ZZalhQeWh4VUo2RHBXRy1LQURseXlDN2NXVGN2eThkcy14WmNGc3VjZFVOVmYwWlJkX0UzaExfZGpLSVpnRWFKaXJJSWROVm0xSHBWRGFmUnFtZXhjb2tqdERzelczY1Z0NVhDUUVJdW9NWlN5TUlkQ1V1TFZEWkJ3?oc=5",
+     "publishedAt": "2026-11-09T14:30:00.000Z",
+     "outlet": "Pure Xbox"
+    },
+    {
+     "title": "If Snap's Specs are still ridiculously expensive, they're also a lot more comfortable than they used to be - TechCrunch",
+     "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPMzc5MUVtNzJkTmVhU19jMVpTMktPZWhQMGdGOEJiSE0yY0FlV1BfMEFSSjJxdktOMHlONjZuaHR6VWZ3RVF6dzlFRjZsLVVWU1Q0OUFIMGtCZWgxT0FRWmtNY3dYUjNwMmFZRjRpYWotRUZiRjBmZnQtdGpPQWNvU2JKdVR0dC1aQWdHYmJQQVY1SFVDc3hlcVM1ZlZ6MVdRR19lcHpsTVQxSmxGaXZZOWJTVXVJOUJ5MmVlNTAxM29iNmhCY1lrdkpud29PTkZHMmpFWQ?oc=5",
+     "publishedAt": "2026-11-08T21:00:00.000Z",
+     "outlet": "TechCrunch"
+    }
+   ]
+  },
+  {
+   "id": "gnews-kr",
+   "name": "Google 뉴스 IT·과학 (KR)",
+   "url": "https://news.google.com/rss/headlines/section/topic/TECHNOLOGY?hl=ko&gl=KR&ceid=KR:ko",
+   "maxGapH": 4,
+   "lang": "ko",
+   "status": "stale",
+   "fetchedAt": "2026-11-09T21:38:11.430Z",
+   "httpDate": "Mon, 09 Nov 2026 21:38:12 GMT",
+   "cacheAge": null,
+   "newestItemAt": "2026-11-09T10:40:05.000Z",
+   "gapHours": 11,
+   "tzAdjusted": false,
+   "count": 32,
+   "items": [
+    {
+     "title": "젠슨 황 \"아내에게 불충실했다\" 中 간첩 의심녀와 불륜 인정 - 조선일보",
+     "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPQ2k4cEg4bVlWVFFVTU1PeFVBOFNGaFhBTVlQRkU0N3dqaFMwOW9ETE4tY3ZpeTBncy03RHM0bjVFSFFrb1IyclNIa1JpYk5LbUFmTnZpX3kxMUxmcDZKMjVKUkJ4bjI2dkN5ZHNTUjF6RE9pM0xTeVR5OXlFQXpLUmxqTQ?oc=5",
+     "publishedAt": "2026-11-09T06:34:05.000Z",
+     "outlet": "조선일보"
+    },
+    {
+     "title": "[단독] 김동관이 직접 본 로봇개… 한화, 라이온로보틱스에 700억 베팅 추진 - Chosunbiz",
+     "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPOFBoMWhUd1lRbkpOc05nVEFmM0JpLVlGM3JBQnd2NEZpMmdtZXE3LUFVdjdGUUJFTUdiV0p6V1h3Y2FEUVpwUExKN1k2V2xaSF9tdVFBRWFyRGpCQUdjQ0FxejFXXzhLbnZYdnVYSHdtaU9fTXFQVzRZTFZOSkVwYnlZWXpYMmfSAZsBQVVfeXFMUEhfeHFnLWt1UC16bXNZcEhWeE42ZlBZZDQtTnBjNFUwek9PeHIxc2JMb09jeDB3MkxmdlhDeUt2eDJpT3RKUW1aQWxUWWp5NExrY1RaRXF1Z1NQTlRONXNCVTNuU0RiN3JZbFRjRTlFWjNZT2ZzRzB6YWRlTkVxYkpnOUtrNmVzSlhNSlhlVFRLYmhoVVZqZHJYWlk?oc=5",
+     "publishedAt": "2026-11-08T21:00:00.000Z",
+     "outlet": "Chosunbiz"
+    },
+    {
+     "title": "[단독] 北 해킹 장물에 개미들 ‘830억 돈잔치’… “공포장 속 황당 횡재” - 매일경제",
+     "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1PZm1CVG5qdmQ2MGJKd3lWT3hQbXJRZi1aakxjaGpYMnFvcHN4TU84S2ZaNWZmQjM0WWxCcE5fQ0hzYmtRLTdQM1VlbS1WaWJIX2c?oc=5",
+     "publishedAt": "2026-11-09T03:53:30.000Z",
+     "outlet": "매일경제"
+    },
+    {
+     "title": "[에디터의 Q] “유럽의 몰락은 중국에 공장 보내고, ‘개념 설계’ 역량 상실한 탓” - 조선일보",
+     "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNd2pKdXJXTi1ZRm8xekk1QUxiTmRDSGVEWmwtd0JIclotVHdFMjFiYmJhMDE2dHNpbkh5aTlpdldHUG1oR29RRWdsVnNWX2lvVzMxZEJudW5XUUdKNmJ5RmRndTlmRmF3eHlXNnF6dlBKLW52b1NtZUxLUFAzUXBzaDFrUEtfSDVXX3pqWA?oc=5",
+     "publishedAt": "2026-11-08T14:46:00.000Z",
+     "outlet": "조선일보"
+    },
+    {
+     "title": "배터리 시장 판도 바뀐다… 韓은 美 ESS 성장에 ‘미소’, 中은 공급 과잉에 ‘울상’ - Chosunbiz",
+     "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPRzhua3NSQnAwdVVtaHAtVkZOQWQzNFFsMUlsV2xHZTJIN0dMZUwzbkJyMW9hcndtVmZpaGlYV1lDX0d1blh1MUktdmYzU2RveG5aQUxsc1dEeUNxOUxNMVUxUThmRkNMSThZeVowdjJyOTMxa0NQTDRkNWEzRTU1b0M2SFXSAZgBQVVfeXFMUGpIdUlONjZRZkNya1daR0pvdTlyMFhnZFpsNWtISGdrbkRUM0RpdjV6TjhxR1FfMzVlSmg1Y1V0QTVQZmx1QmJ5N2VoS2Jla09LTnF5SWYzdFctdWdWaHNuMGFqbkY3TTZjRkFQdVhyZF81alRLR2c0c1c5TWlNYTBnNXdtZmlaSDRzQ3J5Tm9BN3lWUEFZNTk?oc=5",
+     "publishedAt": "2026-11-09T01:42:00.000Z",
+     "outlet": "Chosunbiz"
+    },
+    {
+     "title": "수상한 엔비디아…칩 공급받는 中기업, 사무실 텅 비어있었다 - 동아일보",
+     "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9TdEpnOEdPZ0VBakRGcDNZRTdCSnFXSEt4d1FGTUZWMkJKZWhIOTJVTFJYbEdyNVJ3RjZGbk1GeEJxUkRPVUgyS3Jpc0gtSmhWUEtkLWR1NnJ6M3IyWk9OaDh3dkV2UGRrVDdjakduc29BRlXSAWZBVV95cUxPZTZpYk5ockVtWDhhYVFUWEczeXk2bUhTcW5rVjVkTFBGeFRLNlNlNmpWamhYSFh1OXNBUklWTjRtRDN5R2FxS2plc01ndnE3cEpMcmVFZzhBMkdvUHU0bzM3bUZTN2c?oc=5",
+     "publishedAt": "2026-11-09T02:58:00.000Z",
+     "outlet": "동아일보"
+    },
+    {
+     "title": "\"짓던 데이터센터 계속 짓게 해달라\"… AI업계, 美민주에 '간청' - 매일경제",
+     "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFA5RXRqRTZhWV83N09DMktVMGdZa25OYTdTbzFFSXF3Mk4wZzZvay1JZjRzZGd1Uk1JZEszeG1DZ0FNVG8tV1ZlNUxfMHNmZw?oc=5",
+     "publishedAt": "2026-11-08T08:38:31.000Z",
+     "outlet": "매일경제"
+    },
+    {
+     "title": "협력사 수천개 삼성, 왜 유독 현대차 위해 ‘감사의날’ 행사 열까? - 조선일보",
+     "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNRzN2S3ItMUpmaS1mS3hhS2MxaDREby1ZNmZlb2FCZVlua1FUNWhWTUg2YTZ4WTRka3h4aVNrNGgtNWsyb2N2WXlSZkczUnRSMUJJYWo3elNuamVqbzk5aTdlZEViOEZGcW5WZUI2SHMweFRGeGNQZm12MUhRbVduTTFNTzRoTE9JbGhObWhYQQ?oc=5",
+     "publishedAt": "2026-11-09T04:44:50.000Z",
+     "outlet": "조선일보"
+    },
+    {
+     "title": "서울대 기계 나와 집 마당 컨테이너에서 창업, 세계 ‘지게차의 테슬라’ 꿈 거의 다 왔다 - 조선일보",
+     "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQem82cndHS2JTTFNNWTRCQjVDbk85VVlzd3pEcXZiQTRSM3ZnS2RZUnhZTlZncTBCNm5sQVFSOE9LOXhZejZZMlpCMnlnRDRUM2ZoY3QzaE43VVhGZ3dtcE56YXUxOWxwaDN3Q0RUb0JrSGJJOEtzcmJUNE9NX1dZR0MxZVhzbVhwV01Z?oc=5",
+     "publishedAt": "2026-11-08T21:04:37.000Z",
+     "outlet": "조선일보"
+    },
+    {
+     "title": "“저 학생 왜 안경을 계속 만지작거려?”…시험 감독관 눈썰미에 딱 걸렸다 - 매일경제",
+     "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE4yT2FMcTh4MWRtN2dKbUdQRWNWNUZ5ZGhPR0dJWkVucG9TemwxNEN6emhsV3dwMzNnZGRMYW5tbkpEY0VfTmxrNTVZWmlKSTd3R21BWg?oc=5",
+     "publishedAt": "2026-11-09T04:51:11.000Z",
+     "outlet": "매일경제"
+    },
+    {
+     "title": "해킹 없이도 비밀번호가 줄줄… AI ‘자동 승인’에 비번 2500건 노출 - 조선일보",
+     "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPdXJCQll0eHFHNGZTUmptVUUxUXBVQ0E2cElRTV80VWlFRW9RM1BTUTFZa3NwTFlsbFFQZ1hVQmZwZDA4NUhjbG9SQjZGbGUwWHhZa2Vkd2tiQWpqbUs5b3ZoTWRqT1FVQkhHUVQzVmhiNjhTM1hSejFXSFJrelY2SklIZw?oc=5",
+     "publishedAt": "2026-11-09T06:22:04.000Z",
+     "outlet": "조선일보"
+    },
+    {
+     "title": "[기자수첩] 리센느 착시 빠진 엔터 펀딩 - 딜사이트",
+     "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9aejUyUkJUNVBXM2ZfRHdqb1NmeWlnbUNoUmtPNWJ3dlQ2dHd6LTRpX0ZLYnVFNFhYbkJvVzdsdjVjdzVQSEdhR05RZWlNVmc?oc=5",
+     "publishedAt": "2026-11-08T22:56:05.000Z",
+     "outlet": "딜사이트"
+    },
+    {
+     "title": "데이터센터 급한 앤트로픽, 인프라도 직접...5조원 규모 발전설비 확보 - 머니투데이 - 머니투데이",
+     "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBkanlsU1hJMXlaNXFyRjdOdjN2aWZOLXZkbnIyUG9ENEtra0lLd2t6S0JPblJSWHJGM1Q2UUVtMnBvWXk3WlF4R0hPWnNwZk9KeXBWTjNQNnFZVHBHcmIySDRWbmF5aUlY0gFuQVVfeXFMTXhpUnNNNnlKdEh2RlFqMGVEb0VQdWp4czducHVVOWdkSDVWcGFQQXRnb2N4eGI5bzkwUkJhdl8yVkpGMlVWVklXWlo2b1pGMFU1RkxVLUVoNGJCYjZueElHSFNFcEdHWDRIS0Q1ZHc?oc=5",
+     "publishedAt": "2026-11-09T00:53:33.000Z",
+     "outlet": "머니투데이"
+    },
+    {
+     "title": "中 렌즈테크놀로지, 연내 유리기판 양산라인 가동…\"韓기업과 협력 기대\" - 지디넷코리아",
+     "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFB1NlBpRVc0NTUzcmpSRUZ2bFlIa1FFWUZXTUl1dW9YcFV1bTNodVBjMHdjXzdET1lpMVhMNHJHR0xYVmVXbnNNNGo5RVIxdFlLcjF3Y0lB?oc=5",
+     "publishedAt": "2026-11-08T23:56:03.000Z",
+     "outlet": "지디넷코리아"
+    },
+    {
+     "title": "\"도로 막히면 하늘로\"… 테슬라까지 가세한 '플라잉카' - 매일경제",
+     "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBVeTBTOWtTTi1Pd2ZLQTdRZHdVLUxPalc2SHBfSEEydlhkOWFiV09fTnhtM1dQREtTQlRlODFXOFlCaUNPdC1kSzJXZnd6UQ?oc=5",
+     "publishedAt": "2026-11-09T08:22:58.000Z",
+     "outlet": "매일경제"
+    },
+    {
+     "title": "'화면 쩍' 아이폰 듀오 벌써 후속작?…\"2세대 이렇게 바뀐다\" [IT썰] - 머니투데이 - 머니투데이",
+     "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5yM3RtbGpRX3F1LVI5X0ZvaVNlUjdHYnpySDJuQ2NvT1VlSkhnRG55aGN3elJhc1BmbTJrdjVsN1FSUzNvM0NRaGUxS2Q3S1VDQ2lpSEF4QW4zeWpQMlZQSjVRcnlMZUHSAWxBVV95cUxObmlFNmkxa3VMX1gtOVd1eWQxcVF4Slo4RFl1Wmk0cWMyeEpCeHZzSFhHQzZLckpSRWZLMi1tX1Y4SGh1QW5FOVFYWXBjX1Q4TFBqWTQ1d2dhRkNmZnhmb0ZIb3QxOHpVZzJZeks?oc=5",
+     "publishedAt": "2026-11-08T22:55:15.000Z",
+     "outlet": "머니투데이"
+    },
+    {
+     "title": "“챗GPT 대항마도 뚫렸다?”…클로드, 국내 기업 계정 100여개 유출 우려 - 매일경제",
+     "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE41ZjB4M2JYR0dpRjdzNmZTUmlWVm40by1NLXFHSXE3bXNtYVZnRUNTTkdpYzh6Y2g1ckp4V090bTYzZE9BeW14blV4TVJyaVhvRVE?oc=5",
+     "publishedAt": "2026-11-09T10:40:05.000Z",
+     "outlet": "매일경제"
+    },
+    {
+     "title": "“이 사람과는 말이 잘 통해”… ‘티키타카’ 잘 하는 비결은 - 조선일보",
+     "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQaThfV2hHYTJiVjg2M0o1d25JQUFjU3JYMzhmZDdtbG5obUJDRDZ4ajh4U2Q0NWE5MUZpbkdWRkM0eDh0SjV1RXBqTFNwNThEd3lBdUkwLXdENU9xTjVkcnVpX25YUVVrNXcxZGxhQ3duZHdudVVyNVdsUC1iREQweHZ3MA?oc=5",
+     "publishedAt": "2026-11-08T08:53:19.000Z",
+     "outlet": "조선일보"
+    },
+    {
+     "title": "[기업인X파일] \"회장님, 안 터져요\" 긁힌 이건희...500억짜리 '불기둥쇼', 싹 갈아엎었다 - 파이낸셜뉴스",
+     "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9uTjB2aHVWR1dwNkZISjlFQktiZERVLXNwTHZ3Ry1FeGwySWpuYzkyZjNTdS00T0tDX2V6UHRrZUdFbWRRckxKbzh0YmpWc2FBMkVSRmhhQ0tLQQ?oc=5",
+     "publishedAt": "2026-11-08T20:00:00.000Z",
+     "outlet": "파이낸셜뉴스"
+    },
+    {
+     "title": "美 '블루쓰나미'에 젠슨 황 불륜에도 흔들리지 않는 삼전닉스, 왜? - 머니투데이 - 머니투데이",
+     "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5yWTc5VDl2U2VIVHpnXzNQLUZ1Uk1rR0tybUZ3bndoRlZsWlVoakZzOUk4UE9JZ0M1dGhnRERYQ1ZhMFU4NGZvM2xSWDlSREpDQ2tBRmVON1p6S1RRYkRoX292SURST2NzNWRactIBckFVX3lxTE1OOHpDTEtwTDA5alRta1h0NHFra3B1UnRhTFJFWnhqSHFhRXJ2Z1RZY2oxbGFoVUhKelNuS3BLeXNCOFA0WUtBdG1NVWhNWmZSZnY3TG4wS1FvSkhUd0RaamVycmNYeVdWZ0I0TW1TZWpRQQ?oc=5",
+     "publishedAt": "2026-11-09T07:40:00.000Z",
+     "outlet": "머니투데이"
+    },
+    {
+     "title": "8GB RAM PC도 쾌적하게…윈도우 11 멀티태스킹 최대 40% 개선 - ITWorld Korea",
+     "link": "https://news.google.com/rss/articles/CBMiwgJBVV95cUxNc0dpMUFNNUtLZHdvOERsRUNvRWVkMmZoeF81ZzlOMFJYSksxRW13Zm5RWUNKOUIyR05pZk1hcjNBbFZtb2Q0YUJtQ3dFdDZabGx1NTZnRDdYQ3ZoTmdEN0YxVDZzUVBtQTdkSWd4TVg0WV8yM0lYU3paS2RPaTNrbmJIWHNETHFWaV9HSW10bGs1dzR5X09LSERXaTItc21rTjhFMklzazZSMi0zb2REOHkzM04wR013ajFjOXpLMG5qY194TXNPeHZjRmxGWExVMUVFNnVvYnIwMFM2Uko3T2tZN0N0cFBBZEl1Umk4TEVlMFlvdndrWndHQWNFVnJaZUJvN0NfMmF3ZHBNSG1iT1BuZFA3dnNkMlJGclZLZVdXQkd2ampfWmJ4WkxzU0FCSFVSSl9pYVNwTXBiNm5IdUJR?oc=5",
+     "publishedAt": "2026-11-09T01:10:17.000Z",
+     "outlet": "ITWorld Korea"
+    },
+    {
+     "title": "엔비디아 \"韓, 피지컬 AI 핵심 국가\"…현대차·LG·두산과 로봇 혁신 가속 - 지디넷코리아",
+     "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1xVUZWc1VKSG1mY2NybFFMYVhUOEd5cGZrMGpJVm50UEZJZE8yQmhRWkcwNU9CSjJqU0dpNWtFb1Y2LTk0TVdJUThnRzh4MDNRVzU1UEtB?oc=5",
+     "publishedAt": "2026-11-09T03:03:10.000Z",
+     "outlet": "지디넷코리아"
+    },
+    {
+     "title": "LG AI연구원, 'K-엑사원 2.5' 무료 개방…프런티어 AI 개발 가속 - 이데일리",
+     "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOZjVYRU04TW9hZG1nTXJ3VEg5bkNWWXlRVUx4azFwRXkzZHVZWTdiejNqNUlJd19XV29BY2JBejM5NFZXZlpKNy1WbzYtV1hzczJJemRURFM2ejFfazBRVVpUOGxiSFZNMDZ4eW5pNWxkRkR4MEFxQnVpbTk5by1vVg?oc=5",
+     "publishedAt": "2026-11-09T01:00:05.000Z",
+     "outlet": "이데일리"
+    },
+    {
+     "title": "[기자의 시각] 청와대 냉장고 해킹에 안전할까 - 조선일보",
+     "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPVmh0YWF5YnNvU3JsZEJGdHJhbEZXRjQ4bUd2TjNvYTJpMUZqQTFyd1lLUjlXb3FaMXl6TDRiQmF6N2lpSURENXlmMnJiOS1jRHA5NFd2VDBSdnZJdkg2RE1jc3BfankwNDRwZS1BSzN0Q2pZdjdJWHNaNFRDZW9fUHAxb2djRUpDcmMwbGNB?oc=5",
+     "publishedAt": "2026-11-08T14:49:08.000Z",
+     "outlet": "조선일보"
+    },
+    {
+     "title": "한국 찾은 '큰손' 계약 불발 이유가…AI 프로젝트 '초비상' - 한국경제",
+     "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9LQ3E5dkJPOXk4ZWloOGFab0xwcG1CMHhQVlJlRFRiTENtWjRJMVdwYVdwVURMM1NJVFh0cHoxQUtmQWwtUFRrTjVqLW5XZEYtZnF0OUZLS0gzQQ?oc=5",
+     "publishedAt": "2026-11-09T08:50:01.000Z",
+     "outlet": "한국경제"
+    },
+    {
+     "title": "[단독] '가민'으로 버스 탄다 “티머니 연동” - 전자신문",
+     "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1adW8tSjNtV0tEZ3BrZ25wSjNKWFFLb2UtLXZQZlJyT2Q4bU53SXpUTkxhOElMbUZnMkFueTEzZTNtWm1XREgzMHBPZ1BDQQ?oc=5",
+     "publishedAt": "2026-11-09T04:35:31.000Z",
+     "outlet": "전자신문"
+    },
+    {
+     "title": "'갤럭시Z 슬라이드' 이렇게 나온다…삼성, 새 특허 공개 - 지디넷코리아",
+     "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9zTGhycWVCcWZ3M2dxdWJ3eEFwTTUxUDB2bDVrajJZTno4d2YxWXpNUGp6NE1weEg1UG1pRW80TEdTeVU1V0NFeE9NYUNOLVFWc2NGa25n?oc=5",
+     "publishedAt": "2026-11-09T02:13:49.000Z",
+     "outlet": "지디넷코리아"
+    },
+    {
+     "title": "XRP 2~8일 종가 11.2% 하락…10일 미 CPI 발표 - 토큰포스트",
+     "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE05OEp2dVlackU1bWtGbk1LRDlGN1YtNmVYOEFTWDJIY2VxU0pDUkZ4YWtBRU9RSWYxeXRuSEZ5MFlGMUgxVW5mR1lCVllXSU55T2k5N3hsRkM5TE1sYU40WtIBZkFVX3lxTE5JRUptMHlOZ3IxeXR1VHpoemQwc3NkWjZnUVpoVmVFZzZwRVhPaXRiazdJNjRweEtYai1SRHlkX1BTRW8wZndlY1ZjYzFKY2dOZHRCbkdDU2Fkd1FVM3hib3dqLUdhQQ?oc=5",
+     "publishedAt": "2026-11-09T10:17:38.000Z",
+     "outlet": "토큰포스트"
+    },
+    {
+     "title": "XRP 고래 바이낸스 입금 하루 6억9100만개, 2024년 이후 최고 보도 - 토큰포스트",
+     "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9sU284aUV0N2dMcWJGOHY2N2JMVTVuUzRDSzJLN1FyX2tzNXZzdWRxazNwNTlYcFFNUEZadGkxNGNHLUN0YkFDWk01NnVWSUMyQ1J0OERTTGrSAV5BVV95cUxOb1JXTGx4bVhPQkcxT0RTM2xQTnAzZGd0NzNPU2FhVHNuV0FfODJtdlpZQ2dkaThJcXRpTjBjVTJObWpYMGM0VG05ay1aeGxVVHF2QWdYOWpQLTVQcktB?oc=5",
+     "publishedAt": "2026-11-09T10:10:26.000Z",
+     "outlet": "토큰포스트"
+    },
+    {
+     "title": "테슬라, '판매부진' 사이버트럭 생산 중단키로…로보택시로 방향 전환 - 지디넷코리아",
+     "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFByN080NjVWZXJfd28ydW8yZkw5bUJsVzhtYjhjTlN1UmdDanV5QXNGS1pCdG9vM0xnemV3Wko4YnNBOGIySHRfSl8xbFdtUmlTYkMzeEx3?oc=5",
+     "publishedAt": "2026-11-08T02:17:05.000Z",
+     "outlet": "지디넷코리아"
+    },
+    {
+     "title": "\"내가 계산했는데 로봇에게 팁까지?\"…美 무인매장의 황당한 청구서 - 조선일보",
+     "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOQW9tb3UzWGxmXzBDQmN1N0RBZm5zN2NsMERVUjJ0LVBtSWVjVjVkXzdJcWgwVEVUMmE3dzR3Y3ViQjVUV3d2YUFOX0xORVIyVU5taUNFRUh1cDJXTUxURnFxN1NKRXFrLWg2amY5dmNRNjYyNTdOWVhDa3N1ZXhrTTc0a095SzI5UzVwdWZQX01GdC1DUTM0b3N0ZkluQQ?oc=5",
+     "publishedAt": "2026-11-08T00:34:00.000Z",
+     "outlet": "조선일보"
+    },
+    {
+     "title": "시도 8건에 미끼 서버 최고 권한까지... 오픈SSH ‘SSHole’ 공개 9시간 안 돼 공격 포착 - 보안뉴스",
+     "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE03RG9fUXFBQmR0aUVobzRHTkRveXl6cC1UNldsb3huSVcyUUNsMjZuOUNKVVJTcGJQeVFpTWhNdkpNenBEcmxmRDdHR1d6MHg4eWd6Xy1OdVNsWVIxNTE0eW5NNEZPSXlJSUc0?oc=5",
+     "publishedAt": "2026-11-09T03:30:00.000Z",
+     "outlet": "보안뉴스"
+    }
+   ]
+  },
+  {
+   "id": "geeknews",
+   "name": "GeekNews",
+   "url": "https://news.hada.io/rss/news",
+   "maxGapH": 12,
+   "lang": "ko",
+   "status": "ok",
+   "fetchedAt": "2026-11-09T21:38:11.430Z",
+   "httpDate": "Mon, 09 Nov 2026 21:38:12 GMT",
+   "cacheAge": null,
+   "newestItemAt": "2026-11-09T20:40:10.000Z",
+   "gapHours": 1,
+   "tzAdjusted": false,
+   "count": 20,
+   "items": [
+    {
+     "title": "Children of Men: 미래는 현재를 비추는 거울이다",
+     "link": "https://news.hada.io/topic?id=36904&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+     "publishedAt": "2026-11-09T20:40:10.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Muse Ember - Meta의 가장 작고 효율적인 모델",
+     "link": "https://news.hada.io/topic?id=36903&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+     "publishedAt": "2026-11-09T20:37:09.000Z",
+     "outlet": null
+    },
+    {
+     "title": "암호화된 디스크를 사용하는 시스템의 무인 재부팅",
+     "link": "https://news.hada.io/topic?id=36902&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+     "publishedAt": "2026-11-09T20:02:42.000Z",
+     "outlet": null
+    },
+    {
+     "title": "암호화폐 소송: Ethereum Foundation이 ‘자살 서약’을 요구했다는 의혹",
+     "link": "https://news.hada.io/topic?id=36901&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+     "publishedAt": "2026-11-09T19:57:31.000Z",
+     "outlet": null
+    },
+    {
+     "title": "언제쯤 멈출까? Raspberry Pi 5 16GB 싱글보드 컴퓨터, 이제 385달러에 판매",
+     "link": "https://news.hada.io/topic?id=36899&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+     "publishedAt": "2026-11-09T19:54:31.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Hacker News에서 2년 전으로 돌아가면 더 나은 다른 세계에 들어간 듯하다",
+     "link": "https://news.hada.io/topic?id=36898&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+     "publishedAt": "2026-11-09T19:51:31.000Z",
+     "outlet": null
+    },
+    {
+     "title": "캐나다 전국 건강 보고서, 너무 많은 남성이 말없이 고통받고 있음 확인",
+     "link": "https://news.hada.io/topic?id=36897&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+     "publishedAt": "2026-11-09T19:48:31.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Claude Fable 5.2와 Mythos 5.2 - 복잡한 코딩과 과학 연구 역량을 강화한 AI 모델",
+     "link": "https://news.hada.io/topic?id=36896&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+     "publishedAt": "2026-11-09T19:45:31.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Show GN: FCaptcha - 실제 브라우저를 조작하는 AI 에이전트 탐지용 오픈소스 CAPTCHA",
+     "link": "https://news.hada.io/topic?id=36895&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+     "publishedAt": "2026-11-09T19:12:30.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Flide - Jev같은 의사결정 모델을 최대 9.5배 빠르게 실행",
+     "link": "https://news.hada.io/topic?id=36894&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+     "publishedAt": "2026-11-09T18:41:22.000Z",
+     "outlet": null
+    },
+    {
+     "title": "같은 H100도 어디서 빌리느냐에 따라 시간당 2.69달러 또는 12.29달러",
+     "link": "https://news.hada.io/topic?id=36893&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+     "publishedAt": "2026-11-09T18:38:22.000Z",
+     "outlet": null
+    },
+    {
+     "title": "마젠타색 태양광 패널, 영농형 태양광의 가장 영리한 해법일지도 모른다",
+     "link": "https://news.hada.io/topic?id=36892&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+     "publishedAt": "2026-11-09T18:35:22.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Apple, 엔지니어의 하루 AI 지출 한도를 300달러에서 200달러로 낮춰",
+     "link": "https://news.hada.io/topic?id=36891&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+     "publishedAt": "2026-11-09T17:45:41.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Payments Canada, 캐나다 실시간 결제 시스템 Real-Time Rail(RTR) 출시 발표",
+     "link": "https://news.hada.io/topic?id=36890&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+     "publishedAt": "2026-11-09T17:42:41.000Z",
+     "outlet": null
+    },
+    {
+     "title": "malloc은 대체 무슨 일을 할까?",
+     "link": "https://news.hada.io/topic?id=36889&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+     "publishedAt": "2026-11-09T17:39:41.000Z",
+     "outlet": null
+    },
+    {
+     "title": "HN에서 쓰신 댓글을 봤습니다",
+     "link": "https://news.hada.io/topic?id=36888&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+     "publishedAt": "2026-11-09T16:32:49.000Z",
+     "outlet": null
+    },
+    {
+     "title": "ChatGPT Desktop이 사용자의 SSH 에이전트를 원격 머신으로 전달함",
+     "link": "https://news.hada.io/topic?id=36887&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+     "publishedAt": "2026-11-09T15:32:25.000Z",
+     "outlet": null
+    },
+    {
+     "title": "인류는 다시는 Wikipedia 같은 프로젝트를 만들지 못할 것이다",
+     "link": "https://news.hada.io/topic?id=36885&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+     "publishedAt": "2026-11-09T14:32:23.000Z",
+     "outlet": null
+    },
+    {
+     "title": "멋진 종이비행기 접기",
+     "link": "https://news.hada.io/topic?id=36884&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+     "publishedAt": "2026-11-09T13:31:57.000Z",
+     "outlet": null
+    },
+    {
+     "title": "Show GN: 걸으면 손그림 동물이 열리는 iOS 걷기 게임, CanGoGo",
+     "link": "https://news.hada.io/topic?id=36882&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+     "publishedAt": "2026-11-09T12:47:56.000Z",
+     "outlet": null
+    }
+   ]
+  },
+  {
+   "id": "etnews",
+   "name": "전자신문",
+   "url": "https://rss.etnews.com/Section901.xml",
+   "maxGapH": 8,
+   "lang": "ko",
+   "status": "ok",
+   "fetchedAt": "2026-11-09T21:38:11.430Z",
+   "httpDate": "Mon, 09 Nov 2026 21:38:12 GMT",
+   "cacheAge": null,
+   "newestItemAt": "2026-11-09T21:00:00.000Z",
+   "gapHours": 0.6,
+   "tzAdjusted": false,
+   "count": 30,
+   "items": [
+    {
+     "title": "편의점 직원 된 휴머노이드 로봇…24시간 근무 도전",
+     "link": "https://www.etnews.com/20261109000425",
+     "publishedAt": "2026-11-09T21:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "“3년 안에 결혼 못 하면 환불해 주겠다”…파격 조건 내건 중개업체 정체가?",
+     "link": "https://www.etnews.com/20261109000385",
+     "publishedAt": "2026-11-09T21:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "“옷장 속 외투 뒤에 숨겨져 있었다”…40년 만에 발견된 그림, 감정가만 41억원",
+     "link": "https://www.etnews.com/20261109000341",
+     "publishedAt": "2026-11-09T21:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "용접할 곳도 스스로 찾는다…중국의 '용접 로봇'",
+     "link": "https://www.etnews.com/20261109000285",
+     "publishedAt": "2026-11-09T13:30:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "1시간 전만해도 노랗게 물들었는데…1300살 은행나무, 하루아침에 '우수수'",
+     "link": "https://www.etnews.com/20261109000415",
+     "publishedAt": "2026-11-09T08:51:45.000Z",
+     "outlet": null
+    },
+    {
+     "title": "“재산 220조” 불륜 인정한 젠슨 황, 이혼시 위자료 110조 폭탄?…“엔비디아 또다른 뇌관”",
+     "link": "https://www.etnews.com/20261109000414",
+     "publishedAt": "2026-11-09T08:46:27.000Z",
+     "outlet": null
+    },
+    {
+     "title": "지진 10분 만에 달려와 '생얼 방송' 日 아나운서…“지진 때마다 그랬다”",
+     "link": "https://www.etnews.com/20261109000409",
+     "publishedAt": "2026-11-09T08:18:56.000Z",
+     "outlet": null
+    },
+    {
+     "title": "삼성-현대차, 미래 모빌리티 '원팀' 선언",
+     "link": "https://www.etnews.com/20261109000305",
+     "publishedAt": "2026-11-09T08:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "AI에 직급 주고 개발 문턱 낮춘다…'AI 네이티브 조직' 확산",
+     "link": "https://www.etnews.com/20261109000280",
+     "publishedAt": "2026-11-09T08:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[단독] AI 시대 교육 '백년지대계' 연구 예산 전액 삭감",
+     "link": "https://www.etnews.com/20261109000334",
+     "publishedAt": "2026-11-09T07:30:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "갤S27 프로·울트라 생산비중 70%로 높인다",
+     "link": "https://www.etnews.com/20261109000231",
+     "publishedAt": "2026-11-09T07:30:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "코스피, 장중 반등 못 지키고 0.81%↓…5000선 턱걸이",
+     "link": "https://www.etnews.com/20261109000378",
+     "publishedAt": "2026-11-09T07:07:35.000Z",
+     "outlet": null
+    },
+    {
+     "title": "BCI 기술 상용화 이끌 '브레인링크' 사업단 내년 출범…'K문샷' 전진기지로",
+     "link": "https://www.etnews.com/20261109000314",
+     "publishedAt": "2026-11-09T07:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "국회 심사대 오른 PM법…업계, '원동기 면허' 포함될까 우려",
+     "link": "https://www.etnews.com/20261109000132",
+     "publishedAt": "2026-11-09T07:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "성장 격차 벌어지는 글로벌 '로청' 시장…3Q 로보락 홀로 매출·이익 30%↑",
+     "link": "https://www.etnews.com/20261109000118",
+     "publishedAt": "2026-11-09T07:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "11월에도 자체 보조금… 테슬라 “모델 Y만 215만원”…BYD “4종 모두 제공”",
+     "link": "https://www.etnews.com/20261106000223",
+     "publishedAt": "2026-11-09T07:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[뉴스줌인] 공정위 배달 플랫폼 제재에 업계 반발…행정소송 예고",
+     "link": "https://www.etnews.com/20261109000293",
+     "publishedAt": "2026-11-09T06:30:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[뉴스줌인]“칩만 팔던 시대 끝났다”…SKT·엔비디아·리벨리온 '소버린 토큰 동맹'",
+     "link": "https://www.etnews.com/20261109000354",
+     "publishedAt": "2026-11-09T06:25:33.000Z",
+     "outlet": null
+    },
+    {
+     "title": "펨테크 육성 첫발 뗀 한국…“단발성 지원 넘어 성장체계 구축해야”",
+     "link": "https://www.etnews.com/20261109000347",
+     "publishedAt": "2026-11-09T06:18:23.000Z",
+     "outlet": null
+    },
+    {
+     "title": "기부금이 연구로, 연구가 치료로…'이건희 소아암 사업' 5년의 선순환",
+     "link": "https://www.etnews.com/20261109000324",
+     "publishedAt": "2026-11-09T06:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "이노에이엑스, 보험 전문성에 AI 결합…산업 전반 AX 공략",
+     "link": "https://www.etnews.com/20261109000189",
+     "publishedAt": "2026-11-09T06:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "1만피 외치던 증권가, 코스피 5000선 후퇴하자 전망도 '뚝'",
+     "link": "https://www.etnews.com/20261109000331",
+     "publishedAt": "2026-11-09T05:55:31.000Z",
+     "outlet": null
+    },
+    {
+     "title": "베이비돈크라이 이현·베니 목소리로 '문학' 만난다",
+     "link": "https://www.etnews.com/20261109000312",
+     "publishedAt": "2026-11-09T05:39:18.000Z",
+     "outlet": null
+    },
+    {
+     "title": "서울시, 獨 헨켈 반도체 소재 R&D 센터 유치…2031년까지 121억원 투자",
+     "link": "https://www.etnews.com/20261109000288",
+     "publishedAt": "2026-11-09T05:25:43.000Z",
+     "outlet": null
+    },
+    {
+     "title": "세계 900만 개발자 선택…올라마 CEO “오픈소스-프런티어 AI 격차 4개월”",
+     "link": "https://www.etnews.com/20261109000287",
+     "publishedAt": "2026-11-09T05:25:18.000Z",
+     "outlet": null
+    },
+    {
+     "title": "AI 안경 쓰고 시험 치다 적발된 중·고생 4명…전원 0점 처리",
+     "link": "https://www.etnews.com/20261109000269",
+     "publishedAt": "2026-11-09T05:08:59.000Z",
+     "outlet": null
+    },
+    {
+     "title": "전력망 주민 수용성 '한전'보다 전문조직이 나서야…주민과 함께하는 소통 필요",
+     "link": "https://www.etnews.com/20261109000266",
+     "publishedAt": "2026-11-09T05:03:55.000Z",
+     "outlet": null
+    },
+    {
+     "title": "SK텔레콤, 통합AIDC 인프라 구축…엔비디아 GPU에 국산 NPU 연결",
+     "link": "https://www.etnews.com/20261109000264",
+     "publishedAt": "2026-11-09T05:01:35.000Z",
+     "outlet": null
+    },
+    {
+     "title": "금융권 QR결제 확산…해외 결제 접점 확대",
+     "link": "https://www.etnews.com/20261109000212",
+     "publishedAt": "2026-11-09T05:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[단독] '가민'으로 버스 탄다 “티머니 연동”",
+     "link": "https://www.etnews.com/20261109000237",
+     "publishedAt": "2026-11-09T04:35:31.000Z",
+     "outlet": null
+    }
+   ]
+  },
+  {
+   "id": "bloter",
+   "name": "블로터",
+   "url": "https://www.bloter.net/rss/allArticle.xml",
+   "maxGapH": 12,
+   "lang": "ko",
+   "status": "ok",
+   "fetchedAt": "2026-11-09T21:38:11.430Z",
+   "httpDate": "Mon, 09 Nov 2026 21:38:12 GMT",
+   "cacheAge": null,
+   "newestItemAt": "2026-11-09T21:00:00.000Z",
+   "gapHours": 0.6,
+   "tzAdjusted": true,
+   "count": 50,
+   "items": [
+    {
+     "title": "[박종면칼럼] 금융지주 ‘사외이사 권력’은 누가 견제하나",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678102",
+     "publishedAt": "2026-11-09T21:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "혼다, 트럼프 관세 대응해 美 생산 확대…오하이오에 30억달러 투자",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678164",
+     "publishedAt": "2026-11-09T18:17:07.000Z",
+     "outlet": null
+    },
+    {
+     "title": "美 의회 권력 재편에 中 스파이 의혹까지…젠슨 황, 정치 압박 직면",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678162",
+     "publishedAt": "2026-11-09T17:05:59.000Z",
+     "outlet": null
+    },
+    {
+     "title": "SK케미칼, 연결 이익 두 배에도 코폴리에스터 감익…신사업 성과 관건",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678154",
+     "publishedAt": "2026-11-09T13:21:21.000Z",
+     "outlet": null
+    },
+    {
+     "title": "삼성·현대차 '원팀' 보폭 확대…로봇·에너지서 새 기회 찾는다",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678153",
+     "publishedAt": "2026-11-09T08:53:57.000Z",
+     "outlet": null
+    },
+    {
+     "title": "엔비디아 생태계에 韓 NPU 연결…SKT AIDC서 실증한다 [현장+]",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678110",
+     "publishedAt": "2026-11-09T08:49:28.000Z",
+     "outlet": null
+    },
+    {
+     "title": "롯데손보, 車보험 할인기준 세분화…직면 과제는 '위험률 관리'",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678149",
+     "publishedAt": "2026-11-09T08:37:55.000Z",
+     "outlet": null
+    },
+    {
+     "title": "카카오페이손보, 운전자보험 '틈새'공략…'자녀보장' 추가 효과는",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678147",
+     "publishedAt": "2026-11-09T08:31:20.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[단독] GS건설 자회사 채권 3000만달러 크로스디폴트 위기…은행 4곳 촉각",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678144",
+     "publishedAt": "2026-11-09T08:17:39.000Z",
+     "outlet": null
+    },
+    {
+     "title": "스틸리언, AI로 해킹 탐지서 패치까지 '10.5분'만에 끝 [현장+]",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678115",
+     "publishedAt": "2026-11-09T08:03:54.000Z",
+     "outlet": null
+    },
+    {
+     "title": "한화생명, 413억 이자 부담에도 후순위채 증액…지향점은 '건전성'",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678140",
+     "publishedAt": "2026-11-09T07:49:12.000Z",
+     "outlet": null
+    },
+    {
+     "title": "결재 없이 1조 문서 서명했다는 신한증권…3000억 6년째 표류",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678128",
+     "publishedAt": "2026-11-09T07:39:53.000Z",
+     "outlet": null
+    },
+    {
+     "title": "엔비디아, LG부터 리얼월드까지 협력 확대...피지컬AI 고도화 목표",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678137",
+     "publishedAt": "2026-11-09T07:37:40.000Z",
+     "outlet": null
+    },
+    {
+     "title": "모나미, 화장품 117억 손상 뒤 40억 재출자…상장유지 위해 비상경영",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678139",
+     "publishedAt": "2026-11-09T07:31:58.000Z",
+     "outlet": null
+    },
+    {
+     "title": "이도, KLPGA 최종전서 '골프 꿈나무' 육성 기금 1억 이상 조성",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678134",
+     "publishedAt": "2026-11-09T07:15:52.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[부고] 최훈진(새마을금고중앙회 언론팀장)씨 부친상",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678136",
+     "publishedAt": "2026-11-09T07:04:55.000Z",
+     "outlet": null
+    },
+    {
+     "title": "공공 개인정보 유출 61%가 '업무 실수'…대책은 여전히 교육[현장+]",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678113",
+     "publishedAt": "2026-11-09T07:04:27.000Z",
+     "outlet": null
+    },
+    {
+     "title": "진시스템, 사명 바꾸고 인천서 새출발…신사업 드라이브",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678132",
+     "publishedAt": "2026-11-09T07:02:27.000Z",
+     "outlet": null
+    },
+    {
+     "title": "제일엠앤에스, 24년 감사의견 '적정' 정정…상폐 사유 해소 수순",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678133",
+     "publishedAt": "2026-11-09T06:50:21.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[빛을 담는 기업들] 옵트론텍, 광학필터 기술 딛고 전장·OIS 공략",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=677897",
+     "publishedAt": "2026-11-09T06:46:32.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[저PBR 꼬리표] 자산 쌓고 못 버는 롯데쇼핑…백화점 중 홀로 명단에",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678125",
+     "publishedAt": "2026-11-09T06:44:09.000Z",
+     "outlet": null
+    },
+    {
+     "title": "먼저 뜬 K뷰티가 걷어찬 사다리…ODM 앞 '생산 양극화'",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678127",
+     "publishedAt": "2026-11-09T06:41:51.000Z",
+     "outlet": null
+    },
+    {
+     "title": "관객 30% 줄었는데 이익은 늘었다…CJ CGV의 달라진 셈법",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678103",
+     "publishedAt": "2026-11-09T06:38:19.000Z",
+     "outlet": null
+    },
+    {
+     "title": "신용점수 같아도 연체율 10배…농협은행, 대안신용평가 주목한 까닭",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678111",
+     "publishedAt": "2026-11-09T06:24:36.000Z",
+     "outlet": null
+    },
+    {
+     "title": "생명보험 빅3, '근로자 추정제' 앞두고 노무비 부담 촉각",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678124",
+     "publishedAt": "2026-11-09T06:19:29.000Z",
+     "outlet": null
+    },
+    {
+     "title": "가을 끝자락 화담숲 가보니…'LG家 3대' 흔적 곳곳에 [현장+]",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678095",
+     "publishedAt": "2026-11-09T06:19:12.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[안희철의 M&A 나침반] 자산양수도와 영업양수도 전략",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678060",
+     "publishedAt": "2026-11-09T06:08:59.000Z",
+     "outlet": null
+    },
+    {
+     "title": "중국은 싫어도 훠궈는 좋다…중국 브랜드 실험장 된 서울",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678094",
+     "publishedAt": "2026-11-09T06:03:35.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[단독] 구본웅·예스코홀딩스, 美 파산법원서 분쟁 마침표",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678083",
+     "publishedAt": "2026-11-09T06:02:53.000Z",
+     "outlet": null
+    },
+    {
+     "title": "김동선式 인사 혁신…한화세미텍 새 수장에 37세 김진우",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678117",
+     "publishedAt": "2026-11-09T05:58:31.000Z",
+     "outlet": null
+    },
+    {
+     "title": "MBK \"콜옵션으로 고려아연 매입단가 낮춘다는 주장은 허위 여론몰이\"",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678108",
+     "publishedAt": "2026-11-09T05:51:23.000Z",
+     "outlet": null
+    },
+    {
+     "title": "美 AI 투자 늦어진다는데…삼성·SK HBM 'LTA' 안전할까",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678098",
+     "publishedAt": "2026-11-09T05:50:21.000Z",
+     "outlet": null
+    },
+    {
+     "title": "한국앤컴퍼니, 3분기 영업익 '반토막' 지분법이익·배터리사업 둔화",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678123",
+     "publishedAt": "2026-11-09T05:50:05.000Z",
+     "outlet": null
+    },
+    {
+     "title": "'합산 AUM 5.5경' ACGA, 韓에 \"의무공개매수 입법안 수정해야\"",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678092",
+     "publishedAt": "2026-11-09T05:49:18.000Z",
+     "outlet": null
+    },
+    {
+     "title": "데이터라이즈, 고객사 슬랙에 AI 매니저 '김데라' 투입",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678121",
+     "publishedAt": "2026-11-09T05:46:27.000Z",
+     "outlet": null
+    },
+    {
+     "title": "자사몰 연말 매출 정점은 11월 중순…블랙프라이데이보다 빨라",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678120",
+     "publishedAt": "2026-11-09T05:34:12.000Z",
+     "outlet": null
+    },
+    {
+     "title": "한국앤컴퍼니, 한타·한온 젊은 리더 발탁 '경영 과제' 방점",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678112",
+     "publishedAt": "2026-11-09T05:18:47.000Z",
+     "outlet": null
+    },
+    {
+     "title": "GS건설 '2800억 손실' 전망…경쟁사 흑자인데 왜 철수 택했나",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678096",
+     "publishedAt": "2026-11-09T05:17:41.000Z",
+     "outlet": null
+    },
+    {
+     "title": "에코프로도 믿을건 반도체뿐?…비엠·머티 흔들릴 때 HN '홀로 질주'",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678084",
+     "publishedAt": "2026-11-09T05:15:16.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[어바웃C] '軍 출신' 신익현 LIG D&A 대표, 4조 매출 뒤 '입찰 제한' 암초",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678106",
+     "publishedAt": "2026-11-09T05:14:16.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[단독] 오스템임플란트, 신임 CFO 최문호 선임…재경라인과 동행",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678061",
+     "publishedAt": "2026-11-09T05:12:57.000Z",
+     "outlet": null
+    },
+    {
+     "title": "㈜GS, 15조 인공지능 데이터센터 '첫 고객계약' 연말 승부",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678107",
+     "publishedAt": "2026-11-09T05:12:26.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[메자닌 투자파일] 대규모 증자에 CB까지…커지는 차입 부담 I 태성②",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=677941",
+     "publishedAt": "2026-11-09T05:08:14.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[김동선의 뉴한화] 공개매수 또 꺼낸 김동선…지분 37% 정조준",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678082",
+     "publishedAt": "2026-11-09T05:05:24.000Z",
+     "outlet": null
+    },
+    {
+     "title": "공정위, 배민·쿠팡에 6319억 과징금…'최혜대우·자체배달 강제'",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678104",
+     "publishedAt": "2026-11-09T05:04:51.000Z",
+     "outlet": null
+    },
+    {
+     "title": "데이터라이즈 \"20대 코트·50대 패딩…아우터 수요 급증\"",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678105",
+     "publishedAt": "2026-11-09T04:38:06.000Z",
+     "outlet": null
+    },
+    {
+     "title": "PS일렉트로닉스, 제품 적자·상품 흑자…서버 성장·현금관리 과제",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678097",
+     "publishedAt": "2026-11-09T04:35:49.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[길 잃은 의무공개매수] 50% 유지하되 순서만 바꾼다…'비례적 공개매수' 해법",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678074",
+     "publishedAt": "2026-11-09T04:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "김도균 달파 대표 \"온톨로지 활용이 AX 미래\"[디지털마케팅 대전]",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678086",
+     "publishedAt": "2026-11-09T03:27:33.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[기업대출 각축전]④ 우리은행, '명가'는 수치로 입증…대기업 24%↑",
+     "link": "https://www.bloter.net/news/articleView.html?idxno=678090",
+     "publishedAt": "2026-11-09T02:51:34.000Z",
+     "outlet": null
+    }
+   ]
+  },
+  {
+   "id": "digitaltoday",
+   "name": "디지털투데이",
+   "url": "https://www.digitaltoday.co.kr/rss/allArticle.xml",
+   "maxGapH": 12,
+   "lang": "ko",
+   "status": "ok",
+   "fetchedAt": "2026-11-09T21:38:11.430Z",
+   "httpDate": "Mon, 09 Nov 2026 21:38:12 GMT",
+   "cacheAge": null,
+   "newestItemAt": "2026-11-09T15:15:00.000Z",
+   "gapHours": 6.4,
+   "tzAdjusted": true,
+   "count": 50,
+   "items": [
+    {
+     "title": "엔비디아 쇼크에 비트코인도 '휘청'…하락 신호일까",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713997",
+     "publishedAt": "2026-11-09T15:15:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "비트코인, 美 증시와 점점 닮아간다…장기 동조화 뚜렷",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713795",
+     "publishedAt": "2026-11-09T15:03:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "엔비디아, 韓 정부·기업과 전방위 AI 협력...반도체부터 로봇·스타트업까지",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713993",
+     "publishedAt": "2026-11-09T13:05:59.000Z",
+     "outlet": null
+    },
+    {
+     "title": "엔비디아 스캔들 주인공, 엘리스 황·메가스피드는 어떤 회사?",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713996",
+     "publishedAt": "2026-11-09T12:44:31.000Z",
+     "outlet": null
+    },
+    {
+     "title": "외부 모니터 연결한 노트북, 닫고 써도 될까…관건은 발열",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713799",
+     "publishedAt": "2026-11-09T11:25:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "XRP 급락에 비관론 심화…1.10달러 지킬까",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713783",
+     "publishedAt": "2026-11-09T11:00:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "900달러 PS5 프로에도 없는 기능…'엑스박스 시리즈 X' 차별점 8가지",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713758",
+     "publishedAt": "2026-11-09T10:35:00.000Z",
+     "outlet": null
+    },
+    {
+     "title": "퀀텀레일, 100억원 규모 제5회차 사모 전환사채 발행 철회",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713995",
+     "publishedAt": "2026-11-09T10:20:02.000Z",
+     "outlet": null
+    },
+    {
+     "title": "인제니아테라퓨틱스, MSD로부터 IGT-302 녹내장 적응증 옵션 미행사 공문 수령",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713994",
+     "publishedAt": "2026-11-09T10:20:01.000Z",
+     "outlet": null
+    },
+    {
+     "title": "뉴보텍, 불성실공시법인 미지정",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713992",
+     "publishedAt": "2026-11-09T10:02:02.000Z",
+     "outlet": null
+    },
+    {
+     "title": "퀀텀레일, 임시주총 의결정족수 미달로 무상감자·정관변경 안건 유회",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713991",
+     "publishedAt": "2026-11-09T10:02:01.000Z",
+     "outlet": null
+    },
+    {
+     "title": "리얼월드, 엔비디아서 투자 유치 …로봇 AI 기술 고도화",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713984",
+     "publishedAt": "2026-11-09T09:47:58.000Z",
+     "outlet": null
+    },
+    {
+     "title": "스코넥엔터테인먼트, 주권매매거래정지 기간변경",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713990",
+     "publishedAt": "2026-11-09T09:32:07.000Z",
+     "outlet": null
+    },
+    {
+     "title": "인카금융서비스, 56억6693만원 규모 자기주식 소각 결정",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713989",
+     "publishedAt": "2026-11-09T09:32:06.000Z",
+     "outlet": null
+    },
+    {
+     "title": "에이프로 최영규 사업총괄대표, 소유 주식 수량 8000주 감소…소유 지분율 0.06%p 하락",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713988",
+     "publishedAt": "2026-11-09T09:32:05.000Z",
+     "outlet": null
+    },
+    {
+     "title": "에이프로 김철호 부사장, 소유 주식 수량 3000주 보고 의무 해제…소유 지분율 0.02%",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713987",
+     "publishedAt": "2026-11-09T09:32:03.000Z",
+     "outlet": null
+    },
+    {
+     "title": "인카금융서비스, 30억원 규모 자기주식취득 신탁계약 체결 결정",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713986",
+     "publishedAt": "2026-11-09T09:32:02.000Z",
+     "outlet": null
+    },
+    {
+     "title": "제일엠앤에스 10%이상주주 한국투자2022사모투자합자회사, 소유 주식 수량 232만8181주 감소…소유 지분율 11.57%p 하락",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713985",
+     "publishedAt": "2026-11-09T09:32:01.000Z",
+     "outlet": null
+    },
+    {
+     "title": "대신증권, 3분기 영업손실 22억원...거래대금 감소에 적자전환",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713968",
+     "publishedAt": "2026-11-09T09:13:34.000Z",
+     "outlet": null
+    },
+    {
+     "title": "HT로보틱스, 본사 공장서 중대재해 발생…1명 사망",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713983",
+     "publishedAt": "2026-11-09T09:11:07.000Z",
+     "outlet": null
+    },
+    {
+     "title": "에이플러스에셋어드바이저, 최대주주 곽근호 등 주식 7559주 증가…친인척 신다예 장내매수 영향",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713982",
+     "publishedAt": "2026-11-09T09:11:06.000Z",
+     "outlet": null
+    },
+    {
+     "title": "화천기계, 2026년 3분기 영업손실 2억7400만원으로 적자전환",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713981",
+     "publishedAt": "2026-11-09T09:11:05.000Z",
+     "outlet": null
+    },
+    {
+     "title": "유안타증권, 최대주주 Yuanta Securities Asia Financial Services 등 주식 7500주 증가…최대주주 장내매수 영향",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713980",
+     "publishedAt": "2026-11-09T09:11:04.000Z",
+     "outlet": null
+    },
+    {
+     "title": "SNT에너지, 최대주주 SNT홀딩스 등 주식 10만6000주 증가…SNT홀딩스 장내매수 영향",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713979",
+     "publishedAt": "2026-11-09T09:11:03.000Z",
+     "outlet": null
+    },
+    {
+     "title": "인산가, 주주 오라이언자산운용 측 주식등 보유 비율 2.87%p 감소",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713978",
+     "publishedAt": "2026-11-09T09:11:02.000Z",
+     "outlet": null
+    },
+    {
+     "title": "메타랩스 하지성 대표이사, 소유 주식 수량 1만6912주 보고…소유 지분율 0.06%",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713977",
+     "publishedAt": "2026-11-09T09:11:01.000Z",
+     "outlet": null
+    },
+    {
+     "title": "디에스엠, 3회차 전환사채 10억원 만기전 취득…사채권자 풋옵션 행사",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713976",
+     "publishedAt": "2026-11-09T09:02:01.000Z",
+     "outlet": null
+    },
+    {
+     "title": "[인사] 과학기술정보통신부",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713969",
+     "publishedAt": "2026-11-09T09:00:44.000Z",
+     "outlet": null
+    },
+    {
+     "title": "독파모 3사, 엔비디아와 협력 확장...추론 최적화 기술도 적극 활용",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713961",
+     "publishedAt": "2026-11-09T08:57:04.000Z",
+     "outlet": null
+    },
+    {
+     "title": "한샘, 2026년 3분기 당기순이익 37억7200만원으로 흑자전환",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713974",
+     "publishedAt": "2026-11-09T08:53:05.000Z",
+     "outlet": null
+    },
+    {
+     "title": "CJ제일제당, 보통주 1주당 1500원 분기 현금배당 결정",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713973",
+     "publishedAt": "2026-11-09T08:53:04.000Z",
+     "outlet": null
+    },
+    {
+     "title": "HD현대일렉트릭, 美 텍사스법인에 678억9500만원 채무보증 결정",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713972",
+     "publishedAt": "2026-11-09T08:53:03.000Z",
+     "outlet": null
+    },
+    {
+     "title": "엠투엔, 최대주주 디케이마린 측 주식등 보유 비율 0.04%p 증가",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713971",
+     "publishedAt": "2026-11-09T08:53:02.000Z",
+     "outlet": null
+    },
+    {
+     "title": "체시스, 운영자금 30억원 조달 위한 제3자배정 유상증자 결정",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713970",
+     "publishedAt": "2026-11-09T08:53:01.000Z",
+     "outlet": null
+    },
+    {
+     "title": "체시스, 운영자금 30억원 규모 제3자배정 유상증자 결정",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713967",
+     "publishedAt": "2026-11-09T08:50:04.000Z",
+     "outlet": null
+    },
+    {
+     "title": "모아데이타, 계열회사등 모아라이프플러스 측 주식등 보유 비율 3.28%p 감소",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713966",
+     "publishedAt": "2026-11-09T08:50:03.000Z",
+     "outlet": null
+    },
+    {
+     "title": "현대해상화재보험 정경선 부사장, 소유 주식 수량 511만4895주 증가…소유 지분율 6.00%p 상승",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713965",
+     "publishedAt": "2026-11-09T08:50:02.000Z",
+     "outlet": null
+    },
+    {
+     "title": "현대해상화재보험 10%이상주주 정몽윤 회장, 소유 주식 수량 511만4895주 감소…소유 지분율 6.00%p 하락",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713964",
+     "publishedAt": "2026-11-09T08:50:01.000Z",
+     "outlet": null
+    },
+    {
+     "title": "체시스, 운영자금 60억원 조달 위한 제3자배정 유상증자 결정",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713963",
+     "publishedAt": "2026-11-09T08:41:01.000Z",
+     "outlet": null
+    },
+    {
+     "title": "메가스터디교육, 2026년 3분기 매출액 2601억4900만원으로 4.18% 증가",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713960",
+     "publishedAt": "2026-11-09T08:23:08.000Z",
+     "outlet": null
+    },
+    {
+     "title": "체시스, 임시주총 소집…사내이사 3명 신규 선임·사업목적 추가 상정",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713959",
+     "publishedAt": "2026-11-09T08:23:07.000Z",
+     "outlet": null
+    },
+    {
+     "title": "체시스, 최대주주 MSHC 외 3인 지분 39.59% 295억원에 매각 계약",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713958",
+     "publishedAt": "2026-11-09T08:23:06.000Z",
+     "outlet": null
+    },
+    {
+     "title": "한전기술, 2026년 3분기 당기순손실 10억2700만원…전년 동기 대비 적자전환",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713957",
+     "publishedAt": "2026-11-09T08:23:05.000Z",
+     "outlet": null
+    },
+    {
+     "title": "대신증권, 2026년 3분기 영업손실 22억3000만원으로 적자전환",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713956",
+     "publishedAt": "2026-11-09T08:23:04.000Z",
+     "outlet": null
+    },
+    {
+     "title": "AJ네트웍스, 보통주 1주당 95원 분기 현금배당 결정",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713955",
+     "publishedAt": "2026-11-09T08:23:03.000Z",
+     "outlet": null
+    },
+    {
+     "title": "이월드 10%이상주주 이랜드월드, 소유 주식 수량 3만274주 증가…소유 지분율 0.11%p 상승",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713954",
+     "publishedAt": "2026-11-09T08:23:02.000Z",
+     "outlet": null
+    },
+    {
+     "title": "SNT에너지 사실상지배주주 SNT홀딩스, 소유 주식 수량 10만6000주 증가…소유 지분율 2.80%p 상승",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713953",
+     "publishedAt": "2026-11-09T08:23:01.000Z",
+     "outlet": null
+    },
+    {
+     "title": "엔비디아, 국내 AI 기업 업스테이지·모티프에 투자한다",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713946",
+     "publishedAt": "2026-11-09T08:22:02.000Z",
+     "outlet": null
+    },
+    {
+     "title": "SNT에너지, 최대주주 SNT홀딩스 측 주식등 보유 비율 3.00%p 증가",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713952",
+     "publishedAt": "2026-11-09T08:20:06.000Z",
+     "outlet": null
+    },
+    {
+     "title": "비비안, 최대주주 쌍방울 측 주식등 보유 비율 0.07%p 증가…무상증자 신주 취득 영향",
+     "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=713951",
+     "publishedAt": "2026-11-09T08:20:04.000Z",
+     "outlet": null
+    }
+   ]
+  }
+ ]
+}
