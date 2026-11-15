@@ -1,0 +1,80 @@
+name: Radar publish watch
+
+# Opens a GitHub issue when today's /radar issue has not been published by
+# ~09:13 KST, with the validator output attached (a failing check is the usual
+# reason the daily writer stops). Comments on the same open issue on later
+# missed days, and closes it once an issue is published again.
+
+on:
+  schedule:
+    - cron: "13 0 * * *" # 09:13 KST
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: radar-watch
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check today's issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -u
+          TODAY=$(TZ=Asia/Seoul date +%F)
+          TITLE="Tech Radar 미발행 알림"
+          OPEN=$(gh issue list --state open --label radar-missed --json number --jq '.[0].number // empty')
+
+          if [ -f "content/radar/issues/$TODAY.json" ]; then
+            echo "published: $TODAY"
+            if [ -n "$OPEN" ]; then
+              gh issue close "$OPEN" --comment "$TODAY 호가 발행되어 닫습니다."
+            fi
+            exit 0
+          fi
+
+          RAW="content/radar/raw/$TODAY.json"
+          if [ -f "$RAW" ]; then
+            RAW_STATE=$(node -e 'const r=require("./"+process.argv[1]);console.log(`수집 ${r.collectedAt} · github ${r.summary.github} · hn ${r.summary.hn} · feeds ok ${Object.values(r.summary.feeds).filter(s=>s==="ok").length}/${Object.keys(r.summary.feeds).length}`)' "$RAW")
+          else
+            RAW_STATE="오늘 raw 파일 없음 ($RAW)"
+          fi
+          node scripts/radar/validate.mjs > validate.txt 2>&1 && VSTATUS="통과" || VSTATUS="실패"
+          LAST=$(ls content/radar/issues | sort | tail -1 | cut -c1-10)
+
+          {
+            echo "**$TODAY** 호가 09:13 KST까지 main에 없습니다."
+            echo
+            echo "- 마지막 발행: $LAST"
+            echo "- raw: $RAW_STATE"
+            echo "- \`validate.mjs\` (현재 main 기준): **$VSTATUS**"
+            echo
+            echo '<details><summary>validator 출력 (마지막 40줄)</summary>'
+            echo
+            echo '```'
+            tail -40 validate.txt
+            echo '```'
+            echo '</details>'
+            echo
+            echo "검증이 실패하면 매일 예약작업은 규칙대로 발행을 멈춥니다. 예약작업 실행 기록에서 그날 보고도 확인하세요."
+          } > body.md
+
+          gh label create radar-missed --color B60205 --description "Tech Radar daily issue not published" 2>/dev/null || true
+          if [ -n "$OPEN" ]; then
+            gh issue comment "$OPEN" --body-file body.md
+          else
+            gh issue create --title "$TITLE" --label radar-missed --body-file body.md
+          fi

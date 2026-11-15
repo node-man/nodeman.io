@@ -25,6 +25,8 @@ Personal homepage (`nodeman.io`) — single-page portfolio, terminal/galaxy them
 - AI-written daily brief published with no human review. Data in `content/radar/` (`issues/<date>.json`, `ledger.json`, `raw/<date>.json`); format in `src/lib/radar/types.ts`; renderers in `src/app/radar/_components/blocks.tsx`.
 - Raw inputs come only from `.github/workflows/radar-collect.yml` (`scripts/radar/collect.mjs`, ~06:40 KST, or on demand by pushing `content/radar/requests/latest.txt`). Sandboxed sessions cannot fetch github.com/trending directly, and WebFetch copies can be stale — never take numbers from them.
 - `scripts/radar/validate.mjs` gates every deploy: numbers must match raw, raw must be fresh, excluded topics and conflict-of-interest rules are enforced.
+- Raw files of days that have an issue are never pruned (validator re-checks every past issue against them); other raw files are pruned after 14 days.
+- `.github/workflows/radar-watch.yml` (~09:13 KST) opens/comments a `radar-missed` GitHub issue with validator output when today's issue is missing, and closes it once publishing resumes.
 - Daily procedure: `docs/radar/routine.md`. Local check: `npm run radar:check` (offline build via `next build --webpack` with mocked Google Fonts).
 - Magazine layout: each issue renders as cover (blue) → 차례 → one sheet per section (running head + folio) → colophon; light with a prefers-color-scheme dark variant. Styles in `src/app/radar/radar.css`.
 - Issue pages are `noindex`; index, ledger and about pages are indexable.
