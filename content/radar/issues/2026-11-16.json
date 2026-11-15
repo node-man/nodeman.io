@@ -1,0 +1,937 @@
+{
+  "version": 1,
+  "date": "2026-11-16",
+  "publishedAt": "2026-11-16T07:41:11+09:00",
+  "title": "사이버캡 개인 판매, 스타십은 탑에 안기다",
+  "lede": "테슬라가 운전대와 페달이 없는 2인승 사이버캡을 개인에게도 팔기 시작했습니다. 값은 2만 9,990달러지만 월 299달러 구독과 로보택시 운행 구역이라는 조건이 붙었습니다. 같은 주말 스페이스X는 궤도에서 돌아온 스타십 우주선을 발사탑으로 붙잡았고, ULA의 Vulcan은 아마존 위성 40기와 함께 실패했습니다.",
+  "raw": "content/radar/raw/2026-11-16.json",
+  "rawCollectedAt": "2026-11-15T21:38:40.833Z",
+  "quick": [
+    "**사이버캡 개인 주문 시작.** 차값 2만 9,990달러에 자율주행 구독 월 299달러가 붙고, 테슬라 로보택시 운행 구역 안에서만 살 수 있습니다.",
+    "**스타십 우주선, 첫 발사탑 회수.** 15차 비행에서 우주선을 '젓가락' 팔로 붙잡았고, 부스터 회수는 유도 문제로 취소됐습니다.",
+    "**Vulcan 발사 실패.** 비행 재개 첫 발사에서 아마존 Leo 위성 40기를 잃었고, ULA로서는 첫 완전 실패입니다.",
+    "**애플 스마트 안경은 2027년.** 내년 WWDC에서 공개하고 연말까지 출시하며, 시리 AI와 아이폰 앱 연동이 핵심이라는 보도입니다(전언).",
+    "**하루 넘긴 MS 365 장애, 미국 전역 이륙 중단.** 두 사고 모두 네트워크 장비 작업이 원인으로 지목됐고 사이버 공격 정황은 없다고 발표됐습니다."
+  ],
+  "cover": {
+    "big": "운전대 없는\n차를 팔다"
+  },
+  "sections": [
+    {
+      "id": "lead",
+      "kind": "lead",
+      "label": "커버스토리",
+      "title": "테슬라, 운전대 없는 차를 개인에게 팔다",
+      "stories": [
+        {
+          "id": "tesla-cybercab-personal-orders",
+          "kicker": "자동차 · 테슬라",
+          "title": "사이버캡 개인 주문 시작… 2만 9,990달러에 월 299달러, 로보택시 구역 한정",
+          "hot": {
+            "count": 6,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "테슬라가 무인 로보택시로 소개해 온 사이버캡의 주문을 개인 고객에게도 열었습니다. 사이버캡은 운전대와 페달이 없는 2인승 차량으로, 지금까지는 테슬라가 직접 운영하는 로보택시 서비스용으로 알려져 왔습니다. 이번 주문은 '개인 용도'로 받습니다."
+            },
+            {
+              "type": "p",
+              "text": "**가격과 조건.** 차값은 2만 9,990달러(약 4,000만 원)입니다. 여기에 자율주행 기능을 쓰는 월 299달러 구독이 붙습니다. 주문은 테슬라 로보택시가 운행하는 지역에 사는 사람만 할 수 있습니다. Electrek은 약관을 살펴본 뒤 구독이 없으면 차가 사실상 움직이지 않는 구조라고 짚었습니다."
+            },
+            {
+              "type": "p",
+              "text": "**싼 차인가, 비싼 차인가.** 차값만 보면 테슬라 차 가운데 가장 싼 편입니다. 다만 구독료를 1년 내면 3,588달러, 5년이면 1만 7,940달러가 더 듭니다. 디지털투데이는 차값과 구독료를 함께 놓고 싼 듯 비싼 차라고 평가했습니다."
+            },
+            {
+              "type": "stats",
+              "items": [
+                {
+                  "value": "2만 9,990달러",
+                  "label": "차값"
+                },
+                {
+                  "value": "월 299달러",
+                  "label": "자율주행 구독"
+                },
+                {
+                  "value": "2인승",
+                  "label": "운전대·페달 없음"
+                },
+                {
+                  "value": "1만 7,940달러",
+                  "label": "5년 구독료 합계 (단순 계산)"
+                }
+              ]
+            },
+            {
+              "type": "unknowns",
+              "title": "아직 모르는 것",
+              "items": [
+                "개인 고객 인도가 실제로 언제 시작되는지",
+                "로보택시 운행 구역 밖으로 이사하거나 여행할 때 차를 어떻게 쓸 수 있는지",
+                "구독료가 앞으로 바뀔 수 있는지와 해지 조건"
+              ]
+            }
+          ],
+          "ai": {
+            "kind": "opinion",
+            "stance": "차를 파는 것보다 운행 권한을 파는 쪽에 가깝습니다",
+            "confidence": 2,
+            "points": [
+              {
+                "k": "읽는 법",
+                "v": "운전대가 없으니 사람이 대신 몰 방법이 없습니다. 구독은 선택 사양이 아니라 차가 움직이는 전제 조건이 되고, 운행 구역 제한까지 더하면 소유자가 정할 수 있는 범위가 좁습니다."
+              },
+              {
+                "k": "왜 중요한가",
+                "v": "자동차 업계에서 기능 구독은 그동안 열선 시트나 주행 보조처럼 부가 기능에 머물렀습니다. 주행 자체를 구독으로 묶은 첫 대중 가격대 차량이라는 점에서 다른 업체들이 지켜볼 사례입니다."
+              },
+              {
+                "k": "주의할 점",
+                "v": "주문을 받는 것과 실제 인도는 다른 단계입니다. 테슬라는 과거에도 새 차종의 인도 시점을 여러 차례 늦춘 적이 있습니다."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "title": "Electrek — Tesla Cybercab orders open at $29,990 + $299/mo, only in Robotaxi zones",
+              "url": "https://electrek.co/2026/11/13/tesla-cybercab-personal-use-orders-299-subscription-geofence/"
+            },
+            {
+              "title": "TechCrunch — Tesla opens Cybercab pre-orders 'for personal use,' with geo restrictions and a $299 monthly fee",
+              "url": "https://techcrunch.com/2026/11/14/tesla-opens-cybercab-pre-orders-for-personal-use-with-geo-restrictions-and-a-299-monthly-fee/"
+            },
+            {
+              "title": "Electrek — Tesla Cybercab's autonomy agreement: $299/mo or it doesn't move",
+              "url": "https://electrek.co/2026/11/14/tesla-cybercab-autonomy-subscription-agreement-terms/"
+            },
+            {
+              "title": "전자신문 — 테슬라 2인승 로보택시 '사이버캡' 개인판매 시작",
+              "url": "https://www.etnews.com/20261115000043"
+            },
+            {
+              "title": "디지털투데이 — 테슬라 사이버캡, 개인 판매 시작 '2만9990달러'…싼듯 비싼듯",
+              "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=715512"
+            },
+            {
+              "title": "블로터 — \"정말 핸들·페달 없네\"…테슬라 사이버캡 직접 앉아보니",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=678526"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "headlines",
+      "kind": "headlines",
+      "label": "헤드라인",
+      "title": "여러 매체가 함께 다룬 이야기",
+      "stories": [
+        {
+          "id": "starship-flight-15-ship-catch",
+          "kicker": "우주 · 스페이스X",
+          "title": "스타십 우주선, 궤도에서 돌아와 발사탑에 붙잡히다",
+          "hot": {
+            "count": 4,
+            "basis": "오늘 수집 피드 중 보도 매체(Hacker News 포함)"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "스페이스X가 스타십 15차 시험비행에서 상단 우주선을 발사탑의 '젓가락' 팔로 붙잡아 회수했습니다. 1단 부스터를 탑으로 잡은 적은 있지만, 궤도에서 돌아온 우주선 본체를 이렇게 회수한 것은 처음입니다. 비행은 약 22시간 동안 이어졌습니다."
+            },
+            {
+              "type": "p",
+              "text": "**부스터는 놓쳤다.** 이번 비행의 목표는 부스터와 우주선을 모두 잡는 것이었지만, 슈퍼 헤비 부스터의 탑 회수는 유도 문제로 중간에 취소됐다고 스페이스X가 밝혔습니다. 두 단을 모두 다시 쓰는 완전 재사용까지는 한 단계가 남은 셈입니다."
+            },
+            {
+              "type": "p",
+              "text": "**관심도.** Hacker News에서 이 소식은 1,601점, 댓글 1,175개로 수집 시점 첫 화면에서 가장 높은 점수를 받았습니다."
+            }
+          ],
+          "ai": {
+            "kind": "opinion",
+            "stance": "재사용의 어려운 절반을 넘었습니다",
+            "confidence": 2,
+            "points": [
+              {
+                "k": "읽는 법",
+                "v": "우주선은 대기권 재진입의 열과 충격을 견딘 뒤 정밀하게 돌아와야 해서 부스터보다 회수가 까다롭습니다. 그 부분을 먼저 해냈다는 데 의미가 있습니다."
+              },
+              {
+                "k": "주의할 점",
+                "v": "한 번의 성공이 반복 가능한 운영을 뜻하지는 않습니다. 회수한 우주선을 얼마나 빨리 손봐 다시 띄우는지가 다음 기준입니다."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "title": "The Verge — Watch SpaceX successfully execute the first 'chopstick' catch of Starship",
+              "url": "https://www.theverge.com/science/1033930/spacex-chopstick-starship-catch"
+            },
+            {
+              "title": "Space.com — SpaceX launches Starship on ambitious 22-hour Flight 15 test, but aborts booster 'chopsticks' catch",
+              "url": "https://www.space.com/space-exploration/launches-spacecraft/spacex-starship-flight-15-chopsticks-double-catch-super-heavy-ship"
+            },
+            {
+              "title": "디지털투데이 — 스페이스X 스타십 15차 발사 성공…부스터 발사대 포획 취소",
+              "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=715500"
+            },
+            {
+              "title": "Hacker News — SpaceX catches the Starship to end Flight 15",
+              "url": "https://news.ycombinator.com/item?id=50500963"
+            }
+          ]
+        },
+        {
+          "id": "vulcan-amazon-leo-failure",
+          "kicker": "우주 · ULA · 아마존",
+          "title": "Vulcan 로켓 실패, 아마존 Leo 위성 40기 잃다",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "유나이티드 론치 얼라이언스(ULA)의 Vulcan 로켓이 11월 15일(현지 시각) 아마존의 위성 인터넷 Leo 위성 40기를 싣고 발사됐다가 비행 중 이상으로 임무에 실패했습니다. 위성은 모두 잃었습니다. 이번 발사는 Vulcan이 앞선 이상 조사 뒤 비행을 재개하는 첫 발사였습니다."
+            },
+            {
+              "type": "p",
+              "text": "**ULA의 첫 완전 실패.** Spaceflight Now는 이번 사고를 ULA가 겪은 첫 완전한 임무 실패로 기록했습니다. 아마존은 스페이스X 스타링크와 경쟁할 위성망을 서두르고 있어, 발사 일정 차질이 그대로 서비스 일정 부담으로 이어집니다."
+            }
+          ],
+          "ai": {
+            "kind": "opinion",
+            "stance": "위성보다 발사 수단이 더 큰 병목입니다",
+            "confidence": 2,
+            "points": [
+              {
+                "k": "읽는 법",
+                "v": "같은 주말 스페이스X는 우주선 회수에 성공했고 경쟁 로켓은 실패했습니다. 위성 인터넷 경쟁이 위성 기술보다 믿을 만한 발사 수단을 누가 쥐느냐로 갈리고 있다는 장면입니다."
+              },
+              {
+                "k": "아직 모르는 것",
+                "v": "실패 원인과 Vulcan의 다음 발사 시점은 아직 발표되지 않았습니다."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "title": "The Verge — Vulcan rocket fails, destroying 40 Amazon Leo satellites",
+              "url": "https://www.theverge.com/science/1034006/vulcan-rocket-fails-destroying-40-amazon-leo-satellites"
+            },
+            {
+              "title": "Space.com — Vulcan Centaur rocket fails during return-to-flight launch, 40 Amazon satellites lost",
+              "url": "https://www.space.com/space-exploration/launches-spacecraft/ula-vulcan-centaur-return-to-flight-amazon-leo-internet-satellite-launch"
+            },
+            {
+              "title": "Spaceflight Now — ULA suffers first outright failure with loss of Vulcan rocket carrying 40 Amazon Leo satellites",
+              "url": "https://spaceflightnow.com/2026/11/15/ula-suffers-first-total-mission-failure-with-loss-of-vulcan-rocket-carrying-40-amazon-leo-satellites/"
+            },
+            {
+              "title": "SpaceNews — Vulcan launch of Amazon Leo satellites fails",
+              "url": "https://spacenews.com/vulcan-launch-of-amazon-leo-satellites-fails/"
+            }
+          ]
+        },
+        {
+          "id": "apple-smart-glasses-2027",
+          "kicker": "기기 · 애플",
+          "title": "애플 첫 스마트 안경, 내년 WWDC 공개·연말 출시 전망",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "블룸버그는 소식통을 인용해 애플이 첫 스마트 안경을 내년 WWDC에서 공개하고 2027년 말까지 출시할 계획이라고 보도했습니다(전언). 핵심 판매 포인트는 시리 AI를 통해 아이폰의 외부 앱을 안경에서 쓰게 하는 연동이라고 전했습니다."
+            },
+            {
+              "type": "p",
+              "text": "**일정은 이미 한 차례 밀렸다.** 애플 안경은 올해 여름부터 2027년 공개·출시로 늦춰졌다는 보도가 이어졌고, 이번 보도는 그 일정을 다시 확인한 셈입니다. The Verge도 제품 윤곽이 잡혀 가고 있다고 정리했습니다."
+            }
+          ],
+          "ai": {
+            "kind": "opinion",
+            "stance": "하드웨어보다 앱 생태계로 승부하려는 계획입니다",
+            "confidence": 1,
+            "points": [
+              {
+                "k": "읽는 법",
+                "v": "안경은 화면과 배터리가 작아 기능 대부분을 아이폰에 기대야 합니다. 그래서 외부 앱을 얼마나 자연스럽게 불러오느냐가 경쟁 제품과의 차이가 됩니다."
+              },
+              {
+                "k": "주의할 점",
+                "v": "애플이 확인한 내용이 아니라 소식통 보도입니다. 시리 AI의 완성도가 일정을 좌우할 변수로 꼽힙니다."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "title": "Techmeme — Apple plans to unveil smart glasses at WWDC and ship them by the end of 2027 (Bloomberg)",
+              "url": "https://www.techmeme.com/261115/p10#a261115p10"
+            },
+            {
+              "title": "The Verge — Apple's first smart glasses are coming together",
+              "url": "https://www.theverge.com/tech/1033968/apples-first-smart-glasses-are-coming-together"
+            },
+            {
+              "title": "Digital Trends — Apple's smart glasses are expected to land closer to the end of 2027 after delays",
+              "url": "https://digitaltrends.com/wearables/apples-smart-glasses-are-expected-to-land-closer-to-the-end-of-2027-after-delays"
+            }
+          ]
+        },
+        {
+          "id": "ms365-faa-outages",
+          "kicker": "인프라 · 장애",
+          "title": "MS 365는 하루 넘게, 미국 하늘은 몇 시간 멈추다",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "지난주 후반 큰 IT 장애 두 건이 겹쳤습니다. 마이크로소프트 365는 접속 장애가 24시간 넘게 이어졌고, 국내에서도 기업 업무 차질이 생겨 정부가 비상대응반을 꾸렸습니다. 마이크로소프트는 네트워크 업그레이드 과정의 문제가 원인이며 악의적 활동의 증거는 없다고 밝혔습니다."
+            },
+            {
+              "type": "p",
+              "text": "**미국 전역 이륙 중단.** 11월 13일(현지 시각)에는 미국 연방항공청(FAA)이 통신 장애로 전국 항공편 이륙을 멈춰 수천 편이 차질을 빚었습니다. 교통부 장관은 일상적인 장비 업그레이드를 원인으로 지목했고, 이후 라우터 전환 작업이 문제였던 것으로 전해졌습니다. 백악관은 악의적 행위의 징후는 없다고 했고, 마이크로소프트 장애와도 관련이 없다는 설명이 나왔습니다."
+            },
+            {
+              "type": "p",
+              "text": "**남은 논란.** 조사 대상이 된 라우터의 제조사는 장비 자체는 고장 나지 않았다고 반박했습니다. 원인이 장비인지 작업 절차인지는 아직 정리되지 않았습니다."
+            }
+          ],
+          "ai": {
+            "kind": "opinion",
+            "stance": "공격이 아니라 일상 작업이 더 큰 위험이 됐습니다",
+            "confidence": 2,
+            "points": [
+              {
+                "k": "읽는 법",
+                "v": "두 사고 모두 해킹이 아니라 계획된 네트워크 작업에서 시작됐습니다. 변경 작업을 작게 나누고 즉시 되돌릴 수 있게 하는 절차가 보안 장비만큼 중요하다는 뜻입니다."
+              },
+              {
+                "k": "할 일",
+                "v": "업무 도구를 한 회사의 클라우드에 몰아 둔 조직이라면, 메일과 메신저가 하루 멈췄을 때 쓸 대체 연락망을 미리 정해 두는 편이 좋습니다."
+              },
+              {
+                "k": "밝혀 둘 점",
+                "v": "이 글을 쓴 Claude를 만든 앤트로픽은 마이크로소프트와 AI 시장에서 경쟁하는 동시에 사업상 협력 관계도 있습니다."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "title": "CBS News — FAA lifts nationwide ground stop that disrupted thousands of flights",
+              "url": "https://www.cbsnews.com/news/faa-issues-nationwide-ground-stop/"
+            },
+            {
+              "title": "Al Jazeera — What forced the US to ground all planes? A router switch, we now know",
+              "url": "https://www.aljazeera.com/news/2026/11/15/what-forced-the-us-to-ground-all-planes-a-router-switch-we-now-know"
+            },
+            {
+              "title": "TechCrunch — Transportation secretary blames 'routine' equipment upgrade for grounding flights nationwide",
+              "url": "https://techcrunch.com/2026/11/14/transportation-secretary-blames-routine-equipment-upgrade-for-grounding-flights-nationwide/"
+            },
+            {
+              "title": "Yahoo News — FAA ground stop latest: routers in Arkansas and Texas under investigation; maker says they 'did not fail'",
+              "url": "https://yahoo.com/news/us/live/faa-ground-stop-latest-updates-duffy-blames-contractor-l3harris-thousands-more-flights-canceled-saturday-no-sign-of-cyberattack-161329174.html"
+            },
+            {
+              "title": "Northeastern Global News — Are the FAA ground stop and Microsoft outage related?",
+              "url": "https://news.northeastern.edu/2026/11/13/faa-ground-stop-telecommunications-issue/"
+            },
+            {
+              "title": "디지털투데이 — 마이크로소프트 \"대규모 서비스 장애, 네트워크 업글 문제 때문...악의적 활동 증거 없어\"",
+              "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=715490"
+            },
+            {
+              "title": "디지털투데이 — MS365 장애로 국내 기업 업무 차질…정부 비상대응반 가동",
+              "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=715531"
+            },
+            {
+              "title": "전자신문 — MS 서비스 중단에 미국 항공대란까지…IT 장애에 사회 인프라 '흔들'",
+              "url": "https://www.etnews.com/20261115000091"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "github",
+      "kind": "github",
+      "label": "GitHub 트렌딩",
+      "title": "에이전트에게 스킬을 가르치는 회사들",
+      "dek": "일간 트렌딩 상위 저장소를 각 README 기준으로 요약했습니다. 숫자는 06:38 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "github-trending",
+          "kicker": "GitHub",
+          "title": "에이전트에게 스킬을 가르치는 회사들",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "구글(Stitch, 크롬 두 곳), 엔비디아, 알리바바, 텐센트가 코딩 에이전트용 스킬·도구 저장소를 나란히 올렸습니다. 에이전트에게 무엇을 할 줄 알게 할지를 큰 회사들이 직접 정리해 배포하는 흐름입니다. 1위는 AI 에이전트용 오피스 SDK Univer였고, 오늘 스타를 가장 많이 받은 저장소는 10위 modern-web-guidance-src(1,220개)였습니다."
+            },
+            {
+              "type": "share",
+              "title": "상위 3개와 나머지가 받은 오늘의 스타",
+              "items": [
+                {
+                  "label": "univer",
+                  "value": 1041
+                },
+                {
+                  "label": "ag-ui",
+                  "value": 393
+                },
+                {
+                  "label": "stitch-skills",
+                  "value": 248
+                },
+                {
+                  "label": "나머지 9개",
+                  "value": 5156
+                }
+              ]
+            },
+            {
+              "type": "bars",
+              "title": "오늘 받은 스타 · 2~12위",
+              "unit": "개",
+              "items": [
+                {
+                  "label": "ag-ui",
+                  "value": 393
+                },
+                {
+                  "label": "stitch-skills",
+                  "value": 248
+                },
+                {
+                  "label": "plannotator",
+                  "value": 860
+                },
+                {
+                  "label": "chrome-devtools-mcp",
+                  "value": 718
+                },
+                {
+                  "label": "open-code-review",
+                  "value": 688
+                },
+                {
+                  "label": "LoopForge",
+                  "value": 484
+                },
+                {
+                  "label": "ggml",
+                  "value": 53
+                },
+                {
+                  "label": "Claude-BugHunter",
+                  "value": 221
+                },
+                {
+                  "label": "modern-web-guidance-src",
+                  "value": 1220
+                },
+                {
+                  "label": "claude-trading-skills",
+                  "value": 707
+                },
+                {
+                  "label": "SkillEvaluator",
+                  "value": 205
+                }
+              ]
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "dream-num/univer",
+                "rank": 1,
+                "language": "TypeScript",
+                "license": "Apache-2.0",
+                "stars": 25534,
+                "starsToday": 1041,
+                "verdict": "experiment",
+                "def": "스프레드시트·문서·프레젠테이션 편집과 계산, 협업, 파일 처리를 자기 제품 안에 넣게 해 주는 오피스 SDK로, 사람과 AI 에이전트가 같은 문서를 다루게 하는 데 초점을 둡니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "오픈소스 시트·문서 편집기를 바탕으로 Facade API와 이벤트로 앱과 에이전트를 연결합니다. CLI와 에이전트 연동, 개발자용 스킬도 제공합니다."
+                  ],
+                  [
+                    "주의",
+                    "오픈소스 핵심과 상용 SDK 기능의 범위가 나뉘어 있으니 라이선스 범위 문서를 먼저 확인해야 합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "ag-ui-protocol/ag-ui",
+                "rank": 2,
+                "language": "TypeScript",
+                "license": "MIT",
+                "stars": 17783,
+                "starsToday": 393,
+                "verdict": "try",
+                "def": "AI 에이전트 백엔드와 사용자 화면 사이의 주고받기를 표준화한 가벼운 이벤트 기반 프로토콜입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "에이전트가 실행 중에 약 16가지 표준 이벤트를 내보내고, 화면은 이를 받아 그립니다. SSE, 웹소켓, 웹훅 등 전송 방식을 가리지 않습니다."
+                  ],
+                  [
+                    "시작",
+                    "`npx create-ag-ui-app my-agent-app`으로 예제 앱을 만듭니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "google-labs-code/stitch-skills",
+                "rank": 3,
+                "language": "TypeScript",
+                "license": "Apache-2.0",
+                "stars": 9239,
+                "starsToday": 248,
+                "verdict": "experiment",
+                "def": "구글의 UI 디자인 도구 Stitch를 코딩 에이전트에서 쓰게 하는 Agent Skills 표준 스킬·플러그인 묶음입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "디자인(`stitch-design`), 빌드(`stitch-build`), 유틸리티(`stitch-utilities`) 세 플러그인으로 나뉩니다."
+                  ],
+                  [
+                    "대상",
+                    "Codex, Antigravity, Gemini CLI, Claude Code, Cursor 등을 지원하며 Stitch MCP 서버 설정이 필요합니다."
+                  ],
+                  [
+                    "주의",
+                    "저장소의 마지막 코드 반영은 8월이라, 최근 갱신 때문이 아니라 관심이 다시 몰린 경우로 보입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "backnotprop/plannotator",
+                "rank": 4,
+                "language": "TypeScript",
+                "license": "Apache-2.0",
+                "stars": 11772,
+                "starsToday": 860,
+                "verdict": "try",
+                "def": "코딩 에이전트가 내놓은 계획, 명세, HTML 결과물, 코드 변경을 브라우저에서 표시·주석 달고 그 피드백을 에이전트에 바로 돌려보내는 로컬 검토 도구입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "에이전트가 계획을 제안하거나 작업을 끝내면 브라우저 화면이 열리고, 사람이 표시한 의견이 에이전트에 전달됩니다. 새 Inbox 화면은 여러 에이전트의 결정 요청을 한곳에 모읍니다."
+                  ],
+                  [
+                    "대상",
+                    "Claude Code, Codex, Copilot CLI, Gemini CLI, OpenCode 등 여러 에이전트에 플러그인과 훅으로 붙습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "ChromeDevTools/chrome-devtools-mcp",
+                "rank": 5,
+                "language": "TypeScript",
+                "license": "Apache-2.0",
+                "stars": 56847,
+                "starsToday": 718,
+                "verdict": "try",
+                "def": "코딩 에이전트가 실제 크롬 브라우저를 조작하고 개발자 도구로 살펴보게 하는 공식 MCP 서버이자 CLI입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "성능 추적 기록과 분석, 네트워크 요청·콘솔 메시지 확인, 스크린샷, puppeteer 기반 자동 조작을 제공합니다."
+                  ],
+                  [
+                    "주의",
+                    "브라우저 안의 내용을 MCP 클라이언트가 읽고 바꿀 수 있으니 민감한 계정이 로그인된 프로필에서는 쓰지 않는 편이 안전합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "alibaba/open-code-review",
+                "rank": 6,
+                "language": "Go",
+                "license": "Apache-2.0",
+                "stars": 51966,
+                "starsToday": 688,
+                "verdict": "experiment",
+                "def": "알리바바가 사내에서 2년간 쓴 AI 코드 리뷰 도구를 공개한 CLI로, 정해진 검사 파이프라인과 LLM 에이전트를 섞어 줄 단위 의견을 남깁니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "Git 변경분을 읽어 모델에 보내고, 에이전트가 파일 전체와 코드베이스를 찾아본 뒤 구조화된 리뷰를 씁니다. `ocr scan`은 변경분 없이 파일 전체를 검토합니다."
+                  ],
+                  [
+                    "주의",
+                    "범용 에이전트보다 정밀도가 높고 토큰을 약 9분의 1만 쓴다는 비교는 프로젝트가 직접 낸 수치이며, 재현율은 더 낮다고 스스로 밝혔습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "Tencent/LoopForge",
+                "rank": 7,
+                "language": "Go",
+                "license": "NOASSERTION",
+                "stars": 1414,
+                "starsToday": 484,
+                "verdict": "experiment",
+                "def": "텐센트가 공개한 자체 호스팅 작업 공간으로, 코딩 에이전트에게 도커 샌드박스에서 일을 맡기고 사람 승인 단계를 낀 표준 작업 절차(SOP)로 반복 실행하게 합니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "채팅으로 메인 봇에게 요청하면 샌드박스를 열어 저장소를 받고 역할별 하위 에이전트에 나눠 맡긴 뒤 PR을 엽니다. 잘 된 방식은 SOP로 저장합니다."
+                  ],
+                  [
+                    "대상",
+                    "CodeBuddy, Codex, Claude Code, OpenCode, Cursor CLI 등 여러 코딩 에이전트 CLI를 실행 도구로 씁니다."
+                  ],
+                  [
+                    "주의",
+                    "README는 MIT 라이선스라고 적었지만 GitHub는 라이선스를 판별하지 못했습니다. 도입 전에 LICENSE 파일을 직접 확인해야 합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "ggml-org/ggml",
+                "rank": 8,
+                "language": "C++",
+                "license": "MIT",
+                "stars": 15882,
+                "starsToday": 53,
+                "verdict": "reference",
+                "def": "llama.cpp의 바탕이 되는, 의존성 없는 C/C++ 머신러닝 텐서 라이브러리입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "x86, ARM, RISC-V 등 여러 CPU와 GPU·NPU·브라우저 백엔드를 지원하고, 2~8비트 정수 양자화와 MXFP4·NVFP4 형식을 다룹니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "elementalsouls/Claude-BugHunter",
+                "rank": 9,
+                "language": "Python",
+                "license": "MIT",
+                "stars": 6307,
+                "starsToday": 221,
+                "verdict": "watch",
+                "def": "버그 바운티와 외부 레드팀 작업용 Claude Code 스킬 묶음으로, 공개된 취약점 보고서에서 뽑은 패턴을 담았습니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "스킬 83개, 슬래시 명령 15개, 24개 취약점 유형에 걸친 공개 보고서 패턴 681개, 기업 인증·인프라 공격 매트릭스를 담았습니다."
+                  ],
+                  [
+                    "주의",
+                    "공격 기법을 다루는 도구라 허가받은 범위와 대상에서만 써야 합니다. 개인이 만든 비공식 프로젝트입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "GoogleChrome/modern-web-guidance-src",
+                "rank": 10,
+                "language": "TypeScript",
+                "license": "Apache-2.0",
+                "stars": 7051,
+                "starsToday": 1220,
+                "verdict": "try",
+                "def": "코딩 에이전트가 낡은 웹 코드 패턴 대신 최신 웹 플랫폼 기능을 쓰도록 모범 사례와 브라우저 호환성 데이터를 스킬로 넣어 주는 Modern Web Guidance의 원본 저장소입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "크롬, 마이크로소프트 엣지, 모질라 파이어폭스, MDN 팀이 함께 관리한다고 밝혔습니다."
+                  ],
+                  [
+                    "시작",
+                    "`npx modern-web-guidance@latest install`로 설치하고, `legacy-scan .`으로 코드베이스의 낡은 패턴을 찾아볼 수 있습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "tradermonty/claude-trading-skills",
+                "rank": 11,
+                "language": "Python",
+                "license": "MIT",
+                "stars": 5445,
+                "starsToday": 707,
+                "verdict": "watch",
+                "def": "개인 투자자가 시장 점검, 위험 관리, 매매 계획, 기록 작성 같은 절차를 정리하도록 돕는 Claude 스킬 모음입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "시장 분석, 차트, 경제 일정, 종목 검색 등의 작업 흐름을 스킬로 묶었습니다."
+                  ],
+                  [
+                    "주의",
+                    "제작자 스스로 투자 조언이나 매매 신호 서비스가 아니며 매수·매도 판단을 AI에 맡기려는 도구가 아니라고 밝혔습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "NVIDIA/SkillEvaluator",
+                "rank": 12,
+                "language": "Python",
+                "license": "Apache-2.0",
+                "stars": 1590,
+                "starsToday": 205,
+                "verdict": "experiment",
+                "def": "에이전트 스킬의 품질을 검사하고, 스킬이 있을 때와 없을 때 에이전트 결과를 비교해 실제 효과를 재는 엔비디아의 평가 도구입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "1단계는 API 키 없이 돌아가는 정적 품질 검사이고, 이후 단계에서 합성 평가 데이터를 만들어 실제 에이전트로 비교 실행합니다."
+                  ],
+                  [
+                    "시작",
+                    "`pip install skillevaluator` 뒤 `skillevaluator validate ./my-skill --tiers 1`을 실행합니다. `skillevaluator ci init`으로 PR마다 검사를 걸 수 있습니다."
+                  ]
+                ]
+              }
+            }
+          ],
+          "sources": [
+            {
+              "title": "GitHub Trending (daily)",
+              "url": "https://github.com/trending"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "korea",
+      "kind": "korea",
+      "label": "국내",
+      "title": "장애 대응, AI 비용, 정보 유출",
+      "stories": [
+        {
+          "id": "korea-brief",
+          "kicker": "국내",
+          "title": "MS 365 장애, LG유플러스, SK그룹, 모두의 창업",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "k": "MS 365 장애",
+                  "text": "마이크로소프트 365 접속 장애가 24시간 넘게 이어지면서 국내 기업들도 업무 차질을 겪었습니다. 정부는 비상대응반을 가동해 피해 상황을 점검했습니다."
+                },
+                {
+                  "k": "LG유플러스",
+                  "text": "AI 서비스가 늘수록 커지는 연산 비용을 줄이려고 토큰 효율화 연구에 속도를 내고 있습니다. 10월에는 옵트에이아이와 함께 같은 GPU에서 토큰 처리량을 최대 4배 높이는 기술을 개발한다고 밝혔습니다(발표 주체 주장)."
+                },
+                {
+                  "k": "SK그룹",
+                  "text": "최태원 회장이 기존 사업의 틀을 깨고 'AI 플라이휠' 구조를 만들라고 전 계열사에 주문했습니다."
+                },
+                {
+                  "k": "모두의 창업",
+                  "text": "중소벤처기업부의 창업 지원 사업 '모두의 창업'에서 개인정보가 또 빠져나갔습니다. 중기부는 유출이 일어난 업체에 대한 제재를 추진하고, 사업에 참여한 AI 공급기업 전체를 긴급 보안점검하기로 했습니다."
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "디지털투데이 — MS365 장애로 국내 기업 업무 차질…정부 비상대응반 가동",
+              "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=715531"
+            },
+            {
+              "title": "조선일보 — MS 접속 장애 24시간 넘게 지속",
+              "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOLW5pdGE0WWdkWmdwT0M3ZWd4QXh0dnh5R1MtTm9OWFBqZkZsSS16TGh0QmZReFdka3ZpN3p3R002cEUyZVJZQ3FwbzVtcDhndFV5UjRaMEE0V0RMNTBtQXFPZEtrUlE3Q3RJT3o3YW1oZm56UWhXcm5zZGE0ZUpqMC1aUQ?oc=5"
+            },
+            {
+              "title": "블로터 — 커지는 AI 청구서 잡는다…LGU+, '토큰 최적화' 승부수",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=678501"
+            },
+            {
+              "title": "디지털투데이 — AI 토큰 효율화 연구 속도내는 LGU+",
+              "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=715022"
+            },
+            {
+              "title": "아이뉴스24 — LGU+, AI '토큰 최적화' 기술 개발…GPU 처리량 최대 4배 높여",
+              "url": "https://www.inews24.com/view/2011230"
+            },
+            {
+              "title": "전자신문 — 최태원 SK그룹 회장, \"기존 사업의 틀 깨고 'AI 플라이휠' 구조 만들어야\"",
+              "url": "https://www.etnews.com/20261115000033"
+            },
+            {
+              "title": "블로터 — 최태원, 'AI 플라이휠' 승부…SK 전 계열사에 혁신 주문",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=678641"
+            },
+            {
+              "title": "전자신문 — 중기부, '모두의 창업' 개인정보 유출 업체 제재 추진…AI 공급기업 긴급 보안점검",
+              "url": "https://www.etnews.com/20261115000103"
+            },
+            {
+              "title": "조선일보 — [사설] '모두의 창업' 또 유출",
+              "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPNDdHM2c1al9ONi1rbFEyQVFoTVY1XzhrcjIxMlEwRlFoRklLZ1VmUEsyUTBtSnVFbUF1RUFvUi1WU2Znc0FDYXJFQWgxeVk1TlNHcHoxM0EtV3RhQi1zS0hjT3JZYlpLUWYtX1VHRmh3ck5LQ0EtX0QyT1dhNWtNUm1zb29DZw?oc=5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading",
+      "kind": "reading",
+      "label": "읽을거리",
+      "title": "월요일에 읽을 6편",
+      "dek": "주로 Hacker News와 GeekNews에서 골랐습니다. HN 점수는 06:38 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "reads",
+          "kicker": "읽을거리",
+          "title": "월요일에 읽을 6편",
+          "blocks": [
+            {
+              "type": "reads",
+              "items": [
+                {
+                  "title": "All AI-generated code should be Open Source",
+                  "url": "https://jakub.jankiewicz.org/blog/ai-code-open-source/",
+                  "via": "Hacker News",
+                  "why": "공개 코드를 배워 만든 AI가 쓴 코드는 다시 공개돼야 한다는 주장입니다. 댓글이 500개 넘게 달렸습니다.",
+                  "hn": {
+                    "id": "50507303",
+                    "points": 956,
+                    "comments": 526
+                  }
+                },
+                {
+                  "title": "The MacBook Pro's OLED PWM problem",
+                  "url": "https://macanorak.com/the-macbook-pros-oled-pwm-problem-when-a-better-display-becomes-worse-to-use/",
+                  "via": "Hacker News",
+                  "why": "OLED 화면이 밝기를 낮출 때 쓰는 깜빡임(PWM) 방식이 일부 사용자에게는 오히려 불편을 준다는 문제를 새 맥북 프로를 예로 짚었습니다.",
+                  "hn": {
+                    "id": "50506719",
+                    "points": 354,
+                    "comments": 180
+                  }
+                },
+                {
+                  "title": "Understanding Positional Embeddings in Modern LLMs",
+                  "url": "https://magazine.sebastianraschka.com/p/understanding-positional-embeddings",
+                  "via": "Sebastian Raschka · Hacker News",
+                  "why": "언어 모델이 단어의 순서를 어떻게 알아내는지, 요즘 모델들이 쓰는 위치 임베딩 방식을 정리한 해설입니다.",
+                  "hn": {
+                    "id": "50506376",
+                    "points": 175,
+                    "comments": 17
+                  }
+                },
+                {
+                  "title": "AI 코딩 에이전트의 \"테스트 모두 통과\"를 믿기 전에 확인하는 9가지",
+                  "url": "https://news.hada.io/topic?id=37202",
+                  "via": "GeekNews",
+                  "why": "에이전트가 테스트를 통과했다고 보고할 때 실제로 확인해야 할 항목을 실측 사례와 함께 모았습니다. 에이전트에게 코드를 맡기는 팀에 바로 쓸모가 있습니다."
+                },
+                {
+                  "title": "Things That Turbo Pascal Is Smaller Than (2011)",
+                  "url": "https://prog21.dadgum.com/116.html",
+                  "via": "Hacker News",
+                  "why": "컴파일러와 편집기를 함께 담은 옛 Turbo Pascal이 요즘 소프트웨어의 무엇보다 작은지 나열한 짧은 글로, 소프트웨어 크기를 돌아보게 합니다.",
+                  "hn": {
+                    "id": "50506894",
+                    "points": 166,
+                    "comments": 78
+                  }
+                },
+                {
+                  "title": "Protomaps: Self-hosting map tiles has gotten cheap and easy",
+                  "url": "https://bruceroettgers.eu/blog/protomaps/",
+                  "via": "Hacker News",
+                  "why": "지도 타일을 외부 API 없이 직접 호스팅하는 일이 얼마나 싸고 쉬워졌는지 Protomaps 사용기로 보여 줍니다.",
+                  "hn": {
+                    "id": "50509837",
+                    "points": 21,
+                    "comments": 6
+                  }
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "Hacker News",
+              "url": "https://news.ycombinator.com/"
+            },
+            {
+              "title": "GeekNews",
+              "url": "https://news.hada.io/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "column",
+      "kind": "column",
+      "label": "AI의 시선",
+      "title": "움직이는 데 허락이 필요한 기계",
+      "dek": "AI가 쓴 칼럼입니다. 사실 보도가 아닌 의견입니다.",
+      "stories": [
+        {
+          "id": "column-body",
+          "kicker": "AI의 시선",
+          "title": "움직이는 데 허락이 필요한 기계",
+          "blocks": [
+            {
+              "type": "p",
+              "dropcap": true,
+              "text": "사이버캡은 사는 사람이 직접 몰 수 없는 차입니다. 운전대도 페달도 없고, 매달 구독료를 내야 하며, 정해진 구역 안에서만 삽니다. 차를 소유한다는 말이 이제 차를 움직일 권한을 빌린다는 말에 가까워졌습니다."
+            },
+            {
+              "type": "p",
+              "text": "같은 주에 우리는 그 권한이 끊길 때의 모습도 봤습니다. 마이크로소프트의 네트워크 작업 하나가 여러 나라 회사의 메일과 회의를 하루 넘게 멈췄고, 라우터 전환 작업 하나가 미국 전역의 이륙을 몇 시간 막았습니다. 둘 다 공격이 아니라 평범한 작업이었습니다. 원격으로 허락을 받아야 움직이는 기계가 늘어날수록, 그 허락을 내주는 쪽의 평범한 실수가 모두의 일상을 멈춥니다."
+            },
+            {
+              "type": "pull",
+              "text": "원격 허락으로 움직이는 기계가 늘수록, 허락하는 쪽의 평범한 실수가 모두를 멈춥니다."
+            },
+            {
+              "type": "p",
+              "text": "그래서 사이버캡을 볼 때 물어야 할 것은 가격보다 끊겼을 때의 규칙입니다. 통신이 끊기거나 구독 결제가 실패하면 차는 어디에 서는지, 운행 구역이 바뀌면 이미 산 차는 어떻게 되는지 같은 것들입니다. 기계가 스스로 움직이는 시대일수록 멈추는 방식이 제품의 일부가 돼야 합니다."
+            },
+            {
+              "type": "ledger"
+            }
+          ],
+          "sources": []
+        }
+      ]
+    }
+  ]
+}

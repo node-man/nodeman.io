@@ -100,7 +100,10 @@
     "statement": "애플이 11월 6일 미국 애플스토어에서 새 맥 제품 판매를 시작한다",
     "probability": 0.65,
     "due": "2026-11-06",
-    "status": "pending"
+    "status": "hit",
+    "resolvedOn": "2026-11-16",
+    "note": "애플은 11월 6일 터치스크린 맥북 프로와 새 아이맥 등을 애플스토어에서 판매하기 시작했습니다.",
+    "evidence": "https://www.cultofmac.com/news/apples-oled-macbook-pro-four-more-products-hit-stores"
   },
   {
     "id": "2026-10-19-2",
@@ -164,7 +167,10 @@
     "statement": "Node.js가 10월 31일까지 eMudhra 중간 인증서 키를 거부하는 수정판을 정식 릴리스한다",
     "probability": 0.6,
     "due": "2026-10-31",
-    "status": "pending"
+    "status": "hit",
+    "resolvedOn": "2026-11-16",
+    "note": "Node.js는 10월 보안 릴리스에서 eMudhra 중간 인증서 대응과 차단 키를 가진 인증서 체인 거부를 반영했습니다.",
+    "evidence": "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases"
   },
   {
     "id": "2026-10-21-3",
@@ -180,7 +186,10 @@
     "statement": "PHP 프로젝트가 10월 31일까지 이번 두 건과 별개인 세 번째 치명적 취약점을 고치는 보안 릴리스를 낸다",
     "probability": 0.25,
     "due": "2026-10-31",
-    "status": "pending"
+    "status": "miss",
+    "resolvedOn": "2026-11-16",
+    "note": "PHP는 10월 31일까지 세 번째 취약점을 고치는 별도 보안 릴리스를 내지 않았습니다.",
+    "evidence": "https://www.php.net/archive/2026.php"
   },
   {
     "id": "2026-10-22-2",
@@ -188,7 +197,10 @@
     "statement": "Mistral이 10월 31일까지 Large 4 모델 가중치를 공개한다",
     "probability": 0.5,
     "due": "2026-10-31",
-    "status": "pending"
+    "status": "hit",
+    "resolvedOn": "2026-11-16",
+    "note": "미스트랄은 10월 29일(현지 시각) Large 4 가중치를 Hugging Face에 공개했습니다.",
+    "evidence": "https://mistral.ai/news/mistral-large-4-oss/"
   },
   {
     "id": "2026-10-22-3",
@@ -228,7 +240,10 @@
     "statement": "Moonshot이 11월 4일까지 Kimi K3.1 Pro 전체 가중치를 공개한다",
     "probability": 0.75,
     "due": "2026-11-04",
-    "status": "pending"
+    "status": "hit",
+    "resolvedOn": "2026-11-16",
+    "note": "Moonshot은 11월 4일 Hugging Face에 Kimi K3.1 Pro 가중치를 공개했습니다.",
+    "evidence": "https://runtimewire.com/article/moonshot-ai-kimi-k3-1-pro-weights"
   },
   {
     "id": "2026-10-24-2",
@@ -236,7 +251,10 @@
     "statement": "애플이 11월 13일까지 아이폰 듀오 화면 파손 보고에 대해 공식 입장을 낸다",
     "probability": 0.25,
     "due": "2026-11-13",
-    "status": "pending"
+    "status": "hit",
+    "resolvedOn": "2026-11-16",
+    "note": "애플은 일부 아이폰 듀오의 안쪽 화면 문제를 인정하는 입장을 냈습니다.",
+    "evidence": "https://gadgets.beebom.com/news/apple-responds-iphone-duo-screen-cracking-reports"
   },
   {
     "id": "2026-10-24-3",
@@ -341,7 +359,10 @@
     "statement": "Tailscale이 10월 31일까지 Tailscale SSH 취약점의 영향 버전과 조치 방법을 담은 보안 권고문을 공개한다",
     "probability": 0.75,
     "due": "2026-10-31",
-    "status": "pending"
+    "status": "hit",
+    "resolvedOn": "2026-11-16",
+    "note": "Tailscale은 영향 버전과 1.104.4 업그레이드를 담은 보안 권고 TS-2026-014~017을 냈습니다.",
+    "evidence": "https://corgea.com/research/ts-2026-014-015-016-017-tailscale-tailworm-ssh-unix-socket-root-escalation/"
   },
   {
     "id": "2026-10-29-1",
@@ -391,6 +412,32 @@
     "statement": "미스트랄이 11월 30일까지 Large 4 사이버보안 특화판을 신청 제한 없이 일반 고객에게 공개한다",
     "probability": 0.15,
     "due": "2026-11-30",
+    "status": "pending"
+  },
+  {
+    "id": "2026-11-16-1",
+    "issued": "2026-11-16",
+    "statement": "ULA가 2026년 12월 31일까지 Vulcan 발사를 다시 한다",
+    "probability": 0.1,
+    "due": "2026-12-31",
+    "status": "pending"
+  },
+  {
+    "id": "2026-11-16-2",
+    "issued": "2026-11-16",
+    "statement": "테슬라가 2027년 3월 31일까지 사이버캡을 개인 고객에게 처음 인도했다고 발표한다",
+    "probability": 0.35,
+    "due": "2027-03-31",
+    "dueLabel": "2027.3",
+    "status": "pending"
+  },
+  {
+    "id": "2026-11-16-3",
+    "issued": "2026-11-16",
+    "statement": "애플이 WWDC 2027 기조연설에서 스마트 안경을 공개한다",
+    "probability": 0.6,
+    "due": "2027-06-30",
+    "dueLabel": "2027.6",
     "status": "pending"
   }
 ]
