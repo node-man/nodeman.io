@@ -251,11 +251,17 @@ async function readPrev(date) {
   }
 }
 
+// Raw files are the evidence behind every published number, so a day that has an
+// issue keeps its raw file for good. Only collections that never became an issue
+// are pruned after KEEP_DAYS.
 async function prune(date) {
   const cutoff = new Date(new Date(`${date}T00:00:00Z`).getTime() - KEEP_DAYS * 86400e3).toISOString().slice(0, 10);
+  const issues = new Set(
+    (await fs.readdir(path.join(ROOT, "content/radar/issues")).catch(() => [])).map((f) => f.slice(0, 10)),
+  );
   for (const f of await fs.readdir(RAW_DIR).catch(() => [])) {
     const m = f.match(/^(\d{4}-\d{2}-\d{2})\.json$/);
-    if (m && m[1] < cutoff) await fs.unlink(path.join(RAW_DIR, f));
+    if (m && m[1] < cutoff && !issues.has(m[1])) await fs.unlink(path.join(RAW_DIR, f));
   }
 }
 

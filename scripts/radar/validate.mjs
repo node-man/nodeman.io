@@ -158,9 +158,8 @@ function checkIssue(file, prevIssue, ledger) {
   if (issue.raw) {
     const rp = path.join(ROOT, issue.raw);
     if (!fs.existsSync(rp)) {
-      // Raw files are pruned after 14 days; older issues keep their recorded timestamps.
-      const ageDays = (Date.now() - Date.parse(issue.publishedAt)) / 86400e3;
-      if (ageDays < 13) err(where, `raw file missing: ${issue.raw}`);
+      // The collector never prunes the raw file of a day that has an issue.
+      err(where, `raw file missing: ${issue.raw}`);
     } else {
       raw = JSON.parse(fs.readFileSync(rp, "utf8"));
       if (raw.collectedAt !== issue.rawCollectedAt) err(where, `rawCollectedAt ${issue.rawCollectedAt} != raw ${raw.collectedAt}`);
