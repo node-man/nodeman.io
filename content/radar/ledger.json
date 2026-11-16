@@ -76,7 +76,10 @@
     "statement": "OpenCode 운영사가 10월 31일까지 침해 경위와 영향 범위를 담은 사후 보고서를 공개한다",
     "probability": 0.45,
     "due": "2026-10-31",
-    "status": "pending"
+    "status": "miss",
+    "resolvedOn": "2026-11-17",
+    "note": "10월 31일까지 OpenCode 운영사가 침해 경위와 영향 범위를 담은 사후 보고서를 냈다는 기록을 찾지 못했습니다. 이후 보도도 X 게시물의 짧은 설명만 인용합니다.",
+    "evidence": "https://labs.cloudsecurityalliance.org/research/csa-research-note-opencode-console-provider-key-breach-20261/"
   },
   {
     "id": "2026-10-18-2",
@@ -224,7 +227,10 @@
     "statement": "과기정통부가 10월 31일까지 민간 사이버위기 경보를 '관심'으로 다시 낮춘다",
     "probability": 0.35,
     "due": "2026-10-31",
-    "status": "pending"
+    "status": "miss",
+    "resolvedOn": "2026-11-17",
+    "note": "11월 15일 보도에서도 민간 사이버위기 경보는 '주의' 단계로 남아 있었고, 10월 중 '관심'으로 낮췄다는 발표는 없었습니다.",
+    "evidence": "https://zdnet.co.kr/view/?no=20261115140951"
   },
   {
     "id": "2026-10-23-3",
@@ -303,7 +309,10 @@
     "statement": "Moonshot이 11월 4일까지 Kimi K3.1 Pro 크리에이터 홍보 지침 논란에 대해 공식 입장을 낸다",
     "probability": 0.4,
     "due": "2026-11-04",
-    "status": "pending"
+    "status": "miss",
+    "resolvedOn": "2026-11-17",
+    "note": "Moonshot은 이용 한도 문제에 대해서만 사과했고, 11월 4일까지 크리에이터 홍보 지침 논란에 대한 공식 입장은 나오지 않았습니다.",
+    "evidence": "https://dev.to/976905690/kimi-k31-pro-a-benchmark-champion-overshadowed-by-a-hidden-paid-promotion-scandal-lp3"
   },
   {
     "id": "2026-10-26-3",
@@ -351,7 +360,10 @@
     "statement": "국정원이 11월 15일까지 국가·공공기관에 PHP 취약 시스템의 운영 일시 중지를 공식 권고한다",
     "probability": 0.3,
     "due": "2026-11-15",
-    "status": "pending"
+    "status": "miss",
+    "resolvedOn": "2026-11-17",
+    "note": "국정원은 10월 22일 긴급 보안 권고와 패치 안내를 냈고 운영 중지는 검토 단계라고만 알려졌습니다. 11월 15일까지 실제 중지 권고가 나왔다는 보도는 찾지 못했습니다.",
+    "evidence": "https://www.bloter.net/news/articleView.html?idxno=676885"
   },
   {
     "id": "2026-10-28-3",
@@ -438,6 +450,30 @@
     "probability": 0.6,
     "due": "2027-06-30",
     "dueLabel": "2027.6",
+    "status": "pending"
+  },
+  {
+    "id": "2026-11-17-1",
+    "issued": "2026-11-17",
+    "statement": "Microsoft가 2026년 11월 22일까지 지난주 Microsoft 365 장애의 최종 사후 보고서를 공개한다",
+    "probability": 0.7,
+    "due": "2026-11-22",
+    "status": "pending"
+  },
+  {
+    "id": "2026-11-17-2",
+    "issued": "2026-11-17",
+    "statement": "OpenAI가 2027년 3월 31일까지 Apollo Research 등 외부 임베디드 평가 기관이 쓴 첫 평가 보고서(가린 판본 포함)를 공개한다",
+    "probability": 0.35,
+    "due": "2027-03-31",
+    "status": "pending"
+  },
+  {
+    "id": "2026-11-17-3",
+    "issued": "2026-11-17",
+    "statement": "구글 위협 인텔리전스 그룹이 2027년 5월 31일까지 사람 개입 없이 표적 선정부터 침투까지 수행한 AI 공격을 실제로 관찰했다고 발표한다",
+    "probability": 0.4,
+    "due": "2027-05-31",
     "status": "pending"
   }
 ]
