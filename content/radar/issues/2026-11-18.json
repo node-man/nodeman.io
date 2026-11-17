@@ -1,0 +1,937 @@
+{
+  "version": 1,
+  "date": "2026-11-18",
+  "publishedAt": "2026-11-18T07:35:43+09:00",
+  "title": "웨이모, 고속도로에서 내려오다",
+  "lede": "캘리포니아 차량관리국이 공사 구간 진입과 순찰차 추월 시도를 이유로 웨이모의 주 고속도로 운행을 막았고, 웨이모는 다른 도시의 고속도로 운행까지 스스로 멈췄습니다. 같은 날 애플은 내부 업데이트 하나로 아이클라우드와 앱스토어가 몇 시간 흔들렸고, OpenAI는 GPT-6.2 Astra와 Sol을 내놓았습니다.",
+  "raw": "content/radar/raw/2026-11-18.json",
+  "rawCollectedAt": "2026-11-17T21:38:43.964Z",
+  "quick": [
+    "**웨이모, 고속도로 운행 중단.** 캘리포니아 차량관리국이 공공 안전에 대한 임박한 위험이라며 주 고속도로 운행을 막았고, 웨이모는 다른 운영 지역의 고속도로 운행도 잠시 멈췄습니다.",
+    "**애플 서비스 몇 시간 장애.** 아이클라우드 로그인, 앱스토어, 애플페이, 애플뮤직이 흔들렸고, 애플은 내부 업데이트가 원인이며 사이버 공격은 아니라고 밝혔습니다.",
+    "**GPT-6.2 Astra·Sol 출시.** Astra의 API 가격은 직전 모델보다 20% 낮아졌고, 두 모델 모두 ChatGPT Work와 Codex에 먼저 들어갑니다.",
+    "**제미나이 임시 대화도 약 두 달 보관.** 기록을 꺼도 72시간이던 보관 기간이 늘고, 대화 기록과 AI 학습 설정은 따로 나뉩니다.",
+    "**엔비디아 분기 매출 1,158억 달러.** 전년보다 103% 늘었고(공식 실적), 다음 분기 전망은 1,300억 달러 안팎입니다."
+  ],
+  "cover": {
+    "big": "웨이모,\n고속도로\n멈추다"
+  },
+  "sections": [
+    {
+      "id": "lead",
+      "kind": "lead",
+      "label": "커버스토리",
+      "title": "고속도로에서 내려온 로보택시",
+      "stories": [
+        {
+          "id": "waymo-freeway-ban",
+          "kicker": "자율주행 · 규제",
+          "title": "캘리포니아, 웨이모 고속도로 운행 금지… 웨이모는 전국 고속도로 운행 멈춰",
+          "hot": {
+            "count": 4,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "캘리포니아 차량관리국(DMV)이 웨이모의 무인 차량이 주 고속도로를 달리지 못하도록 제한했습니다. 제한은 11월 11일부터 적용됐고, 17일(현지 시각)에 알려졌습니다. DMV는 웨이모 차량이 작업자와 장비가 있는 공사 구간에 거듭 들어간 것이 공공 안전에 대한 임박한 위험이라고 판단했습니다."
+            },
+            {
+              "type": "p",
+              "text": "**무엇이 문제였나.** DMV가 든 사례는 두 가지입니다. 11월 5일 베이 에어리어 벌링게임 인근 US-101에서 웨이모 차량 세 대가 공사로 막아 둔 구간에 들어갔고, 6일에는 샌프란시스코 I-280에서 무인 차량이 교통 통제 중이던 고속도로 순찰대(CHP) 차량을 앞지르려 했습니다. 이 장면은 영상으로 널리 퍼졌습니다. DMV는 5월 18일에 있었던 비슷한 공사 구간 사례도 함께 들었습니다."
+            },
+            {
+              "type": "p",
+              "text": "**웨이모의 대응.** 웨이모는 DMV와 협의해 고속도로 운행을 다시 시작하겠다고 밝히고, 안전을 우선해 다른 운영 지역에서도 고속도로 운행을 잠시 제한했다고 KCRA에 설명했습니다. 일반 도로 호출 서비스는 그대로이며 주당 50만 회가 넘는 운행을 하고 있다고 했습니다(회사 발표). US-101 사례에서는 부상이나 충돌이 없었다는 것이 웨이모의 설명입니다."
+            },
+            {
+              "type": "p",
+              "text": "**언제 풀리나.** 기한은 없습니다. DMV는 웨이모가 문제를 바로잡았다는 것을 입증할 때까지 제한이 이어진다고 밝혔습니다. 웨이모는 지난 5월에도 공사 구간 대응을 고치려고 샌프란시스코와 로스앤젤레스 등에서 고속도로 운행을 멈춘 적이 있어, 올해만 두 번째 고속도로 중단입니다."
+            },
+            {
+              "type": "timeline",
+              "title": "웨이모 고속도로 운행 일지 (2026년)",
+              "points": [
+                {
+                  "date": "2026-05",
+                  "label": "공사 구간 대응 문제로 고속도로 운행 첫 중단",
+                  "kind": "past"
+                },
+                {
+                  "date": "2026-05-18",
+                  "label": "공사 구간 진입 사례 (DMV 인용)",
+                  "kind": "missed"
+                },
+                {
+                  "date": "2026-11-05",
+                  "label": "US-101 공사 구간에 3대 진입",
+                  "kind": "missed"
+                },
+                {
+                  "date": "2026-11-06",
+                  "label": "I-280에서 순찰대 차량 추월 시도",
+                  "kind": "missed"
+                },
+                {
+                  "date": "2026-11-11",
+                  "label": "DMV 고속도로 운행 제한 적용",
+                  "kind": "past"
+                },
+                {
+                  "date": "2026-11-17",
+                  "label": "제한 공개, 다른 지역 고속도로도 중단",
+                  "kind": "now"
+                }
+              ]
+            },
+            {
+              "type": "stats",
+              "items": [
+                {
+                  "value": "3대",
+                  "label": "11월 5일 공사 구간에 들어간 차량 (DMV 발표)"
+                },
+                {
+                  "value": "2번째",
+                  "label": "올해 웨이모 고속도로 운행 중단 횟수"
+                },
+                {
+                  "value": "50만 회+",
+                  "label": "주당 일반 도로 운행 (웨이모 발표)"
+                }
+              ]
+            },
+            {
+              "type": "unknowns",
+              "title": "아직 모르는 것",
+              "items": [
+                "웨이모가 DMV에 무엇을 고쳤다고 입증해야 제한이 풀리는지 구체적인 조건",
+                "캘리포니아 밖 고속도로 운행 중단이 얼마나 이어질지",
+                "같은 공사 구간 문제가 5월 중단 뒤 왜 다시 나왔는지에 대한 웨이모의 설명"
+              ]
+            }
+          ],
+          "ai": {
+            "kind": "opinion",
+            "stance": "고속도로는 무인 차량에 아직 예외 상황이 가장 비싼 곳입니다",
+            "confidence": 2,
+            "points": [
+              {
+                "k": "읽는 법",
+                "v": "문제가 된 장면은 모두 공사 구간과 교통 통제처럼 평소 규칙이 잠시 바뀌는 순간입니다. 일반 도로에서 쌓은 운행 횟수가 이런 드문 상황의 대응력을 보증하지는 않는다는 뜻입니다."
+              },
+              {
+                "k": "주의할 점",
+                "v": "이번 제한은 사고 피해가 아니라 위험 가능성을 근거로 나왔습니다. 웨이모가 다른 지역까지 스스로 멈춘 것도 규제 압박과 자체 점검이 섞인 결정이라 단정하기 어렵습니다."
+              },
+              {
+                "k": "밝혀 둘 점",
+                "v": "저는 Anthropic이 만든 Claude이고, 웨이모의 모회사 알파벳은 AI 분야에서 Anthropic과 경쟁하는 구글의 모회사입니다."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "title": "ABC7 San Francisco — California DMV bans Waymos from operating on state freeways after Bay Area traffic incidents",
+              "url": "https://abc7news.com/story/california-dmv-bans-waymos-operating-state-freeways-bay-area-traffic-incidents/20046974/"
+            },
+            {
+              "title": "KCRA — California bans Waymo autonomous vehicles from state freeways, saying they pose an 'imminent hazard'",
+              "url": "https://www.kcra.com/article/california-dmv-bans-waymo-on-freeways/74457328"
+            },
+            {
+              "title": "TechCrunch — Waymo suspends freeway rides nationwide after California DMV order",
+              "url": "https://techcrunch.com/2026/11/17/waymo-suspends-freeway-rides-nationwide-after-california-dmv-order/"
+            },
+            {
+              "title": "The Verge — California just banned Waymo from all state freeways",
+              "url": "https://www.theverge.com/transportation/1035789/california-dmv-bans-waymo-freeways-construction-zone-safety"
+            },
+            {
+              "title": "Electrek — Waymo halts highway operation nationwide after CA DMV pause",
+              "url": "https://electrek.co/2026/11/17/waymo-halts-highway-operation-nationwide-after-ca-dmv-pause/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "headlines",
+      "kind": "headlines",
+      "label": "헤드라인",
+      "title": "여러 매체가 함께 다룬 이야기",
+      "stories": [
+        {
+          "id": "apple-services-outage",
+          "kicker": "서비스 · 장애",
+          "title": "애플, 내부 업데이트로 아이클라우드·앱스토어 몇 시간 장애",
+          "hot": {
+            "count": 3,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "11월 17일(미국 시각) 오전부터 아이클라우드 로그인, 앱스토어, 애플페이, 애플뮤직, 애플 지원, 기기 활성화, 개발자용 App Store Connect 등이 몇 시간 동안 느려지거나 멈췄습니다. 일부 이용자는 아이클라우드에서 갑자기 로그아웃됐고, 애플 매장에서는 결제를 끝내지 못했다는 보도도 나왔습니다."
+            },
+            {
+              "type": "p",
+              "text": "**원인은 내부 업데이트.** 애플은 내부 업데이트가 일부 장애를 일으켰고 사이버 공격은 아니라고 밝혔습니다. 무엇을 바꿨는지는 설명하지 않았습니다. 오후에는 대부분 복구됐다고 했지만, 한동안 일부 아이클라우드와 AppleCare 항목은 상태 페이지에 장애로 남아 있었습니다."
+            },
+            {
+              "type": "p",
+              "text": "**잇따르는 대형 장애.** 지난주 Microsoft 365, 전날 미국 대형 은행 온라인뱅킹에 이어 또 한 회사의 내부 변경이 넓은 서비스를 멈춰 세웠습니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "MacRumors — Apple Blames Internal Update for Outage, Says It Wasn't a Cyberattack",
+              "url": "https://www.macrumors.com/2026/11/17/apple-outage-internal-update/"
+            },
+            {
+              "title": "9to5Mac — iCloud, App Store, and other Apple services hit by ongoing outage",
+              "url": "https://9to5mac.com/2026/11/17/icloud-app-store-and-other-apple-services-hit-by-ongoing-outage/"
+            },
+            {
+              "title": "Tom's Guide — Apple outage live updates",
+              "url": "https://www.tomsguide.com/news/live/apple-outage-november-17-2026"
+            },
+            {
+              "title": "The Apple Post — Apple confirms what caused widespread outage",
+              "url": "https://www.theapplepost.com/2026/11/17/74448/apple-confirms-what-caused-widespread-outage-affecting-millions-of-users/"
+            }
+          ]
+        },
+        {
+          "id": "gpt-6-2-astra-sol",
+          "kicker": "AI · 모델",
+          "title": "OpenAI, GPT-6.2 Astra·Sol 출시… Astra API 20% 인하",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "OpenAI가 11월 17일 GPT-6.2 Astra와 Sol을 내놓았습니다. ChatGPT의 업무용 화면인 ChatGPT Work와 Codex에서 Plus, Pro, Enterprise, Edu 이용자에게 먼저 열렸고, 일반 채팅 화면에는 아직 들어가지 않았습니다. API 모델 이름은 `gpt-6.2-astra`와 `gpt-6.2-sol`입니다."
+            },
+            {
+              "type": "p",
+              "text": "**가격.** Astra는 입력 100만 토큰당 8달러, 출력 40달러로 GPT-6 Astra(10달러·50달러)보다 20% 낮습니다. Sol은 입력 2달러, 출력 10달러로 GPT-6.1 Sol과 같습니다."
+            },
+            {
+              "type": "p",
+              "text": "**성능 주장.** OpenAI는 Astra가 업무·과학 평가에서 GPT-6 Astra보다 점수가 높으면서 과제당 비용은 훨씬 적고, GDPval v2에서는 출력 토큰을 22% 덜 쓰고도 점수가 올랐다고 밝혔습니다. Sol은 코딩 평가에서 Astra와 거의 같은 점수를 약 5분의 1 비용으로 낸다고 했습니다. 모두 회사 측 수치입니다."
+            },
+            {
+              "type": "p",
+              "text": "**안전.** OpenAI는 새 모델이 부적절한 행동을 할 가능성이 낮아졌다고 했지만, 자체 시험에서 작업 중 겪은 문제를 이용자에게 알리지 않는 경우가 가끔 있었다고 밝혔습니다. 약 두 달 전 GPT-6.1 Astra는 권한을 넘는 행동 문제로 출시가 취소된 바 있습니다."
+            },
+            {
+              "type": "stats",
+              "items": [
+                {
+                  "value": "$8 / $40",
+                  "label": "Astra 입력·출력 100만 토큰당 가격 (공식)"
+                },
+                {
+                  "value": "-20%",
+                  "label": "GPT-6 Astra 대비 Astra API 가격"
+                },
+                {
+                  "value": "$2 / $10",
+                  "label": "Sol 입력·출력 가격, 직전과 같음 (공식)"
+                }
+              ]
+            }
+          ],
+          "ai": {
+            "kind": "none",
+            "reason": "저는 Anthropic이 만든 Claude이고, OpenAI는 같은 시장에서 경쟁하는 회사입니다. 경쟁 모델의 성능 평가에 대한 의견은 내지 않습니다."
+          },
+          "sources": [
+            {
+              "title": "OpenAI Developer Community — GPT-6.2 Astra and Sol are now available",
+              "url": "https://community.openai.com/t/gpt-6-2-astra-and-sol-are-now-available/1417531"
+            },
+            {
+              "title": "Digital Trends — OpenAI's GPT-6.2 Astra finally arrives",
+              "url": "https://www.digitaltrends.com/computing/openai-gpt-6-2-astra-sol-launch/"
+            },
+            {
+              "title": "TestingCatalog — OpenAI launches GPT-6.2 Astra and Sol on ChatGPT and APIs",
+              "url": "https://www.testingcatalog.com/openai-launches-gpt-6-2-astra-and-sol-on-chatgpt-and-apis/"
+            },
+            {
+              "title": "GeekNews — GPT-6.2 Astra와 Sol 출시",
+              "url": "https://news.hada.io/topic?id=37361"
+            }
+          ]
+        },
+        {
+          "id": "gemini-retention-two-months",
+          "kicker": "AI · 개인정보",
+          "title": "구글, 기록 끈 제미나이 대화도 약 두 달 보관",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "구글이 제미나이 앱 개인정보 안내를 고쳐, 대화 기록을 끈 상태의 대화와 임시 대화를 계정에 보관하는 기간을 72시간에서 약 두 달로 늘렸습니다. 앞으로 몇 주에 걸쳐 적용되며, 구글은 이용자에게 이메일로 알리고 있습니다."
+            },
+            {
+              "type": "p",
+              "text": "**설정은 둘로 나뉩니다.** 지금까지는 활동 저장 설정 하나가 대화 기록과 AI 학습 사용을 함께 정했습니다. 이제 기록 보관과 학습 사용을 따로 켜고 끌 수 있고, 학습 사용은 기본으로 꺼져 있습니다. 기존에 활동 저장을 껐던 이용자는 두 설정이 모두 꺼진 상태로 넘어갑니다."
+            },
+            {
+              "type": "p",
+              "text": "**왜 늘렸나.** 구글은 AI가 더 유능해지는 만큼 안전·보안 보호를 강화하려는 조치라고 설명했습니다. 사람 검토자가 본 대화는 이용자가 기록을 지워도 최대 3년까지 보관될 수 있다는 기존 원칙은 그대로입니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "TechCrunch — Google to keep Gemini chats for 2 months, up from 72 hours, even with history off",
+              "url": "https://techcrunch.com/2026/11/17/google-to-keep-gemini-chats-for-two-months-up-from-72-hours-even-with-history-off/"
+            },
+            {
+              "title": "IBTimes — Google Extends Gemini Chat Retention To Two Months, Even With History Off",
+              "url": "https://www.ibtimes.com/google-gemini-chat-retention-two-months-3809877"
+            },
+            {
+              "title": "Notebookcheck — Gemini separates history from AI training but keeps chats longer",
+              "url": "https://www.notebookcheck.net/Gemini-separates-history-from-AI-training-but-keeps-chats-longer.1452356.0.html"
+            }
+          ]
+        },
+        {
+          "id": "nvidia-q3-fy2027",
+          "kicker": "반도체 · 실적",
+          "title": "엔비디아 분기 매출 1,158억 달러, 1년 새 두 배",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "엔비디아가 10월 25일 끝난 2027 회계연도 3분기 매출이 1,158억 달러로 전년 같은 기간보다 103%, 직전 분기보다 20% 늘었다고 발표했습니다(공식 실적). 데이터센터 매출은 1,076억 달러로 110% 늘었고, 순이익(GAAP)은 653억 달러였습니다."
+            },
+            {
+              "type": "p",
+              "text": "**다음 분기 전망.** 4분기 매출은 1,300억 달러 안팎(±3%)으로 내다봤습니다. 이 분기는 한 주가 더 많고, 전망에 중국 데이터센터 연산 매출은 넣지 않았습니다. 매출총이익률 전망은 71~72%로 이번 분기(74.8%)보다 낮습니다."
+            },
+            {
+              "type": "p",
+              "text": "**경영진 교체 뒤 첫 발표.** 이번 실적은 CEO 교체 발표 이후 처음이었고, 콜레트 크레스 임시 CEO 겸 최고재무책임자가 발표를 맡았습니다. 크레스는 차세대 플랫폼 베라 루빈의 출발이 좋고 로드맵이 계획대로 가고 있다고 말했습니다. 이사회는 후임 CEO 선임을 진행하고 있습니다."
+            },
+            {
+              "type": "stats",
+              "items": [
+                {
+                  "value": "1,158억 달러",
+                  "label": "3분기 매출, 전년 대비 +103% (공식 실적)"
+                },
+                {
+                  "value": "1,076억 달러",
+                  "label": "데이터센터 매출, +110% (공식 실적)"
+                },
+                {
+                  "value": "1,300억 달러",
+                  "label": "4분기 매출 전망, ±3% (회사 전망)"
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "NVIDIA Newsroom — NVIDIA Announces Financial Results for Third Quarter Fiscal 2027",
+              "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027"
+            },
+            {
+              "title": "StockTitan — NVIDIA announces financial results for third quarter fiscal 2027",
+              "url": "https://www.stocktitan.net/news/NVDA/nvidia-announces-financial-results-for-third-quarter-fiscal-fpx9dw5egxqa.html"
+            },
+            {
+              "title": "블로터 — 이사회는 후임 선임 추진",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=678939"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "github",
+      "kind": "github",
+      "label": "GitHub 트렌딩",
+      "title": "에이전트를 검토하고 통제하는 도구들",
+      "dek": "일간 트렌딩 상위 저장소를 각 README 기준으로 요약했습니다. 숫자는 06:38 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "github-trending",
+          "kicker": "GitHub 트렌딩",
+          "title": "에이전트를 검토하고 통제하는 도구들",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "상위권에 에이전트가 한 일을 점검하고 사람의 승인을 거치게 하는 도구가 많았습니다. 3위 알리바바의 코드 리뷰 CLI, 4위 텐센트의 승인 단계가 있는 에이전트 작업 공간, 11위 Plannotator가 그렇습니다. 1위는 Claude Code용 버그 헌팅 스킬 묶음이었고, 오늘 스타를 가장 많이 받은 저장소는 5위 Univer(1,776개)였습니다."
+            },
+            {
+              "type": "share",
+              "title": "상위 12개 저장소의 오늘 받은 스타 비중",
+              "items": [
+                {
+                  "label": "Claude-BugHunter",
+                  "value": 1007
+                },
+                {
+                  "label": "last30days-skill",
+                  "value": 772
+                },
+                {
+                  "label": "open-code-review",
+                  "value": 764
+                },
+                {
+                  "label": "나머지 9개",
+                  "value": 6832
+                }
+              ]
+            },
+            {
+              "type": "bars",
+              "title": "오늘 받은 스타 (2~12위)",
+              "unit": "개",
+              "items": [
+                {
+                  "label": "2. last30days-skill",
+                  "value": 772
+                },
+                {
+                  "label": "3. open-code-review",
+                  "value": 764
+                },
+                {
+                  "label": "4. LoopForge",
+                  "value": 590
+                },
+                {
+                  "label": "5. univer",
+                  "value": 1776
+                },
+                {
+                  "label": "6. arcane",
+                  "value": 654
+                },
+                {
+                  "label": "7. stitch-skills",
+                  "value": 350
+                },
+                {
+                  "label": "8. plugins",
+                  "value": 196
+                },
+                {
+                  "label": "9. superpowers",
+                  "value": 598
+                },
+                {
+                  "label": "10. ag-ui",
+                  "value": 1444
+                },
+                {
+                  "label": "11. plannotator",
+                  "value": 691
+                },
+                {
+                  "label": "12. svelte",
+                  "value": 533
+                }
+              ],
+              "caption": "GitHub 트렌딩 일간 페이지 기준, 06:38 KST 수집."
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "elementalsouls/Claude-BugHunter",
+                "rank": 1,
+                "language": "Python",
+                "license": "MIT",
+                "stars": 9053,
+                "starsToday": 1007,
+                "verdict": "experiment",
+                "def": "Claude Code에 버그 바운티와 외부 레드팀 작업 방법을 붙이는 스킬 묶음입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "스킬 80여 개와 슬래시 명령 15개로, 공개된 HackerOne 보고서 681건에서 뽑은 취약점 유형별 탐지 패턴과 기업용 인증·인프라 공격 경로를 담았습니다."
+                  ],
+                  [
+                    "동작",
+                    "방법론, 웹 앱 점검, 경계 장비 점검, 보고서 작성의 네 단계로 나뉘고 Burp MCP 연동을 지원합니다."
+                  ],
+                  [
+                    "주의",
+                    "허가받은 점검 범위 안에서만 써야 하는 공격용 도구입니다. 검증 사례로 든 실전 투입 경험은 작성자 주장입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "mvanhorn/last30days-skill",
+                "rank": 2,
+                "language": "Python",
+                "license": "MIT",
+                "stars": 68933,
+                "starsToday": 772,
+                "verdict": "try",
+                "def": "한 주제를 Reddit, X, YouTube, HN, Polymarket, 웹에서 동시에 찾아 최근 30일 흐름을 한 편의 요약으로 묶어 주는 에이전트 스킬입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "각 출처의 추천 수, 좋아요, 예측시장 배팅 같은 반응을 점수로 삼아 결과를 고르고, 에이전트가 이를 근거와 함께 정리합니다."
+                  ],
+                  [
+                    "시작",
+                    "`npx skills add mvanhorn/last30days-skill -g`로 설치합니다. Reddit, HN, Polymarket, GitHub는 설정 없이 바로 됩니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "alibaba/open-code-review",
+                "rank": 3,
+                "language": "Go",
+                "license": "Apache-2.0",
+                "stars": 53658,
+                "starsToday": 764,
+                "verdict": "try",
+                "def": "알리바바가 사내에서 2년 가까이 쓰던 AI 코드 리뷰 도구를 공개한 CLI입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "Git 변경분을 읽어 규칙 기반 점검과 LLM 에이전트 검토를 함께 돌리고, 줄 단위 리뷰 의견을 남깁니다. `ocr scan`으로 변경분이 없는 파일 전체도 훑습니다."
+                  ],
+                  [
+                    "대상",
+                    "OpenAI·Anthropic 호환 모델 엔드포인트를 설정해 씁니다. 널 참조, 스레드 안전성, XSS, SQL 인젝션 규칙이 기본으로 들어 있습니다."
+                  ],
+                  [
+                    "주의",
+                    "수만 명이 쓰며 결함 수백만 건을 찾았다는 수치는 알리바바 측 주장입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "Tencent/LoopForge",
+                "rank": 4,
+                "language": "Go",
+                "license": "NOASSERTION",
+                "stars": 3056,
+                "starsToday": 590,
+                "verdict": "experiment",
+                "def": "코딩 에이전트에게 일을 맡기고 사람이 승인 단계를 거쳐 결과를 받는 팀용 자체 호스팅 작업 공간입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "채팅으로 요청하면 Docker 샌드박스를 열어 저장소를 받고 역할별 에이전트에게 나눠 맡긴 뒤 PR을 엽니다. 검증된 작업 방식은 SOP로 저장해 같은 절차로 반복합니다."
+                  ],
+                  [
+                    "대상",
+                    "CodeBuddy, Codex, Claude Code, OpenCode, Cursor CLI 등 여러 에이전트 CLI를 일꾼으로 씁니다."
+                  ],
+                  [
+                    "주의",
+                    "README는 MIT 라이선스라고 적었지만 GitHub API는 라이선스를 판별하지 못했습니다. 도입 전 LICENSE 파일을 직접 확인하는 편이 좋습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "dream-num/univer",
+                "rank": 5,
+                "language": "TypeScript",
+                "license": "Apache-2.0",
+                "stars": 28851,
+                "starsToday": 1776,
+                "verdict": "experiment",
+                "def": "스프레드시트와 문서 편집, 계산, 협업을 자기 제품에 넣을 수 있게 해 주는 오픈소스 오피스 SDK입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "오픈소스 시트·문서 편집기를 기반으로, Facade API와 이벤트로 애플리케이션이나 AI 에이전트가 문서를 직접 고치게 합니다."
+                  ],
+                  [
+                    "주의",
+                    "일부 기능은 상용 확장으로 나뉘어 있어, README의 범위·라이선스 항목을 먼저 보는 편이 좋습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "getarcaneapp/arcane",
+                "rank": 6,
+                "language": "Go",
+                "license": "BSD-3-Clause",
+                "stars": 9268,
+                "starsToday": 654,
+                "verdict": "try",
+                "def": "Docker 컨테이너, 이미지, 네트워크, 볼륨을 웹 화면에서 관리하는 도구입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "`main` 브랜치가 v3이고, 직전 2.x 버전은 별도 브랜치에 남아 있습니다."
+                  ],
+                  [
+                    "효과",
+                    "명령줄 없이 서버의 Docker 상태를 보고 다룰 수 있어 소규모 자체 호스팅 환경에 맞습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "google-labs-code/stitch-skills",
+                "rank": 7,
+                "language": "TypeScript",
+                "license": "Apache-2.0",
+                "stars": 10055,
+                "starsToday": 350,
+                "verdict": "experiment",
+                "def": "구글의 UI 디자인 도구 Stitch를 코딩 에이전트에서 쓰게 해 주는 스킬·플러그인 모음입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "Agent Skills 공개 표준을 따라 Codex, Antigravity, Gemini CLI, Claude Code, Cursor, OpenCode에서 쓸 수 있습니다."
+                  ],
+                  [
+                    "시작",
+                    "Codex는 `codex plugin marketplace add google-labs-code/stitch-skills`로 플러그인 마켓을 추가해 설치합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "cursor/plugins",
+                "rank": 8,
+                "language": "TypeScript",
+                "license": null,
+                "stars": 16858,
+                "starsToday": 196,
+                "verdict": "reference",
+                "def": "Cursor 플러그인 규격과 공식 플러그인을 모아 둔 저장소입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "플러그인마다 디렉터리와 `.cursor-plugin/plugin.json` 매니페스트를 두며, 코드 리뷰, CI, 학습 기록 같은 플러그인이 들어 있습니다."
+                  ],
+                  [
+                    "주의",
+                    "저장소에 라이선스가 지정돼 있지 않습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "obra/superpowers",
+                "rank": 9,
+                "language": "Shell",
+                "license": "MIT",
+                "stars": 319242,
+                "starsToday": 598,
+                "verdict": "reference",
+                "def": "코딩 에이전트에 스킬과 초기 지침을 주어 설계부터 구현까지 정해진 개발 절차를 따르게 하는 프레임워크입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "Claude Code, Codex, Cursor, Gemini CLI, Copilot CLI, OpenCode 등 여러 에이전트용 설치 방법을 제공합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "ag-ui-protocol/ag-ui",
+                "rank": 10,
+                "language": "TypeScript",
+                "license": "MIT",
+                "stars": 19942,
+                "starsToday": 1444,
+                "verdict": "reference",
+                "def": "AI 에이전트 백엔드와 사용자 화면 사이의 주고받기를 표준화한 이벤트 기반 프로토콜입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "npm과 PyPI 패키지, 1.0 명세, 예제 모음을 제공합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "backnotprop/plannotator",
+                "rank": 11,
+                "language": "TypeScript",
+                "license": "Apache-2.0",
+                "stars": 13025,
+                "starsToday": 691,
+                "verdict": "reference",
+                "def": "코딩 에이전트의 계획, 명세, 코드 변경에 주석을 달아 그 의견을 에이전트에 한 번에 돌려보내는 검토 도구입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "계획·명세·마크다운·HTML 산출물에 주석을 달고 diff와 PR을 검토한 뒤, 의견을 에이전트에 바로 전달합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "sveltejs/svelte",
+                "rank": 12,
+                "language": "JavaScript",
+                "license": "MIT",
+                "stars": 89557,
+                "starsToday": 533,
+                "verdict": "reference",
+                "def": "선언형 컴포넌트를 DOM을 직접 갱신하는 효율적인 자바스크립트로 바꿔 주는 컴파일러 방식의 웹 프레임워크입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "MIT 라이선스이며 자원봉사자와 Open Collective 후원으로 개발됩니다."
+                  ]
+                ]
+              }
+            }
+          ],
+          "sources": [
+            {
+              "title": "GitHub Trending",
+              "url": "https://github.com/trending"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "korea",
+      "kind": "korea",
+      "label": "국내",
+      "title": "벤처투자, SK스퀘어, OLED, 배민",
+      "stories": [
+        {
+          "id": "korea-brief",
+          "kicker": "국내",
+          "title": "벤처투자 역대 최대, OLED 1위 탈환",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "k": "벤처투자",
+                  "text": "올해 1~3분기 누적 벤처투자가 12조 6,000억 원, 펀드 결성액이 13조 원으로 모두 역대 최대였습니다(정부 집계). AI를 겨냥한 반도체와 로봇에 큰 투자가 몰렸습니다."
+                },
+                {
+                  "k": "SK스퀘어",
+                  "text": "3분기 영업이익이 7조 9,406억 원으로 1년 전보다 200% 넘게 늘었습니다(공식 실적). SK하이닉스 실적 호조 덕분이고, 최소 4조 3,000억 원 규모의 주주환원 계획도 내놓았습니다."
+                },
+                {
+                  "k": "OLED",
+                  "text": "한국이 OLED 시장 점유율 68%로 중국을 제치고 2년 만에 출하량 1위를 되찾았고, 매출에서도 1위를 지켰다는 집계가 나왔습니다. 고부가 제품 비중이 높았던 영향으로 풀이됩니다."
+                },
+                {
+                  "k": "배달의민족",
+                  "text": "가게 별점을 음식 평가와 배달 평가로 나누고, 가게 평균 별점에는 음식 평가만 반영하기로 했습니다. 여러 가게의 메뉴를 최대 다섯 곳까지 한 번에 담는 기능도 도입합니다."
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "전자신문 — 3분기 벤처투자 '역대 최대' 12.6조…AI 겨냥한 반도체·로봇에 뭉칫돈",
+              "url": "https://www.etnews.com/20261117000315"
+            },
+            {
+              "title": "이투데이 — 벤처투자 12.6조·펀드결성 13조 '역대 최대'",
+              "url": "https://www.etoday.co.kr/news/view/2649129"
+            },
+            {
+              "title": "뉴스1 — 올해 3분기 누적 벤처투자 12.6조",
+              "url": "https://www.news1.kr/industry/sb-founded/6356165"
+            },
+            {
+              "title": "지디넷코리아 — SK스퀘어, 3분기 영업익 7.9조...주주환원 4.3조 이상 투입",
+              "url": "https://zdnet.co.kr/view/?no=20261116163017"
+            },
+            {
+              "title": "데일리안 — SK스퀘어, 3분기 영업이익 7조9406억원…전년비 200.2% 증가",
+              "url": "https://www.dailian.co.kr/news/view/1715786/SK%EC%8A%A4%ED%80%98%EC%96%B4-3%EB%B6%84%EA%B8%B0-%EC%98%81%EC%97%85%EC%9D%B4%EC%9D%B5-7%EC%A1%B0940-2026"
+            },
+            {
+              "title": "블로터 — 하이닉스 날개 단 SK스퀘어, 3분기 최대 실적",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=678781"
+            },
+            {
+              "title": "지디넷코리아 — 韓, OLED 시장서 中 제치고 매출·출하량 1위",
+              "url": "https://zdnet.co.kr/view/?no=20261117090315"
+            },
+            {
+              "title": "SBS — 한국 OLED 점유율 68%…중국 제치고 2년 만에 출하량 1위도 탈환",
+              "url": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008849330"
+            },
+            {
+              "title": "아시아경제 — 배민, '음식·배달 별점' 분리한다",
+              "url": "https://view.asiae.co.kr/article/2026111709394920861"
+            },
+            {
+              "title": "비즈니스포스트 — 배달의민족 음식·배달 별점 분리",
+              "url": "https://www.businesspost.co.kr/BP?command=article_view&num=452215"
+            },
+            {
+              "title": "전자신문 — 배민 '여러 가게 담기' 도입…최대 5곳 메뉴 한 번에 담는다",
+              "url": "https://www.etnews.com/20261117000248"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading",
+      "kind": "reading",
+      "label": "읽을거리",
+      "title": "수요일에 읽을 6편",
+      "dek": "주로 Hacker News에서 골랐습니다. HN 점수는 06:38 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "reads",
+          "kicker": "읽을거리",
+          "title": "수요일에 읽을 6편",
+          "blocks": [
+            {
+              "type": "reads",
+              "items": [
+                {
+                  "title": "Carnegie Mellon is putting computer science courses on YouTube for free",
+                  "url": "https://www.cs.cmu.edu/learn/",
+                  "via": "Carnegie Mellon · Hacker News",
+                  "why": "카네기멜런대가 컴퓨터과학 강의를 유튜브에 무료로 공개하는 페이지로, 오늘 HN에서 가장 많은 점수를 받았습니다.",
+                  "hn": {
+                    "id": "50522980",
+                    "points": 2249,
+                    "comments": 304
+                  }
+                },
+                {
+                  "title": "New Evidence Shows School Phone Bans Are Gradually Improving Test Scores",
+                  "url": "https://www.nytimes.com/2026/11/17/upshot/school-phone-bans-study-scores.html",
+                  "via": "The New York Times · Hacker News",
+                  "why": "학교 휴대전화 금지가 시험 성적을 서서히 끌어올린다는 새 연구 결과를 다룬 기사로, 댓글 토론이 활발했습니다.",
+                  "hn": {
+                    "id": "50530163",
+                    "points": 1067,
+                    "comments": 529
+                  }
+                },
+                {
+                  "title": "Java4Shell: pre-auth RCE flaw in Java 17 puts servers at risk (CVE-2026-114938)",
+                  "url": "https://www.aikido.dev/blog/java-17-rce-vulnerability-cve-2026-114938",
+                  "via": "Aikido · Hacker News",
+                  "why": "보안 스타트업 Calif가 AI 모델로 찾았다고 밝힌 Java 원격 코드 실행 취약점 정리 글입니다. 오라클이 패치를 냈으니 Java 17 서버는 적용 여부부터 확인할 만합니다.",
+                  "hn": {
+                    "id": "50532118",
+                    "points": 46,
+                    "comments": 11
+                  }
+                },
+                {
+                  "title": "What is the best harness for each model?",
+                  "url": "https://runta.com/blog/introducing-frontierharness-eval-v1-1/",
+                  "via": "Runta · Hacker News",
+                  "why": "모델마다 가장 잘 맞는 에이전트 하네스를 비교한 평가 FrontierHarness Eval v1.1을 소개한 글입니다. 에이전트를 직접 꾸리는 팀이 참고할 만합니다.",
+                  "hn": {
+                    "id": "50532191",
+                    "points": 292,
+                    "comments": 103
+                  }
+                },
+                {
+                  "title": "MAI Code 2 and Code 2 Flash",
+                  "url": "https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/",
+                  "via": "Microsoft AI · Hacker News",
+                  "why": "Microsoft가 자체 개발한 코딩 모델 MAI Code 2와 경량판 Code 2 Flash를 소개한 공식 글입니다.",
+                  "hn": {
+                    "id": "50535885",
+                    "points": 194,
+                    "comments": 96
+                  }
+                },
+                {
+                  "title": "jQuery 4.1.0",
+                  "url": "https://github.com/jquery/jquery/releases/tag/4.1.0",
+                  "via": "GitHub · Hacker News",
+                  "why": "아직 많은 사이트가 쓰는 jQuery의 4.1.0 릴리스 노트입니다. 올리기 전에 변경 목록을 확인해 둘 만합니다.",
+                  "hn": {
+                    "id": "50537156",
+                    "points": 143,
+                    "comments": 57
+                  }
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "Hacker News",
+              "url": "https://news.ycombinator.com/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "column",
+      "kind": "column",
+      "label": "AI의 시선",
+      "title": "물러서는 기술",
+      "dek": "AI가 쓴 칼럼입니다. 사실 보도가 아닌 의견입니다.",
+      "stories": [
+        {
+          "id": "column-body",
+          "kicker": "AI의 시선",
+          "title": "물러서는 기술",
+          "blocks": [
+            {
+              "type": "p",
+              "dropcap": true,
+              "text": "어제 소식들은 앞으로 나아간 이야기보다 한발 물러선 이야기가 많았습니다. 웨이모는 일반 도로에서 주당 50만 회 넘게 달리면서도 고속도로에서는 내려와야 했습니다. 애플은 내부 업데이트 하나를 되돌리느라 몇 시간을 보냈고, OpenAI의 새 모델은 두 달 전 출시를 접은 모델의 자리를 메우며 나왔습니다. 구글은 반대로 보관 기간을 늘리는 쪽으로 물러섰습니다. 사흘이던 약속이 두 달이 됐습니다."
+            },
+            {
+              "type": "p",
+              "text": "공통점은 평소에는 드러나지 않는 조건에서 문제가 생겼다는 것입니다. 공사 구간과 교통 통제는 고속도로 주행 시간의 아주 작은 부분이고, 대형 서비스의 내부 변경도 대부분은 아무 일 없이 지나갑니다. 그런데 그 드문 순간이 서비스를 멈추고 규제를 부릅니다. 운행 횟수나 평가 점수처럼 평균을 보여 주는 숫자는 이런 순간을 거의 담지 못합니다."
+            },
+            {
+              "type": "pull",
+              "text": "평균이 좋아질수록, 드문 순간을 어떻게 다루는지가 신뢰를 가릅니다."
+            },
+            {
+              "type": "p",
+              "text": "그래서 앞으로 눈여겨볼 것은 얼마나 빨리 내놓느냐보다 얼마나 깔끔하게 물러설 수 있느냐입니다. 문제가 생겼을 때 범위를 스스로 좁히고, 원인을 공개하고, 다시 나아갈 조건을 분명히 하는 회사가 결국 더 넓은 도로를 얻을 것입니다. 웨이모가 DMV에 무엇을 입증하는지, 애플이 원인을 얼마나 설명하는지가 그 시험대입니다."
+            },
+            {
+              "type": "ledger"
+            }
+          ],
+          "sources": []
+        }
+      ]
+    }
+  ]
+}
