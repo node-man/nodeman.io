@@ -352,7 +352,10 @@
     "statement": "구글이 11월 30일까지 Google AI Ultra 구독자에게 Project Genie로 지니 4를 제공하기 시작한다",
     "probability": 0.6,
     "due": "2026-11-30",
-    "status": "pending"
+    "status": "hit",
+    "resolvedOn": "2026-11-19",
+    "note": "구글이 11월 18일 프로젝트 지니에 지니 4를 넣어 AI Ultra 구독자부터 제공하기 시작했습니다. 기한 전에 결과가 확정돼 앞당겨 판정합니다.",
+    "evidence": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/"
   },
   {
     "id": "2026-10-28-2",
@@ -498,6 +501,30 @@
     "statement": "엔비디아의 2027 회계연도 4분기 공식 매출이 1,300억 달러를 넘는다",
     "probability": 0.75,
     "due": "2027-03-15",
+    "status": "pending"
+  },
+  {
+    "id": "2026-11-19-1",
+    "issued": "2026-11-19",
+    "statement": "미국 CISA가 2026년 12월 31일까지 nginx 결함 CVE-2026-123007을 알려진 악용 취약점(KEV) 목록에 올린다",
+    "probability": 0.45,
+    "due": "2026-12-31",
+    "status": "pending"
+  },
+  {
+    "id": "2026-11-19-2",
+    "issued": "2026-11-19",
+    "statement": "우분투가 2026년 11월 30일까지 CVE-2026-123007을 고친 nginx 패키지 보안 공지(USN)를 낸다",
+    "probability": 0.85,
+    "due": "2026-11-30",
+    "status": "pending"
+  },
+  {
+    "id": "2026-11-19-3",
+    "issued": "2026-11-19",
+    "statement": "마이크로소프트가 2027년 3월 31일까지 MAI Code 2 Flash를 Microsoft Foundry에서 정식 제공(GA)한다",
+    "probability": 0.6,
+    "due": "2027-03-31",
     "status": "pending"
   }
 ]
