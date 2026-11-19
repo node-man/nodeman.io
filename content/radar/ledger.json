@@ -526,5 +526,29 @@
     "probability": 0.6,
     "due": "2027-03-31",
     "status": "pending"
+  },
+  {
+    "id": "2026-11-20-1",
+    "issued": "2026-11-20",
+    "statement": "영국 내무부가 2026년 12월 31일까지 애플에 보낸 기술역량통지(TCN)를 철회했다고 공식 확인한다",
+    "probability": 0.1,
+    "due": "2026-12-31",
+    "status": "pending"
+  },
+  {
+    "id": "2026-11-20-2",
+    "issued": "2026-11-20",
+    "statement": "구글이 2026년 12월 31일까지 macOS용 제미나이의 컴퓨터 사용 기능을 미국 밖 한 나라 이상에 제공한다",
+    "probability": 0.3,
+    "due": "2026-12-31",
+    "status": "pending"
+  },
+  {
+    "id": "2026-11-20-3",
+    "issued": "2026-11-20",
+    "statement": "메타가 2026년 12월 31일까지 Muse Charm의 미국 판매 가격을 공식 발표한다",
+    "probability": 0.55,
+    "due": "2026-12-31",
+    "status": "pending"
   }
 ]

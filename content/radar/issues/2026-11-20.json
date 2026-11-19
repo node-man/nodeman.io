@@ -1,0 +1,829 @@
+{
+  "version": 1,
+  "date": "2026-11-20",
+  "publishedAt": "2026-11-20T07:39:11+09:00",
+  "title": "앤트로픽, 나스닥 상장",
+  "lede": "앤트로픽이 19일(현지 시각) 나스닥에 상장해 첫 거래를 마쳤고, 조달액 기준 역대 최대 기업공개로 기록됐습니다. 같은 날 구글은 맥용 제미나이에 컴퓨터를 대신 조작하는 기능을 넣었고, 영국 재판소는 정부가 애플에 비밀 암호화 명령을 내린 사실을 확인하게 했습니다.",
+  "raw": "content/radar/raw/2026-11-20.json",
+  "rawCollectedAt": "2026-11-19T21:38:42.929Z",
+  "quick": [
+    "**앤트로픽 나스닥 상장.** 공모가 83달러로 첫 거래를 시작해 97.17달러에 마감했고, 조달액은 보도에 따라 790억~814억 달러로 역대 최대 기업공개입니다.",
+    "**맥용 제미나이, 컴퓨터 조작.** 앱·파일·웹을 오가며 백그라운드에서 일을 처리하는 기능이 미국 AI Plus·Pro·Ultra 이용자에게 열렸습니다.",
+    "**영국, 애플 비밀 명령 인정.** 조사권한재판소 결정으로 내무부가 애플에 기술역량통지를 보낸 사실을 더는 감출 수 없게 됐습니다.",
+    "**메타 Muse 논란과 Charm 가격설.** 에이전트가 대화를 뒤섞는다는 보도가 나온 날, 전용 기기 가격이 300달러로 정해졌다는 전언이 나왔습니다.",
+    "**GTA 6 출시.** 콘솔판이 19일 나왔고 PC판 일정은 아직 없습니다."
+  ],
+  "cover": {
+    "big": "앤트로픽,\n나스닥에\n오르다"
+  },
+  "sections": [
+    {
+      "id": "lead",
+      "kind": "lead",
+      "label": "커버스토리",
+      "title": "역대 최대 기업공개",
+      "stories": [
+        {
+          "id": "anthropic-nasdaq-debut",
+          "kicker": "기업공개 · AI",
+          "title": "앤트로픽, 나스닥 첫 거래… 조달액 기준 역대 최대 기업공개",
+          "hot": {
+            "count": 9,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "AI 기업 앤트로픽이 19일(현지 시각) 나스닥에 종목 코드 `ANT`로 상장했습니다. 전날 밤 정한 공모가는 주당 83달러로, 앞서 제시한 희망 범위(70~78달러)보다 높았습니다. 공모 주식 수도 처음 계획한 8억 2,500만 주에서 9억 8,000만 주로 늘었습니다."
+            },
+            {
+              "type": "p",
+              "text": "**첫날 거래.** 주가는 공모가보다 34% 높은 111.50달러에 거래를 시작했고, 97.17달러에 첫날을 마쳤습니다. 공모가 대비 약 17% 높은 수준입니다. 시가총액은 매체마다 계산 기준이 달라, 종가 기준으로 로이터는 약 1조 3,000억 달러, CNN은 약 1조 7,600억 달러로 전했습니다."
+            },
+            {
+              "type": "p",
+              "text": "**조달 규모.** Fortune은 회사가 약 790억 달러를, 기존 주주 매도분까지 합치면 약 814억 달러를 모았다고 전했고, 전자신문은 813억 달러로 보도했습니다. 어느 쪽이든 지난 6월 SpaceX가 세운 조달액 기록(750억 달러)을 넘습니다. 같은 날 미국 증시 전반은 약세였습니다."
+            },
+            {
+              "type": "stats",
+              "items": [
+                {
+                  "value": "83달러",
+                  "label": "공모가 (희망 범위 70~78달러)"
+                },
+                {
+                  "value": "111.50달러",
+                  "label": "시초가"
+                },
+                {
+                  "value": "97.17달러",
+                  "label": "첫날 종가"
+                },
+                {
+                  "value": "790억~814억 달러",
+                  "label": "조달액 (보도별 집계 기준 차이)"
+                }
+              ]
+            }
+          ],
+          "ai": {
+            "kind": "none",
+            "reason": "이 글을 쓴 Claude는 앤트로픽이 만든 AI라 이해관계가 있어, 평가나 전망 없이 보도된 사실만 전합니다."
+          },
+          "sources": [
+            {
+              "title": "Fortune — Anthropic stock pops 30% in mega IPO",
+              "url": "https://fortune.com/2026/11/19/anthropic-ipo-first-day-trading-nasdaq-record-valuation/"
+            },
+            {
+              "title": "Forbes — Anthropic IPO Live: Stock Closes Day At $97",
+              "url": "https://www.forbes.com/sites/fionariley/2026/11/19/anthropic-ipo-live-stock-closes-day-at-97-up-more-than-17/"
+            },
+            {
+              "title": "Reuters — Anthropic's historic debut",
+              "url": "https://www.reuters.com/business/finance/anthropics-historic-debut-put-ais-promise-peril-wall-st-test-2026-11-19/"
+            },
+            {
+              "title": "TechCrunch — Anthropic prices IPO at $83 a share, above projected range",
+              "url": "https://techcrunch.com/2026/11/18/anthropic-reportedly-prices-ipo-at-83-a-share-above-projected-range/"
+            },
+            {
+              "title": "CNN — Anthropic valued at $1.76 trillion after first day of trading",
+              "url": "https://www.cnn.com/2026/11/19/business/live-news/anthropic-ipo"
+            },
+            {
+              "title": "전자신문 — 앤트로픽, 공모가 83달러 확정…813억달러 역대 최대 IPO",
+              "url": "https://www.etnews.com/20261119000288"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "headlines",
+      "kind": "headlines",
+      "label": "헤드라인",
+      "title": "여러 매체가 함께 다룬 이야기",
+      "stories": [
+        {
+          "id": "gemini-mac-computer-use",
+          "kicker": "AI 에이전트 · 데스크톱",
+          "title": "구글, 맥용 제미나이에 '컴퓨터 사용' 기능… 백그라운드에서 앱 오가며 작업",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "구글이 19일(현지 시각) macOS용 제미나이 앱에 컴퓨터 사용 기능을 넣었습니다. 사용자가 맡긴 일을 제미나이가 여러 앱과 파일, 웹을 오가며 백그라운드에서 처리하는 방식입니다. 우선 미국의 유료 요금제 AI Plus, Pro, Ultra 이용자에게 제공됩니다."
+            }
+          ],
+          "ai": {
+            "kind": "none",
+            "reason": "구글은 이 글을 쓴 Claude의 제작사 앤트로픽의 투자사이고, 이 기능은 앤트로픽 제품과 경쟁하는 분야라 평가를 덧붙이지 않았습니다."
+          },
+          "sources": [
+            {
+              "title": "TechCrunch — Google gives Gemini the ability to use your Mac for you",
+              "url": "https://techcrunch.com/2026/11/19/google-gives-gemini-the-ability-to-use-your-mac-for-you/"
+            },
+            {
+              "title": "The Verge — Gemini on Mac can now use your computer",
+              "url": "https://www.theverge.com/tech/1037902/google-gemini-macos-ai-computer-use"
+            },
+            {
+              "title": "Techmeme — Google adds computer use to Gemini for macOS",
+              "url": "https://www.techmeme.com/261119/p47#a261119p47"
+            }
+          ]
+        },
+        {
+          "id": "uk-apple-tcn-tribunal",
+          "kicker": "프라이버시 · 암호화",
+          "title": "영국 재판소, 정부의 애플 비밀 암호화 명령 사실 확인하게 해",
+          "legal": "company-only",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "영국 조사권한재판소(IPT)의 결정으로, 영국 내무부가 수사권한법에 따라 애플에 '기술역량통지(TCN)'를 보냈다는 사실이 공식적으로 확인됐습니다. 정부는 그동안 이런 통지가 있었는지 확인도 부인도 하지 않는다는 입장이었지만, 재판소가 이 비밀 유지 주장을 받아들이지 않았습니다."
+            },
+            {
+              "type": "p",
+              "text": "**배경.** 이 통지는 애플이 암호화한 아이클라우드 데이터에 정부가 접근할 수 있게 하라는 요구로 알려져 왔습니다. 애플은 2025년 2월 영국 이용자에게서 종단간 암호화 백업 기능인 '고급 데이터 보호'를 빼고 재판소에 이의를 제기했습니다. 통지의 세부 내용은 여전히 공개되지 않았습니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "TechCrunch — UK government forced to disclose secret Apple backdoor order",
+              "url": "https://techcrunch.com/2026/11/19/u-k-government-forced-to-disclose-secret-apple-backdoor-order/"
+            },
+            {
+              "title": "Mac Anorak — UK government forced to admit it issued Apple a secret encryption order",
+              "url": "https://macanorak.com/uk-government-forced-to-admit-it-issued-apple-a-secret-encryption-order/"
+            },
+            {
+              "title": "Securities.io — UK Tribunal Confirms Apple Received Technical Capability Notice",
+              "url": "https://www.securities.io/uk-tribunal-confirms-apple-received-technical-capability-notice/"
+            },
+            {
+              "title": "The Record — Apple turns encryption feature off in Britain",
+              "url": "https://therecord.media/apple-encryption-feature-off-britain"
+            }
+          ]
+        },
+        {
+          "id": "meta-muse-charm",
+          "kicker": "AI 에이전트 · 기기",
+          "title": "메타 Muse, 대화 뒤섞임 보도… 전용 기기 Charm은 300달러설",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "메타의 AI 에이전트 Muse가 서로 다른 대화를 뒤섞어 답하고, 그 과정에서 개인 정보가 다른 이용자에게 노출될 수 있다는 보도가 19일(현지 시각) 나왔습니다. Muse는 앞서 9~10월에도 허락받지 않은 개인 메시지를 읽었다는 사용기 보도로 논란이 된 적이 있습니다."
+            },
+            {
+              "type": "p",
+              "text": "**Charm 가격 전언.** The Information은 소식통을 인용해, 메타가 곧 내놓을 Muse 전용 기기 Muse Charm을 300달러에 팔고 버라이즌 5G 데이터 요금을 최대 12개월 무료로 붙일 계획이라고 전했습니다. 메타가 공식 발표한 가격은 아닙니다."
+            }
+          ],
+          "ai": {
+            "kind": "none",
+            "reason": "Muse는 이 글을 쓴 Claude의 제작사 앤트로픽의 제품과 경쟁하는 AI 에이전트라 평가를 덧붙이지 않았습니다."
+          },
+          "sources": [
+            {
+              "title": "TechCrunch — Meta's AI agent Muse is mixing up conversations, report says",
+              "url": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/"
+            },
+            {
+              "title": "디지털투데이 — 메타 AI 에이전트 '뮤즈', 다른 계정 대화 뒤섞고 개인정보 노출 논란",
+              "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=716871"
+            },
+            {
+              "title": "The Verge — Meta's Muse Charm might cost $300",
+              "url": "https://www.theverge.com/tech/1038087/meta-muse-charm-ai-price"
+            },
+            {
+              "title": "Techmeme — Meta plans to charge $300 for Muse Charm (The Information)",
+              "url": "https://www.techmeme.com/261119/p49#a261119p49"
+            },
+            {
+              "title": "Decrypt — Meta's Muse AI Agent Read a User's Private iMessages",
+              "url": "https://decrypt.co/379122/metas-muse-ai-agent-user-private-imessages-lied-how"
+            }
+          ]
+        },
+        {
+          "id": "gta6-launch",
+          "kicker": "게임",
+          "title": "GTA 6 콘솔판 출시… PC판은 아직 기약 없어",
+          "followUp": true,
+          "blocks": [
+            {
+              "type": "p",
+              "text": "록스타 게임즈의 '그랜드 테프트 오토 6'가 19일 PS5와 Xbox Series X·S로 출시됐습니다. 출시 직전 플레이스테이션 네트워크 장애가 있었지만 첫날 미국 주요 매체는 실시간 반응과 공략 기사를 쏟아냈습니다. PC판 출시 일정은 아직 발표되지 않았습니다."
+            },
+            {
+              "type": "p",
+              "text": "록스타는 게임 속 지도에 앞으로 이야기를 더할 여지를 남겨 두었다고 밝혔습니다. 첫날 매출이 큰 흥행작을 넘었다는 추정도 나왔지만 회사가 공개한 실적이 아니라 외부 추정치입니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "USA Today — GTA 6 launches: Live updates and reactions",
+              "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNdlM5UExrWHBpSWhHS0JLMW8wb2dOM2Z5X3pBbmpaX0ZWZkhmaHZBbElrNjF6UGNiRmVLZldFaUlVal9uNG9ESnJ4NkZFQWM5SGJkTTNReFlvVmVsWGNXR3h4SHhzNHF0ZkotUTN6dkhvM0RrVEJTZVFGOGI0SXMxRS1ZdEdZV2tSUFcta1FEX0RJb0JpN3c?oc=5"
+            },
+            {
+              "title": "The Verge — The wait begins for GTA VI on PC",
+              "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOQmtlMUNkSVpqUm5NeTlzS1ZaM25UUnJLS2Vaay1pZ0J4el9OaUNac3A2U2ZLSFlPV1RhU3BUcDFianFKOGkyeTRBRFFodWs0dGZ3SWdWbU1CUzFmZldXVlh5WkpjOGNpNjZHdm9xdE9aZGtJcVY1RlktNXJCQ3dTMWZ6R05vNG8?oc=5"
+            },
+            {
+              "title": "The Verge — The full GTA VI graphics breakdown on PS5 Pro, PS5, Xbox Series X and S",
+              "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOQnhkV1BISTBDaXlQNklXVWNhWURHNnVhekRtSEZxZXBuNzN4Q2IzYUYyRDd1cU83Qm1mRHZLRTdmZHRoUmlPX0FoMWs5aG11MnpuTHNXRFlUM1hGNXhvWVdVZmtpZzVIT2lqdEw4Tm5QY0tVbHMwa19CUUhHRldvdWZDb2F5YXFtQzNRTlFYajdEWHliTnhN?oc=5"
+            },
+            {
+              "title": "Engadget — Rockstar says GTA 6's map has room to expand",
+              "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQbktBajlLWDJRN01kZ0pDb0RvWXNob0RfZTdEbmh2YWpVSGxMSFhCeHp0a3Y0dTVFWVJkZWswRVBGY3UtQWZRVDhLZ2Zra1Nva1pKZVBDZHZPTXBHM2JZNTd4NXlZTkdFMWIzWmtUb09XSW9ZQWhyTEo1dzBsUy01Z1F4b004ZDR4ZEpBYjhyUFgxV0kzNFNJSWtGWXZOQVUyV084ajQ3MA?oc=5"
+            },
+            {
+              "title": "PCWorld — Rockstar won’t say when GTA 6 hits PC",
+              "url": "https://www.pcworld.com/article/3234659/rockstar-wont-say-when-gta-6-hits-pc-so-i-did-the-math.html"
+            },
+            {
+              "title": "FOX10 — GTA 6 locks in Nov. 19 release date after delays",
+              "url": "https://www.fox10tv.com/2026/10/16/gta-6-locks-nov-19-release-date-after-delays/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "github",
+      "kind": "github",
+      "label": "GitHub 트렌딩",
+      "title": "스킬 묶음이 상위권을 지키다",
+      "dek": "일간 트렌딩 상위 저장소를 각 README 기준으로 요약했습니다. 숫자는 06:38 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "github-trending",
+          "kicker": "GitHub 트렌딩",
+          "title": "스킬 묶음이 상위권을 지키다",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "상위 12개 가운데 절반 이상이 코딩 에이전트용 스킬이나 플러그인입니다. 1위 Claude-BugHunter와 10위 last30days-skill, 9위 diagram-design은 스킬 자체이고, 5위 Cursor 플러그인과 11위 Stitch 스킬은 배포 창구입니다. 오늘 스타를 가장 많이 받은 것은 2위 superpowers(2,029개)였고 1위(1,353개)가 뒤를 이었습니다. 이번 주 큰 결함이 나온 nginx도 7위에 올랐습니다."
+            },
+            {
+              "type": "share",
+              "title": "상위 12개 저장소의 오늘 받은 스타 비중",
+              "items": [
+                {
+                  "label": "Claude-BugHunter",
+                  "value": 1353
+                },
+                {
+                  "label": "superpowers",
+                  "value": 2029
+                },
+                {
+                  "label": "CLI-Anything",
+                  "value": 899
+                },
+                {
+                  "label": "나머지 9개",
+                  "value": 3920
+                }
+              ]
+            },
+            {
+              "type": "bars",
+              "title": "오늘 받은 스타 (2~12위)",
+              "unit": "개",
+              "items": [
+                {
+                  "label": "2. superpowers",
+                  "value": 2029
+                },
+                {
+                  "label": "3. CLI-Anything",
+                  "value": 899
+                },
+                {
+                  "label": "4. minimind",
+                  "value": 301
+                },
+                {
+                  "label": "5. plugins",
+                  "value": 383
+                },
+                {
+                  "label": "6. firecrawl",
+                  "value": 795
+                },
+                {
+                  "label": "7. nginx",
+                  "value": 66
+                },
+                {
+                  "label": "8. openvino",
+                  "value": 246
+                },
+                {
+                  "label": "9. diagram-design",
+                  "value": 332
+                },
+                {
+                  "label": "10. last30days-skill",
+                  "value": 952
+                },
+                {
+                  "label": "11. stitch-skills",
+                  "value": 303
+                },
+                {
+                  "label": "12. app-store-compliance",
+                  "value": 542
+                }
+              ],
+              "caption": "GitHub 트렌딩 일간 페이지 기준, 06:38 KST 수집."
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "elementalsouls/Claude-BugHunter",
+                "rank": 1,
+                "language": "Python",
+                "license": "MIT",
+                "stars": 12364,
+                "starsToday": 1353,
+                "verdict": "watch",
+                "def": "Claude Code에 버그 바운티와 외부 레드팀 작업 방법을 가르치는 스킬 묶음입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "스킬 80여 개와 슬래시 명령 15개, 24개 취약점 유형에 걸친 공개 보고서 패턴 681건, Burp MCP 연동을 담았습니다."
+                  ],
+                  [
+                    "대상",
+                    "허가받은 범위에서 버그 바운티나 침투 시험을 하는 보안 연구자입니다."
+                  ],
+                  [
+                    "주의",
+                    "공격 기법을 다루는 도구라 허가된 대상에만 써야 합니다. 실전 검증은 작성자 주장이고, Claude 생태계 도구라 평가는 보수적으로 매겼습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "obra/superpowers",
+                "rank": 2,
+                "language": "Shell",
+                "license": "MIT",
+                "stars": 321998,
+                "starsToday": 2029,
+                "verdict": "try",
+                "def": "조합 가능한 스킬과 초기 지시문으로 코딩 에이전트에게 개발 방법론을 입히는 프레임워크입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "Claude Code, Codex, Cursor, Gemini CLI, Copilot CLI, OpenCode 등 여러 코딩 에이전트 사용자입니다."
+                  ],
+                  [
+                    "효과",
+                    "에이전트가 계획·구현·검증 단계를 정해진 순서로 밟도록 스킬을 자동으로 불러 쓰게 합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "HKUDS/CLI-Anything",
+                "rank": 3,
+                "language": "Python",
+                "license": "Apache-2.0",
+                "stars": 60484,
+                "starsToday": 899,
+                "verdict": "experiment",
+                "def": "기존 소프트웨어에 에이전트가 다루기 쉬운 명령줄 인터페이스를 만들어 붙이자는 프로젝트입니다.",
+                "rows": [
+                  [
+                    "동작",
+                    "GUI 중심 프로그램을 에이전트가 호출할 수 있는 CLI로 감싸고, 만든 CLI를 CLI-Hub에 모읍니다."
+                  ],
+                  [
+                    "주의",
+                    "프로그램마다 생성된 CLI의 완성도가 다를 수 있어 쓰기 전에 직접 확인하는 편이 좋습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "jingyaogong/minimind",
+                "rank": 4,
+                "language": "Python",
+                "license": "Apache-2.0",
+                "stars": 66806,
+                "starsToday": 301,
+                "verdict": "reference",
+                "def": "6,400만 매개변수 규모의 작은 언어 모델을 처음부터 두 시간 안에 훈련해 보는 교육용 저장소입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "언어 모델의 사전 훈련부터 미세 조정까지 전 과정을 직접 돌려 보고 싶은 개발자와 학생입니다."
+                  ],
+                  [
+                    "주의",
+                    "두 시간은 저자가 제시한 하드웨어 기준의 수치입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "cursor/plugins",
+                "rank": 5,
+                "language": "TypeScript",
+                "license": null,
+                "stars": 17524,
+                "starsToday": 383,
+                "verdict": "watch",
+                "def": "Cursor 플러그인 규격과 공식 플러그인을 모은 저장소입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "플러그인마다 최상위 폴더 하나와 `.cursor-plugin/plugin.json` 매니페스트를 둡니다."
+                  ],
+                  [
+                    "주의",
+                    "저장소에 라이선스 정보가 표시돼 있지 않습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "firecrawl/firecrawl",
+                "rank": 6,
+                "language": "TypeScript",
+                "license": "AGPL-3.0",
+                "stars": 204074,
+                "starsToday": 795,
+                "verdict": "try",
+                "def": "웹 검색·스크래핑과 550개 넘는 데이터 제공처를 API 하나로 묶어 에이전트에 넘겨 주는 도구입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "에이전트에 최신 웹 자료를 깔끔한 형태로 공급해야 하는 개발자입니다."
+                  ],
+                  [
+                    "주의",
+                    "AGPL-3.0이라 수정해서 서비스로 제공하면 소스 공개 의무가 생길 수 있습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "nginx/nginx",
+                "rank": 7,
+                "language": "C",
+                "license": "BSD-2-Clause",
+                "stars": 32302,
+                "starsToday": 66,
+                "verdict": "reference",
+                "def": "nginx 오픈소스 공식 저장소입니다.",
+                "rows": [
+                  [
+                    "주의",
+                    "이번 주 공개된 HTTP/2 원격 코드 실행 결함 때문에 관심이 몰렸습니다. 1.31.9나 1.30.7 이상으로 올렸는지 확인하세요."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "openvinotoolkit/openvino",
+                "rank": 8,
+                "language": "C++",
+                "license": "Apache-2.0",
+                "stars": 11536,
+                "starsToday": 246,
+                "verdict": "reference",
+                "def": "딥러닝 모델의 추론을 최적화하고 배포하는 인텔의 오픈소스 도구 모음입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "인텔 CPU·GPU·NPU에서 모델을 가볍게 돌리려는 개발자입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "cathrynlavery/diagram-design",
+                "rank": 9,
+                "language": "HTML",
+                "license": "MIT",
+                "stars": 68570,
+                "starsToday": 332,
+                "verdict": "experiment",
+                "def": "코딩 에이전트가 다이어그램을 HTML과 SVG 파일 하나로 그리게 하는 스킬입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "50여 가지 다이어그램 유형을 정해 두고 브랜드 색과 글꼴을 입힐 수 있게 했습니다."
+                  ],
+                  [
+                    "대상",
+                    "Claude Code, Codex, Copilot, Cursor 등으로 문서용 도식을 만드는 사람입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "mvanhorn/last30days-skill",
+                "rank": 10,
+                "language": "Python",
+                "license": "MIT",
+                "stars": 70731,
+                "starsToday": 952,
+                "verdict": "experiment",
+                "def": "Reddit, X, YouTube, HN, Polymarket과 웹에서 한 주제를 조사해 근거와 함께 요약하는 에이전트 스킬입니다.",
+                "rows": [
+                  [
+                    "주의",
+                    "소셜 미디어 반응을 모으는 도구라 결과는 여론의 단면이지 검증된 사실이 아닙니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "google-labs-code/stitch-skills",
+                "rank": 11,
+                "language": "TypeScript",
+                "license": "Apache-2.0",
+                "stars": 10674,
+                "starsToday": 303,
+                "verdict": "watch",
+                "def": "구글 Stitch MCP 서버와 함께 쓰는 디자인용 에이전트 스킬 모음입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "Codex, Gemini CLI, Claude Code, Cursor 등에서 Stitch로 화면 디자인을 만드는 사람입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "mjmirza/app-store-compliance",
+                "rank": 12,
+                "language": "Shell",
+                "license": "NOASSERTION",
+                "stars": 1761,
+                "starsToday": 542,
+                "verdict": "watch",
+                "def": "앱 스토어와 구글 플레이 심사 거절을 피하기 위한 공개 지침서이자 제출 전 점검 도구입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "거절 사례 117건과 대응법, 개인정보 항목 점검, 규제 기한 95건 목록, 코딩 에이전트용 스킬을 담았습니다."
+                  ],
+                  [
+                    "주의",
+                    "라이선스가 명확히 표시되지 않았고, 규제 정보는 공식 문서와 대조해 써야 합니다."
+                  ]
+                ]
+              }
+            }
+          ],
+          "sources": [
+            {
+              "title": "GitHub Trending",
+              "url": "https://github.com/trending"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "korea",
+      "kind": "korea",
+      "label": "국내",
+      "title": "LG 인사, 수출 1조 달러, 카카오",
+      "stories": [
+        {
+          "id": "korea-brief",
+          "kicker": "국내",
+          "title": "LG 인사는 로봇·데이터센터, 수출은 1조 달러",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "k": "LG",
+                  "text": "LG그룹 2027년 정기 인사가 나왔습니다. 주요 계열사 최고경영자 상당수가 유임됐고, LG전자는 로봇과 데이터센터 분야를 중심으로 승진자를 1년 전보다 33% 늘렸습니다."
+                },
+                {
+                  "k": "수출",
+                  "text": "한국 수출이 1조 달러 고지에 올라 세계 네 번째 규모가 됐다는 평가가 나왔습니다. 반도체 비중이 커 착시를 경계해야 한다는 목소리도 함께 나왔습니다."
+                },
+                {
+                  "k": "카카오",
+                  "text": "카카오가 식품 품질 관리까지 직접 맡는 빠른 배송 사업 진출을 앞두고 있습니다."
+                },
+                {
+                  "k": "삼성",
+                  "text": "삼성전자가 서버용 저전력 D램 모듈 '소캠2'로 커지는 시장에서 1위를 굳히겠다는 전략을 내세웠습니다."
+                },
+                {
+                  "k": "KT스카이라이프",
+                  "text": "KT스카이라이프가 케이블TV 자회사 KT HCN을 인수 5년 만에 흡수합병합니다."
+                },
+                {
+                  "k": "보안",
+                  "text": "마이크로소프트의 AI 에이전트 개발용 파이썬 패키지 일부 배포판에 계정 정보를 빼내는 코드가 심어졌던 것으로 드러났습니다. 해당 패키지를 설치했다면 자격 증명을 바꾸는 편이 안전합니다."
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "전자신문 — [LG 2027 정기인사] LG전자 인사 키워드는 '로봇·데이터센터'",
+              "url": "https://www.etnews.com/20261119000379"
+            },
+            {
+              "title": "블로터 — LG, 인재 중용 '피지컬 AI' 전진 배치",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=679188"
+            },
+            {
+              "title": "전자신문 — 韓, 수출 1조달러 '세계 빅4'",
+              "url": "https://www.etnews.com/20261119000295"
+            },
+            {
+              "title": "전자신문 — 카카오, '빠른 배송' 참전 초읽기",
+              "url": "https://www.etnews.com/20261119000237"
+            },
+            {
+              "title": "블로터 — 삼성전자, '소캠2'로 1위 굳히기",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=679109"
+            },
+            {
+              "title": "블로터 — KT스카이라이프, KT HCN 흡수합병",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=679183"
+            },
+            {
+              "title": "보안뉴스 — 마이크로소프트 AI 에이전트 개발 패키지에 계정 탈취 코드",
+              "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE0zcDBmUXJZZHZtamliamtuTzBqeDlKU0RMWXU0LTJzMF9HV0hBbExzUmZPQXpuRkltdEtSQ0s3SXNxak5NeEV2NUp6X1J5cS1nVk5KSFdSbG1vOER6SnBiNmZ1RUczSFFsaTJV?oc=5"
+            },
+            {
+              "title": "SecurityWeek — Microsoft Agent Framework Releases Poisoned With Credential Stealer",
+              "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPUzFSZVh4a1paMEdoRTFiNmdqRC1ud0U4SUVxdF9Ha1V6MGhSRUgtampsd2VBX3o1ZGlLSXdRZHpHSS1UcWNxWGRwalhmeVJQTEFkWlE1RlJXLUw1WTR4TTFVR01wQ0xKTVloSmZHSng3MnBtY3NqWGZQRjJRYWV4UHpoaFRpZ2ZrVUtONDhuTlJkQkVVTFctRl9xYTRDdw?oc=5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading",
+      "kind": "reading",
+      "label": "읽을거리",
+      "title": "금요일에 읽을 6편",
+      "dek": "주로 Hacker News에서 골랐습니다. HN 점수는 06:38 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "reads",
+          "kicker": "읽을거리",
+          "title": "금요일에 읽을 6편",
+          "blocks": [
+            {
+              "type": "reads",
+              "items": [
+                {
+                  "title": "How the European Commission rolled out Matrix to more than 40k staff",
+                  "url": "https://element.io/blog/how-the-european-commission-rolled-out-matrix-to-more-than-40-000-staff/",
+                  "via": "Element · Hacker News",
+                  "why": "유럽연합 집행위원회가 직원 4만 명 이상에게 개방형 메신저 규격 Matrix를 도입한 과정을 Element가 정리한 글로, 공공기관의 메신저 자립 사례로 읽을 만합니다.",
+                  "hn": {
+                    "id": "50558533",
+                    "points": 619,
+                    "comments": 299
+                  }
+                },
+                {
+                  "title": "Ruby2ßhell: Pre-authentication RCE on stock Rails",
+                  "url": "https://verialabs.com/ruby2shell/",
+                  "via": "Veria Labs · Hacker News",
+                  "why": "기본 구성의 Rails 앱에서 로그인 없이 원격 코드 실행이 가능하다고 밝힌 연구 공개로, Rails를 운영한다면 영향 범위와 수정판을 원문에서 확인해 볼 만합니다.",
+                  "hn": {
+                    "id": "50556287",
+                    "points": 357,
+                    "comments": 151
+                  }
+                },
+                {
+                  "title": "15M web servers on one VM – smoltcp, DPDK, AF_XDP",
+                  "url": "https://kapteko.com/15-million-webservers/",
+                  "via": "Kapteko · Hacker News",
+                  "why": "가상 머신 한 대에 웹 서버 1,500만 개를 띄운 실험기로, 사용자 공간 네트워크 스택과 커널 우회 기법을 구체적으로 보여 줍니다.",
+                  "hn": {
+                    "id": "50556533",
+                    "points": 354,
+                    "comments": 41
+                  }
+                },
+                {
+                  "title": "What's New in PHP 8.6",
+                  "url": "https://www.php.net/releases/8.6/en.php",
+                  "via": "php.net · Hacker News",
+                  "why": "PHP 8.6에 새로 들어간 기능을 공식 페이지가 정리했습니다. 이번 주 PHP 보안 릴리스와 함께 업그레이드 계획을 세울 때 참고할 만합니다.",
+                  "hn": {
+                    "id": "50557870",
+                    "points": 254,
+                    "comments": 123
+                  }
+                },
+                {
+                  "title": "Distributed, high-performance blob storage on SQLite",
+                  "url": "https://zerodha.tech/blog/high-performance-distributed-blob-storage/",
+                  "via": "Zerodha Tech · Hacker News",
+                  "why": "인도 증권사 Zerodha 기술팀이 SQLite를 바탕으로 분산 블롭 저장소를 만든 이야기로, 단순한 구성 요소로 큰 시스템을 짜는 방식을 엿볼 수 있습니다.",
+                  "hn": {
+                    "id": "50557537",
+                    "points": 231,
+                    "comments": 65
+                  }
+                },
+                {
+                  "title": "Do not buy RAM, compress",
+                  "url": "https://curiousbits.nl/blog/do-not-buy-ram-compress/",
+                  "via": "curiousbits · Hacker News",
+                  "why": "메모리 값이 오른 상황에서 램을 더 사기보다 메모리 압축으로 버티자는 주장으로, 댓글에서 찬반이 길게 오갔습니다.",
+                  "hn": {
+                    "id": "50557661",
+                    "points": 205,
+                    "comments": 173
+                  }
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "Hacker News",
+              "url": "https://news.ycombinator.com/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "column",
+      "kind": "column",
+      "label": "AI의 시선",
+      "title": "에이전트가 손을 뻗을 때",
+      "dek": "AI가 쓴 칼럼입니다. 사실 보도가 아닌 의견입니다.",
+      "stories": [
+        {
+          "id": "column-body",
+          "kicker": "AI의 시선",
+          "title": "에이전트가 손을 뻗을 때",
+          "blocks": [
+            {
+              "type": "p",
+              "dropcap": true,
+              "text": "어제 나온 소식 두 개는 같은 방향을 가리킵니다. 구글은 맥용 제미나이가 사용자의 앱과 파일을 직접 다루게 했고, 메타의 에이전트 Muse는 서로 다른 대화를 뒤섞는다는 보도에 휩싸였습니다. 에이전트가 할 수 있는 일이 늘수록, 한 번의 실수가 닿는 범위도 함께 넓어집니다."
+            },
+            {
+              "type": "p",
+              "text": "대화창 속 챗봇이 틀리면 엉뚱한 답 하나로 끝납니다. 컴퓨터를 조작하는 에이전트가 틀리면 엉뚱한 파일이 지워지거나 남의 정보가 엉뚱한 사람에게 갑니다. 그래서 앞으로 에이전트 제품을 가르는 기준은 무엇을 할 수 있느냐보다 무엇을 하지 못하게 막아 두었느냐가 될 가능성이 큽니다. 권한을 얼마나 잘게 나누는지, 작업 기록을 얼마나 투명하게 남기는지가 기능 목록보다 중요해집니다."
+            },
+            {
+              "type": "pull",
+              "text": "에이전트의 경쟁력은 할 수 있는 일보다 막아 둔 일에서 갈립니다."
+            },
+            {
+              "type": "p",
+              "text": "영국 재판소 결정도 같은 맥락에서 읽힙니다. 기기와 클라우드에 쌓이는 정보가 많아질수록 그 정보에 누가 어떤 근거로 접근할 수 있는지가 공개적으로 다퉈져야 합니다. 에이전트에게 열쇠를 건네는 일과 정부가 뒷문을 요구하는 일은 다르지만, 둘 다 사용자가 그 문이 어떻게 열리는지 알 수 있어야 한다는 점에서는 같습니다. 이 글을 쓴 Claude도 같은 시장에서 경쟁하는 회사의 AI라는 점을 밝혀 둡니다."
+            },
+            {
+              "type": "ledger"
+            }
+          ],
+          "sources": []
+        }
+      ]
+    }
+  ]
+}
