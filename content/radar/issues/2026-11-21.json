@@ -1,0 +1,906 @@
+{
+  "version": 1,
+  "date": "2026-11-21",
+  "publishedAt": "2026-11-21T07:37:45+09:00",
+  "title": "리만 가설, 하루에 나온 두 개의 증명 주장",
+  "lede": "미국 시각 20일 하루에 일반화 리만 가설을 증명했다는 주장이 두 건 나왔습니다. 하나는 앤트로픽 소속 수학자가 Claude와 함께 쓴 원고이고, 다른 하나는 사람이 쓴 원고이며, 둘 다 아직 검증 전입니다. 같은 날 GTA 6는 첫날 매출 기록을 냈고, 트럼프 대통령은 해외에 데이터센터를 짓는 미국 기업에 세금을 물리겠다고 경고했습니다.",
+  "raw": "content/radar/raw/2026-11-21.json",
+  "rawCollectedAt": "2026-11-20T21:38:17.626Z",
+  "quick": [
+    "**리만 가설 증명 주장 두 건.** 앤트로픽 수학자가 Claude와 함께 쓴 원고와 사람이 쓴 원고가 몇 시간 차이로 공개됐고, 둘 다 검증 전입니다.",
+    "**GTA 6 첫날 37억 9,000만 달러.** 락스타게임즈 발표로, 역대 최고 흥행 영화의 극장 누적 수입보다 큰 금액입니다.",
+    "**트럼프, 해외 데이터센터에 세금 경고.** 미국 기업이 AI 데이터센터를 해외에 지으면 막거나 막대한 세금을 물리겠다고 말했습니다.",
+    "**시그널, AI 비서의 화면 읽기 차단.** 시리와 제미나이가 대화 화면을 캡처해 읽지 못하게 막았습니다.",
+    "**테슬라 FSD, 이탈리아 잠정 승인.** 국내에서는 국토교통부가 안전성 판단 자료가 부족하다며 서류 보완을 요구했습니다."
+  ],
+  "cover": {
+    "big": "리만 가설,\n증명 주장\n두 편"
+  },
+  "sections": [
+    {
+      "id": "lead",
+      "kind": "lead",
+      "label": "커버스토리",
+      "title": "같은 날 나온 두 개의 증명",
+      "stories": [
+        {
+          "id": "riemann-grh-claims",
+          "kicker": "수학 · AI",
+          "title": "일반화 리만 가설 증명 주장, 하루에 두 건… Claude 협업 원고와 사람의 원고",
+          "hot": {
+            "count": 4,
+            "basis": "오늘 수집 피드 중 보도 매체 (Hacker News 포함)"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "미국 시각 20일, 앤트로픽 소속 수학자 레벤트 알푀게(Levent Alpöge)가 Claude의 도움을 받아 리만 가설과 이를 넓힌 일반화 리만 가설(GRH)을 증명했다고 주장하는 원고를 공개했습니다. 1859년 제기된 리만 가설은 클레이 수학연구소가 100만 달러 상금을 건 밀레니엄 문제 가운데 하나입니다."
+            },
+            {
+              "type": "p",
+              "text": "**몇 시간 뒤 나온 두 번째 주장.** 스탠퍼드대 수학자 라비 바킬(Ravi Vakil)이 자기 블로그에 알레산드로 마술로(Alessandro Masullo)가 쓴 GRH 증명 원고를 급히 공개했습니다. 이쪽은 AI 없이 사람이 쓴 증명이라는 점이 강조됐습니다."
+            },
+            {
+              "type": "p",
+              "text": "**검증은 이제부터.** 두 원고 모두 학계의 검토를 거치지 않았습니다. Scientific American은 두 주장이 맞서는 상황으로 다뤘고, Unite.AI와 Nacionale은 알푀게 쪽 주장에서 Claude가 작성한 Lean 형식화 코드가 검증의 초점이 되고 있다고 전했습니다. Hacker News에서는 알푀게의 원고 글이 수집 시점 1위였습니다."
+            },
+            {
+              "type": "p",
+              "text": "**배경.** 앤트로픽은 지난 8월 미공개 연구용 Claude가 리만 제타 함수의 영점 가운데 임계선 위에 있는 비율의 하한을 41.6%에서 67.2%로 끌어올렸다고 발표했습니다(발표 주체 주장). 당시 회사는 그 기법이 리만 가설 증명으로 이어지리라고 보지 않는다고 밝혔습니다."
+            },
+            {
+              "type": "stats",
+              "items": [
+                {
+                  "value": "1859년",
+                  "label": "리만 가설이 제기된 해"
+                },
+                {
+                  "value": "2건",
+                  "label": "20일 하루에 공개된 GRH 증명 주장"
+                },
+                {
+                  "value": "2,100점",
+                  "label": "Hacker News 점수 (댓글 1,426개, 06:38 KST 수집)"
+                },
+                {
+                  "value": "100만 달러",
+                  "label": "밀레니엄 문제 상금"
+                }
+              ]
+            }
+          ],
+          "ai": {
+            "kind": "none",
+            "reason": "이 글을 쓴 Claude는 앤트로픽이 만든 AI이고 한쪽 주장에 Claude가 쓰였기 때문에, 어느 주장이 맞는지 평가하지 않고 보도된 사실만 전합니다."
+          },
+          "sources": [
+            {
+              "title": "The Verge — Anthropic mathematician claims to have solved prestigious Millennium Prize problem with Claude",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1010051/anthropic-riemann-hypothesis-millennium-prize-problem"
+            },
+            {
+              "title": "TechCrunch — AI claimed a solution to the 167-year-old Riemann Hypothesis — and a human did, too",
+              "url": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/"
+            },
+            {
+              "title": "Scientific American — Dueling claims of Riemann hypothesis proofs emerge",
+              "url": "https://www.scientificamerican.com/article/dueling-claims-of-riemann-hypothesis-proofs-emerge/"
+            },
+            {
+              "title": "Unite.AI — Levent Alpöge's Unverified Riemann Claim Puts Claude's Lean Code in Focus",
+              "url": "https://www.unite.ai/levent-alpoges-unverified-riemann-claim-puts-claudes-lean-code-in-focus/"
+            },
+            {
+              "title": "OfficeChai — Ravi Vakil rushes out a rival all-human proof by Alessandro Masullo",
+              "url": "https://officechai.com/ai/hours-after-alpoges-ai-assisted-riemann-hypothesis-proof-ams-president-ravi-vakil-rushes-out-a-rival-all-human-proof-by-alessandro-masullo/"
+            },
+            {
+              "title": "Math 216 (Ravi Vakil) — Hurried Announcement: Alessandro Masullo GRH",
+              "url": "https://math216.wordpress.com/2026/11/20/hurried-announcement-alessandro-masullo"
+            },
+            {
+              "title": "GeekNews — Anthropic 수학자, Claude와 리만 가설 및 일반화 리만 가설을 증명했다고 발표",
+              "url": "https://news.hada.io/topic?id=37529"
+            },
+            {
+              "title": "Anthropic — Claude has improved on a longstanding lower bound (8월 발표)",
+              "url": "https://www.anthropic.com/research/riemann-zeta"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "headlines",
+      "kind": "headlines",
+      "label": "헤드라인",
+      "title": "여러 매체가 함께 다룬 이야기",
+      "stories": [
+        {
+          "id": "gta6-day-one",
+          "kicker": "게임 · 실적",
+          "followUp": true,
+          "title": "GTA 6, 출시 첫날 매출 37억 9,000만 달러",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "락스타게임즈가 19일 콘솔로 나온 GTA 6가 출시 첫날 37억 9,000만 달러어치 팔렸다고 밝혔습니다(발표 주체 주장). Variety는 이 금액이 역대 최고 흥행 영화인 어벤져스: 엔드게임의 극장 누적 수입(약 29억 달러)보다 크다고 짚었습니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "Variety — GTA 6 Sales: $3.79 Billion in First Day Sales",
+              "url": "https://variety.com/2026/gaming/news/gta-6-sales-billions-first-day-1236954198/"
+            },
+            {
+              "title": "The Verge — Rockstar says GTA VI made $3.79 billion in its first day",
+              "url": "https://www.theverge.com/games/1036279/gta-vi-sales"
+            },
+            {
+              "title": "PC Gamer — Grand Theft Auto 6 earned $3.79 billion on launch day",
+              "url": "https://www.pcgamer.com/games/grand-theft-auto/grand-theft-auto-6-earned-usd3-79-billion-on-launch-day/"
+            },
+            {
+              "title": "Techmeme — Take-Two says GTA VI generated $3.79B in day-one sales",
+              "url": "https://www.techmeme.com/261120/p27#a261120p27"
+            }
+          ]
+        },
+        {
+          "id": "trump-overseas-datacenter-tax",
+          "kicker": "정책 · 데이터센터",
+          "title": "트럼프, 해외에 AI 데이터센터 짓는 미국 기업에 세금 경고",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "트럼프 미국 대통령이 20일 미국 기업이 해외에 AI 데이터센터를 지으면 이를 막거나 막대한 세금을 물리겠다고 말했습니다."
+            },
+            {
+              "type": "unknowns",
+              "title": "아직 모르는 것",
+              "items": [
+                "세금이나 제한을 어떤 법적 근거로, 언제부터 적용할지",
+                "이미 발표되거나 짓고 있는 해외 데이터센터도 대상인지"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "The Verge — Trump threatens 'tremendous tax' for moving AI data centers outside the US",
+              "url": "https://www.theverge.com/policy/1038892/trump-foreign-data-centers-tax"
+            },
+            {
+              "title": "Bloomberg — Trump Threatens Tax on US Firms Building Data Centers Overseas",
+              "url": "https://www.bloomberg.com/news/articles/2026-11-20/trump-threatens-to-tax-companies-building-data-centers-abroad"
+            },
+            {
+              "title": "NBC News — Trump threatens 'tremendous penalties' on companies that build AI data centers overseas",
+              "url": "https://www.nbcnews.com/business/corporations/trump-data-centers-overseas-penalties-rcna610445"
+            },
+            {
+              "title": "ABC News — Trump says he plans to penalize companies that build data centers in other countries",
+              "url": "https://abcnews.com/Technology/wireStory/trump-plans-penalize-us-tech-companies-build-ai-138323831"
+            }
+          ]
+        },
+        {
+          "id": "youtube-school-districts",
+          "kicker": "플랫폼 · 청소년",
+          "legal": "company-only",
+          "title": "유튜브, 미국 학군들과 약 30억 달러 합의에 근접",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "블룸버그는 유튜브가 청소년의 중독을 부추긴다며 미국 학군들이 제기한 청구를 약 30억 달러에 정리하기로 원칙적 합의에 이르렀다고 전했습니다. 최종 합의까지는 몇 달이 더 걸릴 수 있다고 덧붙였습니다. 로이터와 The Verge도 블룸버그 보도를 바탕으로 같은 내용을 전했습니다(전언)."
+            }
+          ],
+          "sources": [
+            {
+              "title": "Bloomberg — YouTube Finalizing Multibillion-Dollar Settlement With Schools Over Social Media Addiction Claims",
+              "url": "https://www.bloomberg.com/news/articles/2026-11-20/youtube-finalizing-multibillion-dollar-schools-settlement-over-addiction-claims"
+            },
+            {
+              "title": "The Verge — YouTube is reportedly preparing to settle social media addiction claims for $3 billion",
+              "url": "https://www.theverge.com/streaming/1039096/youtube-social-media-addiction-school-districts-settlement"
+            },
+            {
+              "title": "Investing.com (Reuters) — YouTube nears $3 billion settlement with US school districts",
+              "url": "https://www.investing.com/news/stock-market-news/youtube-nears-3-billion-settlement-with-us-school-districts-over-addiction-claims-bloomberg-news-reports-5042475"
+            },
+            {
+              "title": "Techmeme — YouTube reaches an agreement in principle to pay ~$3B",
+              "url": "https://www.techmeme.com/261120/p24#a261120p24"
+            }
+          ]
+        },
+        {
+          "id": "signal-blocks-ai-assistants",
+          "kicker": "프라이버시 · AI 에이전트",
+          "title": "시그널, 시리·제미나이가 대화 화면을 읽지 못하게 막아",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "메신저 시그널이 운영체제에 들어간 AI 비서가 대화 화면을 들여다보지 못하도록 화면 캡처를 막는 쪽으로 화면 보안을 넓혔습니다. 여러 매체는 iOS 27의 Siri AI와 안드로이드의 제미나이가 주요 대상이라고 전했습니다."
+            },
+            {
+              "type": "p",
+              "text": "**배경.** 화면을 읽고 앱을 대신 조작하는 에이전트가 운영체제 차원으로 들어오면서, 종단간 암호화로 지켜 온 대화도 화면에 뜨는 순간 다른 소프트웨어에 읽힐 수 있게 됐습니다. 시그널도 블로그에 사용자 프라이버시 보호 방침을 설명하는 글을 올렸고, 이 글은 Hacker News 상위에 올랐습니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "The Next Web — Signal blocks Siri AI and Gemini from reading chats on iPhone and Android",
+              "url": "https://thenextweb.com/news/signal-ai-agents-blocks-screenshots-siri-gemini-whittaker"
+            },
+            {
+              "title": "CyberInsider — Signal blocks screenshots to keep Siri and Gemini out of private chats",
+              "url": "https://cyberinsider.com/signal-blocks-screenshots-ios-27-android-ai-assistants/"
+            },
+            {
+              "title": "Trending Topics — Signal Locks Siri AI and Gemini Out of Its Chats",
+              "url": "https://www.trendingtopics.eu/signal-blocks-siri-ai-gemini/"
+            },
+            {
+              "title": "Signal — Signal Is Serious About Protecting Your Privacy",
+              "url": "https://signal.org/blog/protecting-your-privacy/"
+            }
+          ]
+        },
+        {
+          "id": "tesla-fsd-italy-korea",
+          "kicker": "자율주행 · 규제",
+          "title": "테슬라 FSD, 이탈리아는 잠정 승인… 한국은 서류 보완 요구",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "이탈리아 인프라교통부가 테슬라의 감독형 FSD(유럽 명칭 Assisted Driving)를 잠정 승인했습니다. 유럽연합의 큰 시장 가운데 처음입니다."
+            },
+            {
+              "type": "p",
+              "text": "**국내는 제동.** 국토교통부는 테슬라가 낸 FSD 기술 특례 신청 자료가 안전성을 판단하기에 부족하다며 보완을 요구했습니다. EBN과 서울파이낸스는 제출 서류가 설명서 2장 수준이었다고 전했고, 블로터는 테슬라코리아가 15일 안에 서류를 보완해 달라는 요청을 받아들였다고 보도했습니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "Electrek — Tesla FSD approved in Italy, the first big EU market to say yes",
+              "url": "https://electrek.co/2026/11/20/tesla-fsd-italy-approval-assisted-driving/"
+            },
+            {
+              "title": "Tesla Mag — Italy approves Tesla Assisted Driving on a provisional basis",
+              "url": "https://www.tesla-mag.com/en/tesla-fsd-italy-provisional-approval-mit-salvini/"
+            },
+            {
+              "title": "전자신문 — 테슬라 FSD 국내 도입 제동 걸렸다",
+              "url": "https://www.etnews.com/20261120000297"
+            },
+            {
+              "title": "EBN — 국토부, 테슬라 FSD 서류 보완 요구",
+              "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1732530"
+            },
+            {
+              "title": "블로터 — 테슬라코리아, FSD 특례 서류 '15일 내 보완' 요청 수용",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=679283"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "github",
+      "kind": "github",
+      "label": "GitHub 트렌딩",
+      "title": "보안 스킬이 1위를 지키다",
+      "dek": "일간 트렌딩 상위 저장소를 각 README 기준으로 요약했습니다. 숫자는 06:38 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "github-trending",
+          "kicker": "GitHub 트렌딩",
+          "title": "보안 스킬이 1위를 지키다",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "버그 바운티용 스킬 묶음 Claude-BugHunter가 오늘도 1위였고, 스타도 가장 많이 받았습니다(1,660개). 두 번째로 많이 받은 저장소는 6위 firecrawl(1,226개)입니다. 상위 12개 가운데 절반이 코딩 에이전트용 스킬·플러그인이고, nginx와 OpenVINO 같은 오래된 기반 프로젝트도 함께 올랐습니다."
+            },
+            {
+              "type": "share",
+              "title": "상위 12개 저장소의 오늘 받은 스타 비중",
+              "items": [
+                {
+                  "label": "Claude-BugHunter",
+                  "value": 1660
+                },
+                {
+                  "label": "superpowers",
+                  "value": 888
+                },
+                {
+                  "label": "CLI-Anything",
+                  "value": 774
+                },
+                {
+                  "label": "나머지 9개",
+                  "value": 5332
+                }
+              ]
+            },
+            {
+              "type": "bars",
+              "title": "오늘 받은 스타 (2~12위)",
+              "unit": "개",
+              "items": [
+                {
+                  "label": "2. superpowers",
+                  "value": 888
+                },
+                {
+                  "label": "3. CLI-Anything",
+                  "value": 774
+                },
+                {
+                  "label": "4. minimind",
+                  "value": 841
+                },
+                {
+                  "label": "5. plugins",
+                  "value": 292
+                },
+                {
+                  "label": "6. firecrawl",
+                  "value": 1226
+                },
+                {
+                  "label": "7. nginx",
+                  "value": 246
+                },
+                {
+                  "label": "8. openvino",
+                  "value": 219
+                },
+                {
+                  "label": "9. diagram-design",
+                  "value": 634
+                },
+                {
+                  "label": "10. last30days-skill",
+                  "value": 685
+                },
+                {
+                  "label": "11. stitch-skills",
+                  "value": 315
+                },
+                {
+                  "label": "12. app-store-compliance",
+                  "value": 874
+                }
+              ],
+              "caption": "GitHub 트렌딩 일간 페이지 기준, 06:38 KST 수집."
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "elementalsouls/Claude-BugHunter",
+                "rank": 1,
+                "language": "Python",
+                "license": "MIT",
+                "stars": 14036,
+                "starsToday": 1660,
+                "verdict": "watch",
+                "def": "Claude Code에 버그 바운티와 외부 레드팀 작업 방법을 가르치는 스킬 묶음입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "스킬 83개와 슬래시 명령 15개, 24개 취약점 유형에 걸친 공개 보고서 패턴 681건(README 기준), Burp MCP 연동을 담았습니다."
+                  ],
+                  [
+                    "대상",
+                    "허가받은 범위에서 버그 바운티나 침투 시험을 하는 보안 연구자입니다."
+                  ],
+                  [
+                    "주의",
+                    "공격 기법을 다루는 도구라 허가된 대상에만 써야 합니다. 실전 검증은 작성자 주장이고, Claude 생태계 도구라 평가는 보수적으로 매겼습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "obra/superpowers",
+                "rank": 2,
+                "language": "Shell",
+                "license": "MIT",
+                "stars": 322782,
+                "starsToday": 888,
+                "verdict": "reference",
+                "def": "코딩 에이전트가 조합형 스킬과 기본 지침을 따라 일정한 개발 절차로 일하게 만드는 프레임워크입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot CLI 등 여러 에이전트에 설치 안내가 있습니다."
+                  ],
+                  [
+                    "구성",
+                    "조합해 쓰는 스킬들과, 에이전트가 그 스킬을 제때 쓰도록 하는 초기 지침으로 이뤄져 있습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "HKUDS/CLI-Anything",
+                "rank": 3,
+                "language": "Python",
+                "license": "Apache-2.0",
+                "stars": 61309,
+                "starsToday": 774,
+                "verdict": "experiment",
+                "def": "기존 소프트웨어를 AI 에이전트가 다루기 쉬운 명령줄 도구로 감싸 주는 프로젝트입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "`pip install cli-anything-hub`로 허브를 설치한 뒤 커뮤니티가 만든 CLI를 골라 설치합니다."
+                  ],
+                  [
+                    "동작",
+                    "CAD, 3D, 다이어그램, 자막 같은 작업용 CLI를 에이전트가 호출하고 결과를 미리 보며 반복하게 합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "jingyaogong/minimind",
+                "rank": 4,
+                "language": "Python",
+                "license": "Apache-2.0",
+                "stars": 67656,
+                "starsToday": 841,
+                "verdict": "reference",
+                "def": "64M 규모의 아주 작은 언어 모델을 처음부터 직접 학습해 보는 교육용 프로젝트입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "사전학습, SFT, LoRA, DPO, PPO·GRPO 같은 강화학습, 도구 사용, 증류까지 PyTorch로 직접 구현했습니다."
+                  ],
+                  [
+                    "주의",
+                    "2시간·저비용 학습은 작성자 주장이며, 결과 모델은 학습용이지 실사용 모델이 아닙니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "cursor/plugins",
+                "rank": 5,
+                "language": "TypeScript",
+                "license": null,
+                "stars": 17812,
+                "starsToday": 292,
+                "verdict": "watch",
+                "def": "Cursor 편집기의 공식 플러그인 모음과 플러그인 규격입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "플러그인마다 최상위 디렉터리와 `.cursor-plugin/plugin.json` 매니페스트를 둡니다."
+                  ],
+                  [
+                    "주의",
+                    "저장소에 라이선스가 명시돼 있지 않습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "firecrawl/firecrawl",
+                "rank": 6,
+                "language": "TypeScript",
+                "license": "AGPL-3.0",
+                "stars": 205159,
+                "starsToday": 1226,
+                "verdict": "try",
+                "def": "웹사이트를 에이전트가 읽기 좋은 마크다운으로 바꾸고 검색·스크래핑 API를 제공하는 도구입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "Firecrawl Local은 단일 실행 파일로 돌아가며 MCP 서버와 localhost API를 함께 띄웁니다."
+                  ],
+                  [
+                    "구성",
+                    "로컬 실행, 호스팅 서비스, 자체 서버 배포 세 가지 방식을 지원합니다."
+                  ],
+                  [
+                    "주의",
+                    "AGPL-3.0이라 수정한 서버를 서비스로 제공하면 소스 공개 의무가 생길 수 있습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "nginx/nginx",
+                "rank": 7,
+                "language": "C",
+                "license": "BSD-2-Clause",
+                "stars": 32543,
+                "starsToday": 246,
+                "verdict": "reference",
+                "def": "웹 서버, 리버스 프록시, 로드 밸런서로 널리 쓰이는 NGINX의 공식 오픈소스 저장소입니다.",
+                "rows": [
+                  [
+                    "주의",
+                    "이번 주 공개된 결함(CVE-2026-123007)이 있으니 쓰는 배포판의 보안 업데이트 여부를 확인하는 편이 좋습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "openvinotoolkit/openvino",
+                "rank": 8,
+                "language": "C++",
+                "license": "Apache-2.0",
+                "stars": 11763,
+                "starsToday": 219,
+                "verdict": "reference",
+                "def": "인텔이 주도하는 딥러닝 모델 추론 최적화·배포 도구입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "PyTorch, TensorFlow, ONNX 등으로 만든 모델을 여러 하드웨어에서 빠르게 돌리려는 개발자입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "cathrynlavery/diagram-design",
+                "rank": 9,
+                "language": "HTML",
+                "license": "MIT",
+                "stars": 69228,
+                "starsToday": 634,
+                "verdict": "try",
+                "def": "에이전트가 다이어그램을 자체 완결형 HTML+SVG 파일 하나로 그리게 하는 스킬입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "`npx skills add cathrynlavery/diagram-design`로 설치하고 평소 말로 그림을 요청합니다."
+                  ],
+                  [
+                    "구성",
+                    "README 기준 51종의 다이어그램 형식과 브랜드 색 맞춤, draw.io·Mermaid 가져오기, PNG·SVG 내보내기를 지원합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "mvanhorn/last30days-skill",
+                "rank": 10,
+                "language": "Python",
+                "license": "MIT",
+                "stars": 71384,
+                "starsToday": 685,
+                "verdict": "experiment",
+                "def": "한 주제를 Reddit, X, YouTube, Hacker News, Polymarket, 웹에서 최근 30일치로 찾아 요약하는 에이전트 스킬입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "Claude Code 플러그인 마켓플레이스나 `npx skills add`로 설치합니다."
+                  ],
+                  [
+                    "주의",
+                    "요약 품질은 각 플랫폼에서 얼마나 가져올 수 있느냐에 좌우됩니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "google-labs-code/stitch-skills",
+                "rank": 11,
+                "language": "TypeScript",
+                "license": "Apache-2.0",
+                "stars": 10988,
+                "starsToday": 315,
+                "verdict": "watch",
+                "def": "구글의 UI 디자인 도구 Stitch를 코딩 에이전트에서 쓰게 하는 스킬·플러그인 모음입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "Codex, Antigravity, Gemini CLI, Claude Code, Cursor 등 Agent Skills 규격을 따르는 에이전트입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "mjmirza/app-store-compliance",
+                "rank": 12,
+                "language": "Shell",
+                "license": "NOASSERTION",
+                "stars": 2661,
+                "starsToday": 874,
+                "verdict": "experiment",
+                "def": "앱스토어와 구글 플레이 심사 반려를 미리 막기 위한 점검 규칙 모음입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "문서화된 반려 사례 117건과 해결법, 제출 전 자동 점검을 담았습니다."
+                  ],
+                  [
+                    "주의",
+                    "GitHub가 인식하는 표준 라이선스가 아니므로 사내에서 쓰기 전에 조건을 확인해야 합니다."
+                  ]
+                ]
+              }
+            }
+          ],
+          "sources": [
+            {
+              "title": "GitHub Trending",
+              "url": "https://github.com/trending"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "korea",
+      "kind": "korea",
+      "label": "국내",
+      "title": "삼성 인사, 하이닉스·키옥시아, 전자정부 1위",
+      "stories": [
+        {
+          "id": "korea-brief",
+          "kicker": "국내",
+          "title": "삼성은 반도체 사장 승진, 하이닉스는 키옥시아 지분",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "k": "삼성",
+                  "text": "삼성전자 사장단 인사에서 전영현·노태문 두 대표가 각각 맡던 메모리·스마트폰 사업 겸직을 내려놓고 미래 사업에 집중하게 됐습니다. 사장 승진자 3명은 모두 반도체 부문에서 나왔고, 노태문 대표는 로봇 등 신사업을 맡습니다."
+                },
+                {
+                  "k": "증시",
+                  "text": "앤트로픽 주가가 상장 이튿날 하락 마감했고 엔비디아·AMD 등 AI 관련주도 약세였습니다. 20일 코스피는 4% 넘게 떨어진 4,900선에서 출발했습니다(전자신문)."
+                },
+                {
+                  "k": "SK하이닉스",
+                  "text": "키옥시아 투자 법인의 전환사채를 주식으로 바꿔 키옥시아 지분 14.1%를 간접 보유하게 됐습니다."
+                },
+                {
+                  "k": "LG유플러스",
+                  "text": "카카오모빌리티가 가진 지분을 510억 원에 사들여 전기차 충전 회사 볼트업을 100% 자회사로 만들었습니다."
+                },
+                {
+                  "k": "전자정부",
+                  "text": "한국이 유엔 전자정부 평가에서 12년 만에 세계 1위에 올랐습니다."
+                },
+                {
+                  "k": "현대차",
+                  "text": "LA 오토쇼에서 현대차는 신형 아반떼를, 제네시스는 G80 하이브리드를 처음 공개했습니다."
+                },
+                {
+                  "k": "CJ ENM",
+                  "text": "콘텐츠 사용료 갈등 끝에 LG헬로비전이 CJ ENM 채널 송출 중단을 결정하자, CJ ENM이 법원에 가처분을 신청했습니다."
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "전자신문 — 삼성전자, 반도체 '실적 주역' 3인 사장 발탁",
+              "url": "https://www.etnews.com/20261120000029"
+            },
+            {
+              "title": "블로터 — 삼성, 사장 승진자 전원 '반도체'서 나왔다",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=679212"
+            },
+            {
+              "title": "블로터 — 삼성전자, MX에 최원준 전진배치…노태문은 로봇·미래사업 집중",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=679214"
+            },
+            {
+              "title": "디지털투데이 — 앤트로픽 상장 다음 날 급락…엔비디아·AMD도 약세",
+              "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=717215"
+            },
+            {
+              "title": "블록미디어 — 앤트로픽, 상장 이틀째 하락",
+              "url": "https://www.blockmedia.co.kr/archives/1168690"
+            },
+            {
+              "title": "전자신문 — 앤트로픽 상장 흥행했지만…코스피, 4%이상 급락 4900선에 출발",
+              "url": "https://www.etnews.com/20261120000038"
+            },
+            {
+              "title": "전자신문 — SK하이닉스, 키옥시아 투자법인 전환사채 주식 전환",
+              "url": "https://www.etnews.com/20261120000300"
+            },
+            {
+              "title": "파이낸셜뉴스 — SK하이닉스, 日 키옥시아 전환사채 주식으로…지분 14.1% 확보",
+              "url": "https://www.fnnews.com/news/202611201629060441"
+            },
+            {
+              "title": "전자신문 — LGU+, 볼트업 완전자회사로",
+              "url": "https://www.etnews.com/20261120000285"
+            },
+            {
+              "title": "뉴스웨이 — LG유플러스, 볼트업 완전자회사 편입",
+              "url": "https://www.newsway.co.kr/news/view?ud=2026112016222705625"
+            },
+            {
+              "title": "전자신문 — 한국, 유엔 전자정부평가 12년만에 세계 1위",
+              "url": "https://www.etnews.com/20261120000299"
+            },
+            {
+              "title": "한국일보 — 한국, 유엔 전자정부 평가 12년 만에 정상 탈환",
+              "url": "https://www.hankookilbo.com/news/article/A2026112010380000562"
+            },
+            {
+              "title": "전자신문 — 현대차, LA 오토쇼서 '디 올 뉴 아반떼' 공개",
+              "url": "https://www.etnews.com/20261120000100"
+            },
+            {
+              "title": "디지털데일리 — 현대차, 美 LA오토쇼 참가…아반떼·G80 하이브리드 출격",
+              "url": "https://www.ddaily.co.kr/page/view/2026112009435888134"
+            },
+            {
+              "title": "디지털투데이 — CJ ENM, LG헬로 블랙아웃 결정에 법원 가처분 신청",
+              "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=717183"
+            },
+            {
+              "title": "블로터 — 콘텐츠 사용료 둘러싼 갈등에…CJ ENM·LG헬로비전, 법적 공방 돌입",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=679290"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading",
+      "kind": "reading",
+      "label": "읽을거리",
+      "title": "토요일에 읽을 6편",
+      "dek": "Hacker News에서 골랐습니다. HN 점수는 06:38 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "reads",
+          "kicker": "읽을거리",
+          "title": "토요일에 읽을 6편",
+          "blocks": [
+            {
+              "type": "reads",
+              "items": [
+                {
+                  "title": "Unforced Navier-Stokes Singularity and the Generalized Riemann Hypothesis",
+                  "url": "https://terrytao.wordpress.com/2026/11/20/unforced-euler-singularity-unforced-navier-stokes-singularity-and-the-generalized-riemann-hypothesis/",
+                  "via": "Terence Tao 블로그 · Hacker News",
+                  "why": "같은 날 나온 Navier–Stokes 특이점 주장과 일반화 리만 가설 주장을 한 제목으로 묶은 테렌스 타오의 글입니다.",
+                  "hn": {
+                    "id": "50578358",
+                    "points": 223,
+                    "comments": 62
+                  }
+                },
+                {
+                  "title": "Frostbite: A new CPU architecture discovered, designed and verified by AI",
+                  "url": "https://architectlabs.com/blog/frostbite",
+                  "via": "Architect Labs · Hacker News",
+                  "why": "AI가 CPU 아키텍처를 찾아내고 설계와 검증까지 맡았다고 밝힌 발표로, 어디까지가 기계의 몫인지 따져 보며 읽을 만합니다.",
+                  "hn": {
+                    "id": "50572503",
+                    "points": 570,
+                    "comments": 303
+                  }
+                },
+                {
+                  "title": "Why there are still no non-WebKit browsers on iOS",
+                  "url": "https://blog.mozilla.org/en/mozilla/internet-policy/apple-ios-browser-engine-rules/",
+                  "via": "Mozilla · Hacker News",
+                  "why": "iOS에 웹킷이 아닌 엔진을 쓰는 브라우저가 아직 없는 이유를 모질라가 자기 입장에서 정리한 글입니다.",
+                  "hn": {
+                    "id": "50575644",
+                    "points": 299,
+                    "comments": 165
+                  }
+                },
+                {
+                  "title": "Language Models Can Rewrite Their Own Weights",
+                  "url": "https://arxiv.org/abs/2611.21885",
+                  "via": "arXiv · Hacker News",
+                  "why": "언어 모델이 스스로 가중치를 고치는 방법을 다룬 논문으로, 학습과 추론의 경계가 흐려지는 흐름을 보여 줍니다.",
+                  "hn": {
+                    "id": "50577265",
+                    "points": 283,
+                    "comments": 96
+                  }
+                },
+                {
+                  "title": "Inkling 2 Mini",
+                  "url": "https://thinkingmachines.ai/news/inkling-2-mini/",
+                  "via": "Thinking Machines · Hacker News",
+                  "why": "중간 층을 토큰마다 여러 번 반복해 돌리는 방식의 오픈 가중치 모델 발표로, 모델 크기 대신 반복 계산으로 추론력을 얻으려는 시도입니다.",
+                  "hn": {
+                    "id": "50581260",
+                    "points": 267,
+                    "comments": 28
+                  }
+                },
+                {
+                  "title": "We promoted developers into architects without informing them",
+                  "url": "https://manidoraisamy.com/developer-to-architect.html",
+                  "via": "manidoraisamy.com · Hacker News",
+                  "why": "제목 그대로, 개발자에게 맡겨지는 일이 어느새 설계자의 일로 바뀌었다는 주장을 담은 글입니다.",
+                  "hn": {
+                    "id": "50579331",
+                    "points": 158,
+                    "comments": 89
+                  }
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "Hacker News",
+              "url": "https://news.ycombinator.com/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "column",
+      "kind": "column",
+      "label": "AI의 시선",
+      "title": "발표는 몇 시간, 검증은 몇 달",
+      "dek": "AI가 쓴 칼럼입니다. 사실 보도가 아닌 의견입니다.",
+      "stories": [
+        {
+          "id": "column-body",
+          "kicker": "AI의 시선",
+          "title": "발표는 몇 시간, 검증은 몇 달",
+          "blocks": [
+            {
+              "type": "p",
+              "dropcap": true,
+              "text": "어제는 해냈다는 발표가 유난히 많은 날이었습니다. 수학 난제를 풀었다는 원고가 두 편 나왔고, AI가 설계하고 검증까지 마쳤다는 CPU 아키텍처도 화제가 됐습니다. 국내에서는 자율주행 특례를 신청한 테슬라가 안전성 근거가 부족하다는 이유로 서류 보완 요구를 받았습니다. 증명 원고 가운데 하나에는 Claude가 쓰였고 Claude를 만든 곳이 앤트로픽이라, 이 글은 어느 원고가 맞는지는 다루지 않습니다."
+            },
+            {
+              "type": "p",
+              "text": "세 이야기의 공통점은 주장이 검증보다 훨씬 빨리 도착한다는 점입니다. 원고는 몇 시간이면 올라오지만, 전문가들이 읽고 빈틈을 찾는 데는 몇 달이 걸리곤 합니다. AI가 만드는 결과물이 늘수록 이 간격은 더 벌어집니다. 그래서 Lean 같은 형식 검증 도구나 규제기관의 서류 심사처럼 주장을 걸러 내는 장치의 몫이 커집니다. 다만 기계 검증도 처음에 무엇을 증명하겠다고 적었는지, 곧 명제를 제대로 옮겼는지는 사람이 확인해야 합니다."
+            },
+            {
+              "type": "pull",
+              "text": "결과보다 먼저 볼 것은 그 결과가 거쳐 갈 검증 경로입니다."
+            },
+            {
+              "type": "p",
+              "text": "읽는 쪽이 할 수 있는 일은 결과보다 경로를 보는 것입니다. 누가 확인했는지, 다른 사람이 같은 결과를 재현할 수 있는 자료가 공개됐는지, 심사하는 쪽이 무엇을 요구했는지를 먼저 묻는 습관입니다. 국토교통부가 테슬라에 요구한 것도 결국 그 경로였습니다."
+            },
+            {
+              "type": "ledger"
+            }
+          ],
+          "sources": []
+        }
+      ]
+    }
+  ]
+}
