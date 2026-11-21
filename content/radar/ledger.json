@@ -461,7 +461,10 @@
     "statement": "Microsoft가 2026년 11월 22일까지 지난주 Microsoft 365 장애의 최종 사후 보고서를 공개한다",
     "probability": 0.7,
     "due": "2026-11-22",
-    "status": "pending"
+    "status": "hit",
+    "resolvedOn": "2026-11-22",
+    "note": "11월 20일자 최종 사후 보고서(PIR)에 근본 원인이 담겨 공개됐다고 보도됐습니다.",
+    "evidence": "https://windowsforum.com/news/microsoft-365-november-2026-outage-gateway-defect-teams-failover-and-recovery.453521/"
   },
   {
     "id": "2026-11-17-2",
@@ -575,6 +578,30 @@
     "probability": 0.35,
     "due": "2027-03-31",
     "dueLabel": "2027.3",
+    "status": "pending"
+  },
+  {
+    "id": "2026-11-22-1",
+    "issued": "2026-11-22",
+    "statement": "FBI가 2026년 12월 31일까지 NCIC 데이터베이스 침해 사실을 공식 확인한다",
+    "probability": 0.5,
+    "due": "2026-12-31",
+    "status": "pending"
+  },
+  {
+    "id": "2026-11-22-2",
+    "issued": "2026-11-22",
+    "statement": "아마존이 2026년 12월 31일까지 Decart 인수 계약을 공식 발표한다",
+    "probability": 0.6,
+    "due": "2026-12-31",
+    "status": "pending"
+  },
+  {
+    "id": "2026-11-22-3",
+    "issued": "2026-11-22",
+    "statement": "미 상무부 산업안보국이 2027년 1월 19일까지 원격 접근 반도체 규칙의 소비자용 칩 적용 범위를 줄이는 개정이나 일반 허가를 발표한다",
+    "probability": 0.2,
+    "due": "2027-01-19",
     "status": "pending"
   }
 ]

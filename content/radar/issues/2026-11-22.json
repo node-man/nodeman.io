@@ -1,0 +1,878 @@
+{
+  "version": 1,
+  "date": "2026-11-22",
+  "publishedAt": "2026-11-22T07:37:07+09:00",
+  "title": "FBI 범죄정보망 침해 의혹, 미 정부 전산 잇단 사고",
+  "lede": "미국 경찰이 함께 쓰는 FBI 범죄정보 데이터베이스(NCIC)가 해커에게 뚫렸을 수 있다는 보도가 나왔습니다. 같은 주 농무부는 보안 사고로 여러 시스템을 내렸고, 국가안보국 내부망도 정비 중 멈췄습니다. 시장에서는 나스닥100 지수가 한 주 동안 10% 넘게 떨어졌습니다.",
+  "raw": "content/radar/raw/2026-11-22.json",
+  "rawCollectedAt": "2026-11-21T21:38:21.488Z",
+  "quick": [
+    "**FBI 범죄정보망 침해 의혹.** 수배·실종·도난 기록을 담은 NCIC에 해커가 들어왔을 가능성을 FBI가 조사 중이라고 CNN·AP 등이 전했습니다.",
+    "**리만 가설 Lean 증명, 커뮤니티가 검증 인증.** Lean FRO와 Mathlib 측이 형식 증명의 명제와 증명이 맞다고 밝혔지만, 사람이 읽을 증명은 아직 없습니다.",
+    "**손정의, SK하이닉스 1조 달러 인수 검토 전언.** 소프트뱅크는 지금은 적극 검토하지 않는다고 했습니다.",
+    "**나스닥100, 한 주 10.4% 하락.** 2020년 이후 가장 나쁜 한 주였고 비트코인은 7월 이후 처음 6만 달러 아래로 내려갔습니다.",
+    "**아마존, Decart 75억 달러 인수 막바지 전언.** 파이낸셜타임스 보도이며 두 회사 모두 확인하지 않았습니다."
+  ],
+  "cover": {
+    "big": "FBI\n범죄정보망\n뚫렸나"
+  },
+  "sections": [
+    {
+      "id": "lead",
+      "kind": "lead",
+      "label": "커버스토리",
+      "title": "경찰 데이터베이스가 흔들릴 때",
+      "stories": [
+        {
+          "id": "fbi-ncic-breach",
+          "kicker": "보안 · 공공 전산",
+          "title": "FBI 범죄정보 데이터베이스 침해 의혹… 농무부·NSA 전산도 같은 주 차질",
+          "hot": {
+            "count": 5,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "미국 시각 20일 CNN은 FBI가 국가범죄정보센터(NCIC) 데이터베이스에 대한 침해로 보이는 사건을 조사하고 있다고 보도했습니다. 조사 내용을 보고받은 관계자들은 해커의 소행으로 보고 있다고 전해졌고, AP와 폭스뉴스도 별도 취재원을 인용해 같은 내용을 전했습니다."
+            },
+            {
+              "type": "p",
+              "text": "**NCIC는 무엇인가.** 연방·주·지방 경찰이 함께 쓰는 FBI의 전국 데이터베이스로, 수배와 실종자, 도난 물품과 총기, 접근금지명령 기록을 담고 총기 구매 신원조회에도 쓰입니다. 어떤 경로로 언제 들어왔는지, 자료가 빠져나갔는지는 아직 알려지지 않았습니다. 특정 단체나 국가와 연결된 정황도 공개되지 않았습니다."
+            },
+            {
+              "type": "p",
+              "text": "**두 번째 FBI 사고.** 폭스뉴스와 AP 계열 보도는 이번이 최근 몇 달 사이 FBI가 겪은 두 번째 사이버 공격이라고 전했습니다. FBI는 논평하지 않았고, 트럼프 대통령은 21일 폭스뉴스 인터뷰에서 막 소식을 들었다며 좋은 일이 아니라고 말했습니다."
+            },
+            {
+              "type": "p",
+              "text": "**같은 주 농무부와 NSA.** 넥스트거브에 따르면 미 농무부는 보안 사고를 발견한 뒤 모든 환경의 데이터베이스 비밀번호를 재설정했고, 그 여파로 농가 지급 도구와 대출 조회 포털 등 여러 시스템이 며칠간 멈췄습니다. 공격 주체와 자료 유출 여부는 밝혀지지 않았습니다. 국가안보국(NSA)의 기밀 내부망은 17일 장애를 겪었는데, NSA는 정기 정비 중 일시적 성능 저하였다고 설명했습니다."
+            },
+            {
+              "type": "unknowns",
+              "title": "아직 모르는 것",
+              "items": [
+                "NCIC에 어떤 경로로 접근했고 자료가 유출되거나 바뀌었는지",
+                "FBI가 침해 사실을 공식 확인할지와 그 시점",
+                "농무부 사고와 FBI 사고 사이에 연관이 있는지"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "CNN — FBI 범죄 데이터베이스 침해 보도",
+              "url": "https://www.cnn.com/2026/11/20/politics/fbi-hacked-again-target-crime-database"
+            },
+            {
+              "title": "BleepingComputer — FBI reportedly hacked again, targeting nationwide police database",
+              "url": "https://www.bleepingcomputer.com/news/security/fbi-reportedly-hacked-again-this-time-targeting-nationwide-police-database/"
+            },
+            {
+              "title": "FOX 4 (AP) — FBI's NCIC criminal database hacked",
+              "url": "https://www.fox4news.com/news/fbis-ncic-criminal-database-hacked-sources-tell-ap"
+            },
+            {
+              "title": "TechCrunch — Trump says reported FBI database hack is 'not good'",
+              "url": "https://techcrunch.com/2026/11/21/trump-says-reported-fbi-database-hack-is-not-good/"
+            },
+            {
+              "title": "The Verge — The FBI and USDA were reportedly hacked",
+              "url": "https://www.theverge.com/tech/1039543/fbi-usda-hacked"
+            },
+            {
+              "title": "Nextgov/FCW — USDA grapples with security breach",
+              "url": "https://www.nextgov.com/cybersecurity/2026/11/usda-grapples-security-breach-it-staff-take-multiple-systems-offline/417350/"
+            },
+            {
+              "title": "경향신문 — 미 FBI, 농무부서도 해킹 의심 사고",
+              "url": "https://www.khan.co.kr/article/202611211723001/"
+            },
+            {
+              "title": "GeekNews — FBI, 범죄정보 데이터베이스 해킹 의심 사건 조사",
+              "url": "https://news.hada.io/topic?id=37597"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "headlines",
+      "kind": "headlines",
+      "label": "헤드라인",
+      "title": "여러 매체가 함께 다룬 이야기",
+      "stories": [
+        {
+          "id": "riemann-lean-navier-stokes",
+          "kicker": "수학 · 형식 검증",
+          "title": "리만 가설 Lean 증명, 커뮤니티가 검증 인증… 나비에-스토크스 폭발 증명 주장도",
+          "followUp": true,
+          "blocks": [
+            {
+              "type": "p",
+              "text": "21일 Lean FRO와 Mathlib 이니셔티브는 블로그에서 전날 공개된 리만 가설 형식 증명의 명제와 증명이 맞다고 인증한다고 밝혔습니다. 증명의 정리가 Mathlib에 정의된 리만 가설과 같은 명제인지 비교 도구로 확인했고, 수십 명이 각자 다시 빌드해 같은 결과를 얻었으며, Lean 커널과 여러 독립 검사기가 결과를 받아들였다는 설명입니다."
+            },
+            {
+              "type": "p",
+              "text": "**남은 단서.** MIT 앤드루 서덜랜드의 검증 자료 페이지에 따르면 증명은 Lean의 표준 공리 세 개만 씁니다. 다만 빌드가 격리 환경 밖에서 돌았고 일부 검사는 공개 시점에 아직 진행 중이었습니다. 일반화 리만 가설(GRH)이 어디까지 포함되는지도 분명하지 않습니다. 수학자들은 기계 검증과 별개로 왜 성립하는지 설명하는 사람이 읽을 증명이 아직 없다고 지적했습니다."
+            },
+            {
+              "type": "p",
+              "text": "**나비에-스토크스.** 같은 날 뉴욕대 트리스탄 버크마스터와 레벤트 알푀게는 AI의 도움을 받아, 외부 힘이 없는 3차원 나비에-스토크스 방정식이 매끄러운 초기값에서 유한 시간 안에 폭발한다는 증명을 공개했습니다. 9월 OpenAI가 낸 결과는 외부 힘을 넣은 경우여서 빈틈으로 꼽혔는데, 이를 없앴다는 주장입니다. Lean 코드가 함께 나왔지만 수치 검증 일부는 Lean 밖에서 이뤄졌고 동료 심사는 거치지 않았습니다."
+            }
+          ],
+          "ai": {
+            "kind": "none",
+            "reason": "앤트로픽 소속 연구자와 Claude가 관련된 이야기라 의견을 덧붙이지 않습니다."
+          },
+          "sources": [
+            {
+              "title": "Lean community blog — Lean verification of the Riemann Hypothesis",
+              "url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/"
+            },
+            {
+              "title": "MIT (A. Sutherland) — RH Lean proof verification files",
+              "url": "https://math.mit.edu/~drew/grh/"
+            },
+            {
+              "title": "Quanta Magazine — Transformation",
+              "url": "https://www.quantamagazine.org/updates/transformation/"
+            },
+            {
+              "title": "Al Jazeera — Riemann hypothesis: has it been cracked?",
+              "url": "https://www.aljazeera.com/news/2026/11/21/riemann-hypothesis-has-the-worlds-most-famous-maths-problem-been-cracked"
+            },
+            {
+              "title": "The Next Web — Navier-Stokes can blow up with no outside force",
+              "url": "https://thenextweb.com/news/navier-stokes-blow-up-without-force-buckmaster-alpoge"
+            },
+            {
+              "title": "Terence Tao — Unforced Euler and Navier-Stokes singularity, and GRH",
+              "url": "https://terrytao.wordpress.com/2026/11/20/unforced-euler-singularity-unforced-navier-stokes-singularity-and-the-generalized-riemann-hypothesis/"
+            },
+            {
+              "title": "GeekNews — 리만 가설의 Lean 검증",
+              "url": "https://news.hada.io/topic?id=37586"
+            }
+          ]
+        },
+        {
+          "id": "softbank-sk-hynix",
+          "kicker": "반도체 · 인수합병",
+          "title": "손정의, SK하이닉스 1조 달러 인수 검토 전언… 소프트뱅크 \"지금은 검토 안 해\"",
+          "hot": {
+            "count": 3,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "디 인포메이션은 미국 시각 20일, 손정의 소프트뱅크 회장이 최근 월가 금융기관들에 SK하이닉스를 최대 약 1조 달러에 사들일 자금을 어떻게 마련할 수 있는지 물었다고 여러 관계자를 인용해 보도했습니다(전언). 소프트뱅크는 여러 기회를 살피지만 이 건은 더 이상 적극 검토하지 않는다고 밝혔습니다."
+            },
+            {
+              "type": "p",
+              "text": "**성사 가능성은 낮게 평가.** 로이터에 따르면 SK하이닉스는 아는 바가 없다고 했고, 국내법상 외국 기업이 인수하려면 정부의 사전 승인이 필요하다고 짚었습니다. SK그룹이 팔 뜻을 보인 정황도 없다고 전해졌습니다. 국내 보도 기준 SK하이닉스 시가총액은 20일 무렵 770조~780조 원대였습니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "The Next Web — SoftBank's Son explored a $1tn SK Hynix buyout",
+              "url": "https://thenextweb.com/news/softbank-son-sk-hynix-buyout-1-trillion-the-information"
+            },
+            {
+              "title": "Seoul Economic Daily — Son Weighed $1 Trillion Bid for SK hynix",
+              "url": "https://en.sedaily.com/world/2026/11/21/son-weighed-1-trillion-bid-for-sk-hynix-before-shelving-idea"
+            },
+            {
+              "title": "지디넷코리아 — 손정의, SK하이닉스 1조달러 인수 검토…현재는 아냐",
+              "url": "https://zdnet.co.kr/view/?no=20261121174004"
+            },
+            {
+              "title": "디지털투데이 — 손정의, 한때 1조달러에 SK하이닉스 인수 검토",
+              "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=717239"
+            }
+          ]
+        },
+        {
+          "id": "us-chip-rule-consumer",
+          "kicker": "반도체 · 수출 규제",
+          "title": "미국 새 반도체 규칙, AI 칩 넘어 스마트폰 칩까지… 트럼프 \"중국엔 구형 칩만\"",
+          "followUp": true,
+          "blocks": [
+            {
+              "type": "p",
+              "text": "미 상무부 산업안보국(BIS)이 이번 주 내놓은 잠정 최종 규칙이 19일 발효됐습니다. 중국·마카오에 본사를 둔 기업에 대규모 연산을 제공하는 해외 데이터센터에 허가를 요구하고, 인도네시아·말레이시아·싱가포르·태국·브라질로 가는 고급 칩에도 허가를 요구하며, 바이든 정부의 AI 확산 규칙은 폐지했습니다."
+            },
+            {
+              "type": "p",
+              "text": "**소비자용 칩까지.** 파운드리와 패키징 업체는 중국에서 설계한 고급 칩을 승인 목록에 없는 한 통제 대상으로 봐야 하고, 비AI 칩 예외도 없어졌습니다. 닛케이아시아는 업계 관계자를 인용해 이 규칙이 일상적인 모바일·소비자용 칩까지 닿는다고 전했고, 파이낸셜타임스는 TSMC와 삼성이 허가를 기다리며 일부 출하를 멈췄다고 보도했습니다. 두 회사는 이를 확인하지 않았습니다."
+            },
+            {
+              "type": "p",
+              "text": "**트럼프 발언.** 트럼프 대통령은 20일 백악관 브리핑에서 중국에는 구형 칩만 팔아야 하고 아예 팔지 않아도 괜찮다고 말했습니다. 미국 기업이 해외에 데이터센터를 짓는 것도 허용하지 않겠다고 했지만, 이를 뒷받침하는 공식 규정은 아직 나오지 않았습니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "Greenberg Traurig — BIS Interim Final Rule Targets Remote Access to Advanced Semiconductors",
+              "url": "https://www.gtlaw.com/de/insights/2026/11/bis-interim-final-rule-targets-remote-access-to-advanced-semiconductors-rescinds-ai-diffusion-rule"
+            },
+            {
+              "title": "UPI via Yahoo — Trump admin. unveils new rule to deny China's access to U.S. AI chips",
+              "url": "https://www.yahoo.com/news/politics/articles/trump-admin-unveils-rule-deny-092835065.html"
+            },
+            {
+              "title": "Nikkei Asia — Chip supply chain warns of broader disruption",
+              "url": "https://asia.nikkei.com/business/tech/semiconductors/chip-supply-chain-warns-of-broader-disruption-from-new-us-export-controls"
+            },
+            {
+              "title": "Reuters via AsiaOne — Trump says only older chips should be sold to China",
+              "url": "https://www.asiaone.com/world/trump-says-only-older-chips-should-be-sold-china"
+            },
+            {
+              "title": "NPR via KPBS — Trump holds press conference after meeting with Xi and Putin",
+              "url": "https://www.kpbs.org/news/international/2026/11/20/trump-holds-press-conference-after-meeting-with-xi-and-putin"
+            }
+          ]
+        },
+        {
+          "id": "tech-selloff-week",
+          "kicker": "시장",
+          "title": "나스닥100, 2020년 이후 최악의 한 주… 비트코인 6만 달러 아래로",
+          "hot": {
+            "count": 3,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "미국 시각 20일 나스닥100 지수는 5.6% 떨어져 한 주 하락 폭이 10.4%가 됐습니다. 2020년 이후 가장 큰 주간 하락입니다. S&P500은 이날 3.7%, 한 주 8.6% 내려 사상 최고치보다 11.6% 낮은 조정 국면에 들어섰습니다."
+            },
+            {
+              "type": "p",
+              "text": "**매체들이 꼽은 배경.** 데이터센터 증설과 AI 자금 조달이 느려질 수 있다는 우려, AI 인프라 투자가 수익으로 이어질지에 대한 의문, 금리 인하 기대 약화가 함께 거론됐고 반도체주가 하락을 이끌었습니다. 비트코인은 7월 이후 처음으로 6만 달러 아래로 내려갔습니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "Yahoo Finance (Stocktwits) — Nasdaq 100 Ends Worst Week Since 2020",
+              "url": "https://finance.yahoo.com/markets/stocks/articles/nasdaq-100-ends-worst-week-013025833.html"
+            },
+            {
+              "title": "StockAnalysis — Nasdaq 100 plunges 5.6%",
+              "url": "https://stockanalysis.com/news/nasdaq-100-ends-just-short-of-bear-market/"
+            },
+            {
+              "title": "Forbes — Bitcoin Plunges Below $60,000",
+              "url": "https://www.forbes.com/sites/digital-assets/2026/11/20/bitcoin-plunges-below-60000-as-risk-off-trading-fuels-widespread-losses/"
+            },
+            {
+              "title": "디지털투데이 — 비트코인 6만달러 붕괴…AI주 투매에 암호화폐도 휘청",
+              "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=717229"
+            }
+          ]
+        },
+        {
+          "id": "amazon-decart",
+          "kicker": "AI · 인수합병",
+          "title": "아마존, AI 스타트업 Decart 75억 달러 인수 막바지 전언",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "파이낸셜타임스는 21일 아마존이 AI 스타트업 Decart를 약 75억 달러에 사들이는 협상이 막바지 단계이며, 이르면 다음 주 발표될 수 있다고 보도했습니다(전언). 협상이 깨질 가능성도 남아 있고 두 회사는 확인하지 않았습니다."
+            },
+            {
+              "type": "p",
+              "text": "**Decart는.** 2023년 이스라엘 엔지니어들이 세운 회사로, 개발자가 AI 작업을 서로 다른 칩 계열 사이에서 옮겨 돌리게 하는 소프트웨어가 주력입니다. 아마존 Trainium3를 일찍 쓴 고객이고, 영상 모델 Lucy와 상호작용형 세계 모델 Oasis도 만듭니다. 5월 투자 유치 때 평가액은 40억 달러였습니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "Seeking Alpha — Amazon nears $7.5B deal to buy AI start-up Decart",
+              "url": "https://seekingalpha.com/news/4675396-amazon-nears-75b-deal-buy-ai-start-up-decart"
+            },
+            {
+              "title": "TradingView — Amazon nearing $7.5B deal to buy Decart: FT",
+              "url": "https://www.tradingview.com/news/seekingalpha:71b3d28ff094b:0-amazon-nearing-7-5b-deal-to-buy-ai-start-up-decart-ft/"
+            },
+            {
+              "title": "ChainCatcher — 아마존, 75억 달러에 Decart 인수 계획",
+              "url": "https://www.chaincatcher.com/ko/article/2306987"
+            },
+            {
+              "title": "Techmeme — Amazon nearing $7.5B deal for Decart",
+              "url": "https://www.techmeme.com/261121/p8#a261121p8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "github",
+      "kind": "github",
+      "label": "GitHub 트렌딩",
+      "title": "어제와 같은 12개, 같은 순서",
+      "dek": "일간 트렌딩 상위 저장소를 각 README 기준으로 요약했습니다. 숫자는 06:38 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "github-trending",
+          "kicker": "GitHub 트렌딩",
+          "title": "어제와 같은 12개, 같은 순서",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "상위 12개 저장소가 어제와 같은 순서로 다시 올랐습니다. 1위 Claude-BugHunter가 1,794개로 스타를 가장 많이 받았고, 6위 firecrawl이 999개로 뒤를 이었습니다. 절반 이상이 코딩 에이전트용 스킬·플러그인이라는 구성도 그대로입니다."
+            },
+            {
+              "type": "share",
+              "title": "상위 12개 저장소의 오늘 받은 스타 비중",
+              "items": [
+                {
+                  "label": "Claude-BugHunter",
+                  "value": 1794
+                },
+                {
+                  "label": "superpowers",
+                  "value": 884
+                },
+                {
+                  "label": "CLI-Anything",
+                  "value": 767
+                },
+                {
+                  "label": "나머지 9개",
+                  "value": 4341
+                }
+              ]
+            },
+            {
+              "type": "bars",
+              "title": "오늘 받은 스타 (2~12위)",
+              "unit": "개",
+              "items": [
+                {
+                  "label": "2. superpowers",
+                  "value": 884
+                },
+                {
+                  "label": "3. CLI-Anything",
+                  "value": 767
+                },
+                {
+                  "label": "4. minimind",
+                  "value": 488
+                },
+                {
+                  "label": "5. plugins",
+                  "value": 261
+                },
+                {
+                  "label": "6. firecrawl",
+                  "value": 999
+                },
+                {
+                  "label": "7. nginx",
+                  "value": 195
+                },
+                {
+                  "label": "8. openvino",
+                  "value": 202
+                },
+                {
+                  "label": "9. diagram-design",
+                  "value": 582
+                },
+                {
+                  "label": "10. last30days-skill",
+                  "value": 566
+                },
+                {
+                  "label": "11. stitch-skills",
+                  "value": 324
+                },
+                {
+                  "label": "12. app-store-compliance",
+                  "value": 724
+                }
+              ],
+              "caption": "GitHub 트렌딩 일간 페이지 기준, 06:38 KST 수집."
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "elementalsouls/Claude-BugHunter",
+                "rank": 1,
+                "language": "Python",
+                "license": "MIT",
+                "stars": 15854,
+                "starsToday": 1794,
+                "verdict": "watch",
+                "def": "Claude Code에 버그 바운티와 외부 레드팀 작업 방법을 가르치는 스킬 묶음입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "스킬 83개와 슬래시 명령 15개, 24개 취약점 유형에 걸친 공개 보고서 패턴 681건(README 기준), Burp MCP 연동을 담았습니다."
+                  ],
+                  [
+                    "대상",
+                    "허가받은 범위에서 버그 바운티나 침투 시험을 하는 보안 연구자입니다."
+                  ],
+                  [
+                    "주의",
+                    "공격 기법을 다루는 도구라 허가된 대상에만 써야 합니다. 실전 검증은 작성자 주장이고, Claude 생태계 도구라 평가는 보수적으로 매겼습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "obra/superpowers",
+                "rank": 2,
+                "language": "Shell",
+                "license": "MIT",
+                "stars": 323646,
+                "starsToday": 884,
+                "verdict": "reference",
+                "def": "코딩 에이전트가 조합형 스킬과 기본 지침을 따라 일정한 개발 절차로 일하게 만드는 프레임워크입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot CLI 등 여러 에이전트에 설치 안내가 있습니다."
+                  ],
+                  [
+                    "구성",
+                    "조합해 쓰는 스킬들과, 에이전트가 그 스킬을 제때 쓰도록 하는 초기 지침으로 이뤄져 있습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "HKUDS/CLI-Anything",
+                "rank": 3,
+                "language": "Python",
+                "license": "Apache-2.0",
+                "stars": 62007,
+                "starsToday": 767,
+                "verdict": "experiment",
+                "def": "기존 소프트웨어를 AI 에이전트가 다루기 쉬운 명령줄 도구로 감싸 주는 프로젝트입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "`pip install cli-anything-hub`로 허브를 설치한 뒤 커뮤니티가 만든 CLI를 골라 설치합니다."
+                  ],
+                  [
+                    "동작",
+                    "CAD, 3D, 다이어그램, 자막 같은 작업용 CLI를 에이전트가 호출하고 결과를 미리 보며 반복하게 합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "jingyaogong/minimind",
+                "rank": 4,
+                "language": "Python",
+                "license": "Apache-2.0",
+                "stars": 68107,
+                "starsToday": 488,
+                "verdict": "reference",
+                "def": "64M 규모의 아주 작은 언어 모델을 처음부터 직접 학습해 보는 교육용 프로젝트입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "사전학습, SFT, LoRA, DPO, PPO·GRPO 같은 강화학습, 도구 사용, 증류까지 PyTorch로 직접 구현했습니다."
+                  ],
+                  [
+                    "주의",
+                    "2시간·저비용 학습은 작성자 주장이며, 결과 모델은 학습용이지 실사용 모델이 아닙니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "cursor/plugins",
+                "rank": 5,
+                "language": "TypeScript",
+                "license": null,
+                "stars": 18068,
+                "starsToday": 261,
+                "verdict": "watch",
+                "def": "Cursor 편집기의 공식 플러그인 모음과 플러그인 규격입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "플러그인마다 최상위 디렉터리와 `.cursor-plugin/plugin.json` 매니페스트를 둡니다."
+                  ],
+                  [
+                    "주의",
+                    "저장소에 라이선스가 명시돼 있지 않습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "firecrawl/firecrawl",
+                "rank": 6,
+                "language": "TypeScript",
+                "license": "AGPL-3.0",
+                "stars": 206091,
+                "starsToday": 999,
+                "verdict": "try",
+                "def": "웹사이트를 에이전트가 읽기 좋은 마크다운으로 바꾸고 검색·스크래핑 API를 제공하는 도구입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "Firecrawl Local은 단일 실행 파일로 돌아가며 MCP 서버와 localhost API를 함께 띄웁니다."
+                  ],
+                  [
+                    "구성",
+                    "로컬 실행, 호스팅 서비스, 자체 서버 배포 세 가지 방식을 지원합니다."
+                  ],
+                  [
+                    "주의",
+                    "AGPL-3.0이라 수정한 서버를 서비스로 제공하면 소스 공개 의무가 생길 수 있습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "nginx/nginx",
+                "rank": 7,
+                "language": "C",
+                "license": "BSD-2-Clause",
+                "stars": 32712,
+                "starsToday": 195,
+                "verdict": "reference",
+                "def": "웹 서버, 리버스 프록시, 로드 밸런서로 널리 쓰이는 NGINX의 공식 오픈소스 저장소입니다.",
+                "rows": [
+                  [
+                    "주의",
+                    "최근 공개된 결함(CVE-2026-123007)이 있으니 쓰는 배포판의 보안 업데이트 여부를 확인하는 편이 좋습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "openvinotoolkit/openvino",
+                "rank": 8,
+                "language": "C++",
+                "license": "Apache-2.0",
+                "stars": 11912,
+                "starsToday": 202,
+                "verdict": "reference",
+                "def": "인텔이 주도하는 딥러닝 모델 추론 최적화·배포 도구입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "PyTorch, TensorFlow, ONNX 등으로 만든 모델을 여러 하드웨어에서 빠르게 돌리려는 개발자입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "cathrynlavery/diagram-design",
+                "rank": 9,
+                "language": "HTML",
+                "license": "MIT",
+                "stars": 69752,
+                "starsToday": 582,
+                "verdict": "try",
+                "def": "에이전트가 다이어그램을 자체 완결형 HTML+SVG 파일 하나로 그리게 하는 스킬입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "`npx skills add cathrynlavery/diagram-design`로 설치하고 평소 말로 그림을 요청합니다."
+                  ],
+                  [
+                    "구성",
+                    "README 기준 51종의 다이어그램 형식과 브랜드 색 맞춤, draw.io·Mermaid 가져오기, PNG·SVG 내보내기를 지원합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "mvanhorn/last30days-skill",
+                "rank": 10,
+                "language": "Python",
+                "license": "MIT",
+                "stars": 71924,
+                "starsToday": 566,
+                "verdict": "experiment",
+                "def": "한 주제를 Reddit, X, YouTube, Hacker News, Polymarket, 웹에서 최근 30일치로 찾아 요약하는 에이전트 스킬입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "Claude Code 플러그인 마켓플레이스나 `npx skills add`로 설치합니다."
+                  ],
+                  [
+                    "주의",
+                    "요약 품질은 각 플랫폼에서 얼마나 가져올 수 있느냐에 좌우됩니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "google-labs-code/stitch-skills",
+                "rank": 11,
+                "language": "TypeScript",
+                "license": "Apache-2.0",
+                "stars": 11372,
+                "starsToday": 324,
+                "verdict": "watch",
+                "def": "구글의 UI 디자인 도구 Stitch를 코딩 에이전트에서 쓰게 하는 스킬·플러그인 모음입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "Codex, Antigravity, Gemini CLI, Claude Code, Cursor 등 Agent Skills 규격을 따르는 에이전트입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "mjmirza/app-store-compliance",
+                "rank": 12,
+                "language": "Shell",
+                "license": "NOASSERTION",
+                "stars": 3319,
+                "starsToday": 724,
+                "verdict": "experiment",
+                "def": "앱스토어와 구글 플레이 심사 반려를 미리 막기 위한 점검 규칙 모음입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "문서화된 반려 사례 117건과 해결법, 제출 전 자동 점검을 담았습니다."
+                  ],
+                  [
+                    "주의",
+                    "GitHub가 인식하는 표준 라이선스가 아니므로 사내에서 쓰기 전에 조건을 확인해야 합니다."
+                  ]
+                ]
+              }
+            }
+          ],
+          "sources": [
+            {
+              "title": "GitHub Trending",
+              "url": "https://github.com/trending"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "korea",
+      "kind": "korea",
+      "label": "국내",
+      "title": "삼성 AI 안경, 울산 AI 데이터센터, 와콤 인수",
+      "stories": [
+        {
+          "id": "korea-brief",
+          "kicker": "국내",
+          "title": "삼성 AI 안경 12월 출시, MBK는 와콤 인수",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "k": "삼성 AI 안경",
+                  "text": "삼성전자의 첫 AI 안경이 12월 10일 한국과 미국에서 먼저 나옵니다. 구글 제미나이 기반으로 번역, 길 안내, 회의 요약을 지원합니다."
+                },
+                {
+                  "k": "울산 AI 데이터센터",
+                  "text": "이재명 대통령이 21일 SK 울산 AI 데이터센터 건설 현장을 찾아 AI 데이터센터를 경부고속도로에 빗대고 정부 지원을 약속했습니다. SK에 따르면 공정률은 71%이고 2027년 말 가동 예정입니다."
+                },
+                {
+                  "k": "MBK·와콤",
+                  "text": "MBK파트너스가 S펜 기술을 가진 일본 와콤을 공개매수로 약 1,366억 엔(약 1조 1,600억 원)에 사들입니다. 삼성전자 싱가포르 법인은 지분을 넘긴 뒤 재출자 방식으로 약 6.3%를 유지합니다."
+                },
+                {
+                  "k": "자바포셸",
+                  "text": "SK쉴더스가 OpenJDK의 하드웨어 가속 Base64 디코더 결함(자바포셸) 점검 가이드를 냈습니다. AVX-512를 쓰는 x86 CPU에서만 발생하며 로그인 없이 원격 코드 실행이 가능할 수 있고, 오라클은 미국 시각 17일 패치를 냈습니다."
+                },
+                {
+                  "k": "LG유플러스",
+                  "text": "LG그룹 2027년 임원 인사에서 LG유플러스 홍범식 대표가 유임됐고, 회사는 전무 승진 2명과 신규 상무 9명을 선임했습니다."
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "전자신문 — 삼성 AI 안경 출시",
+              "url": "https://www.etnews.com/20261120000037"
+            },
+            {
+              "title": "전자신문 — 울산 SK AI데이터센터 찾은 李",
+              "url": "https://www.etnews.com/20261121000052"
+            },
+            {
+              "title": "이데일리 — MBK, 日 와콤 1조원대 인수",
+              "url": "https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=02036886645648016"
+            },
+            {
+              "title": "SK쉴더스 — OpenJDK Base64 자바포셸 점검",
+              "url": "https://www.skshieldus.com/security-insights/trends/daily-openjdk-base64-java4shell-update-check"
+            },
+            {
+              "title": "블로터 — 로그인 없이 서버 뚫리는 자바 취약점",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=679089"
+            },
+            {
+              "title": "블로터 — LGU+ 홍범식 유임",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=679307"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading",
+      "kind": "reading",
+      "label": "읽을거리",
+      "title": "일요일에 읽을 6편",
+      "dek": "Hacker News에서 골랐습니다. HN 점수는 06:38 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "reads",
+          "kicker": "읽을거리",
+          "title": "일요일에 읽을 6편",
+          "blocks": [
+            {
+              "type": "reads",
+              "items": [
+                {
+                  "title": "Inkling 2 Mini",
+                  "url": "https://thinkingmachines.ai/news/inkling-2-mini/",
+                  "via": "Thinking Machines",
+                  "why": "Thinking Machines가 Inkling 2 계열의 작은 모델을 소개한 글로, GeekNews에는 5.4GB 메모리에서 돌린 사례도 올라왔습니다.",
+                  "hn": {
+                    "id": "50581260",
+                    "points": 1324,
+                    "comments": 273
+                  }
+                },
+                {
+                  "title": "브라질 국세청, 세금 계산기 코드를 MIT 라이선스로 공개",
+                  "url": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/novembro/receita-federal-publica-primeiro-codigo-fonte-aberto-no-github-e-amplia-transparencia-da-reforma-tributaria",
+                  "via": "Receita Federal",
+                  "why": "브라질 국세청이 세제 개편용 세금 계산 도구 코드를 처음으로 GitHub에 공개한 사례입니다.",
+                  "hn": {
+                    "id": "50532613",
+                    "points": 626,
+                    "comments": 200
+                  }
+                },
+                {
+                  "title": "We promoted developers into architects without informing them",
+                  "url": "https://manidoraisamy.com/developer-to-architect.html",
+                  "via": "manidoraisamy.com",
+                  "why": "개발자들이 알지 못하는 사이 설계자의 일을 떠맡게 됐다는 주장을 담은 에세이로, 댓글 토론이 활발합니다.",
+                  "hn": {
+                    "id": "50579331",
+                    "points": 560,
+                    "comments": 303
+                  }
+                },
+                {
+                  "title": "Why there are still no non-WebKit browsers on iOS",
+                  "url": "https://blog.mozilla.org/en/mozilla/internet-policy/apple-ios-browser-engine-rules/",
+                  "via": "Mozilla",
+                  "why": "애플이 다른 브라우저 엔진을 허용한 뒤에도 iOS에 WebKit이 아닌 브라우저가 나오지 않는 이유를 모질라 입장에서 정리했습니다.",
+                  "hn": {
+                    "id": "50575644",
+                    "points": 411,
+                    "comments": 234
+                  }
+                },
+                {
+                  "title": "My monitor was cutting my download speed by 75%",
+                  "url": "https://blog.tymscar.com/posts/studiodisplayethernet/",
+                  "via": "tymscar",
+                  "why": "모니터를 거친 유선 연결이 다운로드 속도를 크게 떨어뜨린 원인을 추적한 글입니다.",
+                  "hn": {
+                    "id": "50587875",
+                    "points": 390,
+                    "comments": 200
+                  }
+                },
+                {
+                  "title": "RCE in GnuPG",
+                  "url": "https://lists.gnupg.org/pipermail/gnupg-announce/2026q4/000517.html",
+                  "via": "gnupg-announce",
+                  "why": "GnuPG의 원격 코드 실행 결함 공지로, 서명·암호화에 gpg를 쓰는 시스템이라면 배포판 업데이트를 확인할 만합니다.",
+                  "hn": {
+                    "id": "50587208",
+                    "points": 204,
+                    "comments": 82
+                  }
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "Hacker News",
+              "url": "https://news.ycombinator.com/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "column",
+      "kind": "column",
+      "label": "AI의 시선",
+      "title": "유출보다 무서운 것은 변조",
+      "dek": "AI가 쓴 칼럼입니다. 사실 보도가 아닌 의견입니다.",
+      "stories": [
+        {
+          "id": "column-body",
+          "kicker": "AI의 시선",
+          "title": "유출보다 무서운 것은 변조",
+          "blocks": [
+            {
+              "type": "p",
+              "dropcap": true,
+              "text": "데이터베이스 침해 소식이 나오면 보통 몇 건이 새어 나갔는지부터 묻습니다. 그런데 NCIC 같은 시스템에서는 질문이 달라야 합니다. 경찰이 도로 위에서 조회하는 수배 기록, 총기 구매 때 확인하는 신원 기록은 읽히는 것보다 바뀌는 것이 더 위험합니다. 전직 FBI 관계자가 가장 걱정한 대목도 자료가 고쳐졌을 가능성이었습니다."
+            },
+            {
+              "type": "p",
+              "text": "이번 주 미국 정부 전산에서 일어난 세 가지 일은 같은 약점을 가리킨다고 봅니다. 농무부는 침입을 막으려고 비밀번호를 한꺼번에 바꿨고, 그 대가로 농가 지급 시스템이 며칠 멈췄습니다. NSA 내부망은 정비 도중 멈췄습니다. 공격이든 실수든, 핵심 시스템이 무결성을 의심받는 순간 되돌아갈 기준점을 빨리 찾기 어렵다는 점이 드러났습니다."
+            },
+            {
+              "type": "pull",
+              "text": "무엇이 새어 나갔는지보다, 무엇이 맞는지 증명할 수 있느냐가 더 큰 문제입니다."
+            },
+            {
+              "type": "p",
+              "text": "대응의 순서도 거기서 나와야 합니다. 변경 이력을 위조할 수 없게 남기고, 원본과 대조할 수 있는 사본을 따로 두고, 조회하는 쪽이 기록의 출처를 확인할 수 있게 하는 일입니다. 침입을 완벽히 막는 것은 어렵지만, 고쳐진 기록을 찾아내는 능력은 미리 갖춰 둘 수 있습니다."
+            },
+            {
+              "type": "ledger"
+            }
+          ],
+          "sources": []
+        }
+      ]
+    }
+  ]
+}
