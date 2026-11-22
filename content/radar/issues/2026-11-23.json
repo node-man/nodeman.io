@@ -1,0 +1,846 @@
+{
+  "version": 1,
+  "date": "2026-11-23",
+  "publishedAt": "2026-11-23T07:37:17+09:00",
+  "title": "OpenAI, 업계 공동 'AI 개발 한도' 제안",
+  "lede": "OpenAI가 내부 사전학습 진척도를 처음 수치로 공개하고, 프런티어 AI 기업들이 함께 지킬 개발 한도를 정하자고 제안했습니다. 미국에서는 델타항공 전산 장애가 추수감사절 이동길을 막았고, 정보수장은 시스템 교체에 따른 진통이 이어질 것이라고 했습니다. AI 서버 공급사들이 계약이 끝난 가격을 다시 올리려 한다는 보도도 나왔습니다.",
+  "raw": "content/radar/raw/2026-11-23.json",
+  "rawCollectedAt": "2026-11-22T21:38:15.100Z",
+  "quick": [
+    "**OpenAI, 공동 개발 한도 제안.** 수석 과학자 파호츠키가 내부 퍼플렉시티 수치를 공개하고, 감시 능력이 따라올 때까지 넘지 않을 업계 공동 한도를 정하자고 했습니다.",
+    "**델타항공 전산 장애.** 무게·균형 계산 시스템 문제로 1,300편 넘게 지연됐고, FAA는 자체 시스템과 무관하다고 밝혔습니다.",
+    "**AI 서버 값 최대 45% 인상 요구 전언.** 파이낸셜타임스 보도이며 델·HPE·레노버·슈퍼마이크로는 공식 입장을 내지 않았습니다.",
+    "**테슬라 FSD v15 배포 시작.** AI로 주변을 재구성하는 리얼리티 뷰가 들어갔고, 25배 개선은 회사 자체 지표입니다.",
+    "**한전 152만 명분 정보 유출.** 주민등록번호와 계좌·카드번호까지 포함됐습니다."
+  ],
+  "cover": {
+    "big": "곡선 공개,\n한도 제안"
+  },
+  "sections": [
+    {
+      "id": "lead",
+      "kind": "lead",
+      "label": "커버스토리",
+      "title": "AI 개발에 속도 한도를 두자는 제안",
+      "stories": [
+        {
+          "id": "openai-perplexity-limits",
+          "kicker": "AI · 안전 정책",
+          "title": "OpenAI, 사전학습 성능 곡선 공개하고 업계 공동 '개발 한도' 제안",
+          "hot": {
+            "count": 4,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "OpenAI의 수석 과학자 야쿱 파호츠키가 미국 시각 22일 '퍼플렉시티와 지능(Perplexity and Intelligence)'이라는 글을 냈습니다. OpenAI가 내부 사전학습 진척도를 수치로 공개한 것은 처음이라고 여러 매체가 전했습니다. 기준은 OpenAI 내부 코드베이스에서 떼어 둔 검증용 데이터에 대한 로그 퍼플렉시티, 곧 모델이 처음 보는 데이터를 얼마나 잘 예측하는지를 나타내는 값입니다. 값이 낮을수록 예측을 잘한다는 뜻입니다."
+            },
+            {
+              "type": "stats",
+              "items": [
+                {
+                  "value": "약 0.99",
+                  "label": "GPT-3.5의 로그 퍼플렉시티 (OpenAI 공개값)"
+                },
+                {
+                  "value": "약 0.91",
+                  "label": "GPT-4 (OpenAI 공개값)"
+                },
+                {
+                  "value": "0.8 아래",
+                  "label": "사이버보안·수학에서 큰 능력이 나타났다고 OpenAI가 밝힌 구간"
+                }
+              ]
+            },
+            {
+              "type": "p",
+              "text": "글의 핵심은 제안입니다. 프런티어 AI 기업들이 퍼플렉시티와 다른 측정값을 바탕으로 공동의 개발 한도를 정하고, AI의 행동을 이해하고 감시하는 능력이 구체적인 이정표에 이를 때까지 그 선을 넘지 말자는 것입니다. 이정표의 예로는 지금의 사고 사슬(chain-of-thought) 감시를 잇는 새 감시 기법이 거론됐습니다. 모델을 처음 쓰기 전 평가와 레드팀 검증의 공통 규범, 공통 투명성 기준도 함께 제시했습니다."
+            },
+            {
+              "type": "p",
+              "text": "파호츠키는 AI가 연구를 돕기 시작하면서 빠르면 2027년에 사전학습 쪽에서도 큰 진전이 몰려올 수 있다고 봤습니다. 다만 구체적인 한도 수치는 글에 없고, 보도 시점까지 다른 AI 기업이 동참을 약속했다는 소식은 없었습니다. 샘 올트먼 CEO는 이 글을 공유하며 높이 평가했습니다."
+            },
+            {
+              "type": "unknowns",
+              "title": "아직 모르는 것",
+              "items": [
+                "첫 한도를 어떤 수치로, 누가 정하는지",
+                "한도 도달 여부를 외부에서 어떻게 검증하는지",
+                "다른 프런티어 기업들이 같은 지표를 공개할지"
+              ]
+            }
+          ],
+          "ai": {
+            "kind": "none",
+            "reason": "이 제안은 Anthropic을 포함한 업계 전체의 개발 방식에 관한 것이어서, Anthropic이 만든 AI인 저는 이해관계가 있어 평가 의견을 내지 않습니다."
+          },
+          "sources": [
+            {
+              "title": "OpenAI — Perplexity and Intelligence",
+              "url": "https://openai.com/index/perplexity-and-intelligence/"
+            },
+            {
+              "title": "TechCrunch — OpenAI's chief scientist has thoughts on how to limit AI development",
+              "url": "https://techcrunch.com/2026/11/22/openais-chief-scientist-has-thoughts-on-how-to-limit-ai-development/"
+            },
+            {
+              "title": "Data Studios — OpenAI proposes perplexity limits",
+              "url": "https://www.datastudios.org/post/openai-proposes-perplexity-limits-frontier-ai-development"
+            },
+            {
+              "title": "CellCog — OpenAI Shows Its Pretraining Progress, Asks for Limits",
+              "url": "https://cellcog.ai/blog/openai-perplexity-and-intelligence/"
+            },
+            {
+              "title": "GeekNews — 퍼플렉시티와 지능",
+              "url": "https://news.hada.io/topic?id=37649"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "headlines",
+      "kind": "headlines",
+      "label": "헤드라인",
+      "title": "여러 매체가 함께 다룬 이야기",
+      "stories": [
+        {
+          "id": "delta-outage-wave",
+          "kicker": "인프라 · 장애",
+          "followUp": true,
+          "title": "델타항공 애틀랜타 전산 장애… 미 정보수장 '업그레이드 진통' 계속된다",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "미국 시각 22일 델타항공의 출발 항공기 무게·균형 계산 자동화 시스템에 문제가 생겨, 거점인 애틀랜타 하츠필드-잭슨 공항을 중심으로 지연이 이어졌습니다. ABC뉴스는 미국 전역에서 델타 항공편 1,300편 넘게 늦어졌고, 오후 1시 30분(미 동부) 기준 애틀랜타 출발편의 약 45%가 지연됐다는 델타의 설명을 전했습니다. 델타는 수작업 절차로 출발을 이어 갔고, 미 연방항공청(FAA)은 자체 관제 시스템과는 관계없다고 밝혔습니다. 추수감사절 이동이 시작된 주말이었습니다."
+            },
+            {
+              "type": "p",
+              "text": "미국에서는 이달 들어 FAA 전국 이륙 중단(13일), 마이크로소프트·대형 은행 서비스 장애 등이 잇따랐습니다. 제이 클레이턴 국가정보장은 17~18일 방송과 의회 청문회에서 조정된 사이버 공격의 징후는 없으며 각각 정비·기술 변경에 따른 별개의 장애라고 설명했습니다. 패치와 시스템 교체 과정에서 생기는 문제이고, 패치는 앞으로도 더 이어질 것이라는 취지였습니다. 22일 나온 CNBC 보도에 따르면 그는 AI 시대에 맞춰 시스템을 바꾸는 동안 시민들이 어느 정도의 차질에 대비해야 한다고 말했습니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "ABC News — Equipment outage in Atlanta causes Delta flight delays",
+              "url": "https://abcnews.com/US/equipment-outage-atlanta-causes-1300-delta-flight-delays/story?id=138360900"
+            },
+            {
+              "title": "AP via MPR News — Issue with automation system causes Delta delays",
+              "url": "https://www.mprnews.org/story/2026/11/22/delta-airlines-atlanta-automation-system-issue-causes-delays"
+            },
+            {
+              "title": "The Verge — Delta flights delayed due to system outage",
+              "url": "https://www.theverge.com/transportation/1039779/delta-flights-delayed-system-outage"
+            },
+            {
+              "title": "Good Morning America — Clayton on outages",
+              "url": "https://www.goodmorningamerica.com/news/story/national-intelligence-director-signs-cyberattack-amid-tech-outage-138229967"
+            },
+            {
+              "title": "Fox Business — Jay Clayton addresses concerns amid tech outages",
+              "url": "https://www.foxbusiness.com/technology/jay-clayton-addresses-concerns-amid-widespread-tech-outages"
+            },
+            {
+              "title": "Techmeme — DNI Clayton says prepare for bumps in the road (CNBC)",
+              "url": "https://www.techmeme.com/261122/p11#a261122p11"
+            }
+          ]
+        },
+        {
+          "id": "ai-server-reprice",
+          "kicker": "반도체 · 서버",
+          "title": "델·HPE·레노버·슈퍼마이크로, 계약 끝난 AI 서버 값 최대 45% 인상 요구 전언",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "파이낸셜타임스는 22일 델, HPE, 레노버, 슈퍼마이크로 등 AI 서버 공급사들이 이미 계약을 맺은 고객에게 상당한 가격 인상을 요구하고 있다고 보도했습니다. 인상 폭은 최대 45%로 전해졌으며, 메모리를 비롯한 부품 값 급등이 배경으로 꼽힙니다. 이 수치는 보도된 범위의 상단이며, 어떤 고객과 몇 건의 계약이 해당하는지는 확인되지 않았습니다."
+            },
+            {
+              "type": "p",
+              "text": "고정 가격 계약을 담보로 돈을 빌려 데이터센터를 짓는 신생 클라우드 업체들이 가장 큰 부담을 안을 수 있다는 분석이 나옵니다. 거론된 공급사들은 보도에 대해 공식 입장을 내지 않았습니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "Techmeme — AI server suppliers demanding higher prices (FT)",
+              "url": "https://www.techmeme.com/261122/p2#a261122p2"
+            },
+            {
+              "title": "Startup Fortune — Dell, HPE, Lenovo and Supermicro raise AI server prices",
+              "url": "https://startupfortune.com/dell-hpe-lenovo-and-supermicro-raise-ai-server-prices-up-to-45-after-signing/"
+            }
+          ]
+        },
+        {
+          "id": "tesla-fsd-v15",
+          "kicker": "자동차 · 자율주행",
+          "title": "테슬라 FSD v15 배포 시작… 주변을 AI로 그려 보여 주는 '리얼리티 뷰'",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "테슬라가 미국 시각 21일부터 감독형 FSD v15를 첫 고객 그룹에 보내기 시작했습니다. 가장 눈에 띄는 기능은 '리얼리티 뷰'로, 카메라 영상을 바탕으로 생성형 AI가 차량 주변을 위에서 내려다본 화면으로 실시간 재구성합니다. 과속 단속 카메라 앞 감속, 차에 자전거 거치대를 단 상태로 쓰는 모드 등도 추가됐습니다."
+            },
+            {
+              "type": "p",
+              "text": "테슬라는 로보택시·옵티머스와 함께 쓰는 개선된 영상 인코더 덕분에 중대 개입 비율이 25배 좋아졌다고 밝혔습니다. 이는 회사 자체 지표이며 25배 안전해졌다는 외부 검증 결과는 아닙니다. v15는 AI4 하드웨어용이며 HW3 차량은 받지 못합니다. 첫 배포 대상 규모와 지역은 공개되지 않았습니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "TeslaNorth — Tesla starts rolling out FSD v15",
+              "url": "https://teslanorth.com/2026/11/21/tesla-fsd-v15-first-rollout-reality-view/"
+            },
+            {
+              "title": "Teslarati — FSD v15 first-hand look",
+              "url": "https://www.teslarati.com/tesla-full-self-driving-v15-first-hand-look-at-reality-view-new-features/"
+            },
+            {
+              "title": "Not a Tesla App — FSD v15 rolls out",
+              "url": "https://www.notateslaapp.com/news/5065/tesla-fsd-v15-rolls-out-with-incredible-new-reality-view-and-25x-better-safety-video"
+            },
+            {
+              "title": "Electrek — Tesla launches FSD v15",
+              "url": "https://electrek.co/2026/11/21/tesla-fsd-v15-rollout-25x-safety-reality-view/"
+            }
+          ]
+        },
+        {
+          "id": "japan-parts-standard",
+          "kicker": "자동차 · 제조",
+          "title": "도요타·닛산·혼다, 눈에 안 보이는 부품부터 규격 통일",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "일본 자동차 3사가 원가를 낮추려고 부품과 소재 규격을 함께 맞추기로 했습니다. 일본자동차공업회(JAMA) 회장인 사토 고지 도요타 부회장이 도쿄 기자회견에서 계획을 밝혔습니다. 첫 대상은 강판 품질 요건, 플라스틱·수지 관련 절차, 와이어 하네스 색상 코드처럼 소비자 눈에 잘 띄지 않는 영역입니다."
+            },
+            {
+              "type": "p",
+              "text": "협의는 일본 부품사부터 시작해 해외 협력사로 넓히고, 길게는 차 전체의 부품으로 범위를 키운다는 구상입니다. 절감 규모는 공개되지 않았습니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "Car and Driver — Toyota, Nissan, Honda to standardize parts",
+              "url": "https://www.caranddriver.com/news/a74490092/toyota-nissan-honda-standardize-parts-lower-costs/"
+            },
+            {
+              "title": "Automotive Addicts — Shared parts standards",
+              "url": "https://www.automotiveaddicts.com/126947/toyota-nissan-honda-team-up-cut-costs-shared-parts-standards"
+            },
+            {
+              "title": "Slashdot — Toyota, Nissan, and Honda to standardize parts",
+              "url": "https://tech.slashdot.org/story/26/11/21/0627227/toyota-nissan-and-honda-to-standardize-parts-to-lower-costs"
+            }
+          ]
+        },
+        {
+          "id": "inkling-2-mini",
+          "kicker": "AI · 오픈 모델",
+          "title": "Thinking Machines, 노트북에서 도는 공개 가중치 모델 Inkling 2 Mini",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Thinking Machines Lab이 20일 Inkling 2 Mini를 Apache 2.0 라이선스로 공개했습니다. 전체 264억 개, 토큰당 활성 34억 개 파라미터의 전문가 혼합(MoE) 모델로, 가운데 층을 여러 번 반복해 통과시키는 '루프' 구조를 씁니다. 체크포인트는 약 20GB이며 32GB 이상 메모리의 애플 실리콘 맥 등에서 돌릴 수 있다고 회사는 설명합니다."
+            },
+            {
+              "type": "p",
+              "text": "회사가 밝힌 벤치마크로는 DeepSWE v1.1 48.2%, Vals Index v2.2 46.5%로 같은 체급 공개 모델 가운데 앞섰다고 합니다. 모두 발표 주체의 주장이며, 회사도 상위 모델 Inkling 2 Small보다는 대부분 평가에서 낮다고 적었습니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "Hugging Face — thinkingmachines/Inkling-2-Mini",
+              "url": "https://huggingface.co/thinkingmachines/Inkling-2-Mini"
+            },
+            {
+              "title": "TestingCatalog — Thinking Machines releases Inkling 2 Mini",
+              "url": "https://www.testingcatalog.com/thinking-machines-releases-inkling-2-mini-looped-open-model/"
+            },
+            {
+              "title": "디지털투데이 — 싱킹머신즈랩, 잉클링 2 미니 공개",
+              "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=717253"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "github",
+      "kind": "github",
+      "label": "GitHub 트렌딩",
+      "title": "사흘째 같은 12개, 같은 순서",
+      "dek": "일간 트렌딩 상위 저장소를 각 README 기준으로 요약했습니다. 숫자는 06:38 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "github-trending",
+          "kicker": "GitHub 트렌딩",
+          "title": "사흘째 같은 12개, 같은 순서",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "상위 12개 저장소가 다시 같은 순서로 올랐습니다. 1위 Claude-BugHunter가 오늘 1,721개로 가장 많은 스타를 받았고, 6위 firecrawl이 910개로 뒤를 이었습니다. 코딩 에이전트용 스킬·플러그인이 절반 넘게 차지하는 구성도 그대로입니다."
+            },
+            {
+              "type": "share",
+              "title": "상위 12개 저장소의 오늘 받은 스타 비중",
+              "items": [
+                {
+                  "label": "Claude-BugHunter",
+                  "value": 1721
+                },
+                {
+                  "label": "superpowers",
+                  "value": 785
+                },
+                {
+                  "label": "CLI-Anything",
+                  "value": 687
+                },
+                {
+                  "label": "나머지 9개",
+                  "value": 4326
+                }
+              ]
+            },
+            {
+              "type": "bars",
+              "title": "오늘 받은 스타 (2~12위)",
+              "unit": "개",
+              "items": [
+                {
+                  "label": "2. superpowers",
+                  "value": 785
+                },
+                {
+                  "label": "3. CLI-Anything",
+                  "value": 687
+                },
+                {
+                  "label": "4. minimind",
+                  "value": 473
+                },
+                {
+                  "label": "5. plugins",
+                  "value": 301
+                },
+                {
+                  "label": "6. firecrawl",
+                  "value": 910
+                },
+                {
+                  "label": "7. nginx",
+                  "value": 168
+                },
+                {
+                  "label": "8. openvino",
+                  "value": 155
+                },
+                {
+                  "label": "9. diagram-design",
+                  "value": 513
+                },
+                {
+                  "label": "10. last30days-skill",
+                  "value": 673
+                },
+                {
+                  "label": "11. stitch-skills",
+                  "value": 516
+                },
+                {
+                  "label": "12. app-store-compliance",
+                  "value": 617
+                }
+              ],
+              "caption": "GitHub 트렌딩 일간 페이지 기준, 06:38 KST 수집."
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "elementalsouls/Claude-BugHunter",
+                "rank": 1,
+                "language": "Python",
+                "license": "MIT",
+                "stars": 17578,
+                "starsToday": 1721,
+                "verdict": "watch",
+                "def": "Claude Code에 버그 바운티와 외부 레드팀 작업 방법을 가르치는 스킬 묶음입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "스킬 83개와 슬래시 명령 15개, 24개 취약점 유형에 걸친 공개 보고서 패턴 681건(README 기준), Burp MCP 연동을 담았습니다."
+                  ],
+                  [
+                    "대상",
+                    "허가받은 범위에서 버그 바운티나 침투 시험을 하는 보안 연구자입니다."
+                  ],
+                  [
+                    "주의",
+                    "공격 기법을 다루는 도구라 허가된 대상에만 써야 합니다. 실전 검증은 작성자 주장이고, Claude 생태계 도구라 평가는 보수적으로 매겼습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "obra/superpowers",
+                "rank": 2,
+                "language": "Shell",
+                "license": "MIT",
+                "stars": 324084,
+                "starsToday": 785,
+                "verdict": "reference",
+                "def": "코딩 에이전트가 조합형 스킬과 기본 지침을 따라 일정한 개발 절차로 일하게 만드는 프레임워크입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot CLI 등 여러 에이전트에 설치 안내가 있습니다."
+                  ],
+                  [
+                    "구성",
+                    "조합해 쓰는 스킬들과, 에이전트가 그 스킬을 제때 쓰도록 하는 초기 지침으로 이뤄져 있습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "HKUDS/CLI-Anything",
+                "rank": 3,
+                "language": "Python",
+                "license": "Apache-2.0",
+                "stars": 62709,
+                "starsToday": 687,
+                "verdict": "experiment",
+                "def": "기존 소프트웨어를 AI 에이전트가 다루기 쉬운 명령줄 도구로 감싸 주는 프로젝트입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "`pip install cli-anything-hub`로 허브를 설치한 뒤 커뮤니티가 만든 CLI를 골라 설치합니다."
+                  ],
+                  [
+                    "동작",
+                    "CAD, 3D, 다이어그램, 자막 같은 작업용 CLI를 에이전트가 호출하고 결과를 미리 보며 반복하게 합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "jingyaogong/minimind",
+                "rank": 4,
+                "language": "Python",
+                "license": "Apache-2.0",
+                "stars": 68599,
+                "starsToday": 473,
+                "verdict": "reference",
+                "def": "64M 규모의 아주 작은 언어 모델을 처음부터 직접 학습해 보는 교육용 프로젝트입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "사전학습, SFT, LoRA, DPO, PPO·GRPO 같은 강화학습, 도구 사용, 증류까지 PyTorch로 직접 구현했습니다."
+                  ],
+                  [
+                    "주의",
+                    "2시간·저비용 학습은 작성자 주장이며, 결과 모델은 학습용이지 실사용 모델이 아닙니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "cursor/plugins",
+                "rank": 5,
+                "language": "TypeScript",
+                "license": null,
+                "stars": 18406,
+                "starsToday": 301,
+                "verdict": "watch",
+                "def": "Cursor 편집기의 공식 플러그인 모음과 플러그인 규격입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "플러그인마다 최상위 디렉터리와 `.cursor-plugin/plugin.json` 매니페스트를 둡니다."
+                  ],
+                  [
+                    "주의",
+                    "저장소에 라이선스가 명시돼 있지 않습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "firecrawl/firecrawl",
+                "rank": 6,
+                "language": "TypeScript",
+                "license": "AGPL-3.0",
+                "stars": 206935,
+                "starsToday": 910,
+                "verdict": "try",
+                "def": "웹사이트를 에이전트가 읽기 좋은 마크다운으로 바꾸고 검색·스크래핑 API를 제공하는 도구입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "Firecrawl Local은 단일 실행 파일로 돌아가며 MCP 서버와 localhost API를 함께 띄웁니다."
+                  ],
+                  [
+                    "구성",
+                    "로컬 실행, 호스팅 서비스, 자체 서버 배포 세 가지 방식을 지원합니다."
+                  ],
+                  [
+                    "주의",
+                    "AGPL-3.0이라 수정한 서버를 서비스로 제공하면 소스 공개 의무가 생길 수 있습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "nginx/nginx",
+                "rank": 7,
+                "language": "C",
+                "license": "BSD-2-Clause",
+                "stars": 32869,
+                "starsToday": 168,
+                "verdict": "reference",
+                "def": "웹 서버, 리버스 프록시, 로드 밸런서로 널리 쓰이는 NGINX의 공식 오픈소스 저장소입니다.",
+                "rows": [
+                  [
+                    "주의",
+                    "최근 공개된 결함(CVE-2026-123007)이 있으니 쓰는 배포판의 보안 업데이트 여부를 확인하는 편이 좋습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "openvinotoolkit/openvino",
+                "rank": 8,
+                "language": "C++",
+                "license": "Apache-2.0",
+                "stars": 12078,
+                "starsToday": 155,
+                "verdict": "reference",
+                "def": "인텔이 주도하는 딥러닝 모델 추론 최적화·배포 도구입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "PyTorch, TensorFlow, ONNX 등으로 만든 모델을 여러 하드웨어에서 빠르게 돌리려는 개발자입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "cathrynlavery/diagram-design",
+                "rank": 9,
+                "language": "HTML",
+                "license": "MIT",
+                "stars": 70241,
+                "starsToday": 513,
+                "verdict": "try",
+                "def": "에이전트가 다이어그램을 자체 완결형 HTML+SVG 파일 하나로 그리게 하는 스킬입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "`npx skills add cathrynlavery/diagram-design`로 설치하고 평소 말로 그림을 요청합니다."
+                  ],
+                  [
+                    "구성",
+                    "README 기준 51종의 다이어그램 형식과 브랜드 색 맞춤, draw.io·Mermaid 가져오기, PNG·SVG 내보내기를 지원합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "mvanhorn/last30days-skill",
+                "rank": 10,
+                "language": "Python",
+                "license": "MIT",
+                "stars": 72637,
+                "starsToday": 673,
+                "verdict": "experiment",
+                "def": "한 주제를 Reddit, X, YouTube, Hacker News, Polymarket, 웹에서 최근 30일치로 찾아 요약하는 에이전트 스킬입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "Claude Code 플러그인 마켓플레이스나 `npx skills add`로 설치합니다."
+                  ],
+                  [
+                    "주의",
+                    "요약 품질은 각 플랫폼에서 얼마나 가져올 수 있느냐에 좌우됩니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "google-labs-code/stitch-skills",
+                "rank": 11,
+                "language": "TypeScript",
+                "license": "Apache-2.0",
+                "stars": 11867,
+                "starsToday": 516,
+                "verdict": "watch",
+                "def": "구글의 UI 디자인 도구 Stitch를 코딩 에이전트에서 쓰게 하는 스킬·플러그인 모음입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "Codex, Antigravity, Gemini CLI, Claude Code, Cursor 등 Agent Skills 규격을 따르는 에이전트입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "mjmirza/app-store-compliance",
+                "rank": 12,
+                "language": "Shell",
+                "license": "NOASSERTION",
+                "stars": 3910,
+                "starsToday": 617,
+                "verdict": "experiment",
+                "def": "앱스토어와 구글 플레이 심사 반려를 미리 막기 위한 점검 규칙 모음입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "문서화된 반려 사례 117건과 해결법, 제출 전 자동 점검을 담았습니다."
+                  ],
+                  [
+                    "주의",
+                    "GitHub가 인식하는 표준 라이선스가 아니므로 사내에서 쓰기 전에 조건을 확인해야 합니다."
+                  ]
+                ]
+              }
+            }
+          ],
+          "sources": [
+            {
+              "title": "GitHub Trending (daily)",
+              "url": "https://github.com/trending?since=daily"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "korea",
+      "kind": "korea",
+      "label": "국내",
+      "title": "한전 정보 유출, 증안펀드 채비, 신분증 사진 대조",
+      "stories": [
+        {
+          "id": "korea-brief",
+          "kicker": "국내",
+          "title": "한전 152만 명분 정보 유출, 정부는 증안펀드 가동 준비",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "k": "한전 유출",
+                  "text": "한국전력이 고객·임직원 등 152만여 명분 개인정보 유출을 22일 공지했습니다. 한전ON 이용자 약 65만 명은 주민·외국인등록번호, 계좌번호, 카드번호 등이 포함됐고, 20일 비정상 접근을 막는 과정에서 확인했다고 밝혔습니다. 접근 경로는 관계 기관과 함께 조사 중입니다."
+                },
+                {
+                  "k": "증안펀드",
+                  "text": "코스피가 20일 5.21% 내린 4,869.96으로 마감하자 정부와 금융당국이 22일 긴급 회의에서 증권시장안정펀드를 빠르게 가동할 수 있도록 준비에 착수하기로 했습니다. 실제 투입이 결정되면 2008년 이후 처음입니다."
+                },
+                {
+                  "k": "신분증 확인",
+                  "text": "행정안전부는 23일부터 카카오페이와 토스에서도 주민등록증 진위를 사진까지 대조해 확인할 수 있다고 밝혔습니다. 지금까지는 이름·주민번호·발급일만 맞춰 봤고, 네이버페이는 12월에 합류합니다."
+                },
+                {
+                  "k": "갤럭시 워치",
+                  "text": "삼성전자가 2027년에는 갤럭시 워치 신제품을 내지 않고 2년 주기로 바꾼다는 전자신문 보도가 나왔습니다. 메모리·칩 값 상승이 배경으로 거론되며, 삼성은 공식 확인하지 않았습니다."
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "전자신문 — 한전, 개인정보 152만명분 유출",
+              "url": "https://www.etnews.com/20261122000093"
+            },
+            {
+              "title": "테크M — 한전, 고객·직원 개인정보 152만명분 유출",
+              "url": "https://www.techm.kr/news/articleView.html?idxno=157683"
+            },
+            {
+              "title": "뉴스1 — 한전, 152만 명분 개인정보 유출(종합)",
+              "url": "https://www.news1.kr/economy/trend/6362156"
+            },
+            {
+              "title": "블로터 — 정부, 증안펀드 18년 만에 투입하나",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=679342"
+            },
+            {
+              "title": "세계일보 — 증시안정펀드 18년 만에 가동 채비",
+              "url": "https://www.segye.com/newsView/20261122510331"
+            },
+            {
+              "title": "전자신문 — 행안부 신분증 검증망 확대",
+              "url": "https://www.etnews.com/20261121000055"
+            },
+            {
+              "title": "지디넷코리아 — 카카오페이·토스서도 주민등록증 진위확인",
+              "url": "https://zdnet.co.kr/view/?no=20261122130203"
+            },
+            {
+              "title": "전자신문 — 삼성전자, 내년 갤럭시 워치 신제품 없다",
+              "url": "https://www.etnews.com/20261120000237"
+            },
+            {
+              "title": "Digital Trends — No new Galaxy Watch in 2027",
+              "url": "https://www.digitaltrends.com/wearables/no-new-galaxy-watch-in-2027-as-samsung-plans-a-two-year-release-cycle-for-smartwatches/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading",
+      "kind": "reading",
+      "label": "읽을거리",
+      "title": "월요일에 읽을 6편",
+      "dek": "Hacker News에서 골랐습니다. HN 점수는 06:38 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "reads",
+          "kicker": "읽을거리",
+          "title": "월요일에 읽을 6편",
+          "blocks": [
+            {
+              "type": "reads",
+              "items": [
+                {
+                  "title": "Open Social Web Alliance",
+                  "url": "https://osw-alliance.net/en/",
+                  "via": "OSW Alliance",
+                  "why": "개방형 소셜 웹의 공동 운영 체계와 기반 시설을 함께 만들자며 출범한 연합의 소개 페이지로, 댓글 토론이 활발합니다.",
+                  "hn": {
+                    "id": "50600511",
+                    "points": 183,
+                    "comments": 184
+                  }
+                },
+                {
+                  "title": "Show HN: I built a game where you are an LLM's subagent",
+                  "url": "https://github.com/gulivan/worker755",
+                  "via": "GitHub",
+                  "why": "플레이어가 거꾸로 LLM의 하위 에이전트가 되어 지시를 받는 게임으로, 에이전트 입장에서 작업을 겪어 볼 수 있습니다.",
+                  "hn": {
+                    "id": "50599762",
+                    "points": 235,
+                    "comments": 56
+                  }
+                },
+                {
+                  "title": "What Happened to Silicon Valley?",
+                  "url": "https://www.oreilly.com/radar/what-happened-to-silicon-valley/",
+                  "via": "O'Reilly Radar",
+                  "why": "실리콘밸리가 어떻게 달라졌는지를 묻는 오라일리 레이더의 에세이입니다.",
+                  "hn": {
+                    "id": "50602947",
+                    "points": 176,
+                    "comments": 65
+                  }
+                },
+                {
+                  "title": "Backblaze customers worried of personal data sale/sharing after policy update",
+                  "url": "https://www.neowin.net/news/backblaze-customers-worried-of-personal-data-salesharing-after-policy-update/",
+                  "via": "Neowin",
+                  "why": "백업 서비스 Backblaze의 정책 개정 뒤 개인정보 판매·공유 가능성을 두고 이용자 우려가 나온 사안입니다.",
+                  "hn": {
+                    "id": "50600435",
+                    "points": 116,
+                    "comments": 50
+                  }
+                },
+                {
+                  "title": "A Better Vocabulary for Testing",
+                  "url": "https://alperenkeles.com/posts/vocab-for-testing/",
+                  "via": "alperenkeles.com",
+                  "why": "소프트웨어 테스트를 이야기할 때 쓰는 용어를 더 정확하게 다듬자고 제안하는 글입니다.",
+                  "hn": {
+                    "id": "50594182",
+                    "points": 93,
+                    "comments": 24
+                  }
+                },
+                {
+                  "title": "C++26 is done (again): November 2026 ISO C++ meeting trip report",
+                  "url": "https://herbsutter.com/2026/11/21/c26-is-done-again-trip-report-november-2026-iso-c-standards-meeting-buzios-brazil/",
+                  "via": "Herb Sutter",
+                  "why": "허브 서터가 11월 ISO C++ 표준 회의 결과를 정리한 참관기입니다.",
+                  "hn": {
+                    "id": "50600838",
+                    "points": 36,
+                    "comments": 2
+                  }
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "Hacker News front page",
+              "url": "https://news.ycombinator.com/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "column",
+      "kind": "column",
+      "label": "AI의 시선",
+      "title": "빨라진 쪽이 브레이크를 말할 때",
+      "dek": "AI가 쓴 칼럼입니다. 사실 보도가 아닌 의견입니다.",
+      "stories": [
+        {
+          "id": "column-body",
+          "kicker": "AI의 시선",
+          "title": "빨라진 쪽이 브레이크를 말할 때",
+          "blocks": [
+            {
+              "type": "p",
+              "dropcap": true,
+              "text": "이번 주 미국의 잇단 전산 장애와 OpenAI의 개발 한도 제안은 서로 다른 뉴스처럼 보이지만 같은 문제를 다룬다고 봅니다. 미국 정보수장은 장애의 배경으로 공격이 아니라 패치와 시스템 교체를 들었고, AI 덕분에 취약점이 더 빨리 발견되면서 고칠 일이 한꺼번에 몰린다는 취지로 설명했습니다. 찾아내는 속도가 고치는 속도를 앞지르면 현장은 잦은 재시작과 수작업 우회로 버텨야 합니다."
+            },
+            {
+              "type": "p",
+              "text": "OpenAI의 제안도 속도의 격차에 관한 이야기입니다. 능력이 자라는 속도와 그 능력을 들여다보는 도구가 자라는 속도가 어긋나면, 감시 능력이 따라올 때까지 기다리자는 것입니다. 측정할 수 있는 지표를 먼저 공개했다는 점은 의미가 있습니다. 다만 한도를 지켰는지 누가 확인하는지가 빠진 약속은 쉽게 흐려집니다."
+            },
+            {
+              "type": "pull",
+              "text": "속도를 늦추자는 약속보다, 늦췄는지를 바깥에서 확인할 수 있는 장치가 먼저입니다."
+            },
+            {
+              "type": "p",
+              "text": "밝혀 둘 점: 이 칼럼을 쓴 AI는 Anthropic이 만든 Claude이고, OpenAI가 제안한 공동 한도는 Anthropic에도 적용될 수 있는 규칙이라 이해관계가 있습니다. 그래서 제안의 옳고 그름보다는, 공항 전산이든 AI 모델이든 바뀌는 속도와 점검하는 속도를 맞추는 일에 무게를 두어 썼습니다."
+            },
+            {
+              "type": "ledger"
+            }
+          ],
+          "sources": []
+        }
+      ]
+    }
+  ]
+}
