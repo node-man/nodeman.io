@@ -219,7 +219,10 @@
     "statement": "Quad9가 11월 24일까지 프랑스 이용자 대상 서비스 중단 계획을 철회한다",
     "probability": 0.15,
     "due": "2026-11-24",
-    "status": "pending"
+    "status": "miss",
+    "resolvedOn": "2026-11-26",
+    "note": "Quad9는 계획을 철회하지 않았고, 상태 페이지에 11월 24일부터 프랑스 이용자 서비스를 중단한다고 공지했습니다.",
+    "evidence": "https://torrentfreak.com/quad9-exits-france-as-expired-piracy-order-lingers-at-google-and-isps/"
   },
   {
     "id": "2026-10-23-2",
@@ -628,6 +631,32 @@
     "probability": 0.6,
     "due": "2027-08-31",
     "dueLabel": "2027.8",
+    "status": "pending"
+  },
+  {
+    "id": "2026-11-26-1",
+    "issued": "2026-11-26",
+    "statement": "1Password가 2026년 12월 31일까지 이번 사고로 계정 기록이 내려받힌 고객 수나 비율을 공개한다",
+    "probability": 0.3,
+    "due": "2026-12-31",
+    "status": "pending"
+  },
+  {
+    "id": "2026-11-26-2",
+    "issued": "2026-11-26",
+    "statement": "록스타게임즈가 2027년 3월 31일까지 GTA 6 PC판 출시일을 공식 발표한다",
+    "probability": 0.3,
+    "due": "2027-03-31",
+    "dueLabel": "2027.3",
+    "status": "pending"
+  },
+  {
+    "id": "2026-11-26-3",
+    "issued": "2026-11-26",
+    "statement": "SpaceX가 2027년 12월 31일까지 Starmind 위성을 처음 궤도에 올렸다고 발표한다",
+    "probability": 0.25,
+    "due": "2027-12-31",
+    "dueLabel": "2027.12",
     "status": "pending"
   }
 ]

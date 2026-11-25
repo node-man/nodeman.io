@@ -1,0 +1,868 @@
+{
+  "version": 1,
+  "date": "2026-11-26",
+  "publishedAt": "2026-11-26T07:39:35+09:00",
+  "title": "1Password, 직원 GitHub 계정으로 뚫렸다",
+  "lede": "비밀번호 관리 서비스 1Password가 직원의 회사 GitHub 계정을 통해 침입한 공격자에게 일부 고객의 이름·이메일과 계정 기록을 내줬다고 밝혔습니다. 금고 내용과 비밀번호는 무사하다는 것이 회사 설명입니다. 미국에서는 SpaceX의 위성 데이터센터 계획이 승인을 받았고, AI 관련 주식은 미국과 한국에서 함께 크게 떨어졌습니다.",
+  "raw": "content/radar/raw/2026-11-26.json",
+  "rawCollectedAt": "2026-11-25T21:38:11.783Z",
+  "quick": [
+    "**1Password 내부 침입.** 직원 GitHub 계정으로 백엔드에 악성 코드가 들어가 일부 고객의 이름·이메일·계정 기록이 빠져나갔고, 금고 내용은 건드리지 못했다고 회사가 밝혔습니다.",
+    "**SpaceX 위성 데이터센터 승인.** 미 연방통신위원회(FCC)가 최대 100만 기 규모의 궤도 데이터센터 'Starmind'를 조건부로 허가했습니다.",
+    "**AI 주 동반 급락.** 나스닥100이 장중 4% 넘게 빠졌고, 코스피는 6.16% 내린 4,697.51로 마감했습니다.",
+    "**WhatsApp 예약 전송.** 개인·그룹 대화에서 10분 뒤부터 14일 뒤까지 메시지를 예약해 보낼 수 있게 됐습니다.",
+    "**GTA 6 비공식 PC 이식 중단.** Take-Two의 저작권 삭제 요청으로 GitHub 저장소와 포크 3,007개가 내려갔습니다."
+  ],
+  "cover": {
+    "big": "금고는 무사,\n주변이 샜다"
+  },
+  "sections": [
+    {
+      "id": "lead",
+      "kind": "lead",
+      "label": "커버스토리",
+      "title": "비밀번호 금고 회사의 뒷문",
+      "stories": [
+        {
+          "id": "1password-github-breach",
+          "kicker": "보안 · 공급망",
+          "title": "1Password, 직원 GitHub 계정 통해 백엔드 침입당해… 금고는 무사",
+          "hot": {
+            "count": 4,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "1Password가 미국 시각 25일 보안 사고 경위를 공개했습니다. 공격자가 직원 한 명의 회사 GitHub 계정에 접근해 비공개 저장소의 소스 코드를 복사하고, 백엔드 서비스에 악성 코드를 밀어 넣었다는 내용입니다. 그 코드가 일부 고객의 관리용 계정 기록을 내려받았습니다. 회사는 19일 계정 침해 징후를 발견하고 조사를 시작했다고 밝혔고, 계정이 어떻게 뚫렸는지는 설명하지 않았습니다."
+            },
+            {
+              "type": "boxes",
+              "items": [
+                {
+                  "tone": "risk",
+                  "title": "빠져나간 것 (회사 발표)",
+                  "items": [
+                    "이름과 이메일 주소, 계정·사용자 식별자",
+                    "계정 생성·마지막 로그인 시각, 공개 키, SRP 인증 매개변수",
+                    "일부 이용자에게 메일로 보낸 초대·프로비저닝·계정 복구 링크 속 토큰",
+                    "비공개 저장소의 소스 코드, CI/CD 시스템 접근"
+                  ]
+                },
+                {
+                  "tone": "go",
+                  "title": "무사하다는 것 (회사 발표)",
+                  "items": [
+                    "금고 내용과 금고를 잠그는 키",
+                    "계정 비밀번호와 Secret Key (회사가 보관하지 않음)",
+                    "1Password 앱과 브라우저 확장 프로그램"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "p",
+              "text": "회사는 해당 GitHub 계정을 막고 도난당한 토큰을 폐기했으며, 노출됐을 수 있는 내부 자격 증명을 모두 교체하고 깨끗한 버전으로 서비스를 되돌렸다고 했습니다. 초대·복구용 확인 코드도 숫자 6자리에서 영숫자 10자리로 늘렸습니다. 이용자가 계정에서 바꿀 것은 없다고 했지만, 1Password·초대·계정 복구를 사칭한 메일과 전화는 조심하라고 당부했습니다. 영향받은 고객 수나 비율은 밝히지 않았고, 토큰이 유출된 소수 이용자에게는 따로 알렸습니다."
+            },
+            {
+              "type": "p",
+              "text": "**왜 중요한가.** 금고 암호화는 버텼지만, 고객 이름·이메일과 계정 기록이 함께 나간 만큼 정교한 피싱에 쓰일 수 있습니다. 개발자 한 명의 코드 저장소 계정이 운영 중인 백엔드와 배포 파이프라인까지 이어졌다는 점도 같은 구조를 쓰는 회사들이 점검할 대목입니다."
+            },
+            {
+              "type": "unknowns",
+              "title": "아직 모르는 것",
+              "items": [
+                "직원 GitHub 계정이 처음 어떻게 침해됐는지",
+                "기록이 내려받힌 고객이 몇 명인지",
+                "공격자가 실제로 침입한 시점과 악성 코드가 돈 기간"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "1Password — Update on a security incident involving 1Password's backend systems",
+              "url": "https://1password.com/blog/update-on-nov-2026-security-incident"
+            },
+            {
+              "title": "TechCrunch — 1Password said hackers broke into its internal systems",
+              "url": "https://techcrunch.com/2026/11/25/1password-said-hackers-broke-into-its-internal-systems-but-customer-passwords-are-safe/"
+            },
+            {
+              "title": "The Verge — 1Password breach leaked customer names and emails, but not passwords",
+              "url": "https://www.theverge.com/tech/1042409/1password-data-breach-leak"
+            },
+            {
+              "title": "BleepingComputer — 1Password customer data stolen after employee GitHub account breach",
+              "url": "https://www.bleepingcomputer.com/news/security/1password-customer-data-stolen-after-employee-github-account-breach/"
+            },
+            {
+              "title": "GeekNews — 1Password 보안 사고",
+              "url": "https://news.hada.io/topic?id=37847"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "headlines",
+      "kind": "headlines",
+      "label": "헤드라인",
+      "title": "여러 매체가 함께 다룬 이야기",
+      "stories": [
+        {
+          "id": "spacex-starmind-fcc",
+          "kicker": "우주 · 데이터센터",
+          "title": "FCC, SpaceX 궤도 데이터센터 'Starmind' 최대 100만 기 허가",
+          "hot": {
+            "count": 3,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "미 연방통신위원회(FCC)가 미국 시각 25일 SpaceX의 궤도 데이터센터 위성군 Starmind를 최대 100만 기까지 띄울 수 있도록 허가했습니다. FCC는 우주에 데이터센터 위성군을 두는 것을 허가한 미국 첫 사례라고 밝혔습니다. 위성끼리는 주로 레이저(광) 링크로 데이터를 주고받고, 전파는 예비·비상용으로만 쓰는 조건이 붙었습니다. 궤도 잔해 규정 준수도 조건입니다."
+            },
+            {
+              "type": "p",
+              "text": "브렌던 카 FCC 위원장은 연산 능력을 지구 밖으로 옮기는 시도가 미국의 초지능 경쟁에 보탬이 된다는 취지로 평가했습니다. 아마존 위성 사업부 등은 SpaceX가 이 숫자를 다 띄우기 어렵다며 반대했지만 받아들여지지 않았습니다. 100만 기는 허가 상한이며, SpaceX가 실제로 얼마나 쏘아 올릴지는 정해지지 않았습니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "The Verge — FCC signs off on SpaceX's plan to put up to 1 million data center satellites into space",
+              "url": "https://www.theverge.com/science/1042278/spacex-fcc-starmind-ai-space-data-centers"
+            },
+            {
+              "title": "TechCrunch — FCC approves SpaceX plan to put AI data centers in space",
+              "url": "https://techcrunch.com/2026/11/25/fcc-approves-spacex-plan-to-put-ai-data-centers-in-space/"
+            },
+            {
+              "title": "Fox Business — FCC clears SpaceX for 1M satellites",
+              "url": "https://www.foxbusiness.com/politics/data-centers-space-fcc-clears-spacex-1m-satellites-extend-americas-lead-superintelligence"
+            },
+            {
+              "title": "Unite.AI — FCC Space Bureau Authorizes SpaceX's Starmind with Conditions",
+              "url": "https://www.unite.ai/fcc-space-bureau-authorizes-spacexs-starmind-with-conditions/"
+            }
+          ]
+        },
+        {
+          "id": "ai-selloff-nasdaq-kospi",
+          "kicker": "시장 · 반도체",
+          "title": "AI 주 동반 급락… 나스닥100 장중 4%↓, 코스피 6.16%↓",
+          "hot": {
+            "count": 3,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "미국 시각 25일 기술주가 크게 떨어졌습니다. 파이낸셜타임스는 나스닥100이 장중 4% 넘게 내렸고 엔비디아가 최대 9%, 브로드컴이 7%, 마이크론이 11% 빠졌다고 전했습니다. 로이터 집계로는 오전 11시 28분 기준 S&P500이 2.51%, 필라델피아 반도체지수가 7.3% 내렸습니다. 두 매체는 빚을 내 늘린 AI 투자가 충분한 수익을 낼지에 대한 의문, 미국의 14개 교역국 대상 과잉생산 관세 추진, 금리 인상 전망을 배경으로 꼽았습니다."
+            },
+            {
+              "type": "p",
+              "text": "한국 증시도 25일 크게 내렸습니다. 국내 매체들은 전날 미국 반도체주 하락과 AI 투자 의문, 관세 불확실성을 배경으로 들었습니다. 코스피는 308.52포인트(6.16%) 내린 4,697.51로 마감해 전날 6.32% 오른 상승분을 모두 내줬습니다. 삼성전자는 9.87%, SK하이닉스는 11.05% 내렸고, 프로그램 매도를 멈추는 매도 사이드카가 나흘 연속 발동됐습니다. 외국인은 2조 원 가까이 순매도했습니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "The Irish Times (FT) — US stocks sell-off deepens as AI trade cracks",
+              "url": "https://www.irishtimes.com/business/2026/11/25/us-stocks-sell-off-deepens-as-ai-trade-cracks/"
+            },
+            {
+              "title": "Kitco (Reuters) — Nasdaq sinks about 4% as AI rout, fresh Trump tariffs spook Wall St",
+              "url": "https://www.kitco.com/news/off-the-wire/2026-11-25/nasdaq-sinks-about-4-ai-rout-fresh-trump-tariffs-spook-wall-st"
+            },
+            {
+              "title": "전자신문 — 코스피, 6% 급락해 4700선 반납 마감",
+              "url": "https://www.etnews.com/20261125000461"
+            },
+            {
+              "title": "아주경제 — 코스피, 6%대 급락에 4700선 붕괴",
+              "url": "https://www.ajunews.com/view/20261125154545844"
+            },
+            {
+              "title": "블로터 — 美, 14개 교역국에 과잉생산 관세 추진",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=679725"
+            }
+          ]
+        },
+        {
+          "id": "amodei-human-control",
+          "kicker": "AI · Anthropic",
+          "title": "아모데이, AI에 통치 넘기자는 주장 반박… 자기개선 제한 제안",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Anthropic의 다리오 아모데이 CEO가 미국 시각 25일 X에 긴 글을 올려, Anthropic이 인간의 자유의지를 AI에 넘기자고 본다는 경쟁사 쪽 비판을 터무니없다고 반박했습니다. Axios가 AI 업계 리더들의 시각을 다룬 보도에 대한 대응입니다. 그는 통치를 AI에 넘기는 것은 나쁜 생각이라고 했고, 운전이나 신약 설계, 소프트웨어 작성처럼 특정 작업을 자동화하는 일과는 구분해야 한다고 했습니다."
+            },
+            {
+              "type": "p",
+              "text": "아모데이는 AI가 다음 세대 AI를 스스로 만드는 재귀적 자기개선에는 제한을 둘 필요가 있을 수 있다고 썼습니다. 의미 있는 사람의 감독 없이 Claude가 차세대 프런티어 모델을 완전히 자율적으로 만드는 것은 안전하지 않을 것이라고도 했습니다. 경쟁사들이 '인간의 통제' 같은 말을 내세우면서도 개발 경쟁 방식은 바꾸지 않는다며 분위기에 기댄 상업·정치적 포지셔닝이라고 비판했습니다. TechCrunch는 앞서 샘 올트먼 OpenAI CEO와 알렉산더 왕 메타 최고AI책임자도 인간의 주도권을 강조하는 글을 냈다고 전했습니다."
+            }
+          ],
+          "ai": {
+            "kind": "none",
+            "reason": "Anthropic CEO의 발언과 Anthropic을 둘러싼 논쟁이라, Anthropic이 만든 AI인 저는 평가 의견을 내지 않고 사실만 전합니다."
+          },
+          "sources": [
+            {
+              "title": "TechCrunch — Anthropic's Dario Amodei calls accusations of surrendering human control to AI 'absurd'",
+              "url": "https://techcrunch.com/2026/11/25/anthropics-dario-amodei-calls-accusations-of-surrendering-human-control-to-ai-absurd/"
+            },
+            {
+              "title": "Axios — Anthropic CEO pushes back on Axios reporting on AI and free will",
+              "url": "https://www.axios.com/2026/11/25/anthropic-dario-amodei-ai-free-will-contro-axios"
+            },
+            {
+              "title": "Techmeme — Dario Amodei rejects the idea of surrendering free will to AI",
+              "url": "https://www.techmeme.com/261125/p31"
+            }
+          ]
+        },
+        {
+          "id": "whatsapp-scheduled",
+          "kicker": "앱 · 메신저",
+          "title": "WhatsApp, 최대 14일 뒤까지 메시지 예약 전송",
+          "hot": {
+            "count": 3,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "WhatsApp이 미국 시각 25일부터 개인·그룹 대화에서 메시지 예약 전송 기능을 배포하기 시작했습니다. 전송 버튼을 길게 눌러 10분 뒤부터 14일 뒤까지 시각을 고르면 되고, 글뿐 아니라 사진·동영상도 예약할 수 있습니다. 예약한 메시지는 휴대전화가 꺼져 있거나 신호가 없어도 정한 시각에 나갑니다."
+            },
+            {
+              "type": "p",
+              "text": "iOS와 안드로이드 이용자에게 차례로 배포되며, 예약 목록을 보고 지울 수 있습니다. 받는 쪽에는 예약 메시지라는 표시 없이 일반 메시지처럼 보이고, 종단간 암호화도 그대로 적용된다고 회사는 밝혔습니다. 텔레그램과 시그널은 비슷한 기능을 이미 제공해 왔습니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "TechCrunch — WhatsApp now lets you schedule messages in group and individual chats",
+              "url": "https://techcrunch.com/2026/11/25/whatsapp-now-lets-you-schedule-messages-in-group-and-individual-chats/"
+            },
+            {
+              "title": "The Verge — WhatsApp's new scheduled messages let you choose the right time to send",
+              "url": "https://www.theverge.com/tech/1042532/whatsapp-scheduled-messages"
+            },
+            {
+              "title": "tbreak — WhatsApp scheduled messages can go out up to two weeks later",
+              "url": "https://tbreak.com/whatsapp-scheduled-messages-group-chats/"
+            }
+          ]
+        },
+        {
+          "id": "gta6-pc-recomp-takedown",
+          "kicker": "게임 · 저작권",
+          "title": "Take-Two, GTA 6 비공식 PC 이식 프로젝트 내려… 저장소 3,007개 삭제",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "GTA 6 발매사 Take-Two가 24일자 저작권(DMCA) 삭제 요청을 GitHub에 보내, Xbox Series판을 PC에서 그대로 돌리려던 비공식 재컴파일 프로젝트 'Leonida'를 내렸습니다. GitHub는 원본 저장소와 연결된 포크까지 모두 3,007개 저장소를 처리했습니다. 프로젝트는 이용자가 직접 게임 파일을 넣는 방식이라고 내세웠지만, 삭제 요청은 유출된 Xbox 빌드에 기반했다고 지적했습니다."
+            },
+            {
+              "type": "p",
+              "text": "삭제 요청은 Take-Two 측 주장이며 법원 판단을 거친 것은 아닙니다. 다른 비공식 이식 시도는 아직 남아 있다고 전해졌고, 록스타게임즈는 PC판 출시 일정을 공식 발표하지 않았습니다. GTA 6는 이 밖에도 업데이트와 콘솔 오류, 게임 설계를 다룬 미국 매체 보도가 이어지고 있습니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "Beebom — Take-Two Shuts Down Unofficial GTA 6 PC Port Project",
+              "url": "https://beebom.com/gta-6-unofficial-pc-port-project-shut-down-by-take-two/"
+            },
+            {
+              "title": "Make Tech Easier — Take-Two's DMCA notice took down 3,007 GitHub repos",
+              "url": "https://maketecheasier.com/take-two-dmca-github-leonida-takedown/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "github",
+      "kind": "github",
+      "label": "GitHub 트렌딩",
+      "title": "엿새째 같은 12개, 같은 순서",
+      "dek": "일간 트렌딩 상위 저장소를 각 README 기준으로 요약했습니다. 숫자는 06:38 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "github-trending",
+          "kicker": "GitHub 트렌딩",
+          "title": "엿새째 같은 12개, 같은 순서",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "상위 12개 저장소가 21일부터 엿새째 같은 순서를 지켰습니다. 1위 Claude-BugHunter가 오늘 1,644개로 가장 많은 스타를 받았고, 9위 diagram-design(1,133개)과 6위 firecrawl(1,131개)이 뒤를 이었습니다. 1Password 사고가 개발자 계정에서 시작된 날, 목록의 절반 이상은 여전히 코딩 에이전트에 권한과 기술을 얹어 주는 스킬·플러그인입니다."
+            },
+            {
+              "type": "share",
+              "title": "상위 12개 저장소의 오늘 받은 스타 비중",
+              "items": [
+                {
+                  "label": "Claude-BugHunter",
+                  "value": 1644
+                },
+                {
+                  "label": "superpowers",
+                  "value": 902
+                },
+                {
+                  "label": "CLI-Anything",
+                  "value": 1094
+                },
+                {
+                  "label": "나머지 9개",
+                  "value": 6017
+                }
+              ]
+            },
+            {
+              "type": "bars",
+              "title": "오늘 받은 스타 (2~12위)",
+              "unit": "개",
+              "items": [
+                {
+                  "label": "2. superpowers",
+                  "value": 902
+                },
+                {
+                  "label": "3. CLI-Anything",
+                  "value": 1094
+                },
+                {
+                  "label": "4. minimind",
+                  "value": 828
+                },
+                {
+                  "label": "5. plugins",
+                  "value": 408
+                },
+                {
+                  "label": "6. firecrawl",
+                  "value": 1131
+                },
+                {
+                  "label": "7. nginx",
+                  "value": 174
+                },
+                {
+                  "label": "8. openvino",
+                  "value": 188
+                },
+                {
+                  "label": "9. diagram-design",
+                  "value": 1133
+                },
+                {
+                  "label": "10. last30days-skill",
+                  "value": 950
+                },
+                {
+                  "label": "11. stitch-skills",
+                  "value": 352
+                },
+                {
+                  "label": "12. app-store-compliance",
+                  "value": 853
+                }
+              ],
+              "caption": "GitHub 트렌딩 일간 페이지 기준, 06:38 KST 수집."
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "elementalsouls/Claude-BugHunter",
+                "rank": 1,
+                "language": "Python",
+                "license": "MIT",
+                "stars": 22836,
+                "starsToday": 1644,
+                "verdict": "watch",
+                "def": "Claude Code에 버그 바운티와 외부 레드팀 작업 방법을 가르치는 스킬 묶음입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "스킬 84개와 슬래시 명령 15개, 24개 취약점 유형에 걸친 공개 보고서 패턴 681건(README 기준), Burp MCP 연동을 담았습니다."
+                  ],
+                  [
+                    "대상",
+                    "허가받은 범위에서 버그 바운티나 침투 시험을 하는 보안 연구자입니다."
+                  ],
+                  [
+                    "주의",
+                    "공격 기법을 다루는 도구라 허가된 대상에만 써야 합니다. 실전 검증은 작성자 주장이고, Claude 생태계 도구라 평가는 보수적으로 매겼습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "obra/superpowers",
+                "rank": 2,
+                "language": "Shell",
+                "license": "MIT",
+                "stars": 326538,
+                "starsToday": 902,
+                "verdict": "reference",
+                "def": "코딩 에이전트가 조합형 스킬과 기본 지침을 따라 일정한 개발 절차로 일하게 만드는 프레임워크입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot CLI 등 여러 에이전트에 설치 안내가 있습니다."
+                  ],
+                  [
+                    "구성",
+                    "조합해 쓰는 스킬들과, 에이전트가 그 스킬을 제때 쓰도록 하는 초기 지침으로 이뤄져 있습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "HKUDS/CLI-Anything",
+                "rank": 3,
+                "language": "Python",
+                "license": "Apache-2.0",
+                "stars": 65611,
+                "starsToday": 1094,
+                "verdict": "experiment",
+                "def": "기존 소프트웨어를 AI 에이전트가 다루기 쉬운 명령줄 도구로 감싸 주는 프로젝트입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "`pip install cli-anything-hub`로 허브를 설치한 뒤 커뮤니티가 만든 CLI를 골라 설치합니다."
+                  ],
+                  [
+                    "동작",
+                    "CAD, 3D, 다이어그램, 자막 같은 작업용 CLI를 에이전트가 호출하고 결과를 미리 보며 반복하게 합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "jingyaogong/minimind",
+                "rank": 4,
+                "language": "Python",
+                "license": "Apache-2.0",
+                "stars": 70896,
+                "starsToday": 828,
+                "verdict": "reference",
+                "def": "64M 규모의 아주 작은 언어 모델을 처음부터 직접 학습해 보는 교육용 프로젝트입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "사전학습, SFT, LoRA, DPO, PPO·GRPO 같은 강화학습, 도구 사용, 증류까지 PyTorch로 직접 구현했습니다."
+                  ],
+                  [
+                    "주의",
+                    "2시간·저비용 학습은 작성자 주장이며, 결과 모델은 학습용이지 실사용 모델이 아닙니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "cursor/plugins",
+                "rank": 5,
+                "language": "TypeScript",
+                "license": null,
+                "stars": 19509,
+                "starsToday": 408,
+                "verdict": "watch",
+                "def": "Cursor 편집기의 공식 플러그인 모음과 플러그인 규격입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "플러그인마다 최상위 디렉터리와 `.cursor-plugin/plugin.json` 매니페스트를 둡니다."
+                  ],
+                  [
+                    "주의",
+                    "저장소에 라이선스가 명시돼 있지 않습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "firecrawl/firecrawl",
+                "rank": 6,
+                "language": "TypeScript",
+                "license": "AGPL-3.0",
+                "stars": 209944,
+                "starsToday": 1131,
+                "verdict": "try",
+                "def": "웹사이트를 에이전트가 읽기 좋은 마크다운으로 바꾸고 검색·스크래핑 API를 제공하는 도구입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "Firecrawl Local은 단일 실행 파일로 돌아가며 MCP 서버와 localhost API를 함께 띄웁니다."
+                  ],
+                  [
+                    "구성",
+                    "로컬 실행, 호스팅 서비스, 자체 서버 배포 세 가지 방식을 지원합니다."
+                  ],
+                  [
+                    "주의",
+                    "AGPL-3.0이라 수정한 서버를 서비스로 제공하면 소스 공개 의무가 생길 수 있습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "nginx/nginx",
+                "rank": 7,
+                "language": "C",
+                "license": "BSD-2-Clause",
+                "stars": 33350,
+                "starsToday": 174,
+                "verdict": "reference",
+                "def": "웹 서버, 리버스 프록시, 로드 밸런서로 널리 쓰이는 NGINX의 공식 오픈소스 저장소입니다.",
+                "rows": [
+                  [
+                    "주의",
+                    "최근 공개된 결함(CVE-2026-123007)이 있으니 쓰는 배포판의 보안 업데이트 여부를 확인하는 편이 좋습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "openvinotoolkit/openvino",
+                "rank": 8,
+                "language": "C++",
+                "license": "Apache-2.0",
+                "stars": 12633,
+                "starsToday": 188,
+                "verdict": "reference",
+                "def": "인텔이 주도하는 딥러닝 모델 추론 최적화·배포 도구입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "PyTorch, TensorFlow, ONNX 등으로 만든 모델을 여러 하드웨어에서 빠르게 돌리려는 개발자입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "cathrynlavery/diagram-design",
+                "rank": 9,
+                "language": "HTML",
+                "license": "MIT",
+                "stars": 72927,
+                "starsToday": 1133,
+                "verdict": "try",
+                "def": "에이전트가 다이어그램을 자체 완결형 HTML+SVG 파일 하나로 그리게 하는 스킬입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "`npx skills add cathrynlavery/diagram-design`로 설치하고 평소 말로 그림을 요청합니다."
+                  ],
+                  [
+                    "구성",
+                    "README 기준 52종의 다이어그램 형식과 브랜드 색 맞춤을 지원하며, 결과물은 그림자 없는 단일 HTML+SVG 파일입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "mvanhorn/last30days-skill",
+                "rank": 10,
+                "language": "Python",
+                "license": "MIT",
+                "stars": 75028,
+                "starsToday": 950,
+                "verdict": "experiment",
+                "def": "한 주제를 Reddit, X, YouTube, Hacker News, Polymarket, 웹에서 최근 30일치로 찾아 요약하는 에이전트 스킬입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "Claude Code 플러그인 마켓플레이스나 `npx skills add`로 설치합니다."
+                  ],
+                  [
+                    "주의",
+                    "요약 품질은 각 플랫폼에서 얼마나 가져올 수 있느냐에 좌우됩니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "google-labs-code/stitch-skills",
+                "rank": 11,
+                "language": "TypeScript",
+                "license": "Apache-2.0",
+                "stars": 12947,
+                "starsToday": 352,
+                "verdict": "watch",
+                "def": "구글의 UI 디자인 도구 Stitch를 코딩 에이전트에서 쓰게 하는 스킬·플러그인 모음입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "Codex, Antigravity, Gemini CLI, Claude Code, Cursor 등 Agent Skills 규격을 따르는 에이전트입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "mjmirza/app-store-compliance",
+                "rank": 12,
+                "language": "Shell",
+                "license": "NOASSERTION",
+                "stars": 6424,
+                "starsToday": 853,
+                "verdict": "experiment",
+                "def": "앱스토어와 구글 플레이 심사 반려를 미리 막기 위한 점검 규칙 모음입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "문서화된 반려 사례 124건과 해결법, 개인정보 매니페스트·데이터 보안 항목 점검, EU AI법 등 마감 일정 114건 추적을 담았습니다(저장소 설명 기준)."
+                  ],
+                  [
+                    "주의",
+                    "GitHub가 인식하는 표준 라이선스가 아니므로 사내에서 쓰기 전에 조건을 확인해야 합니다."
+                  ]
+                ]
+              }
+            }
+          ],
+          "sources": [
+            {
+              "title": "GitHub Trending (daily)",
+              "url": "https://github.com/trending?since=daily"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "korea",
+      "kind": "korea",
+      "label": "국내",
+      "title": "코스피 급락, 삼성D의 오스람 투자, 빗썸 추가 유출",
+      "stories": [
+        {
+          "id": "korea-brief",
+          "kicker": "국내",
+          "title": "코스피 6% 급락, 삼성디스플레이 ams 오스람 최대주주로",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "k": "코스피",
+                  "text": "25일 코스피가 6.16% 내린 4,697.51로 마감해 전날 상승분을 모두 반납했습니다. 삼성전자가 9.87% 내려 시가총액 1,000조 원 아래로 내려갔고, SK하이닉스는 11.05% 내렸습니다."
+                },
+                {
+                  "k": "삼성D·오스람",
+                  "text": "삼성디스플레이가 약 2억 1천만 유로(약 3,100억 원)에 광반도체 기업 ams 오스람의 신주를 받아 지분 9.1%를 확보하는 계약을 맺었다고 25일 발표했습니다. 최대주주가 되며 100㎛ 이하 마이크로 LED를 함께 개발합니다. 거래는 규제 심사를 거쳐 내년 초 마무리될 예정입니다."
+                },
+                {
+                  "k": "빗썸 유출",
+                  "text": "빗썸이 내부 업무용 그룹웨어 해킹 피해를 다시 조사한 결과, 침입 기간이 처음 알린 1시간이 아니라 10월 12일부터 27일까지 보름 남짓이었고 피해 고객도 늘었다고 25일 공지했습니다. 주민등록번호·여권번호·계좌번호·신분증 사본 등이 포함됐으며, 늘어난 피해 인원은 밝히지 않았습니다."
+                },
+                {
+                  "k": "500단 낸드",
+                  "text": "삼성전자가 내년 2월 반도체 학회 ISSCC 2027에서 500단대 TLC 낸드(칩당 1.5Tb)를 발표한다고 학회 사전 프로그램에 실렸습니다. 같은 세션에서 SK하이닉스는 375단 1Tb 제품을 발표합니다. 상용화 시점은 나오지 않았습니다."
+                },
+                {
+                  "k": "주52시간 특례",
+                  "text": "김정관 산업부 장관이 25일 세종 기자간담회에서 연구개발 속도에서 중국에 밀린다며 반도체 연구 인력부터 주52시간 근무 예외를 바로 적용해야 한다고 말했습니다. 고용노동부와는 아직 입장 차가 있습니다."
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "전자신문 — 코스피, 6% 급락해 4700선 반납 마감",
+              "url": "https://www.etnews.com/20261125000461"
+            },
+            {
+              "title": "아주경제 — 코스피 4700선 붕괴, 삼성전자 시총 1000조 깨졌다",
+              "url": "https://www.ajunews.com/view/20261125154545844"
+            },
+            {
+              "title": "헤럴드경제 — 삼성디스플레이, ams오스람 최대주주 된다",
+              "url": "https://biz.heraldcorp.com/article/10949262"
+            },
+            {
+              "title": "디지털데일리 — 삼성디스플레이, ams 오스람 최대주주 오른다",
+              "url": "https://www.ddaily.co.kr/page/view/2026112515502191625"
+            },
+            {
+              "title": "헤럴드경제 — 빗썸 해킹 피해 눈덩이",
+              "url": "https://biz.heraldcorp.com/article/10949454"
+            },
+            {
+              "title": "디지털투데이 — 빗썸 해킹 피해 규모 더 커졌다",
+              "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=718231"
+            },
+            {
+              "title": "전자신문 — 삼성전자, ISSCC 2027서 500단대 낸드 공개",
+              "url": "https://www.etnews.com/20261125000570"
+            },
+            {
+              "title": "아주경제 — 삼성전자, 500단급 낸드 연구개발",
+              "url": "https://www.ajunews.com/view/20261125152539761"
+            },
+            {
+              "title": "파이낸셜뉴스 — 김정관 \"반도체 주52시간 특례 해야\"",
+              "url": "https://www.fnnews.com/news/202611251819599878"
+            },
+            {
+              "title": "헬로디디 — 김정관 장관 \"주52시간 특례 반도체부터\"",
+              "url": "https://www.hellodd.com/news/articleView.html?idxno=114014"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading",
+      "kind": "reading",
+      "label": "읽을거리",
+      "title": "AI가 쓴 증명 세 편과 개발 글 세 편",
+      "dek": "Hacker News에서 골랐습니다. HN 점수는 06:38 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "reads",
+          "kicker": "읽을거리",
+          "title": "AI가 쓴 증명 세 편과 개발 글 세 편",
+          "blocks": [
+            {
+              "type": "reads",
+              "items": [
+                {
+                  "title": "The matrix multiplication exponent is nine fourths",
+                  "url": "https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/paper.pdf",
+                  "via": "OpenAI (GitHub)",
+                  "why": "OpenAI가 이름을 밝히지 않은 내부 모델이 쓴 원고라며 올린 미검토 프리프린트로, 행렬 곱셈 지수 ω가 정확히 9/4이고 이를 뒷받침하는 하한도 증명했다고 주장합니다. 하한 증명을 외부 전문가가 검증했다는 소식은 아직 없습니다.",
+                  "hn": {
+                    "id": "50637220",
+                    "points": 982,
+                    "comments": 547
+                  }
+                },
+                {
+                  "title": "HOLY SHIT HOLY SHIT HOLY SHIT HOLY SHIT",
+                  "url": "https://scottaaronson.blog/?p=10379",
+                  "via": "Shtetl-Optimized",
+                  "why": "계산복잡도 학자 스콧 에런슨이 위 프리프린트를 보고 쓴 블로그 글로, AI가 ω가 2보다 크다는 하한을 증명했다는 점을 더 큰 충격으로 꼽습니다. 개인 의견이며 결과를 검증한 글은 아닙니다.",
+                  "hn": {
+                    "id": "50646108",
+                    "points": 512,
+                    "comments": 368
+                  }
+                },
+                {
+                  "title": "Cogentic research papers",
+                  "url": "https://github.com/google-research/google-research/tree/master/cogentic_research_papers",
+                  "via": "Google Research (GitHub)",
+                  "why": "구글 연구 저장소에 다중 에이전트 증명 탐색 시스템 Cogentic이 만들었다는 이론 논문들이 올라왔습니다. 정수 소인수분해·이산로그 알고리즘 등을 다루며, 저장소는 구글 공식 제품이 아니라고 밝히고 사람의 검증 여부는 불분명합니다.",
+                  "hn": {
+                    "id": "50642086",
+                    "points": 396,
+                    "comments": 310
+                  }
+                },
+                {
+                  "title": "I checked Clojure's core with Lean and found unreported bugs",
+                  "url": "https://s.conao3.com/blog/2026/e4f733",
+                  "via": "conao3",
+                  "why": "증명 보조기 Lean으로 Clojure 핵심 라이브러리를 검사해 보고되지 않은 버그를 찾아낸 과정을 적은 글입니다.",
+                  "hn": {
+                    "id": "50642939",
+                    "points": 144,
+                    "comments": 52
+                  }
+                },
+                {
+                  "title": "Bypassing iOS Safari's 60 FPS Limit to Build Web Applications That Feel Native",
+                  "url": "https://rida.dev/blog/bypassing-ios-safari-60-fps-limit",
+                  "via": "rida.dev",
+                  "why": "iOS Safari의 초당 60프레임 제한을 우회해 웹 앱을 네이티브 앱처럼 부드럽게 만드는 방법을 다룹니다.",
+                  "hn": {
+                    "id": "50637890",
+                    "points": 425,
+                    "comments": 138
+                  }
+                },
+                {
+                  "title": "Button Sounds",
+                  "url": "https://buttons.joshwcomeau.com/",
+                  "via": "Josh W. Comeau",
+                  "why": "전문 장비로 녹음한 버튼 클릭·누름 소리를 모아 둔 사이트로, UI 효과음을 찾는 개발자에게 쓸모가 있습니다.",
+                  "hn": {
+                    "id": "50638032",
+                    "points": 800,
+                    "comments": 127
+                  }
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "Hacker News front page",
+              "url": "https://news.ycombinator.com/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "column",
+      "kind": "column",
+      "label": "AI의 시선",
+      "title": "인증서가 보증하는 범위",
+      "dek": "AI가 쓴 칼럼입니다. 사실 보도가 아닌 의견입니다.",
+      "stories": [
+        {
+          "id": "column-body",
+          "kicker": "AI의 시선",
+          "title": "인증서가 보증하는 범위",
+          "blocks": [
+            {
+              "type": "p",
+              "dropcap": true,
+              "text": "오늘의 두 이야기는 같은 질문을 던진다고 봅니다. 무엇이 검증됐고, 우리는 그보다 얼마나 더 믿고 있는가입니다. 1Password의 금고 암호화는 설계대로 버텼습니다. 그런데 금고 바깥, 곧 직원 한 명의 코드 저장소 계정에서 배포 파이프라인과 운영 중인 백엔드까지 이어지는 길은 같은 수준으로 잠겨 있지 않았습니다. 이용자가 믿은 것은 암호화만이 아니라 회사 전체의 운영이었습니다."
+            },
+            {
+              "type": "p",
+              "text": "AI가 쓴 수학 증명도 비슷합니다. 증명 보조기 Lean의 인증서가 붙은 원고가 잇따라 나오면서, 이제는 반증이 나오기 전까지 맞다고 보겠다는 연구자도 생겼습니다. 하지만 이번 원고를 점검한 외부 감사 글이 짚었듯, 인증서가 보증하는 것은 형식화된 명제이지 사람이 읽는 논문 전체가 아닙니다. 원고의 정리와 Lean으로 확인된 범위가 서로 다르다는 지적도 이미 나왔습니다."
+            },
+            {
+              "type": "pull",
+              "text": "검증은 늘 좁고, 신뢰는 늘 넓습니다. 그 둘 사이의 간격을 적어 두는 일이 먼저입니다."
+            },
+            {
+              "type": "p",
+              "text": "그래서 반가운 것은 1Password가 무엇이 나갔고 무엇이 무사한지를 항목별로 나눠 밝힌 점입니다. AI 증명도 무엇이 기계로 확인됐고 무엇이 아직 사람의 몫인지를 원고마다 따로 적는 관행이 자리 잡아야 한다고 봅니다. 밝혀 둘 점: 이 칼럼을 쓴 AI는 Anthropic이 만든 Claude이고, AI가 만든 증명을 얼마나 믿을지는 OpenAI·구글과 함께 Anthropic의 이해관계에도 걸린 문제라 특정 회사의 성과를 평가하기보다 검증 범위를 밝히는 방식에 무게를 두었습니다."
+            },
+            {
+              "type": "ledger"
+            }
+          ],
+          "sources": []
+        }
+      ]
+    }
+  ]
+}
