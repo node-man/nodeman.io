@@ -1,0 +1,895 @@
+{
+  "version": 1,
+  "date": "2026-11-27",
+  "publishedAt": "2026-11-27T07:36:02+09:00",
+  "title": "머스크, 미국 아이마다 스페이스X 주식 두 주",
+  "lede": "머스크가 활성화된 트럼프 계좌를 가진 미국 아이마다 스페이스X 주식 두 주를 주겠다고 밝혔습니다. 한 주는 회사가 12월에 새로 발행해 넣고, 한 주는 머스크가 보호예수가 풀리는 내년 6월에 개인 보유분에서 넣는 방식입니다. 같은 날 엔비디아는 동남아 4개국으로 가는 서버 출하를 멈췄고, 리눅스 NFS 서버에서는 12년 묵은 원격 루트 결함이 공개됐습니다.",
+  "raw": "content/radar/raw/2026-11-27.json",
+  "rawCollectedAt": "2026-11-26T21:38:27.207Z",
+  "quick": [
+    "**머스크, 주식 두 주로 약속 키워** 트럼프 계좌가 활성화된 미국 아이마다 회사 한 주, 머스크 한 주씩입니다. 종가 기준 총액은 약 180억 달러로 추산됩니다.",
+    "**엔비디아, 동남아 4개국 서버 출하 중단** 말레이시아·싱가포르·태국·인도네시아로 가는 서버를 델·슈퍼마이크로가 멈췄다고 FT가 전했습니다.",
+    "**리눅스 nfsd에 인증 전 원격 루트 결함** NFSv4.1을 여는 서버는 TCP 2049 포트 하나로 장악될 수 있어, 패치 전에는 포트 차단이 대안입니다.",
+    "**바이낸스, 출금 제한 전면 해제** 10월 29일 63억 달러 규모 탈취 이후 약 4주 만에 복구 작업을 마쳤다고 밝혔습니다.",
+    "**록스타 영국 직원, 노조 인정 부결** 투표율 93.2%에 반대 75%로, 노조는 단체교섭권을 얻지 못했습니다."
+  ],
+  "cover": {
+    "big": "아이마다\n주식 두 주"
+  },
+  "sections": [
+    {
+      "id": "lead",
+      "kind": "lead",
+      "label": "커버 스토리",
+      "title": "계좌를 거쳐 가는 선물",
+      "dek": "약속의 크기는 두 배가 됐고, 받는 길은 정부 계좌 하나로 좁혀졌습니다.",
+      "stories": [
+        {
+          "id": "musk-spacex-two-shares",
+          "kicker": "스페이스X · 트럼프 계좌",
+          "title": "머스크, 미국 아이마다 스페이스X 주식 두 주 약속… 회사 한 주, 본인 한 주",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "머스크가 25일(현지시간) X에 미국의 모든 아이가 스페이스X 주식 두 주를 받게 된다고 밝혔습니다. 스페이스X가 현재 활성화된 트럼프 계좌마다 새 A주를 한 주씩 발행해 넣고, 머스크가 같은 수만큼 개인 보유분을 더하는 구조입니다. 트럼프 계좌는 18세 미만 아이를 위한 정부 지원 계좌이고, 주식을 받으려면 부모나 보호자가 계좌를 신청해 활성화해야 합니다."
+            },
+            {
+              "type": "p",
+              "text": "지급 시점은 둘로 나뉩니다. 회사 몫은 12월에 넘어가고, 머스크 몫은 그의 보호예수가 끝나는 2027년 6월에 넘어갑니다. 10월 19일 머스크가 \"내년에\" 개인 주식 한 주씩을 주겠다고 했던 약속을, 회사 몫을 더해 두 배로 키운 셈입니다."
+            },
+            {
+              "type": "stats",
+              "items": [
+                {
+                  "value": "2주",
+                  "label": "아이 한 명당 (회사 1 + 머스크 1)"
+                },
+                {
+                  "value": "127.44달러",
+                  "label": "발표일 스페이스X 종가"
+                },
+                {
+                  "value": "약 180억 달러",
+                  "label": "총액 추산 (언론 계산)"
+                },
+                {
+                  "value": "약 7천만 개",
+                  "label": "10월까지 만들어진 트럼프 계좌 (백악관 발표)"
+                }
+              ]
+            },
+            {
+              "type": "timeline",
+              "title": "약속이 구체화된 순서",
+              "points": [
+                {
+                  "date": "2026-10-19",
+                  "label": "한 주 약속",
+                  "note": "머스크 개인 주식, 시점은 \"내년\"",
+                  "kind": "past"
+                },
+                {
+                  "date": "2026-11-25",
+                  "label": "두 주로 확대",
+                  "note": "회사 몫 추가, 트럼프 계좌로 지급",
+                  "kind": "now"
+                },
+                {
+                  "date": "2026-12",
+                  "label": "회사 몫 이체",
+                  "kind": "future"
+                },
+                {
+                  "date": "2027-06",
+                  "label": "머스크 몫 이체",
+                  "note": "보호예수 종료 시점",
+                  "kind": "future"
+                }
+              ]
+            },
+            {
+              "type": "p",
+              "text": "총액은 발표일 종가 127.44달러에 계좌 약 7천만 개를 곱한 값이라 실제 규모는 활성화된 계좌 수와 주가에 따라 달라집니다. 같은 날 미 연방통신위원회(FCC)는 스페이스X의 궤도 데이터센터 위성 최대 100만 기 계획을 승인했고, 이 약속은 그 직후에 나왔습니다. 두 사안을 회사가 직접 엮어 설명하지는 않았습니다."
+            },
+            {
+              "type": "unknowns",
+              "title": "아직 모르는 것",
+              "items": [
+                "트럼프 계좌 가운데 실제로 활성화된 계좌가 몇 개인지",
+                "주식을 받기 위한 신청 마감일이 있는지",
+                "머스크 개인 몫도 회사 몫처럼 활성 계좌에만 가는지 (스페이스X는 질의에 답하지 않았습니다)"
+              ]
+            }
+          ],
+          "ai": {
+            "kind": "opinion",
+            "stance": "규모보다 받는 경로를 봐야 하는 발표",
+            "confidence": 2,
+            "points": [
+              {
+                "k": "핵심",
+                "v": "주식이 트럼프 계좌로만 들어가므로, 실제 수혜 범위는 부모가 계좌를 활성화했느냐에 달려 있습니다. 180억 달러는 상한에 가까운 계산입니다."
+              },
+              {
+                "k": "회사 비용",
+                "v": "회사 몫은 신주 발행이라 기존 주주 지분이 그만큼 희석됩니다. 개인 기부와 성격이 다릅니다."
+              },
+              {
+                "k": "밝혀 둘 점",
+                "v": "스페이스X는 AI 사업도 하는 회사이고, 이 글을 쓴 Claude는 경쟁 AI 기업인 Anthropic이 만들었습니다. 평가는 보도된 사실에 한정했습니다."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "title": "Euronews: Musk says will give two SpaceX shares to 'every child in America'",
+              "url": "https://www.euronews.com/2026/11/26/musk-says-will-give-two-spacex-shares-to-every-child-in-america"
+            },
+            {
+              "title": "Al Jazeera: Musk pledges two SpaceX shares for every US child",
+              "url": "https://www.aljazeera.com/economy/2026/11/26/musk-pledges-two-spacex-shares-for-every-us-child"
+            },
+            {
+              "title": "Global News: Elon Musk pledges 2 SpaceX shares to every U.S. child",
+              "url": "https://globalnews.ca/news/12167615/elon-musk-spacex-shares-us-children/"
+            },
+            {
+              "title": "전자신문: 머스크 \"모든 美 아동에게 스페이스X 주식 2주\"",
+              "url": "https://www.etnews.com/20261126000531"
+            },
+            {
+              "title": "블로터: 머스크, 美 어린이 1인당 스페이스X 2주 기부",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=679838"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "headlines",
+      "kind": "headlines",
+      "label": "헤드라인",
+      "title": "여러 매체가 함께 다룬 이야기",
+      "stories": [
+        {
+          "id": "nvidia-sea-servers",
+          "kicker": "반도체 · 수출 통제",
+          "title": "엔비디아, 말레이시아·싱가포르·태국·인도네시아 서버 출하 중단",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "엔비디아가 델, 슈퍼마이크로 같은 제조 협력사에 자사 칩이 들어간 서버를 동남아 4개국으로 보내지 말라고 했다고 파이낸셜타임스가 26일 전했습니다. 협력사들은 현지 고객에게 엔비디아가 주문을 승인하지 않는다고 알렸습니다."
+            },
+            {
+              "type": "p",
+              "text": "배경은 미 상무부 산업안보국이 지난주 내놓은 새 수출 통제입니다. 중국 기업이 해외 클라우드에서 연산 자원을 빌려 판매 금지를 우회하는 길을 막으려는 규칙으로, 이 지역 클라우드 사업자는 90일 안에 허가를 신청해야 합니다. 중단이 일시적인지는 알려지지 않았습니다."
+            }
+          ],
+          "ai": {
+            "kind": "opinion",
+            "stance": "규칙의 범위가 정리될 때까지 지역 AI 투자가 멈칫할 가능성",
+            "confidence": 2,
+            "points": [
+              {
+                "k": "의미",
+                "v": "칩을 사는 쪽이 아니라 연산을 빌려 쓰는 쪽까지 통제 대상이 되면서, 동남아 데이터센터 사업은 고객이 누구인지 증명하는 부담을 지게 됐습니다."
+              },
+              {
+                "k": "볼 것",
+                "v": "90일 허가 신청 기간 동안 어떤 사업자가 허가를 받는지가 출하 재개 시점을 가를 것입니다."
+              }
+            ]
+          },
+          "sources": [
+            {
+              "title": "TechCrunch: Nvidia hits pause on chip shipments to Southeast Asia",
+              "url": "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/"
+            },
+            {
+              "title": "The Decoder: Nvidia halts server shipments to four Southeast Asian countries",
+              "url": "https://the-decoder.com/nvidia-halts-server-shipments-to-malaysia-singapore-thailand-and-indonesia-after-tighter-us-export-controls/"
+            },
+            {
+              "title": "The National: Nvidia halts chip shipments to South-East Asia amid US crackdown",
+              "url": "https://www.thenationalnews.com/future/technology/2026/11/26/nvidia-halts-chip-shipments-to-south-east-asia-amid-us-crackdown/"
+            }
+          ]
+        },
+        {
+          "id": "nfs2root",
+          "kicker": "보안 · 리눅스",
+          "title": "리눅스 NFS 서버에 12년 묵은 인증 전 원격 루트 결함 'NFS2ROOT'",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "리눅스 커널의 NFS 서버(nfsd)에서 인증 없이 원격으로 루트 권한을 얻을 수 있는 결함(CVE-2026-99362)이 공개됐습니다. 발견한 보안 업체 OpenSec은 심각도를 10점 만점에 9.8점으로 매겼고, 결함이 12년 동안 코드에 남아 있었다고 밝혔습니다."
+            },
+            {
+              "type": "list",
+              "items": [
+                {
+                  "k": "조건",
+                  "text": "NFSv4.1을 제공하고 TCP 2049 포트가 열린 서버라면 기본 설정에서도 영향을 받습니다. 조작한 요청 하나로 커널 힙을 넘쳐 쓰는 방식입니다."
+                },
+                {
+                  "k": "수정판",
+                  "text": "Cybernews에 따르면 6.12.117, 6.18.61, 7.3.2, 7.4-rc1에 수정이 들어갔고, 주요 배포판 패키지는 아직 나오지 않았습니다."
+                },
+                {
+                  "k": "당장 할 일",
+                  "text": "커널 업데이트와 재부팅이 어렵다면 방화벽에서 2049 포트를 막는 것이 대안입니다. NAS와 쿠버네티스 스토리지가 특히 점검 대상입니다."
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "Cybernews: NFS2ROOT vulnerability gives hackers root on Linux NFS servers",
+              "url": "https://cybernews.com/security/nfs2root-linux-kernel-vulnerability-exposes-nas-kubernetes/"
+            },
+            {
+              "title": "Breach News: Linux patches a 12-year pre-auth remote root bug in nfsd",
+              "url": "https://breachnews.com/research/nfs2root-cve-2026-99362-linux-nfsd-pre-auth-root/"
+            },
+            {
+              "title": "GeekNews: NFS2ROOT",
+              "url": "https://news.hada.io/topic?id=37896"
+            }
+          ]
+        },
+        {
+          "id": "binance-withdrawals",
+          "kicker": "가상자산",
+          "title": "바이낸스, 63억 달러 탈취 4주 만에 출금 제한 전면 해제",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "바이낸스가 10월 29일 해킹으로 걸었던 출금 중단을 모두 풀었다고 26일 밝혔습니다. 11월 1일부터 단계적으로 출금을 열어 온 지 25일 만이며, 회사는 복구 작업을 마쳤다고 설명했습니다. 정비나 업그레이드 중인 일부 네트워크는 잠시 멈춰 있습니다."
+            },
+            {
+              "type": "p",
+              "text": "회사는 피해 자산을 63억 4천만 달러가 넘는 자체 자금으로 메웠다고 밝혔습니다(발표 주체 주장). 미국 정부는 사고 이후 약 30억 달러를 동결·압수·반환하도록 도왔다고 했습니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "Reuters via KFGO: Binance lifts withdrawal suspension after $6.3 billion crypto heist",
+              "url": "https://kfgo.com/2026/11/26/binance-lifts-withdrawal-suspension-after-6-3-billion-crypto-heist/"
+            },
+            {
+              "title": "crypto.news: Binance lifts withdrawal suspension after $6.34B hack",
+              "url": "https://crypto.news/binance-lifts-withdrawal-suspension-after-hack/"
+            }
+          ]
+        },
+        {
+          "id": "rockstar-union-vote",
+          "kicker": "게임 · 노동",
+          "title": "록스타 영국 직원 투표, 노조 인정안 75% 반대로 부결",
+          "hot": {
+            "count": 3,
+            "basis": "오늘 수집 피드 중 보도 매체"
+          },
+          "blocks": [
+            {
+              "type": "p",
+              "text": "GTA 6를 만든 록스타게임즈의 영국 직원들이 IWGB 산하 노조에 임금과 근로조건 교섭권을 줄지 묻는 투표에서 반대를 택했습니다. 11월 12일부터 26일까지 진행된 투표에 대상자의 93.2%인 1,544명이 참여했고, 찬성은 25%에 그쳤습니다."
+            },
+            {
+              "type": "p",
+              "text": "회사는 직원과 직접 관계를 맺는 방식에 대한 지지라고 평가했고, 노조는 수백 명이 찬성했다며 활동을 이어 가겠다고 밝혔습니다. 결과에 따라 회사에는 노조와 교섭할 의무가 생기지 않습니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "The Verge: GTA VI developers vote against unionization",
+              "url": "https://www.theverge.com/games/1043169/rockstar-games-union-vote-iwgb"
+            },
+            {
+              "title": "Gamereactor: Rockstar UK staff reject union recognition in landslide ballot",
+              "url": "https://gamereactor.eu/rockstar-union-vote-75-percent-no"
+            },
+            {
+              "title": "Startup Fortune: Rockstar UK staff reject union recognition by three to one",
+              "url": "https://startupfortune.com/rockstar-uk-staff-reject-union-recognition-by-three-to-one-after-gta-6-launch"
+            }
+          ]
+        },
+        {
+          "id": "x-parental-controls",
+          "kicker": "플랫폼",
+          "title": "X, 13~17세 계정에 첫 보호자 관리 기능",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "X가 13~17세 이용자를 위한 첫 보호자 관리 기능을 내놓았습니다. 십대 계정은 기본으로 보호 모드로 설정됩니다. Engadget에 따르면 민감한 미디어가 제한되고 맞춤 광고도 꺼집니다."
+            }
+          ],
+          "sources": [
+            {
+              "title": "TechCrunch: X finally gets parental controls after 20 years",
+              "url": "https://techcrunch.com/2026/11/26/x-finally-gets-parental-controls-after-20-years/"
+            },
+            {
+              "title": "Techmeme: X rolls out its first parental controls for users aged 13 to 17",
+              "url": "https://www.techmeme.com/261126/p13#a261126p13"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "github",
+      "kind": "github",
+      "label": "GitHub 트렌딩",
+      "title": "이레째 같은 12개, 같은 순서",
+      "dek": "일간 트렌딩 상위 저장소를 각 README 기준으로 요약했습니다. 숫자는 06:38 KST 수집값입니다.",
+      "stories": [
+        {
+          "id": "github-trending",
+          "kicker": "GitHub 트렌딩",
+          "title": "이레째 같은 12개, 같은 순서",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "상위 12개 저장소가 21일부터 이레째 같은 순서를 지켰습니다. 1위 Claude-BugHunter가 오늘 1,600개로 가장 많은 스타를 받았고, 6위 firecrawl(1,042개)과 9위 diagram-design(951개)이 뒤를 이었습니다. 목록의 절반은 여전히 코딩 에이전트에 기술을 얹어 주는 스킬·플러그인이고, 오늘 nginx 옆에 리눅스 nfsd 결함 소식이 겹친 것처럼 인프라 저장소는 보안 공지와 함께 읽는 편이 좋습니다."
+            },
+            {
+              "type": "share",
+              "title": "상위 12개 저장소의 오늘 받은 스타 비중",
+              "items": [
+                {
+                  "label": "Claude-BugHunter",
+                  "value": 1600
+                },
+                {
+                  "label": "firecrawl",
+                  "value": 1042
+                },
+                {
+                  "label": "diagram-design",
+                  "value": 951
+                },
+                {
+                  "label": "나머지 9개",
+                  "value": 4516
+                }
+              ]
+            },
+            {
+              "type": "bars",
+              "title": "오늘 받은 스타 (2~12위)",
+              "unit": "개",
+              "items": [
+                {
+                  "label": "2. superpowers",
+                  "value": 853
+                },
+                {
+                  "label": "3. CLI-Anything",
+                  "value": 744
+                },
+                {
+                  "label": "4. minimind",
+                  "value": 701
+                },
+                {
+                  "label": "5. plugins",
+                  "value": 268
+                },
+                {
+                  "label": "6. firecrawl",
+                  "value": 1042
+                },
+                {
+                  "label": "7. nginx",
+                  "value": 150
+                },
+                {
+                  "label": "8. openvino",
+                  "value": 176
+                },
+                {
+                  "label": "9. diagram-design",
+                  "value": 951
+                },
+                {
+                  "label": "10. last30days-skill",
+                  "value": 755
+                },
+                {
+                  "label": "11. stitch-skills",
+                  "value": 308
+                },
+                {
+                  "label": "12. app-store-compliance",
+                  "value": 561
+                }
+              ],
+              "caption": "GitHub 트렌딩 일간 페이지 기준, 06:38 KST 수집."
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "elementalsouls/Claude-BugHunter",
+                "rank": 1,
+                "language": "Python",
+                "license": "MIT",
+                "stars": 24400,
+                "starsToday": 1600,
+                "verdict": "watch",
+                "def": "Claude Code에 버그 바운티와 외부 레드팀 작업 방법을 가르치는 스킬 묶음입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "스킬 85개와 슬래시 명령 16개, 24개 취약점 유형에 걸친 공개 보고서 패턴 681건(이 가운데 433건은 출처 표기, README 기준), Burp MCP 연동을 담았습니다."
+                  ],
+                  [
+                    "대상",
+                    "허가받은 범위에서 버그 바운티나 침투 시험을 하는 보안 연구자입니다."
+                  ],
+                  [
+                    "주의",
+                    "공격 기법을 다루는 도구라 허가된 대상에만 써야 합니다. 실전 검증은 작성자 주장이고, Claude 생태계 도구라 평가는 보수적으로 매겼습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "obra/superpowers",
+                "rank": 2,
+                "language": "Shell",
+                "license": "MIT",
+                "stars": 327400,
+                "starsToday": 853,
+                "verdict": "reference",
+                "def": "코딩 에이전트가 조합형 스킬과 기본 지침을 따라 일정한 개발 절차로 일하게 만드는 프레임워크입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot CLI 등 여러 에이전트에 설치 안내가 있습니다."
+                  ],
+                  [
+                    "구성",
+                    "조합해 쓰는 스킬들과, 에이전트가 그 스킬을 제때 쓰도록 하는 초기 지침으로 이뤄져 있습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "HKUDS/CLI-Anything",
+                "rank": 3,
+                "language": "Python",
+                "license": "Apache-2.0",
+                "stars": 66281,
+                "starsToday": 744,
+                "verdict": "experiment",
+                "def": "기존 소프트웨어를 AI 에이전트가 다루기 쉬운 명령줄 도구로 감싸 주는 프로젝트입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "`pip install cli-anything-hub`로 허브를 설치한 뒤 커뮤니티가 만든 CLI를 골라 설치합니다."
+                  ],
+                  [
+                    "동작",
+                    "CAD, 3D, 다이어그램, 자막 같은 작업용 CLI를 에이전트가 호출하고 결과를 미리 보며 반복하게 합니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "jingyaogong/minimind",
+                "rank": 4,
+                "language": "Python",
+                "license": "Apache-2.0",
+                "stars": 71581,
+                "starsToday": 701,
+                "verdict": "reference",
+                "def": "64M 규모의 아주 작은 언어 모델을 처음부터 직접 학습해 보는 교육용 프로젝트입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "사전학습, SFT, LoRA, DPO, PPO·GRPO 같은 강화학습, 도구 사용, 증류까지 PyTorch로 직접 구현했습니다."
+                  ],
+                  [
+                    "주의",
+                    "2시간·저비용 학습은 작성자 주장이며, 결과 모델은 학습용이지 실사용 모델이 아닙니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "cursor/plugins",
+                "rank": 5,
+                "language": "TypeScript",
+                "license": null,
+                "stars": 19763,
+                "starsToday": 268,
+                "verdict": "watch",
+                "def": "Cursor 편집기의 공식 플러그인 모음과 플러그인 규격입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "플러그인마다 최상위 디렉터리와 `.cursor-plugin/plugin.json` 매니페스트를 둡니다."
+                  ],
+                  [
+                    "주의",
+                    "저장소에 라이선스가 명시돼 있지 않습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "firecrawl/firecrawl",
+                "rank": 6,
+                "language": "TypeScript",
+                "license": "AGPL-3.0",
+                "stars": 210852,
+                "starsToday": 1042,
+                "verdict": "try",
+                "def": "웹사이트를 에이전트가 읽기 좋은 형태로 바꾸고 검색·스크래핑 API를 제공하는 도구입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "Firecrawl Local은 단일 실행 파일로 돌아가며 MCP 서버와 localhost API를 함께 띄웁니다."
+                  ],
+                  [
+                    "구성",
+                    "로컬 실행, 호스팅 서비스, 자체 서버 배포 세 가지 방식을 지원합니다."
+                  ],
+                  [
+                    "주의",
+                    "AGPL-3.0이라 수정한 서버를 서비스로 제공하면 소스 공개 의무가 생길 수 있습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "nginx/nginx",
+                "rank": 7,
+                "language": "C",
+                "license": "BSD-2-Clause",
+                "stars": 33505,
+                "starsToday": 150,
+                "verdict": "reference",
+                "def": "웹 서버, 리버스 프록시, 로드 밸런서로 널리 쓰이는 NGINX의 공식 오픈소스 저장소입니다.",
+                "rows": [
+                  [
+                    "주의",
+                    "최근 공개된 결함(CVE-2026-123007)이 있으니 쓰는 배포판의 보안 업데이트 여부를 확인하는 편이 좋습니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "openvinotoolkit/openvino",
+                "rank": 8,
+                "language": "C++",
+                "license": "Apache-2.0",
+                "stars": 12800,
+                "starsToday": 176,
+                "verdict": "reference",
+                "def": "인텔이 주도하는 딥러닝 모델 추론 최적화·배포 도구입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "PyTorch, TensorFlow, ONNX 등으로 만든 모델을 여러 하드웨어에서 빠르게 돌리려는 개발자입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "cathrynlavery/diagram-design",
+                "rank": 9,
+                "language": "HTML",
+                "license": "MIT",
+                "stars": 73773,
+                "starsToday": 951,
+                "verdict": "try",
+                "def": "에이전트가 다이어그램을 자체 완결형 HTML+SVG 파일 하나로 그리게 하는 스킬입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "`npx skills add cathrynlavery/diagram-design`로 설치하고 평소 말로 그림을 요청합니다."
+                  ],
+                  [
+                    "구성",
+                    "README 기준 52종의 다이어그램 형식과 브랜드 색 맞춤을 지원하며, 결과물은 그림자 없는 단일 HTML+SVG 파일입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "mvanhorn/last30days-skill",
+                "rank": 10,
+                "language": "Python",
+                "license": "MIT",
+                "stars": 75674,
+                "starsToday": 755,
+                "verdict": "experiment",
+                "def": "한 주제를 Reddit, X, YouTube, Hacker News, Polymarket, 웹에서 최근 30일치로 찾아 요약하는 에이전트 스킬입니다.",
+                "rows": [
+                  [
+                    "시작",
+                    "Claude Code 플러그인 마켓플레이스나 `npx skills add`로 설치합니다."
+                  ],
+                  [
+                    "주의",
+                    "요약 품질은 각 플랫폼에서 얼마나 가져올 수 있느냐에 좌우됩니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "google-labs-code/stitch-skills",
+                "rank": 11,
+                "language": "TypeScript",
+                "license": "Apache-2.0",
+                "stars": 13254,
+                "starsToday": 308,
+                "verdict": "watch",
+                "def": "구글의 UI 디자인 도구 Stitch를 코딩 에이전트에서 쓰게 하는 스킬·플러그인 모음입니다.",
+                "rows": [
+                  [
+                    "대상",
+                    "Codex, Antigravity, Gemini CLI, Claude Code, Cursor 등 Agent Skills 규격을 따르는 에이전트입니다."
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "repo",
+              "repo": {
+                "fullName": "mjmirza/app-store-compliance",
+                "rank": 12,
+                "language": "Shell",
+                "license": "NOASSERTION",
+                "stars": 6970,
+                "starsToday": 561,
+                "verdict": "experiment",
+                "def": "앱스토어와 구글 플레이 심사 반려를 미리 막기 위한 점검 규칙 모음입니다.",
+                "rows": [
+                  [
+                    "구성",
+                    "문서화된 반려 사례 125건과 해결법, 개인정보 매니페스트·데이터 보안 항목 점검, EU AI법 등 마감 일정 117건 추적을 담았습니다(저장소 설명 기준)."
+                  ],
+                  [
+                    "주의",
+                    "GitHub가 인식하는 표준 라이선스가 아니므로 사내에서 쓰기 전에 조건을 확인해야 합니다."
+                  ]
+                ]
+              }
+            }
+          ],
+          "sources": [
+            {
+              "title": "GitHub Trending (daily)",
+              "url": "https://github.com/trending?since=daily"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "korea",
+      "kind": "korea",
+      "label": "국내",
+      "title": "화웨이 HBM, 5G 단독모드, 다나와 보안 사고",
+      "stories": [
+        {
+          "id": "korea-brief",
+          "kicker": "국내 브리핑",
+          "title": "화웨이 차세대 HBM 보도, 이통 3사 5G 단독모드 경쟁",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "k": "HBM",
+                  "text": "화웨이가 데이터 핀 밀도를 두 배로 높인 차세대 HBM을 설계해 내년 2월 공개할 계획이라는 보도가 나왔습니다(블로터·디지털투데이 보도)."
+                },
+                {
+                  "k": "삼성·테슬라",
+                  "text": "머스크 측의 반도체 장기 구매 제안에 이재용 삼성전자 회장이 추가 조건을 되물었다는 보도가 나왔습니다(매일경제·전자신문 보도)."
+                },
+                {
+                  "k": "5G SA",
+                  "text": "LTE를 떼어 낸 5G 단독모드가 열리면서 이동통신 3사의 경쟁이 필요한 품질을 골라 쓰는 맞춤형 서비스로 옮겨 가고 있습니다."
+                },
+                {
+                  "k": "미국 사이버",
+                  "text": "미국이 범정부 사이버 인프라 보호 계획을 내놓고 CISA 인력을 600명 이상 늘리는 등 사이버보안 지휘 체계를 재편합니다."
+                },
+                {
+                  "k": "삼성 팹",
+                  "text": "삼성이 반도체 공장 무인화를 목표로 로봇 전담 조직을 꾸렸다고 전자신문이 단독 보도했습니다."
+                },
+                {
+                  "k": "다나와",
+                  "text": "가격비교 서비스 다나와가 보안 사고로 서비스 이용을 중단하고 개인정보 유출 여부를 확인하고 있다고 전자신문이 전했습니다."
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "블로터: 화웨이, 차세대 HBM 개발",
+              "url": "https://www.bloter.net/news/articleView.html?idxno=679839"
+            },
+            {
+              "title": "디지털투데이: 화웨이, 데이터 핀 밀도 2배 HBM 설계",
+              "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=718582"
+            },
+            {
+              "title": "전자신문: 머스크도 진땀 빼게 한 이재용의 한마디",
+              "url": "https://www.etnews.com/20261126000565"
+            },
+            {
+              "title": "전자신문: 5G SA 시대 개막…이통 3사 맞춤형 품질 경쟁",
+              "url": "https://www.etnews.com/20261126000396"
+            },
+            {
+              "title": "전자신문: 美, 사이버보안 컨트롤타워 재편",
+              "url": "https://www.etnews.com/20261126000369"
+            },
+            {
+              "title": "전자신문: 삼성 반도체 공장 무인화 로봇팀",
+              "url": "https://www.etnews.com/20261126000296"
+            },
+            {
+              "title": "전자신문: 다나와, 보안 사고로 서비스 이용 중단",
+              "url": "https://www.etnews.com/20261126000392"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading",
+      "kind": "reading",
+      "label": "읽을거리",
+      "title": "실행 파일 하나짜리 Postgres와 개발 글 다섯 편",
+      "stories": [
+        {
+          "id": "reads",
+          "kicker": "읽을거리",
+          "title": "실행 파일 하나짜리 Postgres와 개발 글 다섯 편",
+          "blocks": [
+            {
+              "type": "reads",
+              "items": [
+                {
+                  "title": "Minipg: PostgreSQL as a Single Executable",
+                  "url": "https://progrium.github.io/minipg/",
+                  "via": "Hacker News",
+                  "why": "PostgreSQL을 실행 파일 하나로 띄우는 프로젝트라, 테스트나 로컬 도구에 데이터베이스를 붙일 때 참고할 만합니다.",
+                  "hn": {
+                    "id": "50650892",
+                    "points": 279,
+                    "comments": 44
+                  }
+                },
+                {
+                  "title": "AMD Specific Patches for Llama.cpp",
+                  "url": "https://devnull.land/amd-specific-llama-cpp",
+                  "via": "Hacker News",
+                  "why": "llama.cpp를 AMD GPU에 맞춰 손본 패치 이야기로, 엔비디아 밖에서 로컬 추론을 돌리려는 사람에게 쓸모가 있습니다.",
+                  "hn": {
+                    "id": "50657265",
+                    "points": 203,
+                    "comments": 52
+                  }
+                },
+                {
+                  "title": "Google Will Make AI Agents Use Its MCP Servers. The Gmail One Can't Send Email",
+                  "url": "https://techstackups.com/articles/google-workspace-ai-agents-mcp/",
+                  "via": "Hacker News",
+                  "why": "구글 워크스페이스 MCP 서버가 에이전트에게 실제로 무엇을 허용하는지 따져 본 글로, 연동 범위를 설계할 때 읽어 볼 만합니다.",
+                  "hn": {
+                    "id": "50653477",
+                    "points": 153,
+                    "comments": 163
+                  }
+                },
+                {
+                  "title": "Collection of preserved UI style guides",
+                  "url": "https://aresluna.org/ui-style-guides/",
+                  "via": "Hacker News",
+                  "why": "옛 운영체제와 소프트웨어의 UI 지침서를 모은 자료실이라 디자인 규칙이 어떻게 굳어졌는지 거슬러 볼 수 있습니다.",
+                  "hn": {
+                    "id": "50649834",
+                    "points": 386,
+                    "comments": 88
+                  }
+                },
+                {
+                  "title": "Lions' Commentary on Unix: Why It Was Secretly Copied for 20 Years",
+                  "url": "https://fosscomics.com/posts/17.%20Lions%27%20Commentary%20on%20Unix/",
+                  "via": "Hacker News",
+                  "why": "유닉스 소스 해설서가 오랫동안 몰래 복사돼 돌던 사연을 만화로 정리해, 소스 공개 문화의 뿌리를 가볍게 훑을 수 있습니다.",
+                  "hn": {
+                    "id": "50651719",
+                    "points": 258,
+                    "comments": 55
+                  }
+                },
+                {
+                  "title": "Rustc의 차세대 트레이트 해결기 최적화",
+                  "url": "https://news.hada.io/topic?id=37900",
+                  "via": "GeekNews",
+                  "why": "Rust 컴파일러의 새 트레이트 해결기를 빠르게 만드는 작업을 다뤄, 컴파일 시간에 관심 있는 Rust 개발자에게 맞습니다."
+                }
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "Hacker News front page",
+              "url": "https://news.ycombinator.com/"
+            },
+            {
+              "title": "GeekNews",
+              "url": "https://news.hada.io/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "column",
+      "kind": "column",
+      "label": "칼럼",
+      "title": "문을 지키는 쪽이 정하는 것",
+      "stories": [
+        {
+          "id": "column-body",
+          "kicker": "칼럼",
+          "title": "문을 지키는 쪽이 정하는 것",
+          "blocks": [
+            {
+              "type": "p",
+              "dropcap": true,
+              "text": "오늘 나온 소식들은 무엇을 주느냐보다 어느 문을 지나야 받느냐가 결과를 정한다는 점에서 닮았습니다. 머스크의 주식 두 주는 \"모든 아이\"에게 간다고 소개됐지만, 실제로는 부모가 활성화한 트럼프 계좌라는 문을 통과한 아이에게만 들어갑니다. 약속의 크기는 계좌가 몇 개 열리느냐에 달려 있습니다."
+            },
+            {
+              "type": "p",
+              "text": "엔비디아의 동남아 출하 중단도 같은 구조입니다. 칩 자체는 그대로인데, 그 칩으로 만든 연산을 누가 빌려 쓰는지 증명하라는 새 문이 생기자 델과 슈퍼마이크로의 주문이 한꺼번에 멈췄습니다. 바이낸스는 반대로 닫았던 출금이라는 문을 4주 만에 다시 열었고, 그동안 시장이 본 것은 회사가 문을 언제 열지 혼자 정할 수 있다는 사실이었습니다."
+            },
+            {
+              "type": "pull",
+              "text": "같은 물건도 어느 문을 지나느냐에 따라 받는 사람이 달라집니다."
+            },
+            {
+              "type": "p",
+              "text": "NFS2ROOT는 이 이야기를 기술 쪽에서 보여 줍니다. 2049 포트라는 문 하나가 열려 있으면 인증이라는 더 안쪽 문은 의미가 없어집니다. 주식이든 칩이든 서버든, 오늘 확인할 일은 내가 어떤 문 안쪽에 서 있는지, 그 문을 누가 여닫는지입니다."
+            },
+            {
+              "type": "ledger"
+            }
+          ],
+          "sources": []
+        }
+      ]
+    }
+  ]
+}

@@ -153,7 +153,10 @@
     "probability": 0.4,
     "due": "2027-03-31",
     "dueLabel": "2027.3",
-    "status": "pending"
+    "status": "hit",
+    "resolvedOn": "2026-11-27",
+    "note": "머스크가 11월 25일 활성화된 트럼프 계좌의 18세 미만 아이를 대상으로, 회사 몫은 12월·본인 몫은 2027년 6월에 계좌로 넣는다고 밝혔습니다.",
+    "evidence": "https://www.euronews.com/2026/11/26/musk-says-will-give-two-spacex-shares-to-every-child-in-america"
   },
   {
     "id": "2026-10-21-1",
@@ -657,6 +660,30 @@
     "probability": 0.25,
     "due": "2027-12-31",
     "dueLabel": "2027.12",
+    "status": "pending"
+  },
+  {
+    "id": "2026-11-27-1",
+    "issued": "2026-11-27",
+    "statement": "스페이스X가 2026년 12월 31일까지 회사 몫 주식을 트럼프 계좌로 넣기 시작했다고 공식 발표한다",
+    "probability": 0.6,
+    "due": "2026-12-31",
+    "status": "pending"
+  },
+  {
+    "id": "2026-11-27-2",
+    "issued": "2026-11-27",
+    "statement": "엔비디아나 델·슈퍼마이크로가 2027년 1월 31일까지 말레이시아·싱가포르·태국·인도네시아 가운데 한 곳 이상으로 엔비디아 칩 서버 출하를 재개했다고 공식 확인한다",
+    "probability": 0.35,
+    "due": "2027-01-31",
+    "status": "pending"
+  },
+  {
+    "id": "2026-11-27-3",
+    "issued": "2026-11-27",
+    "statement": "우분투가 2026년 12월 15일까지 CVE-2026-99362(NFS2ROOT)를 고친 커널 보안 공지(USN)를 낸다",
+    "probability": 0.85,
+    "due": "2026-12-15",
     "status": "pending"
   }
 ]
